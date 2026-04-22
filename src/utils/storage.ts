@@ -2,6 +2,7 @@ export const storageKeys = {
   user: 'operum_user',
   session: 'operum_session',
   portfolios: 'operum_portfolios',
+  activePortfolio: 'operum_active_portfolio',
   chat: 'operum_chat',
   preferences: 'operum_preferences',
 };

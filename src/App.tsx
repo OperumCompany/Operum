@@ -3,6 +3,7 @@ import { ProtectedRoute } from './components/ProtectedRoute';
 import { AppShell } from './layout/AppShell';
 import { ChatPage } from './pages/ChatPage';
 import { DashboardPage } from './pages/DashboardPage';
+import { DashboardTechnicalPage } from './pages/DashboardTechnicalPage';
 import { LoginPage } from './pages/LoginPage';
 import { NewsPage } from './pages/NewsPage';
 import { PortfolioDetailsPage } from './pages/PortfolioDetailsPage';
@@ -17,6 +18,7 @@ export default function App() {
       <Route path="/registro" element={<RegisterPage />} />
       <Route path="/" element={<ProtectedRoute><AppShell /></ProtectedRoute>}>
         <Route index element={<DashboardPage />} />
+        <Route path="dashboard-tecnico" element={<DashboardTechnicalPage />} />
         <Route path="noticias" element={<NewsPage />} />
         <Route path="chat" element={<ChatPage />} />
         <Route path="carteiras" element={<PortfoliosPage />} />

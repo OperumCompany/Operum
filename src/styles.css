@@ -1,21 +1,67 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 :root {
-  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+  font-family: "Manrope", "Segoe UI", sans-serif;
+  color: #252525;
+  background:
+    radial-gradient(circle at top left, rgba(225, 94, 242, 0.08), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(61, 77, 156, 0.08), transparent 24%),
+    linear-gradient(180deg, #f2f2f2 0%, #ececec 100%);
+  --bg-app: #f2f2f2;
+  --bg-surface: rgba(255, 255, 255, 0.92);
+  --bg-surface-strong: #ffffff;
+  --border-soft: rgba(165, 165, 165, 0.28);
+  --text-main: #252525;
+  --text-muted: #717171;
+  --brand: #3d4d9c;
+  --brand-strong: #32428b;
+  --accent: #c7559b;
+  --accent-strong: #b3478d;
+  --accent-soft: rgba(199, 85, 155, 0.12);
+  --complementary: #e15ef2;
+  --complementary-soft: rgba(225, 94, 242, 0.12);
+  --success-soft: rgba(61, 77, 156, 0.1);
+  --success-text: #3d4d9c;
+  --danger-soft: rgba(199, 85, 155, 0.12);
+  --danger-text: #c7559b;
+  --shadow-card: 0 18px 50px rgba(37, 37, 37, 0.08);
 }
 
 * {
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   margin: 0;
-  background: #f2f2f2;
-  color: #252525;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(225, 94, 242, 0.08), transparent 28%),
+    radial-gradient(circle at bottom right, rgba(61, 77, 156, 0.08), transparent 24%),
+    linear-gradient(180deg, #f2f2f2 0%, #ececec 100%);
+  color: var(--text-main);
+  font-family: inherit;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
   color: inherit;
   text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: rgba(61, 77, 156, 0.18);
 }

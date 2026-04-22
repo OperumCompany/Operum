@@ -22,7 +22,7 @@ export const initialPortfolios: Portfolio[] = [
   {
     id: 'p-1',
     name: 'Carteira Longo Prazo',
-    description: 'Estrategia diversificada com foco em crescimento e protecao no longo prazo.',
+    description: 'Estratégia diversificada com foco em crescimento e proteção no longo prazo.',
     source: 'example',
     createdAt: '2026-02-12',
     assets: [
@@ -36,18 +36,89 @@ export const initialPortfolios: Portfolio[] = [
 ];
 
 export const newsData: NewsItem[] = [
-  { id: 'n1', title: 'IPCA desacelera no fechamento do trimestre', summary: 'Leitura de inflação veio ligeiramente abaixo do consenso e alivia pressão de curto prazo.', category: 'Inflação', date: '2026-04-05', source: 'Boletim Macro BR', impact: 'Médio', featured: true },
-  { id: 'n2', title: 'Banco central reforça comunicação sobre juros estáveis', summary: 'Ata sinaliza cautela e foco na convergência inflacionária.', category: 'Juros', date: '2026-04-05', source: 'Painel Monetário', impact: 'Alto', featured: true },
-  { id: 'n3', title: 'Big techs ampliam investimento em IA corporativa', summary: 'Empresas listadas registram nova rodada de capex com foco em produtividade.', category: 'Tecnologia', date: '2026-04-04', source: 'Tech Markets Daily', impact: 'Médio' },
-  { id: 'n4', title: 'Bitcoin oscila com fluxo institucional menor', summary: 'Mercado cripto opera com volatilidade elevada e baixa liquidez no intraday.', category: 'Criptomoedas', date: '2026-04-04', source: 'Crypto Pulse', impact: 'Alto' },
-  { id: 'n5', title: 'Ibovespa fecha em alta puxado por commodities', summary: 'Ações de mineração e energia sustentam ganho da sessão.', category: 'Ações', date: '2026-04-03', source: 'Mercado Agora', impact: 'Médio' },
-  { id: 'n6', title: 'Bolsas globais monitoram dados de emprego nos EUA', summary: 'Indicadores de trabalho influenciam expectativa de política monetária.', category: 'Exterior', date: '2026-04-03', source: 'Global Desk', impact: 'Médio' },
-  { id: 'n7', title: 'Discussão fiscal volta ao radar do mercado', summary: 'Propostas de ajuste fiscal geram leituras mistas para curva de juros.', category: 'Política econômica', date: '2026-04-02', source: 'Economia em Foco', impact: 'Alto' },
-  { id: 'n8', title: 'Debêntures incentivadas atraem investidores', summary: 'Emissões com benefícios tributários seguem em destaque.', category: 'Renda fixa', date: '2026-04-02', source: 'Renda Fixa Hoje', impact: 'Baixo' },
+  {
+    id: 'n1',
+    title: 'IPCA desacelera no fechamento do trimestre',
+    summary: 'Leitura de inflação veio ligeiramente abaixo do consenso e alivia pressão de curto prazo.',
+    category: 'Inflação',
+    date: '2026-04-05',
+    source: 'Boletim Macro BR',
+    impact: 'Médio',
+    featured: true,
+  },
+  {
+    id: 'n2',
+    title: 'Banco Central reforça comunicação sobre juros estáveis',
+    summary: 'Ata sinaliza cautela e foco na convergência inflacionária.',
+    category: 'Juros',
+    date: '2026-04-05',
+    source: 'Painel Monetário',
+    impact: 'Alto',
+    featured: true,
+  },
+  {
+    id: 'n3',
+    title: 'Big techs ampliam investimento em IA corporativa',
+    summary: 'Empresas listadas registram nova rodada de capex com foco em produtividade.',
+    category: 'Tecnologia',
+    date: '2026-04-04',
+    source: 'Tech Markets Daily',
+    impact: 'Médio',
+  },
+  {
+    id: 'n4',
+    title: 'Bitcoin oscila com fluxo institucional menor',
+    summary: 'Mercado cripto opera com volatilidade elevada e baixa liquidez no intraday.',
+    category: 'Criptomoedas',
+    date: '2026-04-04',
+    source: 'Crypto Pulse',
+    impact: 'Alto',
+  },
+  {
+    id: 'n5',
+    title: 'Ibovespa fecha em alta puxado por commodities',
+    summary: 'Ações de mineração e energia sustentam ganho da sessão.',
+    category: 'Ações',
+    date: '2026-04-03',
+    source: 'Mercado Agora',
+    impact: 'Médio',
+  },
+  {
+    id: 'n6',
+    title: 'Bolsas globais monitoram dados de emprego nos EUA',
+    summary: 'Indicadores de trabalho influenciam expectativa de política monetária.',
+    category: 'Exterior',
+    date: '2026-04-03',
+    source: 'Global Desk',
+    impact: 'Médio',
+  },
+  {
+    id: 'n7',
+    title: 'Discussão fiscal volta ao radar do mercado',
+    summary: 'Propostas de ajuste fiscal geram leituras mistas para curva de juros.',
+    category: 'Política econômica',
+    date: '2026-04-02',
+    source: 'Economia em Foco',
+    impact: 'Alto',
+  },
+  {
+    id: 'n8',
+    title: 'Debêntures incentivadas atraem investidores',
+    summary: 'Emissões com benefícios tributários seguem em destaque.',
+    category: 'Renda fixa',
+    date: '2026-04-02',
+    source: 'Renda Fixa Hoje',
+    impact: 'Baixo',
+  },
 ];
 
 export const initialChat: ChatMessage[] = [
-  { id: 'c1', role: 'assistant', content: 'Olá! Sou o Operum. Posso explicar termos financeiros e cenários de mercado de forma objetiva.', createdAt: '09:00' },
+  {
+    id: 'c1',
+    role: 'assistant',
+    content: 'Olá. Sou o Operum e posso explicar seus investimentos com uma linguagem simples e direta.',
+    createdAt: '09:00',
+  },
 ];
 
 export const metrics: DashboardMetric[] = [
