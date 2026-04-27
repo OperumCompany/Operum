@@ -2,12 +2,11 @@ import { FormEvent, useState } from 'react';
 import { Compass, ShieldCheck } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Input } from '../components/UI';
-import { defaultUser } from '../data/mocks';
 import { useAuth } from '../context/AuthContext';
 
 export function LoginPage() {
-  const [email, setEmail] = useState(defaultUser.email);
-  const [password, setPassword] = useState(defaultUser.password);
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
   const [message, setMessage] = useState<{ ok: boolean; text: string } | null>(null);
   const { login } = useAuth();
   const navigate = useNavigate();
@@ -76,16 +75,6 @@ export function LoginPage() {
             )}
 
             <div className="mt-6 rounded-[24px] bg-[var(--bg-surface-strong)] p-4 text-sm leading-6 text-[var(--text-muted)]">
-              <p>
-                Conta de exemplo: <strong className="text-[var(--text-main)]">camila@operum.app</strong> /{' '}
-                <strong className="text-[var(--text-main)]">Operum123</strong>
-              </p>
-              <p className="mt-2">
-                Cada novo cadastro fica salvo localmente no navegador para teste rapido da ferramenta.
-              </p>
-            </div>
-
-            <div className="mt-4 rounded-[24px] bg-[var(--bg-surface-strong)] p-4 text-sm leading-6 text-[var(--text-muted)]">
               Nao sabe por onde comecar? Entre e va para <strong className="text-[var(--text-main)]">Carteiras</strong> para usar um exemplo pronto.
             </div>
             <p className="mt-6 text-sm text-[var(--text-muted)]">
