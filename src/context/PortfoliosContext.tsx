@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
 import { Portfolio } from '../types';
-import { readStorage, storageKeys, writeStorage } from '../utils/storage';
+import { getScopedStorageKey, readStorage, storageKeys, writeStorage } from '../utils/storage';
 import { ALL_PORTFOLIOS_ID, getInitialPortfolios, normalizePortfolio, normalizePortfolios } from '../utils/portfolios';
+import { useAuth } from './AuthContext';
 
 type PortfoliosContextType = {
   portfolios: Portfolio[];
@@ -19,22 +20,38 @@ type PortfoliosContextType = {
 const PortfoliosContext = createContext<PortfoliosContextType | undefined>(undefined);
 
 export function PortfoliosProvider({ children }: { children: React.ReactNode }) {
-  const [portfolios, setPortfolios] = useState<Portfolio[]>(() =>
-    normalizePortfolios(readStorage<Portfolio[]>(storageKeys.portfolios, getInitialPortfolios())),
-  );
-  const [activePortfolioId, setActivePortfolioIdState] = useState<string>(() =>
-    readStorage(storageKeys.activePortfolio, portfolios[0]?.id ?? ''),
-  );
+  const { user } = useAuth();
+  const userId = user?.id ?? null;
+  const portfoliosStorageKey = getScopedStorageKey(storageKeys.portfolios, userId);
+  const activePortfolioStorageKey = getScopedStorageKey(storageKeys.activePortfolio, userId);
+  const [portfolios, setPortfolios] = useState<Portfolio[]>(() => getInitialPortfolios());
+  const [activePortfolioId, setActivePortfolioIdState] = useState<string>(() => getInitialPortfolios()[0]?.id ?? '');
 
   useEffect(() => {
+    if (!userId) {
+      setPortfolios(getInitialPortfolios());
+      setActivePortfolioIdState(getInitialPortfolios()[0]?.id ?? '');
+      return;
+    }
+
+    const nextPortfolios = normalizePortfolios(readStorage<Portfolio[]>(portfoliosStorageKey, getInitialPortfolios()));
+    const nextActivePortfolioId = readStorage(activePortfolioStorageKey, nextPortfolios[0]?.id ?? '');
+
+    setPortfolios(nextPortfolios);
+    setActivePortfolioIdState(nextActivePortfolioId);
+  }, [activePortfolioStorageKey, portfoliosStorageKey, userId]);
+
+  useEffect(() => {
+    if (!userId) return;
+
     if (!portfolios.length) {
       setActivePortfolioIdState('');
-      writeStorage(storageKeys.activePortfolio, '');
+      writeStorage(activePortfolioStorageKey, '');
       return;
     }
 
     if (activePortfolioId === ALL_PORTFOLIOS_ID) {
-      writeStorage(storageKeys.activePortfolio, ALL_PORTFOLIOS_ID);
+      writeStorage(activePortfolioStorageKey, ALL_PORTFOLIOS_ID);
       return;
     }
 
@@ -42,17 +59,20 @@ export function PortfoliosProvider({ children }: { children: React.ReactNode }) 
     if (!exists) {
       const fallbackId = portfolios[0].id;
       setActivePortfolioIdState(fallbackId);
-      writeStorage(storageKeys.activePortfolio, fallbackId);
+      writeStorage(activePortfolioStorageKey, fallbackId);
     }
-  }, [activePortfolioId, portfolios]);
+  }, [activePortfolioId, activePortfolioStorageKey, portfolios, userId]);
 
   useEffect(() => {
-    writeStorage(storageKeys.portfolios, portfolios);
-  }, [portfolios]);
+    if (!userId) return;
+    writeStorage(portfoliosStorageKey, portfolios);
+  }, [portfolios, portfoliosStorageKey, userId]);
 
   function setActivePortfolioId(id: string) {
     setActivePortfolioIdState(id);
-    writeStorage(storageKeys.activePortfolio, id);
+    if (userId) {
+      writeStorage(activePortfolioStorageKey, id);
+    }
   }
 
   function createPortfolio(input: { name: string; description: string }) {

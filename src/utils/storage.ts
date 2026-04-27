@@ -1,5 +1,6 @@
 export const storageKeys = {
   user: 'operum_user',
+  users: 'operum_users',
   session: 'operum_session',
   portfolios: 'operum_portfolios',
   activePortfolio: 'operum_active_portfolio',
@@ -19,4 +20,8 @@ export function readStorage<T>(key: string, fallback: T): T {
 
 export function writeStorage<T>(key: string, value: T): void {
   localStorage.setItem(key, JSON.stringify(value));
+}
+
+export function getScopedStorageKey(key: string, scope?: string | null): string {
+  return scope ? `${key}:${scope}` : key;
 }

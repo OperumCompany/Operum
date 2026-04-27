@@ -26,27 +26,27 @@ export function LoginPage() {
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold">
               <Compass size={16} />
-              Comece pela visão mais clara da sua carteira
+              Comece pela visao mais clara da sua carteira
             </div>
             <h1 className="mt-6 text-4xl font-bold leading-tight">
               Entenda seus investimentos sem precisar falar como analista.
             </h1>
             <p className="mt-4 text-base leading-7 text-white/75">
-              O Operum organiza sua carteira, explica o que está acontecendo e mostra análises mais técnicas só quando você quiser.
+              O Operum organiza sua carteira, explica o que esta acontecendo e mostra analises mais tecnicas so quando voce quiser.
             </p>
           </div>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2">
             <div className="rounded-[28px] bg-white/8 p-5">
-              <p className="text-sm font-semibold">Resumo amigável</p>
+              <p className="text-sm font-semibold">Resumo amigavel</p>
               <p className="mt-2 text-sm leading-6 text-white/72">
                 Veja primeiro os sinais principais da sua carteira com frases simples e passos claros.
               </p>
             </div>
             <div className="rounded-[28px] bg-white/8 p-5">
-              <p className="text-sm font-semibold">Painel técnico opcional</p>
+              <p className="text-sm font-semibold">Painel tecnico opcional</p>
               <p className="mt-2 text-sm leading-6 text-white/72">
-                Para quem já conhece o mercado, os gráficos detalhados continuam a um clique de distância.
+                Para quem ja conhece o mercado, os graficos detalhados continuam a um clique de distancia.
               </p>
             </div>
           </div>
@@ -60,7 +60,7 @@ export function LoginPage() {
             </div>
             <h2 className="mt-6 text-3xl font-bold text-[var(--text-main)]">Entrar no Operum</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
-              Entre para acompanhar sua carteira, organizar ativos e receber explicações de forma simples.
+              Entre para acompanhar sua carteira, organizar ativos e receber explicacoes de forma simples.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -76,10 +76,20 @@ export function LoginPage() {
             )}
 
             <div className="mt-6 rounded-[24px] bg-[var(--bg-surface-strong)] p-4 text-sm leading-6 text-[var(--text-muted)]">
-              Não sabe por onde começar? Entre e vá para <strong className="text-[var(--text-main)]">Carteiras</strong> para usar um exemplo pronto.
+              <p>
+                Conta de exemplo: <strong className="text-[var(--text-main)]">camila@operum.app</strong> /{' '}
+                <strong className="text-[var(--text-main)]">Operum123</strong>
+              </p>
+              <p className="mt-2">
+                Cada novo cadastro fica salvo localmente no navegador para teste rapido da ferramenta.
+              </p>
+            </div>
+
+            <div className="mt-4 rounded-[24px] bg-[var(--bg-surface-strong)] p-4 text-sm leading-6 text-[var(--text-muted)]">
+              Nao sabe por onde comecar? Entre e va para <strong className="text-[var(--text-main)]">Carteiras</strong> para usar um exemplo pronto.
             </div>
             <p className="mt-6 text-sm text-[var(--text-muted)]">
-              Ainda não possui conta?{' '}
+              Ainda nao possui conta?{' '}
               <Link to="/registro" className="font-semibold text-[var(--brand)]">
                 Criar conta
               </Link>

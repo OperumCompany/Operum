@@ -1,21 +1,21 @@
 # Operum
 
-Frontend React para acompanhamento de carteiras, leitura simplificada de investimentos e painel técnico com análises mais detalhadas.
+Frontend React para acompanhamento de carteiras, leitura simplificada de investimentos e painel tecnico com analises mais detalhadas.
 
-## Visão Geral
+## Visao Geral
 
-O OPERUM foi estruturado para atender dois perfis de uso:
+O Operum foi estruturado para atender dois perfis de uso:
 
-- `Visão geral`: leitura amigável da carteira selecionada, com linguagem menos técnica.
-- `Painel técnico`: gráficos e comparativos mais densos para leitura analítica.
+- `Visao geral`: leitura amigavel da carteira selecionada, com linguagem menos tecnica.
+- `Painel tecnico`: graficos e comparativos mais densos para leitura analitica.
 
-A aplicação também possui:
+A aplicacao tambem possui:
 
-- seleção global de `Carteira ativa` no header
-- opção de analisar `Todas as carteiras`
-- módulo de carteiras com criação, importação, edição e remoção
-- chat explicativo com respostas baseadas na seleção atual
-- notícias de mercado e configurações básicas
+- selecao global de `Carteira ativa` no header
+- opcao de analisar `Todas as carteiras`
+- modulo de carteiras com criacao, importacao, edicao e remocao
+- chat explicativo com respostas baseadas na selecao atual
+- noticias de mercado e configuracoes basicas
 
 ## Stack
 
@@ -36,47 +36,66 @@ npm run build
 npm run preview
 ```
 
+## Deploy na Vercel
+
+O projeto pode ser publicado como frontend estatico na Vercel.
+
+1. Importe o repositorio na Vercel.
+2. Mantenha o preset de framework como `Vite`.
+3. Use `npm run build` como comando de build.
+4. Use `dist` como output directory.
+
+O arquivo `vercel.json` ja foi incluido para garantir o rewrite das rotas do `React Router` para `index.html`.
+
 ## Estrutura Principal
 
 ```text
 src/
-  components/        # componentes base de UI e proteção de rota
+  components/        # componentes base de UI e protecao de rota
   context/           # auth e estado global de carteiras
   data/              # mocks e dados locais
-  layout/            # shell principal da aplicação
+  layout/            # shell principal da aplicacao
   pages/             # telas principais
   types/             # tipos TypeScript
-  utils/             # storage e utilitários de carteira
+  utils/             # storage e utilitarios de carteira
 ```
 
 ## Fluxos Importantes
 
 ### 1. Carteira ativa global
 
-A seleção de carteira no header controla o comportamento dos principais módulos:
+A selecao de carteira no header controla o comportamento dos principais modulos:
 
 - dashboard simples
-- painel técnico
+- painel tecnico
 - chat
-- resumo da carteira ativa no módulo de carteiras
+- resumo da carteira ativa no modulo de carteiras
 
-Quando `Todas as carteiras` está selecionado, os módulos passam a operar no consolidado.
+Quando `Todas as carteiras` esta selecionado, os modulos passam a operar no consolidado.
 
-### 2. Persistência local
+### 2. Persistencia local
 
-O projeto usa `localStorage` para simular persistência de:
+O projeto usa `localStorage` para simular persistencia de:
 
-- sessão do usuário
-- carteiras
-- carteira ativa
-- preferências
-- histórico de chat
+- sessao do usuario
+- base local de usuarios cadastrados
+- carteiras por usuario
+- carteira ativa por usuario
+- preferencias por usuario
+- historico de chat por usuario
 
 As chaves ficam centralizadas em `src/utils/storage.ts`.
 
-### 3. Dados mockados
+### 3. Conta de exemplo
 
-Não há backend integrado neste momento. Os dados de usuário, ativos, notícias, séries de gráficos e carteira inicial ficam em `src/data/mocks.ts`.
+- E-mail: `camila@operum.app`
+- Senha: `Operum123`
+
+A conta da Camila continua fixa como perfil de demonstracao. Novos cadastros ficam salvos apenas no navegador de quem estiver usando a aplicacao.
+
+### 4. Dados mockados
+
+Nao ha backend integrado neste momento. Os dados de usuario, ativos, noticias, series de graficos e carteira inicial ficam em `src/data/mocks.ts`.
 
 ## Rotas
 
@@ -90,31 +109,32 @@ Não há backend integrado neste momento. Os dados de usuário, ativos, notícia
 - `/carteiras/:id`
 - `/configuracoes`
 
-## Padrões do Frontend
+## Padroes do Frontend
 
 - paleta base definida em `src/styles.css`
 - componentes compartilhados em `src/components/UI.tsx`
 - sidebar e header centralizados em `src/layout/AppShell.tsx`
 - estado global de carteiras em `src/context/PortfoliosContext.tsx`
 
-## Observações
+## Observacoes
 
-- o projeto hoje é orientado a demonstração/prototipação
-- os gráficos usam dados simulados
+- o projeto hoje e orientado a demonstracao e prototipacao
+- os graficos usam dados simulados
 - a build atual funciona normalmente, mas o Vite ainda alerta sobre tamanho de chunk no bundle final
+- por usar `localStorage`, cada navegador mantera sua propria base local de teste
 
-## Validação
+## Validacao
 
-Antes de entregar mudanças no frontend, o mínimo esperado é:
+Antes de entregar mudancas no frontend, o minimo esperado e:
 
 ```bash
 npm run build
 ```
 
-Se a alteração afetar navegação, também vale validar manualmente:
+Se a alteracao afetar navegacao, tambem vale validar manualmente:
 
 - troca de carteira ativa
-- visão geral
-- painel técnico
+- visao geral
+- painel tecnico
 - chat
-- módulo de carteiras
+- modulo de carteiras

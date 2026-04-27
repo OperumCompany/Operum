@@ -1,29 +1,41 @@
-import { FormEvent, useState } from 'react';
+import { FormEvent, useEffect, useState } from 'react';
 import { Bell, SlidersHorizontal, UserRound } from 'lucide-react';
 import { Button, Card, Input } from '../components/UI';
 import { preferencesDefault } from '../data/mocks';
-import { NewsCategory } from '../types';
-import { readStorage, storageKeys, writeStorage } from '../utils/storage';
 import { useAuth } from '../context/AuthContext';
+import { NewsCategory } from '../types';
+import { getScopedStorageKey, readStorage, storageKeys, writeStorage } from '../utils/storage';
 
 const topics: NewsCategory[] = ['Inflação', 'Juros', 'Tecnologia', 'Criptomoedas', 'Ações', 'Exterior', 'Política econômica', 'Renda fixa'];
 
 export function SettingsPage() {
-  const { user, logout } = useAuth();
+  const { user, logout, updatePassword } = useAuth();
   const [password, setPassword] = useState('');
   const [feedback, setFeedback] = useState('');
-  const [prefs, setPrefs] = useState(() => readStorage(storageKeys.preferences, preferencesDefault));
+  const preferencesKey = getScopedStorageKey(storageKeys.preferences, user?.id);
+  const [prefs, setPrefs] = useState(() => readStorage(preferencesKey, preferencesDefault));
+
+  useEffect(() => {
+    setPrefs(readStorage(preferencesKey, preferencesDefault));
+  }, [preferencesKey]);
 
   function savePrefs() {
-    writeStorage(storageKeys.preferences, prefs);
+    writeStorage(preferencesKey, prefs);
     setFeedback('Preferências salvas com sucesso.');
   }
 
-  function updatePassword(e: FormEvent) {
+  function handlePasswordUpdate(e: FormEvent) {
     e.preventDefault();
-    if (password.length < 6) return setFeedback('A senha precisa ter pelo menos 6 caracteres.');
-    setFeedback('Senha alterada com sucesso na simulação.');
-    setPassword('');
+    if (password.length < 6) {
+      setFeedback('A senha precisa ter pelo menos 6 caracteres.');
+      return;
+    }
+
+    const result = updatePassword(password);
+    setFeedback(result.message);
+    if (result.ok) {
+      setPassword('');
+    }
   }
 
   return (
@@ -40,10 +52,15 @@ export function SettingsPage() {
         <Card title="Seus dados" right={<UserRound size={16} className="text-[var(--brand)]" />}>
           <p className="text-sm"><strong>Nome:</strong> {user?.name}</p>
           <p className="mt-2 text-sm"><strong>E-mail:</strong> {user?.email}</p>
+          {user?.email === 'camila@operum.app' && (
+            <p className="mt-3 text-sm text-[var(--text-muted)]">
+              Esta conta permanece fixa como perfil de exemplo para demonstração.
+            </p>
+          )}
         </Card>
 
         <Card title="Segurança">
-          <form onSubmit={updatePassword} className="space-y-3">
+          <form onSubmit={handlePasswordUpdate} className="space-y-3">
             <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Nova senha" />
             <div className="flex flex-wrap gap-2">
               <Button type="submit">Alterar senha</Button>
@@ -62,7 +79,7 @@ export function SettingsPage() {
                   type="checkbox"
                   checked={prefs.topics.includes(t)}
                   onChange={(e) =>
-                    setPrefs((prev: typeof preferencesDefault) => ({
+                    setPrefs((prev) => ({
                       ...prev,
                       topics: e.target.checked ? [...prev.topics, t] : prev.topics.filter((x) => x !== t),
                     }))
@@ -79,7 +96,7 @@ export function SettingsPage() {
             <input
               type="checkbox"
               checked={prefs.compactMode}
-              onChange={(e) => setPrefs((p: typeof preferencesDefault) => ({ ...p, compactMode: e.target.checked }))}
+              onChange={(e) => setPrefs((prev) => ({ ...prev, compactMode: e.target.checked }))}
             />{' '}
             <span className="ml-1">Modo compacto</span>
           </label>
@@ -87,7 +104,7 @@ export function SettingsPage() {
             <input
               type="checkbox"
               checked={prefs.notifications}
-              onChange={(e) => setPrefs((p: typeof preferencesDefault) => ({ ...p, notifications: e.target.checked }))}
+              onChange={(e) => setPrefs((prev) => ({ ...prev, notifications: e.target.checked }))}
             />{' '}
             <span className="ml-1">Alertas locais</span>
           </label>

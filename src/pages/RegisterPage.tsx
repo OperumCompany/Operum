@@ -16,10 +16,18 @@ export function RegisterPage() {
 
   function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    if (!accept) return setError('Você precisa aceitar os termos para continuar.');
+    setError('');
+
+    if (!accept) return setError('Voce precisa aceitar os termos para continuar.');
     if (password.length < 6) return setError('A senha deve ter ao menos 6 caracteres.');
-    if (password !== confirmPassword) return setError('As senhas não coincidem.');
-    register({ id: crypto.randomUUID(), name, email, password });
+    if (password !== confirmPassword) return setError('As senhas nao coincidem.');
+
+    const result = register({ id: crypto.randomUUID(), name, email, password });
+    if (!result.ok) {
+      setError(result.message);
+      return;
+    }
+
     navigate('/');
   }
 
@@ -34,8 +42,8 @@ export function RegisterPage() {
           <div className="mt-8 space-y-4">
             {[
               'Organize seus ativos em poucos passos.',
-              'Receba explicações com menos jargão.',
-              'Acesse uma visão simples e outra técnica da carteira.',
+              'Receba explicacoes com menos jargao.',
+              'Acesse uma visao simples e outra tecnica da carteira.',
             ].map((item) => (
               <div key={item} className="flex items-start gap-3 rounded-[24px] bg-white/80 p-4">
                 <CheckCircle2 size={18} className="mt-1 text-[var(--brand)]" />
@@ -49,7 +57,7 @@ export function RegisterPage() {
           <form onSubmit={handleSubmit} className="w-full rounded-[36px] border border-[var(--border-soft)] bg-[var(--bg-surface)] p-8 shadow-[var(--shadow-card)] sm:p-10">
             <h2 className="text-3xl font-bold text-[var(--text-main)]">Criar conta no Operum</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
-              Preencha seus dados para começar pela visão amigável da plataforma.
+              Preencha seus dados para comecar pela visao amigavel da plataforma.
             </p>
 
             <div className="mt-8 space-y-4">
@@ -68,7 +76,7 @@ export function RegisterPage() {
             {error && <p className="mt-4 text-sm text-[var(--danger-text)]">{error}</p>}
 
             <p className="mt-6 text-sm text-[var(--text-muted)]">
-              Já tem conta?{' '}
+              Ja tem conta?{' '}
               <Link to="/login" className="font-semibold text-[var(--brand)]">
                 Entrar
               </Link>

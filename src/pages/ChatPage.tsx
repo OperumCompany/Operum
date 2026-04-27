@@ -1,10 +1,11 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { MessageSquareHeart } from 'lucide-react';
 import { Button, Card, Input } from '../components/UI';
+import { useAuth } from '../context/AuthContext';
 import { usePortfolios } from '../context/PortfoliosContext';
 import { assetsCatalog, initialChat } from '../data/mocks';
 import { ChatMessage } from '../types';
-import { readStorage, storageKeys, writeStorage } from '../utils/storage';
+import { getScopedStorageKey, readStorage, storageKeys, writeStorage } from '../utils/storage';
 import { getActivePortfolioSelectionLabel, getPortfolioLabel } from '../utils/portfolios';
 
 const suggestions = ['O que é renda fixa?', 'O que é inflação?', 'O que significa liquidez?', 'Como está a carteira ativa?'];
@@ -57,13 +58,19 @@ function answer(
 }
 
 export function ChatPage() {
+  const { user } = useAuth();
   const { activePortfolio, selectedPortfolios, isAllPortfoliosSelected } = usePortfolios();
-  const [messages, setMessages] = useState<ChatMessage[]>(() => readStorage(storageKeys.chat, initialChat));
+  const chatStorageKey = getScopedStorageKey(storageKeys.chat, user?.id);
+  const [messages, setMessages] = useState<ChatMessage[]>(() => readStorage(chatStorageKey, initialChat));
   const [text, setText] = useState('');
 
   useEffect(() => {
-    writeStorage(storageKeys.chat, messages);
-  }, [messages]);
+    setMessages(readStorage(chatStorageKey, initialChat));
+  }, [chatStorageKey]);
+
+  useEffect(() => {
+    writeStorage(chatStorageKey, messages);
+  }, [chatStorageKey, messages]);
 
   function send(content: string) {
     if (!content.trim()) return;
