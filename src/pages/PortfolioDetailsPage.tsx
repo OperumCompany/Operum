@@ -1,112 +1,84 @@
-import { FormEvent, useMemo, useState } from 'react';
-import { Info, Newspaper, PlusCircle } from 'lucide-react';
+import { FormEvent, useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { Button, Card, Input } from '../components/UI';
 import { usePortfolios } from '../context/PortfoliosContext';
-import { assetsCatalog, newsData } from '../data/mocks';
+import { PortfolioMetrics } from '../components/PortfolioMetrics';
+import { CompositionCharts } from '../components/CompositionCharts';
 import { getPortfolioLabel } from '../utils/portfolios';
-
-function normalizeText(value: string): string {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
-}
-
-const classToNewsKeywords: Record<string, string[]> = {
-  'Renda fixa': ['fixa', 'juros', 'inflação', 'política'],
-  'Ações Brasil': ['ações', 'commodities', 'política', 'juros'],
-  'Ações EUA': ['exterior', 'tecnologia', 'ações'],
-  Fundos: ['fundos', 'juros', 'exterior'],
-  Cripto: ['cripto', 'tecnologia'],
-};
-
-const chartColors = ['#3D4D9C', '#C7559B', '#E15EF2', '#717171', '#A5A5A5'];
+import api from '../utils/api';
+import type { Asset, PortfolioAnalysis } from '../types';
 
 export function PortfolioDetailsPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
-  const { portfolios, updatePortfolio, setActivePortfolioId, activePortfolioId } = usePortfolios();
-  const [assetTicker, setAssetTicker] = useState(assetsCatalog[0].ticker);
-  const [allocation, setAllocation] = useState(10);
+  const { portfolios, activePortfolioId, setActivePortfolioId, addPosition, removePosition, updatePortfolio } = usePortfolios();
+  const [assetTicker, setAssetTicker] = useState('');
+  const [quantity, setQuantity] = useState(10);
+  const [avgPrice, setAvgPrice] = useState('');
   const [nameDraft, setNameDraft] = useState('');
-  const [descriptionDraft, setDescriptionDraft] = useState('');
+  const [assets, setAssets] = useState<Asset[]>([]);
+  const [analysis, setAnalysis] = useState<PortfolioAnalysis | null>(null);
+  const [analysisLoading, setAnalysisLoading] = useState(false);
+  const [analysisError, setAnalysisError] = useState<string | null>(null);
+
+  useEffect(() => {
+    api.get<Asset[]>('/assets/universe').then(setAssets).catch(() => {});
+  }, []);
 
   const portfolio = portfolios.find((item) => item.id === id);
 
-  function addAsset(e: FormEvent) {
-    e.preventDefault();
+  useEffect(() => {
     if (!portfolio) return;
-
-    updatePortfolio(portfolio.id, (current) => ({
-      ...current,
-      assets: [...current.assets, { id: crypto.randomUUID(), ticker: assetTicker, allocation: Math.max(1, Math.min(100, allocation)) }],
-    }));
-  }
-
-  function removeAsset(assetId: string) {
-    if (!portfolio) return;
-    updatePortfolio(portfolio.id, (current) => ({
-      ...current,
-      assets: current.assets.filter((asset) => asset.id !== assetId),
-    }));
-  }
-
-  function savePortfolioDetails(e: FormEvent) {
-    e.preventDefault();
-    if (!portfolio) return;
-
-    const nextName = nameDraft.trim() || portfolio.name;
-    const nextDescription = descriptionDraft.trim() || portfolio.description;
-
-    updatePortfolio(portfolio.id, (current) => ({
-      ...current,
-      name: nextName,
-      description: nextDescription,
-    }));
-
-    setNameDraft('');
-    setDescriptionDraft('');
-  }
-
-  const assetsView = useMemo(() => {
-    if (!portfolio) return [];
-    return portfolio.assets.map((asset) => {
-      const catalogAsset = assetsCatalog.find((catalogItem) => catalogItem.ticker === asset.ticker);
-      return {
-        ...asset,
-        assetClass: catalogAsset?.class ?? 'Classe não mapeada',
-        risk: catalogAsset?.risk ?? 0,
-        name: catalogAsset?.name ?? asset.ticker,
-      };
-    });
+    setAnalysisLoading(true);
+    setAnalysisError(null);
+    api.get<PortfolioAnalysis>(`/portfolios/${portfolio.id}/analysis`)
+      .then(setAnalysis)
+      .catch((e) => {
+        setAnalysisError(e instanceof Error ? e.message : 'Erro ao carregar análise');
+        setAnalysis(null);
+      })
+      .finally(() => setAnalysisLoading(false));
   }, [portfolio]);
 
-  const totalAllocation = assetsView.reduce((sum, asset) => sum + asset.allocation, 0);
-  const composition = assetsView.map((asset) => ({
-    name: asset.ticker,
-    value: asset.allocation,
-  }));
+  async function addAsset(e: FormEvent) {
+    e.preventDefault();
+    if (!portfolio || !assetTicker) return;
+    const asset = assets.find((a) => a.ticker === assetTicker);
+    try {
+      await addPosition(portfolio.id, {
+        ticker: assetTicker,
+        asset_class: asset?.asset_class ?? 'BR_STOCK',
+        quantity: Math.max(0.01, quantity),
+        avg_price: avgPrice ? parseFloat(avgPrice) : undefined,
+      });
+      setQuantity(10);
+      setAvgPrice('');
+    } catch {
+      // handled by context
+    }
+  }
 
-  const relatedNews = useMemo(() => {
-    const classes = new Set(assetsView.map((asset) => asset.assetClass));
+  async function handleRemovePosition(ticker: string) {
+    if (!portfolio) return;
+    const confirmed = window.confirm(`Remover ${ticker} da carteira?`);
+    if (!confirmed) return;
+    try {
+      await removePosition(portfolio.id, ticker);
+    } catch {
+      // handled by context
+    }
+  }
 
-    return Array.from(classes)
-      .map((assetClass) => {
-        const keywords = classToNewsKeywords[assetClass] ?? [];
-        const items = newsData
-          .filter((news) => {
-            const haystack = `${news.category} ${news.title} ${news.summary}`;
-            const normalized = normalizeText(haystack);
-            return keywords.some((keyword) => normalized.includes(normalizeText(keyword)));
-          })
-          .slice(0, 3);
-
-        return { assetClass, items };
-      })
-      .filter((entry) => entry.items.length > 0);
-  }, [assetsView]);
+  async function savePortfolioName(e: FormEvent) {
+    e.preventDefault();
+    if (!portfolio || !nameDraft.trim()) return;
+    try {
+      await updatePortfolio(portfolio.id, { name: nameDraft.trim() });
+      setNameDraft('');
+    } catch {
+      // handled by context
+    }
+  }
 
   if (!portfolio) {
     return (
@@ -127,7 +99,9 @@ export function PortfolioDetailsPage() {
         <div className="max-w-2xl">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">Carteira em detalhe</p>
           <h2 className="mt-2 text-3xl font-bold">{getPortfolioLabel(portfolio)}</h2>
-          <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">{portfolio.description}</p>
+          <p className="mt-1 text-sm text-[var(--text-muted)]">
+            {portfolio.positions.length} ativo(s) • Moeda base: {portfolio.base_currency}
+          </p>
         </div>
         <div className="flex flex-wrap gap-2">
           {!isActive && (
@@ -141,31 +115,28 @@ export function PortfolioDetailsPage() {
         </div>
       </section>
 
+      <PortfolioMetrics analysis={analysis} />
+      {analysisLoading && <p className="text-sm text-[var(--text-muted)]">Carregando análise...</p>}
+      {analysisError && <p className="text-sm text-[var(--danger-text)]">{analysisError}</p>}
+
       <div className="grid gap-4 xl:grid-cols-[1.35fr_0.95fr]">
         <div className="space-y-4">
-          <Card title="Editar informações da carteira">
-            <form onSubmit={savePortfolioDetails} className="space-y-3">
+          <Card title="Editar nome">
+            <form onSubmit={savePortfolioName} className="space-y-3">
               <Input placeholder={portfolio.name} value={nameDraft} onChange={(e) => setNameDraft(e.target.value)} />
-              <Input placeholder={portfolio.description} value={descriptionDraft} onChange={(e) => setDescriptionDraft(e.target.value)} />
-              <Button type="submit">Salvar alterações</Button>
+              <Button type="submit">Salvar</Button>
             </form>
           </Card>
 
-          <Card title="Adicionar ativos" right={<span className="text-sm text-[var(--text-muted)]">Próxima ação principal</span>}>
-            <div className="mb-4 rounded-[24px] bg-[var(--accent-soft)] p-4 text-sm leading-6 text-[var(--text-muted)]">
-              <div className="flex items-start gap-3">
-                <Info size={18} className="mt-1 text-[var(--accent)]" />
-                <p>Adicione primeiro os ativos mais importantes. Assim o Operum consegue explicar melhor sua carteira.</p>
-              </div>
-            </div>
-
-            <form onSubmit={addAsset} className="grid gap-2 sm:grid-cols-3">
+          <Card title="Adicionar ativos">
+            <form onSubmit={addAsset} className="grid gap-2 sm:grid-cols-4">
               <select
                 value={assetTicker}
-                onChange={(e) => setAssetTicker(e.target.value)}
-                className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 py-3"
+                onChange={(e) => { setAssetTicker(e.target.value); const asset = assets.find((a) => a.ticker === e.target.value); if (asset) setAvgPrice(''); }}
+                className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm"
               >
-                {assetsCatalog.map((asset) => (
+                <option value="">Selecionar ativo</option>
+                {assets.map((asset) => (
                   <option key={asset.ticker} value={asset.ticker}>
                     {asset.ticker} - {asset.name}
                   </option>
@@ -173,38 +144,47 @@ export function PortfolioDetailsPage() {
               </select>
               <Input
                 type="number"
-                min={1}
-                max={100}
-                value={allocation}
-                onChange={(e) => setAllocation(Number(e.target.value))}
-                placeholder="Alocação %"
+                min={0.01}
+                step={0.01}
+                value={quantity}
+                onChange={(e) => setQuantity(Number(e.target.value))}
+                placeholder="Quantidade"
               />
-              <Button type="submit" className="gap-2">
-                <PlusCircle size={16} />
-                Adicionar ativo
-              </Button>
+              <Input
+                type="number"
+                min={0}
+                step={0.01}
+                value={avgPrice}
+                onChange={(e) => setAvgPrice(e.target.value)}
+                placeholder="Preço médio (opcional)"
+              />
+              <Button type="submit">Adicionar</Button>
             </form>
 
             <div className="mt-4 overflow-x-auto">
               <table className="w-full text-sm">
                 <thead>
                   <tr className="text-left text-[var(--text-muted)]">
-                    <th className="py-2">Ativo</th>
-                    <th>Tipo</th>
-                    <th>Risco</th>
-                    <th>Alocação</th>
+                    <th className="py-2">Ticker</th>
+                    <th>Classe</th>
+                    <th>Quantidade</th>
+                    <th>Preço médio</th>
                     <th></th>
                   </tr>
                 </thead>
                 <tbody>
-                  {assetsView.map((asset) => (
-                    <tr key={asset.id} className="border-t border-[var(--border-soft)]">
-                      <td className="py-3">{asset.ticker} - {asset.name}</td>
-                      <td>{asset.assetClass}</td>
-                      <td>{asset.risk}/5</td>
-                      <td>{asset.allocation}%</td>
+                  {portfolio.positions.map((pos) => (
+                    <tr key={pos.ticker} className="border-t border-[var(--border-soft)]">
+                      <td className="py-3 font-semibold">{pos.ticker}</td>
+                      <td>{pos.asset_class}</td>
+                      <td>{pos.quantity}</td>
+                      <td>{pos.avg_price ? `R$ ${pos.avg_price.toFixed(2)}` : '-'}</td>
                       <td className="text-right">
-                        <button type="button" className="text-sm font-semibold text-[var(--danger-text)]" onClick={() => removeAsset(asset.id)}>
+                        <button
+                          type="button"
+                          className="text-sm font-semibold text-[var(--danger-text)]"
+                          onClick={() => handleRemovePosition(pos.ticker)}
+                        >
                           Remover
                         </button>
                       </td>
@@ -212,52 +192,15 @@ export function PortfolioDetailsPage() {
                   ))}
                 </tbody>
               </table>
-            </div>
-            <p className="mt-3 text-sm text-[var(--text-muted)]">Total alocado: {totalAllocation}%</p>
-          </Card>
-
-          <Card title="Notícias que ajudam a entender essa carteira" right={<Newspaper size={16} className="text-[var(--brand)]" />}>
-            <div className="space-y-4">
-              {relatedNews.length === 0 && <p className="text-sm text-[var(--text-muted)]">Adicione ativos para ver notícias relacionadas.</p>}
-              {relatedNews.map((group) => (
-                <section key={group.assetClass} className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4">
-                  <h3 className="text-base font-semibold">{group.assetClass}</h3>
-                  <div className="mt-3 space-y-2">
-                    {group.items.map((news) => (
-                      <article key={news.id} className="rounded-[20px] bg-white p-4">
-                        <p className="text-xs uppercase tracking-[0.12em] text-[var(--text-muted)]">{news.date} • {news.source}</p>
-                        <p className="mt-2 text-sm font-semibold">{news.title}</p>
-                        <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{news.summary}</p>
-                      </article>
-                    ))}
-                  </div>
-                </section>
-              ))}
+              {portfolio.positions.length === 0 && (
+                <p className="py-4 text-center text-sm text-[var(--text-muted)]">Nenhum ativo ainda. Adicione o primeiro acima.</p>
+              )}
             </div>
           </Card>
         </div>
 
         <div className="space-y-4">
-          <Card title="Resumo visual da carteira">
-            <p className="text-sm leading-6 text-[var(--text-muted)]">
-              Esse gráfico ajuda a enxergar rapidamente quais ativos ocupam mais espaço.
-            </p>
-            <div className="mt-4 h-64">
-              {!!composition.length && (
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie data={composition} dataKey="value" nameKey="name" outerRadius={80}>
-                      {composition.map((_, index) => (
-                        <Cell key={index} fill={chartColors[index % chartColors.length]} />
-                      ))}
-                    </Pie>
-                    <Tooltip />
-                  </PieChart>
-                </ResponsiveContainer>
-              )}
-              {!composition.length && <p className="text-sm text-[var(--text-muted)]">Sem ativos para visualizar.</p>}
-            </div>
-          </Card>
+          <CompositionCharts positions={portfolio.positions} analysis={analysis} />
         </div>
       </div>
     </div>

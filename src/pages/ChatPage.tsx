@@ -15,18 +15,18 @@ function getPortfolioSummary(
   selectedPortfolios: ReturnType<typeof usePortfolios>['selectedPortfolios'],
   isAllPortfoliosSelected: boolean,
 ) {
-  const selectedAssets = selectedPortfolios.flatMap((portfolio) => portfolio.assets);
-  if (!selectedAssets.length) {
+  const selectedPositions = selectedPortfolios.flatMap((p) => p.positions);
+  if (!selectedPositions.length) {
     return 'A carteira ativa ainda não possui ativos suficientes para uma leitura personalizada.';
   }
 
-  const topAsset = [...selectedAssets].sort((a, b) => b.allocation - a.allocation)[0];
-  const assetName = assetsCatalog.find((item) => item.ticker === topAsset.ticker)?.name ?? topAsset.ticker;
+  const topPos = [...selectedPositions].sort((a, b) => b.quantity - a.quantity)[0];
+  const assetName = assetsCatalog.find((item) => item.ticker === topPos.ticker)?.name ?? topPos.ticker;
   if (isAllPortfoliosSelected) {
-    return `No consolidado de todas as carteiras, o maior peso hoje está em ${assetName} com ${topAsset.allocation}% da alocação.`;
+    return `No consolidado de todas as carteiras, o maior peso hoje está em ${assetName} com ${topPos.quantity} unidades.`;
   }
   return activePortfolio
-    ? `Na carteira ativa ${getPortfolioLabel(activePortfolio)}, o maior peso hoje está em ${assetName} com ${topAsset.allocation}% da alocação.`
+    ? `Na carteira ativa ${getPortfolioLabel(activePortfolio)}, o maior peso hoje está em ${assetName} com ${topPos.quantity} unidades.`
     : 'Nenhuma carteira foi selecionada para análise.';
 }
 

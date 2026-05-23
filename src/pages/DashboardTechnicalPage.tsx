@@ -3,37 +3,14 @@ import { Link } from 'react-router-dom';
 import { Card } from '../components/UI';
 import { usePortfolios } from '../context/PortfoliosContext';
 import {
-  Area,
-  AreaChart,
-  Bar,
-  BarChart,
-  CartesianGrid,
-  Cell,
-  Legend,
-  Line,
-  LineChart,
-  Pie,
-  PieChart,
-  PolarAngleAxis,
-  PolarGrid,
-  Radar,
-  RadarChart,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
+  Area, AreaChart, Bar, BarChart, CartesianGrid, Cell, Legend, Line, LineChart,
+  Pie, PieChart, PolarAngleAxis, PolarGrid, Radar, RadarChart,
+  ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts';
-import { areaSeries, assetsCatalog, lineSeries, pieSeries, radarSeries } from '../data/mocks';
-import { getActivePortfolioSelectionLabel } from '../utils/portfolios';
+import { areaSeries, lineSeries, pieSeries, radarSeries } from '../data/mocks';
+import { getActivePortfolioSelectionLabel, mapAssetClassToLabel } from '../utils/portfolios';
 
 const colors = ['#3D4D9C', '#C7559B', '#E15EF2', '#717171', '#A5A5A5'];
-
-function normalizeText(value: string): string {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
-}
 
 function chartInfo(text: string) {
   return (
@@ -50,71 +27,28 @@ function chartInfo(text: string) {
 
 export function DashboardTechnicalPage() {
   const { selectedPortfolios, activePortfolio, isAllPortfoliosSelected } = usePortfolios();
-  const selectedAssets = selectedPortfolios.flatMap((portfolio) => portfolio.assets);
-  const hasAssets = selectedAssets.length > 0;
-
+  const selectedPositions = selectedPortfolios.flatMap((portfolio) => portfolio.positions);
   const classDistribution = (() => {
     const totals = new Map<string, number>();
-
-    for (const asset of selectedAssets) {
-      const catalog = assetsCatalog.find((item) => item.ticker === asset.ticker);
-      const rawClass = catalog?.class ?? 'Outros';
-      const key = normalizeText(rawClass).includes('renda')
-        ? 'Renda fixa'
-        : normalizeText(rawClass).includes('cripto')
-          ? 'Cripto'
-          : normalizeText(rawClass).includes('fund')
-            ? 'Fundos'
-            : normalizeText(rawClass).includes('eua')
-              ? 'Ações EUA'
-              : 'Ações BR';
-
-      totals.set(key, (totals.get(key) ?? 0) + asset.allocation);
+    for (const pos of selectedPositions) {
+      const label = mapAssetClassToLabel(pos.asset_class);
+      totals.set(label, (totals.get(label) ?? 0) + pos.quantity);
     }
-
     return Array.from(totals.entries()).map(([name, value]) => ({ name, value }));
   })();
 
   const compositionData = (() => {
     const totals = new Map<string, number>();
-
-    for (const asset of selectedAssets) {
-      totals.set(asset.ticker, (totals.get(asset.ticker) ?? 0) + asset.allocation);
+    for (const pos of selectedPositions) {
+      totals.set(pos.ticker, (totals.get(pos.ticker) ?? 0) + pos.quantity);
     }
-
     return Array.from(totals.entries()).map(([name, value]) => ({ name, value }));
   })();
 
-  const weightedRisk = (() => {
-    if (!selectedAssets.length) return 0;
-
-    const total = selectedAssets.reduce((sum, asset) => sum + asset.allocation, 0);
-    if (!total) return 0;
-
-    const weighted = selectedAssets.reduce((sum, asset) => {
-      const risk = assetsCatalog.find((item) => item.ticker === asset.ticker)?.risk ?? 3;
-      return sum + risk * asset.allocation;
-    }, 0);
-
-    return weighted / total;
-  })();
-
-  const factor = 1 + (weightedRisk - 3) * 0.025;
-
-  const lineData = hasAssets
-    ? lineSeries.map((point) => ({ ...point, value: Number((point.value * factor).toFixed(2)) }))
-    : lineSeries;
-
-  const areaData = hasAssets
-    ? areaSeries.map((point) => ({ ...point, gain: Number((point.gain * factor).toFixed(2)) }))
-    : areaSeries;
-
-  const radarData = hasAssets
-    ? radarSeries.map((point) => ({
-        ...point,
-        carteira: Math.max(10, Math.min(100, Number((point.carteira * factor).toFixed(2)))),
-      }))
-    : radarSeries;
+  const factor = 1;
+  const lineData = lineSeries.map((point) => ({ ...point, value: Number((point.value * factor).toFixed(2)) }));
+  const areaData = areaSeries.map((point) => ({ ...point, gain: Number((point.gain * factor).toFixed(2)) }));
+  const radarData = radarSeries;
 
   const metrics = [
     {
@@ -124,31 +58,23 @@ export function DashboardTechnicalPage() {
     },
     {
       label: 'Ativos monitorados',
-      value: String(selectedAssets.length),
-      variation: 'Composição observada',
+      value: String(selectedPositions.length),
+      variation: 'Posições na carteira',
     },
     {
-      label: 'Risco médio',
-      value: weightedRisk ? weightedRisk.toFixed(2) : '0.00',
-      variation: 'Escala de 1 a 5',
+      label: 'Total de unidades',
+      value: selectedPositions.reduce((s, p) => s + p.quantity, 0).toFixed(1),
+      variation: 'Soma de posições',
     },
     {
-      label: 'Alocação total',
-      value: `${selectedAssets.reduce((sum, asset) => sum + asset.allocation, 0).toFixed(0)}%`,
-      variation: 'Soma dos ativos',
+      label: 'Classes distintas',
+      value: String(new Set(selectedPositions.map((p) => p.asset_class)).size),
+      variation: 'Diversificação',
     },
   ];
 
   const pieData = compositionData.length ? compositionData : pieSeries;
-  const barData = classDistribution.length
-    ? classDistribution
-    : [
-        { name: 'Renda fixa', value: 0 },
-        { name: 'Ações BR', value: 0 },
-        { name: 'Ações EUA', value: 0 },
-        { name: 'Fundos', value: 0 },
-        { name: 'Cripto', value: 0 },
-      ];
+  const barData = classDistribution.length ? classDistribution : [];
 
   return (
     <div className="space-y-5">
@@ -158,7 +84,7 @@ export function DashboardTechnicalPage() {
             <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">Painel técnico</p>
             <h2 className="mt-2 text-3xl font-bold">Análises mais detalhadas para leitura profissional</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
-              Use este painel para comparar exposição, tendência simulada e perfil consolidado das carteiras em mais profundidade.
+              Compare exposição, tendência simulada e perfil consolidado das carteiras.
             </p>
             <p className="mt-3 text-sm font-semibold text-[var(--brand)]">
               Analisando agora: {getActivePortfolioSelectionLabel(activePortfolio, isAllPortfoliosSelected)}
@@ -173,9 +99,7 @@ export function DashboardTechnicalPage() {
       <div>
         <h3 className="text-2xl font-bold">Comparativos e tendências</h3>
         <p className="text-sm text-[var(--text-muted)]">
-          {isAllPortfoliosSelected
-            ? 'Leitura consolidada das carteiras, ativos e contexto de simulação.'
-            : 'Leitura técnica aplicada à seleção atual de carteiras.'}
+          {isAllPortfoliosSelected ? 'Leitura consolidada das carteiras.' : 'Leitura técnica aplicada à seleção atual.'}
         </p>
       </div>
 
@@ -190,10 +114,7 @@ export function DashboardTechnicalPage() {
       </div>
 
       <div className="grid gap-4 xl:grid-cols-2">
-        <Card
-          title="Evolução simulada da carteira"
-          right={chartInfo('Mostra a tendência acumulada ao longo dos meses. Linha em alta indica valorização no período; em queda, perda de valor.')}
-        >
+        <Card title="Evolução simulada da carteira" right={chartInfo('Tendência acumulada ao longo dos meses.')}>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <LineChart data={lineData}>
@@ -207,10 +128,7 @@ export function DashboardTechnicalPage() {
           </div>
         </Card>
 
-        <Card
-          title="Distribuição por categoria"
-          right={chartInfo('Barras maiores significam maior exposição percentual em cada classe de investimento no consolidado das carteiras.')}
-        >
+        <Card title="Distribuição por categoria" right={chartInfo('Exposição percentual em cada classe.')}>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <BarChart data={barData}>
@@ -224,10 +142,7 @@ export function DashboardTechnicalPage() {
           </div>
         </Card>
 
-        <Card
-          title="Composição por ativo"
-          right={chartInfo('Cada fatia representa um ativo. Quanto maior a fatia, maior a alocação percentual desse ticker no consolidado.')}
-        >
+        <Card title="Composição por ativo" right={chartInfo('Fatia representa um ativo.')}>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <PieChart>
@@ -243,10 +158,7 @@ export function DashboardTechnicalPage() {
           </div>
         </Card>
 
-        <Card
-          title="Tendência semanal"
-          right={chartInfo('Área acima de zero indica ganho simulado na semana. Compare o ritmo entre semanas para ler aceleração ou desaceleração.')}
-        >
+        <Card title="Tendência semanal" right={chartInfo('Área acima de zero indica ganho simulado.')}>
           <div className="h-72">
             <ResponsiveContainer width="100%" height="100%">
               <AreaChart data={areaData}>
@@ -261,10 +173,7 @@ export function DashboardTechnicalPage() {
         </Card>
       </div>
 
-      <Card
-        title="Comparação da carteira"
-        right={chartInfo('Compara a carteira consolidada com benchmark em risco, liquidez, diversificação, volatilidade e exposição.')}
-      >
+      <Card title="Comparação da carteira" right={chartInfo('Compara carteira com benchmark.')}>
         <div className="h-80">
           <ResponsiveContainer width="100%" height="100%">
             <RadarChart data={radarData}>

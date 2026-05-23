@@ -3,72 +3,51 @@ import { Link } from 'react-router-dom';
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { Button, Card } from '../components/UI';
 import { usePortfolios } from '../context/PortfoliosContext';
-import { assetsCatalog, newsData, pieSeries } from '../data/mocks';
-import { getActivePortfolioSelectionLabel, getPortfolioLabel } from '../utils/portfolios';
+import { PortfolioOpinion } from '../components/PortfolioOpinion';
+import { ScenarioView } from '../components/ScenarioView';
+import { newsData, pieSeries } from '../data/mocks';
+import { getActivePortfolioSelectionLabel, getPortfolioLabel, mapAssetClassToLabel } from '../utils/portfolios';
 
 const colors = ['#3D4D9C', '#C7559B', '#E15EF2', '#717171', '#A5A5A5'];
 
-function normalizeText(value: string): string {
-  return value
-    .normalize('NFD')
-    .replace(/[\u0300-\u036f]/g, '')
-    .toLowerCase();
-}
-
-function getToneByRisk(risk: number) {
-  if (risk <= 2.3) return 'Baixo';
-  if (risk <= 3.5) return 'Moderado';
-  return 'Mais arrojado';
-}
-
 export function DashboardPage() {
   const { activePortfolio, selectedPortfolios, isAllPortfoliosSelected } = usePortfolios();
-  const selectedAssets = selectedPortfolios.flatMap((portfolio) => portfolio.assets);
-  const totalAllocation = selectedAssets.reduce((sum, asset) => sum + asset.allocation, 0);
+  const selectedPositions = selectedPortfolios.flatMap((portfolio) => portfolio.positions);
+  const totalQuantity = selectedPositions.reduce((sum, p) => sum + p.quantity, 0);
 
-  const weightedRisk = selectedAssets.length
-    ? selectedAssets.reduce((sum, asset) => {
-        const risk = assetsCatalog.find((item) => item.ticker === asset.ticker)?.risk ?? 3;
-        return sum + risk * asset.allocation;
-      }, 0) / Math.max(totalAllocation, 1)
-    : 0;
-
-  const classDistribution = selectedAssets.reduce<Record<string, number>>((acc, asset) => {
-    const assetClass = assetsCatalog.find((item) => item.ticker === asset.ticker)?.class ?? 'Outros';
-    acc[assetClass] = (acc[assetClass] ?? 0) + asset.allocation;
+  const classDistribution = selectedPositions.reduce<Record<string, number>>((acc, pos) => {
+    const label = mapAssetClassToLabel(pos.asset_class);
+    acc[label] = (acc[label] ?? 0) + pos.quantity;
     return acc;
   }, {});
 
   const topClassEntry = Object.entries(classDistribution).sort((a, b) => b[1] - a[1])[0];
-  const topClassText = topClassEntry ? `${topClassEntry[1].toFixed(0)}% em ${topClassEntry[0]}` : 'Nenhuma classe predominante ainda';
+  const topClassText = topClassEntry
+    ? `${topClassEntry[0]} (${((topClassEntry[1] / Math.max(totalQuantity, 1)) * 100).toFixed(0)}%)`
+    : 'Nenhuma classe predominante ainda';
 
-  const compositionData = selectedAssets.length
-    ? selectedAssets.map((asset) => ({ name: asset.ticker, value: asset.allocation }))
+  const compositionData = selectedPositions.length
+    ? selectedPositions.map((p) => ({ name: p.ticker, value: p.quantity }))
     : pieSeries;
 
-  const relatedNews = newsData
-    .filter((item) => {
-      const lowered = normalizeText(`${item.category} ${item.title} ${item.summary}`);
-      return ['juros', 'inflação', 'ações', 'renda fixa', 'cripto'].some((term) => lowered.includes(normalizeText(term)));
-    })
-    .slice(0, 3);
+  const relatedNews = newsData.slice(0, 3);
 
   const nextSteps = [
     {
       title: 'Crie ou importe uma carteira',
-      description: 'Comece com uma carteira manual ou use um modelo para explorar a plataforma sem esforço.',
+      description: 'Comece com uma carteira manual para explorar a plataforma.',
       action: 'Abrir carteiras',
       to: '/carteiras',
     },
     {
       title: 'Adicione seus ativos principais',
-      description: 'Inclua os investimentos que mais pesam para receber explicações e comparações mais úteis.',
+      description: 'Inclua os investimentos que mais pesam para receber explicações úteis.',
       action: 'Editar carteira',
       to: activePortfolio && !isAllPortfoliosSelected ? `/carteiras/${activePortfolio.id}` : '/carteiras',
     },
     {
       title: 'Aprofunde quando quiser',
-      description: 'Se você já conhece análise de investimentos, acesse o painel técnico com gráficos completos.',
+      description: 'Acesse o painel técnico com gráficos completos.',
       action: 'Ver painel técnico',
       to: '/dashboard-tecnico',
     },
@@ -79,20 +58,20 @@ export function DashboardPage() {
       label: 'Carteira em foco',
       value: getActivePortfolioSelectionLabel(activePortfolio, isAllPortfoliosSelected),
       helper: isAllPortfoliosSelected
-        ? 'O resumo está usando a visão geral de todas as carteiras.'
+        ? 'Resumo com visão de todas as carteiras.'
         : activePortfolio
-          ? 'Essa é a carteira usada no resumo de hoje.'
+          ? 'Carteira usada no resumo de hoje.'
           : 'Crie uma carteira para começar.',
     },
     {
-      label: 'Nível de risco',
-      value: weightedRisk ? getToneByRisk(weightedRisk) : 'Indefinido',
-      helper: weightedRisk ? `Média estimada de ${weightedRisk.toFixed(1)} em uma escala de 1 a 5.` : 'Adicione ativos para calcular.',
+      label: 'Ativos na carteira',
+      value: String(selectedPositions.length),
+      helper: selectedPositions.length ? 'Total de ativos na seleção atual.' : 'Adicione ativos para começar.',
     },
     {
-      label: 'Quanto está distribuído',
-      value: `${totalAllocation.toFixed(0)}%`,
-      helper: totalAllocation >= 100 ? 'Sua alocação já cobre toda a carteira.' : 'Ainda existe espaço sem distribuição definida.',
+      label: 'Total de unidades',
+      value: totalQuantity.toFixed(1),
+      helper: totalQuantity > 0 ? 'Soma de todas as posições.' : 'Nenhuma posição registrada.',
     },
   ];
 
@@ -113,7 +92,7 @@ export function DashboardPage() {
               O que está acontecendo com seus investimentos, sem jargão.
             </h2>
             <p className="mt-4 text-base leading-7 text-[var(--text-muted)]">
-              Veja primeiro um resumo claro da carteira ativa. Quando precisar de mais detalhes, o painel técnico continua disponível.
+              Veja primeiro um resumo claro da carteira ativa.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <Link to="/carteiras">
@@ -151,18 +130,16 @@ export function DashboardPage() {
             <div className="rounded-[24px] bg-[var(--success-soft)] p-5">
               <p className="text-sm font-semibold text-[var(--success-text)]">Leitura simples</p>
               <p className="mt-3 text-xl font-bold text-[var(--text-main)]">
-                {weightedRisk <= 2.3
-                  ? 'Sua carteira parece mais estável.'
-                  : weightedRisk <= 3.5
-                    ? 'Sua carteira está equilibrada entre segurança e crescimento.'
-                    : 'Sua carteira aceita mais oscilações em busca de retorno.'}
+                {selectedPositions.length > 0
+                  ? 'Sua carteira tem ativos distribuídos em diferentes classes.'
+                  : 'Adicione ativos para liberar uma leitura personalizada.'}
               </p>
               <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
-                {selectedAssets.length
+                {selectedPositions.length
                   ? isAllPortfoliosSelected
-                    ? 'Essa conclusão usa o consolidado de todas as carteiras selecionadas.'
-                    : `Essa conclusão usa a carteira ativa ${activePortfolio ? getPortfolioLabel(activePortfolio) : ''}.`
-                  : 'Adicione ativos para liberar uma leitura personalizada.'}
+                    ? 'Usando o consolidado de todas as carteiras.'
+                    : `Usando a carteira ${activePortfolio ? getPortfolioLabel(activePortfolio) : ''}.`
+                  : ''}
               </p>
             </div>
           </div>
@@ -173,9 +150,9 @@ export function DashboardPage() {
               <div>
                 <p className="font-semibold text-[var(--text-main)]">Próxima melhor ação</p>
                 <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
-                  {selectedAssets.length
-                    ? 'Revise se a distribuição entre classes faz sentido para o seu objetivo. Se quiser profundidade, use o painel técnico.'
-                    : 'Sua experiência fica mais útil quando você adiciona ativos ou importa uma carteira exemplo.'}
+                  {selectedPositions.length
+                    ? 'Revise se a distribuição entre classes faz sentido para o seu objetivo.'
+                    : 'Adicione ativos ou crie uma carteira para começar.'}
                 </p>
               </div>
             </div>
@@ -185,8 +162,8 @@ export function DashboardPage() {
         <Card title="Composição da carteira" right={<Link to="/carteiras" className="text-sm font-semibold text-[var(--brand)]">Editar</Link>}>
           <p className="text-sm leading-6 text-[var(--text-muted)]">
             {isAllPortfoliosSelected
-              ? 'Veja como o dinheiro está distribuído no consolidado de todas as carteiras.'
-              : 'Veja como o dinheiro da carteira ativa está distribuído entre os ativos mais importantes.'}
+              ? 'Distribuição no consolidado de todas as carteiras.'
+              : 'Distribuição da carteira ativa.'}
           </p>
           <div className="mt-4 h-72">
             <ResponsiveContainer width="100%" height="100%">
@@ -228,7 +205,7 @@ export function DashboardPage() {
           <div className="space-y-3">
             {relatedNews.map((item) => (
               <article key={item.id} className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4">
-                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">{item.category}</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">{item.source_name}</p>
                 <h3 className="mt-2 text-base font-semibold text-[var(--text-main)]">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{item.summary}</p>
               </article>
@@ -239,6 +216,11 @@ export function DashboardPage() {
             </Link>
           </div>
         </Card>
+      </div>
+
+      <div className="grid gap-5 xl:grid-cols-[1fr_1fr]">
+        <PortfolioOpinion portfolioId={!isAllPortfoliosSelected && activePortfolio ? activePortfolio.id : undefined} />
+        <ScenarioView />
       </div>
     </div>
   );

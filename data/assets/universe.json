@@ -1,0 +1,1312 @@
+[
+  {
+    "ticker": "PETR4",
+    "name": "Petrobras PN",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Petróleo e Gás",
+    "sub_type": "PN",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "PETR3",
+    "name": "Petrobras ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Petróleo e Gás",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "VALE3",
+    "name": "Vale ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Mineração",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ITUB4",
+    "name": "Itaú Unibanco PN",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Financeiro",
+    "sub_type": "PN",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ITUB3",
+    "name": "Itaú Unibanco ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Financeiro",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BBDC4",
+    "name": "Bradesco PN",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Financeiro",
+    "sub_type": "PN",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BBDC3",
+    "name": "Bradesco ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Financeiro",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BBAS3",
+    "name": "Banco do Brasil ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Financeiro",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "SANB11",
+    "name": "Santander BR UNIT",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Financeiro",
+    "sub_type": "UNIT",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ABEV3",
+    "name": "Ambev ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Bebidas",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "WEGE3",
+    "name": "WEG ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Equipamentos Elétricos",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ELET3",
+    "name": "Eletrobras ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ELET6",
+    "name": "Eletrobras PN B",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "PNB",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "RENT3",
+    "name": "Localiza ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Aluguel de Veículos",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "LREN3",
+    "name": "Lojas Renner ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Varejo",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "MGLU3",
+    "name": "Magazine Luiza ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Varejo",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "VIIA3",
+    "name": "Casas Bahia ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Varejo",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "AMER3",
+    "name": "Americanas ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Varejo",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "JBSS3",
+    "name": "JBS ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Alimentos",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "MRFG3",
+    "name": "Marfrig ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Alimentos",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BEEF3",
+    "name": "Minerva ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Alimentos",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "SUZB3",
+    "name": "Suzano ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Papel e Celulose",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "KLBN11",
+    "name": "Klabin UNIT",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Papel e Celulose",
+    "sub_type": "UNIT",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "GGBP4",
+    "name": "Gerdau PN",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Siderurgia",
+    "sub_type": "PN",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CSNA3",
+    "name": "Companhia Siderúrgica Nacional ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Siderurgia",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CMIN3",
+    "name": "CSN Mineração ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Mineração",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "RAIL3",
+    "name": "Rumo ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Logística",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CCRO3",
+    "name": "CCR ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Concessões",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ECOR3",
+    "name": "Ecorodovias ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Concessões",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "GOLL4",
+    "name": "Gol PN",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Aviação",
+    "sub_type": "PN",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "AZUL4",
+    "name": "Azul PN",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Aviação",
+    "sub_type": "PN",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "EMBR3",
+    "name": "Embraer ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Aeronáutico",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "HAPV3",
+    "name": "Hapvida ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Saúde",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "RDOR3",
+    "name": "Rede D'Or ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Saúde",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "FLRY3",
+    "name": "Fleury ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Saúde",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "QUAL3",
+    "name": "Qualicorp ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Saúde",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "RADL3",
+    "name": "Raia Drogasil ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Farmácias",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "PRIO3",
+    "name": "Petrorio ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Petróleo e Gás",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CSAN3",
+    "name": "Cosan ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Logística e Energia",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "UGPA3",
+    "name": "Ultrapar ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Distribuição",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "EQTL3",
+    "name": "Equatorial ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "NEOE3",
+    "name": "Neoenergia ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CPLE6",
+    "name": "Copel PN B",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "PNB",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CMIG4",
+    "name": "Cemig PN",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "PN",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "TIMS3",
+    "name": "Tim ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Telecomunicações",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "VIVT3",
+    "name": "Telefônica Brasil ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Telecomunicações",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CXSE3",
+    "name": "Caixa Seguridade ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Seguros",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "IRBR3",
+    "name": "IRB Brasil RE ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Seguros",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "PSSA3",
+    "name": "Porto Seguro ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Seguros",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ARZZ3",
+    "name": "Arezzo ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Calçados",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ALPA4",
+    "name": "Alpargatas PN",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Têxtil",
+    "sub_type": "PN",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "SOMA3",
+    "name": "Grupo Soma ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Vestuário",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "NTCO3",
+    "name": "Natura ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Cosméticos",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CVCB3",
+    "name": "CVC Brasil ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Turismo",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "YDUQ3",
+    "name": "Yduqs ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Educação",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "COGN3",
+    "name": "Cogna ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Educação",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "MRVE3",
+    "name": "MRV ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Construção",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CYRE3",
+    "name": "Cyrela ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Construção",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "DIRR3",
+    "name": "Direcional ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Construção",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "TEND3",
+    "name": "Tenda ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Construção",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "EZTC3",
+    "name": "EZTEC ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Construção",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "MULT3",
+    "name": "Multiplan ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Shoppings",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "IGTI11",
+    "name": "Iguatemi UNIT",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Shoppings",
+    "sub_type": "UNIT",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BRKM5",
+    "name": "Braskem PN A",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Petroquímica",
+    "sub_type": "PNA",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "UNIP6",
+    "name": "Unipar PN B",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Petroquímica",
+    "sub_type": "PNB",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "TAEE11",
+    "name": "Taesa UNIT",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "UNIT",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "TRPL4",
+    "name": "Transmissão Paulista PN",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "PN",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "EGIE3",
+    "name": "Engie Brasil ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "AURE3",
+    "name": "Auren ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ENEV3",
+    "name": "Eneva ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Energia Elétrica",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "B3SA3",
+    "name": "B3 ON",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Financeiro",
+    "sub_type": "ON",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BPAC11",
+    "name": "BTG Pactual UNIT",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Financeiro",
+    "sub_type": "UNIT",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "XPBR31",
+    "name": "XP Inc BDR",
+    "asset_class": "BR_STOCK",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Financeiro",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "KNRI11",
+    "name": "Kinea Renda Imobiliária",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Lajes Corporativas",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "XPLG11",
+    "name": "XP Log",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Logística",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BRCR11",
+    "name": "BC Fund",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Lajes Corporativas",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "HGCR11",
+    "name": "CSHG Crédito",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Crédito",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "HGLG11",
+    "name": "CSHG Logística",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Logística",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "HSML11",
+    "name": "HSM",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Lajes Corporativas",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BTLG11",
+    "name": "BTG Logística",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Logística",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "VINO11",
+    "name": "Vinci Offices",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Lajes Corporativas",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "VISC11",
+    "name": "Vinci Shopping Centers",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Shoppings",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "MXRF11",
+    "name": "Maxi Renda",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Híbrido",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "KNIP11",
+    "name": "Kinea Índice de Preços",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Crédito",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "KNCR11",
+    "name": "Kinea Rendimentos Imobiliários",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Crédito",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CPTS11",
+    "name": "Capitânia Securities II",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Crédito",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "RCRB11",
+    "name": "Rio Bravo Renda Corporativa",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Lajes Corporativas",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "PVBI11",
+    "name": "VBI Prime Properties",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Lajes Corporativas",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "JSRE11",
+    "name": "JS Real Estate",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Lajes Corporativas",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "RECT11",
+    "name": "REC Renda",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Híbrido",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "GGRC11",
+    "name": "GGR Covepi",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Lajes Corporativas",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "FIIB11",
+    "name": "FIIB",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Lajes Corporativas",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ALZR11",
+    "name": "Alianza Renda",
+    "asset_class": "FII",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Lajes Corporativas",
+    "sub_type": "FII",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "AAPL34",
+    "name": "Apple BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Tecnologia",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "MSFT34",
+    "name": "Microsoft BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Tecnologia",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "GOOG34",
+    "name": "Alphabet BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Tecnologia",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "AMZO34",
+    "name": "Amazon BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Tecnologia",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "META34",
+    "name": "Meta BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Tecnologia",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "TSLA34",
+    "name": "Tesla BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Automotivo",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "NVDC34",
+    "name": "NVIDIA BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Tecnologia",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "IVVB11",
+    "name": "iShares S&P 500 ETF BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Índice",
+    "sub_type": "ETF BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BIVB39",
+    "name": "Berkshire Hathaway BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Financeiro",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "JPMC34",
+    "name": "JPMorgan BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Financeiro",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "DISB34",
+    "name": "Disney BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Entretenimento",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "NFLX34",
+    "name": "Netflix BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Entretenimento",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "COCA34",
+    "name": "Coca-Cola BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Bebidas",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "MCDC34",
+    "name": "McDonald's BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Alimentação",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "PGCO34",
+    "name": "Procter & Gamble BDR",
+    "asset_class": "US_STOCK",
+    "country": "US",
+    "currency": "USD",
+    "sector": "Higiene",
+    "sub_type": "BDR",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BTC",
+    "name": "Bitcoin",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ETH",
+    "name": "Ethereum",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "SOL",
+    "name": "Solana",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "BNB",
+    "name": "BNB",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "XRP",
+    "name": "XRP",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ADA",
+    "name": "Cardano",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "DOT",
+    "name": "Polkadot",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "DOGE",
+    "name": "Dogecoin",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "USDT",
+    "name": "Tether",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Stablecoin",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "USDC",
+    "name": "USD Coin",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Stablecoin",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "AVAX",
+    "name": "Avalanche",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "LINK",
+    "name": "Chainlink",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "MATIC",
+    "name": "Polygon",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "ATOM",
+    "name": "Cosmos",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "LTC",
+    "name": "Litecoin",
+    "asset_class": "CRYPTO",
+    "country": "global",
+    "currency": "USD",
+    "sector": "Criptomoedas",
+    "sub_type": "Criptomoeda",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "TESOURO-SELIC",
+    "name": "Tesouro Selic",
+    "asset_class": "FIXED_INCOME",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Renda Fixa",
+    "sub_type": "Tesouro Direto",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "TESOURO-IPCA",
+    "name": "Tesouro IPCA+",
+    "asset_class": "FIXED_INCOME",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Renda Fixa",
+    "sub_type": "Tesouro Direto",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "TESOURO-PREFIXADO",
+    "name": "Tesouro Prefixado",
+    "asset_class": "FIXED_INCOME",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Renda Fixa",
+    "sub_type": "Tesouro Direto",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CDB-100",
+    "name": "CDB 100% CDI",
+    "asset_class": "FIXED_INCOME",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Renda Fixa",
+    "sub_type": "CDB",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "CDB-120",
+    "name": "CDB 120% CDI",
+    "asset_class": "FIXED_INCOME",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Renda Fixa",
+    "sub_type": "CDB",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "LCI",
+    "name": "LCI (isenta IR)",
+    "asset_class": "FIXED_INCOME",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Renda Fixa",
+    "sub_type": "LCI",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "LCA",
+    "name": "LCA (isenta IR)",
+    "asset_class": "FIXED_INCOME",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Renda Fixa",
+    "sub_type": "LCA",
+    "source": "yfinance"
+  },
+  {
+    "ticker": "POUPANCA",
+    "name": "Poupança",
+    "asset_class": "FIXED_INCOME",
+    "country": "BR",
+    "currency": "BRL",
+    "sector": "Renda Fixa",
+    "sub_type": "Poupança",
+    "source": "yfinance"
+  }
+]

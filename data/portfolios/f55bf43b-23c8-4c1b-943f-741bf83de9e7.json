@@ -1,0 +1,49 @@
+{
+  "id": "f55bf43b-23c8-4c1b-943f-741bf83de9e7",
+  "name": "Análise",
+  "base_currency": "BRL",
+  "created_at": "2026-05-23T01:48:08.202113Z",
+  "updated_at": "2026-05-23T03:35:35.527755+00:00",
+  "positions": [
+    {
+      "asset_id": "PETR4",
+      "ticker": "PETR4",
+      "asset_class": "BR_STOCK",
+      "quantity": 100.0,
+      "avg_price": null,
+      "currency": "BRL",
+      "manual_notes": ""
+    },
+    {
+      "asset_id": "VALE3",
+      "ticker": "VALE3",
+      "asset_class": "BR_STOCK",
+      "quantity": 50.0,
+      "avg_price": null,
+      "currency": "BRL",
+      "manual_notes": ""
+    },
+    {
+      "asset_id": "HSML11",
+      "ticker": "HSML11",
+      "asset_class": "FII",
+      "quantity": 10.0,
+      "avg_price": null,
+      "currency": "BRL",
+      "manual_notes": ""
+    },
+    {
+      "asset_id": "BPAC11",
+      "ticker": "BPAC11",
+      "asset_class": "BR_STOCK",
+      "quantity": 10.0,
+      "avg_price": null,
+      "currency": "BRL",
+      "manual_notes": ""
+    }
+  ],
+  "settings": {
+    "risk_profile": "moderado",
+    "forecast_horizon_days": 5
+  }
+}

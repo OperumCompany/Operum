@@ -1,6 +1,7 @@
 ---
 name: skillsFront
 description: Guia de execução para IA contribuir no frontend do OPERUM com React, TypeScript, Vite, Tailwind e gráficos, preservando a experiência simples para leigos e a leitura técnica para usuários avançados.
+> Atualizado em: 23/05/2026
 ---
 
 # Skills Front - OPERUM
@@ -17,12 +18,16 @@ Antes de propor qualquer solução, assuma o stack real:
 - Roteamento: `react-router-dom`
 - Gráficos: `recharts`
 - Ícones: `lucide-react`
-- Persistência atual: `localStorage`
+- Persistência (fallback): `localStorage`
+- **Backend:** Python FastAPI (proxy Vite `/api` → `localhost:8000`)
+- **API Client:** `fetch()` via `src/utils/api.ts`
+- **Build:** `npm run build` (frontend estático para deploy separado)
 
 Regra crítica:
 
-- Não inventar backend ou integrações externas sem pedido explícito.
 - Não trocar a stack atual.
+- Toda comunicação com dados deve passar pela API (`src/utils/api.ts`), exceto auth/session que ainda usa `localStorage`.
+- Não fazer fetch direto para o backend sem passar pelos utilitários de API.
 
 ## 2. Antes de Codar
 
@@ -32,7 +37,9 @@ Checklist obrigatório:
 2. Verificar `src/layout/AppShell.tsx` para entender navegação e header.
 3. Verificar `src/context/PortfoliosContext.tsx` antes de alterar qualquer fluxo relacionado a carteiras.
 4. Verificar `src/data/mocks.ts` e `src/utils/storage.ts` antes de mexer em dados.
-5. Respeitar a arquitetura existente e fazer a menor mudança necessária.
+5. **Verificar `src/utils/api.ts` antes de fazer qualquer chamada ao backend.**
+6. **Verificar `docs/spec.md` para contratos de API antes de criar novos endpoints.**
+7. Respeitar a arquitetura existente e fazer a menor mudança necessária.
 
 ## 3. Princípios do Produto
 
@@ -97,20 +104,40 @@ Regras:
 
 ## 6. Persistência e Dados
 
-O projeto usa `localStorage`, com chaves em `src/utils/storage.ts`.
+### 6.1 Dados do Backend (via API)
+Dados de negócio (ativos, carteiras, notícias, análises) devem ser obtidos via API.
 
-Persistências atuais:
+Usar `src/utils/api.ts` para todas as chamadas:
 
-- usuário
-- sessão
-- carteiras
-- carteira ativa
-- chat
+```typescript
+import api from '../utils/api';
+
+// GET
+const portfolios = await api.get('/portfolios');
+
+// POST
+const novo = await api.post('/portfolios', { name: 'Minha Carteira' });
+
+// PUT
+const atualizado = await api.put(`/portfolios/${id}`, { name: 'Novo Nome' });
+
+// DELETE
+await api.del(`/portfolios/${id}`);
+```
+
+### 6.2 Dados Locais (legado)
+`localStorage` ainda é usado para:
+- sessão do usuário (auth)
 - preferências
+- chat (pode migrar para API depois)
+
+As chaves continuam centralizadas em `src/utils/storage.ts`.
 
 Regras:
 
-- Não espalhar `localStorage` direto por páginas se já existe contexto/utilitário.
+- Dados de negócio SEMPRE via API, nunca via localStorage.
+- Auth/session ainda pode usar localStorage.
+- Não espalhar `localStorage` direto por páginas — usar context ou api.ts.
 - Se o estado é transversal, preferir `context`.
 - Se for preciso criar nova chave de storage, centralizar em `storageKeys`.
 
@@ -187,19 +214,82 @@ Regras:
 
 Esse módulo hoje suporta:
 
-- criar carteira
-- importar carteira mockada
-- editar carteira
+- criar carteira (via API)
+- importar carteira (via universo de ativos real)
+- editar carteira (nome + configurações)
 - remover carteira com confirmação
+- adicionar/remover posições (ticker, quantidade, preço médio)
 - definir carteira para análise global
 
 Regras:
 
-- Qualquer operação de CRUD deve passar por `PortfoliosContext`.
+- Qualquer operação de CRUD deve passar por `PortfoliosContext` e consumir a API.
 - Exclusão deve sempre pedir confirmação.
 - Se a carteira removida for a ativa, o contexto deve decidir o fallback.
+- Posições agora têm `quantity` (float) e `avg_price` (float opcional), não mais `allocation` percentual.
+- O universo de ativos vem da API (`GET /assets/universe` ou `GET /assets/search?q=`).
 
-## 12. Chat
+## 12. Novos Componentes
+
+### 12.1 NewsCard
+- Card compacto com: título, fonte, data, badges de ativos mencionados, score de impacto
+- `onClick` → abre `NewsModal`
+
+### 12.2 NewsModal
+- Modal exibindo: título, fonte, data/hora, resumo, ativos impactados, score de impacto, link original
+- Botão "Abrir original" → `source_url` em nova aba
+
+### 12.3 PortfolioMetrics
+- Cards de métricas financeiras: pesos por classe/setor/moeda, correlação, VaR, volatilidade, concentração
+- Dados vindos de `GET /portfolios/{id}/analysis`
+
+### 12.4 CompositionCharts
+- Gráficos de composição: pizza (classes), barras (setores), rosca (moedas)
+- Usa Recharts
+- Dados vindos de `GET /portfolios/{id}/analysis`
+
+### 12.5 ScenarioView
+- Exibição de cenários futuros (conservador, moderado, agressivo, inflação alta, juros em queda) com indicador de probabilidade
+- Cenários ilustrativos baseados em condições macroeconômicas hipotéticas
+- Dados mockados no componente (sem endpoint específico)
+
+### 12.6 PortfolioOpinion
+- Card com score consolidado (0-100%) + rótulo (Saudável / Atenção / Crítico)
+- Texto analítico explicando a carteira
+- Barras de componentes: diversificação, risco correlação, impacto notícias, sensibilidade macro, risco forecast
+- Dados vindos de `GET /models/opinion/{portfolio_id}`
+
+### 12.7 Carteira de Exemplo
+- O sistema inclui uma "Carteira Exemplo" com 8 ativos (PETR4, VALE3, ITUB4, WEGE3, BBAS3, HGLG11, KNRI11, AAPL34).
+- Criada automaticamente via API, serve como onboarding visual.
+- Pode ser excluída via UI se desejado.
+
+## 13. Integração com API
+
+### 13.1 Padrão de Chamada
+Toda página que consome dados do backend deve usar o padrão:
+
+```typescript
+const [data, setData] = useState<T | null>(null);
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState<string | null>(null);
+
+useEffect(() => {
+  api.get('/caminho')
+    .then(setData)
+    .catch(e => setError(e.message))
+    .finally(() => setLoading(false));
+}, []);
+```
+
+### 13.2 Tratamento de Estados
+Toda tela que chama API deve cobrir:
+- `loading` → spinner/skeleton
+- `error` → mensagem amigável + opção de retry
+- `data` vazio → empty state com call to action
+- `data` preenchido → render normal
+
+## 14. Chat
 
 O chat é explicativo e orientado a linguagem simples.
 
@@ -209,7 +299,7 @@ Regras:
 - Se estiver em `Todas as carteiras`, as respostas devem deixar isso claro.
 - Não transformar o chat em motor de regras complexo sem necessidade.
 
-## 13. Qualidade e Validação
+## 15. Qualidade e Validação
 
 Toda mudança relevante deve ser validada com:
 
@@ -217,16 +307,28 @@ Toda mudança relevante deve ser validada com:
 npm run build
 ```
 
-Também vale testar manualmente:
+Para mudanças que envolvem backend + frontend:
 
+```bash
+# Terminal 1: backend
+uvicorn app.main:app --reload
+
+# Terminal 2: frontend
+npm run dev
+```
+
+Testar manualmente:
 1. troca de carteira ativa
 2. modo `Todas as carteiras`
 3. dashboard simples
 4. painel técnico
 5. chat
 6. módulo de carteiras
+7. notícias com filtros
+8. modal de notícia
+9. análise de carteira (correlação, VaR, pesos)
 
-## 14. O que Não Fazer
+## 16. O que Não Fazer
 
 - Não quebrar a lógica global de carteira ativa.
 - Não introduzir seleção local de carteira em cada página.
@@ -234,17 +336,21 @@ Também vale testar manualmente:
 - Não trocar a paleta atual.
 - Não adicionar dependências pesadas sem motivo real.
 - Não fazer refatoração estrutural grande junto com mudança pequena de interface.
+- **Não ignorar os estados de loading, erro e empty nas telas que consomem API.**
+- **Não fazer fetch direto sem usar `src/utils/api.ts`.**
 
-## 15. Checklist Final
+## 17. Checklist Final
 
 1. A mudança respeita a stack atual?
 2. A seleção global de carteira continua funcionando?
 3. O modo `Todas as carteiras` está coberto?
 4. A UI continua coerente com a identidade do OPERUM?
 5. Os textos continuam claros e sem encoding quebrado?
-6. `npm run build` passou?
+6. As chamadas de API usam `src/utils/api.ts`?
+7. Os estados de loading/erro/empty estão cobertos?
+8. `npm run build` passou?
 
-## 16. Documento Vivo
+## 18. Documento Vivo
 
 Sempre que houver mudança importante em:
 
@@ -254,5 +360,6 @@ Sempre que houver mudança importante em:
 - identidade visual
 - navegação
 - regras de análise por carteira
+- integração com backend
 
 a IA deve atualizar este `skillsFront.md` para refletir o estado real do projeto.

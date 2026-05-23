@@ -1,0 +1,12 @@
+{
+  "id": "f3fdb8e4-14c2-4765-8258-f0d1e80b2816",
+  "name": "Teste",
+  "base_currency": "BRL",
+  "created_at": "2026-05-23T03:40:18.312903Z",
+  "updated_at": "2026-05-23T03:40:18.312903Z",
+  "positions": [],
+  "settings": {
+    "risk_profile": "moderado",
+    "forecast_horizon_days": 5
+  }
+}

@@ -1,140 +1,159 @@
 # Operum
 
-Frontend React para acompanhamento de carteiras, leitura simplificada de investimentos e painel tecnico com analises mais detalhadas.
-
-## Visao Geral
-
-O Operum foi estruturado para atender dois perfis de uso:
-
-- `Visao geral`: leitura amigavel da carteira selecionada, com linguagem menos tecnica.
-- `Painel tecnico`: graficos e comparativos mais densos para leitura analitica.
-
-A aplicacao tambem possui:
-
-- selecao global de `Carteira ativa` no header
-- opcao de analisar `Todas as carteiras`
-- modulo de carteiras com criacao, importacao, edicao e remocao
-- chat explicativo com respostas baseadas na selecao atual
-- noticias de mercado e configuracoes basicas
+Plataforma full-stack para acompanhamento de carteiras de investimento, leitura de notícias de mercado e análise financeira com IA.
 
 ## Stack
 
-- `React 18`
-- `TypeScript`
-- `Vite`
-- `React Router DOM`
-- `Recharts`
-- `Tailwind CSS`
-- `Lucide React`
+**Frontend:**
+- React 18 + TypeScript
+- Vite
+- React Router DOM
+- Recharts
+- Tailwind CSS
+- Lucide React
+
+**Backend:**
+- Python 3.11+
+- FastAPI
+- Pydantic v2
+- yfinance (preços)
+- RSS feeds + yfinance news (notícias)
+- scikit-learn, XGBoost, LightGBM (ML)
+- Persistência local em JSON + Parquet
+
+## Arquitetura
+
+```
+Frontend (React/Vite)  ←→  API (FastAPI)  ←→  Services  ←→  LocalStorageService
+                                                              ↓
+                                                        Arquivos JSON/Parquet
+```
+
+O projeto é um monorepo com frontend em `src/` e backend em `app/`.
+
+## Setup
+
+### Backend
+
+```bash
+python -m venv venv
+venv\Scripts\activate      # Windows
+pip install -r requirements.txt
+uvicorn app.main:app --reload
+```
+
+### Frontend
+
+```bash
+npm install
+npm run dev      # Vite proxy /api → localhost:8000
+```
+
+Acessar frontend em `http://localhost:5173`.
+
+## Módulos
+
+### Notícias
+- Coleta automática de notícias via YFinance (13 tickers) + RSS (Folha, InfoMoney, Investing.com, BBC)
+- Filtros por ticker, classe, setor, país, sentimento, impacto, data
+- Modal com resumo, ativos impactados e link original
+- Notícias relacionadas à carteira ativa
+- Clusterização temática automática (K-Means)
+- Scoring: sentimento (keywords), relevância (TF-IDF + LR), impacto (composto)
+- HTML stripping automático de conteúdo RSS
+
+### Carteiras
+- CRUD completo de carteiras
+- Universo de ~131+ ativos (BR ações, FIIs, US stocks, crypto)
+- Posições com quantidade e preço médio
+- Composição por classe, setor, moeda
+- Análise financeira: pesos, concentração, correlação, VaR, CVaR, beta, volatilidade
+
+### Motor Financeiro (22 funções puras)
+- Retorno simples, logarítmico, cumulativo
+- Volatilidade, covariância, correlação, beta, alpha
+- VaR, CVaR, drawdown
+- Média móvel, EMA, RSI, MACD
+- Pesos, retorno e volatilidade de carteira, concentração
+- CAPM, CAGR
+
+### IA
+- Classificação e ranking de notícias (TF-IDF + Logistic Regression / LightGBM Ranker)
+- Clusterização temática (K-Means sobre TF-IDF)
+- Forecast de ativos (XGBoost Regressor — requer treino via API)
+- Opinião consolidada da carteira (score composto + texto analítico)
+- Cenários probabilísticos ilustrativos
+
+## Estrutura
+
+```text
+operum/
+├── app/                  # Backend Python/FastAPI
+│   ├── api/              # Endpoints (health, assets, market, news, portfolios, models)
+│   ├── core/             # Config (CORS, logging)
+│   ├── schemas/          # Pydantic models (asset, news, portfolio)
+│   └── services/         # Lógica de negócio (12 serviços)
+├── src/                  # Frontend React
+│   ├── components/       # UI components + PortfolioMetrics, CompositionCharts, ScenarioView, PortfolioOpinion
+│   ├── context/          # Estado global (AuthContext, PortfoliosContext)
+│   ├── pages/            # Telas
+│   ├── types/            # Interfaces TS
+│   └── utils/            # Helpers (api.ts, storage.ts)
+├── data/                 # Persistência local
+│   ├── assets/           # universe.json
+│   ├── news/             # raw/processed/summaries
+│   ├── portfolios/       # JSON por carteira
+│   ├── market/prices/    # Cache de preços
+│   ├── cache/            # Cache de requisições
+│   ├── datasets/train/   # Datasets de treino
+│   ├── models/           # Modelos serializados (.pkl)
+│   └── logs/             # operum.log
+├── docs/                 # Documentação (compendium.md, spec.md)
+├── tests/                # 30 testes (20 finance engine + 10 API)
+├── skillsFront.md        # Guia frontend para IA
+├── skillsBack.md         # Guia backend para IA
+├── plano.md              # Plano de implementação vivo
+└── requirements.txt
+```
 
 ## Scripts
 
 ```bash
-npm install
-npm run dev
-npm run build
-npm run preview
+# Frontend
+npm run dev       # Desenvolvimento (porta 5173)
+npm run build     # Build produção
+npm run preview   # Preview build
+
+# Backend
+uvicorn app.main:app --reload    # Desenvolvimento (porta 8000)
+pytest tests/ -v                 # Testes
 ```
 
-## Deploy na Vercel
+## Documentação
 
-O projeto pode ser publicado como frontend estatico na Vercel.
+- `docs/compendium.md` — Base de conhecimento consolidada
+- `docs/spec.md` — Especificação detalhada
+- `plano.md` — Plano de implementação com status
 
-1. Importe o repositorio na Vercel.
-2. Mantenha o preset de framework como `Vite`.
-3. Use `npm run build` como comando de build.
-4. Use `dist` como output directory.
+## Rotas
 
-O arquivo `vercel.json` ja foi incluido para garantir o rewrite das rotas do `React Router` para `index.html`.
+- `/` — Dashboard (visão geral)
+- `/dashboard-tecnico` — Painel técnico
+- `/noticias` — Notícias de mercado
+- `/chat` — Chat explicativo
+- `/carteiras` — Lista de carteiras
+- `/carteiras/:id` — Detalhe da carteira
+- `/configuracoes` — Preferências
+- `/login` / `/registro` — Autenticação
 
-## Estrutura Principal
-
-```text
-src/
-  components/        # componentes base de UI e protecao de rota
-  context/           # auth e estado global de carteiras
-  data/              # mocks e dados locais
-  layout/            # shell principal da aplicacao
-  pages/             # telas principais
-  types/             # tipos TypeScript
-  utils/             # storage e utilitarios de carteira
-```
-
-## Fluxos Importantes
-
-### 1. Carteira ativa global
-
-A selecao de carteira no header controla o comportamento dos principais modulos:
-
-- dashboard simples
-- painel tecnico
-- chat
-- resumo da carteira ativa no modulo de carteiras
-
-Quando `Todas as carteiras` esta selecionado, os modulos passam a operar no consolidado.
-
-### 2. Persistencia local
-
-O projeto usa `localStorage` para simular persistencia de:
-
-- sessao do usuario
-- base local de usuarios cadastrados
-- carteiras por usuario
-- carteira ativa por usuario
-- preferencias por usuario
-- historico de chat por usuario
-
-As chaves ficam centralizadas em `src/utils/storage.ts`.
-
-### 3. Conta de exemplo
+## Conta de Exemplo
 
 - E-mail: `camila@operum.app`
 - Senha: `Operum123`
 
-A conta da Camila continua fixa como perfil de demonstracao. Novos cadastros ficam salvos apenas no navegador de quem estiver usando a aplicacao.
-
-### 4. Dados mockados
-
-Nao ha backend integrado neste momento. Os dados de usuario, ativos, noticias, series de graficos e carteira inicial ficam em `src/data/mocks.ts`.
-
-## Rotas
-
-- `/login`
-- `/registro`
-- `/`
-- `/dashboard-tecnico`
-- `/noticias`
-- `/chat`
-- `/carteiras`
-- `/carteiras/:id`
-- `/configuracoes`
-
-## Padroes do Frontend
-
-- paleta base definida em `src/styles.css`
-- componentes compartilhados em `src/components/UI.tsx`
-- sidebar e header centralizados em `src/layout/AppShell.tsx`
-- estado global de carteiras em `src/context/PortfoliosContext.tsx`
-
-## Observacoes
-
-- o projeto hoje e orientado a demonstracao e prototipacao
-- os graficos usam dados simulados
-- a build atual funciona normalmente, mas o Vite ainda alerta sobre tamanho de chunk no bundle final
-- por usar `localStorage`, cada navegador mantera sua propria base local de teste
-
-## Validacao
-
-Antes de entregar mudancas no frontend, o minimo esperado e:
+## Validação
 
 ```bash
-npm run build
+npm run build    # Frontend
+pytest tests/    # Backend
 ```
-
-Se a alteracao afetar navegacao, tambem vale validar manualmente:
-
-- troca de carteira ativa
-- visao geral
-- painel tecnico
-- chat
-- modulo de carteiras
