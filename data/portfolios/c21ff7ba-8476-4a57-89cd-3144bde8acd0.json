@@ -3,7 +3,7 @@
   "name": "Carteira Exemplo",
   "base_currency": "BRL",
   "created_at": "2026-05-23T03:37:05.227994Z",
-  "updated_at": "2026-05-23T03:37:21.770683Z",
+  "updated_at": "2026-05-25T01:56:49.326099Z",
   "positions": [
     {
       "asset_id": "PETR4",
@@ -74,6 +74,15 @@
       "asset_class": "BDR",
       "quantity": 30.0,
       "avg_price": 75.0,
+      "currency": "BRL",
+      "manual_notes": ""
+    },
+    {
+      "asset_id": "MXRF11",
+      "ticker": "MXRF11",
+      "asset_class": "FII",
+      "quantity": 1000.0,
+      "avg_price": null,
       "currency": "BRL",
       "manual_notes": ""
     }

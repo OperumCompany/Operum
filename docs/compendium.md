@@ -1,7 +1,7 @@
 # Compendium — Operum
 
 > Base de conhecimento consolidada do projeto Operum.
-> Última atualização: 23/05/2026
+> Última atualização: 24/05/2026
 
 ---
 
@@ -309,20 +309,63 @@ Saída: texto analítico (ex: "Carteira com concentração moderada em risco dom
 
 ---
 
-## 11. Tratamento de Dados de Notícias
+## 11. Ambiente e Inicialização
 
-### 11.1 Limpeza de HTML
+### 11.1 Porta do Backend
+
+- Backend uvicorn roda na **porta 8001** (migrado de 8000 devido a TIME_WAIT no Windows).
+- Vite proxy (`vite.config.ts`): `/api` → `localhost:8001`.
+- `iniciar.ps1` usa porta 8001 e libera porta 8000/8001 automaticamente.
+- Se houver erro `[Errno 10048]`, aguardar TIME_WAIT expirar (~2 min) ou trocar porta.
+
+### 11.2 Bug Fix — `get_universe()` → `get_all()`
+
+- `app/main.py` linha 27 chamava `AssetUniverseService.get_universe()` (inexistente).
+- Corrigido para `AssetUniverseService.get_all()` (método real).
+- Lifespan do FastAPI agora executa corretamente: ingestão de notícias + cache de preços.
+
+---
+
+## 12. Tratamento de Dados de Notícias
+
+### 12.1 Limpeza de HTML
 - RSS feeds (InfoMoney, Folha) retornam conteúdo com tags HTML (`<p>`, `<img>`, etc.).
 - `NewsIngestionService._strip_html()` remove tags HTML e entidades (`&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#\d+;`) antes de armazenar `content_preview`.
 - Chamado dentro de `_clean_text()` em conjunto com correção de encoding (latin1 → utf-8).
 
-### 11.2 Scoring de Sentimento
+### 12.2 Scoring de Sentimento
 - Algoritmo baseado em keywords positivas/negativas (~30 palavras cada).
 - Fórmula: `(pos_count - neg_count) / total` quando há match, `-0.1` para neutro (sem keywords).
 - Keywords expandidas: inclui "sobe", "recorde", "dividendo", "desemprego", "inflação", "juros", "tarifa" etc.
 - Valores típicos: -1.0 (fortemente negativo), 1.0 (fortemente positivo), -0.1 (neutro).
 
-### 11.3 Exemplo de Carteira
+### 12.3 Auto-Update na Inicialização
+- `app/main.py` usa `lifespan` handler do FastAPI.
+- Ao iniciar, executa `NewsIngestionService.ingest()` para buscar notícias novas.
+- Atualiza cache de preços dos primeiros 20 ativos do universo via `MarketDataService`.
+
+### 12.4 Endpoint de Preços da Carteira
+- `GET /api/portfolios/{id}/prices` retorna preço atual, valor total e % da carteira para cada posição.
+- Usa `MarketDataService.get_current_price()` com cache de 1 hora.
+- No frontend, exibido em colunas adicionais nas tabelas de posições.
+
+### 12.5 Análise por IA com Notícias
+- Botão "Gerar análise por IA" no frontend chama `GET /api/models/opinion/{id}`.
+- `PortfolioOpinionService._generate_text()` agora inclui para cada ativo:
+  - Quantidade de notícias relevantes
+  - Sentimento médio (positivo/negativo/neutro)
+  - Impacto médio
+- Score consolidado: diversificação (30%), correlação (20%), notícias (20%), macro (15%), forecast (15%).
+
+### 12.6 Frontend — Carteira em Detalhes
+- Tabelas de posições **separadas por classe de ativo** (BR_STOCK, FII, BDR, CRYPTO).
+- **Filtro por tipo** no formulário de adicionar ativos: seleciona classe primeiro, depois o ativo.
+- **Preços reais** exibidos ao lado de cada posição (preço atual, valor total, % da carteira).
+- **Editar nome** inline ao lado do botão "Voltar" no header.
+- **CompositionCharts** movido para o final da página.
+- Novo componente `PortfolioAnalysisAI` com score, barras de componentes e texto analítico.
+
+### 12.7 Exemplo de Carteira
 - `data/portfolios/` contém a carteira "Carteira Exemplo" com 8 ativos:
   - PETR4, VALE3, ITUB4, WEGE3, BBAS3 (BR_STOCK)
   - HGLG11, KNRI11 (FII)

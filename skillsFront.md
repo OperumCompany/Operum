@@ -1,7 +1,7 @@
 ---
 name: skillsFront
 description: Guia de execução para IA contribuir no frontend do OPERUM com React, TypeScript, Vite, Tailwind e gráficos, preservando a experiência simples para leigos e a leitura técnica para usuários avançados.
-> Atualizado em: 23/05/2026
+> Atualizado em: 24/05/2026
 ---
 
 # Skills Front - OPERUM
@@ -19,7 +19,7 @@ Antes de propor qualquer solução, assuma o stack real:
 - Gráficos: `recharts`
 - Ícones: `lucide-react`
 - Persistência (fallback): `localStorage`
-- **Backend:** Python FastAPI (proxy Vite `/api` → `localhost:8000`)
+- **Backend:** Python FastAPI (proxy Vite `/api` → `localhost:8001`)
 - **API Client:** `fetch()` via `src/utils/api.ts`
 - **Build:** `npm run build` (frontend estático para deploy separado)
 
@@ -259,14 +259,40 @@ Regras:
 - Barras de componentes: diversificação, risco correlação, impacto notícias, sensibilidade macro, risco forecast
 - Dados vindos de `GET /models/opinion/{portfolio_id}`
 
-### 12.7 Carteira de Exemplo
+### 12.7 PortfolioAnalysisAI
+- Componente na página de detalhes da carteira.
+- Botão "Gerar análise por IA" → chama `GET /api/models/opinion/{portfolio_id}`.
+- Exibe: score circular (0-100%) com cor (verde/amarelo/vermelho), label (Saudável/Atenção/Crítico), texto analítico, barras dos 5 componentes (diversificação, risco correlação, impacto notícias, sensibilidade macro, risco forecast).
+- Estados: `initial` (CTA de gerar), `loading` (spinner), `error` (mensagem + retry), `data` (score + texto + barras + regenerar).
+
+### 12.8 Carteira de Exemplo
 - O sistema inclui uma "Carteira Exemplo" com 8 ativos (PETR4, VALE3, ITUB4, WEGE3, BBAS3, HGLG11, KNRI11, AAPL34).
 - Criada automaticamente via API, serve como onboarding visual.
 - Pode ser excluída via UI se desejado.
 
-## 13. Integração com API
+## 13. Layout da PortfolioDetailsPage (v2)
 
-### 13.1 Padrão de Chamada
+A página de detalhe da carteira agora segue esta ordem:
+
+1. **Header** — nome editável, botões (Editar nome, Definir como ativa, Voltar)
+2. **Análise por IA** — componente PortfolioAnalysisAI (botão "Gerar" → score + texto)
+3. **Tabelas por classe** — um card por classe de ativo (BR_STOCK, FII, BDR, CRYPTO) com colunas: Ticker, Quantidade, Preço médio, Preço atual, Valor total, % Carteira, Remover
+4. **Adicionar ativos** — formulário com: select de classe → select de ativo filtrado → quantidade → preço médio
+5. **Composição** — CompositionCharts (gráficos de pizza) no final da página
+
+### 13.1 Filtro por Tipo de Ativo
+- Primeiro select: classe do ativo (BR_STOCK, FII, BDR, CRYPTO, US_STOCK, FIXED_INCOME)
+- Segundo select: lista filtrada de ativos da classe escolhida
+- Desabilitado até selecionar uma classe
+
+### 13.2 Preços Reais
+- `GET /api/portfolios/{id}/prices` carregado na montagem.
+- Colunas: Preço atual (R$), Valor total (R$), % Carteira.
+- Dados vêm do YFinance com cache de 1h.
+
+## 14. Integração com API
+
+### 14.1 Padrão de Chamada
 Toda página que consome dados do backend deve usar o padrão:
 
 ```typescript
@@ -282,14 +308,14 @@ useEffect(() => {
 }, []);
 ```
 
-### 13.2 Tratamento de Estados
+### 14.2 Tratamento de Estados
 Toda tela que chama API deve cobrir:
 - `loading` → spinner/skeleton
 - `error` → mensagem amigável + opção de retry
 - `data` vazio → empty state com call to action
 - `data` preenchido → render normal
 
-## 14. Chat
+## 15. Chat
 
 O chat é explicativo e orientado a linguagem simples.
 
@@ -299,7 +325,7 @@ Regras:
 - Se estiver em `Todas as carteiras`, as respostas devem deixar isso claro.
 - Não transformar o chat em motor de regras complexo sem necessidade.
 
-## 15. Qualidade e Validação
+## 16. Qualidade e Validação
 
 Toda mudança relevante deve ser validada com:
 
@@ -310,10 +336,10 @@ npm run build
 Para mudanças que envolvem backend + frontend:
 
 ```bash
-# Terminal 1: backend
-uvicorn app.main:app --reload
+# Terminal 1: backend (porta 8001)
+uvicorn app.main:app --reload --port 8001
 
-# Terminal 2: frontend
+# Terminal 2: frontend (proxy /api → localhost:8001)
 npm run dev
 ```
 
@@ -328,7 +354,7 @@ Testar manualmente:
 8. modal de notícia
 9. análise de carteira (correlação, VaR, pesos)
 
-## 16. O que Não Fazer
+## 17. O que Não Fazer
 
 - Não quebrar a lógica global de carteira ativa.
 - Não introduzir seleção local de carteira em cada página.
@@ -339,7 +365,7 @@ Testar manualmente:
 - **Não ignorar os estados de loading, erro e empty nas telas que consomem API.**
 - **Não fazer fetch direto sem usar `src/utils/api.ts`.**
 
-## 17. Checklist Final
+## 18. Checklist Final
 
 1. A mudança respeita a stack atual?
 2. A seleção global de carteira continua funcionando?
@@ -350,7 +376,7 @@ Testar manualmente:
 7. Os estados de loading/erro/empty estão cobertos?
 8. `npm run build` passou?
 
-## 18. Documento Vivo
+## 19. Documento Vivo
 
 Sempre que houver mudança importante em:
 

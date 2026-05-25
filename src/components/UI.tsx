@@ -14,11 +14,19 @@ export function Card({ title, right, children }: { title?: string; right?: React
   );
 }
 
-export function Button({ children, className = '', ...props }: React.ButtonHTMLAttributes<HTMLButtonElement>) {
+type ButtonProps = React.ButtonHTMLAttributes<HTMLButtonElement> & {
+  variant?: 'primary' | 'ghost';
+};
+
+export function Button({ children, className = '', variant = 'primary', ...props }: ButtonProps) {
+  const base = 'inline-flex items-center justify-center gap-2 rounded-2xl px-4 py-2.5 text-sm font-semibold transition disabled:cursor-not-allowed disabled:opacity-50';
+  const styles = variant === 'ghost'
+    ? 'bg-transparent text-[var(--text-main)] hover:bg-[var(--bg-surface-strong)] border border-[var(--border-soft)]'
+    : 'bg-[var(--brand)] text-white shadow-[0_10px_20px_rgba(47,111,237,0.18)] hover:bg-[var(--brand-strong)]';
   return (
     <button
       {...props}
-      className={`inline-flex items-center justify-center gap-2 rounded-2xl bg-[var(--brand)] px-4 py-2.5 text-sm font-semibold text-white shadow-[0_10px_20px_rgba(47,111,237,0.18)] transition hover:bg-[var(--brand-strong)] disabled:cursor-not-allowed disabled:opacity-50 ${className}`}
+      className={`${base} ${styles} ${className}`}
     >
       {children}
     </button>

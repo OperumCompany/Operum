@@ -39,14 +39,14 @@ O projeto é um monorepo com frontend em `src/` e backend em `app/`.
 python -m venv venv
 venv\Scripts\activate      # Windows
 pip install -r requirements.txt
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --port 8001
 ```
 
 ### Frontend
 
 ```bash
 npm install
-npm run dev      # Vite proxy /api → localhost:8000
+npm run dev      # Vite proxy /api → localhost:8001
 ```
 
 Acessar frontend em `http://localhost:5173`.
@@ -66,8 +66,11 @@ Acessar frontend em `http://localhost:5173`.
 - CRUD completo de carteiras
 - Universo de ~131+ ativos (BR ações, FIIs, US stocks, crypto)
 - Posições com quantidade e preço médio
-- Composição por classe, setor, moeda
+- Tabelas de posições separadas por classe de ativo (BR_STOCK, FII, BDR, CRYPTO)
+- Preços reais atualizados via YFinance com cache de 1h
+- Composição por classe, setor, moeda (gráficos ao final da página)
 - Análise financeira: pesos, concentração, correlação, VaR, CVaR, beta, volatilidade
+- Análise por IA com botão "Gerar análise por IA" — texto com notícias de cada ativo
 
 ### Motor Financeiro (22 funções puras)
 - Retorno simples, logarítmico, cumulativo
@@ -125,7 +128,7 @@ npm run build     # Build produção
 npm run preview   # Preview build
 
 # Backend
-uvicorn app.main:app --reload    # Desenvolvimento (porta 8000)
+uvicorn app.main:app --reload --port 8001   # Desenvolvimento
 pytest tests/ -v                 # Testes
 ```
 

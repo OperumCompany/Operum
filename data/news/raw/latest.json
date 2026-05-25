@@ -902,5 +902,1009 @@
     "summary": "Borrowing was higher than expected last month and retail sales fell as fuel prices surged.",
     "cluster_id": null,
     "created_at": "2026-05-23T03:32:01.569108Z"
+  },
+  {
+    "id": "137f0855ccac1034c3c0a6498d7783f2",
+    "title": "Petróleo abre a semana abaixo de US$ 100 diante de possível acordo entre Irã e EUA",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/petroleo-abre-a-semana-abaixo-de-us-100-diante-de-possivel-acordo-entre-ira-e-eua.shtml",
+    "published_at": "2026-05-25T01:19:05.938380Z",
+    "language": "pt",
+    "tags": [
+      "Petróleo e Gás",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Petróleo e Gás",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Petróleo abre a semana abaixo de US$ 100 diante de possível acordo entre Irã e EUA.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.968471Z"
+  },
+  {
+    "id": "333dde7c2593bf4b2796859b11f0d7cd",
+    "title": "A inteligência artificial sabe investir?",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/blogs/de-grao-em-grao/2026/05/a-inteligencia-artificial-sabe-investir.shtml",
+    "published_at": "2026-05-25T01:19:05.968471Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A inteligência artificial sabe investir?.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.968471Z"
+  },
+  {
+    "id": "080c8c02c72ea68760094d72d172f9a3",
+    "title": "Pressão financeira sobre avós cresce com aumento do custo de vida",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/pressao-financeira-sobre-avos-cresce-com-aumento-do-custo-de-vida.shtml",
+    "published_at": "2026-05-25T01:19:05.968471Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Pressão financeira sobre avós cresce com aumento do custo de vida.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.968471Z"
+  },
+  {
+    "id": "20d78d6e694a445186cd895ade3be5cf",
+    "title": "Porto Digital do Recife se mobiliza para sobreviver à reforma tributária",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/blogs/que-imposto-e-esse/2026/05/porto-digital-do-recife-se-mobiliza-para-sobreviver-a-reforma-tributaria.shtml",
+    "published_at": "2026-05-25T01:19:05.968471Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Porto Digital do Recife se mobiliza para sobreviver à reforma tributária.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.968471Z"
+  },
+  {
+    "id": "6e9938f2439319c84caf4591340dddaa",
+    "title": "Opinião - Ronaldo Lemos: Brasil, o país que abre mão do desenvolvimento",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/colunas/ronaldolemos/2026/05/brasil-o-pais-que-abre-mao-do-desenvolvimento.shtml",
+    "published_at": "2026-05-25T01:19:05.968471Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Opinião - Ronaldo Lemos: Brasil, o país que abre mão do desenvolvimento.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.968471Z"
+  },
+  {
+    "id": "21efd89a254f6d09f39e0688647cb62f",
+    "title": "Reforma tributária enfrenta pressão de 50 projetos no Congresso em ano eleitoral",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/reforma-tributaria-enfrenta-pressao-de-50-projetos-no-congresso-em-ano-eleitoral.shtml",
+    "published_at": "2026-05-25T01:19:05.968471Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Reforma tributária enfrenta pressão de 50 projetos no Congresso em ano eleitoral.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.968471Z"
+  },
+  {
+    "id": "157cc8e877e5b53cf3c21697dfcfbca3",
+    "title": "Acionistas pressionam big techs sobre uso de energia por IA e metas climáticas",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/acionistas-pressionam-big-techs-sobre-uso-de-energia-por-ia-e-metas-climaticas.shtml",
+    "published_at": "2026-05-25T01:19:05.970151Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia",
+      "Energia Elétrica"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia",
+      "Energia Elétrica"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Acionistas pressionam big techs sobre uso de energia por IA e metas climáticas.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970151Z"
+  },
+  {
+    "id": "3c72853dc4d759bb6e21a8a95e532526",
+    "title": "Privatização da Eletrobras tem R$ 3,7 bi encalhados em fundos para rios e saneamento",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/privatizacao-da-eletrobras-tem-r-37-bi-encalhados-em-fundos-para-rios-e-saneamento.shtml",
+    "published_at": "2026-05-25T01:19:05.970151Z",
+    "language": "pt",
+    "tags": [
+      "Energia Elétrica"
+    ],
+    "mentioned_assets": [
+      "ELET3"
+    ],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Energia Elétrica"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Privatização da Eletrobras tem R$ 3,7 bi encalhados em fundos para rios e saneamento. Notícia menciona ELET3.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970151Z"
+  },
+  {
+    "id": "7374ae230627f60b2e62c76dda3be110",
+    "title": "Fux acompanha Mendonça e vota para manter pai e primo de Vorcaro presos",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/fux-acompanha-mendonca-e-vota-para-manter-pai-e-primo-de-vorcaro-presos.shtml",
+    "published_at": "2026-05-25T01:19:05.970151Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Fux acompanha Mendonça e vota para manter pai e primo de Vorcaro presos.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970151Z"
+  },
+  {
+    "id": "3cb74645bfb5025469c802c39d8885ca",
+    "title": "Número de navios em Hormuz voltará ao nível pré-guerra em 30 dias sob possível acordo, diz agência do Irã",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/numero-de-navios-em-hormuz-voltara-ao-nivel-pre-guerra-em-30-dias-sob-possivel-acordo-diz-agencia-do-ira.shtml",
+    "published_at": "2026-05-25T01:19:05.970151Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Número de navios em Hormuz voltará ao nível pré-guerra em 30 dias sob possível acordo, diz agência do Irã.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970151Z"
+  },
+  {
+    "id": "b91e107963b519bf6b2b37d08be1a705",
+    "title": "EUA condenam ameaças do Hezbollah de derrubar governo do Líbano",
+    "subtitle": null,
+    "content_preview": "O secretário acusou o grupo de ignorar pedidos das autoridades libanesas para cessar ataques The post EUA condenam ameaças do Hezbollah de derrubar governo do Líbano appeared first on InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mundo/eua-condenam-ameacas-do-hezbollah-de-derrubar-governo-do-libano/",
+    "published_at": "2026-05-25T01:19:05.970151Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O secretário acusou o grupo de ignorar pedidos das autoridades libanesas para cessar ataques The post EUA condenam ameaças do Hezbollah de derrubar governo do Líbano appeared first on InfoMoney.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970151Z"
+  },
+  {
+    "id": "218e0dfbaefbfd86fa48bb14c330ccf8",
+    "title": "Petróleo cai abaixo de US$ 100 e bolsas sobem com esperança de acordo entre EUA e Irã",
+    "subtitle": null,
+    "content_preview": "Entendimento no Oriente Médio pode abrir espaço para corte de juros nos EUA, segundo assessor de Trump The post Petróleo cai abaixo de US$ 100 e bolsas sobem com esperança de acordo entre EUA e Irã appeared first on InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mercados/petroleo-e-dow-jones-futuro-cai-com-esperanca-de-acordo-entre-eua-e-ira/",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [
+      "Petróleo e Gás",
+      "Financeiro"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Petróleo e Gás",
+      "Financeiro"
+    ],
+    "sentiment_score": 0.3333333333333333,
+    "relevance_score": 0.5,
+    "impact_score": 0.35,
+    "summary": "Entendimento no Oriente Médio pode abrir espaço para corte de juros nos EUA, segundo assessor de Trump The post Petróleo cai abaixo de US$ 100 e bolsas sobem com esperança de acordo entre EUA e Irã ap",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "c358f7541295dcc5e000144740406a23",
+    "title": "Maduro envia, de sua prisão nos EUA, mensagem de unidade ao povo da Venezuela",
+    "subtitle": null,
+    "content_preview": "O líder venezuelano pede \"pela paz, pela prosperidade e pela liberdade de todos nós\" The post Maduro envia, de sua prisão nos EUA, mensagem de unidade ao povo da Venezuela appeared first on InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mundo/maduro-envia-de-sua-prisao-nos-eua-mensagem-de-unidade-ao-povo-da-venezuela/",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O líder venezuelano pede \"pela paz, pela prosperidade e pela liberdade de todos nós\" The post Maduro envia, de sua prisão nos EUA, mensagem de unidade ao povo da Venezuela appeared first on InfoMoney.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "5d1115a4159d852457fc9f6a8a53b59a",
+    "title": "Líder do Hezbollah exige o fim das negociações entre Líbano e Israel",
+    "subtitle": null,
+    "content_preview": "\"Quem quer que se oponha a nós ao lado de Israel será enfrentado da mesma forma que enfrentamos Israel\" The post Líder do Hezbollah exige o fim das negociações entre Líbano e Israel appeared first on InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mundo/lider-do-hezbollah-exige-o-fim-das-negociacoes-entre-libano-e-israel/",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "\"Quem quer que se oponha a nós ao lado de Israel será enfrentado da mesma forma que enfrentamos Israel\" The post Líder do Hezbollah exige o fim das negociações entre Líbano e Israel appeared first on ",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "d417c68daa6396fdef9b09105ea740ee",
+    "title": "Vasco x RB Bragantino: Veja onde assistir ao Brasileirão",
+    "subtitle": null,
+    "content_preview": "Os times jogam neste domingo The post Vasco x RB Bragantino: Veja onde assistir ao Brasileirão appeared first on InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/esportes/vasco-bragantino-onde-assistir-brasileirao/",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Os times jogam neste domingo The post Vasco x RB Bragantino: Veja onde assistir ao Brasileirão appeared first on InfoMoney.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "65cf6d31773f415e41b47613a649a7fb",
+    "title": "Acordo com Irã pode abrir espaço para Fed cortar juros, diz Hassett",
+    "subtitle": null,
+    "content_preview": "A fala acontece após Trump afirmar que as negociações com Teerã avançaram de forma \"ordenada e construtiva\" The post Acordo com Irã pode abrir espaço para Fed cortar juros, diz Hassett appeared first on InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mundo/acordo-com-ira-pode-abrir-espaco-para-fed-cortar-juros-diz-hassett/",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [
+      "Financeiro",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Financeiro",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A fala acontece após Trump afirmar que as negociações com Teerã avançaram de forma \"ordenada e construtiva\" The post Acordo com Irã pode abrir espaço para Fed cortar juros, diz Hassett appeared first ",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "0bebd83b1084569f2e8f0f0e6158f6e6",
+    "title": "Com Warsh no Fed, mercado precifica alta de juros nos EUA até dezembro",
+    "subtitle": null,
+    "content_preview": "Apostas de três meses atrás revertem com guerra, resiliência da economia americana e o boom de investimentos em IA The post Com Warsh no Fed, mercado precifica alta de juros nos EUA até dezembro appeared first on InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/economia/com-warsh-no-fed-mercado-precifica-alta-de-juros-nos-eua-ate-dezembro/",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [
+      "Financeiro",
+      "Tecnologia",
+      "Economia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Financeiro",
+      "Tecnologia",
+      "Economia"
+    ],
+    "sentiment_score": 0.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.25,
+    "summary": "Apostas de três meses atrás revertem com guerra, resiliência da economia americana e o boom de investimentos em IA The post Com Warsh no Fed, mercado precifica alta de juros nos EUA até dezembro appea",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "d0c40d2be76b4b446d54ff644b07c923",
+    "title": "Calendário econômico da semana: PIB, trabalho e inflação são foco no Brasil",
+    "subtitle": null,
+    "content_preview": "Tudo o que o investidor precisa saber antes de operar na semana The post Calendário econômico da semana: PIB, trabalho e inflação são foco no Brasil appeared first on InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mercados/calendario-economico-da-semana-pib-trabalho-e-inflacao-sao-foco-no-brasil/",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [
+      "Economia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Tudo o que o investidor precisa saber antes de operar na semana The post Calendário econômico da semana: PIB, trabalho e inflação são foco no Brasil appeared first on InfoMoney.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "0f84737721ae3ca318f6104508009d5f",
+    "title": "Irã acusa EUA de recuo em acordo e ameaça não assinar, diz emissora",
+    "subtitle": null,
+    "content_preview": "Fonte iraniana citada pela Al Jazeera aponta divergências sobre descongelamento de ativos e cessar-fogo no Líbano The post Irã acusa EUA de recuo em acordo e ameaça não assinar, diz emissora appeared first on InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mundo/ira-acusa-eua-de-recuo-em-acordo-e-ameaca-nao-assinar-diz-emissora/",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Fonte iraniana citada pela Al Jazeera aponta divergências sobre descongelamento de ativos e cessar-fogo no Líbano The post Irã acusa EUA de recuo em acordo e ameaça não assinar, diz emissora appeared ",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "2bae8a8647f08b3ac38c142e5a1af1db",
+    "title": "Chanceler da Ucrânia pede reação da ONU após ofensiva russa contra Kiev",
+    "subtitle": null,
+    "content_preview": "Chanceler afirmou ainda que Vladimir Putin \"está tentando intimidar a Ucrânia ao atacar civis e destruir edifícios residenciais The post Chanceler da Ucrânia pede reação da ONU após ofensiva russa contra Kiev appeared first on InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mundo/chanceler-da-ucrania-pede-reacao-da-onu-apos-ofensiva-russa-contra-kiev/",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Chanceler afirmou ainda que Vladimir Putin \"está tentando intimidar a Ucrânia ao atacar civis e destruir edifícios residenciais The post Chanceler da Ucrânia pede reação da ONU após ofensiva russa con",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "ffb970b59925d8e2ab7817d0ab9dd3a5",
+    "title": "Ibovespa e dólar hoje: mercado avalia fiscal em dia de feriado nos EUA",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/stock-market-news/ibovespa-e-dolar-hoje-mercado-avalia-fiscal-em-dia-de-feriado-nos-eua-1950999",
+    "published_at": "2026-05-25T10:30:15",
+    "language": "pt",
+    "tags": [
+      "Tecnologia",
+      "Economia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia",
+      "Economia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ibovespa e dólar hoje: mercado avalia fiscal em dia de feriado nos EUA.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "7fb77e2dcb06d129abf1567f6b8e3010",
+    "title": "PIB de Singapura no 1º tri revisado para alta de 6,0%; perspectiva para 2026 mantida",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/economic-indicators/pib-de-singapura-no-1o-tri-revisado-para-alta-de-60-perspectiva-para-2026-mantida-1951002",
+    "published_at": "2026-05-25T00:54:34",
+    "language": "pt",
+    "tags": [
+      "Economia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Economia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "PIB de Singapura no 1º tri revisado para alta de 6,0%; perspectiva para 2026 mantida.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "a9a5ae649c6bacfcf48fb4dc566552b0",
+    "title": "EROAD registra receita estável no segundo semestre de 2026 apesar dos desafios",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/transcripts/eroad-registra-receita-estavel-no-segundo-semestre-de-2026-apesar-dos-desafios-93CH-1951001",
+    "published_at": "2026-05-25T00:52:36",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "EROAD registra receita estável no segundo semestre de 2026 apesar dos desafios.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "4173692b2c91420359019358c242a2e2",
+    "title": "Análise SWOT da NOV Inc.: ação de energia enfrenta desafios de ciclo inicial",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-da-nov-inc-acao-de-energia-enfrenta-desafios-de-ciclo-inicial-93CH-1951000",
+    "published_at": "2026-05-25T00:51:22",
+    "language": "pt",
+    "tags": [
+      "Tecnologia",
+      "Energia Elétrica"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia",
+      "Energia Elétrica"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Análise SWOT da NOV Inc.: ação de energia enfrenta desafios de ciclo inicial.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "13bb4767526c1e3de4921583d28d54ab",
+    "title": "Análise SWOT da Globus Medical: ação ganha força com crescimento em coluna",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-da-globus-medical-acao-ganha-forca-com-crescimento-em-coluna-93CH-1950997",
+    "published_at": "2026-05-25T00:28:23",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Análise SWOT da Globus Medical: ação ganha força com crescimento em coluna.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "3dbeed313bcadecfe40d2b70e190d0ca",
+    "title": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/analyst-ratings/sofrendo-com-o-ibovespa-esta-acao-da-b3-escolhida-por-ia-sobe-quase-20-neste-mes-1949007",
+    "published_at": "2026-05-25T00:21:25",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "B3SA3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.75,
+    "summary": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS. Notícia menciona B3SA3.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "1a666df4ad3a9419c9958dc03bb64e3d",
+    "title": "Preços do ouro disparam com esperanças de acordo de paz entre EUA e Irã",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/commodities-news/precos-do-ouro-disparam-com-esperancas-de-acordo-de-paz-entre-eua-e-ira-1950996",
+    "published_at": "2026-05-25T00:15:16",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Preços do ouro disparam com esperanças de acordo de paz entre EUA e Irã.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "e94264c18d2c6c76f779e042ac6ce814",
+    "title": "Transcrição do call de resultados: Ação da Pacific Edge sobe no 2º tri de 2026 apesar dos desafios",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/transcripts/transcricao-do-call-de-resultados-acao-da-pacific-edge-sobe-no-2o-tri-de-2026-apesar-dos-desafios-93CH-1950994",
+    "published_at": "2026-05-25T00:11:35",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Transcrição do call de resultados: Ação da Pacific Edge sobe no 2º tri de 2026 apesar dos desafios.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "17253987f611b09e35ecc0e9152a9f80",
+    "title": "Análise SWOT da Essent Group: seguradora hipotecária equilibra qualidade de crédito com crescimento estagnado",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-da-essent-group-seguradora-hipotecaria-equilibra-qualidade-de-credito-com-crescimento-estagnado-93CH-1950992",
+    "published_at": "2026-05-25T00:10:39",
+    "language": "pt",
+    "tags": [
+      "Financeiro",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Financeiro",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Análise SWOT da Essent Group: seguradora hipotecária equilibra qualidade de crédito com crescimento estagnado.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "7d1354c9010594b5021ec000568275d0",
+    "title": "Análise SWOT de BJ’s Restaurants: ações enfrentam sinais mistos",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-de-bjs-restaurants-acoes-enfrentam-sinais-mistos-93CH-1950988",
+    "published_at": "2026-05-24T23:51:00",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Análise SWOT de BJ’s Restaurants: ações enfrentam sinais mistos.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "91710666db25c8052d510fe02ab15cda",
+    "title": "Oil prices slide on hopes of US-Iran peace deal",
+    "subtitle": null,
+    "content_preview": "Trump said on Saturday that an agreement would include the reopening of the Strait of Hormuz, without giving further details.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/c809m7g29r7o?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Trump said on Saturday that an agreement would include the reopening of the Strait of Hormuz, without giving further details.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "883c09f9344bf38b568fd19cddf15749",
+    "title": "'I live in survival mode': The rise of the multi-job workforce",
+    "subtitle": null,
+    "content_preview": "More people are taking second jobs as rising costs and insecure work reshape how we earn a living.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/c70vwr8z7pyo?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "More people are taking second jobs as rising costs and insecure work reshape how we earn a living.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "78d67e24fe6959d4a7ea632e722b2e82",
+    "title": "Beer boom goes flat as breweries call last orders",
+    "subtitle": null,
+    "content_preview": "The UK's brewery scene is shrinking as pubs close, costs rise and drinking habits change.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/c9werp5keqlo?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "The UK's brewery scene is shrinking as pubs close, costs rise and drinking habits change.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "0123d7d56e427d0f89a719f6af9f8e66",
+    "title": "'Shameful' more spent on benefits than jobs for young people, says Milburn",
+    "subtitle": null,
+    "content_preview": "Reforms are needed of the welfare system to tackle the high numbers of young people not in work or education, says Alan Milburn.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/crrpx4p1z71o?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Reforms are needed of the welfare system to tackle the high numbers of young people not in work or education, says Alan Milburn.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "89912ce89c745f34544207a5576b7c14",
+    "title": "Indian billionaires buy foreign companies as growth slows at home",
+    "subtitle": null,
+    "content_preview": "India Inc spent $18bn on global buyouts in 2025 and the deal value could cross $15bn in the first half of 2026.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/cwy21x20q23o?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "India Inc spent $18bn on global buyouts in 2025 and the deal value could cross $15bn in the first half of 2026.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "53a8a3e2fff90924ddab063228fdb797",
+    "title": "'Six eggs used to be £1' - why everyday essentials cost so much more now",
+    "subtitle": null,
+    "content_preview": "Six supermarket brand eggs cost £1 in 2022. How much are they now, why have they gone up, and is anyone profiteering?",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/cd6pw4zg5p9o?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Six supermarket brand eggs cost £1 in 2022. How much are they now, why have they gone up, and is anyone profiteering?",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "00c90feebde99542d97cf6841642092c",
+    "title": "AI may speed up search for drugs to treat brain conditions",
+    "subtitle": null,
+    "content_preview": "Researchers hope the work will help identify affordable, effective drugs to treat conditions like MND.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/cdrp3zzzp71o?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-05-25T01:19:05.970942Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Researchers hope the work will help identify affordable, effective drugs to treat conditions like MND.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:19:05.970942Z"
+  },
+  {
+    "id": "13d3a474dc89df55d84049d6be6b488f",
+    "title": "How Saudi Arabia's spending spree reached the end of the line",
+    "subtitle": null,
+    "content_preview": "MBS's Vison 2030 project seemed the stuff of science fiction. Now reality has bitten",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/cx21g0828reo?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-05-25T01:21:07.381778Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "MBS's Vison 2030 project seemed the stuff of science fiction. Now reality has bitten",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:21:07.381778Z"
+  },
+  {
+    "id": "7cad971f7693477da5b932239caa4eeb",
+    "title": "Análise SWOT da Take-Two: ação vive momento decisivo com GTA VI",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-da-taketwo-acao-vive-momento-decisivo-com-gta-vi-93CH-1951004",
+    "published_at": "2026-05-25T01:11:38",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Análise SWOT da Take-Two: ação vive momento decisivo com GTA VI.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:22:48.719946Z"
+  },
+  {
+    "id": "6863be9710be3bca89ed23fc190306e5",
+    "title": "SpaceX launches massive Starship V3 rocket on test flight",
+    "subtitle": null,
+    "content_preview": "The largest and most powerful rocket in history blasted off after its first attempted launch was postponed.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/c62d65y16nno?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-05-25T01:22:48.723019Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "The largest and most powerful rocket in history blasted off after its first attempted launch was postponed.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:22:48.723019Z"
+  },
+  {
+    "id": "ea7d66b9094a67195f3cb3f192734573",
+    "title": "Análise SWOT da FIGS: ação de vestuário médico enfrenta teste de valuation",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-da-figs-acao-de-vestuario-medico-enfrenta-teste-de-valuation-93CH-1951005",
+    "published_at": "2026-05-25T01:30:35",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Análise SWOT da FIGS: ação de vestuário médico enfrenta teste de valuation.",
+    "cluster_id": null,
+    "created_at": "2026-05-25T01:53:05.650633Z"
   }
 ]

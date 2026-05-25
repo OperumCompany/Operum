@@ -1,7 +1,7 @@
 ---
 name: skillsBack
 description: Guia de execução para IA contribuir no backend do OPERUM com Python, FastAPI, persistência local e motores de IA financeira.
-> Atualizado em: 23/05/2026
+> Atualizado em: 24/05/2026
 ---
 
 # Skills Back — OPERUM
@@ -198,7 +198,23 @@ def compute_volatility(returns: np.ndarray, window: int = 252) -> float:
 - `GET /models/forecast/{ticker}` — Obter previsão 1d para um ticker
 - `GET /models/forecast/trained` — Listar modelos treinados
 - `POST /models/cluster/news` — Clusterizar notícias
-- `GET /models/opinion/{portfolio_id}` — Opinião consolidada
+- `GET /models/opinion/{portfolio_id}` — Opinião consolidada (texto enriquecido com notícias por ativo)
+
+### 8.6 Endpoints de Carteira (`app/api/portfolios.py`)
+- `GET /portfolios/{id}/prices` — Preços reais de todos os ativos da carteira (preço atual, valor total, %)
+
+### 8.7 Auto-Startup
+- `app/main.py` usa `lifespan` para executar tarefas na inicialização:
+  - `NewsIngestionService.ingest()` — busca notícias novas
+  - `MarketDataService.get_current_price()` — atualiza cache de preços (20 ativos)
+- **Atenção:** `AssetUniverseService` não tem método `get_universe()`. Usar `get_all()`. (Bug fix em `app/main.py:27`)
+
+### 8.8 Porta do Servidor
+- Backend uvicorn roda na **porta 8001** (não 8000).
+- Motivo: TIME_WAIT no Windows impede reuso imediato da mesma porta.
+- `iniciar.ps1` já usa 8001 e limpa porta automaticamente.
+- Comando: `uvicorn app.main:app --port 8001`
+- **Startup lento:** lifespan (news + price cache) leva ~10-16s. `iniciar.ps1` faz retry a cada 2s até 15 tentativas (30s total).
 
 ## 9. Testes
 
@@ -234,7 +250,7 @@ Toda mudança deve ser validada com:
 
 ```bash
 cd operum
-uvicorn app.main:app --reload
+uvicorn app.main:app --reload --port 8001
 # Testar endpoints manualmente ou via pytest
 ```
 

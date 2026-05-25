@@ -215,7 +215,7 @@ operum/
 | Preços | YFinance |
 | Notícias | RSS feeds + YFinance news |
 | Universo ativos | ~200+ ativos (BR, FIIs, US, crypto) |
-| Integração dev | Proxy Vite `/api` → `localhost:8000` |
+| Integração dev | Proxy Vite `/api` → `localhost:8001` |
 | Frontend | React 18 + Vite (existente, adaptado) |
 | ML notícias | TF-IDF + Logistic Regression → LightGBM Ranker |
 | Forecast ativos | XGBoost tabular |

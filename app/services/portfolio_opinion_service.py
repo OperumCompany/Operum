@@ -140,7 +140,31 @@ class PortfolioOpinionService:
         if tickers:
             parts.append(f"Composição: {', '.join(tickers[:5])}.")
 
-        if news_impact > 0.5:
-            parts.append("Notícias recentes podem impactar ativos da carteira.")
+        # News per asset
+        try:
+            all_news = self.news_service.get_all_raw()
+            portfolio_tickers = {t.upper() for t in tickers}
+            news_lines = []
+            for ticker in sorted(portfolio_tickers):
+                relevant = [
+                    n for n in all_news
+                    if any(a.upper() == ticker for a in n.mentioned_assets)
+                ]
+                if relevant:
+                    avg_sent = sum(n.sentiment_score for n in relevant) / len(relevant)
+                    avg_impact = sum(n.impact_score for n in relevant) / len(relevant)
+                    direction = "positivo" if avg_sent > 0.1 else "negativo" if avg_sent < -0.1 else "neutro"
+                    news_lines.append(
+                        f"{ticker}: {len(relevant)} notícia(s), sentimento {direction} ({avg_sent:.2f}), "
+                        f"impacto médio {avg_impact:.2f}"
+                    )
+            if news_lines:
+                parts.append("Notícias por ativo:")
+                parts.extend(news_lines)
+            else:
+                parts.append("Nenhuma notícia recente encontrada para os ativos da carteira.")
+        except Exception:
+            if news_impact > 0.5:
+                parts.append("Notícias recentes podem impactar ativos da carteira.")
 
         return " ".join(parts)

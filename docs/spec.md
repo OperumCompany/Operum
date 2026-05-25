@@ -1,7 +1,7 @@
 # Specification — Operum v2
 
 > Especificação detalhada do sistema.
-> Última atualização: 23/05/2026
+> Última atualização: 24/05/2026
 
 ---
 
@@ -381,5 +381,65 @@ class NewsItem(BaseModel):
 - Serve como onboarding visual para novos usuários.
 
 ### 7.4 Dependência de Servidor
-- Frontend (Vite) proxy `/api` → `localhost:8000`. Backend (uvicorn) deve estar rodando.
+- Frontend (Vite) proxy `/api` → `localhost:8001`. Backend (uvicorn) deve estar rodando.
 - Sem backend, Vite retorna `ECONNREFUSED` e frontend exibe erro de carregamento.
+- Porta migrada de 8000 → 8001 para evitar TIME_WAIT no Windows.
+
+### 7.5 Bug Fix — main.py
+- `AssetUniverseService.get_universe()` não existe. Corrigido para `get_all()` em `app/main.py:27`.
+- Lifespan do FastAPI agora executa corretamente no startup.
+
+## 8. Onda 6 — Melhorias na Carteira em Detalhes e IA
+
+### 8.1 Backend
+
+#### 8.1.1 Auto-Startup
+- `app/main.py` usa `lifespan` do FastAPI para executar tarefas na inicialização.
+- Dispara `NewsIngestionService.ingest()` automaticamente.
+- Atualiza cache de preços para os primeiros 20 ativos do universo.
+
+#### 8.1.2 Endpoint de Preços
+```
+GET /api/portfolios/{id}/prices
+Response: {
+  "portfolio_id": string,
+  "portfolio_name": string,
+  "total_value": number | null,
+  "positions": [{
+    "ticker": string,
+    "asset_class": string,
+    "quantity": number,
+    "avg_price": number | null,
+    "current_price": number | null,
+    "currency": string,
+    "total_value": number | null,
+    "name": string,
+    "weight_pct": number | null
+  }]
+}
+```
+
+#### 8.1.3 Análise Enriquecida com Notícias
+- `PortfolioOpinionService._generate_text()` agora inclui para cada ativo:
+  - Número de notícias relevantes
+  - Sentimento médio (positivo/negativo/neutro)
+  - Impacto médio
+
+### 8.2 Frontend
+
+#### 8.2.1 PortfolioDetailsPage Reformulada
+- **Tabelas separadas por classe**: BR_STOCK, FII, BDR, CRYPTO cada um em seu próprio card.
+- **Filtro por tipo**: select de classe de ativo antes do select de ativo.
+- **Preços reais**: colunas de preço atual, valor total e % da carteira.
+- **Editar nome inline**: botão ao lado de "Voltar" no header.
+- **CompositionCharts** movido para o final da página.
+
+#### 8.2.2 PortfolioAnalysisAI
+- Novo componente na página de detalhes.
+- Botão "Gerar análise por IA" → chama `GET /api/models/opinion/{id}`.
+- Exibe: score circular colorido, label (Saudável/Atenção/Crítico), texto analítico, barras dos 5 componentes.
+- Estados de loading (spinner), erro (retry) e vazio (CTA inicial).
+
+### 8.3 Componente Button
+- Agora suporta `variant: 'primary' | 'ghost'`.
+- `ghost` exibe botão com fundo transparente e borda.
