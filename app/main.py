@@ -1,42 +1,79 @@
 import logging
+import threading
 from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+
+from app.api import assets, health, market, models, news, portfolios
 from app.core.config import CORS_ORIGINS
-from app.api import health, assets, portfolios, news, market, models
 
 logger = logging.getLogger(__name__)
+logging.getLogger("yfinance").setLevel(logging.CRITICAL)
+
+STARTUP_PRICE_TICKERS = [
+    "PETR4",
+    "VALE3",
+    "ITUB4",
+    "BBDC4",
+    "BBAS3",
+    "ABEV3",
+    "WEGE3",
+    "B3SA3",
+    "HGLG11",
+    "KNRI11",
+    "AAPL34",
+    "BTC",
+]
+
+
+def _run_news_backfill_async():
+    try:
+        from app.services.news_ingestion_service import NewsIngestionService
+
+        ing = NewsIngestionService()
+        backfill = ing.maybe_backfill(start_date="2026-05-01")
+        if backfill:
+            logger.info(f"Backfill automatico: {backfill.get('new_count', 0)} noticias novas")
+    except Exception as e:
+        logger.warning(f"Falha no backfill automatico de noticias: {e}")
+
+
+def _warm_prices_async():
+    try:
+        from app.services.market_data_service import MarketDataService
+
+        mkt = MarketDataService()
+        updated = 0
+        for ticker in STARTUP_PRICE_TICKERS:
+            price = mkt.get_current_price(ticker)
+            if price:
+                updated += 1
+        logger.info(f"Cache de precos atualizado para {updated} ativos")
+    except Exception as e:
+        logger.warning(f"Falha na atualizacao de cache de precos: {e}")
 
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    logger.info("Inicializando Operum — buscando notícias e preços...")
+    logger.info("Inicializando Operum - buscando noticias e precos...")
     try:
         from app.services.news_ingestion_service import NewsIngestionService
+
         ing = NewsIngestionService()
         count = ing.ingest()
-        logger.info(f"Ingestão automática: {count} notícias novas")
+        logger.info(f"Ingestao automatica: {count} noticias novas")
     except Exception as e:
-        logger.warning(f"Falha na ingestão automática de notícias: {e}")
-    try:
-        from app.services.market_data_service import MarketDataService
-        mkt = MarketDataService()
-        from app.services.asset_universe_service import AssetUniverseService
-        assets_svc = AssetUniverseService()
-        universe = assets_svc.get_all()
-        updated = 0
-        for asset in universe[:20]:
-            price = mkt.get_current_price(asset.ticker)
-            if price:
-                updated += 1
-        logger.info(f"Cache de preços atualizado para {updated} ativos")
-    except Exception as e:
-        logger.warning(f"Falha na atualização de cache de preços: {e}")
+        logger.warning(f"Falha na ingestao automatica de noticias: {e}")
+
+    threading.Thread(target=_run_news_backfill_async, daemon=True).start()
+    threading.Thread(target=_warm_prices_async, daemon=True).start()
     yield
+
 
 app = FastAPI(
     title="Operum API",
-    description="Backend do Operum — notícias, carteiras e IA financeira",
+    description="Backend do Operum - noticias, carteiras e IA financeira",
     version="2.1.0",
     lifespan=lifespan,
 )

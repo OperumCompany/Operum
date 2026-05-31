@@ -1,0 +1,10 @@
+{
+  "history_backfill": {
+    "source": "infomoney_open_pages",
+    "start_date": "2026-05-01",
+    "completed": true,
+    "completed_at": "2026-05-31T04:04:32.091827+00:00",
+    "pages_scanned": 12,
+    "items_found": 18
+  }
+}

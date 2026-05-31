@@ -1,0 +1,94 @@
+{
+  "portfolio_id": "38db1097-dc45-42db-9b12-b892abd6689c",
+  "ticker": "HGLG11",
+  "asset_name": "CSHG Logística",
+  "asset_class": "FII",
+  "generated_at": "2026-05-31T04:06:37.695852+00:00",
+  "confidence": "media",
+  "status": "ok",
+  "current_snapshot": {
+    "current_price": 155.71,
+    "currency": "BRL",
+    "weight_pct": 64.96,
+    "sector": "Logística",
+    "country": "BR"
+  },
+  "recent_performance": {
+    "change_1m_pct": null,
+    "change_3m_pct": null,
+    "change_12m_pct": null,
+    "volatility_21d_pct": null
+  },
+  "outlook_3m": {
+    "scenario": "concentrado",
+    "dominant_topics": []
+  },
+  "analysis_sections": {
+    "current": "O ativo é um fundo imobiliário e depende de renda, qualidade do portfólio e sensibilidade a juros. Cotacao atual aproximada em BRL 155.71. Hoje representa cerca de 65.0% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.60.",
+    "recent": "Ainda nao ha historico suficiente para resumir os ultimos 3 meses com seguranca.",
+    "outlook": "A perspectiva de 3 meses precisa ser lida junto com o peso elevado na carteira, porque qualquer oscilacao tera impacto relevante no conjunto. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. A confianca dessa leitura e moderada."
+  },
+  "sources": [
+    {
+      "id": "919533bf840502e174106d5df59d7690",
+      "title": "Relatórios",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/conteudos/relatorios/",
+      "published_at": "2026-05-31T04:04:31.951890+00:00",
+      "summary": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Relatórios Cursos E-books Planilhas Relatórios Simuladores Aprenda investir em ouroTudo que você precisa saber para proteger sua carteira com o metal precioso.\n\nO texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.2
+    },
+    {
+      "id": "1389a5a785c51cbd5efc0d383728baba",
+      "title": "Planilhas e Calculadoras on-line e gratuitas. Baixe agora!",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/conteudos/planilhas/",
+      "published_at": "2026-05-31T04:04:31.951890+00:00",
+      "summary": "As melhores planilhas e calculadoras do mercado financeiro! Planilha de controle financeiro, simulador de renda fixa, dividendos e muito mais!.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Planilhas Cursos E-books Relatórios Planilhas Simuladores Planilha de Gastos MensaisMonitore gastos e receitas para organizar seu orçamento e controle financeiro! O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.2
+    },
+    {
+      "id": "57b95b8bd8a8a98c42d3717d121db4e4",
+      "title": "Cursos de Investimento para Começar Investir | Online e Gratuito",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/conteudos/cursos/",
+      "published_at": "2026-05-31T04:04:31.951890+00:00",
+      "summary": "Inscreva-se nos nossos cursos de investimento gratuitos e comece a investir com quem entende do assunto.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Cursos E-books Planilhas Relatórios Cursos Simuladores Manual dos DividendosInscreva-se no curso gratuito sobre dividendos para gerar renda mensal com proventos. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.2
+    },
+    {
+      "id": "0a44efcbb1d4ef5869b576bdf779f30e",
+      "title": "Ebooks Gratuitos de Finanças e Investimentos. Baixe Agora!",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/conteudos/ebooks/",
+      "published_at": "2026-05-31T04:04:31.951890+00:00",
+      "summary": "Baixe nossos ebooks de finanças e investimentos e aprenda a gerenciar seu dinheiro, investir com sabedoria e alcançar objetivos financeiros.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos E-books Cursos Planilhas Relatórios E-books Simuladores Imposto de Renda 2026Evite problemas com a Receita Federal e declare seus investimentos de forma simples e correta. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.2
+    },
+    {
+      "id": "1f13e4f39789c6f4984e581d2390e060",
+      "title": "MERCADOS: Ações, Bolsas e Moedas | InfoMoney",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/page/2/",
+      "published_at": "2026-05-31T04:04:31.943874+00:00",
+      "summary": "Últimas notícias sobre Mercados, Ações, Bolsas de Valores e Moedas. Acompanhe cotações, agenda econômica, resultados, proventos e muito mais.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados PublicidadeMercados“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América LatinaMercadosCogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º triBancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.2
+    }
+  ],
+  "portfolio_updated_at": "2026-05-31T04:06:35.630098+00:00"
+}

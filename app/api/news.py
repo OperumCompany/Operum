@@ -18,6 +18,7 @@ summary_service = NewsSummaryService()
 
 @router.get("", response_model=dict)
 def list_news(
+    q: str | None = Query(None, description="Busca textual"),
     ticker: str | None = Query(None, description="Filtrar por ticker"),
     asset_class: str | None = Query(None, description="Filtrar por classe de ativo"),
     sector: str | None = Query(None, description="Filtrar por setor"),
@@ -29,7 +30,7 @@ def list_news(
     portfolio_id: str | None = Query(None, description="Filtrar por carteira"),
     macro_only: bool = Query(False, description="Apenas macroeconomia"),
     page: int = Query(1, ge=1),
-    page_size: int = Query(20, ge=1, le=100),
+    page_size: int = Query(30, ge=1, le=100),
 ):
     all_news = ingestion_service.get_all_raw()
 
@@ -83,6 +84,13 @@ def list_news(
     if macro_only:
         filtered = [n for n in filtered if "Economia" in n.mentioned_sectors]
 
+    if q:
+        query = q.lower().strip()
+        filtered = [
+            n for n in filtered
+            if query in f"{n.title} {n.content_preview} {n.summary} {n.full_text_if_available or ''}".lower()
+        ]
+
     # Sort by published_at descending (make all offset-aware for comparison)
     def safe_dt(n):
         dt = n.published_at
@@ -101,6 +109,7 @@ def list_news(
         "total": total,
         "page": page,
         "page_size": page_size,
+        "total_pages": (total + page_size - 1) // page_size if page_size else 0,
     }
 
 
@@ -119,6 +128,12 @@ def reindex_news():
     return {"status": "ok", "ingested": count}
 
 
+@router.post("/backfill")
+def backfill_news(start_date: str = Query("2026-05-01", description="Data inicial ISO")):
+    result = ingestion_service.backfill_history(start_date=start_date)
+    return {"status": "ok", **result}
+
+
 @router.post("/summarize/{news_id}")
 def summarize_news(news_id: str):
     all_news = ingestion_service.get_all_raw()
@@ -130,5 +145,11 @@ def summarize_news(news_id: str):
     if news is None:
         raise HTTPException(status_code=404, detail="Notícia não encontrada")
 
-    summary = summary_service.summarize(news.title, news.content_preview, news.mentioned_assets)
+    summary = summary_service.summarize(
+        news.title,
+        news.content_preview,
+        news.mentioned_assets,
+        mentioned_sectors=news.mentioned_sectors,
+        full_text=news.full_text_if_available,
+    )
     return {"id": news_id, "summary": summary}

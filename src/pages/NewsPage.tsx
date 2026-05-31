@@ -2,12 +2,11 @@ import { useEffect, useMemo, useState } from 'react';
 import { Newspaper, ExternalLink, X, RefreshCw } from 'lucide-react';
 import { Card, Input } from '../components/UI';
 import { NewsItem } from '../types';
-import { newsData as fallbackNews } from '../data/mocks';
 import api from '../utils/api';
 
 function getImpactLabel(score: number): string {
   if (score >= 0.7) return 'Alto';
-  if (score >= 0.4) return 'Médio';
+  if (score >= 0.4) return 'Medio';
   return 'Baixo';
 }
 
@@ -34,24 +33,44 @@ type NewsResponse = {
   total: number;
   page: number;
   page_size: number;
+  total_pages: number;
 };
+
+const PAGE_SIZE = 30;
 
 export function NewsPage() {
   const [news, setNews] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
   const [query, setQuery] = useState('');
+  const [debouncedQuery, setDebouncedQuery] = useState('');
   const [selectedAsset, setSelectedAsset] = useState<string | null>(null);
   const [selectedSentiment, setSelectedSentiment] = useState<string | null>(null);
   const [selectedImpact, setSelectedImpact] = useState<string | null>(null);
   const [modalNews, setModalNews] = useState<NewsItem | null>(null);
   const [total, setTotal] = useState(0);
+  const [page, setPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
 
-  function fetchNews() {
+  useEffect(() => {
+    const timeout = window.setTimeout(() => {
+      setDebouncedQuery(query.trim());
+      setPage(1);
+    }, 250);
+    return () => window.clearTimeout(timeout);
+  }, [query]);
+
+  useEffect(() => {
+    setPage(1);
+  }, [selectedAsset, selectedSentiment, selectedImpact]);
+
+  function fetchNews(targetPage = page) {
     setLoading(true);
     setError(null);
     const params = new URLSearchParams();
-    params.set('page_size', '50');
+    params.set('page_size', String(PAGE_SIZE));
+    params.set('page', String(targetPage));
+    if (debouncedQuery) params.set('q', debouncedQuery);
     if (selectedAsset) params.set('ticker', selectedAsset);
     if (selectedSentiment) params.set('sentiment', selectedSentiment);
     if (selectedImpact) params.set('impact', selectedImpact);
@@ -60,36 +79,44 @@ export function NewsPage() {
       .then((data) => {
         setNews(data.items);
         setTotal(data.total);
+        setPage(data.page);
+        setTotalPages(Math.max(1, data.total_pages || 1));
       })
-      .catch(() => {
-        // Fallback to mock data
-        setNews(fallbackNews as unknown as NewsItem[]);
-        setTotal(fallbackNews.length);
+      .catch((e) => {
+        setError(e instanceof Error ? e.message : 'Erro ao carregar noticias');
+        setNews([]);
+        setTotal(0);
+        setTotalPages(1);
       })
       .finally(() => setLoading(false));
   }
 
   useEffect(() => {
-    fetchNews();
-  }, [selectedAsset, selectedSentiment, selectedImpact]);
-
-  const filtered = useMemo(
-    () =>
-      query
-        ? news.filter((n) =>
-            `${n.title} ${n.content_preview} ${n.summary}`
-              .toLowerCase()
-              .includes(query.toLowerCase()),
-          )
-        : news,
-    [query, news],
-  );
+    fetchNews(page);
+  }, [page, debouncedQuery, selectedAsset, selectedSentiment, selectedImpact]);
 
   const availableAssets = useMemo(() => {
     const assets = new Set<string>();
     news.forEach((n) => n.mentioned_assets.forEach((a) => assets.add(a)));
     return Array.from(assets).sort();
   }, [news]);
+
+  const pageNumbers = useMemo(() => {
+    const numbers: number[] = [];
+    const start = Math.max(1, page - 2);
+    const end = Math.min(totalPages, page + 2);
+    for (let current = start; current <= end; current += 1) {
+      numbers.push(current);
+    }
+    return numbers;
+  }, [page, totalPages]);
+
+  const summaryParagraphs = modalNews
+    ? (modalNews.summary || modalNews.content_preview)
+        .split(/\n\s*\n/)
+        .map((part) => part.trim())
+        .filter(Boolean)
+    : [];
 
   return (
     <div className="space-y-4">
@@ -100,17 +127,17 @@ export function NewsPage() {
               <Newspaper size={16} />
               O que pode mexer com sua carteira
             </div>
-            <h2 className="mt-4 text-3xl font-bold">Notícias de mercado com leitura mais clara</h2>
+            <h2 className="mt-4 text-3xl font-bold">Noticias de mercado com leitura mais clara</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
-              Filtre por ativo, sentimento ou impacto. Clique em uma notícia para ver detalhes.
+              Filtre por ativo, sentimento ou impacto. Clique em uma noticia para ver detalhes.
             </p>
           </div>
           <div className="flex items-center gap-2">
-            <span className="text-sm text-[var(--text-muted)]">{total} notícias</span>
+            <span className="text-sm text-[var(--text-muted)]">{total} noticias</span>
             <button
-              onClick={fetchNews}
+              onClick={() => fetchNews(page)}
               className="rounded-full p-2 text-[var(--text-muted)] hover:bg-gray-100"
-              title="Atualizar notícias"
+              title="Atualizar noticias"
             >
               <RefreshCw size={16} className={loading ? 'animate-spin' : ''} />
             </button>
@@ -118,7 +145,7 @@ export function NewsPage() {
         </div>
       </section>
 
-      <Card title="Filtrar notícias">
+      <Card title="Filtrar noticias">
         <div className="flex flex-col gap-3 md:flex-row md:items-center">
           <Input
             placeholder="Buscar palavra-chave"
@@ -132,8 +159,8 @@ export function NewsPage() {
             className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm"
           >
             <option value="">Todos os ativos</option>
-            {availableAssets.map((a) => (
-              <option key={a} value={a}>{a}</option>
+            {availableAssets.map((asset) => (
+              <option key={asset} value={asset}>{asset}</option>
             ))}
           </select>
           <select
@@ -153,7 +180,7 @@ export function NewsPage() {
           >
             <option value="">Todos impactos</option>
             <option value="high">Alto</option>
-            <option value="medium">Médio</option>
+            <option value="medium">Medio</option>
             <option value="low">Baixo</option>
           </select>
         </div>
@@ -161,7 +188,7 @@ export function NewsPage() {
 
       {loading && (
         <Card>
-          <p className="py-8 text-center text-sm text-[var(--text-muted)]">Carregando notícias...</p>
+          <p className="py-8 text-center text-sm text-[var(--text-muted)]">Carregando noticias...</p>
         </Card>
       )}
 
@@ -174,41 +201,77 @@ export function NewsPage() {
       {!loading && !error && (
         <>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {filtered.map((n) => (
+            {news.map((item) => (
               <article
-                key={n.id}
+                key={item.id}
                 className="cursor-pointer rounded-[24px] border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4 transition hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(37,37,37,0.08)]"
-                onClick={() => setModalNews(n)}
+                onClick={() => setModalNews(item)}
               >
                 <div className="flex flex-wrap items-center gap-2 text-xs">
-                  <span className="font-semibold text-[var(--brand)]">{n.source_name}</span>
+                  <span className="font-semibold text-[var(--brand)]">{item.source_name}</span>
                   <span className="text-[var(--text-muted)]">•</span>
                   <span className="text-[var(--text-muted)]">
-                    {new Date(n.published_at).toLocaleDateString('pt-BR')}
+                    {new Date(item.published_at).toLocaleDateString('pt-BR')}
                   </span>
                 </div>
-                <h3 className="mt-2 text-base font-semibold text-[var(--text-main)]">{n.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-[var(--text-muted)] line-clamp-2">{n.content_preview}</p>
+                <h3 className="mt-2 text-base font-semibold text-[var(--text-main)]">{item.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-[var(--text-muted)] line-clamp-3">{item.content_preview}</p>
                 <div className="mt-3 flex flex-wrap gap-2">
-                  {n.mentioned_assets.slice(0, 3).map((asset) => (
+                  {item.mentioned_assets.slice(0, 3).map((asset) => (
                     <span key={asset} className="rounded-full bg-[var(--accent-soft)] px-2.5 py-1 text-xs font-semibold text-[var(--accent)]">
                       {asset}
                     </span>
                   ))}
-                  <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${getImpactColor(n.impact_score)}`}>
-                    Impacto {getImpactLabel(n.impact_score)}
+                  <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${getImpactColor(item.impact_score)}`}>
+                    Impacto {getImpactLabel(item.impact_score)}
                   </span>
-                  <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${getSentimentColor(n.sentiment_score)}`}>
-                    {getSentimentLabel(n.sentiment_score)}
+                  <span className={`rounded-full px-2.5 py-1 text-xs font-semibold ${getSentimentColor(item.sentiment_score)}`}>
+                    {getSentimentLabel(item.sentiment_score)}
                   </span>
                 </div>
               </article>
             ))}
           </div>
 
-          {filtered.length === 0 && (
+          {news.length === 0 && (
             <Card>
-              <p className="py-8 text-center text-sm text-[var(--text-muted)]">Nenhuma notícia encontrada com esses filtros.</p>
+              <p className="py-8 text-center text-sm text-[var(--text-muted)]">Nenhuma noticia encontrada com esses filtros.</p>
+            </Card>
+          )}
+
+          {totalPages > 1 && (
+            <Card>
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <p className="text-sm text-[var(--text-muted)]">Pagina {page} de {totalPages}</p>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setPage((prev) => Math.max(1, prev - 1))}
+                    disabled={page === 1}
+                    className="rounded-2xl border border-[var(--border-soft)] px-3 py-2 text-sm font-semibold disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    ←
+                  </button>
+                  {pageNumbers.map((number) => (
+                    <button
+                      key={number}
+                      type="button"
+                      onClick={() => setPage(number)}
+                      className={`rounded-2xl px-3 py-2 text-sm font-semibold ${number === page ? 'bg-[var(--brand)] text-white' : 'border border-[var(--border-soft)] text-[var(--text-main)]'}`}
+                    >
+                      {number}
+                    </button>
+                  ))}
+                  <button
+                    type="button"
+                    onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}
+                    disabled={page === totalPages}
+                    className="rounded-2xl border border-[var(--border-soft)] px-3 py-2 text-sm font-semibold disabled:cursor-not-allowed disabled:opacity-50"
+                  >
+                    →
+                  </button>
+                </div>
+              </div>
             </Card>
           )}
         </>
@@ -241,7 +304,13 @@ export function NewsPage() {
 
             <div className="mt-6">
               <h3 className="text-sm font-semibold text-[var(--text-muted)]">Resumo</h3>
-              <p className="mt-1 text-sm leading-6 text-[var(--text-main)]">{modalNews.summary || modalNews.content_preview}</p>
+              <div className="mt-2 space-y-3">
+                {summaryParagraphs.map((paragraph) => (
+                  <p key={paragraph} className="text-sm leading-7 text-[var(--text-main)]">
+                    {paragraph}
+                  </p>
+                ))}
+              </div>
             </div>
 
             <div className="mt-4 flex flex-wrap gap-2">
@@ -252,7 +321,7 @@ export function NewsPage() {
                 Sentimento: {getSentimentLabel(modalNews.sentiment_score)} ({modalNews.sentiment_score.toFixed(2)})
               </span>
               <span className="rounded-full bg-[var(--accent-soft)] px-3 py-1.5 text-xs font-semibold text-[var(--accent)]">
-                Relevância: {(modalNews.relevance_score * 100).toFixed(0)}%
+                Relevancia: {(modalNews.relevance_score * 100).toFixed(0)}%
               </span>
             </div>
 

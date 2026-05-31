@@ -93,6 +93,17 @@ async def test_news_list(client: AsyncClient):
     data = resp.json()
     assert "items" in data
     assert "total" in data
+    assert "total_pages" in data
+
+
+@pytest.mark.asyncio
+async def test_news_query_and_pagination_metadata(client: AsyncClient):
+    resp = await client.get("/api/news?page=1&page_size=30&q=mercado")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["page"] == 1
+    assert data["page_size"] == 30
+    assert "total_pages" in data
 
 
 @pytest.mark.asyncio

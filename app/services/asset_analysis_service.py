@@ -139,12 +139,18 @@ class AssetAnalysisService:
                 continue
             matches.append({"match_score": match_score, "news": news})
 
+        def safe_published(item: dict):
+            published = item["news"].published_at
+            if published.tzinfo is None:
+                return published.replace(tzinfo=timezone.utc)
+            return published
+
         matches.sort(
             key=lambda item: (
                 item["match_score"],
                 item["news"].impact_score,
                 item["news"].relevance_score,
-                item["news"].published_at,
+                safe_published(item),
             ),
             reverse=True,
         )

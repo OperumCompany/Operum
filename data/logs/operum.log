@@ -267,3 +267,27 @@
 2026-05-31 00:44:21 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AMER3"}}}
 2026-05-31 00:44:22 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MRFG3"}}}
 2026-05-31 00:44:23 | INFO     | app.main | Cache de preços atualizado para 11 ativos
+2026-05-31 01:01:59 | INFO     | httpx | HTTP Request: GET http://test/api/news?page=1&page_size=30 "HTTP/1.1 200 OK"
+2026-05-31 01:02:40 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-05-31 01:02:40 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 01:02:44 | INFO     | app.services.news_ingestion_service | Ingestão: 20 notícias novas de 60 únicas
+2026-05-31 01:02:44 | INFO     | app.main | Ingestao automatica: 20 noticias novas
+2026-05-31 01:04:32 | INFO     | app.services.news_ingestion_service | Backfill concluído: 18 itens normalizados, 18 novos
+2026-05-31 01:04:32 | INFO     | app.main | Backfill automatico: 18 noticias novas
+2026-05-31 01:04:32 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PETR3"}}}
+2026-05-31 01:04:34 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ITUB3"}}}
+2026-05-31 01:04:35 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BBDC3"}}}
+2026-05-31 01:04:38 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ELET3.SA"}}}
+2026-05-31 01:04:39 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ELET6.SA"}}}
+2026-05-31 01:04:41 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: VIIA3"}}}
+2026-05-31 01:04:42 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AMER3"}}}
+2026-05-31 01:04:43 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MRFG3"}}}
+2026-05-31 01:04:43 | INFO     | app.main | Cache de precos atualizado para 11 ativos
+2026-05-31 01:06:09 | INFO     | httpx | HTTP Request: GET http://test/api/health "HTTP/1.1 200 OK"
+2026-05-31 01:06:33 | INFO     | httpx | HTTP Request: GET http://test/api/portfolios "HTTP/1.1 200 OK"
+2026-05-31 01:07:13 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-05-31 01:07:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 01:07:17 | INFO     | app.services.news_ingestion_service | Ingestão: 0 notícias novas de 60 únicas
+2026-05-31 01:07:17 | INFO     | app.main | Ingestao automatica: 0 noticias novas
+2026-05-31 01:07:17 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 01:07:19 | INFO     | app.main | Cache de precos atualizado para 12 ativos
