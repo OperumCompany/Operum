@@ -5,6 +5,7 @@ from fastapi import APIRouter, HTTPException
 from app.services.forecast_service import ForecastService
 from app.services.news_clustering_service import NewsClusteringService
 from app.services.news_ingestion_service import NewsIngestionService
+from app.services.asset_analysis_service import AssetAnalysisService
 from app.services.portfolio_opinion_service import PortfolioOpinionService
 from app.services.portfolio_analytics_service import PortfolioAnalyticsService
 from app.services.market_data_service import MarketDataService
@@ -21,6 +22,7 @@ analytics_service = PortfolioAnalyticsService()
 market_service = MarketDataService()
 portfolio_service = PortfolioService()
 news_service = NewsIngestionService()
+asset_analysis_service = AssetAnalysisService()
 
 
 @router.get("/status")
@@ -88,3 +90,15 @@ def get_portfolio_opinion(portfolio_id: str):
     analysis = analytics_service.analyze(portfolio, prices_data if prices_data else None)
     opinion = opinion_service.generate_opinion(portfolio, analysis, prices_data if prices_data else None)
     return opinion
+
+
+@router.get("/opinion/{portfolio_id}/positions/{ticker}")
+def get_position_opinion(portfolio_id: str, ticker: str):
+    portfolio = portfolio_service.get_by_id(portfolio_id)
+    if portfolio is None:
+        raise HTTPException(status_code=404, detail="Carteira nÃ£o encontrada")
+
+    result = asset_analysis_service.generate_asset_analysis(portfolio, ticker.upper())
+    if result.get("status") == "not_found":
+        raise HTTPException(status_code=404, detail="Ativo nÃ£o encontrado na carteira")
+    return result

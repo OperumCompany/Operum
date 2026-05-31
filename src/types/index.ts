@@ -112,3 +112,74 @@ export type NewsItem = {
   cluster_id: number | null;
   created_at: string;
 };
+
+export type PortfolioOpinion = {
+  score: number;
+  components: {
+    diversification: number;
+    correlation_risk: number;
+    news_impact: number;
+    macro_sensitivity: number;
+    forecast_risk: number;
+  };
+  opinion: string;
+  headline: string;
+  composition_grade: string;
+  composition_summary: string;
+  strengths: string[];
+  overlaps: string[];
+  block_reviews: Array<{
+    title: string;
+    assessment: string;
+    highlights: string;
+  }>;
+  final_diagnosis: string;
+  conclusion: string;
+  sources: Array<{
+    id: string;
+    title: string;
+    source_name: string;
+    source_url: string;
+    published_at: string;
+    summary: string;
+    sentiment_score: number;
+    impact_score: number;
+    relevance_score: number;
+    match_score: number;
+  }>;
+  portfolio_id: string;
+  generated_at: string;
+};
+
+export type PositionOpinion = {
+  portfolio_id: string;
+  ticker: string;
+  asset_name: string;
+  asset_class: string;
+  generated_at: string;
+  confidence: string;
+  status: string;
+  current_snapshot: {
+    current_price: number | null;
+    currency: string;
+    weight_pct: number | null;
+    sector: string;
+    country: string;
+  };
+  recent_performance: {
+    change_1m_pct: number | null;
+    change_3m_pct: number | null;
+    change_12m_pct: number | null;
+    volatility_21d_pct: number | null;
+  };
+  outlook_3m: {
+    scenario: string;
+    dominant_topics: string[];
+  };
+  analysis_sections: {
+    current: string;
+    recent: string;
+    outlook: string;
+  };
+  sources: PortfolioOpinion['sources'];
+};

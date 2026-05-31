@@ -1,0 +1,31 @@
+{
+  "id": "952a1460-4f12-4c4a-92da-6a0cdbb45b44",
+  "name": "Opiniao",
+  "base_currency": "BRL",
+  "created_at": "2026-05-31T03:37:04.578922Z",
+  "updated_at": "2026-05-31T03:37:04.634761Z",
+  "positions": [
+    {
+      "asset_id": "PETR4",
+      "ticker": "PETR4",
+      "asset_class": "BR_STOCK",
+      "quantity": 20.0,
+      "avg_price": 32.0,
+      "currency": "BRL",
+      "manual_notes": ""
+    },
+    {
+      "asset_id": "HGLG11",
+      "ticker": "HGLG11",
+      "asset_class": "FII",
+      "quantity": 10.0,
+      "avg_price": 165.0,
+      "currency": "BRL",
+      "manual_notes": ""
+    }
+  ],
+  "settings": {
+    "risk_profile": "moderado",
+    "forecast_horizon_days": 5
+  }
+}

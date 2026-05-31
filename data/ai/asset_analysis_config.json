@@ -1,0 +1,52 @@
+{
+  "weights": {
+    "direct_match": 0.45,
+    "name_alias": 0.25,
+    "sector_match": 0.1,
+    "country_match": 0.1,
+    "recency": 0.1
+  },
+  "aliases": {
+    "B3SA3": [
+      "b3",
+      "bolsa brasileira",
+      "bolsa de valores"
+    ],
+    "BBAS3": [
+      "banco do brasil"
+    ],
+    "BTC": [
+      "bitcoin",
+      "btc"
+    ],
+    "ETH": [
+      "ethereum",
+      "ether"
+    ],
+    "SOL": [
+      "solana"
+    ],
+    "TAEE11": [
+      "taesa"
+    ],
+    "CXSE3": [
+      "caixa seguridade"
+    ],
+    "SAPR11": [
+      "sanepar"
+    ],
+    "CMIG4": [
+      "cemig"
+    ],
+    "CEEB3": [
+      "coelba"
+    ]
+  },
+  "class_templates": {
+    "FII": "O ativo é um fundo imobiliário e depende de renda, qualidade do portfólio e sensibilidade a juros.",
+    "CRYPTO": "O ativo pertence ao bloco cripto, com potencial de assimetria e volatilidade estruturalmente elevada.",
+    "FIXED_INCOME": "O ativo pertence à renda fixa, com comportamento mais ligado a juros, duration e previsibilidade do fluxo.",
+    "US_STOCK": "O ativo está exposto ao mercado americano e ao ciclo global de juros, dólar e crescimento.",
+    "BR_STOCK": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local."
+  }
+}

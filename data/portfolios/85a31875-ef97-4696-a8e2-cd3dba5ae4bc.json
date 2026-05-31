@@ -1,0 +1,22 @@
+{
+  "id": "85a31875-ef97-4696-a8e2-cd3dba5ae4bc",
+  "name": "Noticias",
+  "base_currency": "BRL",
+  "created_at": "2026-05-31T03:37:04.546408Z",
+  "updated_at": "2026-05-31T03:37:04.556348Z",
+  "positions": [
+    {
+      "asset_id": "PETR4",
+      "ticker": "PETR4",
+      "asset_class": "BR_STOCK",
+      "quantity": 10.0,
+      "avg_price": null,
+      "currency": "BRL",
+      "manual_notes": ""
+    }
+  ],
+  "settings": {
+    "risk_profile": "moderado",
+    "forecast_horizon_days": 5
+  }
+}

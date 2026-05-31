@@ -1,0 +1,97 @@
+{
+  "portfolio_id": "c21ff7ba-8476-4a57-89cd-3144bde8acd0",
+  "ticker": "VALE3",
+  "asset_name": "Vale ON",
+  "asset_class": "BR_STOCK",
+  "generated_at": "2026-05-31T03:45:14.117055+00:00",
+  "confidence": "media",
+  "status": "ok",
+  "current_snapshot": {
+    "current_price": 82.82,
+    "currency": "BRL",
+    "weight_pct": 12.31,
+    "sector": "Mineração",
+    "country": "BR"
+  },
+  "recent_performance": {
+    "change_1m_pct": null,
+    "change_3m_pct": null,
+    "change_12m_pct": null,
+    "volatility_21d_pct": null
+  },
+  "outlook_3m": {
+    "scenario": "pressionado",
+    "dominant_topics": [
+      "cambio",
+      "inflacao"
+    ]
+  },
+  "analysis_sections": {
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 82.82. Hoje representa cerca de 12.3% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.33.",
+    "recent": "Ainda nao ha historico suficiente para resumir os ultimos 3 meses com seguranca.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. Os temas dominantes hoje sao cambio, inflacao. A confianca dessa leitura e moderada."
+  },
+  "sources": [
+    {
+      "id": "c8c20d60342637cb9b723f3d02a70e81",
+      "title": "Calendário Econômico: Payroll nos EUA é destaque com agenda reduzida no Brasil",
+      "source_name": "Todas as Notícias",
+      "source_url": "https://br.investing.com/news/economic-indicators/calendario-economico-payroll-nos-eua-e-destaque-com-agenda-reduzida-no-brasil-1957204",
+      "published_at": "2026-05-31T22:17:45",
+      "summary": "Calendário Econômico: Payroll nos EUA é destaque com agenda reduzida no Brasil.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.2
+    },
+    {
+      "id": "ffb970b59925d8e2ab7817d0ab9dd3a5",
+      "title": "Ibovespa e dólar hoje: mercado avalia fiscal em dia de feriado nos EUA",
+      "source_name": "Todas as Notícias",
+      "source_url": "https://br.investing.com/news/stock-market-news/ibovespa-e-dolar-hoje-mercado-avalia-fiscal-em-dia-de-feriado-nos-eua-1950999",
+      "published_at": "2026-05-25T10:30:15",
+      "summary": "Ibovespa e dólar hoje: mercado avalia fiscal em dia de feriado nos EUA.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.1809
+    },
+    {
+      "id": "d0c40d2be76b4b446d54ff644b07c923",
+      "title": "Calendário econômico da semana: PIB, trabalho e inflação são foco no Brasil",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/calendario-economico-da-semana-pib-trabalho-e-inflacao-sao-foco-no-brasil/",
+      "published_at": "2026-05-25T01:19:05.970942+00:00",
+      "summary": "Tudo o que o investidor precisa saber antes de operar na semana The post Calendário econômico da semana: PIB, trabalho e inflação são foco no Brasil appeared first on InfoMoney.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.1797
+    },
+    {
+      "id": "13d3a474dc89df55d84049d6be6b488f",
+      "title": "How Saudi Arabia's spending spree reached the end of the line",
+      "source_name": "BBC News",
+      "source_url": "https://www.bbc.com/news/articles/cx21g0828reo?at_medium=RSS&at_campaign=rss",
+      "published_at": "2026-05-25T01:21:07.381778+00:00",
+      "summary": "MBS's Vison 2030 project seemed the stuff of science fiction. Now reality has bitten",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.1797
+    },
+    {
+      "id": "d417c68daa6396fdef9b09105ea740ee",
+      "title": "Vasco x RB Bragantino: Veja onde assistir ao Brasileirão",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/esportes/vasco-bragantino-onde-assistir-brasileirao/",
+      "published_at": "2026-05-25T01:19:05.970942+00:00",
+      "summary": "Os times jogam neste domingo The post Vasco x RB Bragantino: Veja onde assistir ao Brasileirão appeared first on InfoMoney.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.1797
+    }
+  ],
+  "portfolio_updated_at": "2026-05-25T01:56:49.326099+00:00"
+}

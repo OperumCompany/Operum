@@ -196,3 +196,74 @@
 2026-05-24 22:59:45 | ERROR    | yfinance | HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
 2026-05-24 22:59:46 | ERROR    | yfinance | HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"Invalid Crumb"}}}
 2026-05-24 22:59:47 | ERROR    | yfinance | HTTP Error 401: {"finance":{"result":null,"error":{"code":"Unauthorized","description":"User is unable to access this feature - https://bit.ly/yahoo-finance-api-feedback"}}}
+2026-05-30 23:54:00 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-30 23:54:00 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-30 23:54:03 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-30 23:54:03 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-30 23:54:03 | INFO     | app.main | Inicializando Operum — buscando notícias e preços...
+2026-05-30 23:54:03 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-30 23:54:08 | INFO     | app.services.news_ingestion_service | Ingestão: 40 notícias novas de 40 únicas
+2026-05-30 23:54:08 | INFO     | app.main | Ingestão automática: 40 notícias novas
+2026-05-30 23:54:09 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PETR3"}}}
+2026-05-30 23:54:11 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ITUB3"}}}
+2026-05-30 23:54:13 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BBDC3"}}}
+2026-05-30 23:54:17 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ELET3.SA"}}}
+2026-05-30 23:54:17 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ELET6.SA"}}}
+2026-05-30 23:54:20 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: VIIA3"}}}
+2026-05-30 23:54:21 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AMER3"}}}
+2026-05-30 23:54:22 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MRFG3"}}}
+2026-05-30 23:54:23 | INFO     | app.main | Cache de preços atualizado para 11 ativos
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:39:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:43:43 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:43:43 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:43:43 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:43:43 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:43:43 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:43:43 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:43:43 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:43:43 | INFO     | app.main | Inicializando Operum — buscando notícias e preços...
+2026-05-31 00:43:43 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:43:47 | INFO     | app.services.news_ingestion_service | Ingestão: 1 notícias novas de 40 únicas
+2026-05-31 00:43:47 | INFO     | app.main | Ingestão automática: 1 notícias novas
+2026-05-31 00:43:48 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PETR3"}}}
+2026-05-31 00:43:48 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ITUB3"}}}
+2026-05-31 00:43:49 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BBDC3"}}}
+2026-05-31 00:43:50 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ELET3.SA"}}}
+2026-05-31 00:43:51 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ELET6.SA"}}}
+2026-05-31 00:43:52 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: VIIA3"}}}
+2026-05-31 00:43:52 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AMER3"}}}
+2026-05-31 00:43:54 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MRFG3"}}}
+2026-05-31 00:43:54 | INFO     | app.main | Cache de preços atualizado para 11 ativos
+2026-05-31 00:44:12 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:44:12 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:44:12 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:44:12 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:44:12 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:44:12 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:44:12 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:44:12 | INFO     | app.main | Inicializando Operum — buscando notícias e preços...
+2026-05-31 00:44:12 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-05-31 00:44:16 | INFO     | app.services.news_ingestion_service | Ingestão: 0 notícias novas de 40 únicas
+2026-05-31 00:44:16 | INFO     | app.main | Ingestão automática: 0 notícias novas
+2026-05-31 00:44:16 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: PETR3"}}}
+2026-05-31 00:44:17 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ITUB3"}}}
+2026-05-31 00:44:18 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: BBDC3"}}}
+2026-05-31 00:44:19 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ELET3.SA"}}}
+2026-05-31 00:44:20 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: ELET6.SA"}}}
+2026-05-31 00:44:20 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: VIIA3"}}}
+2026-05-31 00:44:21 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: AMER3"}}}
+2026-05-31 00:44:22 | ERROR    | yfinance | HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: MRFG3"}}}
+2026-05-31 00:44:23 | INFO     | app.main | Cache de preços atualizado para 11 ativos

@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException
+from app.services.asset_analysis_service import AssetAnalysisService
 from app.services.portfolio_service import PortfolioService
 from app.services.portfolio_analytics_service import PortfolioAnalyticsService
 from app.services.market_data_service import MarketDataService
@@ -8,6 +9,7 @@ router = APIRouter(prefix="/portfolios", tags=["portfolios"])
 service = PortfolioService()
 analytics_service = PortfolioAnalyticsService()
 market_service = MarketDataService()
+asset_analysis_service = AssetAnalysisService()
 
 
 @router.get("", response_model=list[Portfolio])
@@ -129,3 +131,26 @@ def get_portfolio_prices(portfolio_id: str):
         "total_value": round(total_value, 2) if total_value > 0 else None,
         "positions": results,
     }
+
+
+@router.get("/{portfolio_id}/news")
+def get_portfolio_news(portfolio_id: str):
+    portfolio = service.get_by_id(portfolio_id)
+    if portfolio is None:
+        raise HTTPException(status_code=404, detail="Carteira nÃ£o encontrada")
+
+    by_id: dict[str, dict] = {}
+    for pos in portfolio.positions:
+        for item in asset_analysis_service.get_related_news(pos.ticker, limit=5):
+            existing = by_id.get(item["id"])
+            if existing is None or item["match_score"] > existing["match_score"]:
+                enriched = dict(item)
+                enriched["ticker"] = pos.ticker
+                by_id[item["id"]] = enriched
+
+    items = sorted(
+        by_id.values(),
+        key=lambda item: (item["match_score"], item["impact_score"], item["published_at"]),
+        reverse=True,
+    )
+    return {"items": items, "total": len(items)}

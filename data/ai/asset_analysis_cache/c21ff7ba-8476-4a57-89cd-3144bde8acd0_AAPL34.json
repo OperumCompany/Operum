@@ -1,0 +1,97 @@
+{
+  "portfolio_id": "c21ff7ba-8476-4a57-89cd-3144bde8acd0",
+  "ticker": "AAPL34",
+  "asset_name": "Apple BDR",
+  "asset_class": "US_STOCK",
+  "generated_at": "2026-05-31T03:45:38.752069+00:00",
+  "confidence": "media",
+  "status": "ok",
+  "current_snapshot": {
+    "current_price": 78.8,
+    "currency": "BRL",
+    "weight_pct": 4.39,
+    "sector": "Tecnologia",
+    "country": "US"
+  },
+  "recent_performance": {
+    "change_1m_pct": null,
+    "change_3m_pct": null,
+    "change_12m_pct": null,
+    "volatility_21d_pct": null
+  },
+  "outlook_3m": {
+    "scenario": "pressionado",
+    "dominant_topics": [
+      "cambio",
+      "juros"
+    ]
+  },
+  "analysis_sections": {
+    "current": "O ativo está exposto ao mercado americano e ao ciclo global de juros, dólar e crescimento. Cotacao atual aproximada em BRL 78.80. Hoje representa cerca de 4.4% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.33.",
+    "recent": "Ainda nao ha historico suficiente para resumir os ultimos 3 meses com seguranca.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. Os temas dominantes hoje sao cambio, juros. A confianca dessa leitura e moderada."
+  },
+  "sources": [
+    {
+      "id": "49f33dd8b5d27d450943aaaf91773efc",
+      "title": "Meteoro explode no céu dos EUA e provoca tremores relatados em várias cidades",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mundo/meteoro-explode-no-ceu-dos-eua-e-provoca-tremores-relatados-em-varias-cidades/",
+      "published_at": "2026-05-31T02:54:08.039041+00:00",
+      "summary": "Apesar do susto causado em várias regiões, autoridades não identificaram danos The post Meteoro explode no céu dos EUA e provoca tremores relatados em várias cidades appeared first on InfoMoney.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.2999
+    },
+    {
+      "id": "ab4c9901b71cf86533d19d91ce97f636",
+      "title": "Negociações EUA-Irã esbarram em impasses enquanto conflito no Líbano se intensifica",
+      "source_name": "Todas as Notícias",
+      "source_url": "https://br.investing.com/news/economy-news/negociacoes-euaira-esbarram-em-impasses-enquanto-conflito-no-libano-se-intensifica-1957256",
+      "published_at": "2026-05-31T01:23:02",
+      "summary": "Negociações EUA-Irã esbarram em impasses enquanto conflito no Líbano se intensifica.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.2997
+    },
+    {
+      "id": "ffb970b59925d8e2ab7817d0ab9dd3a5",
+      "title": "Ibovespa e dólar hoje: mercado avalia fiscal em dia de feriado nos EUA",
+      "source_name": "Todas as Notícias",
+      "source_url": "https://br.investing.com/news/stock-market-news/ibovespa-e-dolar-hoje-mercado-avalia-fiscal-em-dia-de-feriado-nos-eua-1950999",
+      "published_at": "2026-05-25T10:30:15",
+      "summary": "Ibovespa e dólar hoje: mercado avalia fiscal em dia de feriado nos EUA.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.2809
+    },
+    {
+      "id": "65cf6d31773f415e41b47613a649a7fb",
+      "title": "Acordo com Irã pode abrir espaço para Fed cortar juros, diz Hassett",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mundo/acordo-com-ira-pode-abrir-espaco-para-fed-cortar-juros-diz-hassett/",
+      "published_at": "2026-05-25T01:19:05.970942+00:00",
+      "summary": "A fala acontece após Trump afirmar que as negociações com Teerã avançaram de forma \"ordenada e construtiva\" The post Acordo com Irã pode abrir espaço para Fed cortar juros, diz Hassett appeared first ",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.2797
+    },
+    {
+      "id": "c358f7541295dcc5e000144740406a23",
+      "title": "Maduro envia, de sua prisão nos EUA, mensagem de unidade ao povo da Venezuela",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mundo/maduro-envia-de-sua-prisao-nos-eua-mensagem-de-unidade-ao-povo-da-venezuela/",
+      "published_at": "2026-05-25T01:19:05.970942+00:00",
+      "summary": "O líder venezuelano pede \"pela paz, pela prosperidade e pela liberdade de todos nós\" The post Maduro envia, de sua prisão nos EUA, mensagem de unidade ao povo da Venezuela appeared first on InfoMoney.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.2797
+    }
+  ],
+  "portfolio_updated_at": "2026-05-25T01:56:49.326099+00:00"
+}

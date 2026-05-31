@@ -112,6 +112,59 @@ async def test_models_status(client: AsyncClient):
 
 
 @pytest.mark.asyncio
+async def test_portfolio_news_endpoint(client: AsyncClient):
+    resp = await client.post("/api/portfolios", json={"name": "Noticias", "base_currency": "BRL"})
+    pid = resp.json()["id"]
+    await client.post(
+        f"/api/portfolios/{pid}/positions",
+        json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 10},
+    )
+    resp = await client.get(f"/api/portfolios/{pid}/news")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert "items" in data
+    assert "total" in data
+
+
+@pytest.mark.asyncio
+async def test_portfolio_opinion_structure(client: AsyncClient):
+    resp = await client.post("/api/portfolios", json={"name": "Opiniao", "base_currency": "BRL"})
+    pid = resp.json()["id"]
+    await client.post(
+        f"/api/portfolios/{pid}/positions",
+        json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 20, "avg_price": 32},
+    )
+    await client.post(
+        f"/api/portfolios/{pid}/positions",
+        json={"ticker": "HGLG11", "asset_class": "FII", "quantity": 10, "avg_price": 165},
+    )
+    resp = await client.get(f"/api/models/opinion/{pid}")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert "headline" in data
+    assert "composition_summary" in data
+    assert "block_reviews" in data
+    assert "sources" in data
+
+
+@pytest.mark.asyncio
+async def test_position_opinion_endpoint(client: AsyncClient):
+    resp = await client.post("/api/portfolios", json={"name": "Ativo", "base_currency": "BRL"})
+    pid = resp.json()["id"]
+    await client.post(
+        f"/api/portfolios/{pid}/positions",
+        json={"ticker": "BTC", "asset_class": "CRYPTO", "quantity": 0.05},
+    )
+    resp = await client.get(f"/api/models/opinion/{pid}/positions/BTC")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["ticker"] == "BTC"
+    assert "analysis_sections" in data
+    assert "current" in data["analysis_sections"]
+    assert "sources" in data
+
+
+@pytest.mark.asyncio
 async def test_cluster_news(client: AsyncClient):
     resp = await client.post("/api/models/cluster/news")
     assert resp.status_code == 200

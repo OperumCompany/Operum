@@ -1,0 +1,31 @@
+{
+  "id": "bdd533cd-8c8c-4832-ac2e-aa493a2b9616",
+  "name": "Analise",
+  "base_currency": "BRL",
+  "created_at": "2026-05-31T03:36:58.177083Z",
+  "updated_at": "2026-05-31T03:36:58.201190Z",
+  "positions": [
+    {
+      "asset_id": "PETR4",
+      "ticker": "PETR4",
+      "asset_class": "BR_STOCK",
+      "quantity": 100.0,
+      "avg_price": null,
+      "currency": "BRL",
+      "manual_notes": ""
+    },
+    {
+      "asset_id": "VALE3",
+      "ticker": "VALE3",
+      "asset_class": "BR_STOCK",
+      "quantity": 50.0,
+      "avg_price": null,
+      "currency": "BRL",
+      "manual_notes": ""
+    }
+  ],
+  "settings": {
+    "risk_profile": "moderado",
+    "forecast_horizon_days": 5
+  }
+}

@@ -1,28 +1,16 @@
 import { useState } from 'react';
 import { Button, Card } from './UI';
 import api from '../utils/api';
-
-type OpinionResponse = {
-  score: number;
-  components: {
-    diversification: number;
-    correlation_risk: number;
-    news_impact: number;
-    macro_sensitivity: number;
-    forecast_risk: number;
-  };
-  opinion: string;
-  portfolio_id: string;
-};
+import type { PortfolioOpinion } from '../types';
 
 function pct(v: number): string {
   return `${(v * 100).toFixed(0)}%`;
 }
 
 function scoreLabel(score: number): { label: string; color: string } {
-  if (score >= 0.7) return { label: 'Saudável', color: '#22c55e' };
-  if (score >= 0.4) return { label: 'Atenção', color: '#eab308' };
-  return { label: 'Crítico', color: '#ef4444' };
+  if (score >= 0.7) return { label: 'Saudavel', color: '#22c55e' };
+  if (score >= 0.4) return { label: 'Atencao', color: '#eab308' };
+  return { label: 'Critico', color: '#ef4444' };
 }
 
 function ComponentBar({ label, value, invert }: { label: string; value: number; invert?: boolean }) {
@@ -42,7 +30,7 @@ function ComponentBar({ label, value, invert }: { label: string; value: number; 
 }
 
 export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
-  const [data, setData] = useState<OpinionResponse | null>(null);
+  const [data, setData] = useState<PortfolioOpinion | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -50,10 +38,10 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
     setLoading(true);
     setError(null);
     try {
-      const result = await api.get<OpinionResponse>(`/models/opinion/${portfolioId}`);
+      const result = await api.get<PortfolioOpinion>(`/models/opinion/${portfolioId}`);
       setData(result);
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Erro ao gerar análise');
+      setError(e instanceof Error ? e.message : 'Erro ao gerar analise');
     } finally {
       setLoading(false);
     }
@@ -62,14 +50,14 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
   const sl = data ? scoreLabel(data.score) : null;
 
   return (
-    <Card title="Análise da Carteira">
+    <Card title="Analise da Carteira">
       {!data && !loading && !error && (
         <div className="flex flex-col items-center gap-3 py-4">
           <p className="text-sm text-[var(--text-muted)]">
-            Gere uma análise detalhada com base nos ativos, notícias e indicadores de risco.
+            Gere uma analise detalhada com base nos ativos, noticias e indicadores de risco.
           </p>
           <Button type="button" onClick={loadOpinion}>
-            Gerar análise por IA
+            Gerar analise por IA
           </Button>
         </div>
       )}
@@ -77,7 +65,7 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
       {loading && (
         <div className="flex items-center gap-3 py-4">
           <div className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--brand)] border-t-transparent" />
-          <p className="text-sm text-[var(--text-muted)]">Gerando análise...</p>
+          <p className="text-sm text-[var(--text-muted)]">Gerando analise...</p>
         </div>
       )}
 
@@ -104,54 +92,80 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
           </div>
 
           <div className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4">
-            <p className="text-sm leading-relaxed text-[var(--text-main)]">{data.opinion}</p>
+            <p className="text-sm font-semibold text-[var(--text-main)]">{data.headline}</p>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{data.composition_summary}</p>
+            <div className="mt-3 rounded-2xl bg-white/80 p-3">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Nota geral da composicao</p>
+              <p className="mt-1 text-lg font-bold text-[var(--text-main)]">{data.composition_grade}</p>
+            </div>
           </div>
 
           <div className="space-y-2">
             <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Componentes</p>
-            <ComponentBar label="Diversificação" value={data.components.diversification} />
-            <p className="text-xs leading-relaxed text-[var(--text-muted)]">
-              A diversificação mede o quanto a carteira está distribuída entre diferentes ativos. 
-              Uma carteira com muitos ativos de setores variados tende a ter maior resiliência 
-              a choques específicos. O score é calculado a partir do índice de concentração: 
-              quanto menor a concentração em poucos ativos, melhor a diversificação. 
-              Esse componente tem peso de 30% no score final por ser um dos pilares 
-              da construção de carteiras.
-            </p>
-            <ComponentBar label="Risco correlação" value={data.components.correlation_risk} invert />
-            <p className="text-xs leading-relaxed text-[var(--text-muted)]">
-              A correlação entre os ativos indica o quanto eles se movem juntos. 
-              Quando a correlação é alta, a diversificação perde eficácia, pois todos os ativos 
-              tendem a cair simultaneamente em momentos de estresse. O cálculo usa a matriz de 
-              correlação das séries de retorno dos últimos 12 meses. Esse componente tem peso 
-              de 20% no score final.
-            </p>
-            <ComponentBar label="Impacto notícias" value={data.components.news_impact} invert />
-            <p className="text-xs leading-relaxed text-[var(--text-muted)]">
-              Mede o impacto médio das notícias recentes sobre os ativos da carteira. 
-              Quanto mais notícias relevantes e com alto impacto, maior a possibilidade de 
-              volatilidade de curto prazo. O cálculo considera o impacto_score de cada notícia 
-              que menciona ativos da carteira. Esse componente tem peso de 20% no score final.
-            </p>
+            <ComponentBar label="Diversificacao" value={data.components.diversification} />
+            <ComponentBar label="Risco correlacao" value={data.components.correlation_risk} invert />
+            <ComponentBar label="Impacto noticias" value={data.components.news_impact} invert />
             <ComponentBar label="Sensibilidade macro" value={data.components.macro_sensitivity} invert />
-            <p className="text-xs leading-relaxed text-[var(--text-muted)]">
-              A sensibilidade macro avalia a exposição da carteira a fatores econômicos 
-              amplos como juros, inflação, câmbio e crescimento do PIB. Ativos de classes 
-              como ações (BR_STOCK, US_STOCK) e criptomoedas são mais sensíveis ao cenário 
-              macroeconômico, enquanto renda fixa e FIIs podem ter comportamentos distintos. 
-              Esse componente tem peso de 15% no score final.
-            </p>
             <ComponentBar label="Risco forecast" value={data.components.forecast_risk} invert />
-            <p className="text-xs leading-relaxed text-[var(--text-muted)]">
-              O risco de forecast é derivado do Value at Risk (VaR) da carteira. 
-              Quanto maior o VaR, maior a perda potencial esperada em condições normais 
-              de mercado, o que indica um perfil de risco mais elevado para as projeções 
-              futuras. Esse componente tem peso de 15% no score final.
-            </p>
           </div>
 
+          {!!data.strengths.length && (
+            <div className="space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Pontos fortes</p>
+              {data.strengths.map((item) => (
+                <p key={item} className="text-sm leading-relaxed text-[var(--text-main)]">{item}</p>
+              ))}
+            </div>
+          )}
+
+          {!!data.overlaps.length && (
+            <div className="space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Sobreposicoes e riscos</p>
+              {data.overlaps.map((item) => (
+                <p key={item} className="text-sm leading-relaxed text-[var(--text-main)]">{item}</p>
+              ))}
+            </div>
+          )}
+
+          {!!data.block_reviews.length && (
+            <div className="space-y-3">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Avaliacao por blocos</p>
+              {data.block_reviews.map((review) => (
+                <div key={review.title} className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4">
+                  <p className="text-sm font-semibold text-[var(--text-main)]">{review.title}</p>
+                  <p className="mt-1 text-sm leading-relaxed text-[var(--text-main)]">{review.assessment}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-[var(--text-muted)]">{review.highlights}</p>
+                </div>
+              ))}
+            </div>
+          )}
+
+          <div className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4">
+            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Diagnostico final</p>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{data.final_diagnosis}</p>
+            <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{data.conclusion}</p>
+          </div>
+
+          {!!data.sources.length && (
+            <div className="space-y-2">
+              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Fontes relacionadas</p>
+              {data.sources.map((source) => (
+                <a
+                  key={source.id}
+                  href={source.source_url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="block rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3 transition hover:border-[var(--brand)]"
+                >
+                  <p className="text-sm font-semibold text-[var(--text-main)]">{source.title}</p>
+                  <p className="mt-1 text-xs text-[var(--text-muted)]">{source.source_name}</p>
+                </a>
+              ))}
+            </div>
+          )}
+
           <Button type="button" variant="ghost" onClick={loadOpinion}>
-            Regenerar análise
+            Regenerar analise
           </Button>
         </div>
       )}

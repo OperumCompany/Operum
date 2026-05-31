@@ -1,0 +1,22 @@
+{
+  "id": "b9fdbe8a-9424-4624-925f-72e5ae2e99ee",
+  "name": "Ativo",
+  "base_currency": "BRL",
+  "created_at": "2026-05-31T03:37:05.203899Z",
+  "updated_at": "2026-05-31T03:37:05.218156Z",
+  "positions": [
+    {
+      "asset_id": "BTC",
+      "ticker": "BTC",
+      "asset_class": "CRYPTO",
+      "quantity": 0.05,
+      "avg_price": null,
+      "currency": "BRL",
+      "manual_notes": ""
+    }
+  ],
+  "settings": {
+    "risk_profile": "moderado",
+    "forecast_horizon_days": 5
+  }
+}
