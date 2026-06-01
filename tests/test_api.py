@@ -24,12 +24,36 @@ async def client():
         yield ac
 
 
+async def auth_headers(client: AsyncClient, suffix: str = "base") -> dict[str, str]:
+    email = f"tester-{suffix}@operum.app"
+    password = "Operum123"
+    await client.post("/api/auth/register", json={"name": "Tester", "email": email, "password": password})
+    login = await client.post("/api/auth/login", json={"email": email, "password": password})
+    token = login.json()["token"]
+    return {"Authorization": f"Bearer {token}"}
+
+
 @pytest.mark.asyncio
 async def test_health(client: AsyncClient):
     resp = await client.get("/api/health")
     assert resp.status_code == 200
     data = resp.json()
     assert data["status"] == "ok"
+
+
+@pytest.mark.asyncio
+async def test_auth_register_login_and_me(client: AsyncClient):
+    register = await client.post("/api/auth/register", json={
+        "name": "Camila Real",
+        "email": "camila-real@operum.app",
+        "password": "Operum123",
+    })
+    assert register.status_code == 200
+    token = register.json()["token"]
+
+    me = await client.get("/api/auth/me", headers={"Authorization": f"Bearer {token}"})
+    assert me.status_code == 200
+    assert me.json()["email"] == "camila-real@operum.app"
 
 
 @pytest.mark.asyncio
@@ -52,44 +76,48 @@ async def test_assets_search(client: AsyncClient):
 
 @pytest.mark.asyncio
 async def test_create_and_get_portfolio(client: AsyncClient):
-    resp = await client.post("/api/portfolios", json={"name": "Teste", "base_currency": "BRL"})
+    headers = await auth_headers(client, "create")
+    resp = await client.post("/api/portfolios", headers=headers, json={"name": "Teste", "base_currency": "BRL"})
     assert resp.status_code == 201
     data = resp.json()
     assert data["name"] == "Teste"
     pid = data["id"]
 
-    resp2 = await client.get(f"/api/portfolios/{pid}")
+    resp2 = await client.get(f"/api/portfolios/{pid}", headers=headers)
     assert resp2.status_code == 200
     assert resp2.json()["id"] == pid
 
 
 @pytest.mark.asyncio
 async def test_add_and_remove_position(client: AsyncClient):
-    resp = await client.post("/api/portfolios", json={"name": "Teste", "base_currency": "BRL"})
+    headers = await auth_headers(client, "position")
+    resp = await client.post("/api/portfolios", headers=headers, json={"name": "Teste", "base_currency": "BRL"})
     pid = resp.json()["id"]
 
     resp = await client.post(
         f"/api/portfolios/{pid}/positions",
+        headers=headers,
         json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 100, "avg_price": 31.2},
     )
     assert resp.status_code == 200
     data = resp.json()
     assert len(data["positions"]) == 1
 
-    resp = await client.delete(f"/api/portfolios/{pid}/positions/PETR4")
+    resp = await client.delete(f"/api/portfolios/{pid}/positions/PETR4", headers=headers)
     assert resp.status_code == 200
     assert len(resp.json()["positions"]) == 0
 
 
 @pytest.mark.asyncio
 async def test_bulk_delete_portfolios(client: AsyncClient):
+    headers = await auth_headers(client, "bulk")
     created_ids = []
     for name in ("Lote A", "Lote B"):
-        resp = await client.post("/api/portfolios", json={"name": name, "base_currency": "BRL"})
+        resp = await client.post("/api/portfolios", headers=headers, json={"name": name, "base_currency": "BRL"})
         assert resp.status_code == 201
         created_ids.append(resp.json()["id"])
 
-    resp = await client.post("/api/portfolios/bulk-delete", json={"portfolio_ids": created_ids})
+    resp = await client.post("/api/portfolios/bulk-delete", headers=headers, json={"portfolio_ids": created_ids})
     assert resp.status_code == 200
     data = resp.json()
     assert data["deleted_count"] == 2
@@ -98,20 +126,43 @@ async def test_bulk_delete_portfolios(client: AsyncClient):
 
 @pytest.mark.asyncio
 async def test_portfolio_analysis(client: AsyncClient):
-    resp = await client.post("/api/portfolios", json={"name": "Analise", "base_currency": "BRL"})
+    headers = await auth_headers(client, "analysis")
+    resp = await client.post("/api/portfolios", headers=headers, json={"name": "Analise", "base_currency": "BRL"})
     pid = resp.json()["id"]
     await client.post(
         f"/api/portfolios/{pid}/positions",
+        headers=headers,
         json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 100},
     )
     await client.post(
         f"/api/portfolios/{pid}/positions",
+        headers=headers,
         json={"ticker": "VALE3", "asset_class": "BR_STOCK", "quantity": 50},
     )
-    resp = await client.get(f"/api/portfolios/{pid}/analysis")
+    resp = await client.get(f"/api/portfolios/{pid}/analysis", headers=headers)
     assert resp.status_code == 200
     data = resp.json()
     assert data["num_assets"] == 2
+    assert "benchmark" in data
+    assert "volatility_window_days" in data
+
+
+@pytest.mark.asyncio
+async def test_portfolio_prices_include_unrealized_pnl(client: AsyncClient):
+    headers = await auth_headers(client, "prices")
+    resp = await client.post("/api/portfolios", headers=headers, json={"name": "Precos", "base_currency": "BRL"})
+    pid = resp.json()["id"]
+    await client.post(
+        f"/api/portfolios/{pid}/positions",
+        headers=headers,
+        json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 10, "avg_price": 30},
+    )
+    resp = await client.get(f"/api/portfolios/{pid}/prices", headers=headers)
+    assert resp.status_code == 200
+    data = resp.json()
+    assert "total_unrealized_pnl" in data
+    assert "unrealized_pnl" in data["positions"][0]
+    assert "sparkline_20d" in data["positions"][0]
 
 
 @pytest.mark.asyncio
@@ -166,13 +217,15 @@ async def test_models_status(client: AsyncClient):
 
 @pytest.mark.asyncio
 async def test_portfolio_news_endpoint(client: AsyncClient):
-    resp = await client.post("/api/portfolios", json={"name": "Noticias", "base_currency": "BRL"})
+    headers = await auth_headers(client, "news")
+    resp = await client.post("/api/portfolios", headers=headers, json={"name": "Noticias", "base_currency": "BRL"})
     pid = resp.json()["id"]
     await client.post(
         f"/api/portfolios/{pid}/positions",
+        headers=headers,
         json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 10},
     )
-    resp = await client.get(f"/api/portfolios/{pid}/news")
+    resp = await client.get(f"/api/portfolios/{pid}/news", headers=headers)
     assert resp.status_code == 200
     data = resp.json()
     assert "items" in data
@@ -181,17 +234,20 @@ async def test_portfolio_news_endpoint(client: AsyncClient):
 
 @pytest.mark.asyncio
 async def test_portfolio_opinion_structure(client: AsyncClient):
-    resp = await client.post("/api/portfolios", json={"name": "Opiniao", "base_currency": "BRL"})
+    headers = await auth_headers(client, "opinion")
+    resp = await client.post("/api/portfolios", headers=headers, json={"name": "Opiniao", "base_currency": "BRL"})
     pid = resp.json()["id"]
     await client.post(
         f"/api/portfolios/{pid}/positions",
+        headers=headers,
         json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 20, "avg_price": 32},
     )
     await client.post(
         f"/api/portfolios/{pid}/positions",
+        headers=headers,
         json={"ticker": "HGLG11", "asset_class": "FII", "quantity": 10, "avg_price": 165},
     )
-    resp = await client.get(f"/api/models/opinion/{pid}")
+    resp = await client.get(f"/api/models/opinion/{pid}", headers=headers)
     assert resp.status_code == 200
     data = resp.json()
     assert "headline" in data
@@ -199,17 +255,20 @@ async def test_portfolio_opinion_structure(client: AsyncClient):
     assert "block_reviews" in data
     assert "sources" in data
     assert "source_groups" in data
+    assert "benchmark" in data
 
 
 @pytest.mark.asyncio
 async def test_position_opinion_endpoint(client: AsyncClient):
-    resp = await client.post("/api/portfolios", json={"name": "Ativo", "base_currency": "BRL"})
+    headers = await auth_headers(client, "position-opinion")
+    resp = await client.post("/api/portfolios", headers=headers, json={"name": "Ativo", "base_currency": "BRL"})
     pid = resp.json()["id"]
     await client.post(
         f"/api/portfolios/{pid}/positions",
+        headers=headers,
         json={"ticker": "BTC", "asset_class": "CRYPTO", "quantity": 0.05},
     )
-    resp = await client.get(f"/api/models/opinion/{pid}/positions/BTC")
+    resp = await client.get(f"/api/models/opinion/{pid}/positions/BTC", headers=headers)
     assert resp.status_code == 200
     data = resp.json()
     assert data["ticker"] == "BTC"
@@ -219,6 +278,30 @@ async def test_position_opinion_endpoint(client: AsyncClient):
     assert "source_groups" in data
     assert "used_news_count" in data
     assert "historical_window" in data
+    assert "beta_63d" in data["recent_performance"]
+
+
+@pytest.mark.asyncio
+async def test_portfolio_analysis_empty_portfolio(client: AsyncClient):
+    headers = await auth_headers(client, "empty")
+    resp = await client.post("/api/portfolios", headers=headers, json={"name": "Vazia", "base_currency": "BRL"})
+    pid = resp.json()["id"]
+    analysis = await client.get(f"/api/portfolios/{pid}/analysis", headers=headers)
+    assert analysis.status_code == 200
+    assert analysis.json()["num_assets"] == 0
+
+
+@pytest.mark.asyncio
+async def test_protected_route_requires_auth(client: AsyncClient):
+    resp = await client.get("/api/portfolios")
+    assert resp.status_code == 401
+
+
+@pytest.mark.asyncio
+async def test_status_endpoint(client: AsyncClient):
+    resp = await client.get("/api/status")
+    assert resp.status_code == 200
+    assert resp.json()["status"] == "ok"
 
 
 @pytest.mark.asyncio

@@ -11,28 +11,35 @@ class PortfolioService:
         self.storage = LocalStorageService()
         self._dir = "portfolios"
 
-    def list_all(self) -> list[Portfolio]:
+    def list_all(self, user_id: str | None = None) -> list[Portfolio]:
         files = self.storage.list_files(self._dir, ".json")
         portfolios = []
         for f in files:
             data = self.storage.load_json(f"{self._dir}/{f}")
             if data:
-                portfolios.append(Portfolio(**data))
+                portfolio = Portfolio(**data)
+                if user_id and portfolio.owner_id not in (None, user_id):
+                    continue
+                portfolios.append(portfolio)
         return sorted(portfolios, key=lambda p: p.created_at, reverse=True)
 
-    def get_by_id(self, portfolio_id: str) -> Portfolio | None:
+    def get_by_id(self, portfolio_id: str, user_id: str | None = None) -> Portfolio | None:
         data = self.storage.load_json(f"{self._dir}/{portfolio_id}.json")
         if data is None:
             return None
-        return Portfolio(**data)
+        portfolio = Portfolio(**data)
+        if user_id and portfolio.owner_id not in (None, user_id):
+            return None
+        return portfolio
 
-    def create(self, data: PortfolioCreate) -> Portfolio:
-        if len(self.list_all()) >= self.MAX_PORTFOLIOS:
+    def create(self, data: PortfolioCreate, user_id: str | None = None) -> Portfolio:
+        if len(self.list_all(user_id)) >= self.MAX_PORTFOLIOS:
             raise ValueError(f"Limite maximo de {self.MAX_PORTFOLIOS} carteiras atingido")
 
         now = datetime.now(timezone.utc)
         portfolio = Portfolio(
             id=str(uuid.uuid4()),
+            owner_id=user_id,
             name=data.name,
             base_currency=data.base_currency,
             created_at=now,
@@ -42,8 +49,8 @@ class PortfolioService:
         self.storage.save_json(f"{self._dir}/{portfolio.id}.json", portfolio.model_dump(mode="json"))
         return portfolio
 
-    def update(self, portfolio_id: str, updates: dict) -> Portfolio | None:
-        portfolio = self.get_by_id(portfolio_id)
+    def update(self, portfolio_id: str, updates: dict, user_id: str | None = None) -> Portfolio | None:
+        portfolio = self.get_by_id(portfolio_id, user_id)
         if portfolio is None:
             return None
         portfolio_dict = portfolio.model_dump(mode="json")
@@ -54,16 +61,19 @@ class PortfolioService:
         self.storage.save_json(f"{self._dir}/{portfolio_id}.json", portfolio_dict)
         return Portfolio(**portfolio_dict)
 
-    def delete(self, portfolio_id: str) -> bool:
+    def delete(self, portfolio_id: str, user_id: str | None = None) -> bool:
+        portfolio = self.get_by_id(portfolio_id, user_id)
+        if portfolio is None:
+            return False
         return self.storage.delete_file(f"{self._dir}/{portfolio_id}.json")
 
-    def delete_many(self, portfolio_ids: list[str]) -> dict:
+    def delete_many(self, portfolio_ids: list[str], user_id: str | None = None) -> dict:
         unique_ids = list(dict.fromkeys(portfolio_ids))
         deleted_ids: list[str] = []
         missing_ids: list[str] = []
 
         for portfolio_id in unique_ids:
-            if self.delete(portfolio_id):
+            if self.delete(portfolio_id, user_id):
                 deleted_ids.append(portfolio_id)
             else:
                 missing_ids.append(portfolio_id)
@@ -74,8 +84,8 @@ class PortfolioService:
             "deleted_count": len(deleted_ids),
         }
 
-    def add_position(self, portfolio_id: str, position_data: PositionAdd) -> Portfolio | None:
-        portfolio = self.get_by_id(portfolio_id)
+    def add_position(self, portfolio_id: str, position_data: PositionAdd, user_id: str | None = None) -> Portfolio | None:
+        portfolio = self.get_by_id(portfolio_id, user_id)
         if portfolio is None:
             return None
 
@@ -103,8 +113,8 @@ class PortfolioService:
         self.storage.save_json(f"{self._dir}/{portfolio_id}.json", portfolio.model_dump(mode="json"))
         return portfolio
 
-    def remove_position(self, portfolio_id: str, ticker: str) -> Portfolio | None:
-        portfolio = self.get_by_id(portfolio_id)
+    def remove_position(self, portfolio_id: str, ticker: str, user_id: str | None = None) -> Portfolio | None:
+        portfolio = self.get_by_id(portfolio_id, user_id)
         if portfolio is None:
             return None
 

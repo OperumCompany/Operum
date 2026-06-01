@@ -1,5 +1,932 @@
 [
   {
+    "id": "c9ea071b5e56dc0f36f203d1f9085142",
+    "title": "Preços do petróleo saltam 5% após notícia sobre suspensão de negociações EUA-Irã",
+    "subtitle": null,
+    "content_preview": "Preços do petróleo saltam 5% após notícia sobre suspensão de negociações EUA-Irã",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/precos-do-petroleo-aceleram-apos-noticia-sobre-suspensao-de-negociacoes-eua-ira/",
+    "published_at": "2026-06-01T15:00:15.353680Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Preços do petróleo saltam 5% após notícia sobre suspensão de negociações EUA-Irã.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.353680Z"
+  },
+  {
+    "id": "662907bc8edc5ea0b58f31accad5f513",
+    "title": "“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina",
+    "subtitle": null,
+    "content_preview": "“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ponto-cego-as-oportunidades-de-us-13-trilhao-em-acoes-ligadas-a-america-latina/",
+    "published_at": "2026-06-01T15:00:15.351675Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
+  },
+  {
+    "id": "c607dcbc2e65e520d1e9096dad3640f2",
+    "title": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri",
+    "subtitle": null,
+    "content_preview": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/cogna-yduqs-anima-e-mais-quais-acoes-se-destacaram-na-temporada-do-1o-tri/",
+    "published_at": "2026-06-01T15:00:15.351675Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
+  },
+  {
+    "id": "3d13939fe7c7d2a3c370eed6d5cab685",
+    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "subtitle": null,
+    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
+    "published_at": "2026-06-01T15:00:15.351675Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
+  },
+  {
+    "id": "1a98d9a6d5d302c236553d3a81f035c8",
+    "title": "Ibovespa Hoje Ao Vivo: Bolsa cai e tenta manter os 172 mil pontos",
+    "subtitle": null,
+    "content_preview": "Ibovespa Hoje Ao Vivo: Bolsa cai e tenta manter os 172 mil pontos",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
+    "published_at": "2026-06-01T15:00:15.351675Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ibovespa Hoje Ao Vivo: Bolsa cai e tenta manter os 172 mil pontos.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
+  },
+  {
+    "id": "cb757db59a2b625bea427f2c747b6f7b",
+    "title": "Spacex terá programa especial de ações do IPO para funcionários, amigos e familiares",
+    "subtitle": null,
+    "content_preview": "Spacex terá programa especial de ações do IPO para funcionários, amigos e familiares",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/spacex-tera-programa-especial-de-acoes-do-ipo-para-funcionarios-amigos-e-familiares/",
+    "published_at": "2026-06-01T15:00:15.351675Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Spacex terá programa especial de ações do IPO para funcionários, amigos e familiares.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
+  },
+  {
+    "id": "ad91dd745b7d32747fc7394723000747",
+    "title": "Bolsas de NY abrem em queda com piora do sentimento EUA-Irã, apesar de Nvidia",
+    "subtitle": null,
+    "content_preview": "Bolsas de NY abrem em queda com piora do sentimento EUA-Irã, apesar de Nvidia",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-abrem-em-queda-com-piora-do-sentimento-eua-ira-apesar-de-nvidia/",
+    "published_at": "2026-06-01T15:00:15.351675Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Bolsas de NY abrem em queda com piora do sentimento EUA-Irã, apesar de Nvidia.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
+  },
+  {
+    "id": "68750ccfce11015d20bd2659cb0f3aae",
+    "title": "Usiminas (USIM5) diz que BlackRock aumentou participação na companhia",
+    "subtitle": null,
+    "content_preview": "Usiminas (USIM5) diz que BlackRock aumentou participação na companhia",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/usiminas-usim5-diz-que-blackrock-aumentou-participacao-na-companhia/",
+    "published_at": "2026-06-01T15:00:15.351675Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Usiminas (USIM5) diz que BlackRock aumentou participação na companhia.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
+  },
+  {
+    "id": "c1b0263dfcec870652bad241dc60e1e5",
+    "title": "Ações da fintech Wise caem devido à investigação de lavagem de dinheiro na Bélgica",
+    "subtitle": null,
+    "content_preview": "Ações da fintech Wise caem devido à investigação de lavagem de dinheiro na Bélgica",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/acoes-da-fintech-wise-caem-devido-a-investigacao-de-lavagem-de-dinheiro-na-belgica/",
+    "published_at": "2026-06-01T15:00:15.351675Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ações da fintech Wise caem devido à investigação de lavagem de dinheiro na Bélgica.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
+  },
+  {
+    "id": "4a0c21203fdf9b4732118a5348651786",
+    "title": "“El Niño Godzilla” pode criar assimetria positiva para elétricas da Bolsa; veja quais",
+    "subtitle": null,
+    "content_preview": "“El Niño Godzilla” pode criar assimetria positiva para elétricas da Bolsa; veja quais",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/el-nino-godzilla-pode-criar-assimetria-positiva-para-eletricas-da-bolsa-veja-quais/",
+    "published_at": "2026-06-01T15:00:15.351675Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "“El Niño Godzilla” pode criar assimetria positiva para elétricas da Bolsa; veja quais.\n\nO foco principal passa por Economia, Energia Eletrica.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
+  },
+  {
+    "id": "25778b34dc2f7cd24411b33e8708bb38",
+    "title": "Petrobras: subsídio ao diesel alivia preços, mas pode apertar caixa",
+    "subtitle": null,
+    "content_preview": "Petrobras: subsídio ao diesel alivia preços, mas pode apertar caixa",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/petrobras-subsidio-compensa-corte-do-diesel-mas-eventuais-atrasos-preocupam/",
+    "published_at": "2026-06-01T15:00:15.351675Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "PETR4"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Petrobras: subsídio ao diesel alivia preços, mas pode apertar caixa.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
+  },
+  {
+    "id": "ea4ca7baec33f42e761422862f13c2ff",
+    "title": "Agência da ONU suspende nomeação dos EUA após atraso de pagamento",
+    "subtitle": null,
+    "content_preview": "A OIT (Organização Internacional do Trabalho) recusou a nomeação de uma alta funcionária dos EUA para o cargo de vice-diretora da agência da ONU devido a atrasos nos pagamentos dos Estados Unidos, informou a entidade nesta segunda-feira (1º). Leia mais (06/01/2026 - 11h58)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/agencia-da-onu-suspende-nomeacao-dos-eua-apos-atraso-de-pagamento.shtml",
+    "published_at": "2026-06-01T11:58:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A OIT (Organização Internacional do Trabalho) recusou a nomeação de uma alta funcionária dos EUA para o cargo de vice-diretora da agência da ONU devido a atrasos nos pagamentos dos Estados Unidos, informou a entidade nesta segunda-feira (1º).\n\nLeia mais (06/01/2026 - 11h58). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.347667Z"
+  },
+  {
+    "id": "e132e7edc6c5569fc6b426a2700d8b5b",
+    "title": "Brasil perde mais de 6,2 mil voos em dois meses após disparada do querosene de aviação",
+    "subtitle": null,
+    "content_preview": "A crise do querosene de aviação causada pelos conflitos no Oriente Médio enxugou a malha aérea nacional, com o cancelamento de mais de 6,2 mil voos da programação do setor. Leia mais (06/01/2026 - 11h50)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/brasil-perde-mais-de-62-mil-voos-em-dois-meses-apos-disparada-do-querosene-de-aviacao.shtml",
+    "published_at": "2026-06-01T11:50:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A crise do querosene de aviação causada pelos conflitos no Oriente Médio enxugou a malha aérea nacional, com o cancelamento de mais de 6,2 mil voos da programação do setor.\n\nLeia mais (06/01/2026 - 11h50). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.347667Z"
+  },
+  {
+    "id": "99a7d1c43b433c2fffc3052d6885e5b5",
+    "title": "Gastos com construção nos EUA superam expectativas em abril",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/economic-indicators/gastos-com-construcao-nos-eua-superam-expectativas-em-abril-1958338",
+    "published_at": "2026-06-01T14:49:59Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Gastos com construção nos EUA superam expectativas em abril.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.353680Z"
+  },
+  {
+    "id": "e708999e802ec8cf31cc7baecb9ce11d",
+    "title": "França atrai 93 bilhões de euros em investimentos, metade para data centers do SoftBank",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/franca-atrai-93-bilhoes-de-euros-em-investimentos-metade-para-data-centers-do-softbank-1958337",
+    "published_at": "2026-06-01T14:49:29Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "França atrai 93 bilhões de euros em investimentos, metade para data centers do SoftBank.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.353680Z"
+  },
+  {
+    "id": "41ab0dd5093ba3ab58119609fcdf4985",
+    "title": "Barclays identifica ações de geração de energia a gás no boom de US$ 1 tri em IA",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/barclays-identifica-acoes-de-geracao-de-energia-a-gas-no-boom-de-us-1-tri-em-ia-93CH-1958333",
+    "published_at": "2026-06-01T14:40:05Z",
+    "language": "pt",
+    "tags": [
+      "Energia Eletrica",
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Energia Eletrica",
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Barclays identifica ações de geração de energia a gás no boom de US$ 1 tri em IA.\n\nO foco principal passa por Energia Eletrica, Macroeconomia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.353680Z"
+  },
+  {
+    "id": "bb55032f3b008a518ee0230a2f80d367",
+    "title": "Por que as ações da Micron estão disparando hoje?",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/por-que-as-acoes-da-micron-estao-disparando-hoje-93CH-1958328",
+    "published_at": "2026-06-01T14:36:53Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Por que as ações da Micron estão disparando hoje?\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.353680Z"
+  },
+  {
+    "id": "cb54c98bae79a01d4f9297a828b99158",
+    "title": "Nvidia lança chip potente para laptops com Windows e promete 'revolucionar mercado'",
+    "subtitle": null,
+    "content_preview": "A Nvidia apresentou nesta segunda-feira (1º) um chip potente para laptops com Windows, com o objetivo de consolidar sua posição no mercado de computadores pessoais (PC) com inteligência artificial (IA). Leia mais (06/01/2026 - 11h27)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/tec/2026/06/nvidia-lanca-chip-potente-para-laptops-com-windows-e-promete-revolucionar-mercado.shtml",
+    "published_at": "2026-06-01T11:27:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Nvidia apresentou nesta segunda-feira (1º) um chip potente para laptops com Windows, com o objetivo de consolidar sua posição no mercado de computadores pessoais (PC) com inteligência artificial (IA).\n\nLeia mais (06/01/2026 - 11h27). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.347667Z"
+  },
+  {
+    "id": "73f795e296e4926ad8e28ab3264f085a",
+    "title": "Camil Alimentos propõe aumento de capital de R$ 1,39 bi",
+    "subtitle": null,
+    "content_preview": "O conselho de administração da Camil Alimentos propôs aos seus acionistas um aumento de capital de R$ 1,39 bilhão sem emissão de novas ações. Leia mais (06/01/2026 - 10h30)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://aovivo.folha.uol.com.br/mercado/2026/06/01/6449-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post450819",
+    "published_at": "2026-06-01T10:30:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Alimentos",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Alimentos",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O conselho de administração da Camil Alimentos propôs aos seus acionistas um aumento de capital de R$ 1,39 bilhão sem emissão de novas ações.\n\nLeia mais (06/01/2026 - 10h30). O foco principal passa por Alimentos, Economia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.347667Z"
+  },
+  {
+    "id": "327a88c1d7b49d4716e172c44b9fd600",
+    "title": "Petrobras reduz em 14,2% preço do querosene de aviação a partir desta segunda",
+    "subtitle": null,
+    "content_preview": "A Petrobras vai reduzir em 14,2% o preço médio de venda do querosene de aviação (QAV) para distribuidoras a partir de junho, o que corresponde a uma diminuição de R$ 0,93 por litro frente ao mês anterior, informou a estatal em comunicado nesta segunda-feira (1º). Leia mais (06/01/2026 - 10h02)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petrobras-reduz-em-142-preco-do-querosene-de-aviacao-a-partir-desta-segunda.shtml",
+    "published_at": "2026-06-01T10:02:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "PETR4"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "A Petrobras vai reduzir em 14,2% o preço médio de venda do querosene de aviação (QAV) para distribuidoras a partir de junho, o que corresponde a uma diminuição de R$ 0,93 por litro frente ao mês anterior, informou a estatal em comunicado nesta segunda-feira (1º).\n\nLeia mais (06/01/2026 - 10h02). O texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.347667Z"
+  },
+  {
+    "id": "6fb01bc4156d16110c4508274bac6a7c",
+    "title": "Inadimplência no agronegócio brasileiro encerra 2025 em 8,2%, aponta Serasa",
+    "subtitle": null,
+    "content_preview": "A inadimplência no agronegócio brasileiro voltou a subir no quarto trimestre de 2025, encerrando o ano a 8,2%, alta de um ponto percentual em relação ao mesmo período do ano anterior, em momento em que agricultores lidam com margens apertadas e diante de custos elevados, apontou nesta segunda-feira (1º) um levantamento da Serasa Experian. Leia mais (06/01/2026 - 10h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/inadimplencia-no-agronegocio-brasileiro-encerra-2025-em-82-aponta-serasa.shtml",
+    "published_at": "2026-06-01T10:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A inadimplência no agronegócio brasileiro voltou a subir no quarto trimestre de 2025, encerrando o ano a 8,2%, alta de um ponto percentual em relação ao mesmo período do ano anterior, em momento em que agricultores lidam com margens apertadas e diante de custos elevados, apontou nesta segunda-feira (1º) um levantamento da Serasa Experian.\n\nLeia mais (06/01/2026 - 10h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.347667Z"
+  },
+  {
+    "id": "1f540fa08e153daa45939ee7525389c4",
+    "title": "Rede Lojas MM planeja faturar R$ 3,5 bilhões e crescer 400% até 2032",
+    "subtitle": null,
+    "content_preview": "Uma das principais varejistas do Sul do país, a rede Lojas MM planeja ciclo de crescimento para chegar a R$ 3,5 bilhões de faturamento até 2032. A companhia opera também no Sudeste e no Centro-Oeste. Leia mais (06/01/2026 - 10h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/rede-lojas-mm-planeja-faturar-r-35-bilhoes-e-crescer-400-ate-2032.shtml",
+    "published_at": "2026-06-01T10:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Uma das principais varejistas do Sul do país, a rede Lojas MM planeja ciclo de crescimento para chegar a R$ 3,5 bilhões de faturamento até 2032.\n\nA companhia opera também no Sudeste e no Centro-Oeste. Leia mais (06/01/2026 - 10h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.347667Z"
+  },
+  {
+    "id": "8c0ebeeca39e80940fdc39fe1b2caec6",
+    "title": "Dólar abre em queda nesta segunda com atenções voltadas a negociações no Oriente Médio",
+    "subtitle": null,
+    "content_preview": "O dólar abriu em queda nesta segunda-feira (1º), enquanto no exterior a moeda norte-americana tem sinais mistos ante as demais divisas, com os investidores novamente atentos às movimentações diplomáticas e militares no Oriente Médio. Leia mais (06/01/2026 - 09h49)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/dolar-abre-em-queda-nesta-segunda-com-atencoes-voltadas-a-negociacoes-no-oriente-medio.shtml",
+    "published_at": "2026-06-01T09:49:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O dólar abriu em queda nesta segunda-feira (1º), enquanto no exterior a moeda norte-americana tem sinais mistos ante as demais divisas, com os investidores novamente atentos às movimentações diplomáticas e militares no Oriente Médio.\n\nLeia mais (06/01/2026 - 09h49). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.347667Z"
+  },
+  {
+    "id": "7cbaf75733e1b76778881ee3877a6adb",
+    "title": "Economistas sobem previsão da inflação para 2026 e os dois próximos anos",
+    "subtitle": null,
+    "content_preview": "Os economistas elevaram a previsão da inflação neste ano e para os dois próximos com o impacto da guerra no Irã afetando os preços dos combustíveis e dos alimentos em todo o mundo. Leia mais (06/01/2026 - 09h35)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/economistas-sobem-previsao-da-inflacao-para-2026-e-os-dois-proximos-anos.shtml",
+    "published_at": "2026-06-01T09:35:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Alimentos",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Alimentos",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 0.3333333333333333,
+    "relevance_score": 0.5,
+    "impact_score": 0.35,
+    "summary": "Os economistas elevaram a previsão da inflação neste ano e para os dois próximos com o impacto da guerra no Irã afetando os preços dos combustíveis e dos alimentos em todo o mundo.\n\nLeia mais (06/01/2026 - 09h35). O foco principal passa por Alimentos, Economia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.347667Z"
+  },
+  {
+    "id": "760ff9bd15bb50904fbe698abf7ee2d5",
+    "title": "Durigan diz que se reunirá com EUA para debater classificação de PCC e CV como grupos terroristas",
+    "subtitle": null,
+    "content_preview": "O ministro da Fazenda, Dario Durigan, afirmou nesta segunda-feira (1º) que terá reuniões nesta semana com autoridades dos EUA para tratar da decisão do governo norte-americano de designar as facções criminosas PCC (Primeiro Comando da Capital) e CV (Comando Vermelho) como organizações terroristas internacionais. Leia mais (06/01/2026 - 08h52)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/durigan-diz-que-se-reunira-com-eua-para-debater-classificacao-de-pcc-e-cv-como-grupos-terroristas.shtml",
+    "published_at": "2026-06-01T08:52:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O ministro da Fazenda, Dario Durigan, afirmou nesta segunda-feira (1º) que terá reuniões nesta semana com autoridades dos EUA para tratar da decisão do governo norte-americano de designar as facções criminosas PCC (Primeiro Comando da Capital) e CV (Comando Vermelho) como organizações terroristas internacionais.\n\nLeia mais (06/01/2026 - 08h52). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.347667Z"
+  },
+  {
+    "id": "7a6ac3caac8b6b89ece463502f42a129",
+    "title": "Com feriado de Corpus Christi, quinto dia útil de junho pode cair no sábado (6)",
+    "subtitle": null,
+    "content_preview": "O quinto dia útil de junho pode cair no sábado (6) por conta de Corpus Christi. A data marca o prazo-limite para o pagamento de salários de trabalhadores sob o regime da CLT (Consolidação das Leis do Trabalho). Leia mais (06/01/2026 - 08h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/com-feriado-de-corpus-christi-quinto-dia-util-de-junho-pode-cair-no-sabado-6.shtml",
+    "published_at": "2026-06-01T08:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O quinto dia útil de junho pode cair no sábado (6) por conta de Corpus Christi. A data marca o prazo-limite para o pagamento de salários de trabalhadores sob o regime da CLT (Consolidação das Leis do Trabalho).\n\nLeia mais (06/01/2026 - 08h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.349671Z"
+  },
+  {
     "id": "d5ecd4095bbeedf34cc9a96a0f42d8c8",
     "title": "Ibovespa e dólar hoje: Trump adia acordo com Irã pré-semana de emprego nos EUA",
     "subtitle": null,
@@ -70,6 +997,114 @@
     "summary": "Ibovespa e dólar hoje: Trump adia acordo com Irã pré-semana de emprego nos EUA.\n\nO foco principal passa por Economia, Macroeconomia.",
     "cluster_id": null,
     "created_at": "2026-06-01T04:44:08.167032Z"
+  },
+  {
+    "id": "4268eba7c4c570b79c9850bb72a9ce85",
+    "title": "Empresa projeta que teto de reajuste de planos de saúde só beneficia 14,5% dos usuários",
+    "subtitle": null,
+    "content_preview": "Análise do Grupo All Cross aponta que a maioria dos usuários de planos de saúde no país não vai se beneficiar do teto de reajuste aprovado pela ANS (Agência Nacional de Saúde Suplementar). O índice máximo de 5,11% foi anunciado como o menor aumento desde 2000. Leia mais (06/01/2026 - 07h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/empresa-projeta-que-teto-de-reajuste-de-planos-de-saude-so-beneficia-145-dos-usuarios.shtml",
+    "published_at": "2026-06-01T07:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Análise do Grupo All Cross aponta que a maioria dos usuários de planos de saúde no país não vai se beneficiar do teto de reajuste aprovado pela ANS (Agência Nacional de Saúde Suplementar).\n\nO índice máximo de 5,11% foi anunciado como o menor aumento desde 2000. Leia mais (06/01/2026 - 07h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.349671Z"
+  },
+  {
+    "id": "edf50474ac35d60dc0d19ac973ac4463",
+    "title": "Elétrica e pesada, Ferrari Luce pode ser um fracasso genial",
+    "subtitle": null,
+    "content_preview": "As reações do público e da crítica diante da Ferrari Luce, primeiro modelo elétrico da fabricante italiana, remetem ao que ocorreu com a Porsche no Salão de Paris, em 2002. Leia mais (06/01/2026 - 06h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/eduardosodre/2026/06/eletrica-e-pesada-ferrari-luce-pode-ser-um-fracasso-genial.shtml",
+    "published_at": "2026-06-01T06:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "As reações do público e da crítica diante da Ferrari Luce, primeiro modelo elétrico da fabricante italiana, remetem ao que ocorreu com a Porsche no Salão de Paris, em 2002.\n\nLeia mais (06/01/2026 - 06h00). O foco principal passa por Economia, Energia Eletrica.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.349671Z"
+  },
+  {
+    "id": "fdd002ecc3e6cae8c61dbcd15cf2e8fd",
+    "title": "Como um repórter do New York Times vendeu a própria casa somente com ajuda de IA",
+    "subtitle": null,
+    "content_preview": "Eu estava sentado no meu carro quando recebi uma ligação que valia potencialmente mais de meio milhão de dólares (R$ 2,6 milhões). Era uma corretora de imóveis cujo cliente estava considerando fazer uma oferta pela minha casa. Ela queria esclarecer alguns detalhes, incluindo: eu realmente tinha cuidado de todo o anúncio sozinho? Ela não conseguia acreditar que eu era um amador. Leia mais (06/01/2026 - 06h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/como-um-reporter-do-new-york-times-vendeu-a-propria-casa-somente-com-ajuda-de-ia.shtml",
+    "published_at": "2026-06-01T06:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Eu estava sentado no meu carro quando recebi uma ligação que valia potencialmente mais de meio milhão de dólares (R$ 2,6 milhões).\n\nEra uma corretora de imóveis cujo cliente estava considerando fazer uma oferta pela minha casa. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.349671Z"
   },
   {
     "id": "3dab1b07432c634c945e8067ee116759",
@@ -2236,6 +3271,45 @@
     "created_at": "2026-06-01T00:37:04.345437Z"
   },
   {
+    "id": "1ddc39807c505b8fbb65878ec2fd7c76",
+    "title": "002-2026-VPE-Comunicado Externo",
+    "subtitle": null,
+    "content_preview": "A B3 deixará de condicionar o início da negociação no mercado secundário de ETFs à apresentação do ofício de autorização de funcionamento expedido pela CVM.",
+    "full_text_if_available": null,
+    "source_id": "b3_comunicados",
+    "source_name": "B3 - Oficios e Comunicados",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "exchange",
+    "source_url": "https://www.b3.com.br/data/files/94/35/08/C6/1938E91064BF82E9AC094EA8/CE 002-2026-VPE ESCLARECIMENTOS SOBRE OS PROCEDIMENTOS PARA INICIO DA NEGOCIACAO DE ETFS NO MERCADO SECUNDARIO_PT.pdf",
+    "published_at": "2026-06-01T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "B3SA3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "A B3 deixará de condicionar o início da negociação no mercado secundário de ETFs à apresentação do ofício de autorização de funcionamento expedido pela CVM.\n\nO texto menciona B3SA3. O foco principal passa por B3, Mercado de Capitais.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.341913Z"
+  },
+  {
     "id": "c8a6c22af036def0c570db245175ba5b",
     "title": "EUA bloqueiam vendas de chips de IA da NVIDIA a empresas chinesas fora da China",
     "subtitle": null,
@@ -2329,6 +3403,46 @@
     "summary": "O petróleo abriu em alta de 1% nas negociações referentes à segunda-feira (1º), com investidores reagindo às incertezas em torno de uma resolução da guerra no Oriente Médio.\n\nLeia mais (05/31/2026 - 20h22). O foco principal passa por Economia, Mercado.",
     "cluster_id": null,
     "created_at": "2026-06-01T04:44:08.151062Z"
+  },
+  {
+    "id": "8a4178ae9bf794cb024cc0861d0d8979",
+    "title": "Petróleo sobe mais de 6% com novos ataques entre EUA e Irã",
+    "subtitle": null,
+    "content_preview": "O petróleo sobe mais de 6% nas negociações desta segunda-feira (1º), com investidores reagindo a novos ataques entre EUA e Irã e mais pessimistas quanto a uma resolução para o conflito no Oriente Médio. Leia mais (05/31/2026 - 20h22)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/petroleo-abre-em-alta-em-meio-a-incertezas-sobre-guerra-no-ira.shtml",
+    "published_at": "2026-05-31T20:22:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O petróleo sobe mais de 6% nas negociações desta segunda-feira (1º), com investidores reagindo a novos ataques entre EUA e Irã e mais pessimistas quanto a uma resolução para o conflito no Oriente Médio.\n\nLeia mais (05/31/2026 - 20h22). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T15:00:15.351675Z"
   },
   {
     "id": "c8c20d60342637cb9b723f3d02a70e81",

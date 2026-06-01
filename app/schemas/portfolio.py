@@ -19,6 +19,7 @@ class PortfolioSettings(BaseModel):
 
 class Portfolio(BaseModel):
     id: str
+    owner_id: str | None = None
     name: str
     base_currency: str = "BRL"
     created_at: datetime

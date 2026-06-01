@@ -5,6 +5,7 @@ from datetime import datetime, timezone
 from app.schemas.portfolio import Portfolio
 from app.services.asset_analysis_service import AssetAnalysisService
 from app.services.asset_universe_service import AssetUniverseService
+from app.services.forecast_service import ForecastService
 from app.services.news_ingestion_service import NewsIngestionService
 from app.services.portfolio_analytics_service import PortfolioAnalyticsService
 
@@ -33,6 +34,7 @@ class PortfolioOpinionService:
         self.news_service = NewsIngestionService()
         self.asset_analysis = AssetAnalysisService()
         self.assets = AssetUniverseService()
+        self.forecast = ForecastService()
 
     def generate_opinion(
         self,
@@ -55,8 +57,7 @@ class PortfolioOpinionService:
 
         news_impact = self._compute_news_impact(portfolio)
         macro_sensitivity = self._compute_macro_sensitivity(analysis)
-        var_95 = analysis.get("var_95")
-        forecast_risk = min(1.0, abs(var_95) * 5) if var_95 is not None else 0.5
+        forecast_risk = self._compute_forecast_risk(portfolio, analysis)
 
         portfolio_score = (
             0.30 * diversification_score
@@ -96,6 +97,7 @@ class PortfolioOpinionService:
             "conclusion": opinion["conclusion"],
             "sources": opinion["sources"],
             "source_groups": opinion["source_groups"],
+            "benchmark": opinion["benchmark"],
             "portfolio_id": portfolio.id,
             "generated_at": opinion["generated_at"],
         }
@@ -125,6 +127,24 @@ class PortfolioOpinionService:
                 macro_exposed += weight
             total += weight
         return macro_exposed / total if total > 0 else 0.5
+
+    def _compute_forecast_risk(self, portfolio: Portfolio, analysis: dict) -> float:
+        volatility = abs(float(analysis.get("volatility") or 0.0))
+        beta = abs(float(analysis.get("beta") or 0.0))
+        var_95 = abs(float(analysis.get("var_95") or 0.0))
+        structural_risk = min(1.0, volatility * 1.8 + var_95 * 2.4 + max(0.0, beta - 1.0) * 0.12)
+
+        confidences = []
+        for position in portfolio.positions[:8]:
+            forecast = self.forecast.predict(position.ticker)
+            if forecast and forecast.get("confidence") is not None:
+                confidences.append(float(forecast["confidence"]))
+
+        if not confidences:
+            return round(min(1.0, 0.35 + structural_risk * 0.65), 4)
+
+        predictability_penalty = 1.0 - (sum(confidences) / len(confidences))
+        return round(min(1.0, structural_risk * 0.6 + predictability_penalty * 0.4), 4)
 
     def _generate_text(
         self,
@@ -167,15 +187,15 @@ class PortfolioOpinionService:
 
         strengths = []
         if len(class_weights) >= 4:
-            strengths.append("A carteira tem boa diversificação entre classes de ativos, o que reduz a dependência de um único mercado.")
+            strengths.append("A carteira tem boa diversificacao entre classes de ativos, o que reduz a dependencia de um unico mercado.")
         if fixed_weight > 0:
             strengths.append("Existe um bloco mais defensivo em renda fixa ou caixa, o que ajuda a suavizar a volatilidade do conjunto.")
         if any(all_assets.get(ticker) and all_assets[ticker].asset_class == "US_STOCK" for ticker in weights):
-            strengths.append("A exposição internacional amplia o acesso a dólar e a motores de crescimento fora do mercado doméstico.")
+            strengths.append("A exposicao internacional amplia o acesso a dolar e a motores de crescimento fora do mercado domestico.")
         if any(all_assets.get(ticker) and all_assets[ticker].asset_class == "BR_STOCK" for ticker in weights):
             strengths.append("A parte brasileira traz ativos geradores de caixa e setores conhecidos pelo investidor local.")
         if not strengths:
-            strengths.append("A carteira tem uma lógica básica de diversificação, mas ainda depende bastante de poucos vetores.")
+            strengths.append("A carteira tem uma logica basica de diversificacao, mas ainda depende bastante de poucos vetores.")
 
         overlaps = []
         function_groups = {
@@ -186,29 +206,42 @@ class PortfolioOpinionService:
         for label, tickers in function_groups.items():
             matched = [ticker for ticker in weights if ticker.upper() in tickers]
             if len(matched) >= 2:
-                overlaps.append(f"Há sobreposição funcional em {label}: {', '.join(matched)}.")
+                overlaps.append(f"Ha sobreposicao funcional em {label}: {', '.join(matched)}.")
         if correlation_risk > 0.6:
-            overlaps.append("A correlação média entre ativos está elevada, o que reduz o ganho efetivo de diversificação.")
+            overlaps.append("A correlacao media entre ativos esta elevada, o que reduz o ganho efetivo de diversificacao.")
         if concentration > 0.25:
             overlaps.append("A carteira ainda concentra peso demais em poucos ativos relevantes.")
         if us_weight >= 0.35:
-            overlaps.append("A exposição aos Estados Unidos é maior do que parece quando se somam ativos globais, ETFs e BDRs.")
+            overlaps.append("A exposicao aos Estados Unidos e maior do que parece quando se somam ativos globais, ETFs e BDRs.")
         if fii_weight >= 0.25:
-            overlaps.append("O bloco de FIIs já exige cuidado para não mascarar risco de crédito ou sensibilidade a juros.")
+            overlaps.append("O bloco de FIIs ja exige cuidado para nao mascarar risco de credito ou sensibilidade a juros.")
+        sectors = Counter(
+            (all_assets.get(pos.ticker).sector if all_assets.get(pos.ticker) else "Desconhecido")
+            for pos in positions
+        )
+        repeated_sectors = [sector for sector, count in sectors.items() if sector != "Desconhecido" and count >= 2]
+        if repeated_sectors:
+            overlaps.append(f"Ha repeticao setorial relevante em {', '.join(repeated_sectors[:3])}.")
+        countries = Counter(
+            (all_assets.get(pos.ticker).country if all_assets.get(pos.ticker) else "Desconhecido")
+            for pos in positions
+        )
+        if countries.get("US", 0) >= 3:
+            overlaps.append("Existe sobreposicao geografica relevante em ativos ligados aos Estados Unidos.")
 
         block_reviews = []
         br_positions = [pos for pos in positions if pos.asset_class == "BR_STOCK"]
         if br_positions:
-            sectors = Counter(
+            sectors_br = Counter(
                 (all_assets.get(pos.ticker).sector if all_assets.get(pos.ticker) else "Desconhecido")
                 for pos in br_positions
             )
-            top_sector, _ = sectors.most_common(1)[0]
+            top_sector, _ = sectors_br.most_common(1)[0]
             block_reviews.append({
-                "title": "Ações brasileiras",
+                "title": "Acoes brasileiras",
                 "assessment": "Bom para renda e estabilidade, mas ainda concentrado em setores dominantes da carteira."
-                if len(sectors) <= 4 else "Bloco razoavelmente distribuído entre setores locais.",
-                "highlights": f"Maior concentração setorial em {top_sector}.",
+                if len(sectors_br) <= 4 else "Bloco razoavelmente distribuido entre setores locais.",
+                "highlights": f"Maior concentracao setorial em {top_sector}.",
             })
 
         fii_positions = [pos for pos in positions if pos.asset_class == "FII"]
@@ -216,20 +249,20 @@ class PortfolioOpinionService:
             credit_like = 0
             for pos in fii_positions:
                 sector = all_assets.get(pos.ticker).sector if all_assets.get(pos.ticker) else ""
-                if any(word in sector.lower() for word in ["crédito", "credito", "híbrido", "hibrido"]):
+                if any(word in sector.lower() for word in ["credito", "hibrido"]):
                     credit_like += 1
             block_reviews.append({
                 "title": "FIIs",
-                "assessment": "Bom para renda mensal, mas com atenção ao risco de crédito e ao comportamento dos juros."
+                "assessment": "Bom para renda mensal, mas com atencao ao risco de credito e ao comportamento dos juros."
                 if credit_like else "Bloco de FIIs mais equilibrado entre renda e tijolo.",
-                "highlights": f"{credit_like} fundo(s) têm perfil mais próximo de crédito ou híbrido.",
+                "highlights": f"{credit_like} fundo(s) tem perfil mais proximo de credito ou hibrido.",
             })
 
         us_positions = [pos for pos in positions if pos.asset_class == "US_STOCK"]
         if us_positions:
             block_reviews.append({
                 "title": "Exterior",
-                "assessment": "Bloco importante para diversificação geográfica, mas sensível ao ciclo de juros e ao peso excessivo em índices parecidos."
+                "assessment": "Bloco importante para diversificacao geografica, mas sensivel ao ciclo de juros e ao peso excessivo em indices parecidos."
                 if us_weight >= 0.3 else "Bloco externo ajuda a diversificar sem dominar a carteira.",
                 "highlights": f"Peso agregado aproximado de {us_weight * 100:.1f}% em ativos ligados aos EUA.",
             })
@@ -237,8 +270,8 @@ class PortfolioOpinionService:
         if fixed_weight > 0:
             block_reviews.append({
                 "title": "Renda fixa",
-                "assessment": "Bloco defensivo útil para equilíbrio da carteira.",
-                "highlights": f"Peso aproximado de {fixed_weight * 100:.1f}% na composição.",
+                "assessment": "Bloco defensivo util para equilibrio da carteira.",
+                "highlights": f"Peso aproximado de {fixed_weight * 100:.1f}% na composicao.",
             })
 
         if crypto_weight > 0:
@@ -250,7 +283,7 @@ class PortfolioOpinionService:
 
         headline_risks = []
         if us_weight >= 0.35:
-            headline_risks.append("renda variável global")
+            headline_risks.append("renda variavel global")
         if fii_weight >= 0.20:
             headline_risks.append("FIIs")
         if crypto_weight >= 0.08:
@@ -258,32 +291,32 @@ class PortfolioOpinionService:
         suffix = f", mas com risco concentrado em {', '.join(headline_risks)}" if headline_risks else ""
 
         if score >= 0.7:
-            headline = f"A avaliação final da carteira é: boa, diversificada em classes de ativos{suffix}."
+            headline = f"A avaliacao final da carteira e: boa, diversificada em classes de ativos{suffix}."
         elif score >= 0.45:
-            headline = f"A avaliação final da carteira é: razoável, com bons ativos, porém com sobreposições e riscos que merecem ajuste{suffix}."
+            headline = f"A avaliacao final da carteira e: razoavel, com bons ativos, porem com sobreposicoes e riscos que merecem ajuste{suffix}."
         else:
-            headline = f"A avaliação final da carteira é: frágil na construção atual, com concentração e correlação elevadas{suffix}."
+            headline = f"A avaliacao final da carteira e: fragil na construcao atual, com concentracao e correlacao elevadas{suffix}."
 
         summary_parts = [
-            "Não é uma carteira ruim.",
+            "Nao e uma carteira ruim.",
             f"Ela combina {len(class_weights)} classe(s) de ativos e hoje tem seus maiores pesos em {', '.join(top_tickers[:4])}.",
         ]
         if overlaps:
-            summary_parts.append("O principal ponto de atenção está na sobreposição entre ativos com função parecida e no risco escondido em alguns blocos.")
+            summary_parts.append("O principal ponto de atencao esta na sobreposicao entre ativos com funcao parecida e no risco escondido em alguns blocos.")
         if forecast_risk > 0.5:
-            summary_parts.append("A leitura quantitativa de risco ainda pede monitoramento de volatilidade e concentração.")
+            summary_parts.append("A leitura quantitativa de risco ainda pede monitoramento de volatilidade e concentracao.")
 
         final_diag_parts = []
         if concentration > 0.3:
-            final_diag_parts.append("a carteira está concentrada em poucos nomes")
+            final_diag_parts.append("a carteira esta concentrada em poucos nomes")
         if correlation_risk > 0.6:
             final_diag_parts.append("muitos ativos tendem a se mover juntos")
         if crypto_weight > 0.1:
-            final_diag_parts.append("o peso de cripto já aumenta bastante a oscilação potencial")
+            final_diag_parts.append("o peso de cripto ja aumenta bastante a oscilacao potencial")
         if not final_diag_parts:
-            final_diag_parts.append("a carteira está funcional, mas ainda pode ficar mais limpa e coerente")
+            final_diag_parts.append("a carteira esta funcional, mas ainda pode ficar mais limpa e coerente")
 
-        conclusion = "O maior ajuste conceitual é reduzir redundâncias, explicitar a função de cada bloco e limitar os riscos que hoje parecem diversificação, mas ainda representam exposição repetida."
+        conclusion = "O maior ajuste conceitual e reduzir redundancias, explicitar a funcao de cada bloco e limitar os riscos que hoje parecem diversificacao, mas ainda representam exposicao repetida."
 
         sources = []
         seen_ids = set()
@@ -306,9 +339,10 @@ class PortfolioOpinionService:
             "strengths": strengths[:4],
             "overlaps": overlaps[:5],
             "block_reviews": block_reviews,
-            "final_diagnosis": "No diagnóstico final, " + "; ".join(final_diag_parts) + ".",
+            "final_diagnosis": "No diagnostico final, " + "; ".join(final_diag_parts) + ".",
             "conclusion": conclusion,
             "sources": sources[:15],
             "source_groups": source_groups,
+            "benchmark": analysis.get("benchmark"),
             "generated_at": datetime.now(timezone.utc).isoformat(),
         }

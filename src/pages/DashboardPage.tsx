@@ -1,11 +1,13 @@
 import { ArrowRight, BadgeHelp, BookOpen, ChartColumnIncreasing, CircleAlert, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Cell, Legend, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
+import { ReactNode, useEffect, useMemo, useState } from 'react';
 import { Button, Card } from '../components/UI';
 import { usePortfolios } from '../context/PortfoliosContext';
 import { PortfolioOpinion } from '../components/PortfolioOpinion';
 import { ScenarioView } from '../components/ScenarioView';
-import { newsData, pieSeries } from '../data/mocks';
+import { NewsItem } from '../types';
+import api from '../utils/api';
 import { getActivePortfolioSelectionLabel, getPortfolioLabel, mapAssetClassToLabel } from '../utils/portfolios';
 
 const colors = ['#3D4D9C', '#C7559B', '#E15EF2', '#717171', '#A5A5A5'];
@@ -14,6 +16,16 @@ export function DashboardPage() {
   const { activePortfolio, selectedPortfolios, isAllPortfoliosSelected } = usePortfolios();
   const selectedPositions = selectedPortfolios.flatMap((portfolio) => portfolio.positions);
   const totalQuantity = selectedPositions.reduce((sum, p) => sum + p.quantity, 0);
+  const [relatedNews, setRelatedNews] = useState<NewsItem[]>([]);
+
+  useEffect(() => {
+    const route = activePortfolio && !isAllPortfoliosSelected
+      ? `/portfolios/${activePortfolio.id}/news`
+      : '/news?page=1&page_size=3';
+    api.get<{ items: NewsItem[] }>(route)
+      .then((data) => setRelatedNews(data.items.slice(0, 3)))
+      .catch(() => setRelatedNews([]));
+  }, [activePortfolio, isAllPortfoliosSelected]);
 
   const classDistribution = selectedPositions.reduce<Record<string, number>>((acc, pos) => {
     const label = mapAssetClassToLabel(pos.asset_class);
@@ -28,9 +40,7 @@ export function DashboardPage() {
 
   const compositionData = selectedPositions.length
     ? selectedPositions.map((p) => ({ name: p.ticker, value: p.quantity }))
-    : pieSeries;
-
-  const relatedNews = newsData.slice(0, 3);
+    : [];
 
   const nextSteps = [
     {
@@ -75,12 +85,14 @@ export function DashboardPage() {
     },
   ];
 
-  const helperPill = (icon: React.ReactNode, text: string) => (
+  const helperPill = (icon: ReactNode, text: string) => (
     <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-soft)] px-3 py-1.5 text-xs font-semibold text-[var(--text-main)]">
       {icon}
       <span>{text}</span>
     </div>
   );
+
+  const compositionEmpty = useMemo(() => !compositionData.length, [compositionData.length]);
 
   return (
     <div className="space-y-6">
@@ -166,17 +178,21 @@ export function DashboardPage() {
               : 'Distribuição da carteira ativa.'}
           </p>
           <div className="mt-4 h-72">
-            <ResponsiveContainer width="100%" height="100%">
-              <PieChart>
-                <Pie data={compositionData} dataKey="value" nameKey="name" outerRadius={90}>
-                  {compositionData.map((_, index) => (
-                    <Cell key={index} fill={colors[index % colors.length]} />
-                  ))}
-                </Pie>
-                <Tooltip />
-                <Legend />
-              </PieChart>
-            </ResponsiveContainer>
+            {compositionEmpty ? (
+              <div className="flex h-full items-center justify-center text-sm text-[var(--text-muted)]">Adicione ativos para visualizar a composição.</div>
+            ) : (
+              <ResponsiveContainer width="100%" height="100%">
+                <PieChart>
+                  <Pie data={compositionData} dataKey="value" nameKey="name" outerRadius={90}>
+                    {compositionData.map((_, index) => (
+                      <Cell key={index} fill={colors[index % colors.length]} />
+                    ))}
+                  </Pie>
+                  <Tooltip />
+                  <Legend />
+                </PieChart>
+              </ResponsiveContainer>
+            )}
           </div>
         </Card>
       </div>
@@ -203,13 +219,15 @@ export function DashboardPage() {
 
         <Card title="Notícias para acompanhar" right={helperPill(<ChartColumnIncreasing size={14} />, 'O que pode impactar sua carteira')}>
           <div className="space-y-3">
-            {relatedNews.map((item) => (
+            {relatedNews.length ? relatedNews.map((item) => (
               <article key={item.id} className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4">
                 <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--brand)]">{item.source_name}</p>
                 <h3 className="mt-2 text-base font-semibold text-[var(--text-main)]">{item.title}</h3>
                 <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{item.summary}</p>
               </article>
-            ))}
+            )) : (
+              <p className="text-sm text-[var(--text-muted)]">Sem notícias relevantes suficientes para a seleção atual.</p>
+            )}
             <Link to="/noticias" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand)]">
               Ver mais notícias
               <ArrowRight size={16} />

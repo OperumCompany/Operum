@@ -11,9 +11,9 @@ export function LoginPage() {
   const { login } = useAuth();
   const navigate = useNavigate();
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
-    const res = login(email, password);
+    const res = await login(email, password);
     setMessage({ ok: res.ok, text: res.message });
     if (res.ok) navigate('/');
   }

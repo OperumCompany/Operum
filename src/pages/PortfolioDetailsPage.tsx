@@ -1,6 +1,6 @@
 import { FormEvent, Fragment, useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Sparkles, ChevronDown, ChevronUp } from 'lucide-react';
+import { Sparkles, ChevronDown, ChevronUp, ArrowDownUp } from 'lucide-react';
 import { Button, Card, Input } from '../components/UI';
 import { CompositionCharts } from '../components/CompositionCharts';
 import { PortfolioAnalysisAI } from '../components/PortfolioAnalysisAI';
@@ -19,12 +19,16 @@ type PriceRow = {
   total_value: number | null;
   name: string;
   weight_pct: number | null;
+  unrealized_pnl: number | null;
+  unrealized_pnl_pct: number | null;
+  sparkline_20d: number[];
 };
 
 type PricesResponse = {
   portfolio_id: string;
   portfolio_name: string;
   total_value: number | null;
+  total_unrealized_pnl: number | null;
   positions: PriceRow[];
 };
 
@@ -47,6 +51,8 @@ type OpinionState = {
   expandedSources?: Record<string, boolean>;
 };
 
+type SortKey = 'ticker' | 'quantity' | 'current_price' | 'total_value' | 'weight_pct' | 'unrealized_pnl';
+
 function resolveDisplayClass(assetClass: string, ticker: string, assets: Asset[]): string {
   if (assetClass === 'US_STOCK') {
     const asset = assets.find((a) => a.ticker === ticker);
@@ -61,6 +67,37 @@ function confidenceLabel(confidence: string) {
   return 'Confianca baixa';
 }
 
+function fmtMoney(value: number | null | undefined, currency = 'BRL') {
+  if (value == null) return '-';
+  const prefix = currency === 'BRL' ? 'R$' : currency;
+  return `${prefix} ${value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+}
+
+function Sparkline({ values }: { values: number[] }) {
+  if (!values.length) return <span className="text-xs text-[var(--text-muted)]">-</span>;
+  const min = Math.min(...values);
+  const max = Math.max(...values);
+  const range = Math.max(max - min, 1);
+  const points = values.map((value, index) => {
+    const x = (index / Math.max(values.length - 1, 1)) * 100;
+    const y = 24 - ((value - min) / range) * 24;
+    return `${x},${y}`;
+  }).join(' ');
+  const rising = values[values.length - 1] >= values[0];
+  return (
+    <svg viewBox="0 0 100 24" className="h-8 w-24 overflow-visible">
+      <polyline
+        fill="none"
+        stroke={rising ? '#3D9C72' : '#C7559B'}
+        strokeWidth="2"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+        points={points}
+      />
+    </svg>
+  );
+}
+
 export function PortfolioDetailsPage() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
@@ -73,11 +110,14 @@ export function PortfolioDetailsPage() {
   const [editingName, setEditingName] = useState(false);
   const [assets, setAssets] = useState<Asset[]>([]);
   const [analysis, setAnalysis] = useState<PortfolioAnalysis | null>(null);
-  const [, setAnalysisLoading] = useState(false);
-  const [, setAnalysisError] = useState<string | null>(null);
+  const [analysisLoading, setAnalysisLoading] = useState(false);
+  const [analysisError, setAnalysisError] = useState<string | null>(null);
   const [prices, setPrices] = useState<PricesResponse | null>(null);
   const [pricesLoading, setPricesLoading] = useState(false);
   const [positionOpinions, setPositionOpinions] = useState<Record<string, OpinionState>>({});
+  const [tableQuery, setTableQuery] = useState('');
+  const [sortKey, setSortKey] = useState<SortKey>('weight_pct');
+  const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
 
   useEffect(() => {
     api.get<Asset[]>('/assets/universe').then(setAssets).catch(() => {});
@@ -88,23 +128,26 @@ export function PortfolioDetailsPage() {
   useEffect(() => {
     if (!portfolio) return;
     setAnalysisLoading(true);
-    setAnalysisError(null);
-    api.get<PortfolioAnalysis>(`/portfolios/${portfolio.id}/analysis`)
-      .then(setAnalysis)
-      .catch((e) => {
-        setAnalysisError(e instanceof Error ? e.message : 'Erro ao carregar analise');
-        setAnalysis(null);
-      })
-      .finally(() => setAnalysisLoading(false));
-  }, [portfolio]);
-
-  useEffect(() => {
-    if (!portfolio) return;
     setPricesLoading(true);
-    api.get<PricesResponse>(`/portfolios/${portfolio.id}/prices`)
-      .then(setPrices)
-      .catch(() => setPrices(null))
-      .finally(() => setPricesLoading(false));
+    setAnalysisError(null);
+    Promise.all([
+      api.get<PortfolioAnalysis>(`/portfolios/${portfolio.id}/analysis`),
+      api.get<PricesResponse>(`/portfolios/${portfolio.id}/prices`),
+    ])
+      .then(([analysisData, pricesData]) => {
+        setAnalysis(analysisData);
+        setPrices(pricesData);
+      })
+      .catch((e) => {
+        const msg = e instanceof Error ? e.message : 'Erro ao carregar dados da carteira';
+        setAnalysisError(msg);
+        setAnalysis(null);
+        setPrices(null);
+      })
+      .finally(() => {
+        setAnalysisLoading(false);
+        setPricesLoading(false);
+      });
   }, [portfolio]);
 
   const filteredAssets = useMemo(() => {
@@ -117,14 +160,53 @@ export function PortfolioDetailsPage() {
 
   const positionsByClass = useMemo(() => {
     if (!portfolio) return {};
+    const query = tableQuery.trim().toLowerCase();
     const grouped: Record<string, typeof portfolio.positions> = {};
     for (const pos of portfolio.positions) {
-      const cls = resolveDisplayClass(pos.asset_class, pos.ticker, assets);
-      if (!grouped[cls]) grouped[cls] = [];
-      grouped[cls].push(pos);
+      const priceInfo = prices?.positions.find((item) => item.ticker === pos.ticker);
+      const asset = assets.find((item) => item.ticker === pos.ticker);
+      const label = resolveDisplayClass(pos.asset_class, pos.ticker, assets);
+      const haystack = `${pos.ticker} ${asset?.name ?? ''}`.toLowerCase();
+      if (query && !haystack.includes(query)) continue;
+      if (!grouped[label]) grouped[label] = [];
+      grouped[label].push(pos);
+      if (priceInfo) {
+        // no-op: keeps parity with memo deps for sorting values
+      }
+    }
+
+    const getComparable = (pos: typeof portfolio.positions[number]) => {
+      const priceInfo = prices?.positions.find((item) => item.ticker === pos.ticker);
+      switch (sortKey) {
+        case 'ticker':
+          return pos.ticker;
+        case 'quantity':
+          return pos.quantity;
+        case 'current_price':
+          return priceInfo?.current_price ?? Number.NEGATIVE_INFINITY;
+        case 'total_value':
+          return priceInfo?.total_value ?? Number.NEGATIVE_INFINITY;
+        case 'unrealized_pnl':
+          return priceInfo?.unrealized_pnl ?? Number.NEGATIVE_INFINITY;
+        case 'weight_pct':
+        default:
+          return priceInfo?.weight_pct ?? Number.NEGATIVE_INFINITY;
+      }
+    };
+
+    for (const key of Object.keys(grouped)) {
+      grouped[key].sort((a, b) => {
+        const left = getComparable(a);
+        const right = getComparable(b);
+        if (typeof left === 'string' && typeof right === 'string') {
+          return sortDirection === 'asc' ? left.localeCompare(right) : right.localeCompare(left);
+        }
+        const diff = Number(left) - Number(right);
+        return sortDirection === 'asc' ? diff : -diff;
+      });
     }
     return grouped;
-  }, [portfolio, assets]);
+  }, [portfolio, assets, prices, sortDirection, sortKey, tableQuery]);
 
   const assetClassesWithPositions = useMemo(() => {
     return ASSET_CLASSES.filter((cls) => positionsByClass[cls]?.length);
@@ -228,6 +310,15 @@ export function PortfolioDetailsPage() {
     });
   }
 
+  function updateSort(nextKey: SortKey) {
+    if (sortKey === nextKey) {
+      setSortDirection((prev) => prev === 'asc' ? 'desc' : 'asc');
+      return;
+    }
+    setSortKey(nextKey);
+    setSortDirection(nextKey === 'ticker' ? 'asc' : 'desc');
+  }
+
   if (!portfolio) {
     return (
       <Card title="Carteira nao encontrada">
@@ -264,7 +355,8 @@ export function PortfolioDetailsPage() {
           )}
           <p className="mt-1 text-sm text-[var(--text-muted)]">
             {portfolio.positions.length} ativo(s) • Moeda base: {portfolio.base_currency}
-            {prices?.total_value != null && ` • Valor total: R$ ${prices.total_value.toLocaleString('pt-BR', { minimumFractionDigits: 2 })}`}
+            {prices?.total_value != null && ` • Valor total: ${fmtMoney(prices.total_value)}`}
+            {prices?.total_unrealized_pnl != null && ` • P&L nao realizado: ${fmtMoney(prices.total_unrealized_pnl)}`}
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -283,6 +375,44 @@ export function PortfolioDetailsPage() {
           </Link>
         </div>
       </section>
+
+      {(analysisLoading || pricesLoading) && (
+        <Card title="Atualizando carteira">
+          <div className="flex items-center gap-3">
+            <div className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--brand)] border-t-transparent" />
+            <p className="text-sm text-[var(--text-muted)]">Carregando analise, precos e comparativos da carteira...</p>
+          </div>
+        </Card>
+      )}
+
+      {analysisError && (
+        <Card title="Falha ao carregar dados">
+          <p className="text-sm text-[var(--danger-text)]">{analysisError}</p>
+        </Card>
+      )}
+
+      {analysis?.benchmark && (
+        <Card title="Benchmark de referencia">
+          <div className="grid gap-3 sm:grid-cols-4">
+            <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-4">
+              <p className="text-xs text-[var(--text-muted)]">Benchmark</p>
+              <p className="mt-1 text-lg font-bold text-[var(--text-main)]">{analysis.benchmark.label}</p>
+            </div>
+            <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-4">
+              <p className="text-xs text-[var(--text-muted)]">Beta (estimativa)</p>
+              <p className="mt-1 text-lg font-bold text-[var(--text-main)]">{analysis.beta != null ? analysis.beta.toFixed(2) : '-'}</p>
+            </div>
+            <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-4">
+              <p className="text-xs text-[var(--text-muted)]">Benchmark 3m</p>
+              <p className="mt-1 text-lg font-bold text-[var(--text-main)]">{analysis.benchmark.return_63d_pct != null ? `${analysis.benchmark.return_63d_pct.toFixed(1)}%` : '-'}</p>
+            </div>
+            <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-4">
+              <p className="text-xs text-[var(--text-muted)]">VaR 95% (252d)</p>
+              <p className="mt-1 text-lg font-bold text-[var(--text-main)]">{analysis.var_95 != null ? `${(analysis.var_95 * 100).toFixed(2)}%` : '-'}</p>
+            </div>
+          </div>
+        </Card>
+      )}
 
       <PortfolioAnalysisAI portfolioId={portfolio.id} />
 
@@ -334,6 +464,23 @@ export function PortfolioDetailsPage() {
         </form>
       </Card>
 
+      <Card title="Filtros e ordenacao" right={<ArrowDownUp size={16} className="text-[var(--brand)]" />}>
+        <div className="grid gap-3 sm:grid-cols-3">
+          <Input value={tableQuery} onChange={(e) => setTableQuery(e.target.value)} placeholder="Filtrar por ticker ou nome" />
+          <select value={sortKey} onChange={(e) => updateSort(e.target.value as SortKey)} className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm">
+            <option value="weight_pct">% da carteira</option>
+            <option value="total_value">Valor atual</option>
+            <option value="unrealized_pnl">Ganho/perda</option>
+            <option value="current_price">Preco atual</option>
+            <option value="quantity">Quantidade</option>
+            <option value="ticker">Ticker</option>
+          </select>
+          <Button type="button" variant="ghost" onClick={() => setSortDirection((prev) => prev === 'asc' ? 'desc' : 'asc')}>
+            Ordem: {sortDirection === 'asc' ? 'Crescente' : 'Decrescente'}
+          </Button>
+        </div>
+      </Card>
+
       {assetClassesWithPositions.length > 0 ? (
         assetClassesWithPositions.map((cls) => (
           <Card key={cls} title={CLASS_LABELS[cls] || cls}>
@@ -346,7 +493,9 @@ export function PortfolioDetailsPage() {
                     <th>Preco medio</th>
                     <th>Preco atual</th>
                     <th>Valor total</th>
+                    <th>P&L nao realizado</th>
                     <th>% Carteira</th>
+                    <th>Mini historico</th>
                     <th>IA</th>
                     <th></th>
                   </tr>
@@ -361,21 +510,17 @@ export function PortfolioDetailsPage() {
                           <td className="py-3 font-semibold">{pos.ticker}</td>
                           <td>{pos.quantity}</td>
                           <td>{pos.avg_price ? `R$ ${pos.avg_price.toFixed(2)}` : '-'}</td>
+                          <td>{priceInfo?.current_price != null ? `${priceInfo.currency === 'BRL' ? 'R$' : priceInfo.currency} ${priceInfo.current_price.toFixed(2)}` : '-'}</td>
+                          <td>{fmtMoney(priceInfo?.total_value)}</td>
                           <td>
-                            {pricesLoading ? '-' : priceInfo?.current_price != null
-                              ? `${priceInfo.currency === 'BRL' ? 'R$' : priceInfo.currency} ${priceInfo.current_price.toFixed(2)}`
-                              : '-'}
+                            {priceInfo?.unrealized_pnl != null ? (
+                              <span className={priceInfo.unrealized_pnl >= 0 ? 'text-green-600' : 'text-[var(--danger-text)]'}>
+                                {fmtMoney(priceInfo.unrealized_pnl)} {priceInfo.unrealized_pnl_pct != null ? `(${priceInfo.unrealized_pnl_pct.toFixed(1)}%)` : ''}
+                              </span>
+                            ) : '-'}
                           </td>
-                          <td>
-                            {pricesLoading ? '-' : priceInfo?.total_value != null
-                              ? `R$ ${priceInfo.total_value.toFixed(2)}`
-                              : '-'}
-                          </td>
-                          <td>
-                            {pricesLoading ? '-' : priceInfo?.weight_pct != null
-                              ? `${priceInfo.weight_pct.toFixed(1)}%`
-                              : '-'}
-                          </td>
+                          <td>{priceInfo?.weight_pct != null ? `${priceInfo.weight_pct.toFixed(1)}%` : '-'}</td>
+                          <td><Sparkline values={priceInfo?.sparkline_20d ?? []} /></td>
                           <td>
                             <button
                               type="button"
@@ -398,7 +543,7 @@ export function PortfolioDetailsPage() {
                         </tr>
                         {opinionState?.open && (
                           <tr className="border-t border-[var(--border-soft)] bg-[var(--bg-surface-strong)]/60">
-                            <td colSpan={8} className="p-4">
+                            <td colSpan={10} className="p-4">
                               {opinionState.loading && (
                                 <div className="flex items-center gap-3">
                                   <div className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--brand)] border-t-transparent" />
@@ -431,7 +576,7 @@ export function PortfolioDetailsPage() {
                                     )}
                                   </div>
 
-                                  <div className="grid gap-3 lg:grid-cols-3">
+                                  <div className="grid gap-3 lg:grid-cols-4">
                                     <section className="rounded-2xl bg-white p-4">
                                       <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Situacao atual</p>
                                       <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{opinionState.data.analysis_sections.current}</p>
@@ -443,6 +588,15 @@ export function PortfolioDetailsPage() {
                                     <section className="rounded-2xl bg-white p-4">
                                       <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Perspectivas 3 meses</p>
                                       <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{opinionState.data.analysis_sections.outlook}</p>
+                                    </section>
+                                    <section className="rounded-2xl bg-white p-4">
+                                      <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Snapshot quantitativo</p>
+                                      <div className="mt-2 space-y-2 text-sm text-[var(--text-main)]">
+                                        <p>Beta 63d: {opinionState.data.recent_performance.beta_63d ?? '-'}</p>
+                                        <p>Correlacao 63d: {opinionState.data.recent_performance.correlation_63d ?? '-'}</p>
+                                        <p>Drawdown 90d: {opinionState.data.recent_performance.drawdown_90d_pct != null ? `${opinionState.data.recent_performance.drawdown_90d_pct}%` : '-'}</p>
+                                        <p>Benchmark: {opinionState.data.recent_performance.benchmark_ticker ?? '-'}</p>
+                                      </div>
                                     </section>
                                   </div>
 

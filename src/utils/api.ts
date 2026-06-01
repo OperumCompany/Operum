@@ -1,10 +1,21 @@
 const API_BASE = '/api';
+const AUTH_TOKEN_KEY = 'operum_auth_token';
 
 class ApiClient {
   private async request<T>(path: string, options?: RequestInit): Promise<T> {
     const url = `${API_BASE}${path}`;
+    let token: string | null = null;
+    try {
+      token = JSON.parse(localStorage.getItem(AUTH_TOKEN_KEY) ?? 'null');
+    } catch {
+      token = null;
+    }
     const res = await fetch(url, {
-      headers: { 'Content-Type': 'application/json', ...options?.headers },
+      headers: {
+        'Content-Type': 'application/json',
+        ...(token ? { Authorization: `Bearer ${token}` } : {}),
+        ...options?.headers,
+      },
       ...options,
     });
     if (!res.ok) {

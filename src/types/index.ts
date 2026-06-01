@@ -2,7 +2,9 @@ export type User = {
   id: string;
   name: string;
   email: string;
-  password: string;
+  password?: string;
+  created_at?: string;
+  updated_at?: string;
 };
 
 export type NewsCategory =
@@ -36,6 +38,11 @@ export type UserPreferences = {
   topics: NewsCategory[];
   compactMode: boolean;
   notifications: boolean;
+};
+
+export type AuthResponse = {
+  token: string;
+  user: User;
 };
 
 // --- Backend-aligned types ---
@@ -83,10 +90,18 @@ export type PortfolioAnalysis = {
   concentration_label: string;
   correlation_matrix: number[][] | null;
   volatility: number | null;
+  volatility_window_days: number;
   portfolio_return: number | null;
   var_95: number | null;
   cvar_95: number | null;
   beta: number | null;
+  benchmark: {
+    ticker: string | null;
+    label: string;
+    return_21d_pct: number | null;
+    return_63d_pct: number | null;
+    return_252d_pct: number | null;
+  };
   num_assets: number;
   num_classes: number;
 };
@@ -192,6 +207,10 @@ export type PositionOpinion = {
     change_3m_pct: number | null;
     change_12m_pct: number | null;
     volatility_21d_pct: number | null;
+    drawdown_90d_pct?: number | null;
+    beta_63d?: number | null;
+    correlation_63d?: number | null;
+    benchmark_ticker?: string | null;
   };
   outlook_3m: {
     scenario: string;

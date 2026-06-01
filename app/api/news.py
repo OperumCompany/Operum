@@ -1,5 +1,6 @@
 import logging
-from fastapi import APIRouter, HTTPException, Query
+import os
+from fastapi import APIRouter, Header, HTTPException, Query
 from datetime import datetime, timezone
 
 from app.schemas.news import NewsItem
@@ -14,6 +15,14 @@ router = APIRouter(prefix="/news", tags=["news"])
 ingestion_service = NewsIngestionService()
 scoring_service = NewsScoringService()
 summary_service = NewsSummaryService()
+ADMIN_REFRESH_TOKEN = os.environ.get("OPERUM_REFRESH_TOKEN", "")
+
+
+def _require_admin_token(authorization: str | None):
+    if not ADMIN_REFRESH_TOKEN:
+        return
+    if not authorization or authorization != f"Bearer {ADMIN_REFRESH_TOKEN}":
+        raise HTTPException(status_code=401, detail="Token administrativo invalido")
 
 
 @router.get("", response_model=dict)
@@ -123,7 +132,8 @@ def get_news(news_id: str):
 
 
 @router.post("/reindex")
-def reindex_news():
+def reindex_news(authorization: str | None = Header(default=None)):
+    _require_admin_token(authorization)
     count = ingestion_service.ingest()
     return {"status": "ok", "ingested": count}
 
@@ -132,7 +142,9 @@ def reindex_news():
 def backfill_news(
     start_date: str = Query("2026-05-01", description="Data inicial ISO"),
     source_id: str | None = Query(None, description="Fonte especifica para backfill"),
+    authorization: str | None = Header(default=None),
 ):
+    _require_admin_token(authorization)
     result = ingestion_service.backfill_history(start_date=start_date, source_id=source_id)
     return {"status": "ok", **result}
 

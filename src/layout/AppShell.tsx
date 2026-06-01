@@ -54,11 +54,11 @@ export function AppShell() {
             <div className="flex items-start justify-between gap-3">
               <div>
                 <p className="text-xs uppercase tracking-[0.18em] text-white/50">Conta</p>
-                <p className="mt-2 text-base font-semibold">{user?.name}</p>
-                <p className="mt-1 text-sm text-white/68">{user?.email}</p>
+                <p className="mt-2 text-base font-semibold">{user?.name ?? 'Conta'}</p>
+                <p className="mt-1 text-sm text-white/68">{user?.email ?? 'Sem sessao'}</p>
               </div>
               <button
-                onClick={logout}
+                onClick={() => { void logout(); }}
                 className="rounded-2xl border border-white/12 p-2.5 text-[#E15EF2] transition hover:bg-white/10"
                 aria-label="Sair"
                 title="Sair"

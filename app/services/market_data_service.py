@@ -32,6 +32,9 @@ class MarketDataService:
             "USDT": "USDT-USD",
             "USDC": "USDC-USD",
             "IVVB11": "IVVB11.SA",
+            "IBOV": "^BVSP",
+            "SP500": "^GSPC",
+            "IFIX": "IFIX.SA",
         }
         if ticker in mapping:
             return mapping[ticker]

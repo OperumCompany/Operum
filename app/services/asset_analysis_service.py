@@ -1,4 +1,5 @@
 import math
+import unicodedata
 from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 
@@ -101,7 +102,8 @@ class AssetAnalysisService:
         return asset.model_dump()
 
     def _normalize_text(self, text: str) -> str:
-        return (text or "").lower()
+        base = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode("ascii")
+        return base.lower()
 
     def _safe_dt(self, dt: datetime) -> datetime:
         return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
@@ -171,7 +173,7 @@ class AssetAnalysisService:
 
         published = self._safe_dt(news.published_at)
         age_days = max(0.0, (datetime.now(timezone.utc) - published).total_seconds() / 86400)
-        recency_score = max(0.0, 1.0 - min(age_days / 120.0, 1.0))
+        recency_score = math.exp(-age_days / 30.0)
         score += recency_score * weights["recency"]
         source_confidence = self._source_confidence_weight(news)
         score += source_confidence * weights["source_confidence"]
@@ -231,8 +233,13 @@ class AssetAnalysisService:
         )
 
         results = []
+        seen_event_keys: set[str] = set()
         for item in matches[:limit]:
             news = item["news"]
+            event_key = self._normalize_text(news.title)[:120]
+            if event_key in seen_event_keys:
+                continue
+            seen_event_keys.add(event_key)
             results.append({
                 "id": news.id,
                 "title": news.title,
@@ -264,6 +271,7 @@ class AssetAnalysisService:
     def _performance_snapshot(self, ticker: str, avg_price: float | None) -> dict:
         current = self.market.get_current_price(ticker)
         df = self._get_history_dataframe(ticker)
+        meta = self._asset_meta(ticker)
 
         current_price = float(current["price"]) if current and current.get("price") is not None else avg_price
         currency = current.get("currency", "BRL") if current else "BRL"
@@ -281,10 +289,42 @@ class AssetAnalysisService:
         month_3 = pct_change(63)
         month_12 = pct_change(252)
         volatility_21d = None
+        drawdown_90d = None
+        beta_63d = None
+        correlation_63d = None
         if df is not None and len(df) > 22:
             returns = df["close"].pct_change().dropna().tail(21)
             if not returns.empty:
                 volatility_21d = float(returns.std() * math.sqrt(21) * 100)
+        if df is not None and len(df) > 30:
+            closes = df["close"].astype(float)
+            rolling = closes.tail(90)
+            peak = rolling.cummax()
+            dd = ((rolling / peak) - 1.0) * 100
+            if not dd.empty:
+                drawdown_90d = float(dd.min())
+        benchmark_ticker = "IBOV"
+        if meta.get("asset_class") == "FII":
+            benchmark_ticker = "IFIX"
+        elif meta.get("asset_class") == "CRYPTO":
+            benchmark_ticker = "BTC"
+        elif meta.get("country") == "US":
+            benchmark_ticker = "SP500"
+        if df is not None and len(df) > 64 and benchmark_ticker != ticker.upper():
+            benchmark_history = self.market.get_history(benchmark_ticker, period="1y", interval="1d")
+            if benchmark_history and benchmark_history.get("prices"):
+                benchmark_df = pd.DataFrame(benchmark_history["prices"])
+                if not benchmark_df.empty and "close" in benchmark_df.columns:
+                    asset_ret = df["close"].astype(float).pct_change().dropna().tail(63).reset_index(drop=True)
+                    bench_ret = benchmark_df["close"].astype(float).pct_change().dropna().tail(63).reset_index(drop=True)
+                    aligned = pd.concat([asset_ret, bench_ret], axis=1).dropna()
+                    if len(aligned) >= 20:
+                        asset_series = aligned.iloc[:, 0]
+                        bench_series = aligned.iloc[:, 1]
+                        bench_var = float(bench_series.var())
+                        if bench_var > 0:
+                            beta_63d = float(asset_series.cov(bench_series) / bench_var)
+                        correlation_63d = float(asset_series.corr(bench_series))
 
         return {
             "current_price": current_price,
@@ -293,6 +333,10 @@ class AssetAnalysisService:
             "change_3m_pct": round(month_3, 2) if month_3 is not None else None,
             "change_12m_pct": round(month_12, 2) if month_12 is not None else None,
             "volatility_21d_pct": round(volatility_21d, 2) if volatility_21d is not None else None,
+            "drawdown_90d_pct": round(drawdown_90d, 2) if drawdown_90d is not None else None,
+            "beta_63d": round(beta_63d, 2) if beta_63d is not None else None,
+            "correlation_63d": round(correlation_63d, 2) if correlation_63d is not None else None,
+            "benchmark_ticker": benchmark_ticker,
             "has_history": df is not None and len(df) > 5,
             "has_3m_history": df is not None and len(df) > 63,
         }
@@ -341,9 +385,19 @@ class AssetAnalysisService:
     def _confidence(self, perf: dict, news_list: list[dict]) -> str:
         has_price = perf.get("current_price") is not None
         has_history = perf.get("has_history")
-        if has_price and has_history and len(news_list) >= 4:
+        unique_sources = len({item.get("source_name") for item in news_list})
+        official_ratio = (
+            sum(1 for item in news_list if item.get("is_official")) / len(news_list)
+            if news_list else 0.0
+        )
+        sentiment_values = [item["sentiment_score"] for item in news_list]
+        dispersion = 0.0
+        if len(sentiment_values) >= 2:
+            avg = sum(sentiment_values) / len(sentiment_values)
+            dispersion = sum(abs(value - avg) for value in sentiment_values) / len(sentiment_values)
+        if has_price and has_history and len(news_list) >= 5 and unique_sources >= 3 and (official_ratio >= 0.2 or dispersion <= 0.45):
             return "alta"
-        if has_price and (has_history or news_list):
+        if has_price and (has_history or len(news_list) >= 2):
             return "media"
         return "baixa"
 
@@ -395,6 +449,10 @@ class AssetAnalysisService:
             snippets.append(f"Sem serie completa de 3 meses, o historico de 12 meses indica {perf['change_12m_pct']:+.1f}%.")
         if perf.get("volatility_21d_pct") is not None:
             snippets.append(f"A volatilidade curta esta em torno de {perf['volatility_21d_pct']:.1f}% anualizada.")
+        if perf.get("drawdown_90d_pct") is not None:
+            snippets.append(f"O drawdown recente de 90 dias ficou perto de {perf['drawdown_90d_pct']:.1f}%.")
+        if perf.get("beta_63d") is not None and perf.get("benchmark_ticker"):
+            snippets.append(f"Contra {perf['benchmark_ticker']}, o beta de curto prazo esta em torno de {perf['beta_63d']:.2f}.")
 
         if historical_news:
             avg_sent = sum(n["sentiment_score"] for n in historical_news) / len(historical_news)
@@ -526,6 +584,10 @@ class AssetAnalysisService:
                 "change_3m_pct": perf.get("change_3m_pct"),
                 "change_12m_pct": perf.get("change_12m_pct"),
                 "volatility_21d_pct": perf.get("volatility_21d_pct"),
+                "drawdown_90d_pct": perf.get("drawdown_90d_pct"),
+                "beta_63d": perf.get("beta_63d"),
+                "correlation_63d": perf.get("correlation_63d"),
+                "benchmark_ticker": perf.get("benchmark_ticker"),
             },
             "outlook_3m": {
                 "scenario": scenario,

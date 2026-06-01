@@ -33,11 +33,12 @@ export function PortfolioMetrics({ analysis }: { analysis: PortfolioAnalysis | n
       <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-4">
         <MetricBox label="Concentração" value={analysis.concentration_label} valueClass={getConcentrationColor(analysis.concentration_label)} />
         <MetricBox label="Índice de concentração" value={fmt(analysis.concentration, 4)} />
-        <MetricBox label="Volatilidade (anual)" value={pct(analysis.volatility)} />
-        <MetricBox label="VaR (95%)" value={pct(analysis.var_95)} />
-        <MetricBox label="CVaR (95%)" value={pct(analysis.cvar_95)} />
-        <MetricBox label="Beta" value={fmt(analysis.beta)} />
+        <MetricBox label={`Volatilidade (${analysis.volatility_window_days}d)`} value={pct(analysis.volatility)} />
+        <MetricBox label={`VaR (95%, ${analysis.volatility_window_days}d)`} value={pct(analysis.var_95)} />
+        <MetricBox label={`CVaR (95%, ${analysis.volatility_window_days}d)`} value={pct(analysis.cvar_95)} />
+        <MetricBox label="Beta (estimativa)" value={fmt(analysis.beta)} />
         <MetricBox label="Retorno médio" value={pct(analysis.portfolio_return)} />
+        <MetricBox label="Benchmark" value={analysis.benchmark.label} />
         <MetricBox label="Ativos" value={String(analysis.num_assets)} />
         <MetricBox label="Classes" value={String(analysis.num_classes)} />
       </div>

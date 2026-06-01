@@ -1,4 +1,5 @@
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
+from app.api.auth import require_current_user
 from app.services.asset_analysis_service import AssetAnalysisService
 from app.services.portfolio_service import PortfolioService
 from app.services.portfolio_analytics_service import PortfolioAnalyticsService
@@ -13,68 +14,68 @@ asset_analysis_service = AssetAnalysisService()
 
 
 @router.get("", response_model=list[Portfolio])
-def list_portfolios():
-    return service.list_all()
+def list_portfolios(current=Depends(require_current_user)):
+    return service.list_all(current["user"].id)
 
 
 @router.post("", response_model=Portfolio, status_code=201)
-def create_portfolio(data: PortfolioCreate):
+def create_portfolio(data: PortfolioCreate, current=Depends(require_current_user)):
     try:
-        return service.create(data)
+        return service.create(data, current["user"].id)
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
 
 
 @router.post("/bulk-delete")
-def bulk_delete_portfolios(data: PortfolioBulkDelete):
+def bulk_delete_portfolios(data: PortfolioBulkDelete, current=Depends(require_current_user)):
     if not data.portfolio_ids:
         raise HTTPException(status_code=400, detail="Nenhuma carteira foi selecionada")
-    return service.delete_many(data.portfolio_ids)
+    return service.delete_many(data.portfolio_ids, current["user"].id)
 
 
 @router.get("/{portfolio_id}", response_model=Portfolio)
-def get_portfolio(portfolio_id: str):
-    portfolio = service.get_by_id(portfolio_id)
+def get_portfolio(portfolio_id: str, current=Depends(require_current_user)):
+    portfolio = service.get_by_id(portfolio_id, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
     return portfolio
 
 
 @router.put("/{portfolio_id}", response_model=Portfolio)
-def update_portfolio(portfolio_id: str, data: dict):
-    portfolio = service.update(portfolio_id, data)
+def update_portfolio(portfolio_id: str, data: dict, current=Depends(require_current_user)):
+    portfolio = service.update(portfolio_id, data, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
     return portfolio
 
 
 @router.delete("/{portfolio_id}")
-def delete_portfolio(portfolio_id: str):
-    deleted = service.delete(portfolio_id)
+def delete_portfolio(portfolio_id: str, current=Depends(require_current_user)):
+    deleted = service.delete(portfolio_id, current["user"].id)
     if not deleted:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
     return {"status": "deleted"}
 
 
 @router.post("/{portfolio_id}/positions", response_model=Portfolio)
-def add_position(portfolio_id: str, data: PositionAdd):
-    portfolio = service.add_position(portfolio_id, data)
+def add_position(portfolio_id: str, data: PositionAdd, current=Depends(require_current_user)):
+    portfolio = service.add_position(portfolio_id, data, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
     return portfolio
 
 
 @router.delete("/{portfolio_id}/positions/{ticker}", response_model=Portfolio)
-def remove_position(portfolio_id: str, ticker: str):
-    portfolio = service.remove_position(portfolio_id, ticker)
+def remove_position(portfolio_id: str, ticker: str, current=Depends(require_current_user)):
+    portfolio = service.remove_position(portfolio_id, ticker, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
     return portfolio
 
 
 @router.get("/{portfolio_id}/analysis")
-def get_portfolio_analysis(portfolio_id: str):
-    portfolio = service.get_by_id(portfolio_id)
+def get_portfolio_analysis(portfolio_id: str, current=Depends(require_current_user)):
+    portfolio = service.get_by_id(portfolio_id, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
 
@@ -92,18 +93,30 @@ def get_portfolio_analysis(portfolio_id: str):
 
 
 @router.get("/{portfolio_id}/prices")
-def get_portfolio_prices(portfolio_id: str):
-    portfolio = service.get_by_id(portfolio_id)
+def get_portfolio_prices(portfolio_id: str, current=Depends(require_current_user)):
+    portfolio = service.get_by_id(portfolio_id, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
 
     results = []
     total_value = 0.0
+    total_unrealized = 0.0
     for pos in portfolio.positions:
         price_data = market_service.get_current_price(pos.ticker)
+        history = market_service.get_history(pos.ticker, period="1mo", interval="1d")
+        sparkline = []
+        if history and history.get("prices"):
+            sparkline = [round(float(item.get("close", 0.0)), 2) for item in history["prices"][-20:]]
         if price_data and price_data.get("price"):
             price = float(price_data["price"])
             value = price * pos.quantity
+            unrealized = None
+            unrealized_pct = None
+            if pos.avg_price is not None:
+                unrealized = (price - float(pos.avg_price)) * pos.quantity
+                total_unrealized += unrealized
+                if pos.avg_price != 0:
+                    unrealized_pct = ((price / float(pos.avg_price)) - 1.0) * 100
             total_value += value
             results.append({
                 "ticker": pos.ticker,
@@ -114,6 +127,9 @@ def get_portfolio_prices(portfolio_id: str):
                 "currency": price_data.get("currency", "BRL"),
                 "total_value": round(value, 2),
                 "name": price_data.get("name", pos.ticker),
+                "unrealized_pnl": round(unrealized, 2) if unrealized is not None else None,
+                "unrealized_pnl_pct": round(unrealized_pct, 2) if unrealized_pct is not None else None,
+                "sparkline_20d": sparkline,
             })
         else:
             results.append({
@@ -125,6 +141,9 @@ def get_portfolio_prices(portfolio_id: str):
                 "currency": "BRL",
                 "total_value": None,
                 "name": pos.ticker,
+                "unrealized_pnl": None,
+                "unrealized_pnl_pct": None,
+                "sparkline_20d": sparkline,
             })
 
     # Add weight % based on total
@@ -139,13 +158,14 @@ def get_portfolio_prices(portfolio_id: str):
         "portfolio_id": portfolio_id,
         "portfolio_name": portfolio.name,
         "total_value": round(total_value, 2) if total_value > 0 else None,
+        "total_unrealized_pnl": round(total_unrealized, 2) if results else None,
         "positions": results,
     }
 
 
 @router.get("/{portfolio_id}/news")
-def get_portfolio_news(portfolio_id: str):
-    portfolio = service.get_by_id(portfolio_id)
+def get_portfolio_news(portfolio_id: str, current=Depends(require_current_user)):
+    portfolio = service.get_by_id(portfolio_id, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira nÃ£o encontrada")
 

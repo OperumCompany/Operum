@@ -1,7 +1,8 @@
 import logging
 
-from fastapi import APIRouter, HTTPException
+from fastapi import APIRouter, Depends, HTTPException
 
+from app.api.auth import require_current_user
 from app.services.forecast_service import ForecastService
 from app.services.news_clustering_service import NewsClusteringService
 from app.services.news_ingestion_service import NewsIngestionService
@@ -74,8 +75,8 @@ def cluster_news():
 
 
 @router.get("/opinion/{portfolio_id}")
-def get_portfolio_opinion(portfolio_id: str):
-    portfolio = portfolio_service.get_by_id(portfolio_id)
+def get_portfolio_opinion(portfolio_id: str, current=Depends(require_current_user)):
+    portfolio = portfolio_service.get_by_id(portfolio_id, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
 
@@ -93,8 +94,8 @@ def get_portfolio_opinion(portfolio_id: str):
 
 
 @router.get("/opinion/{portfolio_id}/positions/{ticker}")
-def get_position_opinion(portfolio_id: str, ticker: str):
-    portfolio = portfolio_service.get_by_id(portfolio_id)
+def get_position_opinion(portfolio_id: str, ticker: str, current=Depends(require_current_user)):
+    portfolio = portfolio_service.get_by_id(portfolio_id, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira nÃ£o encontrada")
 

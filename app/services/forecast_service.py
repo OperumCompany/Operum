@@ -23,6 +23,7 @@ DATASET_DIR = os.path.join(
 class ForecastService:
     def __init__(self):
         self.models: dict[str, object] = {}
+        self.model_meta: dict[str, dict] = {}
 
     def _prepare_features(self, df: pd.DataFrame) -> pd.DataFrame:
         px = df["Close"].values.astype(float)
@@ -54,6 +55,11 @@ class ForecastService:
         if os.path.exists(path):
             try:
                 self.models[ticker] = joblib.load(path)
+                meta_path = os.path.join(MODEL_DIR, f"forecast_{ticker}_meta.json")
+                if os.path.exists(meta_path):
+                    import json
+                    with open(meta_path, "r", encoding="utf-8") as f:
+                        self.model_meta[ticker] = json.load(f)
                 return True
             except Exception as e:
                 logger.warning(f"Erro ao carregar modelo de {ticker}: {e}")
@@ -64,6 +70,29 @@ class ForecastService:
         path = os.path.join(MODEL_DIR, f"forecast_{ticker}.pkl")
         joblib.dump(model, path)
         logger.info(f"Modelo de forecast salvo para {ticker}")
+
+    def _save_model_meta(self, ticker: str, meta: dict):
+        import json
+        os.makedirs(MODEL_DIR, exist_ok=True)
+        path = os.path.join(MODEL_DIR, f"forecast_{ticker}_meta.json")
+        with open(path, "w", encoding="utf-8") as f:
+            json.dump(meta, f, ensure_ascii=False, indent=2, default=str)
+        self.model_meta[ticker] = meta
+
+    def _estimate_confidence(self, ticker: str, pred_return: float, df: pd.DataFrame) -> float:
+        meta = self.model_meta.get(ticker, {})
+        test_r2 = float(meta.get("test_r2", 0.0) or 0.0)
+        data_quality = min(1.0, len(df) / 120.0)
+        recent_returns = df["Close"].pct_change().dropna().tail(21)
+        recent_vol = float(recent_returns.std()) if not recent_returns.empty else 0.0
+        if recent_vol <= 1e-9:
+            magnitude_penalty = 0.2
+        else:
+            z_score = abs(pred_return) / recent_vol
+            magnitude_penalty = min(0.65, max(0.0, (z_score - 1.0) * 0.18))
+        base = 0.35 + max(-0.25, min(test_r2, 0.45))
+        confidence = base + data_quality * 0.2 - magnitude_penalty
+        return round(max(0.05, min(0.95, confidence)), 4)
 
     def _download_data(self, ticker: str, period: str = "2y") -> pd.DataFrame | None:
         try:
@@ -136,6 +165,14 @@ class ForecastService:
 
         self._save_model(ticker, model)
         self.models[ticker] = model
+        self._save_model_meta(ticker, {
+            "ticker": ticker,
+            "train_r2": round(train_score, 6),
+            "test_r2": round(test_score, 6),
+            "train_samples": len(X_train),
+            "test_samples": len(X_test),
+            "trained_at": datetime.now(timezone.utc).isoformat(),
+        })
 
         return {
             "status": "trained",
@@ -166,6 +203,7 @@ class ForecastService:
 
         last_price = float(df["Close"].values[-1])
         predicted_price = last_price * (1 + pred_return)
+        confidence = self._estimate_confidence(ticker, pred_return, df)
 
         return {
             "ticker": ticker,
@@ -173,7 +211,7 @@ class ForecastService:
             "predicted_return_1d": round(pred_return, 6),
             "predicted_price_1d": round(predicted_price, 2),
             "direction": "up" if pred_return > 0 else "down",
-            "confidence": min(1.0, max(0.0, abs(pred_return) * 10)),
+            "confidence": confidence,
             "generated_at": datetime.now(timezone.utc).isoformat(),
         }
 

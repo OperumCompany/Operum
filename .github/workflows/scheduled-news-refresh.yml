@@ -1,0 +1,21 @@
+name: Scheduled News Refresh
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */6 * * *"
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    if: ${{ secrets.OPERUM_REFRESH_URL != '' && secrets.OPERUM_REFRESH_TOKEN != '' }}
+    steps:
+      - name: Trigger lightweight reindex
+        run: |
+          curl --fail --show-error --silent \
+            -X POST \
+            -H "Authorization: Bearer $OPERUM_REFRESH_TOKEN" \
+            "$OPERUM_REFRESH_URL"
+        env:
+          OPERUM_REFRESH_URL: ${{ secrets.OPERUM_REFRESH_URL }}
+          OPERUM_REFRESH_TOKEN: ${{ secrets.OPERUM_REFRESH_TOKEN }}

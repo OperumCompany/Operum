@@ -1,16 +1,23 @@
 import { FormEvent, useEffect, useMemo, useState } from 'react';
-import { MessageSquareHeart } from 'lucide-react';
+import { BookOpenText } from 'lucide-react';
 import { Button, Card, Input } from '../components/UI';
 import { useAuth } from '../context/AuthContext';
 import { usePortfolios } from '../context/PortfoliosContext';
-import { assetsCatalog, initialChat } from '../data/mocks';
-import { ChatMessage } from '../types';
+import { Asset, ChatMessage } from '../types';
 import { getScopedStorageKey, readStorage, storageKeys, writeStorage } from '../utils/storage';
 import { getActivePortfolioSelectionLabel, getPortfolioLabel } from '../utils/portfolios';
+import api from '../utils/api';
 
 const suggestions = ['O que é renda fixa?', 'O que é inflação?', 'O que significa liquidez?', 'Como está a carteira ativa?'];
+const initialGuide: ChatMessage[] = [{
+  id: 'guide-1',
+  role: 'assistant',
+  content: 'Este espaço funciona como um guia rápido. Você pode tirar dúvidas básicas de investimentos e pedir um resumo simples da carteira ativa.',
+  createdAt: '09:00',
+}];
 
 function getPortfolioSummary(
+  assets: Asset[],
   activePortfolio: ReturnType<typeof usePortfolios>['activePortfolio'],
   selectedPortfolios: ReturnType<typeof usePortfolios>['selectedPortfolios'],
   isAllPortfoliosSelected: boolean,
@@ -21,7 +28,7 @@ function getPortfolioSummary(
   }
 
   const topPos = [...selectedPositions].sort((a, b) => b.quantity - a.quantity)[0];
-  const assetName = assetsCatalog.find((item) => item.ticker === topPos.ticker)?.name ?? topPos.ticker;
+  const assetName = assets.find((item) => item.ticker === topPos.ticker)?.name ?? topPos.ticker;
   if (isAllPortfoliosSelected) {
     return `No consolidado de todas as carteiras, o maior peso hoje está em ${assetName} com ${topPos.quantity} unidades.`;
   }
@@ -31,6 +38,7 @@ function getPortfolioSummary(
 }
 
 function answer(
+  assets: Asset[],
   text: string,
   activePortfolio: ReturnType<typeof usePortfolios>['activePortfolio'],
   selectedPortfolios: ReturnType<typeof usePortfolios>['selectedPortfolios'],
@@ -38,7 +46,7 @@ function answer(
 ): string {
   const normalized = text.toLowerCase();
   if (normalized.includes('carteira ativa') || normalized.includes('como está')) {
-    return getPortfolioSummary(activePortfolio, selectedPortfolios, isAllPortfoliosSelected);
+    return getPortfolioSummary(assets, activePortfolio, selectedPortfolios, isAllPortfoliosSelected);
   }
   if (normalized.includes('renda fixa')) {
     return 'Renda fixa reúne investimentos com regras de rendimento mais previsíveis, como CDB e Tesouro. O risco e a liquidez mudam conforme o emissor e o prazo.';
@@ -61,11 +69,16 @@ export function ChatPage() {
   const { user } = useAuth();
   const { activePortfolio, selectedPortfolios, isAllPortfoliosSelected } = usePortfolios();
   const chatStorageKey = getScopedStorageKey(storageKeys.chat, user?.id);
-  const [messages, setMessages] = useState<ChatMessage[]>(() => readStorage(chatStorageKey, initialChat));
+  const [messages, setMessages] = useState<ChatMessage[]>(() => readStorage(chatStorageKey, initialGuide));
   const [text, setText] = useState('');
+  const [assets, setAssets] = useState<Asset[]>([]);
 
   useEffect(() => {
-    setMessages(readStorage(chatStorageKey, initialChat));
+    api.get<Asset[]>('/assets/universe').then(setAssets).catch(() => setAssets([]));
+  }, []);
+
+  useEffect(() => {
+    setMessages(readStorage(chatStorageKey, initialGuide));
   }, [chatStorageKey]);
 
   useEffect(() => {
@@ -83,7 +96,7 @@ export function ChatPage() {
     const botMsg: ChatMessage = {
       id: crypto.randomUUID(),
       role: 'assistant',
-      content: answer(content, activePortfolio, selectedPortfolios, isAllPortfoliosSelected),
+      content: answer(assets, content, activePortfolio, selectedPortfolios, isAllPortfoliosSelected),
       createdAt: userMsg.createdAt,
     };
     setMessages((prev) => [...prev, userMsg, botMsg]);
@@ -103,15 +116,15 @@ export function ChatPage() {
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-soft)] px-4 py-2 text-sm font-semibold">
-              <MessageSquareHeart size={16} />
-              Tire dúvidas sem medo de perguntar
+              <BookOpenText size={16} />
+              Guia rápido de investimentos
             </div>
-            <h2 className="mt-4 text-3xl font-bold">Chat com linguagem simples</h2>
+            <h2 className="mt-4 text-3xl font-bold">Perguntas frequentes com linguagem simples</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
-              Pergunte o que quiser sobre termos financeiros, tipos de investimento e comportamento do mercado.
+              Use este guia para revisar conceitos do mercado e pedir um resumo básico da carteira ativa.
             </p>
             <p className="mt-3 text-sm font-semibold text-[var(--brand)]">
-              Analisando agora: {getActivePortfolioSelectionLabel(activePortfolio, isAllPortfoliosSelected)}
+              Contexto atual: {getActivePortfolioSelectionLabel(activePortfolio, isAllPortfoliosSelected)}
             </p>
           </div>
           <div className="rounded-[24px] bg-white p-4 text-sm text-[var(--text-muted)]">
@@ -125,7 +138,7 @@ export function ChatPage() {
         </div>
       </section>
 
-      <Card title="Conversa com o Operum">
+      <Card title="Guia do Operum">
         <div className="max-h-[60vh] space-y-3 overflow-y-auto rounded-[24px] bg-[var(--bg-surface-strong)] p-4">
           {messages.map((m) => (
             <div

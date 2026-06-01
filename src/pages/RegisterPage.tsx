@@ -14,7 +14,7 @@ export function RegisterPage() {
   const [accept, setAccept] = useState(false);
   const [error, setError] = useState('');
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError('');
 
@@ -22,7 +22,7 @@ export function RegisterPage() {
     if (password.length < 6) return setError('A senha deve ter ao menos 6 caracteres.');
     if (password !== confirmPassword) return setError('As senhas nao coincidem.');
 
-    const result = register({ id: crypto.randomUUID(), name, email, password });
+    const result = await register({ name, email, password });
     if (!result.ok) {
       setError(result.message);
       return;

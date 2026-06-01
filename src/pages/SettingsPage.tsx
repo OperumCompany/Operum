@@ -1,39 +1,57 @@
 import { FormEvent, useEffect, useState } from 'react';
 import { Bell, SlidersHorizontal, UserRound } from 'lucide-react';
 import { Button, Card, Input } from '../components/UI';
-import { preferencesDefault } from '../data/mocks';
 import { useAuth } from '../context/AuthContext';
-import { NewsCategory } from '../types';
-import { getScopedStorageKey, readStorage, storageKeys, writeStorage } from '../utils/storage';
+import { NewsCategory, UserPreferences } from '../types';
+import api from '../utils/api';
 
 const topics: NewsCategory[] = ['Inflação', 'Juros', 'Tecnologia', 'Criptomoedas', 'Ações', 'Exterior', 'Política econômica', 'Renda fixa'];
+const defaultPreferences: UserPreferences = {
+  topics: ['Inflação', 'Juros', 'Ações', 'Exterior'],
+  compactMode: false,
+  notifications: true,
+};
 
 export function SettingsPage() {
   const { user, logout, updatePassword } = useAuth();
+  const [currentPassword, setCurrentPassword] = useState('');
   const [password, setPassword] = useState('');
   const [feedback, setFeedback] = useState('');
-  const preferencesKey = getScopedStorageKey(storageKeys.preferences, user?.id);
-  const [prefs, setPrefs] = useState(() => readStorage(preferencesKey, preferencesDefault));
+  const [prefs, setPrefs] = useState<UserPreferences>(defaultPreferences);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    setPrefs(readStorage(preferencesKey, preferencesDefault));
-  }, [preferencesKey]);
+    api.get<UserPreferences>('/auth/preferences')
+      .then((data) => setPrefs({
+        topics: (data.topics?.length ? data.topics : defaultPreferences.topics) as NewsCategory[],
+        compactMode: !!data.compactMode,
+        notifications: !!data.notifications,
+      }))
+      .catch(() => setPrefs(defaultPreferences))
+      .finally(() => setLoading(false));
+  }, []);
 
-  function savePrefs() {
-    writeStorage(preferencesKey, prefs);
-    setFeedback('Preferências salvas com sucesso.');
+  async function savePrefs() {
+    try {
+      const saved = await api.put<UserPreferences>('/auth/preferences', prefs);
+      setPrefs(saved);
+      setFeedback('Preferências salvas com sucesso.');
+    } catch (error) {
+      setFeedback(error instanceof Error ? error.message : 'Falha ao salvar preferências.');
+    }
   }
 
-  function handlePasswordUpdate(e: FormEvent) {
+  async function handlePasswordUpdate(e: FormEvent) {
     e.preventDefault();
     if (password.length < 6) {
       setFeedback('A senha precisa ter pelo menos 6 caracteres.');
       return;
     }
 
-    const result = updatePassword(password);
+    const result = await updatePassword(currentPassword, password);
     setFeedback(result.message);
     if (result.ok) {
+      setCurrentPassword('');
       setPassword('');
     }
   }
@@ -52,19 +70,15 @@ export function SettingsPage() {
         <Card title="Seus dados" right={<UserRound size={16} className="text-[var(--brand)]" />}>
           <p className="text-sm"><strong>Nome:</strong> {user?.name}</p>
           <p className="mt-2 text-sm"><strong>E-mail:</strong> {user?.email}</p>
-          {user?.email === 'camila@operum.app' && (
-            <p className="mt-3 text-sm text-[var(--text-muted)]">
-              Esta conta permanece fixa como perfil de exemplo para demonstração.
-            </p>
-          )}
         </Card>
 
         <Card title="Segurança">
           <form onSubmit={handlePasswordUpdate} className="space-y-3">
+            <Input type="password" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} placeholder="Senha atual" />
             <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Nova senha" />
             <div className="flex flex-wrap gap-2">
               <Button type="submit">Alterar senha</Button>
-              <button type="button" className="rounded-2xl border border-[var(--border-soft)] px-4 py-2.5 text-sm font-semibold text-[var(--danger-text)]" onClick={logout}>
+              <button type="button" className="rounded-2xl border border-[var(--border-soft)] px-4 py-2.5 text-sm font-semibold text-[var(--danger-text)]" onClick={() => { void logout(); }}>
                 Sair da conta
               </button>
             </div>
@@ -72,23 +86,27 @@ export function SettingsPage() {
         </Card>
 
         <Card title="Temas de notícias" right={<Bell size={16} className="text-[var(--brand)]" />}>
-          <div className="grid gap-2 sm:grid-cols-2">
-            {topics.map((t) => (
-              <label key={t} className="rounded-[18px] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm">
-                <input
-                  type="checkbox"
-                  checked={prefs.topics.includes(t)}
-                  onChange={(e) =>
-                    setPrefs((prev) => ({
-                      ...prev,
-                      topics: e.target.checked ? [...prev.topics, t] : prev.topics.filter((x) => x !== t),
-                    }))
-                  }
-                />{' '}
-                <span className="ml-1">{t}</span>
-              </label>
-            ))}
-          </div>
+          {loading ? (
+            <p className="text-sm text-[var(--text-muted)]">Carregando preferências...</p>
+          ) : (
+            <div className="grid gap-2 sm:grid-cols-2">
+              {topics.map((t) => (
+                <label key={t} className="rounded-[18px] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm">
+                  <input
+                    type="checkbox"
+                    checked={prefs.topics.includes(t)}
+                    onChange={(e) =>
+                      setPrefs((prev) => ({
+                        ...prev,
+                        topics: e.target.checked ? [...prev.topics, t] : prev.topics.filter((x) => x !== t),
+                      }))
+                    }
+                  />{' '}
+                  <span className="ml-1">{t}</span>
+                </label>
+              ))}
+            </div>
+          )}
         </Card>
 
         <Card title="Preferências da interface" right={<SlidersHorizontal size={16} className="text-[var(--brand)]" />}>

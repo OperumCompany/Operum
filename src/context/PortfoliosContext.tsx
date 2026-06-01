@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useMemo, useState, useCallback } from 'react';
+import { ReactNode, createContext, useContext, useEffect, useMemo, useState, useCallback } from 'react';
 import { Portfolio } from '../types';
 import { getScopedStorageKey, readStorage, storageKeys, writeStorage } from '../utils/storage';
 import { ALL_PORTFOLIOS_ID } from '../utils/portfolios';
@@ -25,7 +25,7 @@ type PortfoliosContextType = {
 
 const PortfoliosContext = createContext<PortfoliosContextType | undefined>(undefined);
 
-export function PortfoliosProvider({ children }: { children: React.ReactNode }) {
+export function PortfoliosProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth();
   const userId = user?.id ?? null;
   const activePortfolioStorageKey = getScopedStorageKey(storageKeys.activePortfolio, userId);

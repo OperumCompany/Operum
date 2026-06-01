@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import assets, health, market, models, news, portfolios
+from app.api import assets, auth, health, market, models, news, portfolios, status
 from app.core.config import CORS_ORIGINS
 
 logger = logging.getLogger(__name__)
@@ -87,8 +87,10 @@ app.add_middleware(
 )
 
 app.include_router(health.router, prefix="/api")
+app.include_router(auth.router, prefix="/api")
 app.include_router(assets.router, prefix="/api")
 app.include_router(portfolios.router, prefix="/api")
 app.include_router(news.router, prefix="/api")
 app.include_router(market.router, prefix="/api")
 app.include_router(models.router, prefix="/api")
+app.include_router(status.router, prefix="/api")
