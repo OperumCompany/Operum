@@ -449,6 +449,100 @@ class AssetAnalysisService:
                     topics.append(topic)
         return [topic for topic, _ in Counter(topics).most_common(4)]
 
+    def _classify_news_category(self, item: dict, meta: dict) -> str:
+        text = self._normalize_text(f"{item.get('title', '')} {item.get('summary', '')}")
+        if any(term in text for term in ["resultado", "lucro", "receita", "ebitda", "balanco", "dividendo", "guidance", "margem", "inadimplencia", "vacancia", "provisao", "provisoes", "credito", "alavancagem", "divida"]):
+            return "fundamento"
+        if any(term in text for term in ["juros", "selic", "copom", "fed", "inflacao", "ipca", "dolar", "cambio", "fiscal", "governo", "guerra", "geopolitica", "china", "petroleo", "brent", "commodity"]):
+            return "macro"
+        if item.get("context_role") == "sector" or any(term in text for term in ["tarifaria", "tarifa", "regulacao", "setor", "logistica", "shoppings", "credito imobiliario", "cri", "agronegocio", "bolsa", "ipo"]):
+            return "setorial"
+        return "fluxo"
+
+    def _categorize_news(self, news_list: list[dict], meta: dict) -> list[dict]:
+        categorized = []
+        for item in news_list:
+            cloned = dict(item)
+            cloned["analysis_category"] = self._classify_news_category(item, meta)
+            categorized.append(cloned)
+        return categorized
+
+    def _infer_asset_function(self, meta: dict, weight_pct: float | None) -> str:
+        asset_class = meta.get("asset_class")
+        sector = self._normalize_text(meta.get("sector", ""))
+        if asset_class in {"FII", "FIXED_INCOME"}:
+            return "renda"
+        if asset_class == "CRYPTO":
+            return "assimetria/alto_risco"
+        if asset_class in {"US_STOCK", "BDR"}:
+            return "crescimento"
+        if "ouro" in sector or meta.get("ticker") == "GOLD11":
+            return "protecao"
+        if any(word in sector for word in ["energia", "saneamento", "financeiro", "seguridade"]) or (weight_pct and weight_pct > 12):
+            return "estabilidade"
+        return "crescimento"
+
+    def _news_adjustment(self, news_list: list[dict], meta: dict, outlook_days: int) -> tuple[float, dict]:
+        if not news_list:
+            return 0.0, {"fundamento": 0, "macro": 0, "setorial": 0, "fluxo": 0}
+        category_weights = {"fundamento": 0.45, "macro": 0.3, "setorial": 0.18, "fluxo": 0.07}
+        category_counts = Counter(item.get("analysis_category", "fluxo") for item in news_list)
+        weighted_signal = 0.0
+        total_weight = 0.0
+        for item in news_list:
+            category = item.get("analysis_category", "fluxo")
+            base_weight = category_weights.get(category, 0.05)
+            weighted_signal += float(item.get("sentiment_score", 0.0)) * float(item.get("impact_score", 0.0)) * base_weight
+            total_weight += base_weight
+        signal = (weighted_signal / total_weight) if total_weight else 0.0
+        class_multiplier = 1.0
+        if meta.get("asset_class") == "CRYPTO":
+            class_multiplier = 1.35
+        elif meta.get("asset_class") == "FII":
+            class_multiplier = 0.8
+        elif meta.get("asset_class") == "FIXED_INCOME":
+            class_multiplier = 0.55
+        horizon_multiplier = min(1.2, max(0.65, outlook_days / 21.0))
+        adjustment = signal * 0.06 * class_multiplier * horizon_multiplier
+        return round(adjustment, 6), dict(category_counts)
+
+    def _apply_news_adjustment(self, forecast_bundle: dict | None, adjustment_pct: float) -> dict | None:
+        if not forecast_bundle:
+            return None
+        adjusted = {
+            **forecast_bundle,
+            "predictions": [],
+            "forecast_anchor_points": [],
+            "forecast_series": [],
+        }
+        for prediction in forecast_bundle.get("predictions", []):
+            adjusted_return = float(prediction["predicted_return"]) + adjustment_pct
+            last_price = float(forecast_bundle["last_price"])
+            adjusted_price = round(last_price * (1 + adjusted_return), 2)
+            adjusted_prediction = {
+                **prediction,
+                "predicted_return": round(adjusted_return, 6),
+                "predicted_price": adjusted_price,
+            }
+            adjusted["predictions"].append(adjusted_prediction)
+            adjusted["forecast_anchor_points"].append(
+                {
+                    "date": prediction["horizon_label"],
+                    "horizon_days": prediction["horizon_days"],
+                    "predicted_price": adjusted_price,
+                    "predicted_return": round(adjusted_return, 6),
+                    "confidence": prediction["confidence"],
+                }
+            )
+        generated_at = datetime.fromisoformat(forecast_bundle["generated_at"].replace("Z", "+00:00"))
+        adjusted["forecast_series"] = self.forecast._interpolate_series(
+            float(forecast_bundle["last_price"]),
+            generated_at,
+            adjusted["predictions"],
+        )
+        adjusted["news_adjustment_pct"] = round(adjustment_pct * 100, 2)
+        return adjusted
+
     def _history_label(self, history_horizon: str) -> str:
         return {"1m": "ultimo mes", "2m": "ultimos 2 meses", "3m": "ultimos 3 meses"}.get(history_horizon, "ultimos 3 meses")
 
@@ -463,9 +557,13 @@ class AssetAnalysisService:
         weight_pct: float | None,
         forecast_prediction: dict | None,
         outlook_horizon: str,
+        asset_function: str,
+        category_counts: dict,
+        forecast_adjustment_pct: float | None,
     ) -> str:
         class_hint = self._config["class_templates"].get(meta.get("asset_class"), "O ativo deve ser interpretado dentro do seu contexto especifico.")
         parts = [class_hint]
+        parts.append(f"Dentro da carteira, a funcao principal deste ativo hoje e {asset_function.replace('_', ' ')}.")
         if perf.get("current_price") is not None:
             parts.append(f"Cotacao atual aproximada em {perf['currency']} {perf['current_price']:.2f}.")
         if weight_pct is not None:
@@ -477,11 +575,16 @@ class AssetAnalysisService:
             parts.append(
                 f"O modelo de {self._outlook_label(outlook_horizon)} hoje aponta {direction}, com retorno estimado de {forecast_prediction['predicted_return'] * 100:+.1f}% e confianca de {forecast_prediction['confidence'] * 100:.0f}%."
             )
+        if forecast_adjustment_pct:
+            parts.append(f"O ajuste contextual das noticias adiciona {forecast_adjustment_pct:+.1f}% ao cenario-base projetado.")
         if news_list:
             avg_impact = sum(n["impact_score"] for n in news_list) / len(news_list)
             avg_sent = sum(n["sentiment_score"] for n in news_list) / len(news_list)
             direction = "positivo" if avg_sent > 0.15 else "negativo" if avg_sent < -0.15 else "misto"
             parts.append(f"As noticias recentes tem vies {direction} e impacto medio de {avg_impact:.2f}.")
+            parts.append(
+                f"Nesse conjunto, o peso informacional esta distribuido em fundamento ({category_counts.get('fundamento', 0)}), macro ({category_counts.get('macro', 0)}), setorial ({category_counts.get('setorial', 0)}) e fluxo ({category_counts.get('fluxo', 0)})."
+            )
         else:
             parts.append("Ha pouca noticia especifica recente, entao a leitura depende mais do comportamento de preco e da classe do ativo.")
         return " ".join(parts)
@@ -491,6 +594,7 @@ class AssetAnalysisService:
         perf: dict,
         historical_news: list[dict],
         history_horizon: str,
+        asset_function: str,
     ) -> str:
         label = self._history_label(history_horizon)
         snippets = []
@@ -512,11 +616,17 @@ class AssetAnalysisService:
             avg_impact = sum(n["impact_score"] for n in historical_news) / len(historical_news)
             direction = "mais positivo" if avg_sent > 0.15 else "mais negativo" if avg_sent < -0.15 else "misto"
             topics = self._dominant_topics(historical_news)
+            categories = Counter(item.get("analysis_category", "fluxo") for item in historical_news)
             if topics:
                 snippets.append(f"No noticiario do periodo, os temas mais recorrentes foram {', '.join(topics)}.")
             snippets.append(
                 f"Houve {len(historical_news)} evento(s) relevante(s), com vies {direction} e impacto medio de {avg_impact:.2f}."
             )
+            if categories:
+                dominant_category = categories.most_common(1)[0][0]
+                snippets.append(
+                    f"A leitura desse intervalo foi puxada principalmente por noticias de {dominant_category}, o que ajuda a entender como o ativo cumpriu sua funcao de {asset_function.replace('_', ' ')}."
+                )
             latest_titles = [n["title"] for n in historical_news[:3]]
             if latest_titles:
                 snippets.append(f"Os destaques desse intervalo incluem: {'; '.join(latest_titles)}.")
@@ -533,6 +643,8 @@ class AssetAnalysisService:
         confidence: str,
         forecast_prediction: dict | None,
         outlook_horizon: str,
+        asset_function: str,
+        forecast_adjustment_pct: float | None,
     ) -> str:
         topics = self._dominant_topics(news_list)
         topics_text = f" Os temas dominantes agora sao {', '.join(topics)}." if topics else ""
@@ -542,6 +654,9 @@ class AssetAnalysisService:
             forecast_text = (
                 f" O modelo para {horizon_label} projeta retorno de {forecast_prediction['predicted_return'] * 100:+.1f}% e preco estimado perto de {forecast_prediction['predicted_price']:.2f}."
             )
+        adjustment_text = ""
+        if forecast_adjustment_pct:
+            adjustment_text = f" O contexto de noticias ajusta essa leitura em {forecast_adjustment_pct:+.1f}%, com maior peso para fatos de fundamento e macro."
         scenario_map = {
             "positivo": f"A perspectiva de {horizon_label} e construtiva, com espaco para continuidade se fluxo e noticiario permanecerem favoraveis.",
             "pressionado": f"A perspectiva de {horizon_label} pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados.",
@@ -558,12 +673,13 @@ class AssetAnalysisService:
             class_tail = " Para renda fixa, a direcao de juros e a duration continuam sendo os vetores principais."
         elif meta.get("asset_class") == "CRYPTO":
             class_tail = " Para cripto, liquidez global e apetite a risco continuam pesando mais do que fundamentos tradicionais."
+        function_tail = f" Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de {asset_function.replace('_', ' ')}."
         confidence_tail = {
             "alta": " A confianca dessa leitura e alta para o horizonte selecionado.",
             "media": " A confianca dessa leitura e moderada.",
             "baixa": " A confianca dessa leitura e baixa por limitacao de dados.",
         }[confidence]
-        return f"{base}{forecast_text}{topics_text}{class_tail}{confidence_tail}"
+        return f"{base}{forecast_text}{adjustment_text}{topics_text}{class_tail}{function_tail}{confidence_tail}"
 
     def _build_source_groups(self, sources: list[dict]) -> list[dict]:
         grouped: dict[str, list[dict]] = defaultdict(list)
@@ -627,10 +743,10 @@ class AssetAnalysisService:
         history_days = HISTORY_WINDOW_DAYS[history_horizon]
         outlook_days = OUTLOOK_WINDOW_DAYS[outlook_horizon]
         all_related_news = self.get_related_news(ticker, limit=25, days_back=120)
-        current_news = all_related_news[:6]
-        historical_news = self._windowed_news(all_related_news, history_days)[:12]
+        current_news = self._categorize_news(all_related_news[:6], meta)
+        historical_news = self._categorize_news(self._windowed_news(all_related_news, history_days)[:12], meta)
         outlook_news = sorted(
-            self._windowed_news(all_related_news, outlook_days)[:10],
+            self._categorize_news(self._windowed_news(all_related_news, outlook_days)[:10], meta),
             key=lambda item: (item.get("rank_score", item["match_score"]), item["impact_score"]),
             reverse=True,
         )[:6]
@@ -658,11 +774,14 @@ class AssetAnalysisService:
 
         perf = self._performance_snapshot(ticker, position.avg_price, history_horizon)
         weight_pct = self._compute_weight_pct(portfolio, ticker)
+        asset_function = self._infer_asset_function(meta, weight_pct)
 
         forecast_bundle = self.forecast.predict_multi(ticker, requested_horizons=sorted(set(OUTLOOK_WINDOW_DAYS.values())))
+        news_adjustment_pct, category_counts = self._news_adjustment(outlook_news or used_news, meta, outlook_days)
+        adjusted_forecast_bundle = self._apply_news_adjustment(forecast_bundle, news_adjustment_pct)
         forecast_lookup = {
             item["horizon_days"]: item
-            for item in (forecast_bundle.get("predictions", []) if forecast_bundle else [])
+            for item in (adjusted_forecast_bundle.get("predictions", []) if adjusted_forecast_bundle else [])
         }
         forecast_prediction = forecast_lookup.get(outlook_days)
         scenario = self._scenario_label(
@@ -678,8 +797,8 @@ class AssetAnalysisService:
         recent_by_horizon = {}
         for horizon_key in ["1m", "2m", "3m"]:
             recent_perf = self._performance_snapshot(ticker, position.avg_price, horizon_key)
-            recent_news = self._windowed_news(all_related_news, HISTORY_WINDOW_DAYS[horizon_key])[:12]
-            recent_by_horizon[horizon_key] = self._recent_section(recent_perf, recent_news, horizon_key)
+            recent_news = self._categorize_news(self._windowed_news(all_related_news, HISTORY_WINDOW_DAYS[horizon_key])[:12], meta)
+            recent_by_horizon[horizon_key] = self._recent_section(recent_perf, recent_news, horizon_key, asset_function)
 
         outlook_by_horizon = {}
         for horizon_key in ["1w", "1m", "2m", "3m"]:
@@ -691,7 +810,8 @@ class AssetAnalysisService:
                 weight_pct,
                 pred.get("predicted_return") if pred else None,
             )
-            horizon_news = self._windowed_news(all_related_news, OUTLOOK_WINDOW_DAYS[horizon_key])[:8]
+            horizon_news = self._categorize_news(self._windowed_news(all_related_news, OUTLOOK_WINDOW_DAYS[horizon_key])[:8], meta)
+            horizon_adjustment_pct, _ = self._news_adjustment(horizon_news or used_news, meta, OUTLOOK_WINDOW_DAYS[horizon_key])
             outlook_by_horizon[horizon_key] = self._outlook_section(
                 scenario_for_horizon,
                 horizon_news or used_news,
@@ -699,6 +819,8 @@ class AssetAnalysisService:
                 confidence,
                 pred,
                 horizon_key,
+                asset_function,
+                round(horizon_adjustment_pct * 100, 2) if horizon_adjustment_pct else None,
             )
 
         payload = {
@@ -712,12 +834,14 @@ class AssetAnalysisService:
             "status": "ok" if perf.get("current_price") is not None or used_news else "insufficient_data",
             "selected_history_horizon": history_horizon,
             "selected_outlook_horizon": outlook_horizon,
+            "asset_function": asset_function,
             "current_snapshot": {
                 "current_price": perf.get("current_price"),
                 "currency": perf.get("currency"),
                 "weight_pct": weight_pct,
                 "sector": meta.get("sector"),
                 "country": meta.get("country"),
+                "asset_function": asset_function,
             },
             "historical_window": {
                 "start_date": (now - timedelta(days=history_days * 2)).date().isoformat(),
@@ -726,8 +850,8 @@ class AssetAnalysisService:
                 "has_price_history": bool(perf.get("has_selected_history")),
             },
             "historical_series": self._build_historical_series(ticker, history_horizon),
-            "forecast_series": forecast_bundle.get("forecast_series", []) if forecast_bundle else [],
-            "forecast_anchor_points": forecast_bundle.get("forecast_anchor_points", []) if forecast_bundle else [],
+            "forecast_series": adjusted_forecast_bundle.get("forecast_series", []) if adjusted_forecast_bundle else [],
+            "forecast_anchor_points": adjusted_forecast_bundle.get("forecast_anchor_points", []) if adjusted_forecast_bundle else [],
             "recent_performance": {
                 "change_selected_pct": perf.get("change_selected_pct"),
                 "change_1m_pct": perf.get("change_1m_pct"),
@@ -742,13 +866,24 @@ class AssetAnalysisService:
                 "forecast_return_selected_pct": round(forecast_prediction["predicted_return"] * 100, 2) if forecast_prediction else None,
                 "forecast_price_selected": forecast_prediction["predicted_price"] if forecast_prediction else None,
                 "forecast_confidence_selected": forecast_prediction["confidence"] if forecast_prediction else None,
+                "forecast_news_adjustment_pct": round(news_adjustment_pct * 100, 2) if news_adjustment_pct else 0.0,
             },
             "outlook_3m": {
                 "scenario": scenario,
                 "dominant_topics": self._dominant_topics(outlook_news or used_news),
             },
             "analysis_sections": {
-                "current": self._current_section(meta, perf, current_news or used_news, weight_pct, forecast_prediction, outlook_horizon),
+                "current": self._current_section(
+                    meta,
+                    perf,
+                    current_news or used_news,
+                    weight_pct,
+                    forecast_prediction,
+                    outlook_horizon,
+                    asset_function,
+                    category_counts,
+                    round(news_adjustment_pct * 100, 2) if news_adjustment_pct else None,
+                ),
                 "recent": recent_by_horizon[history_horizon],
                 "outlook": outlook_by_horizon[outlook_horizon],
                 "recent_by_horizon": recent_by_horizon,

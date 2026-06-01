@@ -3,18 +3,20 @@
   "ticker": "VALE3",
   "asset_name": "Vale ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T16:32:11.717507+00:00",
-  "recomputed_at": "2026-06-01T16:32:11.717507+00:00",
+  "generated_at": "2026-06-01T23:38:33.528325+00:00",
+  "recomputed_at": "2026-06-01T23:38:33.528325+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
+  "asset_function": "estabilidade",
   "current_snapshot": {
-    "current_price": 81.06,
+    "current_price": 81.7,
     "currency": "BRL",
-    "weight_pct": 12.22,
+    "weight_pct": 12.33,
     "sector": "Mineração",
-    "country": "BR"
+    "country": "BR",
+    "asset_function": "estabilidade"
   },
   "historical_window": {
     "start_date": "2026-01-26",
@@ -26,289 +28,289 @@
   "forecast_series": [
     {
       "date": "2026-06-01",
-      "value": 80.82
+      "value": 81.7
     },
     {
       "date": "2026-06-02",
-      "value": 80.66
+      "value": 81.06
     },
     {
       "date": "2026-06-03",
-      "value": 80.5
+      "value": 80.43
     },
     {
       "date": "2026-06-04",
-      "value": 80.35
+      "value": 79.79
     },
     {
       "date": "2026-06-05",
-      "value": 80.19
+      "value": 79.16
     },
     {
       "date": "2026-06-08",
-      "value": 80.03
+      "value": 78.52
     },
     {
       "date": "2026-06-09",
-      "value": 80.28
+      "value": 78.86
     },
     {
       "date": "2026-06-10",
-      "value": 80.53
+      "value": 79.2
     },
     {
       "date": "2026-06-11",
-      "value": 80.77
+      "value": 79.54
     },
     {
       "date": "2026-06-12",
-      "value": 81.02
+      "value": 79.88
     },
     {
       "date": "2026-06-15",
-      "value": 81.27
+      "value": 80.22
     },
     {
       "date": "2026-06-16",
-      "value": 81.52
+      "value": 80.56
     },
     {
       "date": "2026-06-17",
-      "value": 81.77
+      "value": 80.9
     },
     {
       "date": "2026-06-18",
-      "value": 82.02
+      "value": 81.25
     },
     {
       "date": "2026-06-19",
-      "value": 82.26
+      "value": 81.59
     },
     {
       "date": "2026-06-22",
-      "value": 82.51
+      "value": 81.93
     },
     {
       "date": "2026-06-23",
-      "value": 82.76
+      "value": 82.27
     },
     {
       "date": "2026-06-24",
-      "value": 83.01
+      "value": 82.61
     },
     {
       "date": "2026-06-25",
-      "value": 83.26
+      "value": 82.95
     },
     {
       "date": "2026-06-26",
-      "value": 83.5
+      "value": 83.29
     },
     {
       "date": "2026-06-29",
-      "value": 83.75
+      "value": 83.63
     },
     {
       "date": "2026-06-30",
-      "value": 84.0
+      "value": 83.97
     },
     {
       "date": "2026-07-01",
-      "value": 84.02
+      "value": 84.01
     },
     {
       "date": "2026-07-02",
-      "value": 84.03
-    },
-    {
-      "date": "2026-07-03",
-      "value": 84.05
-    },
-    {
-      "date": "2026-07-06",
       "value": 84.06
     },
     {
-      "date": "2026-07-07",
-      "value": 84.08
+      "date": "2026-07-03",
+      "value": 84.1
     },
     {
-      "date": "2026-07-08",
-      "value": 84.09
-    },
-    {
-      "date": "2026-07-09",
-      "value": 84.11
-    },
-    {
-      "date": "2026-07-10",
-      "value": 84.12
-    },
-    {
-      "date": "2026-07-13",
-      "value": 84.14
-    },
-    {
-      "date": "2026-07-14",
+      "date": "2026-07-06",
       "value": 84.15
     },
     {
-      "date": "2026-07-15",
-      "value": 84.17
+      "date": "2026-07-07",
+      "value": 84.19
     },
     {
-      "date": "2026-07-16",
-      "value": 84.18
-    },
-    {
-      "date": "2026-07-17",
-      "value": 84.2
-    },
-    {
-      "date": "2026-07-20",
-      "value": 84.21
-    },
-    {
-      "date": "2026-07-21",
+      "date": "2026-07-08",
       "value": 84.23
     },
     {
-      "date": "2026-07-22",
-      "value": 84.24
+      "date": "2026-07-09",
+      "value": 84.28
     },
     {
-      "date": "2026-07-23",
-      "value": 84.26
-    },
-    {
-      "date": "2026-07-24",
-      "value": 84.27
-    },
-    {
-      "date": "2026-07-27",
-      "value": 84.29
-    },
-    {
-      "date": "2026-07-28",
-      "value": 84.3
-    },
-    {
-      "date": "2026-07-29",
+      "date": "2026-07-10",
       "value": 84.32
     },
     {
-      "date": "2026-07-30",
-      "value": 84.34
-    },
-    {
-      "date": "2026-07-31",
+      "date": "2026-07-13",
       "value": 84.36
     },
     {
-      "date": "2026-08-03",
-      "value": 84.38
+      "date": "2026-07-14",
+      "value": 84.41
     },
     {
-      "date": "2026-08-04",
-      "value": 84.4
+      "date": "2026-07-15",
+      "value": 84.45
     },
     {
-      "date": "2026-08-05",
-      "value": 84.42
-    },
-    {
-      "date": "2026-08-06",
-      "value": 84.44
-    },
-    {
-      "date": "2026-08-07",
-      "value": 84.46
-    },
-    {
-      "date": "2026-08-10",
-      "value": 84.48
-    },
-    {
-      "date": "2026-08-11",
+      "date": "2026-07-16",
       "value": 84.5
     },
     {
-      "date": "2026-08-12",
-      "value": 84.52
+      "date": "2026-07-17",
+      "value": 84.54
     },
     {
-      "date": "2026-08-13",
-      "value": 84.55
+      "date": "2026-07-20",
+      "value": 84.58
     },
     {
-      "date": "2026-08-14",
-      "value": 84.57
-    },
-    {
-      "date": "2026-08-17",
-      "value": 84.59
-    },
-    {
-      "date": "2026-08-18",
-      "value": 84.61
-    },
-    {
-      "date": "2026-08-19",
+      "date": "2026-07-21",
       "value": 84.63
     },
     {
-      "date": "2026-08-20",
-      "value": 84.65
-    },
-    {
-      "date": "2026-08-21",
+      "date": "2026-07-22",
       "value": 84.67
     },
     {
-      "date": "2026-08-24",
-      "value": 84.69
-    },
-    {
-      "date": "2026-08-25",
+      "date": "2026-07-23",
       "value": 84.71
     },
     {
+      "date": "2026-07-24",
+      "value": 84.76
+    },
+    {
+      "date": "2026-07-27",
+      "value": 84.8
+    },
+    {
+      "date": "2026-07-28",
+      "value": 84.85
+    },
+    {
+      "date": "2026-07-29",
+      "value": 84.89
+    },
+    {
+      "date": "2026-07-30",
+      "value": 84.9
+    },
+    {
+      "date": "2026-07-31",
+      "value": 84.91
+    },
+    {
+      "date": "2026-08-03",
+      "value": 84.92
+    },
+    {
+      "date": "2026-08-04",
+      "value": 84.94
+    },
+    {
+      "date": "2026-08-05",
+      "value": 84.95
+    },
+    {
+      "date": "2026-08-06",
+      "value": 84.96
+    },
+    {
+      "date": "2026-08-07",
+      "value": 84.97
+    },
+    {
+      "date": "2026-08-10",
+      "value": 84.98
+    },
+    {
+      "date": "2026-08-11",
+      "value": 84.99
+    },
+    {
+      "date": "2026-08-12",
+      "value": 85.0
+    },
+    {
+      "date": "2026-08-13",
+      "value": 85.02
+    },
+    {
+      "date": "2026-08-14",
+      "value": 85.03
+    },
+    {
+      "date": "2026-08-17",
+      "value": 85.04
+    },
+    {
+      "date": "2026-08-18",
+      "value": 85.05
+    },
+    {
+      "date": "2026-08-19",
+      "value": 85.06
+    },
+    {
+      "date": "2026-08-20",
+      "value": 85.07
+    },
+    {
+      "date": "2026-08-21",
+      "value": 85.08
+    },
+    {
+      "date": "2026-08-24",
+      "value": 85.1
+    },
+    {
+      "date": "2026-08-25",
+      "value": 85.11
+    },
+    {
       "date": "2026-08-26",
-      "value": 84.73
+      "value": 85.12
     },
     {
       "date": "2026-08-27",
-      "value": 84.75
+      "value": 85.13
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 80.03,
-      "predicted_return": -0.009783,
-      "confidence": 0.2834
+      "predicted_price": 78.52,
+      "predicted_return": -0.038939,
+      "confidence": 0.2836
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 84.0,
-      "predicted_return": 0.039355,
-      "confidence": 0.3971
+      "predicted_price": 83.97,
+      "predicted_return": 0.027809,
+      "confidence": 0.3909
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 84.32,
-      "predicted_return": 0.043275,
-      "confidence": 0.3113
+      "predicted_price": 84.89,
+      "predicted_return": 0.038988,
+      "confidence": 0.3103
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 84.75,
-      "predicted_return": 0.048649,
-      "confidence": 0.5021
+      "predicted_price": 85.13,
+      "predicted_return": 0.041924,
+      "confidence": 0.5017
     }
   ],
   "recent_performance": {
@@ -322,33 +324,34 @@
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 4.86,
-    "forecast_price_selected": 84.75,
-    "forecast_confidence_selected": 0.5021
+    "forecast_return_selected_pct": 4.19,
+    "forecast_price_selected": 85.13,
+    "forecast_confidence_selected": 0.5017,
+    "forecast_news_adjustment_pct": -1.68
   },
   "outlook_3m": {
     "scenario": "pressionado",
     "dominant_topics": [
-      "juros",
       "inflacao",
+      "juros",
       "cambio",
       "commodities"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 81.06. Hoje representa cerca de 12.2% da carteira. O modelo de 3 meses hoje aponta alta, com retorno estimado de +4.9% e confianca de 50%. As noticias recentes tem vies negativo e impacto medio de 0.57.",
-    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +4.9% e preco estimado perto de 84.75. Os temas dominantes agora sao juros, inflacao, cambio, commodities. A confianca dessa leitura e moderada.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 81.70. Hoje representa cerca de 12.3% da carteira. O modelo de 3 meses hoje aponta alta, com retorno estimado de +4.2% e confianca de 50%. O ajuste contextual das noticias adiciona -1.7% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.55. Nesse conjunto, o peso informacional esta distribuido em fundamento (2), macro (2), setorial (0) e fluxo (2).",
+    "recent": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +4.2% e preco estimado perto de 85.13. O contexto de noticias ajusta essa leitura em -1.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
-      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
-      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo."
+      "1m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras.",
+      "2m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras.",
+      "3m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -1.0% e preco estimado perto de 80.03. Os temas dominantes agora sao juros, inflacao, cambio, commodities. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +3.9% e preco estimado perto de 84.00. Os temas dominantes agora sao juros, inflacao, cambio, commodities. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +4.3% e preco estimado perto de 84.32. Os temas dominantes agora sao juros, inflacao, cambio, commodities. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +4.9% e preco estimado perto de 84.75. Os temas dominantes agora sao juros, inflacao, cambio, commodities. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -3.9% e preco estimado perto de 78.52. O contexto de noticias ajusta essa leitura em -1.0%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +2.8% e preco estimado perto de 83.97. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +3.9% e preco estimado perto de 84.89. O contexto de noticias ajusta essa leitura em -1.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +4.2% e preco estimado perto de 85.13. O contexto de noticias ajusta essa leitura em -1.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
@@ -363,13 +366,33 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.702,
-      "rank_score": 0.632,
+      "match_score": 0.7012,
+      "rank_score": 0.6316,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "asset",
       "source_confidence_weight": 0.95,
-      "role": "current"
+      "analysis_category": "fundamento",
+      "role": "outlook"
+    },
+    {
+      "id": "e832f883055e6f76417a69aaf8db15c6",
+      "title": "Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/colunas/michael-franca/2026/06/audiencia-vale-mais-que-curriculo-que-tal-virginia-fonseca-operar-seu-coracao.shtml",
+      "published_at": "2026-06-01T18:57:00-03:00",
+      "summary": "Já ouviu falar na Virginia Fonseca? Uma colega aqui da Folha, a Natalia Beauty, em sua coluna \"Odeiam Virginia na Copa porque ela revela verdade humilhante: audiência vale mais que currículo\", disse que parte do Brasil para quando Virginia fala.\n\nConfesso que não a conhecia até ela aparecer de moletom na CPI das Bets. Leia mais (06/01/2026 - 18h57). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.48000000000000004,
+      "relevance_score": 0.5,
+      "match_score": 0.7073,
+      "rank_score": 0.6118,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fluxo",
+      "role": "outlook"
     },
     {
       "id": "becd03b804844cc70fbc3330bee50a5c",
@@ -381,13 +404,14 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.7047,
-      "rank_score": 0.6104,
+      "match_score": 0.7037,
+      "rank_score": 0.6099,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "fluxo",
+      "role": "outlook"
     },
     {
       "id": "d4ad77c8fe0dba39b783708103c1403f",
@@ -399,13 +423,14 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.348,
-      "rank_score": 0.5095,
+      "match_score": 0.347,
+      "rank_score": 0.5089,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "macro",
+      "role": "outlook"
     },
     {
       "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -417,13 +442,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3523,
-      "rank_score": 0.5042,
+      "match_score": 0.3513,
+      "rank_score": 0.5037,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "fundamento",
+      "role": "outlook"
     },
     {
       "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -435,13 +461,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3523,
-      "rank_score": 0.5042,
+      "match_score": 0.3513,
+      "rank_score": 0.5037,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "macro",
+      "role": "outlook"
     },
     {
       "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -453,13 +480,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3501,
-      "rank_score": 0.5031,
+      "match_score": 0.3492,
+      "rank_score": 0.5026,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "macro",
+      "role": "historical"
     },
     {
       "id": "629cddfde78d45fdde8891b65e011167",
@@ -471,12 +499,13 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3501,
-      "rank_score": 0.5031,
+      "match_score": 0.3491,
+      "rank_score": 0.5025,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
       "role": "historical"
     },
     {
@@ -489,12 +518,32 @@
       "sentiment_score": 0.14285714285714285,
       "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.348,
-      "rank_score": 0.4859,
+      "match_score": 0.3471,
+      "rank_score": 0.4854,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "cdd7cde965d0db8917bcc712e4a3459b",
+      "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
+      "published_at": "2026-06-01T23:33:02.846612+00:00",
+      "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.75,
+      "relevance_score": 0.5,
+      "match_score": 0.315,
+      "rank_score": 0.4743,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "fluxo",
       "role": "historical"
     },
     {
@@ -507,12 +556,13 @@
       "sentiment_score": 0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.357,
-      "rank_score": 0.4691,
+      "match_score": 0.356,
+      "rank_score": 0.4686,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
       "role": "historical"
     },
     {
@@ -525,48 +575,13 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.305,
-      "rank_score": 0.4651,
+      "match_score": 0.3047,
+      "rank_score": 0.4649,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "macro",
       "source_confidence_weight": 0.95,
-      "role": "historical"
-    },
-    {
-      "id": "3dbeed313bcadecfe40d2b70e190d0ca",
-      "title": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS",
-      "source_name": "Todas as Notícias",
-      "source_url": "https://br.investing.com/news/analyst-ratings/sofrendo-com-o-ibovespa-esta-acao-da-b3-escolhida-por-ia-sobe-quase-20-neste-mes-1949007",
-      "published_at": "2026-05-25T00:21:25+00:00",
-      "summary": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS. Notícia menciona B3SA3.",
-      "sentiment_score": 1.0,
-      "impact_score": 0.75,
-      "relevance_score": 0.5,
-      "match_score": 0.2886,
-      "rank_score": 0.4576,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "role": "historical"
-    },
-    {
-      "id": "645bc96e1a4e4c459f852c8cc290b56d",
-      "title": "Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar?",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-tem-maior-queda-mensal-desde-2023-com-debandada-dos-gringos-o-que-esperar/",
-      "published_at": "2026-05-29T21:01:22+00:00",
-      "summary": "Índice teve baixa de 7,22%, maior queda desde fevereiro de 2023, quando caiu 7,49%.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Mercado doméstico Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar? O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.6,
-      "impact_score": 0.63,
-      "relevance_score": 0.5,
-      "match_score": 0.303,
-      "rank_score": 0.4471,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
       "role": "historical"
     }
   ],
@@ -585,13 +600,14 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.348,
-          "rank_score": 0.5095,
+          "match_score": 0.347,
+          "rank_score": 0.5089,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "macro",
+          "role": "outlook"
         },
         {
           "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -603,13 +619,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3523,
-          "rank_score": 0.5042,
+          "match_score": 0.3513,
+          "rank_score": 0.5037,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "fundamento",
+          "role": "outlook"
         },
         {
           "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -621,13 +638,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3523,
-          "rank_score": 0.5042,
+          "match_score": 0.3513,
+          "rank_score": 0.5037,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "macro",
+          "role": "outlook"
         },
         {
           "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -639,13 +657,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3501,
-          "rank_score": 0.5031,
+          "match_score": 0.3492,
+          "rank_score": 0.5026,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "macro",
+          "role": "historical"
         },
         {
           "id": "629cddfde78d45fdde8891b65e011167",
@@ -657,12 +676,13 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3501,
-          "rank_score": 0.5031,
+          "match_score": 0.3491,
+          "rank_score": 0.5025,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
           "role": "historical"
         },
         {
@@ -675,30 +695,95 @@
           "sentiment_score": 0.14285714285714285,
           "impact_score": 0.4928571428571429,
           "relevance_score": 0.5,
-          "match_score": 0.348,
-          "rank_score": 0.4859,
+          "match_score": 0.3471,
+          "rank_score": 0.4854,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
           "role": "historical"
         },
         {
-          "id": "645bc96e1a4e4c459f852c8cc290b56d",
-          "title": "Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar?",
+          "id": "cdd7cde965d0db8917bcc712e4a3459b",
+          "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
           "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-tem-maior-queda-mensal-desde-2023-com-debandada-dos-gringos-o-que-esperar/",
-          "published_at": "2026-05-29T21:01:22+00:00",
-          "summary": "Índice teve baixa de 7,22%, maior queda desde fevereiro de 2023, quando caiu 7,49%.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Mercado doméstico Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar? O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.6,
-          "impact_score": 0.63,
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
+          "published_at": "2026-06-01T23:33:02.846612+00:00",
+          "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.303,
-          "rank_score": 0.4471,
-          "source_category": null,
+          "match_score": 0.315,
+          "rank_score": 0.4743,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "fluxo",
+          "role": "historical"
+        }
+      ]
+    },
+    {
+      "source_name": "Folha.com - Mercado - Principal",
+      "count": 3,
+      "items": [
+        {
+          "id": "e832f883055e6f76417a69aaf8db15c6",
+          "title": "Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/colunas/michael-franca/2026/06/audiencia-vale-mais-que-curriculo-que-tal-virginia-fonseca-operar-seu-coracao.shtml",
+          "published_at": "2026-06-01T18:57:00-03:00",
+          "summary": "Já ouviu falar na Virginia Fonseca? Uma colega aqui da Folha, a Natalia Beauty, em sua coluna \"Odeiam Virginia na Copa porque ela revela verdade humilhante: audiência vale mais que currículo\", disse que parte do Brasil para quando Virginia fala.\n\nConfesso que não a conhecia até ela aparecer de moletom na CPI das Bets. Leia mais (06/01/2026 - 18h57). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 0.7073,
+          "rank_score": 0.6118,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
+        {
+          "id": "becd03b804844cc70fbc3330bee50a5c",
+          "title": "Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/petrobras-anuncia-reducao-de-r-035-no-preco-do-oleo-diesel-para-as-distribuidoras.shtml",
+          "published_at": "2026-05-31T17:55:00-03:00",
+          "summary": "A Petrobras anunciou neste domingo (31) que reduzirá o preço do diesel em suas refinarias em R$ 0,35 por litro. O novo valor começa a vigorar nesta segunda (1º).\n\nA redução equivale a um desconto de 9,59% no litro do combustível. Leia mais (05/31/2026 - 17h55). O texto menciona PETR4, VALE3. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 0.7037,
+          "rank_score": 0.6099,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
+        {
+          "id": "7cbaf75733e1b76778881ee3877a6adb",
+          "title": "Economistas sobem previsão da inflação para 2026 e os dois próximos anos",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/economistas-sobem-previsao-da-inflacao-para-2026-e-os-dois-proximos-anos.shtml",
+          "published_at": "2026-06-01T09:35:00-03:00",
+          "summary": "Os economistas elevaram a previsão da inflação neste ano e para os dois próximos com o impacto da guerra no Irã afetando os preços dos combustíveis e dos alimentos em todo o mundo.\n\nLeia mais (06/01/2026 - 09h35). O foco principal passa por Alimentos, Economia.",
+          "sentiment_score": 0.3333333333333333,
+          "impact_score": 0.35,
+          "relevance_score": 0.5,
+          "match_score": 0.356,
+          "rank_score": 0.4686,
+          "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
           "role": "historical"
         }
       ]
@@ -717,13 +802,14 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.702,
-          "rank_score": 0.632,
+          "match_score": 0.7012,
+          "rank_score": 0.6316,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "asset",
           "source_confidence_weight": 0.95,
-          "role": "current"
+          "analysis_category": "fundamento",
+          "role": "outlook"
         },
         {
           "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
@@ -735,78 +821,13 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.305,
-          "rank_score": 0.4651,
+          "match_score": 0.3047,
+          "rank_score": 0.4649,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "macro",
           "source_confidence_weight": 0.95,
-          "role": "historical"
-        }
-      ]
-    },
-    {
-      "source_name": "Folha.com - Mercado - Principal",
-      "count": 2,
-      "items": [
-        {
-          "id": "becd03b804844cc70fbc3330bee50a5c",
-          "title": "Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/petrobras-anuncia-reducao-de-r-035-no-preco-do-oleo-diesel-para-as-distribuidoras.shtml",
-          "published_at": "2026-05-31T17:55:00-03:00",
-          "summary": "A Petrobras anunciou neste domingo (31) que reduzirá o preço do diesel em suas refinarias em R$ 0,35 por litro. O novo valor começa a vigorar nesta segunda (1º).\n\nA redução equivale a um desconto de 9,59% no litro do combustível. Leia mais (05/31/2026 - 17h55). O texto menciona PETR4, VALE3. O foco principal passa por Economia, Mercado.",
-          "sentiment_score": -0.1,
-          "impact_score": 0.48000000000000004,
-          "relevance_score": 0.5,
-          "match_score": 0.7047,
-          "rank_score": 0.6104,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "asset",
-          "source_confidence_weight": 0.72,
-          "role": "current"
-        },
-        {
-          "id": "7cbaf75733e1b76778881ee3877a6adb",
-          "title": "Economistas sobem previsão da inflação para 2026 e os dois próximos anos",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/economistas-sobem-previsao-da-inflacao-para-2026-e-os-dois-proximos-anos.shtml",
-          "published_at": "2026-06-01T09:35:00-03:00",
-          "summary": "Os economistas elevaram a previsão da inflação neste ano e para os dois próximos com o impacto da guerra no Irã afetando os preços dos combustíveis e dos alimentos em todo o mundo.\n\nLeia mais (06/01/2026 - 09h35). O foco principal passa por Alimentos, Economia.",
-          "sentiment_score": 0.3333333333333333,
-          "impact_score": 0.35,
-          "relevance_score": 0.5,
-          "match_score": 0.357,
-          "rank_score": 0.4691,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "role": "historical"
-        }
-      ]
-    },
-    {
-      "source_name": "Todas as Notícias",
-      "count": 1,
-      "items": [
-        {
-          "id": "3dbeed313bcadecfe40d2b70e190d0ca",
-          "title": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS",
-          "source_name": "Todas as Notícias",
-          "source_url": "https://br.investing.com/news/analyst-ratings/sofrendo-com-o-ibovespa-esta-acao-da-b3-escolhida-por-ia-sobe-quase-20-neste-mes-1949007",
-          "published_at": "2026-05-25T00:21:25+00:00",
-          "summary": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS. Notícia menciona B3SA3.",
-          "sentiment_score": 1.0,
-          "impact_score": 0.75,
-          "relevance_score": 0.5,
-          "match_score": 0.2886,
-          "rank_score": 0.4576,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
           "role": "historical"
         }
       ]

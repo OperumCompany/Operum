@@ -31,7 +31,6 @@ type PriceRow = {
   weight_pct: number | null;
   unrealized_pnl: number | null;
   unrealized_pnl_pct: number | null;
-  sparkline_20d: number[];
 };
 
 type PricesResponse = {
@@ -94,33 +93,6 @@ function fmtMoney(value: number | null | undefined, currency = 'BRL') {
   if (value == null) return '-';
   const prefix = currency === 'BRL' ? 'R$' : currency;
   return `${prefix} ${value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
-}
-
-function Sparkline({ values }: { values: number[] }) {
-  if (!values.length) return <span className="text-xs text-[var(--text-muted)]">-</span>;
-  const min = Math.min(...values);
-  const max = Math.max(...values);
-  const range = Math.max(max - min, 1);
-  const points = values
-    .map((value, index) => {
-      const x = (index / Math.max(values.length - 1, 1)) * 100;
-      const y = 24 - ((value - min) / range) * 24;
-      return `${x},${y}`;
-    })
-    .join(' ');
-  const rising = values[values.length - 1] >= values[0];
-  return (
-    <svg viewBox="0 0 100 24" className="h-8 w-24 overflow-visible">
-      <polyline
-        fill="none"
-        stroke={rising ? '#3D9C72' : '#C7559B'}
-        strokeWidth="2"
-        strokeLinejoin="round"
-        strokeLinecap="round"
-        points={points}
-      />
-    </svg>
-  );
 }
 
 function mergeChartSeries(historical: HorizonSeriesPoint[], forecast: HorizonSeriesPoint[]) {
@@ -455,29 +427,6 @@ export function PortfolioDetailsPage() {
         </Card>
       )}
 
-      {analysis?.benchmark && (
-        <Card title="Benchmark de referencia">
-          <div className="grid gap-3 sm:grid-cols-4">
-            <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-4">
-              <p className="text-xs text-[var(--text-muted)]">Benchmark</p>
-              <p className="mt-1 text-lg font-bold text-[var(--text-main)]">{analysis.benchmark.label}</p>
-            </div>
-            <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-4">
-              <p className="text-xs text-[var(--text-muted)]">Beta (estimativa)</p>
-              <p className="mt-1 text-lg font-bold text-[var(--text-main)]">{analysis.beta != null ? analysis.beta.toFixed(2) : '-'}</p>
-            </div>
-            <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-4">
-              <p className="text-xs text-[var(--text-muted)]">Benchmark 3m</p>
-              <p className="mt-1 text-lg font-bold text-[var(--text-main)]">{analysis.benchmark.return_63d_pct != null ? `${analysis.benchmark.return_63d_pct.toFixed(1)}%` : '-'}</p>
-            </div>
-            <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-4">
-              <p className="text-xs text-[var(--text-muted)]">VaR 95% (252d)</p>
-              <p className="mt-1 text-lg font-bold text-[var(--text-main)]">{analysis.var_95 != null ? `${(analysis.var_95 * 100).toFixed(2)}%` : '-'}</p>
-            </div>
-          </div>
-        </Card>
-      )}
-
       <PortfolioAnalysisAI portfolioId={portfolio.id} />
 
       <Card title="Adicionar ativos">
@@ -545,7 +494,6 @@ export function PortfolioDetailsPage() {
                     <th>Valor total</th>
                     <th>P&L nao realizado</th>
                     <th>% Carteira</th>
-                    <th>Mini historico</th>
                     <th>IA</th>
                     <th></th>
                   </tr>
@@ -573,7 +521,6 @@ export function PortfolioDetailsPage() {
                             ) : '-'}
                           </td>
                           <td>{priceInfo?.weight_pct != null ? `${priceInfo.weight_pct.toFixed(1)}%` : '-'}</td>
-                          <td><Sparkline values={priceInfo?.sparkline_20d ?? []} /></td>
                           <td>
                             <button
                               type="button"
@@ -592,7 +539,7 @@ export function PortfolioDetailsPage() {
                         </tr>
                         {opinionState?.open && (
                           <tr className="border-t border-[var(--border-soft)] bg-[var(--bg-surface-strong)]/60">
-                            <td colSpan={10} className="p-4">
+                            <td colSpan={9} className="p-4">
                               {opinionState.loading && (
                                 <div className="flex items-center gap-3">
                                   <div className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--brand)] border-t-transparent" />
@@ -617,6 +564,11 @@ export function PortfolioDetailsPage() {
                                       <p className="mt-1 text-xs text-[var(--text-muted)]">
                                         Janela historica: {opinionState.data.historical_window.start_date} ate {opinionState.data.historical_window.end_date} â€¢ {opinionState.data.used_news_count} noticia(s) usada(s)
                                       </p>
+                                      {opinionState.data.current_snapshot.asset_function && (
+                                        <p className="mt-1 text-xs text-[var(--text-muted)]">
+                                          Funcao do ativo: {opinionState.data.current_snapshot.asset_function.replace('_', ' ')}
+                                        </p>
+                                      )}
                                     </div>
                                     {opinionState.data.current_snapshot.weight_pct != null && (
                                       <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--text-main)]">
@@ -780,6 +732,12 @@ export function PortfolioDetailsPage() {
                                           {opinionState.data.recent_performance.forecast_confidence_selected != null ? `${(opinionState.data.recent_performance.forecast_confidence_selected * 100).toFixed(0)}%` : '-'}
                                         </p>
                                       </div>
+                                      <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-3 text-sm">
+                                        <p className="text-xs text-[var(--text-muted)]">Ajuste por noticias</p>
+                                        <p className="mt-1 font-semibold text-[var(--text-main)]">
+                                          {opinionState.data.recent_performance.forecast_news_adjustment_pct != null ? `${opinionState.data.recent_performance.forecast_news_adjustment_pct.toFixed(1)}%` : '-'}
+                                        </p>
+                                      </div>
                                     </div>
                                   </section>
 
@@ -817,6 +775,7 @@ export function PortfolioDetailsPage() {
                                                     <p className="mt-1 text-xs text-[var(--text-muted)]">
                                                       {new Date(item.published_at).toLocaleDateString('pt-BR')}
                                                       {item.role ? ` â€¢ ${item.role}` : ''}
+                                                      {item.analysis_category ? ` â€¢ ${item.analysis_category}` : ''}
                                                     </p>
                                                   </a>
                                                 ))}

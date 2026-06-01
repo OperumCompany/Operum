@@ -150,6 +150,19 @@ class PortfolioOpinionService:
         predictability_penalty = 1.0 - (sum(confidences) / len(confidences))
         return round(min(1.0, structural_risk * 0.6 + predictability_penalty * 0.4), 4)
 
+    def _asset_function(self, asset) -> str:
+        if asset is None:
+            return "diversificacao"
+        if asset.asset_class in {"FII", "FIXED_INCOME"}:
+            return "renda"
+        if asset.asset_class == "CRYPTO":
+            return "assimetria"
+        if asset.asset_class in {"US_STOCK", "BDR"}:
+            return "crescimento global"
+        if any(term in (asset.sector or "").lower() for term in ["energia", "financeiro", "seguridade", "saneamento"]):
+            return "estabilidade"
+        return "crescimento"
+
     def _portfolio_return_for_window(self, portfolio: Portfolio, analysis: dict, prices_data: dict, horizon_days: int) -> float | None:
         weights = analysis.get("weights", {})
         returns = []
@@ -249,6 +262,13 @@ class PortfolioOpinionService:
             strengths.append("A parte brasileira traz ativos geradores de caixa e setores conhecidos pelo investidor local.")
         if portfolio_return_window is not None and benchmark_return is not None and portfolio_return_window >= benchmark_return:
             strengths.append(f"No recorte de {horizon_label}, a carteira acompanha ou supera o benchmark principal.")
+        top_functions = Counter(
+            self._asset_function(all_assets.get(pos.ticker))
+            for pos in positions[: min(8, len(positions))]
+        )
+        if top_functions:
+            dominant_functions = ", ".join(name for name, _ in top_functions.most_common(3))
+            strengths.append(f"As maiores posicoes cumprem funcoes relativamente claras dentro da carteira, com destaque para {dominant_functions}.")
         if not strengths:
             strengths.append("A carteira tem uma logica basica de diversificacao, mas ainda depende bastante de poucos vetores.")
 
@@ -277,6 +297,13 @@ class PortfolioOpinionService:
         repeated_sectors = [sector for sector, count in sectors.items() if sector != "Desconhecido" and count >= 2]
         if repeated_sectors:
             overlaps.append(f"Ha repeticao setorial relevante em {', '.join(repeated_sectors[:3])}.")
+        function_overlap = Counter(
+            self._asset_function(all_assets.get(pos.ticker))
+            for pos in positions
+        )
+        repeated_functions = [name for name, count in function_overlap.items() if count >= 3]
+        if repeated_functions:
+            overlaps.append(f"Existe repeticao de funcao economica em {', '.join(repeated_functions[:3])}, o que diminui a diversificacao efetiva.")
 
         block_reviews = []
         br_positions = [pos for pos in positions if pos.asset_class == "BR_STOCK"]
@@ -293,7 +320,7 @@ class PortfolioOpinionService:
                     "assessment": "Bloco com perfil de renda e estabilidade, mas ainda sensivel ao ambiente domestico e a concentracao setorial."
                     if len(sectors_br) <= 4
                     else "Bloco razoavelmente distribuido entre setores locais, ainda dependente de macro Brasil.",
-                    "highlights": f"Maior concentracao setorial em {top_sector}. Retorno do bloco em {horizon_label}: {block_return:+.1f}%."
+                    "highlights": f"Maior concentracao setorial em {top_sector}. O bloco funciona hoje como base domestica de renda/estabilidade. Retorno em {horizon_label}: {block_return:+.1f}%."
                     if block_return is not None
                     else f"Maior concentracao setorial em {top_sector}.",
                 }
@@ -314,7 +341,7 @@ class PortfolioOpinionService:
                     if credit_like
                     else "Bloco de FIIs mais equilibrado entre renda e tijolo.",
                     "highlights": (
-                        f"{credit_like} fundo(s) tem perfil mais proximo de credito ou hibrido. Retorno do bloco em {horizon_label}: {block_return:+.1f}%."
+                        f"{credit_like} fundo(s) tem perfil mais proximo de credito ou hibrido. O risco escondido aqui esta mais em credito/indexadores do que em simples oscilacao de tela. Retorno em {horizon_label}: {block_return:+.1f}%."
                         if block_return is not None
                         else f"{credit_like} fundo(s) tem perfil mais proximo de credito ou hibrido."
                     ),
@@ -331,7 +358,7 @@ class PortfolioOpinionService:
                     if us_weight >= 0.3
                     else "Bloco externo ajuda a diversificar sem dominar a carteira.",
                     "highlights": (
-                        f"Peso agregado aproximado de {us_weight * 100:.1f}% em ativos ligados aos EUA. Retorno do bloco em {horizon_label}: {block_return:+.1f}%."
+                        f"Peso agregado aproximado de {us_weight * 100:.1f}% em ativos ligados aos EUA. O bloco cumpre funcao de crescimento global, mas pode estar redundante em indices muito parecidos. Retorno em {horizon_label}: {block_return:+.1f}%."
                         if block_return is not None
                         else f"Peso agregado aproximado de {us_weight * 100:.1f}% em ativos ligados aos EUA."
                     ),
@@ -385,7 +412,7 @@ class PortfolioOpinionService:
                 f"No mesmo periodo, o benchmark de referencia {benchmark.get('label')} variou {benchmark_return:+.1f}%."
             )
         if overlaps:
-            summary_parts.append("O principal ponto de atencao esta na sobreposicao entre ativos com funcao parecida e no risco escondido em alguns blocos.")
+            summary_parts.append("O principal ponto de atencao esta na sobreposicao entre ativos com funcao parecida e no risco escondido em alguns blocos, especialmente quando varios ativos parecem diversificacao, mas respondem ao mesmo motor.")
         if forecast_risk > 0.5:
             summary_parts.append("A leitura quantitativa de risco ainda pede monitoramento de volatilidade e concentracao.")
 
@@ -399,7 +426,7 @@ class PortfolioOpinionService:
         if not final_diag_parts:
             final_diag_parts.append("a carteira esta funcional, mas ainda pode ficar mais limpa e coerente")
 
-        conclusion = f"O maior ajuste conceitual para o recorte de {horizon_label} e reduzir redundancias, explicitar a funcao de cada bloco e limitar os riscos que hoje parecem diversificacao, mas ainda representam exposicao repetida."
+        conclusion = f"O maior ajuste conceitual para o recorte de {horizon_label} e reduzir redundancias, explicitar a funcao de cada bloco e limitar os riscos que hoje parecem diversificacao, mas ainda representam exposicao repetida. A pergunta central passa a ser se cada ativo continua cumprindo bem a funcao que deveria cumprir dentro da carteira."
 
         sources = []
         seen_ids = set()

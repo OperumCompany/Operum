@@ -1,5 +1,1234 @@
 [
   {
+    "id": "ff5319f6ce521f89dc4665884cdbbe2a",
+    "title": "IRB conclui obrigações com Departamento de Justiça dos EUA após \"caso Buffett\"",
+    "subtitle": null,
+    "content_preview": "IRB conclui obrigações com Departamento de Justiça dos EUA após \"caso Buffett\"",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/irb-conclui-obrigacoes-com-departamento-de-justica-dos-eua-apos-caso-buffett/",
+    "published_at": "2026-06-01T23:33:02.846612Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "IRB conclui obrigações com Departamento de Justiça dos EUA após \"caso Buffett\".\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.846612Z"
+  },
+  {
+    "id": "1acacd9606daaccdf1005f3f908f74f7",
+    "title": "JPMorgan tem otimismo limitado ao atualizar projeções para Grupo Petz Cobasi (AUAU3)",
+    "subtitle": null,
+    "content_preview": "JPMorgan tem otimismo limitado ao atualizar projeções para Grupo Petz Cobasi (AUAU3)",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/jpmorgan-tem-otimismo-limitado-ao-atualizar-projecoes-para-grupo-petz-cobasi-auau3/",
+    "published_at": "2026-06-01T23:33:02.846612Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "JPMorgan tem otimismo limitado ao atualizar projeções para Grupo Petz Cobasi (AUAU3).\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.846612Z"
+  },
+  {
+    "id": "cdd7cde965d0db8917bcc712e4a3459b",
+    "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
+    "subtitle": null,
+    "content_preview": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
+    "published_at": "2026-06-01T23:33:02.846612Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "mentioned_assets": [
+      "PETR4"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.75,
+    "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.846612Z"
+  },
+  {
+    "id": "7c9aa001ced65200933df05bb5ebc7d3",
+    "title": "Dólar hoje cai 0,47%, a R$ 5,02, após idas e vindas sobre conversas entre Irã-EUA",
+    "subtitle": null,
+    "content_preview": "Dólar hoje cai 0,47%, a R$ 5,02, após idas e vindas sobre conversas entre Irã-EUA",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-01062026/",
+    "published_at": "2026-06-01T23:33:02.846612Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Dólar hoje cai 0,47%, a R$ 5,02, após idas e vindas sobre conversas entre Irã-EUA.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.846612Z"
+  },
+  {
+    "id": "7a7bd132636c65795e0e8a74ee3a1e42",
+    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "subtitle": null,
+    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
+    "published_at": "2026-06-01T23:33:02.845617Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.845617Z"
+  },
+  {
+    "id": "45d3ba059f2eed9b94a48d2cb63f422f",
+    "title": "Totvs: ação avança mais de 4% acompanhando movimento global do setor de software",
+    "subtitle": null,
+    "content_preview": "Totvs: ação avança mais de 4% acompanhando movimento global do setor de software",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/totvs-acao-avanca-3-acompanhando-movimento-global-do-setor-de-software/",
+    "published_at": "2026-06-01T23:33:02.845617Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Totvs: ação avança mais de 4% acompanhando movimento global do setor de software.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.845617Z"
+  },
+  {
+    "id": "cf082f3eb601043e0f0f4a4ba17482a4",
+    "title": "Nvidia dissipa temores de obsolescência de software e ações do setor sobem pelo mundo",
+    "subtitle": null,
+    "content_preview": "Nvidia dissipa temores de obsolescência de software e ações do setor sobem pelo mundo",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/nvidia-dissipa-temores-de-obsolescencia-de-software-e-acoes-do-setor-sobem-pelo-mundo/",
+    "published_at": "2026-06-01T23:33:02.845617Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Nvidia dissipa temores de obsolescência de software e ações do setor sobem pelo mundo.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.845617Z"
+  },
+  {
+    "id": "3a7538be8ae5a2c0f6a0623d6ee24037",
+    "title": "Ibovespa começa junho em queda de 0,91%, aos 172 mil, menor nível desde 21 de janeiro",
+    "subtitle": null,
+    "content_preview": "Ibovespa começa junho em queda de 0,91%, aos 172 mil, menor nível desde 21 de janeiro",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-comeca-junho-em-queda-de-091-aos-172-mil-menor-nivel-desde-21-de-janeiro/",
+    "published_at": "2026-06-01T23:33:02.845617Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ibovespa começa junho em queda de 0,91%, aos 172 mil, menor nível desde 21 de janeiro.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.845617Z"
+  },
+  {
+    "id": "2d540794d0dddec602686eeaad1d144a",
+    "title": "Bolsas em NY fecham em alta e descolam do petróleo impulsionadas por techs",
+    "subtitle": null,
+    "content_preview": "Bolsas em NY fecham em alta e descolam do petróleo impulsionadas por techs",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/bolsas-em-ny-fecham-em-alta-e-descolam-do-petroleo-impulsionadas-por-techs/",
+    "published_at": "2026-06-01T23:33:02.845617Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Bolsas em NY fecham em alta e descolam do petróleo impulsionadas por techs.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.845617Z"
+  },
+  {
+    "id": "e40dbea6f37f8ae2cafb295c33b120ed",
+    "title": "“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina",
+    "subtitle": null,
+    "content_preview": "“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ponto-cego-as-oportunidades-de-us-13-trilhao-em-acoes-ligadas-a-america-latina/",
+    "published_at": "2026-06-01T23:33:02.844615Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.844615Z"
+  },
+  {
+    "id": "99a85af29aea69382bcf15238eddc0e2",
+    "title": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri",
+    "subtitle": null,
+    "content_preview": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/cogna-yduqs-anima-e-mais-quais-acoes-se-destacaram-na-temporada-do-1o-tri/",
+    "published_at": "2026-06-01T23:33:02.844615Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.844615Z"
+  },
+  {
+    "id": "e3f399bb35d85d201d308257d85ab637",
+    "title": "Anvisa fará análise mês a mês de lotes da Ypê fabricados antes de abril",
+    "subtitle": null,
+    "content_preview": "A Anvisa (Agência Nacional de Vigilância Sanitária) afirma que fará uma análise mês a mês dos produtos da Ypê fabricados antes de abril para decidir se autoriza o uso de detergentes, lava-roupas líquidos e desinfetantes com final de lote \"1\", que seguem suspensos. Leia mais (06/01/2026 - 20h06)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/anvisa-fara-analise-mes-a-mes-de-lotes-da-ype-fabricados-antes-de-abril.shtml",
+    "published_at": "2026-06-01T20:06:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Anvisa (Agência Nacional de Vigilância Sanitária) afirma que fará uma análise mês a mês dos produtos da Ypê fabricados antes de abril para decidir se autoriza o uso de detergentes, lava-roupas líquidos e desinfetantes com final de lote \"1\", que seguem suspensos.\n\nLeia mais (06/01/2026 - 20h06). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "7f6413c30a214912ec5e1280b1ebe9ec",
+    "title": "Clínica pede à Justiça Federal anulação do registro da marca 'Star' da Rede D'Or de hospitais",
+    "subtitle": null,
+    "content_preview": "Em mais um capítulo na disputa pelo registro da marca \"star\" no segmento de medicina, a Nefrostar Clínica Médica de Nefrologia pediu na 25ª Vara Federal do Rio de Janeiro que dois registros de propriedade da Rede D'Or São Luiz S.A sejam anulados pelo INPI (Instituto Nacional da Propriedade Industrial). Leia mais (06/01/2026 - 19h41)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/clinica-pede-a-justica-federal-anulacao-do-registro-da-marca-star-da-rede-dor-de-hospitais.shtml",
+    "published_at": "2026-06-01T19:41:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Em mais um capítulo na disputa pelo registro da marca \"star\" no segmento de medicina, a Nefrostar Clínica Médica de Nefrologia pediu na 25ª Vara Federal do Rio de Janeiro que dois registros de propriedade da Rede D'Or São Luiz S.A sejam anulados pelo INPI (Instituto Nacional da Propriedade Industrial).\n\nLeia mais (06/01/2026 - 19h41). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "c3af7442b703c36b5ddd454858c4a7bc",
+    "title": "Governo atrasa novamente pagamento de subvenção ao diesel",
+    "subtitle": null,
+    "content_preview": "Empresas que aderiram ao programa de subvenção ao óleo diesel criado pelo governo para enfrentar efeitos da guerra no Irã seguem sem receber ressarcimento pelas vendas do produto. Na sexta-feira (29), venceu o prazo para o pagamento do mês de abril. Leia mais (06/01/2026 - 19h30)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/governo-atrasa-novamente-pagamento-de-subvencao-ao-diesel.shtml",
+    "published_at": "2026-06-01T19:30:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Empresas que aderiram ao programa de subvenção ao óleo diesel criado pelo governo para enfrentar efeitos da guerra no Irã seguem sem receber ressarcimento pelas vendas do produto.\n\nNa sexta-feira (29), venceu o prazo para o pagamento do mês de abril. Leia mais (06/01/2026 - 19h30). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "3f98267305abeecb70c863f0df2833a2",
+    "title": "Acesso a crédito não é sinônimo de bem-estar financeiro",
+    "subtitle": null,
+    "content_preview": "O alto endividamento das famílias brasileiras -que compromete cerca de 30% da renda- ocorre simultaneamente ao processo de inclusão financeira observado nos últimos anos. A abertura das informações de crédito por modalidade e faixa de renda deixa evidente que essa transformação está associada ao perfil de endividamento das famílias de baixa renda, bastante distinto do restante da população. Leia mais (06/01/2026 - 18h58)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/cecilia-machado/2026/06/acesso-a-credito-nao-e-sinonimo-de-bem-estar-financeiro.shtml",
+    "published_at": "2026-06-01T18:58:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O alto endividamento das famílias brasileiras -que compromete cerca de 30% da renda- ocorre simultaneamente ao processo de inclusão financeira observado nos últimos anos.\n\nA abertura das informações de crédito por modalidade e faixa de renda deixa evidente que essa transformação está associada ao perfil de endividamento das famílias de baixa renda, bastante distinto do restante da população. O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "e832f883055e6f76417a69aaf8db15c6",
+    "title": "Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?",
+    "subtitle": null,
+    "content_preview": "Já ouviu falar na Virginia Fonseca? Uma colega aqui da Folha, a Natalia Beauty, em sua coluna \"Odeiam Virginia na Copa porque ela revela verdade humilhante: audiência vale mais que currículo\", disse que parte do Brasil para quando Virginia fala. Confesso que não a conhecia até ela aparecer de moletom na CPI das Bets. Leia mais (06/01/2026 - 18h57)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/michael-franca/2026/06/audiencia-vale-mais-que-curriculo-que-tal-virginia-fonseca-operar-seu-coracao.shtml",
+    "published_at": "2026-06-01T18:57:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "VALE3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Já ouviu falar na Virginia Fonseca? Uma colega aqui da Folha, a Natalia Beauty, em sua coluna \"Odeiam Virginia na Copa porque ela revela verdade humilhante: audiência vale mais que currículo\", disse que parte do Brasil para quando Virginia fala.\n\nConfesso que não a conhecia até ela aparecer de moletom na CPI das Bets. Leia mais (06/01/2026 - 18h57). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "c1a3e7ae61a87d13600466ef2b15694e",
+    "title": "SpaceX reserva 5% de ações do IPO para compradores selecionados",
+    "subtitle": null,
+    "content_preview": "A SpaceX reservou 5% das ações em seu IPO (sigla em inglês para oferta pública inicial) para determinados funcionários e indivíduos selecionados por seus diretores executivos, isentando-os das restrições de bloqueio de negócios pós-IPO, de acordo com documento da empresa enviado ao mercado nesta segunda-feira (1º). Leia mais (06/01/2026 - 18h52)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://aovivo.folha.uol.com.br/mercado/2026/06/01/6449-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post450822",
+    "published_at": "2026-06-01T18:52:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A SpaceX reservou 5% das ações em seu IPO (sigla em inglês para oferta pública inicial) para determinados funcionários e indivíduos selecionados por seus diretores executivos, isentando-os das restrições de bloqueio de negócios pós-IPO, de acordo com documento da empresa enviado ao mercado nesta segunda-feira (1º).\n\nLeia mais (06/01/2026 - 18h52). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "769aab44f6777cd378b34ae6d070cbf7",
+    "title": "Bolsa Família de junho começa a ser pago no dia 17; veja calendário",
+    "subtitle": null,
+    "content_preview": "Os pagamentos do Bolsa Família referentes a junho de 2026 terão início no próximo dia 17. Os depósitos são realizados de forma escalonada, conforme o número final do NIS (Número de Identificação Social), e seguem até 30 de junho. Leia mais (06/01/2026 - 18h30)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/bolsa-familia-de-junho-comeca-a-ser-pago-no-dia-17-veja-calendario.shtml",
+    "published_at": "2026-06-01T18:30:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Os pagamentos do Bolsa Família referentes a junho de 2026 terão início no próximo dia 17. Os depósitos são realizados de forma escalonada, conforme o número final do NIS (Número de Identificação Social), e seguem até 30 de junho.\n\nLeia mais (06/01/2026 - 18h30). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "9efb7681daace3174b72fa0a694442c0",
+    "title": "iFood inicia serviço de entrega com drone na Grande SP; veja vídeo",
+    "subtitle": null,
+    "content_preview": "O iFood começou a realizar entregas por drone no estado de São Paulo nesta segunda-feira (1º), informou a empresa. A cidade escolhida pelo grupo para inaugurar o serviço é Barueri, na região da Grande São Paulo. Leia mais (06/01/2026 - 18h27)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/ifood-inicia-servico-de-entrega-com-drone-na-grande-sp-veja-video.shtml",
+    "published_at": "2026-06-01T18:27:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O iFood começou a realizar entregas por drone no estado de São Paulo nesta segunda-feira (1º), informou a empresa. A cidade escolhida pelo grupo para inaugurar o serviço é Barueri, na região da Grande São Paulo.\n\nLeia mais (06/01/2026 - 18h27). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "b3785a603e483bb25eefd0c8cbe4499e",
+    "title": "Os ETFs de ações brasileiras mais comprados não foram os que mais renderam",
+    "subtitle": null,
+    "content_preview": "Imagine que você esteja perdido em uma floresta e encontre duas trilhas. Uma delas está cheia de pegadas. A outra parece pouco utilizada. A tendência natural é seguir o caminho mais movimentado, concorda? Afinal, tanta gente não pode estar errada. Leia mais (06/01/2026 - 18h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/blogs/de-grao-em-grao/2026/06/os-etfs-de-acoes-brasileiras-mais-comprados-nao-foram-os-que-mais-renderam.shtml",
+    "published_at": "2026-06-01T18:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Imagine que você esteja perdido em uma floresta e encontre duas trilhas. Uma delas está cheia de pegadas. A outra parece pouco utilizada.\n\nA tendência natural é seguir o caminho mais movimentado, concorda? Afinal, tanta gente não pode estar errada. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "300fb8fc15ce12006833434b750e403e",
+    "title": "Unidade da Toyota em Indaiatuba encerra atividades após 28 anos de operação",
+    "subtitle": null,
+    "content_preview": "A Toyota vai encerrar no dia 30 de junho de 2026 as atividades de sua fábrica em Indaiatuba (SP), unidade que operava desde 1998 e produziu mais de 1 milhão de veículos. O fechamento marca a etapa final da reorganização industrial da montadora no Brasil, com a transferência da produção do Corolla Sedan para Sorocaba (SP). Leia mais (06/01/2026 - 17h28)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/unidade-da-toyota-em-indaiatuba-encerra-atividades-apos-28-anos-de-operacao.shtml",
+    "published_at": "2026-06-01T17:28:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Toyota vai encerrar no dia 30 de junho de 2026 as atividades de sua fábrica em Indaiatuba (SP), unidade que operava desde 1998 e produziu mais de 1 milhão de veículos.\n\nO fechamento marca a etapa final da reorganização industrial da montadora no Brasil, com a transferência da produção do Corolla Sedan para Sorocaba (SP). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "78d4b004fa43f5606ed4ba7f9165a47f",
+    "title": "BNDES capta R$ 1 bi com banco espanhol para financiar projetos verdes no Brasil",
+    "subtitle": null,
+    "content_preview": "O BNDES (Banco Nacional de Desenvolvimento Econômico e Social) afirma que captou nesta segunda-feira (1º) US$ 200 milhões (cerca de R$ 1 bilhão) junto ao banco público espanhol ICO (Instituto de Crédito Oficial). Leia mais (06/01/2026 - 17h25)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/bndes-capta-r-1-bi-com-banco-espanhol-para-financiar-projetos-verdes-no-brasil.shtml",
+    "published_at": "2026-06-01T17:25:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O BNDES (Banco Nacional de Desenvolvimento Econômico e Social) afirma que captou nesta segunda-feira (1º) US$ 200 milhões (cerca de R$ 1 bilhão) junto ao banco público espanhol ICO (Instituto de Crédito Oficial).\n\nLeia mais (06/01/2026 - 17h25). O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "2f2b6780d8450b5c909aa19297592882",
+    "title": "Safra de inverno é menor, mas oferta de milho ainda é grande",
+    "subtitle": null,
+    "content_preview": "O Brasil não repete neste ano a safrinha recorde que teve no período anterior, mas, apesar da queda na produção, o estoque de passagem -a sobra que vem da safra anterior- e a pouca competitividade brasileira no mercado externo garantem milho para o abastecimento interno. O país deve terminar esta safra, que vai até o final de janeiro de 2027, com estoques próximos ou até superiores aos 12,5 milhões de toneladas da anterior. Leia mais (06/01/2026 - 17h14)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/vaivem/2026/06/safra-de-inverno-e-menor-mas-oferta-de-milho-ainda-e-grande.shtml",
+    "published_at": "2026-06-01T17:14:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 0.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.25,
+    "summary": "O Brasil não repete neste ano a safrinha recorde que teve no período anterior, mas, apesar da queda na produção, o estoque de passagem -a sobra que vem da safra anterior- e a pouca competitividade brasileira no mercado externo garantem milho para o abastecimento interno.\n\nO país deve terminar esta safra, que vai até o final de janeiro de 2027, com estoques próximos ou até superiores aos 12,5 milhões de toneladas da anterior. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "944c23ebed231ff10de904dd6ee4259b",
+    "title": "Americanas afirma atrair 34% de novos clientes com figurinhas da Copa de 2026",
+    "subtitle": null,
+    "content_preview": "A categoria de figurinhas, em destaque pela procura de produtos do tipo para completar o álbum da Copa do Mundo de 2026, atrai novos consumidores para as Americanas. Itens do segmento têm participação em 34% na aquisição e reativação de clientes, acima da média da companhia. Leia mais (06/01/2026 - 17h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/americanas-afirma-atrair-34-de-novos-clientes-com-figurinhas-da-copa-de-2026.shtml",
+    "published_at": "2026-06-01T17:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia",
+      "Varejo"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia",
+      "Varejo"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A categoria de figurinhas, em destaque pela procura de produtos do tipo para completar o álbum da Copa do Mundo de 2026, atrai novos consumidores para as Americanas.\n\nItens do segmento têm participação em 34% na aquisição e reativação de clientes, acima da média da companhia. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "bfd13c59030208ae33fb10c1095a338e",
+    "title": "TCE recomenda rejeição das contas de 2025 de Cláudio Castro no RJ",
+    "subtitle": null,
+    "content_preview": "O TCE-RJ (Tribunal de Contas do Estado do Rio de Janeiro) recomendou nesta segunda-feira (1º) a rejeição das contas do governo Cláudio Castro (PL) de 2025. Por 3 votos a 1, ele aponta falhas nos números do balanço do estado, incluindo no Rioprevidência, alvo de investigação da Polícia Federal. Leia mais (06/01/2026 - 16h52)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/poder/2026/06/tce-recomenda-rejeicao-das-contas-de-2025-de-claudio-castro-no-rj.shtml",
+    "published_at": "2026-06-01T16:52:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O TCE-RJ (Tribunal de Contas do Estado do Rio de Janeiro) recomendou nesta segunda-feira (1º) a rejeição das contas do governo Cláudio Castro (PL) de 2025.\n\nPor 3 votos a 1, ele aponta falhas nos números do balanço do estado, incluindo no Rioprevidência, alvo de investigação da Polícia Federal. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "eafbe925ac9f906a953d501cbab323d3",
+    "title": "Publisher do NYT acusa empresas de IA de parasitismo e pede união do jornalismo profissional",
+    "subtitle": null,
+    "content_preview": "Os chatbots de inteligência artificial generativa, como ChatGPT, Claude e Gemini, são frutos de \"um roubo descarado de propriedade intelectual que ocorreu em uma escala sem precedentes\", afirmou o publisher do New York Times, A.G. Sulzberger, nesta segunda-feira (1º). Segundo o executivo, esse é o \"pecado original que anima os produtos de IA\". Leia mais (06/01/2026 - 16h47)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/tec/2026/06/publisher-do-nyt-acusa-empresas-de-ia-de-parasitismo-e-pede-uniao-do-jornalismo-profissional.shtml",
+    "published_at": "2026-06-01T16:47:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Os chatbots de inteligência artificial generativa, como ChatGPT, Claude e Gemini, são frutos de \"um roubo descarado de propriedade intelectual que ocorreu em uma escala sem precedentes\", afirmou o publisher do New York Times, A.G.\n\nSulzberger, nesta segunda-feira (1º). Segundo o executivo, esse é o \"pecado original que anima os produtos de IA\". O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "609c78989416beaac640de69a72c43e3",
+    "title": "Lucros da IA devem beneficiar trabalhadores, diz diretor-geral de agência da ONU",
+    "subtitle": null,
+    "content_preview": "O diretor-geral da OIT (Organização Internacional do Trabalho), Gilbert Houngbo, defendeu nesta segunda-feira (1º) que os lucros gerados pela inteligência artificial (IA) devem beneficiar os trabalhadores e serem feitos de forma justa. Leia mais (06/01/2026 - 16h13)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/lucros-da-ia-devem-beneficiar-trabalhadores-diz-diretor-geral-de-agencia-da-onu.shtml",
+    "published_at": "2026-06-01T16:13:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O diretor-geral da OIT (Organização Internacional do Trabalho), Gilbert Houngbo, defendeu nesta segunda-feira (1º) que os lucros gerados pela inteligência artificial (IA) devem beneficiar os trabalhadores e serem feitos de forma justa.\n\nLeia mais (06/01/2026 - 16h13). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
+  },
+  {
+    "id": "a1ee6273054ae1b38b96f0bfcb3d3d74",
+    "title": "Prejuízo dos Correios quase dobra e vai a R$ 3,2 bi no 1º trimestre de 2026",
+    "subtitle": null,
+    "content_preview": "Os Correios tiveram um prejuízo de R$ 3,16 bilhões no primeiro trimestre de 2026, segundo demonstrações financeiras divulgadas pela empresa estatal. O rombo é quase o dobro do observado em igual período do ano passado, quando o resultado ficou negativo em R$ 1,7 bilhão. Leia mais (06/01/2026 - 15h36)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/prejuizo-dos-correios-quase-dobra-e-vai-a-r-32-bi-no-1o-trimestre-de-2026.shtml",
+    "published_at": "2026-06-01T15:36:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Os Correios tiveram um prejuízo de R$ 3,16 bilhões no primeiro trimestre de 2026, segundo demonstrações financeiras divulgadas pela empresa estatal.\n\nO rombo é quase o dobro do observado em igual período do ano passado, quando o resultado ficou negativo em R$ 1,7 bilhão. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.842606Z"
+  },
+  {
+    "id": "d1da3e6c0b8e74d1ead570498f2ad48b",
+    "title": "Trabalho no comércio aos feriados volta a exigir negociação coletiva, mas regra pode mudar; entenda",
+    "subtitle": null,
+    "content_preview": "O trabalho no comércio aos feriados volta a exigir negociação coletiva entre empregadores e empregados após sete anos. A mudança ocorre depois de um embate entre integrantes do governo do presidente Luiz Inácio Lula da Silva (PT) e dirigentes empresariais em idas e vindas desde 2023. As novas regras, no entanto, ainda não estão fechadas e pode mudar. Leia mais (06/01/2026 - 15h14)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/trabalho-no-comercio-aos-feriados-volta-a-exigir-negociacao-coletiva-mas-regra-pode-mudar-entenda.shtml",
+    "published_at": "2026-06-01T15:14:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O trabalho no comércio aos feriados volta a exigir negociação coletiva entre empregadores e empregados após sete anos. A mudança ocorre depois de um embate entre integrantes do governo do presidente Luiz Inácio Lula da Silva (PT) e dirigentes empresariais em idas e vindas desde 2023.\n\nAs novas regras, no entanto, ainda não estão fechadas e pode mudar. Leia mais (06/01/2026 - 15h14). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.842606Z"
+  },
+  {
+    "id": "4b1fd0c5d6f0b451deef6e4bb64bb870",
+    "title": "Resolução CVM 193, de 20 de Outubro de 2023",
+    "subtitle": null,
+    "content_preview": "Dispõe sobre a elaboração e divulgação do relatório de informações financeiras relacionadas à sustentabilidade, com base no padrão internacional emitido pelo International Sustainability Standards Board - ISSB. (Publicada no DOU de 23.10.2023) Justificativa - Dispensa de Análise de Impacto Regulatório (AIR) ALTERADA pelas Resoluções 219/24, 227/25 e 244/26.",
+    "full_text_if_available": null,
+    "source_id": "cvm_legislacao",
+    "source_name": "CVM - Legislacao",
+    "source_type": "official_notice_feed",
+    "is_official": true,
+    "source_category": "regulator",
+    "source_url": "http://www.cvm.gov.br/legislacao/resolucoes/resol193.html",
+    "published_at": "2026-06-01T15:09:19-03:00",
+    "language": "pt",
+    "tags": [
+      "Mercado de Capitais",
+      "Regulacao"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Mercado de Capitais",
+      "Regulacao"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Dispõe sobre a elaboração e divulgação do relatório de informações financeiras relacionadas à sustentabilidade, com base no padrão internacional emitido pelo International Sustainability Standards Board - ISSB.\n\n(Publicada no DOU de 23.10.2023) Justificativa - Dispensa de Análise de Impacto Regulatório (AIR) ALTERADA pelas Resoluções 219/24, 227/25 e 244/26. O foco principal passa por Mercado de Capitais, Regulacao.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.824754Z"
+  },
+  {
+    "id": "2c00369753ad74c6c79105a81dd4c4ba",
+    "title": "Motorola mira mercado de drones de defesa e vai comprar startup israelense por US$ 1,5 bilhão",
+    "subtitle": null,
+    "content_preview": "A Motorola anunciou que comprará a startup israelense D-Fend Solutions por US$ 1,5 bilhão (R$ 7,56 bilhões), à medida que governos e operadores de infraestrutura crítica em todo o mundo correm para se defender contra a crescente ameaça de drones hostis. Leia mais (06/01/2026 - 14h44)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/motorola-mira-mercado-de-drones-de-defesa-e-vai-comprar-startup-israelense-por-us-15-bilhao.shtml",
+    "published_at": "2026-06-01T14:44:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Motorola anunciou que comprará a startup israelense D-Fend Solutions por US$ 1,5 bilhão (R$ 7,56 bilhões), à medida que governos e operadores de infraestrutura crítica em todo o mundo correm para se defender contra a crescente ameaça de drones hostis.\n\nLeia mais (06/01/2026 - 14h44). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.842606Z"
+  },
+  {
+    "id": "b7834062e3f0731a627f92f25215bf45",
+    "title": "Anthropic oferece à União Europeia acesso ao Mythos, IA de segurança cibernética",
+    "subtitle": null,
+    "content_preview": "A Anthropic ofereceu à União Europeia acesso ao seu modelo de inteligência artificial Mythos, a primeira vez que a empresa disponibiliza a poderosa ferramenta de segurança cibernética fora dos Estados Unidos e do Reino Unido. Leia mais (06/01/2026 - 14h27)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/anthropic-oferece-a-uniao-europeia-acesso-ao-mythos-ia-de-seguranca-cibernetica.shtml",
+    "published_at": "2026-06-01T14:27:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Anthropic ofereceu à União Europeia acesso ao seu modelo de inteligência artificial Mythos, a primeira vez que a empresa disponibiliza a poderosa ferramenta de segurança cibernética fora dos Estados Unidos e do Reino Unido.\n\nLeia mais (06/01/2026 - 14h27). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.843615Z"
+  },
+  {
+    "id": "89683fe515765424f11131411f533ee4",
+    "title": "Anthropic entra com pedido para abrir capital e prepara terreno para IPO gigantesco",
+    "subtitle": null,
+    "content_preview": "A Anthropic, empresa de inteligência artificial por trás do chatbot Claude, entrou com pedido confidencial nesta segunda-feira (1º) para uma oferta pública inicial de ações, tornando-se a mais recente a se juntar ao que pode ser um momento único em uma geração para ganhar dinheiro em Wall Street. Leia mais (06/01/2026 - 14h14)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/anthropic-entra-com-pedido-para-abrir-capital-e-prepara-terreno-para-ipo-gigantesco.shtml",
+    "published_at": "2026-06-01T14:14:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Anthropic, empresa de inteligência artificial por trás do chatbot Claude, entrou com pedido confidencial nesta segunda-feira (1º) para uma oferta pública inicial de ações, tornando-se a mais recente a se juntar ao que pode ser um momento único em uma geração para ganhar dinheiro em Wall Street.\n\nLeia mais (06/01/2026 - 14h14). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.843615Z"
+  },
+  {
+    "id": "5a13ef830fac77e993d3eb52b2569940",
+    "title": "Aluno em universidade particular faz Estado economizar R$ 239,7 bilhões por ano, diz entidade",
+    "subtitle": null,
+    "content_preview": "Entidade que representa 1.300 universidades particulares no país, o Semesp (representante de mantenedoras de ensino superior no país) afirma que o investimento público por aluno nas instituições privadas é quatro vezes menor do que o feito nas federais e estaduais. Leia mais (06/01/2026 - 14h14)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/aluno-em-universidade-particular-faz-estado-economizar-r-2397-bilhoes-por-ano-diz-entidade.shtml",
+    "published_at": "2026-06-01T14:14:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Entidade que representa 1.300 universidades particulares no país, o Semesp (representante de mantenedoras de ensino superior no país) afirma que o investimento público por aluno nas instituições privadas é quatro vezes menor do que o feito nas federais e estaduais.\n\nLeia mais (06/01/2026 - 14h14). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.843615Z"
+  },
+  {
+    "id": "b0e792dfc19f18161f698d905f0ce4bf",
+    "title": "OpenAI é processada na Flórida após acusado usar chatbot antes de realizar atentado",
+    "subtitle": null,
+    "content_preview": "O procurador-geral do estado da Flórida, nos EUA, entrou com processo nesta segunda-feira (1º) contra a OpenAI, dona do ChatGPT, por lançar intencionalmente um produto que não era seguro e colocava em risco a segurança dos usuários. Leia mais (06/01/2026 - 14h06)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/tec/2026/06/openai-e-processada-na-florida-apos-acusado-usar-chatbot-antes-de-realizar-atentado.shtml",
+    "published_at": "2026-06-01T14:06:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O procurador-geral do estado da Flórida, nos EUA, entrou com processo nesta segunda-feira (1º) contra a OpenAI, dona do ChatGPT, por lançar intencionalmente um produto que não era seguro e colocava em risco a segurança dos usuários.\n\nLeia mais (06/01/2026 - 14h06). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.844615Z"
+  },
+  {
     "id": "c1c67106805689f0a20c94233bcd4887",
     "title": "“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina",
     "subtitle": null,
@@ -4143,6 +5372,43 @@
     "summary": "A B3 deixará de condicionar o início da negociação no mercado secundário de ETFs à apresentação do ofício de autorização de funcionamento expedido pela CVM.\n\nO texto menciona B3SA3. O foco principal passa por B3, Mercado de Capitais.",
     "cluster_id": null,
     "created_at": "2026-06-01T15:00:15.341913Z"
+  },
+  {
+    "id": "02267599cf5a3edc05785150ed330383",
+    "title": "Tesouro Nacional apoia Instituto Rui Barbosa na elaboração do Guia de Custos para o Setor Público Nacional",
+    "subtitle": null,
+    "content_preview": "Entidades firmaram acordo de cooperação para elaborar o documento",
+    "full_text_if_available": null,
+    "source_id": "tesouro_noticias",
+    "source_name": "Tesouro Nacional - Noticias",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "treasury",
+    "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/tesouro-nacional-apoia-instituto-rui-barbosa-na-elaboracao-do-guia-de-custos-para-o-setor-publico-nacional",
+    "published_at": "2026-06-01T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "Divida Publica",
+      "Renda Fixa",
+      "Tecnologia",
+      "Tesouro Direto"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Divida Publica",
+      "Renda Fixa",
+      "Tecnologia",
+      "Tesouro Direto"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Entidades firmaram acordo de cooperação para elaborar o documento.\n\nO foco principal passa por Divida Publica, Renda Fixa.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T23:33:02.835629Z"
   },
   {
     "id": "c8a6c22af036def0c570db245175ba5b",

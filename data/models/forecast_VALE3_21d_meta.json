@@ -1,10 +1,10 @@
 {
   "ticker": "VALE3",
   "horizon_days": 21,
-  "train_r2": 0.952325,
-  "test_r2": 0.121553,
-  "rmse": 0.094816,
+  "train_r2": 0.954419,
+  "test_r2": 0.116113,
+  "rmse": 0.095075,
   "train_samples": 361,
   "test_samples": 91,
-  "trained_at": "2026-06-01T16:32:11.126947+00:00"
+  "trained_at": "2026-06-01T23:38:32.855575+00:00"
 }

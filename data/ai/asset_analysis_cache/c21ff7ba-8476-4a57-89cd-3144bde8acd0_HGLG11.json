@@ -3,18 +3,20 @@
   "ticker": "HGLG11",
   "asset_name": "CSHG Logística",
   "asset_class": "FII",
-  "generated_at": "2026-06-01T16:32:22.993247+00:00",
-  "recomputed_at": "2026-06-01T16:32:22.993247+00:00",
+  "generated_at": "2026-06-01T23:38:45.366700+00:00",
+  "recomputed_at": "2026-06-01T23:38:45.366700+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
+  "asset_function": "renda",
   "current_snapshot": {
-    "current_price": 154.47,
+    "current_price": 154.65,
     "currency": "BRL",
-    "weight_pct": 14.55,
+    "weight_pct": 14.59,
     "sector": "Logística",
-    "country": "BR"
+    "country": "BR",
+    "asset_function": "renda"
   },
   "historical_window": {
     "start_date": "2026-01-26",
@@ -26,288 +28,288 @@
   "forecast_series": [
     {
       "date": "2026-06-01",
-      "value": 154.46
-    },
-    {
-      "date": "2026-06-02",
-      "value": 154.52
-    },
-    {
-      "date": "2026-06-03",
-      "value": 154.57
-    },
-    {
-      "date": "2026-06-04",
-      "value": 154.63
-    },
-    {
-      "date": "2026-06-05",
-      "value": 154.68
-    },
-    {
-      "date": "2026-06-08",
-      "value": 154.74
-    },
-    {
-      "date": "2026-06-09",
-      "value": 154.68
-    },
-    {
-      "date": "2026-06-10",
-      "value": 154.62
-    },
-    {
-      "date": "2026-06-11",
-      "value": 154.55
-    },
-    {
-      "date": "2026-06-12",
-      "value": 154.49
-    },
-    {
-      "date": "2026-06-15",
-      "value": 154.43
-    },
-    {
-      "date": "2026-06-16",
-      "value": 154.37
-    },
-    {
-      "date": "2026-06-17",
-      "value": 154.31
-    },
-    {
-      "date": "2026-06-18",
-      "value": 154.25
-    },
-    {
-      "date": "2026-06-19",
-      "value": 154.18
-    },
-    {
-      "date": "2026-06-22",
-      "value": 154.12
-    },
-    {
-      "date": "2026-06-23",
-      "value": 154.06
-    },
-    {
-      "date": "2026-06-24",
-      "value": 154.0
-    },
-    {
-      "date": "2026-06-25",
-      "value": 153.94
-    },
-    {
-      "date": "2026-06-26",
-      "value": 153.87
-    },
-    {
-      "date": "2026-06-29",
-      "value": 153.81
-    },
-    {
-      "date": "2026-06-30",
-      "value": 153.75
-    },
-    {
-      "date": "2026-07-01",
-      "value": 153.85
-    },
-    {
-      "date": "2026-07-02",
-      "value": 153.95
-    },
-    {
-      "date": "2026-07-03",
-      "value": 154.05
-    },
-    {
-      "date": "2026-07-06",
-      "value": 154.15
-    },
-    {
-      "date": "2026-07-07",
-      "value": 154.25
-    },
-    {
-      "date": "2026-07-08",
-      "value": 154.35
-    },
-    {
-      "date": "2026-07-09",
-      "value": 154.45
-    },
-    {
-      "date": "2026-07-10",
-      "value": 154.55
-    },
-    {
-      "date": "2026-07-13",
       "value": 154.65
     },
     {
+      "date": "2026-06-02",
+      "value": 154.3
+    },
+    {
+      "date": "2026-06-03",
+      "value": 153.96
+    },
+    {
+      "date": "2026-06-04",
+      "value": 153.61
+    },
+    {
+      "date": "2026-06-05",
+      "value": 153.27
+    },
+    {
+      "date": "2026-06-08",
+      "value": 152.92
+    },
+    {
+      "date": "2026-06-09",
+      "value": 152.82
+    },
+    {
+      "date": "2026-06-10",
+      "value": 152.71
+    },
+    {
+      "date": "2026-06-11",
+      "value": 152.61
+    },
+    {
+      "date": "2026-06-12",
+      "value": 152.51
+    },
+    {
+      "date": "2026-06-15",
+      "value": 152.41
+    },
+    {
+      "date": "2026-06-16",
+      "value": 152.31
+    },
+    {
+      "date": "2026-06-17",
+      "value": 152.2
+    },
+    {
+      "date": "2026-06-18",
+      "value": 152.1
+    },
+    {
+      "date": "2026-06-19",
+      "value": 152.0
+    },
+    {
+      "date": "2026-06-22",
+      "value": 151.89
+    },
+    {
+      "date": "2026-06-23",
+      "value": 151.79
+    },
+    {
+      "date": "2026-06-24",
+      "value": 151.69
+    },
+    {
+      "date": "2026-06-25",
+      "value": 151.59
+    },
+    {
+      "date": "2026-06-26",
+      "value": 151.49
+    },
+    {
+      "date": "2026-06-29",
+      "value": 151.38
+    },
+    {
+      "date": "2026-06-30",
+      "value": 151.28
+    },
+    {
+      "date": "2026-07-01",
+      "value": 151.37
+    },
+    {
+      "date": "2026-07-02",
+      "value": 151.46
+    },
+    {
+      "date": "2026-07-03",
+      "value": 151.54
+    },
+    {
+      "date": "2026-07-06",
+      "value": 151.63
+    },
+    {
+      "date": "2026-07-07",
+      "value": 151.72
+    },
+    {
+      "date": "2026-07-08",
+      "value": 151.81
+    },
+    {
+      "date": "2026-07-09",
+      "value": 151.9
+    },
+    {
+      "date": "2026-07-10",
+      "value": 151.98
+    },
+    {
+      "date": "2026-07-13",
+      "value": 152.07
+    },
+    {
       "date": "2026-07-14",
-      "value": 154.75
+      "value": 152.16
     },
     {
       "date": "2026-07-15",
-      "value": 154.84
+      "value": 152.25
     },
     {
       "date": "2026-07-16",
-      "value": 154.94
+      "value": 152.34
     },
     {
       "date": "2026-07-17",
-      "value": 155.04
+      "value": 152.43
     },
     {
       "date": "2026-07-20",
-      "value": 155.14
+      "value": 152.51
     },
     {
       "date": "2026-07-21",
-      "value": 155.24
+      "value": 152.6
     },
     {
       "date": "2026-07-22",
-      "value": 155.34
+      "value": 152.69
     },
     {
       "date": "2026-07-23",
-      "value": 155.44
+      "value": 152.78
     },
     {
       "date": "2026-07-24",
-      "value": 155.54
+      "value": 152.87
     },
     {
       "date": "2026-07-27",
-      "value": 155.64
+      "value": 152.95
     },
     {
       "date": "2026-07-28",
-      "value": 155.74
+      "value": 153.04
     },
     {
       "date": "2026-07-29",
-      "value": 155.84
+      "value": 153.13
     },
     {
       "date": "2026-07-30",
-      "value": 155.77
+      "value": 153.07
     },
     {
       "date": "2026-07-31",
-      "value": 155.69
+      "value": 153.02
     },
     {
       "date": "2026-08-03",
-      "value": 155.62
+      "value": 152.96
     },
     {
       "date": "2026-08-04",
-      "value": 155.55
+      "value": 152.9
     },
     {
       "date": "2026-08-05",
-      "value": 155.47
+      "value": 152.85
     },
     {
       "date": "2026-08-06",
-      "value": 155.4
+      "value": 152.79
     },
     {
       "date": "2026-08-07",
-      "value": 155.33
+      "value": 152.73
     },
     {
       "date": "2026-08-10",
-      "value": 155.25
+      "value": 152.68
     },
     {
       "date": "2026-08-11",
-      "value": 155.18
+      "value": 152.62
     },
     {
       "date": "2026-08-12",
-      "value": 155.11
+      "value": 152.56
     },
     {
       "date": "2026-08-13",
-      "value": 155.03
+      "value": 152.51
     },
     {
       "date": "2026-08-14",
-      "value": 154.96
+      "value": 152.45
     },
     {
       "date": "2026-08-17",
-      "value": 154.89
+      "value": 152.39
     },
     {
       "date": "2026-08-18",
-      "value": 154.81
+      "value": 152.34
     },
     {
       "date": "2026-08-19",
-      "value": 154.74
+      "value": 152.28
     },
     {
       "date": "2026-08-20",
-      "value": 154.67
+      "value": 152.22
     },
     {
       "date": "2026-08-21",
-      "value": 154.59
+      "value": 152.17
     },
     {
       "date": "2026-08-24",
-      "value": 154.52
+      "value": 152.11
     },
     {
       "date": "2026-08-25",
-      "value": 154.45
+      "value": 152.05
     },
     {
       "date": "2026-08-26",
-      "value": 154.37
+      "value": 152.0
     },
     {
       "date": "2026-08-27",
-      "value": 154.3
+      "value": 151.94
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 154.74,
-      "predicted_return": 0.001808,
-      "confidence": 0.3342
+      "predicted_price": 152.92,
+      "predicted_return": -0.011158,
+      "confidence": 0.3306
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 153.75,
-      "predicted_return": -0.004564,
+      "predicted_price": 151.28,
+      "predicted_return": -0.021815,
       "confidence": 0.3077
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 155.84,
-      "predicted_return": 0.008951,
-      "confidence": 0.2661
+      "predicted_price": 153.13,
+      "predicted_return": -0.009829,
+      "confidence": 0.2658
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 154.3,
-      "predicted_return": -0.001014,
+      "predicted_price": 151.94,
+      "predicted_return": -0.01754,
       "confidence": 0.2021
     }
   ],
@@ -322,9 +324,10 @@
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IFIX",
-    "forecast_return_selected_pct": -0.1,
-    "forecast_price_selected": 154.3,
-    "forecast_confidence_selected": 0.2021
+    "forecast_return_selected_pct": -1.75,
+    "forecast_price_selected": 151.94,
+    "forecast_confidence_selected": 0.2021,
+    "forecast_news_adjustment_pct": -1.53
   },
   "outlook_3m": {
     "scenario": "pressionado",
@@ -336,19 +339,19 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo é um fundo imobiliário e depende de renda, qualidade do portfólio e sensibilidade a juros. Cotacao atual aproximada em BRL 154.47. Hoje representa cerca de 14.6% da carteira. O modelo de 3 meses hoje aponta estabilidade, com retorno estimado de -0.1% e confianca de 20%. As noticias recentes tem vies negativo e impacto medio de 0.59.",
-    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -0.1% e preco estimado perto de 154.30. Os temas dominantes agora sao juros, inflacao, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. A confianca dessa leitura e moderada.",
+    "current": "O ativo é um fundo imobiliário e depende de renda, qualidade do portfólio e sensibilidade a juros. Dentro da carteira, a funcao principal deste ativo hoje e renda. Cotacao atual aproximada em BRL 154.65. Hoje representa cerca de 14.6% da carteira. O modelo de 3 meses hoje aponta queda, com retorno estimado de -1.8% e confianca de 20%. O ajuste contextual das noticias adiciona -1.5% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.59. Nesse conjunto, o peso informacional esta distribuido em fundamento (2), macro (4), setorial (0) e fluxo (0).",
+    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -1.8% e preco estimado perto de 151.94. O contexto de noticias ajusta essa leitura em -1.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
-      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
-      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global."
+      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
+      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
+      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +0.2% e preco estimado perto de 154.74. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -0.5% e preco estimado perto de 153.75. Os temas dominantes agora sao juros, inflacao, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +0.9% e preco estimado perto de 155.84. Os temas dominantes agora sao juros, inflacao, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -0.1% e preco estimado perto de 154.30. Os temas dominantes agora sao juros, inflacao, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -1.1% e preco estimado perto de 152.92. O contexto de noticias ajusta essa leitura em -0.7%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -2.2% e preco estimado perto de 151.28. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -1.0% e preco estimado perto de 153.13. O contexto de noticias ajusta essa leitura em -1.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -1.8% e preco estimado perto de 151.94. O contexto de noticias ajusta essa leitura em -1.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
@@ -363,13 +366,14 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.348,
-      "rank_score": 0.5095,
+      "match_score": 0.347,
+      "rank_score": 0.5089,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "macro",
+      "role": "outlook"
     },
     {
       "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -381,13 +385,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3523,
-      "rank_score": 0.5042,
+      "match_score": 0.3513,
+      "rank_score": 0.5037,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "fundamento",
+      "role": "outlook"
     },
     {
       "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -399,13 +404,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3523,
-      "rank_score": 0.5042,
+      "match_score": 0.3513,
+      "rank_score": 0.5037,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "macro",
+      "role": "outlook"
     },
     {
       "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -417,13 +423,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3501,
-      "rank_score": 0.5031,
+      "match_score": 0.3492,
+      "rank_score": 0.5026,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "macro",
+      "role": "outlook"
     },
     {
       "id": "629cddfde78d45fdde8891b65e011167",
@@ -435,13 +442,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3501,
-      "rank_score": 0.5031,
+      "match_score": 0.3491,
+      "rank_score": 0.5025,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "fundamento",
+      "role": "outlook"
     },
     {
       "id": "68fa2f4903ea31a203e21b6b4233a73e",
@@ -453,13 +461,33 @@
       "sentiment_score": 0.14285714285714285,
       "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.348,
-      "rank_score": 0.4859,
+      "match_score": 0.3471,
+      "rank_score": 0.4854,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "cdd7cde965d0db8917bcc712e4a3459b",
+      "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
+      "published_at": "2026-06-01T23:33:02.846612+00:00",
+      "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.75,
+      "relevance_score": 0.5,
+      "match_score": 0.315,
+      "rank_score": 0.4743,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "fluxo",
+      "role": "historical"
     },
     {
       "id": "7cbaf75733e1b76778881ee3877a6adb",
@@ -471,12 +499,13 @@
       "sentiment_score": 0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.357,
-      "rank_score": 0.4691,
+      "match_score": 0.356,
+      "rank_score": 0.4686,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
       "role": "historical"
     },
     {
@@ -489,12 +518,32 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.305,
-      "rank_score": 0.4651,
+      "match_score": 0.3047,
+      "rank_score": 0.4649,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "macro",
       "source_confidence_weight": 0.95,
+      "analysis_category": "fundamento",
+      "role": "historical"
+    },
+    {
+      "id": "c3af7442b703c36b5ddd454858c4a7bc",
+      "title": "Governo atrasa novamente pagamento de subvenção ao diesel",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/governo-atrasa-novamente-pagamento-de-subvencao-ao-diesel.shtml",
+      "published_at": "2026-06-01T19:30:00-03:00",
+      "summary": "Empresas que aderiram ao programa de subvenção ao óleo diesel criado pelo governo para enfrentar efeitos da guerra no Irã seguem sem receber ressarcimento pelas vendas do produto.\n\nNa sexta-feira (29), venceu o prazo para o pagamento do mês de abril. Leia mais (06/01/2026 - 19h30). O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.3574,
+      "rank_score": 0.4588,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
       "role": "historical"
     },
     {
@@ -507,12 +556,13 @@
       "sentiment_score": 1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.2886,
-      "rank_score": 0.4576,
+      "match_score": 0.2878,
+      "rank_score": 0.4572,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
+      "analysis_category": "fluxo",
       "role": "historical"
     },
     {
@@ -525,55 +575,20 @@
       "sentiment_score": -0.6,
       "impact_score": 0.63,
       "relevance_score": 0.5,
-      "match_score": 0.303,
-      "rank_score": 0.4471,
+      "match_score": 0.3021,
+      "rank_score": 0.4466,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "role": "historical"
-    },
-    {
-      "id": "919533bf840502e174106d5df59d7690",
-      "title": "Relatórios",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/conteudos/relatorios/",
-      "published_at": "2026-05-31T04:04:31.951890+00:00",
-      "summary": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Relatórios Cursos E-books Planilhas Relatórios Simuladores Aprenda investir em ouroTudo que você precisa saber para proteger sua carteira com o metal precioso.\n\nO texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.3073,
-      "rank_score": 0.4448,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "role": "historical"
-    },
-    {
-      "id": "57b95b8bd8a8a98c42d3717d121db4e4",
-      "title": "Cursos de Investimento para Começar Investir | Online e Gratuito",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/conteudos/cursos/",
-      "published_at": "2026-05-31T04:04:31.951890+00:00",
-      "summary": "Inscreva-se nos nossos cursos de investimento gratuitos e comece a investir com quem entende do assunto.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Cursos E-books Planilhas Relatórios Cursos Simuladores Manual dos DividendosInscreva-se no curso gratuito sobre dividendos para gerar renda mensal com proventos. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.3073,
-      "rank_score": 0.4448,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
       "role": "historical"
     }
   ],
   "source_groups": [
     {
       "source_name": "InfoMoney",
-      "count": 9,
+      "count": 8,
       "items": [
         {
           "id": "d4ad77c8fe0dba39b783708103c1403f",
@@ -585,13 +600,14 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.348,
-          "rank_score": 0.5095,
+          "match_score": 0.347,
+          "rank_score": 0.5089,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "macro",
+          "role": "outlook"
         },
         {
           "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -603,13 +619,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3523,
-          "rank_score": 0.5042,
+          "match_score": 0.3513,
+          "rank_score": 0.5037,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "fundamento",
+          "role": "outlook"
         },
         {
           "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -621,13 +638,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3523,
-          "rank_score": 0.5042,
+          "match_score": 0.3513,
+          "rank_score": 0.5037,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "macro",
+          "role": "outlook"
         },
         {
           "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -639,13 +657,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3501,
-          "rank_score": 0.5031,
+          "match_score": 0.3492,
+          "rank_score": 0.5026,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "macro",
+          "role": "outlook"
         },
         {
           "id": "629cddfde78d45fdde8891b65e011167",
@@ -657,13 +676,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3501,
-          "rank_score": 0.5031,
+          "match_score": 0.3491,
+          "rank_score": 0.5025,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "fundamento",
+          "role": "outlook"
         },
         {
           "id": "68fa2f4903ea31a203e21b6b4233a73e",
@@ -675,13 +695,33 @@
           "sentiment_score": 0.14285714285714285,
           "impact_score": 0.4928571428571429,
           "relevance_score": 0.5,
-          "match_score": 0.348,
-          "rank_score": 0.4859,
+          "match_score": 0.3471,
+          "rank_score": 0.4854,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "cdd7cde965d0db8917bcc712e4a3459b",
+          "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
+          "published_at": "2026-06-01T23:33:02.846612+00:00",
+          "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.75,
+          "relevance_score": 0.5,
+          "match_score": 0.315,
+          "rank_score": 0.4743,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "fluxo",
+          "role": "historical"
         },
         {
           "id": "645bc96e1a4e4c459f852c8cc290b56d",
@@ -693,48 +733,57 @@
           "sentiment_score": -0.6,
           "impact_score": 0.63,
           "relevance_score": 0.5,
-          "match_score": 0.303,
-          "rank_score": 0.4471,
+          "match_score": 0.3021,
+          "rank_score": 0.4466,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "historical"
+        }
+      ]
+    },
+    {
+      "source_name": "Folha.com - Mercado - Principal",
+      "count": 2,
+      "items": [
+        {
+          "id": "7cbaf75733e1b76778881ee3877a6adb",
+          "title": "Economistas sobem previsão da inflação para 2026 e os dois próximos anos",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/economistas-sobem-previsao-da-inflacao-para-2026-e-os-dois-proximos-anos.shtml",
+          "published_at": "2026-06-01T09:35:00-03:00",
+          "summary": "Os economistas elevaram a previsão da inflação neste ano e para os dois próximos com o impacto da guerra no Irã afetando os preços dos combustíveis e dos alimentos em todo o mundo.\n\nLeia mais (06/01/2026 - 09h35). O foco principal passa por Alimentos, Economia.",
+          "sentiment_score": 0.3333333333333333,
+          "impact_score": 0.35,
+          "relevance_score": 0.5,
+          "match_score": 0.356,
+          "rank_score": 0.4686,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
           "role": "historical"
         },
         {
-          "id": "919533bf840502e174106d5df59d7690",
-          "title": "Relatórios",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/conteudos/relatorios/",
-          "published_at": "2026-05-31T04:04:31.951890+00:00",
-          "summary": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Relatórios Cursos E-books Planilhas Relatórios Simuladores Aprenda investir em ouroTudo que você precisa saber para proteger sua carteira com o metal precioso.\n\nO texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
+          "id": "c3af7442b703c36b5ddd454858c4a7bc",
+          "title": "Governo atrasa novamente pagamento de subvenção ao diesel",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/governo-atrasa-novamente-pagamento-de-subvencao-ao-diesel.shtml",
+          "published_at": "2026-06-01T19:30:00-03:00",
+          "summary": "Empresas que aderiram ao programa de subvenção ao óleo diesel criado pelo governo para enfrentar efeitos da guerra no Irã seguem sem receber ressarcimento pelas vendas do produto.\n\nNa sexta-feira (29), venceu o prazo para o pagamento do mês de abril. Leia mais (06/01/2026 - 19h30). O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.28,
           "relevance_score": 0.5,
-          "match_score": 0.3073,
-          "rank_score": 0.4448,
-          "source_category": null,
+          "match_score": 0.3574,
+          "rank_score": 0.4588,
+          "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "role": "historical"
-        },
-        {
-          "id": "57b95b8bd8a8a98c42d3717d121db4e4",
-          "title": "Cursos de Investimento para Começar Investir | Online e Gratuito",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/conteudos/cursos/",
-          "published_at": "2026-05-31T04:04:31.951890+00:00",
-          "summary": "Inscreva-se nos nossos cursos de investimento gratuitos e comece a investir com quem entende do assunto.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Cursos E-books Planilhas Relatórios Cursos Simuladores Manual dos DividendosInscreva-se no curso gratuito sobre dividendos para gerar renda mensal com proventos. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.3073,
-          "rank_score": 0.4448,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
           "role": "historical"
         }
       ]
@@ -753,12 +802,13 @@
           "sentiment_score": 1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.2886,
-          "rank_score": 0.4576,
+          "match_score": 0.2878,
+          "rank_score": 0.4572,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
+          "analysis_category": "fluxo",
           "role": "historical"
         }
       ]
@@ -777,36 +827,13 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.305,
-          "rank_score": 0.4651,
+          "match_score": 0.3047,
+          "rank_score": 0.4649,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "macro",
           "source_confidence_weight": 0.95,
-          "role": "historical"
-        }
-      ]
-    },
-    {
-      "source_name": "Folha.com - Mercado - Principal",
-      "count": 1,
-      "items": [
-        {
-          "id": "7cbaf75733e1b76778881ee3877a6adb",
-          "title": "Economistas sobem previsão da inflação para 2026 e os dois próximos anos",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/economistas-sobem-previsao-da-inflacao-para-2026-e-os-dois-proximos-anos.shtml",
-          "published_at": "2026-06-01T09:35:00-03:00",
-          "summary": "Os economistas elevaram a previsão da inflação neste ano e para os dois próximos com o impacto da guerra no Irã afetando os preços dos combustíveis e dos alimentos em todo o mundo.\n\nLeia mais (06/01/2026 - 09h35). O foco principal passa por Alimentos, Economia.",
-          "sentiment_score": 0.3333333333333333,
-          "impact_score": 0.35,
-          "relevance_score": 0.5,
-          "match_score": 0.357,
-          "rank_score": 0.4691,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
           "role": "historical"
         }
       ]

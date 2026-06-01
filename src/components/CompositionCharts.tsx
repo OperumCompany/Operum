@@ -41,14 +41,14 @@ export function CompositionCharts({
 
   if (!positions.length) {
     return (
-      <Card title="Composição">
+      <Card title="Composicao">
         <p className="text-sm text-[var(--text-muted)]">Nenhum ativo na carteira.</p>
       </Card>
     );
   }
 
   return (
-    <Card title="Composição">
+    <Card title="Composicao">
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <p className="mb-2 text-center text-sm font-semibold text-[var(--text-muted)]">Por ativo</p>
@@ -80,16 +80,6 @@ export function CompositionCharts({
             </ResponsiveContainer>
           </div>
         </div>
-      </div>
-      <div className="mt-4 space-y-1">
-        {positions.map((pos) => (
-          <div key={pos.ticker} className="flex justify-between text-sm">
-            <span className="text-[var(--text-main)]">{pos.ticker}</span>
-            <span className="text-[var(--text-muted)]">
-              {pos.quantity} un{pos.avg_price ? ` · R$ ${pos.avg_price.toFixed(2)}` : ''}
-            </span>
-          </div>
-        ))}
       </div>
     </Card>
   );

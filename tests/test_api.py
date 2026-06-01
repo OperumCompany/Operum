@@ -289,6 +289,10 @@ async def test_position_opinion_endpoint(client: AsyncClient):
     assert "beta_selected" in data["recent_performance"]
     assert "recent_by_horizon" in data["analysis_sections"]
     assert "outlook_by_horizon" in data["analysis_sections"]
+    assert "asset_function" in data
+    assert "forecast_news_adjustment_pct" in data["recent_performance"]
+    if data["sources"]:
+        assert "analysis_category" in data["sources"][0]
 
 
 @pytest.mark.asyncio

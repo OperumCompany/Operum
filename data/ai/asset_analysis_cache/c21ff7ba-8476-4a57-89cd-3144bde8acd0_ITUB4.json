@@ -3,21 +3,23 @@
   "ticker": "ITUB4",
   "asset_name": "Itaú Unibanco PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T16:33:49.842535+00:00",
-  "recomputed_at": "2026-06-01T16:33:49.842535+00:00",
+  "generated_at": "2026-06-01T23:45:37.460743+00:00",
+  "recomputed_at": "2026-06-01T23:45:37.460743+00:00",
   "confidence": "media",
   "status": "ok",
-  "selected_history_horizon": "2m",
-  "selected_outlook_horizon": "2m",
+  "selected_history_horizon": "3m",
+  "selected_outlook_horizon": "3m",
+  "asset_function": "estabilidade",
   "current_snapshot": {
-    "current_price": 39.39,
+    "current_price": 39.36,
     "currency": "BRL",
-    "weight_pct": 14.84,
+    "weight_pct": 14.85,
     "sector": "Financeiro",
-    "country": "BR"
+    "country": "BR",
+    "asset_function": "estabilidade"
   },
   "historical_window": {
-    "start_date": "2026-03-09",
+    "start_date": "2026-01-26",
     "end_date": "2026-06-01",
     "news_count": 12,
     "has_price_history": false
@@ -26,288 +28,288 @@
   "forecast_series": [
     {
       "date": "2026-06-01",
-      "value": 39.32
+      "value": 39.36
     },
     {
       "date": "2026-06-02",
-      "value": 39.32
+      "value": 39.3
     },
     {
       "date": "2026-06-03",
-      "value": 39.31
+      "value": 39.24
     },
     {
       "date": "2026-06-04",
-      "value": 39.31
+      "value": 39.19
     },
     {
       "date": "2026-06-05",
-      "value": 39.3
+      "value": 39.13
     },
     {
       "date": "2026-06-08",
-      "value": 39.3
+      "value": 39.07
     },
     {
       "date": "2026-06-09",
-      "value": 39.37
+      "value": 39.14
     },
     {
       "date": "2026-06-10",
-      "value": 39.44
+      "value": 39.2
     },
     {
       "date": "2026-06-11",
-      "value": 39.5
+      "value": 39.27
     },
     {
       "date": "2026-06-12",
-      "value": 39.57
+      "value": 39.33
     },
     {
       "date": "2026-06-15",
-      "value": 39.64
+      "value": 39.4
     },
     {
       "date": "2026-06-16",
-      "value": 39.71
+      "value": 39.46
     },
     {
       "date": "2026-06-17",
-      "value": 39.78
+      "value": 39.53
     },
     {
       "date": "2026-06-18",
-      "value": 39.84
+      "value": 39.59
     },
     {
       "date": "2026-06-19",
-      "value": 39.91
+      "value": 39.66
     },
     {
       "date": "2026-06-22",
-      "value": 39.98
+      "value": 39.73
     },
     {
       "date": "2026-06-23",
-      "value": 40.05
+      "value": 39.79
     },
     {
       "date": "2026-06-24",
-      "value": 40.12
+      "value": 39.86
     },
     {
       "date": "2026-06-25",
-      "value": 40.19
+      "value": 39.92
     },
     {
       "date": "2026-06-26",
-      "value": 40.25
+      "value": 39.99
     },
     {
       "date": "2026-06-29",
-      "value": 40.32
+      "value": 40.05
     },
     {
       "date": "2026-06-30",
-      "value": 40.39
+      "value": 40.12
     },
     {
       "date": "2026-07-01",
-      "value": 40.47
+      "value": 40.2
     },
     {
       "date": "2026-07-02",
-      "value": 40.54
+      "value": 40.27
     },
     {
       "date": "2026-07-03",
-      "value": 40.62
+      "value": 40.35
     },
     {
       "date": "2026-07-06",
-      "value": 40.69
+      "value": 40.42
     },
     {
       "date": "2026-07-07",
-      "value": 40.77
+      "value": 40.5
     },
     {
       "date": "2026-07-08",
-      "value": 40.84
+      "value": 40.57
     },
     {
       "date": "2026-07-09",
-      "value": 40.92
+      "value": 40.65
     },
     {
       "date": "2026-07-10",
-      "value": 40.99
+      "value": 40.73
     },
     {
       "date": "2026-07-13",
-      "value": 41.07
+      "value": 40.8
     },
     {
       "date": "2026-07-14",
-      "value": 41.14
+      "value": 40.88
     },
     {
       "date": "2026-07-15",
-      "value": 41.22
+      "value": 40.95
     },
     {
       "date": "2026-07-16",
-      "value": 41.29
+      "value": 41.03
     },
     {
       "date": "2026-07-17",
-      "value": 41.37
+      "value": 41.1
     },
     {
       "date": "2026-07-20",
-      "value": 41.44
+      "value": 41.18
     },
     {
       "date": "2026-07-21",
-      "value": 41.52
+      "value": 41.26
     },
     {
       "date": "2026-07-22",
-      "value": 41.59
+      "value": 41.33
     },
     {
       "date": "2026-07-23",
-      "value": 41.67
+      "value": 41.41
     },
     {
       "date": "2026-07-24",
-      "value": 41.74
+      "value": 41.48
     },
     {
       "date": "2026-07-27",
-      "value": 41.82
+      "value": 41.56
     },
     {
       "date": "2026-07-28",
-      "value": 41.89
+      "value": 41.63
     },
     {
       "date": "2026-07-29",
-      "value": 41.97
+      "value": 41.71
     },
     {
       "date": "2026-07-30",
-      "value": 42.06
+      "value": 41.81
     },
     {
       "date": "2026-07-31",
-      "value": 42.16
+      "value": 41.91
     },
     {
       "date": "2026-08-03",
-      "value": 42.25
+      "value": 42.01
     },
     {
       "date": "2026-08-04",
-      "value": 42.34
+      "value": 42.11
     },
     {
       "date": "2026-08-05",
-      "value": 42.43
+      "value": 42.21
     },
     {
       "date": "2026-08-06",
-      "value": 42.53
+      "value": 42.3
     },
     {
       "date": "2026-08-07",
-      "value": 42.62
+      "value": 42.4
     },
     {
       "date": "2026-08-10",
-      "value": 42.71
+      "value": 42.5
     },
     {
       "date": "2026-08-11",
-      "value": 42.81
+      "value": 42.6
     },
     {
       "date": "2026-08-12",
-      "value": 42.9
+      "value": 42.7
     },
     {
       "date": "2026-08-13",
-      "value": 42.99
+      "value": 42.8
     },
     {
       "date": "2026-08-14",
-      "value": 43.08
+      "value": 42.9
     },
     {
       "date": "2026-08-17",
-      "value": 43.18
+      "value": 43.0
     },
     {
       "date": "2026-08-18",
-      "value": 43.27
+      "value": 43.1
     },
     {
       "date": "2026-08-19",
-      "value": 43.36
+      "value": 43.2
     },
     {
       "date": "2026-08-20",
-      "value": 43.46
+      "value": 43.29
     },
     {
       "date": "2026-08-21",
-      "value": 43.55
+      "value": 43.39
     },
     {
       "date": "2026-08-24",
-      "value": 43.64
+      "value": 43.49
     },
     {
       "date": "2026-08-25",
-      "value": 43.73
+      "value": 43.59
     },
     {
       "date": "2026-08-26",
-      "value": 43.83
+      "value": 43.69
     },
     {
       "date": "2026-08-27",
-      "value": 43.92
+      "value": 43.79
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 39.3,
-      "predicted_return": -0.000535,
-      "confidence": 0.2047
+      "predicted_price": 39.07,
+      "predicted_return": -0.007427,
+      "confidence": 0.2048
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 40.39,
-      "predicted_return": 0.027145,
-      "confidence": 0.0714
+      "predicted_price": 40.12,
+      "predicted_return": 0.019385,
+      "confidence": 0.0716
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 41.97,
-      "predicted_return": 0.067371,
+      "predicted_price": 41.71,
+      "predicted_return": 0.059611,
       "confidence": 0.06
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 43.92,
-      "predicted_return": 0.116987,
+      "predicted_price": 43.79,
+      "predicted_return": 0.112492,
       "confidence": 0.05
     }
   ],
@@ -322,9 +324,10 @@
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 6.74,
-    "forecast_price_selected": 41.97,
-    "forecast_confidence_selected": 0.06
+    "forecast_return_selected_pct": 11.25,
+    "forecast_price_selected": 43.79,
+    "forecast_confidence_selected": 0.05,
+    "forecast_news_adjustment_pct": -0.78
   },
   "outlook_3m": {
     "scenario": "pressionado",
@@ -336,19 +339,19 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 39.39. Hoje representa cerca de 14.8% da carteira. O modelo de 2 meses hoje aponta alta, com retorno estimado de +6.7% e confianca de 6%. As noticias recentes tem vies negativo e impacto medio de 0.63.",
-    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
-    "outlook": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +6.7% e preco estimado perto de 41.97. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 39.36. Hoje representa cerca de 14.8% da carteira. O modelo de 3 meses hoje aponta alta, com retorno estimado de +11.2% e confianca de 5%. O ajuste contextual das noticias adiciona -0.8% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.63. Nesse conjunto, o peso informacional esta distribuido em fundamento (3), macro (3), setorial (0) e fluxo (0).",
+    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de fundamento, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +11.2% e preco estimado perto de 43.79. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
-      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
-      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro."
+      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de fundamento, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de fundamento, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de fundamento, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -0.1% e preco estimado perto de 39.30. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +2.7% e preco estimado perto de 40.39. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +6.7% e preco estimado perto de 41.97. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +11.7% e preco estimado perto de 43.92. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -0.7% e preco estimado perto de 39.07. O contexto de noticias ajusta essa leitura em -0.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +1.9% e preco estimado perto de 40.12. O contexto de noticias ajusta essa leitura em -0.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +6.0% e preco estimado perto de 41.71. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +11.2% e preco estimado perto de 43.79. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
@@ -363,13 +366,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.8773,
-      "rank_score": 0.7782,
+      "match_score": 0.8763,
+      "rank_score": 0.7777,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "fundamento",
+      "role": "outlook"
     },
     {
       "id": "21f8aa5e905ce6a3988e0ecc5e182e51",
@@ -381,13 +385,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.8522,
-      "rank_score": 0.7651,
+      "match_score": 0.8514,
+      "rank_score": 0.7647,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "macro",
+      "role": "outlook"
     },
     {
       "id": "7f9fc289b8eb917c98f45337ecbae744",
@@ -399,13 +404,14 @@
       "sentiment_score": 1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.71,
-      "rank_score": 0.6567,
+      "match_score": 0.7089,
+      "rank_score": 0.6561,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.75,
-      "role": "current"
+      "analysis_category": "fundamento",
+      "role": "outlook"
     },
     {
       "id": "d4ad77c8fe0dba39b783708103c1403f",
@@ -417,13 +423,14 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.448,
-      "rank_score": 0.5685,
+      "match_score": 0.447,
+      "rank_score": 0.5679,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "macro",
+      "role": "outlook"
     },
     {
       "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -435,13 +442,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4523,
-      "rank_score": 0.5632,
+      "match_score": 0.4513,
+      "rank_score": 0.5627,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "fundamento",
+      "role": "outlook"
     },
     {
       "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -453,13 +461,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4523,
-      "rank_score": 0.5632,
+      "match_score": 0.4513,
+      "rank_score": 0.5627,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "analysis_category": "macro",
+      "role": "outlook"
     },
     {
       "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -471,12 +480,13 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4501,
-      "rank_score": 0.5621,
+      "match_score": 0.4492,
+      "rank_score": 0.5616,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
       "role": "historical"
     },
     {
@@ -489,12 +499,13 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.45,
-      "rank_score": 0.562,
+      "match_score": 0.4491,
+      "rank_score": 0.5615,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
       "role": "historical"
     },
     {
@@ -507,12 +518,13 @@
       "sentiment_score": 0.14285714285714285,
       "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.448,
-      "rank_score": 0.5449,
+      "match_score": 0.4471,
+      "rank_score": 0.5444,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
       "role": "historical"
     },
     {
@@ -525,12 +537,13 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4236,
-      "rank_score": 0.5283,
+      "match_score": 0.4226,
+      "rank_score": 0.5278,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
       "role": "historical"
     },
     {
@@ -543,12 +556,13 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.405,
-      "rank_score": 0.5241,
+      "match_score": 0.4047,
+      "rank_score": 0.5239,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "sector",
       "source_confidence_weight": 0.95,
+      "analysis_category": "fundamento",
       "role": "historical"
     },
     {
@@ -561,12 +575,13 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.4232,
-      "rank_score": 0.5206,
+      "match_score": 0.4222,
+      "rank_score": 0.52,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
       "role": "historical"
     }
   ],
@@ -585,13 +600,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.8773,
-          "rank_score": 0.7782,
+          "match_score": 0.8763,
+          "rank_score": 0.7777,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "fundamento",
+          "role": "outlook"
         },
         {
           "id": "21f8aa5e905ce6a3988e0ecc5e182e51",
@@ -603,13 +619,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.8522,
-          "rank_score": 0.7651,
+          "match_score": 0.8514,
+          "rank_score": 0.7647,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "macro",
+          "role": "outlook"
         },
         {
           "id": "7f9fc289b8eb917c98f45337ecbae744",
@@ -621,13 +638,14 @@
           "sentiment_score": 1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.71,
-          "rank_score": 0.6567,
+          "match_score": 0.7089,
+          "rank_score": 0.6561,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
           "source_confidence_weight": 0.75,
-          "role": "current"
+          "analysis_category": "fundamento",
+          "role": "outlook"
         },
         {
           "id": "d4ad77c8fe0dba39b783708103c1403f",
@@ -639,13 +657,14 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.448,
-          "rank_score": 0.5685,
+          "match_score": 0.447,
+          "rank_score": 0.5679,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "macro",
+          "role": "outlook"
         },
         {
           "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -657,13 +676,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4523,
-          "rank_score": 0.5632,
+          "match_score": 0.4513,
+          "rank_score": 0.5627,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "fundamento",
+          "role": "outlook"
         },
         {
           "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -675,13 +695,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4523,
-          "rank_score": 0.5632,
+          "match_score": 0.4513,
+          "rank_score": 0.5627,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "analysis_category": "macro",
+          "role": "outlook"
         },
         {
           "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -693,12 +714,13 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4501,
-          "rank_score": 0.5621,
+          "match_score": 0.4492,
+          "rank_score": 0.5616,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
           "role": "historical"
         },
         {
@@ -711,12 +733,13 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.45,
-          "rank_score": 0.562,
+          "match_score": 0.4491,
+          "rank_score": 0.5615,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
           "role": "historical"
         },
         {
@@ -729,12 +752,13 @@
           "sentiment_score": 0.14285714285714285,
           "impact_score": 0.4928571428571429,
           "relevance_score": 0.5,
-          "match_score": 0.448,
-          "rank_score": 0.5449,
+          "match_score": 0.4471,
+          "rank_score": 0.5444,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
           "role": "historical"
         },
         {
@@ -747,12 +771,13 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4236,
-          "rank_score": 0.5283,
+          "match_score": 0.4226,
+          "rank_score": 0.5278,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
           "role": "historical"
         },
         {
@@ -765,12 +790,13 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.4232,
-          "rank_score": 0.5206,
+          "match_score": 0.4222,
+          "rank_score": 0.52,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
           "role": "historical"
         }
       ]
@@ -789,12 +815,13 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.405,
-          "rank_score": 0.5241,
+          "match_score": 0.4047,
+          "rank_score": 0.5239,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "sector",
           "source_confidence_weight": 0.95,
+          "analysis_category": "fundamento",
           "role": "historical"
         }
       ]

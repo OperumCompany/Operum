@@ -171,6 +171,7 @@ export type PortfolioOpinion = {
     is_official?: boolean;
     context_role?: string;
     source_confidence_weight?: number;
+    analysis_category?: string;
   }>;
   source_groups: Array<{
     source_name: string;
@@ -192,6 +193,7 @@ export type PositionOpinion = {
   ticker: string;
   asset_name: string;
   asset_class: string;
+  asset_function?: string;
   generated_at: string;
   recomputed_at: string;
   confidence: string;
@@ -204,6 +206,7 @@ export type PositionOpinion = {
     weight_pct: number | null;
     sector: string;
     country: string;
+    asset_function?: string;
   };
   historical_window: {
     start_date: string;
@@ -234,6 +237,7 @@ export type PositionOpinion = {
     forecast_return_selected_pct?: number | null;
     forecast_price_selected?: number | null;
     forecast_confidence_selected?: number | null;
+    forecast_news_adjustment_pct?: number | null;
   };
   outlook_3m: {
     scenario: string;
@@ -251,6 +255,6 @@ export type PositionOpinion = {
   source_groups: Array<{
     source_name: string;
     count: number;
-    items: Array<PortfolioOpinion['sources'][number] & { role?: string }>;
+    items: Array<PortfolioOpinion['sources'][number] & { role?: string; analysis_category?: string }>;
   }>;
 };
