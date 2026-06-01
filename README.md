@@ -1,35 +1,36 @@
 # Operum
 
-Plataforma full-stack para acompanhamento de carteiras de investimento, leitura de notícias de mercado e análise financeira com IA.
+Plataforma full-stack para acompanhamento de carteiras de investimento, leitura de noticias de mercado e analise financeira com IA interna.
 
 ## Stack
 
-**Frontend:**
+**Frontend**
 - React 18 + TypeScript
 - Vite
 - React Router DOM
-- Recharts
 - Tailwind CSS
+- Recharts
 - Lucide React
 
-**Backend:**
+**Backend**
 - Python 3.11+
 - FastAPI
 - Pydantic v2
-- yfinance (preços)
-- RSS feeds + yfinance news (notícias)
-- scikit-learn, XGBoost, LightGBM (ML)
-- Persistência local em JSON + Parquet
+- yfinance para precos
+- Ingestao de noticias por RSS e listagens oficiais/editoriais abertas
+- scikit-learn, XGBoost, LightGBM
+- Persistencia local em JSON + Parquet
 
 ## Arquitetura
 
-```
-Frontend (React/Vite)  ←→  API (FastAPI)  ←→  Services  ←→  LocalStorageService
-                                                              ↓
-                                                        Arquivos JSON/Parquet
+```text
+Frontend (React/Vite) <-> API (FastAPI) <-> Services <-> LocalStorageService
+                                                      |
+                                                      v
+                                                JSON / Parquet
 ```
 
-O projeto é um monorepo com frontend em `src/` e backend em `app/`.
+O projeto e um monorepo com frontend em `src/` e backend em `app/`.
 
 ## Setup
 
@@ -37,7 +38,7 @@ O projeto é um monorepo com frontend em `src/` e backend em `app/`.
 
 ```bash
 python -m venv venv
-venv\Scripts\activate      # Windows
+venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8001
 ```
@@ -46,117 +47,145 @@ uvicorn app.main:app --reload --port 8001
 
 ```bash
 npm install
-npm run dev      # Vite proxy /api → localhost:8001
+npm run dev
 ```
 
-Acessar frontend em `http://localhost:5173`.
+Frontend em `http://localhost:5173` com proxy `/api` para `localhost:8001`.
 
-## Módulos
+## Modulos
 
-### Notícias
-- Coleta automática de notícias via YFinance (13 tickers) + RSS (Folha, InfoMoney, Investing.com, BBC)
-- Filtros por ticker, classe, setor, país, sentimento, impacto, data
-- Modal com resumo, ativos impactados e link original
-- Notícias relacionadas à carteira ativa
-- Clusterização temática automática (K-Means)
-- Scoring: sentimento (keywords), relevância (TF-IDF + LR), impacto (composto)
-- HTML stripping automático de conteúdo RSS
+### Noticias
+- Acervo historico local com `archive.json` e `latest.json`
+- Paginacao server-side de 30 noticias por pagina
+- Busca textual e filtros por ticker, classe, setor, pais, sentimento, impacto e datas
+- Backfill desde `2026-05-01` para fontes suportadas
+- Resumo local em 2 paragrafos curtos, sem LLM externa
+- Agrupamento e scoring de noticias para alimentar analise por ativo e por carteira
+
+### Fontes de noticias atualmente integradas
+
+**Oficiais**
+- CVM: decisoes, legislacao, audiencias, sancionadores, despachos e informativos
+- B3: comunicados e paginas oficiais abertas
+- Tesouro Nacional / Tesouro Direto: paginas oficiais abertas
+- BCB: conectores preparados, mas com cobertura parcial porque o portal publico e servido como SPA
+
+**Editoriais complementares**
+- Folha Mercado
+- InfoMoney
+- Investing Brasil
+
+**Complemento temporario**
+- yfinance news
 
 ### Carteiras
-- CRUD completo de carteiras
-- Universo de ~131+ ativos (BR ações, FIIs, US stocks, crypto)
-- Posições com quantidade e preço médio
-- Tabelas de posições separadas por classe de ativo (BR_STOCK, FII, BDR, CRYPTO)
-- Preços reais atualizados via YFinance com cache de 1h
-- Composição por classe, setor, moeda (gráficos ao final da página)
-- Análise financeira: pesos, concentração, correlação, VaR, CVaR, beta, volatilidade
-- Análise por IA com botão "Gerar análise por IA" — texto com notícias de cada ativo
+- CRUD de carteiras com persistencia local
+- Limite de 50 carteiras, em ate 5 paginas de 10 itens
+- Exclusao individual e exclusao em lote por modo de selecao na interface
+- Posicoes com quantidade e preco medio
+- Tabelas por classe de ativo na tela de detalhe
+- Precos reais com cache
+- Analise financeira: pesos, concentracao, correlacao, VaR, CVaR, beta e volatilidade
 
-### Motor Financeiro (22 funções puras)
-- Retorno simples, logarítmico, cumulativo
-- Volatilidade, covariância, correlação, beta, alpha
-- VaR, CVaR, drawdown
-- Média móvel, EMA, RSI, MACD
-- Pesos, retorno e volatilidade de carteira, concentração
-- CAPM, CAGR
+### IA interna
+- Scoring de noticias por relevancia, impacto e sentimento
+- Ranking de noticias com pesos por tipo de fonte
+- Analise individual por ativo com geracao deterministica por templates
+- Sintese geral da carteira com foco em composicao, sobreposicao e blocos de risco
+- Agrupamento de fontes por origem na UI da analise
 
-### IA
-- Classificação e ranking de notícias (TF-IDF + Logistic Regression / LightGBM Ranker)
-- Clusterização temática (K-Means sobre TF-IDF)
-- Forecast de ativos (XGBoost Regressor — requer treino via API)
-- Opinião consolidada da carteira (score composto + texto analítico)
-- Cenários probabilísticos ilustrativos
+## Analise por IA
+
+### Analise por ativo
+- Botao com icone de estrela em cada ativo na `Carteira em Detalhe`
+- Recalculo no clique, sem reutilizar resposta antiga como cache ativo
+- Blocos:
+  - `Situacao atual`
+  - `Ultimos 3 meses`
+  - `Perspectivas 3 meses`
+- Usa noticias do ativo, do setor e do contexto macro
+- Fontes exibidas por origem, com expansao das noticias usadas
+
+### Analise geral da carteira
+- `GET /api/models/opinion/{portfolio_id}`
+- Mantem `score` e `components`
+- Retorna tambem:
+  - `headline`
+  - `composition_grade`
+  - `composition_summary`
+  - `strengths`
+  - `overlaps`
+  - `block_reviews`
+  - `final_diagnosis`
+  - `conclusion`
+  - `sources`
+  - `source_groups`
 
 ## Estrutura
 
 ```text
 operum/
-├── app/                  # Backend Python/FastAPI
-│   ├── api/              # Endpoints (health, assets, market, news, portfolios, models)
-│   ├── core/             # Config (CORS, logging)
-│   ├── schemas/          # Pydantic models (asset, news, portfolio)
-│   └── services/         # Lógica de negócio (12 serviços)
-├── src/                  # Frontend React
-│   ├── components/       # UI components + PortfolioMetrics, CompositionCharts, ScenarioView, PortfolioOpinion
-│   ├── context/          # Estado global (AuthContext, PortfoliosContext)
-│   ├── pages/            # Telas
-│   ├── types/            # Interfaces TS
-│   └── utils/            # Helpers (api.ts, storage.ts)
-├── data/                 # Persistência local
-│   ├── assets/           # universe.json
-│   ├── news/             # raw/processed/summaries
-│   ├── portfolios/       # JSON por carteira
-│   ├── market/prices/    # Cache de preços
-│   ├── cache/            # Cache de requisições
-│   ├── datasets/train/   # Datasets de treino
-│   ├── models/           # Modelos serializados (.pkl)
-│   └── logs/             # operum.log
-├── docs/                 # Documentação (compendium.md, spec.md)
-├── tests/                # 30 testes (20 finance engine + 10 API)
-├── skillsFront.md        # Guia frontend para IA
-├── skillsBack.md         # Guia backend para IA
-├── plano.md              # Plano de implementação vivo
-└── requirements.txt
+|-- app/
+|   |-- api/
+|   |-- core/
+|   |-- schemas/
+|   `-- services/
+|-- src/
+|   |-- components/
+|   |-- context/
+|   |-- layout/
+|   |-- pages/
+|   |-- types/
+|   `-- utils/
+|-- data/
+|   |-- assets/
+|   |-- news/
+|   |-- portfolios/
+|   |-- market/
+|   |-- cache/
+|   |-- datasets/
+|   |-- models/
+|   `-- logs/
+|-- docs/
+|-- tests/
+|-- skillsFront.md
+|-- skillsBack.md
+`-- requirements.txt
 ```
 
 ## Scripts
 
 ```bash
 # Frontend
-npm run dev       # Desenvolvimento (porta 5173)
-npm run build     # Build produção
-npm run preview   # Preview build
+npm run dev
+npm run build
+npm run preview
 
 # Backend
-uvicorn app.main:app --reload --port 8001   # Desenvolvimento
-pytest tests/ -v                 # Testes
+uvicorn app.main:app --reload --port 8001
+pytest tests/ -q
 ```
 
-## Documentação
+## Documentacao
 
-- `docs/compendium.md` — Base de conhecimento consolidada
-- `docs/spec.md` — Especificação detalhada
-- `plano.md` — Plano de implementação com status
+- `docs/compendium.md` - base de conhecimento consolidada
+- `docs/spec.md` - especificacao funcional e contratos de API
+- `skillsFront.md` - guia para alteracoes no frontend
+- `skillsBack.md` - guia para alteracoes no backend
 
-## Rotas
+## Rotas principais
 
-- `/` — Dashboard (visão geral)
-- `/dashboard-tecnico` — Painel técnico
-- `/noticias` — Notícias de mercado
-- `/chat` — Chat explicativo
-- `/carteiras` — Lista de carteiras
-- `/carteiras/:id` — Detalhe da carteira
-- `/configuracoes` — Preferências
-- `/login` / `/registro` — Autenticação
+- `/` - Dashboard
+- `/dashboard-tecnico` - Painel tecnico
+- `/noticias` - Noticias
+- `/carteiras` - Lista de carteiras
+- `/carteiras/:id` - Detalhe da carteira
+- `/configuracoes` - Preferencias
+- `/login` e `/registro` - Autenticacao
 
-## Conta de Exemplo
-
-- E-mail: `camila@operum.app`
-- Senha: `Operum123`
-
-## Validação
+## Validacao
 
 ```bash
-npm run build    # Frontend
-pytest tests/    # Backend
+npm run build
+pytest tests/ -q
 ```

@@ -1,372 +1,297 @@
-# Compendium — Operum
+# Compendium - Operum
 
-> Base de conhecimento consolidada do projeto Operum.
-> Última atualização: 24/05/2026
-
----
-
-## 1. Visão Geral
-
-O Operum é uma aplicação full-stack para **acompanhamento de carteiras de investimento**, **leitura de notícias de mercado** e **análise financeira com IA**. O projeto evoluiu de um frontend React estático para uma arquitetura com backend Python/FastAPI, persistência local em arquivos e três motores de IA independentes.
-
-**Público-alvo:** Investidores pessoa física que querem entender a composição e os riscos de suas carteiras, com notícias filtradas por relevância pessoal.
+> Base de conhecimento consolidada do projeto.
+> Ultima atualizacao: 01/06/2026
 
 ---
 
-## 2. Stack Tecnológica
+## 1. Visao Geral
+
+O Operum e uma aplicacao full-stack para:
+
+- acompanhar carteiras de investimento
+- consumir noticias de mercado
+- gerar analises financeiras e textuais com IA interna
+
+O produto hoje combina calculo financeiro classico, ingestao local de noticias e geracao deterministica de analise sem dependencia de LLM externa.
+
+---
+
+## 2. Stack Tecnologica
 
 | Camada | Tecnologia |
 |--------|-----------|
 | Frontend | React 18 + TypeScript + Vite |
-| UI | Tailwind CSS + CSS custom properties |
-| Gráficos | Recharts |
-| Ícones | Lucide React |
-| Roteamento | React Router DOM v6 |
-| Backend | Python 3.11+ / FastAPI |
-| Persistência | Arquivos locais (JSON + Parquet) |
-| Preços | YFinance (gratuito) |
-| Notícias | RSS feeds + YFinance news |
-| ML/DL | scikit-learn, XGBoost, LightGBM |
-| Agendamento | schedule library |
+| UI | Tailwind CSS |
+| Graficos | Recharts |
+| Roteamento | React Router DOM |
+| Backend | Python 3.11+ + FastAPI |
+| Persistencia | JSON + Parquet via `LocalStorageService` |
+| Precos | yfinance |
+| Noticias | RSS + listagens oficiais/editoriais abertas |
+| ML | scikit-learn, XGBoost, LightGBM |
+| Testes | pytest |
 
 ---
 
 ## 3. Arquitetura
 
-### 3.1 Visão em Camadas
-
-```
-┌─────────────────────────────────────────────────────┐
-│                   Frontend (React)                   │
-│  Pages → Context → API Client → fetch()             │
-└──────────────────────┬──────────────────────────────┘
-                       │ HTTP (JSON)
-┌──────────────────────▼──────────────────────────────┐
-│              API Layer (FastAPI)                      │
-│  Endpoints → Schemas (Pydantic) → Services           │
-└──────────────────────┬──────────────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────┐
-│              Service Layer                            │
-│  AssetUniverse  │  Portfolio  │  News                 │
-│  MarketData     │  Financial  │  Forecast             │
-│  Opinion        │  ML Models  │  Storage              │
-└──────────────────────┬──────────────────────────────┘
-                       │
-┌──────────────────────▼──────────────────────────────┐
-│           Persistence Layer (LocalStorageService)     │
-│  JSON files  │  Parquet files  │  Cache               │
-└─────────────────────────────────────────────────────┘
+```text
+Frontend -> API FastAPI -> Services -> LocalStorageService -> data/
 ```
 
-### 3.2 Separação de Responsabilidades
+### Camadas principais
 
-- **Cálculo financeiro clássico** → funções puras em `financial_engine.py`
-- **IA de notícias** → classificação + ranking + clustering
-- **Forecast de ativos** → modelo tabular (XGBoost)
-- **Análise de carteira** → composição de scores + texto analítico
-
-### 3.3 Estrutura de Pastas
-
-```
-operum/
-├── app/              # Backend Python/FastAPI
-│   ├── api/          # Endpoints
-│   ├── core/         # Config
-│   ├── schemas/      # Pydantic models
-│   └── services/     # Lógica de negócio
-├── src/              # Frontend React
-│   ├── components/   # UI components
-│   ├── context/      # Estado global
-│   ├── data/         # Tipos e mocks legados
-│   ├── layout/       # AppShell
-│   ├── pages/        # Telas
-│   ├── types/        # Interfaces TS
-│   └── utils/        # Helpers
-├── data/             # Persistência local
-│   ├── assets/       # universe.json
-│   ├── news/         # raw/processed/summaries
-│   ├── portfolios/   # JSON por carteira
-│   ├── market/       # prices/*.parquet
-│   ├── cache/        # Cache de requisições
-│   ├── datasets/     # train/*.parquet
-│   ├── models/       # .pkl / .json
-│   └── logs/         # Logs de ingestão
-├── docs/             # Documentação
-├── notebooks/        # Experimentação
-├── scripts/          # Utilitários
-└── tests/            # Testes
-```
+- `api/`
+  - endpoints HTTP
+  - validacao de request/response
+- `schemas/`
+  - modelos Pydantic de dominio
+- `services/`
+  - regra de negocio
+  - ingestao, ranking, analise e persistencia
+- `data/`
+  - portfolios
+  - news archive/latest/meta
+  - modelos
+  - cache
 
 ---
 
-## 4. Modelo de Dados
+## 4. Modulo de Noticias
 
-### 4.1 Asset
+### Estado atual
 
-| Campo | Tipo | Descrição |
-|-------|------|-----------|
-| ticker | string | Código do ativo (PETR4, BTC, etc.) |
-| name | string | Nome completo |
-| asset_class | enum | BR_STOCK, FII, US_STOCK, CRYPTO, FIXED_INCOME |
-| country | string | BR, US, global |
-| currency | string | BRL, USD |
-| sector | string | Petróleo, Mineração, Tecnologia, etc. |
-| sub_type | string | Ação ON, BDR, ETF, etc. |
-| source | string | yfinance, b3, etc. |
+O modulo de noticias deixou de depender apenas de feeds genericos. Hoje ele usa um catalogo estruturado de fontes, com metadados por origem e conectores especificos por tipo.
 
-### 4.2 Portfolio
+### Tipos de fonte
 
-| Campo | Tipo | Descrição |
-|-------|------|-----------|
-| id | string (UUID) | Identificador único |
-| name | string | Nome da carteira |
-| base_currency | string | BRL (padrão) |
-| created_at | datetime | Data de criação |
-| updated_at | datetime | Data de atualização |
-| positions | Position[] | Lista de posições |
-| settings | object | risk_profile, forecast_horizon_days |
+- `rss`
+- `official_listing`
+- `official_notice_feed`
+- `editorial_listing`
+- `api_proxy`
 
-### 4.3 Position
+### Fontes oficiais ativas
 
-| Campo | Tipo | Descrição |
-|-------|------|-----------|
-| asset_id | string | Ticker do ativo |
-| ticker | string | Mesmo que asset_id |
-| asset_class | string | Classe do ativo no momento da adição |
-| quantity | float | Quantidade |
-| avg_price | float? | Preço médio opcional |
-| currency | string | Moeda do ativo |
-| manual_notes | string | Observações |
+- **CVM**
+  - `cvm_decisoes`
+  - `cvm_legislacao`
+  - `cvm_audiencias`
+  - `cvm_sancionadores`
+  - `cvm_despachos`
+  - `cvm_informativos`
+- **B3**
+  - `b3_comunicados`
+- **Tesouro**
+  - `tesouro_noticias`
+- **BCB**
+  - `bcb_copom`
+  - `bcb_noticias`
+  - observacao: cobertura parcial porque o portal publico e servido como SPA
 
-### 4.4 NewsItem
+### Fontes editoriais complementares
 
-| Campo | Tipo | Descrição |
-|-------|------|-----------|
-| id | string | UUID |
-| title | string | Título |
-| subtitle | string? | Subtítulo |
-| content_preview | string | Preview do conteúdo |
-| full_text_if_available | string? | Texto completo |
-| source_name | string | Nome da fonte |
-| source_url | string | URL original |
-| published_at | datetime | Data de publicação |
-| language | string | pt, en |
-| tags | string[] | Tags genéricas |
-| mentioned_assets | string[] | Tickers mencionados |
-| mentioned_countries | string[] | Países mencionados |
-| mentioned_sectors | string[] | Setores mencionados |
-| sentiment_score | float | -1 a 1 |
-| relevance_score | float | 0 a 1 |
-| impact_score | float | 0 a 1 |
-| summary | string | Resumo gerado |
-| cluster_id | int? | ID do cluster temático |
-| created_at | datetime | Data de ingestão |
+- `folha_mercado`
+- `infomoney`
+- `investing_br`
 
----
+### Complemento temporario
 
-## 5. API Endpoints
+- yfinance news
 
-### 5.1 Health
-- `GET /health`
+### Persistencia
 
-### 5.2 Assets
-- `GET /assets/universe` — Lista completa
-- `GET /assets/search?q=` — Busca por ticker/nome
+- `data/news/raw/archive.json`
+  - acervo principal
+- `data/news/raw/latest.json`
+  - janela curta para consumo rapido
+- `data/news/raw/meta.json`
+  - metadados de ingestao e backfill por fonte
 
-### 5.3 Market
-- `GET /market/price/{ticker}` — Preço atual
-- `GET /market/history/{ticker}` — Histórico de preços
+### Resumo
 
-### 5.4 News
-- `GET /news` — Lista com filtros (ticker, class, sector, country, sentiment, impact, date_from, date_to, portfolio_only)
-- `GET /news/{id}` — Detalhe
-- `POST /news/reindex` — Reingestão
-- `POST /news/summarize/{id}` — Gerar resumo
+O `NewsSummaryService` gera resumo local em 2 paragrafos:
 
-### 5.5 Portfolios
-- `GET /portfolios` — Lista
-- `POST /portfolios` — Criar
-- `GET /portfolios/{id}` — Detalhe
-- `PUT /portfolios/{id}` — Atualizar
-- `DELETE /portfolios/{id}` — Remover
-- `POST /portfolios/{id}/positions` — Adicionar posição
-- `DELETE /portfolios/{id}/positions/{ticker}` — Remover posição
-- `GET /portfolios/{id}/analysis` — Análise financeira
-- `GET /portfolios/{id}/news` — Notícias relacionadas
-- `GET /portfolios/{id}/scenarios` — Cenários futuros
+1. o que aconteceu
+2. porque isso importa
 
-### 5.6 Models
-- `GET /models/status` — Status dos modelos
-- `POST /models/train/forecast/{ticker}` — Treinar XGBoost para um ativo
-- `GET /models/forecast/{ticker}` — Previsão de retorno 1d
-- `GET /models/forecast/trained` — Listar tickers com modelo treinado
-- `POST /models/cluster/news` — Clusterizar notícias (K-Means)
-- `GET /models/opinion/{portfolio_id}` — Opinião consolidada da carteira
+Tambem limpa ruido de syndication, HTML e trechos como `The post ... appeared first on ...`.
+
+### Paginacao
+
+- `GET /api/news`
+- `page_size` padrao = `30`
+- resposta com `items`, `total`, `page`, `page_size`, `total_pages`
+- busca textual `q` e filtros executados no backend antes da paginacao
 
 ---
 
-## 6. Motor Financeiro
+## 5. Analise por IA
 
-### 6.1 Funções Implementadas
+### Filosofia atual
 
-```python
-compute_simple_return(prices)
-compute_log_return(prices)
-compute_cumulative_return(prices)
-compute_volatility(returns, window)
-compute_covariance_matrix(returns_df)
-compute_correlation_matrix(returns_df)
-compute_beta(asset_returns, market_returns)
-compute_alpha(asset_returns, market_returns, risk_free_rate)
-compute_var(returns, confidence_level)
-compute_cvar(returns, confidence_level)
-compute_drawdown(prices)
-compute_moving_average(prices, window)
-compute_ema(prices, span)
-compute_rsi(prices, window)
-compute_macd(prices)
-compute_portfolio_weights(positions)
-compute_portfolio_return(weights, returns)
-compute_portfolio_volatility(weights, cov_matrix)
-compute_portfolio_concentration(weights)
-compute_capm_expected_return(risk_free_rate, beta, market_return)
-compute_cagr(initial_value, final_value, periods)
-```
+A camada de IA atual e interna e deterministica:
 
----
+- nao usa LLM externa
+- usa scores, classificacoes e templates
+- privilegia transparencia de fontes
 
-## 7. Motores de IA
+### Analise por ativo
 
-### 7.1 Motor de Notícias
+Cada linha da carteira em detalhe possui um botao de estrela que abre uma analise individual.
 
-| Componente | Técnica | Entrada | Saída |
-|-----------|---------|---------|-------|
-| Classificador de relevância | TF-IDF + Logistic Regression | Texto da notícia | relevance_score (0-1) |
-| Sentimento | Keyword-based (pos/neg keywords) | Texto da notícia | sentiment_score (-1 a 1), neutro = -0.1 |
-| Rankeamento de impacto | LightGBM Ranker | Features textuais + temporais | impact_score (0-1) |
-| Cluster temático | K-Means sobre TF-IDF | Vetores de texto | cluster_id |
-| Resumo | Extrativo/templateado | Texto completo | summary |
+Essa analise:
+- recalcula no clique
+- usa snapshot atual do ativo
+- combina noticias do ativo, do setor e do contexto macro
+- usa historico de noticias do periodo quando o historico de preco e fraco
+- agrupa fontes por origem na interface
 
-### 7.2 Motor de Forecast de Ativos
+Campos relevantes do payload:
+- `analysis_sections.current`
+- `analysis_sections.recent`
+- `analysis_sections.outlook`
+- `historical_window`
+- `used_news_count`
+- `source_groups`
+- `recomputed_at`
 
-| Componente | Técnica | Alvo |
-|-----------|---------|------|
-| Baseline | XGBoost Regressor | Retorno futuro 1d/5d/20d |
-| Benchmark | LightGBM / CatBoost | Retorno futuro 1d/5d/20d |
+### Analise geral da carteira
 
-Features: lags de retorno, volatilidade móvel, volume relativo, máximas/mínimas recentes, médias móveis, betas, correlação com índices, score de notícia, contagem de notícias, sentimento agregado.
+`PortfolioOpinionService` deixou de responder apenas com um texto curto. Hoje ele retorna uma sintese estruturada com:
 
-### 7.3 Motor de Opinião da Carteira
+- `headline`
+- `composition_grade`
+- `composition_summary`
+- `strengths`
+- `overlaps`
+- `block_reviews`
+- `final_diagnosis`
+- `conclusion`
+- `sources`
+- `source_groups`
 
-```
-portfolio_opinion_score =
-  0.30 * diversification_score +
-  0.20 * correlation_risk_score +
-  0.20 * news_impact_score +
-  0.15 * macro_sensitivity_score +
-  0.15 * forecast_risk_score
-```
+### Ranking de noticias para analise
 
-Saída: texto analítico (ex: "Carteira com concentração moderada em risco doméstico"), nunca recomendação financeira.
+O `AssetAnalysisService` hoje considera:
 
----
+- match direto por ticker/alias
+- match por setor
+- match por pais
+- recencia
+- impacto
+- relevancia
+- peso de confianca por tipo de fonte
+- peso de contexto macro
 
-## 8. Princípios de Design
+Papéis de contexto:
+- `asset`
+- `sector`
+- `macro`
 
-1. **Separação total** entre cálculo financeiro clássico e aprendizado de máquina
-2. **Persistência abstrata** via `LocalStorageService` — preparado para migrar para banco depois
-3. **Cenários probabilísticos**, nunca previsões determinísticas
-4. **Funcionalidade correta primeiro**, estética depois
-5. **Carteira ativa global** guia toda a experiência do usuário
+Pesos relativos de fonte:
+- oficiais: mais altos
+- editoriais: intermediarios
+- yfinance: menor
 
----
+### Temas dominantes
 
-## 9. Glossário
+O sistema hoje identifica melhor temas como:
 
-| Termo | Definição |
-|-------|-----------|
-| VaR | Value at Risk — perda máxima esperada em dado nível de confiança |
-| CVaR | Conditional VaR — perda média além do VaR |
-| CAPM | Capital Asset Pricing Model — retorno esperado = risco-free + beta * prêmio |
-| CAGR | Compound Annual Growth Rate — taxa de crescimento anual composta |
-| RSI | Relative Strength Index — indicador de momentum |
-| MACD | Moving Average Convergence Divergence — indicador de tendência |
-| Sharpe | Retorno ajustado ao risco (não implementado ainda) |
-| Beta | Sensibilidade do ativo ao mercado |
-| Alpha | Retorno acima do esperado pelo CAPM |
-| Drawdown | Queda do pico ao vale |
+- juros
+- inflacao
+- cambio
+- commodities
+- fiscal/politica
+- geopolitica
+- dividendos
+- resultados
 
 ---
 
-## 10. Logs e Monitoramento
+## 6. Modulo de Carteiras
 
-- Logs estruturados via módulo `logging` do Python.
-- Formato: `timestamp | LEVEL | module | mensagem`
-- Handler: stdout (console) + arquivo rotativo em `data/logs/operum.log`.
-- Configuração centralizada em `app/core/config.py`.
-- Logs de ingestão de notícias registram quantidade ingerida, erros por fonte.
+### Estado atual
 
----
+- CRUD local via API
+- maximo de 50 carteiras
+- 10 carteiras por pagina
+- ate 5 paginas na UI
+- exclusao individual por card
+- exclusao em lote por modo de selecao ativado por lixeira no topo
 
-## 11. Ambiente e Inicialização
+### Tela de detalhe
 
-### 11.1 Porta do Backend
-
-- Backend uvicorn roda na **porta 8001** (migrado de 8000 devido a TIME_WAIT no Windows).
-- Vite proxy (`vite.config.ts`): `/api` → `localhost:8001`.
-- `iniciar.ps1` usa porta 8001 e libera porta 8000/8001 automaticamente.
-- Se houver erro `[Errno 10048]`, aguardar TIME_WAIT expirar (~2 min) ou trocar porta.
-
-### 11.2 Bug Fix — `get_universe()` → `get_all()`
-
-- `app/main.py` linha 27 chamava `AssetUniverseService.get_universe()` (inexistente).
-- Corrigido para `AssetUniverseService.get_all()` (método real).
-- Lifespan do FastAPI agora executa corretamente: ingestão de notícias + cache de preços.
+- tabelas separadas por classe
+- precos atuais e pesos por posicao
+- analise geral da carteira
+- analise individual por ativo
+- fontes agrupadas por origem nas analises
 
 ---
 
-## 12. Tratamento de Dados de Notícias
+## 7. Modelos de Dados Relevantes
 
-### 12.1 Limpeza de HTML
-- RSS feeds (InfoMoney, Folha) retornam conteúdo com tags HTML (`<p>`, `<img>`, etc.).
-- `NewsIngestionService._strip_html()` remove tags HTML e entidades (`&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#\d+;`) antes de armazenar `content_preview`.
-- Chamado dentro de `_clean_text()` em conjunto com correção de encoding (latin1 → utf-8).
+### `NewsItem`
 
-### 12.2 Scoring de Sentimento
-- Algoritmo baseado em keywords positivas/negativas (~30 palavras cada).
-- Fórmula: `(pos_count - neg_count) / total` quando há match, `-0.1` para neutro (sem keywords).
-- Keywords expandidas: inclui "sobe", "recorde", "dividendo", "desemprego", "inflação", "juros", "tarifa" etc.
-- Valores típicos: -1.0 (fortemente negativo), 1.0 (fortemente positivo), -0.1 (neutro).
+Campos novos importantes:
 
-### 12.3 Auto-Update na Inicialização
-- `app/main.py` usa `lifespan` handler do FastAPI.
-- Ao iniciar, executa `NewsIngestionService.ingest()` para buscar notícias novas.
-- Atualiza cache de preços dos primeiros 20 ativos do universo via `MarketDataService`.
+- `source_id`
+- `source_type`
+- `is_official`
+- `source_category`
 
-### 12.4 Endpoint de Preços da Carteira
-- `GET /api/portfolios/{id}/prices` retorna preço atual, valor total e % da carteira para cada posição.
-- Usa `MarketDataService.get_current_price()` com cache de 1 hora.
-- No frontend, exibido em colunas adicionais nas tabelas de posições.
+Esses metadados permitem:
+- peso por fonte
+- filtragem futura por origem
+- transparencia maior na analise
 
-### 12.5 Análise por IA com Notícias
-- Botão "Gerar análise por IA" no frontend chama `GET /api/models/opinion/{id}`.
-- `PortfolioOpinionService._generate_text()` agora inclui para cada ativo:
-  - Quantidade de notícias relevantes
-  - Sentimento médio (positivo/negativo/neutro)
-  - Impacto médio
-- Score consolidado: diversificação (30%), correlação (20%), notícias (20%), macro (15%), forecast (15%).
+---
 
-### 12.6 Frontend — Carteira em Detalhes
-- Tabelas de posições **separadas por classe de ativo** (BR_STOCK, FII, BDR, CRYPTO).
-- **Filtro por tipo** no formulário de adicionar ativos: seleciona classe primeiro, depois o ativo.
-- **Preços reais** exibidos ao lado de cada posição (preço atual, valor total, % da carteira).
-- **Editar nome** inline ao lado do botão "Voltar" no header.
-- **CompositionCharts** movido para o final da página.
-- Novo componente `PortfolioAnalysisAI` com score, barras de componentes e texto analítico.
+## 8. Endpoints que mais mudaram
 
-### 12.7 Exemplo de Carteira
-- `data/portfolios/` contém a carteira "Carteira Exemplo" com 8 ativos:
-  - PETR4, VALE3, ITUB4, WEGE3, BBAS3 (BR_STOCK)
-  - HGLG11, KNRI11 (FII)
-  - AAPL34 (BDR)
+- `GET /api/news`
+  - agora pagina no backend
+  - `page_size=30`
+  - `q` server-side
+- `POST /api/news/backfill`
+  - aceita `source_id` opcional
+- `GET /api/portfolios/{id}/news`
+  - reaproveita a base estruturada
+- `GET /api/models/opinion/{portfolio_id}`
+  - resposta enriquecida
+- `GET /api/models/opinion/{portfolio_id}/positions/{ticker}`
+  - analise individual por ativo
+- `POST /api/portfolios/bulk-delete`
+  - exclusao em lote
+
+---
+
+## 9. Observacoes Operacionais
+
+- Startup do backend foi ajustado para nao bloquear por backfill longo.
+- Backfill e aquecimento de precos rodam em background.
+- O BCB foi mantido no desenho por valor institucional, mas nao deve ser tratado como fonte robusta enquanto a extracao publica continuar limitada.
+- Os testes usam storage isolado para nao deixar carteiras residuais no ambiente principal.
+
+---
+
+## 10. Estado de Validacao
+
+Ultimo estado conhecido apos as mudancas recentes:
+
+- `python -m pytest -q` passou com `40 passed`
+- `npm run build` passou
+
+---
+
+## 11. Direcao de Produto
+
+O produto hoje segue esta hierarquia para qualidade analitica:
+
+1. fatos oficiais
+2. contexto editorial
+3. contexto macro e setorial
+
+Isso permite que a analise fique mais util sem abrir mao de rastreabilidade e sem depender de geracao livre por LLM externa.

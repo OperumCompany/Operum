@@ -1,281 +1,257 @@
 ---
 name: skillsBack
-description: Guia de execução para IA contribuir no backend do OPERUM com Python, FastAPI, persistência local e motores de IA financeira.
-> Atualizado em: 24/05/2026
+description: Guia de execucao para IA contribuir no backend do Operum com Python, FastAPI, persistencia local, ingestao de noticias e motores de IA financeira.
+updated_at: 2026-06-01
 ---
 
-# Skills Back — OPERUM
+# Skills Back - Operum
 
-> Propósito: definir regras práticas para qualquer IA atuar no backend do OPERUM com consistência técnica, arquitetural e de produto.
+## 1. Stack real do backend
 
-## 1. Stack Real do Backend
+- Python 3.11+
+- FastAPI
+- Pydantic v2
+- Persistencia local em JSON + Parquet
+- yfinance para precos
+- Noticias por RSS e listagens abertas oficiais/editoriais
+- scikit-learn, XGBoost, LightGBM
+- pytest
 
-- **Runtime:** Python 3.11+
-- **Framework:** FastAPI
-- **Schemas:** Pydantic v2
-- **Persistência:** Arquivos locais (JSON + Parquet)
-- **Preços:** yfinance (gratuito)
-- **Notícias:** RSS feeds + yfinance news
-- **ML:** scikit-learn, XGBoost, LightGBM
-- **Agendamento:** schedule library
-- **Testes:** pytest
-- **Dados tabulares:** pandas, numpy, pyarrow
+Regras:
+- nao introduzir banco relacional sem pedido explicito
+- nao espalhar IO direto fora do `LocalStorageService`
+- nao introduzir LLM externa por padrao
 
-Regra crítica:
-- Não adicionar banco de dados relacional sem pedido explícito.
-- Não adicionar dependências pesadas sem motivo real.
-
-## 2. Estrutura de Pastas
+## 2. Estrutura de pastas
 
 ```text
-operum/
-  app/
-    api/           # Endpoints FastAPI
-    core/          # Configurações
-    schemas/       # Modelos Pydantic
-    services/      # Lógica de negócio
-  data/
-    assets/        # universe.json
-    news/          # raw/processed/summaries
-    portfolios/    # JSON por carteira
-    market/        # prices/*.parquet
-    cache/         # Cache de requisições
-    datasets/      # Datasets de treino
-    models/        # Modelos serializados (.pkl / .json)
-    logs/          # Logs de ingestão
-  notebooks/       # Experimentação
-  scripts/         # Utilitários
-  tests/           # Testes
+app/
+  api/
+  core/
+  schemas/
+  services/
+data/
+  assets/
+  news/
+  portfolios/
+  market/
+  cache/
+  datasets/
+  models/
+  logs/
+tests/
 ```
 
-## 3. Antes de Codar
+## 3. Checklist antes de codar
 
-Checklist obrigatório:
+1. Ler `docs/compendium.md`
+2. Ler `docs/spec.md`
+3. Conferir `app/schemas/`
+4. Conferir `app/services/local_storage_service.py`
+5. Respeitar fluxo `api -> services -> storage/schemas`
 
-1. Ler `docs/compendium.md` para visão geral do projeto.
-2. Ler `docs/spec.md` para contratos de API e schemas.
-3. Verificar `app/services/local_storage_service.py` antes de criar qualquer persistência.
-4. Verificar `app/schemas/` antes de criar novos modelos de dados.
-5. Respeitar a separação entre camadas: `api/` → `services/` → `schemas/`.
+## 4. Camadas
 
-## 4. Arquitetura de Camadas
+### API
+- routers FastAPI
+- sem regra de negocio relevante
 
-### 4.1 Camada de API (`app/api/`)
-- Endpoints FastAPI com routers.
-- Não contém lógica de negócio.
-- Recebe request, chama service, retorna response.
-- Usa schemas Pydantic para validação.
+### Schemas
+- modelos Pydantic de request/response
+- manter compatibilidade de contrato
 
-### 4.2 Camada de Schemas (`app/schemas/`)
-- Modelos Pydantic para request/response.
-- Schemas de domínio puro (Asset, Portfolio, NewsItem).
+### Services
+- regra de negocio real
+- podem se compor entre si
+- nao dependem de FastAPI
 
-### 4.3 Camada de Serviços (`app/services/`)
-- Lógica de negócio real.
-- Services podem chamar outros services.
-- Services NÃO dependem de HTTP/fastapi.
-- Services de persistência são injetados ou instanciados no topo.
+### Persistencia
+- tudo passa por `LocalStorageService`
+- JSON para entidades pequenas
+- Parquet para series e datasets
 
-### 4.4 Camada de Persistência (`LocalStorageService`)
-- Interface única para leitura/escrita em arquivos.
-- `save_json(path, data)` / `load_json(path)`
-- `save_dataframe(path, df)` / `load_dataframe(path)`
-- `append_event(path, event)`
+## 5. Noticias: estado atual
 
-## 5. Padrões de Código
+### Arquitetura
 
-### 5.1 Services
+O `NewsIngestionService` nao trabalha mais com uma lista plana unica. Ele usa um catalogo de fontes com metadados:
 
-```python
-class MeuService:
-    def __init__(self):
-        self.storage = LocalStorageService()
+- `source_id`
+- `source_name`
+- `source_type`
+- `enabled`
+- `base_url`
+- `feed_url` ou `listing_url`
+- `is_official`
+- `source_category`
 
-    def listar(self, user_id: str) -> list[MeuModel]:
-        data = self.storage.load_json(f"data/meus/{user_id}.json")
-        return [MeuModel(**item) for item in data]
-```
+Tipos praticos hoje:
+- `rss`
+- `official_listing`
+- `official_notice_feed`
+- `editorial_listing`
+- `api_proxy`
 
-### 5.2 Endpoints
+### Fontes oficiais
 
-```python
-router = APIRouter(prefix="/meus", tags=["meus"])
+- CVM
+  - `cvm_decisoes`
+  - `cvm_legislacao`
+  - `cvm_audiencias`
+  - `cvm_sancionadores`
+  - `cvm_despachos`
+  - `cvm_informativos`
+- B3
+  - `b3_comunicados`
+- Tesouro
+  - `tesouro_noticias`
+- BCB
+  - `bcb_copom`
+  - `bcb_noticias`
+  - cobertura parcial por limitacao do portal publico
 
-@router.get("")
-def listar():
-    service = MeuService()
-    return service.listar()
-```
+### Fontes editoriais
 
-### 5.3 Schemas
+- `folha_mercado`
+- `infomoney`
+- `investing_br`
 
-```python
-class MeuModel(BaseModel):
-    id: str
-    nome: str
-    valor: float = 0.0
-```
+### Regras importantes
 
-## 6. Persistência Local
+- fontes oficiais tem maior confianca factual
+- fontes editoriais entram como contexto complementar
+- `yfinance` continua apenas como complemento temporario
+- filtros editoriais existem para remover ruido obvio
 
-- Toda persistência passa por `LocalStorageService`.
-- JSON para entidades pequenas (portfolios, universe, settings).
-- Parquet para séries temporais e datasets (prices, features, train).
-- Cache em `data/cache/` com TTL simples.
+### Persistencia de noticias
 
-```python
-# Exemplo de uso
-storage = LocalStorageService()
+- `data/news/raw/archive.json`
+- `data/news/raw/latest.json`
+- `data/news/raw/meta.json`
 
-# Salvar portfolio
-storage.save_json(f"data/portfolios/{portfolio_id}.json", portfolio_dict)
+### Backfill
 
-# Carregar portfolio
-portfolio_dict = storage.load_json(f"data/portfolios/{portfolio_id}.json")
+- `POST /api/news/backfill`
+- aceita `start_date`
+- aceita `source_id` opcional
+- manter backfill seletivo quando a fonte suportar historico sem autenticacao
 
-# Salvar dataframe de preços
-storage.save_dataframe(f"data/market/prices/{ticker}.parquet", df_prices)
+## 6. `NewsItem` atual
 
-# Carregar dataframe
-df = storage.load_dataframe(f"data/market/prices/{ticker}.parquet")
-```
+Campos que precisam ser preservados:
 
-## 7. Motor Financeiro
+- `source_id`
+- `source_type`
+- `is_official`
+- `source_category`
 
-- Funções PURAS em `financial_engine.py`.
-- Recebem dados, retornam resultados.
-- Nenhum efeito colateral (IO, storage, logging).
-- Testáveis isoladamente.
+Esses campos alimentam ranking e transparencia da analise.
 
-```python
-# Exemplo
-def compute_volatility(returns: np.ndarray, window: int = 252) -> float:
-    return float(np.std(returns) * np.sqrt(window))
-```
+## 7. IA interna
 
-## 8. Motores de IA
+### Servicos principais
 
-### 8.1 Separação
-- **NÃO** misturar lógica financeira com ML.
-- Cada motor tem seu próprio service.
-- Modelos serializados em `data/models/`.
+| Servico | Arquivo | Papel |
+|---------|---------|-------|
+| Scoring de noticias | `news_scoring_service.py` | relevancia, impacto e sentimento |
+| Resumo | `news_summary_service.py` | resumo local em 2 paragrafos |
+| Clustering | `news_clustering_service.py` | K-Means sobre TF-IDF |
+| Forecast | `forecast_service.py` | previsao tabular por ativo |
+| Analise por ativo | `asset_analysis_service.py` | ranking + templates + contexto |
+| Opiniao da carteira | `portfolio_opinion_service.py` | sintese geral da composicao |
 
-### 8.2 Treino vs Inferência
-- Serviços de treino em `model_training_service.py`.
-- Serviços de inferência acoplados ao service de domínio.
-- Ex: `news_scoring_service.py` faz inferência; `model_training_service.py` treina.
+### `AssetAnalysisService`
 
-### 8.3 Baseline Primeiro
-- Implementar baseline simples (TF-IDF + Logistic Regression) antes de modelos complexos.
-- Só migrar para LightGBM/XGBoost após baseline validado.
+Regras atuais:
+- analise e recalculada no clique
+- nao reutilizar cache antigo como resposta ativa
+- separar noticias em `asset`, `sector` e `macro`
+- priorizar `preco + noticias`
+- se preco for fraco, usar noticias historicas do periodo
 
-### 8.4 Serviços de IA Implementados
+Campos relevantes no retorno:
+- `analysis_sections`
+- `historical_window`
+- `used_news_count`
+- `source_groups`
+- `recomputed_at`
 
-| Serviço | Arquivo | Técnica |
-|---------|---------|---------|
-| Scoring de notícias | `news_scoring_service.py` | TF-IDF + Logistic Regression / LightGBM Ranker + Sentiment keywords |
-| Clusterização | `news_clustering_service.py` | K-Means sobre TF-IDF |
-| Forecast de ativos | `forecast_service.py` | XGBoost Regressor (features: lags, volatilidade, médias) |
-| Opinião da carteira | `portfolio_opinion_service.py` | Score composto (diversificação, correlação, notícias, macro, forecast) |
-| Treino de modelos | `model_training_service.py` | Wrapper para treino de forecast em lote + histórico |
+### Ranking de noticias
 
-### 8.4.1 Sentiment Scoring (Keyword-based)
-- Algoritmo simples em `NewsScoringService.score_sentiment()`.
-- Lista de ~15 keywords positivas e ~15 negativas (português + inglês).
-- Fórmula: `(pos_count - neg_count) / total` quando há match.
-- Retorna `-0.1` para neutro (sem keywords encontradas).
-- Acessórios expandidos incluem: "sobe", "recorde", "dividendo", "desemprego", "inflação", "juros", "tarifa".
+O ranking hoje leva em conta:
+- `match_score`
+- `impact_score`
+- `relevance_score`
+- `source_confidence_weight`
+- `macro_context_weight`
+- prioridade de contexto
 
-### 8.4.2 HTML Stripping em RSS
-- `NewsIngestionService._strip_html()` remove tags HTML e entidades do conteúdo RSS.
-- Chamado dentro de `_clean_text()`.
-- Necessário porque InfoMoney e outros feeds retornam `<p><img ...>` no summary.
-- Remove: `<tags>`, `&amp;`, `&lt;`, `&gt;`, `&quot;`, `&#\d+;`.
+Confianca por tipo de fonte:
+- official_notice_feed: mais alta
+- official_listing: muito alta
+- rss/editorial: intermediaria
+- api_proxy: menor
 
-### 8.5 API de Modelos (`app/api/models.py`)
-- `GET /models/status` — Status geral dos modelos
-- `POST /models/train/forecast/{ticker}` — Treinar XGBoost para um ticker
-- `GET /models/forecast/{ticker}` — Obter previsão 1d para um ticker
-- `GET /models/forecast/trained` — Listar modelos treinados
-- `POST /models/cluster/news` — Clusterizar notícias
-- `GET /models/opinion/{portfolio_id}` — Opinião consolidada (texto enriquecido com notícias por ativo)
+### Topicos dominantes
 
-### 8.6 Endpoints de Carteira (`app/api/portfolios.py`)
-- `GET /portfolios/{id}/prices` — Preços reais de todos os ativos da carteira (preço atual, valor total, %)
+Cobertura atual:
+- juros
+- inflacao
+- cambio
+- commodities
+- fiscal/politica
+- geopolitica
+- dividendos
+- resultados
 
-### 8.7 Auto-Startup
-- `app/main.py` usa `lifespan` para executar tarefas na inicialização:
-  - `NewsIngestionService.ingest()` — busca notícias novas
-  - `MarketDataService.get_current_price()` — atualiza cache de preços (20 ativos)
-- **Atenção:** `AssetUniverseService` não tem método `get_universe()`. Usar `get_all()`. (Bug fix em `app/main.py:27`)
+## 8. PortfolioOpinionService
 
-### 8.8 Porta do Servidor
-- Backend uvicorn roda na **porta 8001** (não 8000).
-- Motivo: TIME_WAIT no Windows impede reuso imediato da mesma porta.
-- `iniciar.ps1` já usa 8001 e limpa porta automaticamente.
-- Comando: `uvicorn app.main:app --port 8001`
-- **Startup lento:** lifespan (news + price cache) leva ~10-16s. `iniciar.ps1` faz retry a cada 2s até 15 tentativas (30s total).
+O endpoint `GET /api/models/opinion/{portfolio_id}` nao retorna mais apenas `opinion`.
 
-## 9. Testes
+Estrutura atual relevante:
+- `score`
+- `components`
+- `headline`
+- `composition_grade`
+- `composition_summary`
+- `strengths`
+- `overlaps`
+- `block_reviews`
+- `final_diagnosis`
+- `conclusion`
+- `sources`
+- `source_groups`
 
-- Usar `pytest` + `pytest-asyncio`.
-- Testes unitários para `financial_engine.py` (funções puras).
-- Testes de API com `httpx.AsyncClient` + `ASGITransport`.
-- Configurar fixture `async_client` com `@pytest_asyncio.fixture` e `@pytest.mark.asyncio`.
+## 9. Carteiras
 
-```bash
-pytest tests/ -v          # 30 testes (20 finance engine + 10 API)
-```
+Estado atual importante para backend:
+- limite de 50 carteiras
+- exclusao em lote suportada por `POST /api/portfolios/bulk-delete`
+- testes devem usar storage isolado para nao poluir `data/portfolios`
 
-## 10. Regras Importantes
+## 10. Testes
 
-### 10.1 Opinião da Carteira
-- **Nunca** emitir recomendação de compra/venda.
-- **Sempre** apresentar como análise descritiva.
-- Cenários futuros como probabilísticos, não determinísticos.
+- usar `pytest`
+- API com cliente ASGI
+- preferir storage temporario ou `OPERUM_DATA_DIR` para isolamento
 
-### 10.2 Tratamento de Erros
-- Endpoints devem retornar HTTP 404 para recursos não encontrados.
-- Erros de serviço viram HTTP 422 ou 500 com mensagem descritiva.
-- Logar erros com o módulo `logging`.
+Checks minimos:
+- `python -m pytest -q`
+- contratos novos de noticias e opiniao preservados
 
-### 10.3 Performance
-- Operações de IO (arquivos) podem ser lentas — usar cache onde fizer sentido.
-- Modelos de ML carregados em memória apenas quando necessários.
-- Preferir Parquet para dados grandes (séries temporais).
+## 11. O que nao fazer
 
-## 11. Qualidade e Validação
+- nao remover campos de contrato sem ajustar frontend e docs
+- nao misturar regra de ranking com camada HTTP
+- nao tratar fontes editoriais como equivalentes factuais as oficiais
+- nao deixar testes escreverem em `data/` principal se houver alternativa
 
-Toda mudança deve ser validada com:
+## 12. Documento vivo
 
-```bash
-cd operum
-uvicorn app.main:app --reload --port 8001
-# Testar endpoints manualmente ou via pytest
-```
-
-Também vale verificar:
-1. `GET /health` responde 200
-2. CRUD de portfolios funciona
-3. Dados persistem entre restart
-4. Erros retornam HTTP status code adequado
-
-## 12. O que Não Fazer
-
-- Não usar banco de dados relacional sem pedido explícito.
-- Não espalhar `open()` / `json.dump()` pelo código — usar `LocalStorageService`.
-- Não misturar lógica financeira com ML no mesmo arquivo.
-- Não adicionar dependências pesadas sem motivo.
-- Não ignorar tratamento de erros em endpoints.
-- Não fazer deploy de modelos não testados.
-
-## 13. Documento Vivo
-
-Sempre que houver mudança importante em:
-- arquitetura
-- novos services
-- novos endpoints
-- formato de dados
-- dependências
-
-a IA deve atualizar este `skillsBack.md` para refletir o estado real do projeto.
+Sempre atualizar este arquivo quando houver mudancas em:
+- catalogo de fontes
+- contratos de `NewsItem`
+- endpoints de noticias
+- analise por ativo
+- opiniao da carteira
+- persistencia de portfolios ou noticias

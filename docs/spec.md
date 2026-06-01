@@ -1,78 +1,83 @@
-# Specification — Operum v2
+# Specification - Operum
 
-> Especificação detalhada do sistema.
-> Última atualização: 24/05/2026
+> Especificacao funcional, contratos de API e regras de produto.
+> Ultima atualizacao: 01/06/2026
 
 ---
 
 ## 1. Escopo
 
-Este documento especifica os requisitos funcionais, contratos de API, formatos de dados e regras de UX para a evolução do Operum com foco em **módulo de notícias**, **módulo de carteiras**, **motor financeiro** e **motores de IA**.
+O Operum cobre quatro blocos principais:
+
+- modulo de noticias com ingestao multi-fonte, historico local e filtros
+- modulo de carteiras com CRUD, detalhamento por classe e analise financeira
+- motor financeiro com funcoes puras
+- camada de IA interna para analise por ativo e sintese da carteira
 
 ---
 
 ## 2. Requisitos Funcionais
 
-### 2.1 Módulo de Notícias
+### 2.1 Modulo de Noticias
 
 | ID | Requisito | Prioridade |
 |----|-----------|-----------|
-| N-01 | Coletar notícias automaticamente de fontes gratuitas | Alta |
-| N-02 | Normalizar campos e remover duplicatas | Alta |
-| N-03 | Detectar tickers e entidades mencionadas | Alta |
-| N-04 | Calcular sentimento (-1 a 1), relevância (0-1), impacto (0-1) | Alta |
-| N-05 | Gerar resumo extrativo de cada notícia | Média |
-| N-06 | Agrupar notícias em clusters temáticos | Média |
-| N-07 | Exibir lista paginada com filtros | Alta |
-| N-08 | Abrir modal ao clicar em notícia | Alta |
-| N-09 | Vincular notícias a ativos e carteiras | Alta |
-| N-10 | Relacionar notícias relevantes à carteira ativa | Alta |
+| N-01 | Coletar noticias de fontes oficiais e editoriais publicas | Alta |
+| N-02 | Normalizar noticias em schema unico com metadados de origem | Alta |
+| N-03 | Persistir historico em `archive.json` e janela curta em `latest.json` | Alta |
+| N-04 | Deduplicar por hash considerando titulo, fonte e data | Alta |
+| N-05 | Calcular sentimento, relevancia e impacto | Alta |
+| N-06 | Gerar resumo local em 2 paragrafos curtos | Alta |
+| N-07 | Exibir lista paginada com 30 itens por pagina | Alta |
+| N-08 | Suportar busca textual server-side e filtros combinados | Alta |
+| N-09 | Suportar `reindex` e `backfill` por fonte | Alta |
+| N-10 | Relacionar noticias a ativos, setores e contexto macro | Alta |
 
-**Filtros obrigatórios:**
-- Classe de ativo
-- Ticker
-- Setor
-- País/região
-- Sentimento (positivo/negativo/neutro)
-- Impacto (alto/médio/baixo)
-- Intervalo de tempo
-- Apenas notícias da carteira ativa
-- Apenas notícias macroeconômicas
+**Fontes suportadas**
+- Oficiais:
+  - CVM
+  - B3
+  - Tesouro Nacional / Tesouro Direto
+  - BCB com cobertura parcial
+- Editoriais:
+  - Folha Mercado
+  - InfoMoney
+  - Investing Brasil
+- Complemento temporario:
+  - yfinance news
 
-**Modal de notícia:**
-- Título
-- Fonte
-- Data/hora
-- Resumo
-- Ativos impactados (com links)
-- Score de impacto
-- Link para notícia original
+**Filtros obrigatorios**
+- `ticker`
+- `asset_class`
+- `sector`
+- `country`
+- `sentiment`
+- `impact`
+- `date_from`
+- `date_to`
+- `portfolio_id`
+- `macro_only`
+- `q`
 
-### 2.2 Módulo de Carteiras
+### 2.2 Modulo de Carteiras
 
 | ID | Requisito | Prioridade |
 |----|-----------|-----------|
 | C-01 | Criar carteira com nome e moeda base | Alta |
-| C-02 | Listar todas as carteiras do usuário | Alta |
-| C-03 | Editar nome e configurações da carteira | Alta |
-| C-04 | Excluir carteira com confirmação | Alta |
-| C-05 | Adicionar ativo à carteira (ticker, quantidade, preço médio) | Alta |
-| C-06 | Remover ativo da carteira | Alta |
-| C-07 | Calcular automaticamente pesos por ativo, classe, setor, moeda | Alta |
-| C-08 | Calcular concentração da carteira | Alta |
-| C-09 | Calcular correlação média entre ativos | Alta |
-| C-10 | Exibir notícias relacionadas à carteira | Alta |
-| C-11 | Exibir análise de risco (VaR, volatilidade, drawdown) | Média |
-
-**Universo de ativos:** ~200+ ativos incluindo:
-- Ações da bolsa brasileira (B3)
-- Fundos imobiliários (FIIs)
-- Ativos norte-americanos (BDRs e ETFs)
-- Criptomoedas (Bitcoin, Ethereum + principais)
+| C-02 | Listar carteiras do usuario com paginacao local de 10 por pagina | Alta |
+| C-03 | Limitar a 50 carteiras no total | Alta |
+| C-04 | Excluir carteira individualmente | Alta |
+| C-05 | Excluir carteiras em lote por modo de selecao | Alta |
+| C-06 | Adicionar ativo com ticker, quantidade e preco medio | Alta |
+| C-07 | Remover posicao da carteira | Alta |
+| C-08 | Exibir tabelas por classe de ativo na tela de detalhe | Alta |
+| C-09 | Exibir precos atuais, valor total e peso por posicao | Alta |
+| C-10 | Exibir analise financeira e noticias relacionadas | Alta |
+| C-11 | Exibir analise por IA por ativo e geral da carteira | Alta |
 
 ### 2.3 Motor Financeiro
 
-| ID | Função | Prioridade |
+| ID | Funcao | Prioridade |
 |----|--------|-----------|
 | F-01 | compute_simple_return | Alta |
 | F-02 | compute_log_return | Alta |
@@ -85,28 +90,28 @@ Este documento especifica os requisitos funcionais, contratos de API, formatos d
 | F-09 | compute_var | Alta |
 | F-10 | compute_cvar | Alta |
 | F-11 | compute_drawdown | Alta |
-| F-12 | compute_moving_average | Média |
-| F-13 | compute_ema | Média |
-| F-14 | compute_rsi | Média |
-| F-15 | compute_macd | Média |
+| F-12 | compute_moving_average | Media |
+| F-13 | compute_ema | Media |
+| F-14 | compute_rsi | Media |
+| F-15 | compute_macd | Media |
 | F-16 | compute_portfolio_weights | Alta |
 | F-17 | compute_portfolio_return | Alta |
 | F-18 | compute_portfolio_volatility | Alta |
 | F-19 | compute_portfolio_concentration | Alta |
-| F-20 | compute_capm_expected_return | Média |
-| F-21 | compute_cagr | Média |
+| F-20 | compute_capm_expected_return | Media |
+| F-21 | compute_cagr | Media |
 
-### 2.4 Motores de IA
+### 2.4 IA Interna
 
 | ID | Requisito | Prioridade |
 |----|-----------|-----------|
-| AI-01 | Classificar relevância de notícias com TF-IDF + Logistic Regression | Alta |
-| AI-02 | Ranquear impacto de notícias com LightGBM Ranker | Alta |
-| AI-03 | Agrupar notícias em clusters temáticos (K-Means) | Média |
-| AI-04 | Projetar retorno futuro de ativos (XGBoost, alvos 1d/5d/20d) | Alta |
-| AI-05 | Calcular score consolidado de opinião da carteira | Alta |
-| AI-06 | Gerar texto analítico explicando a carteira | Média |
-| AI-07 | Exibir cenários probabilísticos futuros | Média |
+| AI-01 | Classificar relevancia de noticias com TF-IDF + Logistic Regression | Alta |
+| AI-02 | Ranquear noticias com features textuais, temporais e peso por fonte | Alta |
+| AI-03 | Agrupar noticias em clusters tematicos | Media |
+| AI-04 | Projetar retorno futuro de ativos com XGBoost | Alta |
+| AI-05 | Gerar analise individual por ativo sem LLM externa | Alta |
+| AI-06 | Gerar sintese geral da carteira com foco em composicao | Alta |
+| AI-07 | Separar noticia de ativo, setor e macro na analise | Alta |
 
 ---
 
@@ -114,135 +119,164 @@ Este documento especifica os requisitos funcionais, contratos de API, formatos d
 
 ### 3.1 Health
 
-```
+```http
 GET /health
 Response: { "status": "ok", "timestamp": "..." }
 ```
 
 ### 3.2 Assets
 
-```
+```http
 GET /assets/universe
-Response: Asset[]
-
 GET /assets/search?q=petr
-Query: q (string, min 2 chars)
-Response: Asset[]
 ```
 
 ### 3.3 Market
 
-```
+```http
 GET /market/price/{ticker}
-Params: ticker (string)
-Response: { "ticker": "PETR4", "price": 31.20, "currency": "BRL", "updated_at": "..." }
-
-GET /market/history/{ticker}
-Query: period (string, default "6mo"), interval (string, default "1d")
-Response: { "ticker": "...", "prices": [{"date": "...", "close": 31.20, ...}] }
+GET /market/history/{ticker}?period=6mo&interval=1d
 ```
 
 ### 3.4 News
 
-```
+```http
 GET /news
 Query:
-  - ticker (string, optional)
-  - asset_class (string, optional)
-  - sector (string, optional)
-  - country (string, optional)
-  - sentiment (string: positive|negative|neutral, optional)
-  - impact (string: high|medium|low, optional)
-  - date_from (string ISO, optional)
-  - date_to (string ISO, optional)
-  - portfolio_id (string UUID, optional)
-  - macro_only (boolean, optional)
-  - page (int, default 1)
-  - page_size (int, default 20)
-Response: { "items": NewsItem[], "total": int, "page": int }
+  - ticker
+  - asset_class
+  - sector
+  - country
+  - sentiment
+  - impact
+  - date_from
+  - date_to
+  - portfolio_id
+  - macro_only
+  - q
+  - page (default 1)
+  - page_size (default 30)
 
+Response:
+{
+  "items": NewsItem[],
+  "total": int,
+  "page": int,
+  "page_size": int,
+  "total_pages": int
+}
+```
+
+```http
 GET /news/{id}
-Response: NewsItem
-
 POST /news/reindex
-Response: { "status": "ok", "ingested": int }
-
 POST /news/summarize/{id}
-Response: { "id": "...", "summary": "..." }
+POST /news/backfill
+Body:
+{
+  "start_date": "2026-05-01",
+  "source_id": "optional"
+}
 ```
 
 ### 3.5 Portfolios
 
-```
+```http
 GET /portfolios
-Response: Portfolio[]
-
 POST /portfolios
-Body: { "name": string, "base_currency": string }
-Response: Portfolio
-
 GET /portfolios/{id}
-Response: Portfolio
-
 PUT /portfolios/{id}
-Body: { "name"?: string, "settings"?: {...} }
-Response: Portfolio
-
 DELETE /portfolios/{id}
-Response: { "status": "deleted" }
-
+POST /portfolios/bulk-delete
 POST /portfolios/{id}/positions
-Body: { "ticker": string, "quantity": float, "avg_price"?: float }
-Response: Portfolio
-
 DELETE /portfolios/{id}/positions/{ticker}
-Response: Portfolio
-
 GET /portfolios/{id}/analysis
-Response: { "weights": {...}, "concentration": float, "correlation_matrix": [[...]], "volatility": float, "var": float, "cvar": float, "beta": float, "drawdown": float }
-
+GET /portfolios/{id}/prices
 GET /portfolios/{id}/news
-Query: same filters as GET /news (default scope = this portfolio)
-Response: { "items": NewsItem[], "total": int }
-
 GET /portfolios/{id}/scenarios
-Response: { "scenarios": { "1d": {...}, "5d": {...}, "30d": {...} }, "confidence": float }
 ```
 
 ### 3.6 Models
 
-```
+```http
 GET /models/status
-Response: { "forecast_models": [...], "forecast_count": int, "news_scoring": "fallback", "clustering": "available", "opinion": "available" }
-
 POST /models/train/forecast/{ticker}
-Params: ticker (string)
-Response: { "status": "trained"|"error", "ticker": "...", "train_r2": float, "test_r2": float }
-
 GET /models/forecast/{ticker}
-Response: { "ticker": "...", "last_price": float, "predicted_return_1d": float, "predicted_price_1d": float, "direction": "up"|"down", "confidence": float, "generated_at": "..." }
-
 GET /models/forecast/trained
-Response: { "tickers": [string] }
-
 POST /models/cluster/news
-Response: { "status": "ok", "num_news": int, "num_clusters": int, "clusters": {...} }
-
 GET /models/opinion/{portfolio_id}
-Response: { "score": float, "components": { "diversification": float, "correlation_risk": float, "news_impact": float, "macro_sensitivity": float, "forecast_risk": float }, "opinion": string }
+GET /models/opinion/{portfolio_id}/positions/{ticker}
+```
+
+**Resposta de `GET /models/opinion/{portfolio_id}`**
+
+```json
+{
+  "portfolio_id": "uuid",
+  "score": 0.74,
+  "components": {
+    "diversification": 0.8,
+    "correlation_risk": 0.6,
+    "news_impact": 0.7,
+    "macro_sensitivity": 0.68,
+    "forecast_risk": 0.72
+  },
+  "headline": "...",
+  "composition_grade": "7.5 / 10",
+  "composition_summary": "...",
+  "strengths": ["..."],
+  "overlaps": ["..."],
+  "block_reviews": [{"title": "...", "body": "..."}],
+  "final_diagnosis": "...",
+  "conclusion": "...",
+  "sources": [],
+  "source_groups": []
+}
+```
+
+**Resposta de `GET /models/opinion/{portfolio_id}/positions/{ticker}`**
+
+```json
+{
+  "portfolio_id": "uuid",
+  "ticker": "PETR4",
+  "asset_name": "Petrobras PN",
+  "asset_class": "BR_STOCK",
+  "generated_at": "...",
+  "recomputed_at": "...",
+  "confidence": "media",
+  "status": "ok",
+  "current_snapshot": {},
+  "recent_performance": {},
+  "outlook_3m": {},
+  "historical_window": {
+    "start_date": "2026-03-01",
+    "end_date": "2026-06-01",
+    "news_count": 12,
+    "has_price_history": false
+  },
+  "analysis_sections": {
+    "current": "...",
+    "recent": "...",
+    "outlook": "..."
+  },
+  "used_news_count": 12,
+  "sources": [],
+  "source_groups": []
+}
 ```
 
 ---
 
 ## 4. Formatos de Dados
 
-### 4.1 Asset Schema (Pydantic)
+### 4.1 Asset
 
 ```python
 class Asset(BaseModel):
     ticker: str
     name: str
-    asset_class: str  # BR_STOCK | FII | US_STOCK | CRYPTO | FIXED_INCOME
+    asset_class: str
     country: str
     currency: str
     sector: str
@@ -250,7 +284,7 @@ class Asset(BaseModel):
     source: str = "yfinance"
 ```
 
-### 4.2 Portfolio Schema (Pydantic)
+### 4.2 Portfolio
 
 ```python
 class Position(BaseModel):
@@ -276,7 +310,7 @@ class Portfolio(BaseModel):
     settings: PortfolioSettings = PortfolioSettings()
 ```
 
-### 4.3 NewsItem Schema (Pydantic)
+### 4.3 NewsItem
 
 ```python
 class NewsItem(BaseModel):
@@ -287,6 +321,10 @@ class NewsItem(BaseModel):
     full_text_if_available: str | None = None
     source_name: str
     source_url: str
+    source_id: str = ""
+    source_type: str = "rss"
+    is_official: bool = False
+    source_category: str | None = None
     published_at: datetime
     language: str = "pt"
     tags: list[str] = []
@@ -305,141 +343,65 @@ class NewsItem(BaseModel):
 
 ## 5. Regras de UX
 
-### 5.1 Geral
-- Notícias em lista com scroll infinito ou paginação
-- Cards compactos com: título, fonte, data, badges de ativos, score de impacto
-- Modal ao clicar com detalhes completos
-- Sidebar de filtros (esquerda ou superior)
-- Carteira ativa global no header
-- Toda análise depende da carteira ativa
+### 5.1 Noticias
+- Lista paginada com 30 itens por pagina
+- Navegacao com setas e paginas numeradas
+- Busca e filtros sempre reiniciam a pagina para `1`
+- Modal exibe resumo em 2 paragrafos
 
-### 5.2 Tela de Carteira (interna)
-- 4 blocos obrigatórios:
-  1. Composição atual (tabela + gráficos)
-  2. Notícias mais relevantes para a carteira
-  3. Análise de risco/correlação
-  4. Cenários futuros
+### 5.2 Carteiras
+- Tela de listagem com 10 carteiras por pagina e maximo de 5 paginas
+- Exclusao em lote e ativada por icone de lixeira no topo da secao
+- Cada card continua com lixeira individual
 
-### 5.3 Regras de Opinião da Carteira
-- **Nunca** emitir recomendação de compra/venda
-- **Sempre** apresentar como análise descritiva
-- Cenários futuros devem ser probabilísticos, não determinísticos
-- Exemplos válidos:
-  - "Sua carteira está concentrada em risco doméstico"
-  - "Exposição elevada a notícias de juros"
-  - "Cripto com alta sensibilidade ao noticiário global"
+### 5.3 Carteira em Detalhe
+- Tabelas por classe de ativo
+- Analise geral da carteira em card dedicado
+- Botao de estrela por ativo para analise individual
+- Fontes agrupadas por origem tanto na analise por ativo quanto na analise geral
+
+### 5.4 Regras da IA
+- Nunca emitir recomendacao direta de compra ou venda
+- Explicitar baixa confianca quando faltarem dados
+- Priorizar:
+  1. noticia direta do ativo
+  2. noticia de setor
+  3. noticia macro contextual
 
 ---
 
-## 6. Critérios de Aceite por Onda
+## 6. Regras de Ranking de Noticias
 
-### Onda 1
-- [x] `uvicorn` sobe sem erros
-- [x] `GET /health` responde 200
-- [x] Universo com ~131+ ativos carregado
-- [x] CRUD de carteiras funciona via API
-- [x] Frontend lista carteiras do backend
-- [x] Usuário adiciona ativos à carteira
-- [x] `npm run build` passa sem erros
+- Fontes oficiais tem maior peso factual
+- Fontes editoriais tem peso contextual medio
+- yfinance tem peso menor
+- `context_role` pode ser:
+  - `asset`
+  - `sector`
+  - `macro`
+- O ranking da analise por ativo considera:
+  - match direto por ticker/alias
+  - compatibilidade por setor e pais
+  - recencia
+  - impacto e relevancia
+  - peso da fonte
+  - peso de contexto macro
 
-### Onda 2
-- [x] Notícias são coletadas (YFinance + RSS)
-- [x] Filtros funcionam via API
-- [x] Modal de notícia abre com dados reais
-- [x] Notícias relacionadas aparecem na carteira
+---
 
-### Onda 3
-- [x] Funções financeiras retornam valores corretos (20 testes)
-- [x] Análise de carteira retorna weights, correlation, VaR
-- [x] Gráficos de composição (CompositionCharts) + métricas (PortfolioMetrics) funcionam
+## 7. Criterios de Aceite
 
-### Onda 4
-- [x] Modelo de relevância treina e classifica (TF-IDF + LR / LightGBM Ranker)
-- [x] Forecast de ativos gera projeções (XGBoost, requer treino via API)
-- [x] Opinião consolidada da carteira (PortfolioOpinionService)
-- [x] Cenários futuros (ScenarioView no Dashboard)
+- `GET /news` retorna `page_size=30` e `total_pages`
+- `POST /news/backfill` aceita `source_id` opcional
+- `GET /models/opinion/{portfolio_id}/positions/{ticker}` retorna `historical_window`, `source_groups` e `used_news_count`
+- noticias oficiais e editoriais coexistem no acervo sem quebrar resumo, scoring ou clustering
+- a analise do ativo usa noticias do periodo quando o historico de preco for insuficiente
+- a UI de fontes agrupadas funciona tanto na analise do ativo quanto na analise da carteira
 
-### Onda 5
-- [x] 30 testes do backend passam (20 finance engine + 10 API)
-- [x] Logs de ingestão em `data/logs/operum.log`
-- [x] Estados de loading/erro/empty no frontend
-- [x] Mensagens de confiança/incerteza nos cenários
+---
 
-## 7. Pós-Onda 5 — Correções e Ajustes
+## 8. Observacoes Operacionais
 
-### 7.1 HTML Stripping em RSS
-- Adicionado `NewsIngestionService._strip_html()` para remover tags HTML e entidades de conteúdo RSS.
-- Necessário porque feeds como InfoMoney retornam `<p><img ...>` como `summary`.
-
-### 7.2 Correção de Sentiment Score
-- `score_sentiment()` agora retorna `-0.1` para textos neutros (sem keywords), em vez de `0.0`.
-- Fórmula corrigida de `(pos-neg)/(total+1)` para `(pos-neg)/total`.
-- Keywords expandidas (+10 termos) para melhor cobertura.
-
-### 7.3 Carteira de Exemplo
-- "Carteira Exemplo" criada no sistema com 8 ativos (5 BR_STOCK, 2 FII, 1 BDR).
-- Serve como onboarding visual para novos usuários.
-
-### 7.4 Dependência de Servidor
-- Frontend (Vite) proxy `/api` → `localhost:8001`. Backend (uvicorn) deve estar rodando.
-- Sem backend, Vite retorna `ECONNREFUSED` e frontend exibe erro de carregamento.
-- Porta migrada de 8000 → 8001 para evitar TIME_WAIT no Windows.
-
-### 7.5 Bug Fix — main.py
-- `AssetUniverseService.get_universe()` não existe. Corrigido para `get_all()` em `app/main.py:27`.
-- Lifespan do FastAPI agora executa corretamente no startup.
-
-## 8. Onda 6 — Melhorias na Carteira em Detalhes e IA
-
-### 8.1 Backend
-
-#### 8.1.1 Auto-Startup
-- `app/main.py` usa `lifespan` do FastAPI para executar tarefas na inicialização.
-- Dispara `NewsIngestionService.ingest()` automaticamente.
-- Atualiza cache de preços para os primeiros 20 ativos do universo.
-
-#### 8.1.2 Endpoint de Preços
-```
-GET /api/portfolios/{id}/prices
-Response: {
-  "portfolio_id": string,
-  "portfolio_name": string,
-  "total_value": number | null,
-  "positions": [{
-    "ticker": string,
-    "asset_class": string,
-    "quantity": number,
-    "avg_price": number | null,
-    "current_price": number | null,
-    "currency": string,
-    "total_value": number | null,
-    "name": string,
-    "weight_pct": number | null
-  }]
-}
-```
-
-#### 8.1.3 Análise Enriquecida com Notícias
-- `PortfolioOpinionService._generate_text()` agora inclui para cada ativo:
-  - Número de notícias relevantes
-  - Sentimento médio (positivo/negativo/neutro)
-  - Impacto médio
-
-### 8.2 Frontend
-
-#### 8.2.1 PortfolioDetailsPage Reformulada
-- **Tabelas separadas por classe**: BR_STOCK, FII, BDR, CRYPTO cada um em seu próprio card.
-- **Filtro por tipo**: select de classe de ativo antes do select de ativo.
-- **Preços reais**: colunas de preço atual, valor total e % da carteira.
-- **Editar nome inline**: botão ao lado de "Voltar" no header.
-- **CompositionCharts** movido para o final da página.
-
-#### 8.2.2 PortfolioAnalysisAI
-- Novo componente na página de detalhes.
-- Botão "Gerar análise por IA" → chama `GET /api/models/opinion/{id}`.
-- Exibe: score circular colorido, label (Saudável/Atenção/Crítico), texto analítico, barras dos 5 componentes.
-- Estados de loading (spinner), erro (retry) e vazio (CTA inicial).
-
-### 8.3 Componente Button
-- Agora suporta `variant: 'primary' | 'ghost'`.
-- `ghost` exibe botão com fundo transparente e borda.
+- Backend roda na porta `8001`
+- O startup faz ingestao e aquecimento em background para nao bloquear a inicializacao
+- O BCB permanece no catalogo, mas hoje pode retornar pouco ou nada por limitacao tecnica do portal publico
