@@ -1,5 +1,5 @@
 import math
-from collections import Counter
+from collections import Counter, defaultdict
 from datetime import datetime, timedelta, timezone
 
 import pandas as pd
@@ -61,20 +61,6 @@ class AssetAnalysisService:
     def _cache_key(self, portfolio_id: str, ticker: str) -> str:
         return f"{self._cache_dir}/{portfolio_id}_{ticker.upper()}.json"
 
-    def _get_cached_analysis(self, portfolio: Portfolio, ticker: str) -> dict | None:
-        cached = self.storage.load_json(self._cache_key(portfolio.id, ticker))
-        if not cached:
-            return None
-        try:
-            generated_at = datetime.fromisoformat(str(cached.get("generated_at")).replace("Z", "+00:00"))
-            if datetime.now(timezone.utc) - generated_at > timedelta(hours=6):
-                return None
-            if cached.get("portfolio_updated_at") != portfolio.updated_at.isoformat():
-                return None
-        except Exception:
-            return None
-        return cached
-
     def _save_cached_analysis(self, portfolio: Portfolio, ticker: str, payload: dict) -> None:
         payload["portfolio_updated_at"] = portfolio.updated_at.isoformat()
         self.storage.save_json(self._cache_key(portfolio.id, ticker), payload)
@@ -101,9 +87,14 @@ class AssetAnalysisService:
     def _normalize_text(self, text: str) -> str:
         return (text or "").lower()
 
+    def _safe_dt(self, dt: datetime) -> datetime:
+        return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+
     def _matches_asset(self, news: NewsItem, meta: dict) -> tuple[bool, float]:
         ticker = meta["ticker"].upper()
-        text = self._normalize_text(f"{news.title} {news.summary} {news.content_preview}")
+        text = self._normalize_text(
+            f"{news.title} {news.summary} {news.content_preview} {news.full_text_if_available or ''}"
+        )
         aliases = [a.lower() for a in self._config.get("aliases", {}).get(ticker, [])]
         weights = self._config["weights"]
 
@@ -121,36 +112,31 @@ class AssetAnalysisService:
         if country and any(country in self._normalize_text(c) for c in news.mentioned_countries):
             score += weights["country_match"]
 
-        published = news.published_at
-        if published.tzinfo is None:
-            published = published.replace(tzinfo=timezone.utc)
+        published = self._safe_dt(news.published_at)
         age_days = max(0.0, (datetime.now(timezone.utc) - published).total_seconds() / 86400)
-        recency_score = max(0.0, 1.0 - min(age_days / 30.0, 1.0))
+        recency_score = max(0.0, 1.0 - min(age_days / 120.0, 1.0))
         score += recency_score * weights["recency"]
-
         return score > 0.15, round(min(score, 1.0), 4)
 
-    def get_related_news(self, ticker: str, limit: int = 5) -> list[dict]:
+    def get_related_news(self, ticker: str, limit: int = 20, days_back: int | None = None) -> list[dict]:
         meta = self._asset_meta(ticker)
+        now = datetime.now(timezone.utc)
         matches: list[dict] = []
         for news in self.news.get_all_raw():
             matched, match_score = self._matches_asset(news, meta)
             if not matched:
                 continue
-            matches.append({"match_score": match_score, "news": news})
-
-        def safe_published(item: dict):
-            published = item["news"].published_at
-            if published.tzinfo is None:
-                return published.replace(tzinfo=timezone.utc)
-            return published
+            published = self._safe_dt(news.published_at)
+            if days_back is not None and published < now - timedelta(days=days_back):
+                continue
+            matches.append({"match_score": match_score, "news": news, "published": published})
 
         matches.sort(
             key=lambda item: (
                 item["match_score"],
                 item["news"].impact_score,
                 item["news"].relevance_score,
-                safe_published(item),
+                item["published"],
             ),
             reverse=True,
         )
@@ -163,7 +149,7 @@ class AssetAnalysisService:
                 "title": news.title,
                 "source_name": news.source_name,
                 "source_url": news.source_url,
-                "published_at": news.published_at.isoformat(),
+                "published_at": item["published"].isoformat(),
                 "summary": news.summary,
                 "sentiment_score": news.sentiment_score,
                 "impact_score": news.impact_score,
@@ -214,6 +200,7 @@ class AssetAnalysisService:
             "change_12m_pct": round(month_12, 2) if month_12 is not None else None,
             "volatility_21d_pct": round(volatility_21d, 2) if volatility_21d is not None else None,
             "has_history": df is not None and len(df) > 5,
+            "has_3m_history": df is not None and len(df) > 63,
         }
 
     def _compute_weight_pct(self, portfolio: Portfolio, ticker: str) -> float | None:
@@ -260,7 +247,7 @@ class AssetAnalysisService:
     def _confidence(self, perf: dict, news_list: list[dict]) -> str:
         has_price = perf.get("current_price") is not None
         has_history = perf.get("has_history")
-        if has_price and has_history and len(news_list) >= 2:
+        if has_price and has_history and len(news_list) >= 4:
             return "alta"
         if has_price and (has_history or news_list):
             return "media"
@@ -298,18 +285,32 @@ class AssetAnalysisService:
             parts.append("Ha pouca noticia especifica recente, entao a leitura depende mais do comportamento de preco e da classe do ativo.")
         return " ".join(parts)
 
-    def _recent_section(self, perf: dict) -> str:
+    def _recent_section(self, perf: dict, historical_news: list[dict]) -> str:
         snippets = []
         if perf.get("change_1m_pct") is not None:
             snippets.append(f"No ultimo mes, variou {perf['change_1m_pct']:+.1f}%.")
         if perf.get("change_3m_pct") is not None:
             snippets.append(f"Em 3 meses, acumulou {perf['change_3m_pct']:+.1f}%.")
-        if perf.get("change_12m_pct") is not None:
-            snippets.append(f"Em 12 meses, esta em {perf['change_12m_pct']:+.1f}%.")
+        elif perf.get("change_12m_pct") is not None:
+            snippets.append(f"Sem serie completa de 3 meses, o historico de 12 meses indica {perf['change_12m_pct']:+.1f}%.")
         if perf.get("volatility_21d_pct") is not None:
             snippets.append(f"A volatilidade curta esta em torno de {perf['volatility_21d_pct']:.1f}% anualizada.")
+
+        if historical_news:
+            avg_sent = sum(n["sentiment_score"] for n in historical_news) / len(historical_news)
+            avg_impact = sum(n["impact_score"] for n in historical_news) / len(historical_news)
+            direction = "mais positivo" if avg_sent > 0.15 else "mais negativo" if avg_sent < -0.15 else "misto"
+            topics = self._dominant_topics(historical_news)
+            topic_text = f" Os temas que mais apareceram foram {', '.join(topics)}." if topics else ""
+            snippets.append(
+                f"No retrospecto de noticias do periodo, houve {len(historical_news)} evento(s) relevante(s), com vies {direction} e impacto medio de {avg_impact:.2f}.{topic_text}"
+            )
+            latest_titles = [n["title"] for n in historical_news[:2]]
+            if latest_titles:
+                snippets.append(f"Os destaques recentes nesse intervalo incluem: {'; '.join(latest_titles)}.")
+
         if not snippets:
-            return "Ainda nao ha historico suficiente para resumir os ultimos 3 meses com seguranca."
+            return "Sem base robusta de preco e sem noticias historicas suficientes para montar um retrospecto confiavel dos ultimos 3 meses."
         return " ".join(snippets)
 
     def _outlook_section(self, scenario: str, news_list: list[dict], meta: dict, confidence: str) -> str:
@@ -331,7 +332,6 @@ class AssetAnalysisService:
             class_tail = " Para renda fixa, a direcao de juros e a duration continuam sendo os vetores principais."
         elif meta.get("asset_class") == "CRYPTO":
             class_tail = " Para cripto, liquidez global e apetite a risco continuam pesando mais do que fundamentos tradicionais."
-
         confidence_tail = {
             "alta": " A confianca dessa leitura e alta para um horizonte curto.",
             "media": " A confianca dessa leitura e moderada.",
@@ -339,11 +339,21 @@ class AssetAnalysisService:
         }[confidence]
         return f"{base}{topics_text}{class_tail}{confidence_tail}"
 
-    def generate_asset_analysis(self, portfolio: Portfolio, ticker: str) -> dict:
-        cached = self._get_cached_analysis(portfolio, ticker)
-        if cached:
-            return cached
+    def _build_source_groups(self, sources: list[dict]) -> list[dict]:
+        grouped: dict[str, list[dict]] = defaultdict(list)
+        for item in sources:
+            grouped[item["source_name"]].append(item)
+        groups = []
+        for source_name, items in grouped.items():
+            groups.append({
+                "source_name": source_name,
+                "count": len(items),
+                "items": items,
+            })
+        groups.sort(key=lambda group: (group["count"], group["source_name"]), reverse=True)
+        return groups
 
+    def generate_asset_analysis(self, portfolio: Portfolio, ticker: str) -> dict:
         position = self._resolve_position(portfolio, ticker)
         if position is None:
             return {
@@ -352,30 +362,63 @@ class AssetAnalysisService:
                 "status": "not_found",
                 "analysis_sections": {},
                 "sources": [],
+                "source_groups": [],
                 "generated_at": datetime.now(timezone.utc).isoformat(),
             }
 
         meta = self._asset_meta(ticker)
-        related_news = self.get_related_news(ticker, limit=5)
+        all_related_news = self.get_related_news(ticker, limit=25, days_back=120)
+        current_news = all_related_news[:6]
+        historical_news = [item for item in all_related_news if self._safe_dt(datetime.fromisoformat(item["published_at"].replace("Z", "+00:00"))) >= datetime.now(timezone.utc) - timedelta(days=90)][:12]
+        outlook_news = sorted(all_related_news[:8], key=lambda item: (item["impact_score"], item["match_score"]), reverse=True)[:6]
+
+        for item in current_news:
+            item["role"] = "current"
+        for item in historical_news:
+            item["role"] = item.get("role", "historical")
+        for item in outlook_news:
+            item["role"] = item.get("role", "outlook")
+
+        used_news_map = {}
+        for item in current_news + historical_news + outlook_news:
+            used_news_map[item["id"]] = item
+        used_news = sorted(
+            used_news_map.values(),
+            key=lambda item: (
+                item["match_score"],
+                item["impact_score"],
+                item["published_at"],
+            ),
+            reverse=True,
+        )
+
         perf = self._performance_snapshot(ticker, position.avg_price)
         weight_pct = self._compute_weight_pct(portfolio, ticker)
-        confidence = self._confidence(perf, related_news)
-        scenario = self._scenario_label(perf, related_news, meta, weight_pct)
+        confidence = self._confidence(perf, used_news)
+        scenario = self._scenario_label(perf, outlook_news or used_news, meta, weight_pct)
+        now = datetime.now(timezone.utc)
 
         payload = {
             "portfolio_id": portfolio.id,
             "ticker": meta["ticker"],
             "asset_name": meta["name"],
             "asset_class": meta["asset_class"],
-            "generated_at": datetime.now(timezone.utc).isoformat(),
+            "generated_at": now.isoformat(),
+            "recomputed_at": now.isoformat(),
             "confidence": confidence,
-            "status": "ok" if perf.get("current_price") is not None or related_news else "insufficient_data",
+            "status": "ok" if perf.get("current_price") is not None or used_news else "insufficient_data",
             "current_snapshot": {
                 "current_price": perf.get("current_price"),
                 "currency": perf.get("currency"),
                 "weight_pct": weight_pct,
                 "sector": meta.get("sector"),
                 "country": meta.get("country"),
+            },
+            "historical_window": {
+                "start_date": (now - timedelta(days=90)).date().isoformat(),
+                "end_date": now.date().isoformat(),
+                "news_count": len(historical_news),
+                "has_price_history": bool(perf.get("has_3m_history")),
             },
             "recent_performance": {
                 "change_1m_pct": perf.get("change_1m_pct"),
@@ -385,14 +428,16 @@ class AssetAnalysisService:
             },
             "outlook_3m": {
                 "scenario": scenario,
-                "dominant_topics": self._dominant_topics(related_news),
+                "dominant_topics": self._dominant_topics(outlook_news or used_news),
             },
             "analysis_sections": {
-                "current": self._current_section(meta, perf, related_news, weight_pct),
-                "recent": self._recent_section(perf),
-                "outlook": self._outlook_section(scenario, related_news, meta, confidence),
+                "current": self._current_section(meta, perf, current_news or used_news, weight_pct),
+                "recent": self._recent_section(perf, historical_news or used_news),
+                "outlook": self._outlook_section(scenario, outlook_news or used_news, meta, confidence),
             },
-            "sources": related_news,
+            "used_news_count": len(used_news),
+            "sources": used_news,
+            "source_groups": self._build_source_groups(used_news),
         }
         self._save_cached_analysis(portfolio, ticker, payload)
         return payload

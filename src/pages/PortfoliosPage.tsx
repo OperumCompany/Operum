@@ -7,22 +7,52 @@ import { usePortfolios } from '../context/PortfoliosContext';
 import { getActivePortfolioSelectionLabel, getPortfolioLabel } from '../utils/portfolios';
 
 const chartColors = ['#3D4D9C', '#C7559B', '#E15EF2', '#717171', '#A5A5A5'];
+const PAGE_SIZE = 10;
+const MAX_PAGES = 5;
+const MAX_PORTFOLIOS = PAGE_SIZE * MAX_PAGES;
 
 export function PortfoliosPage() {
   const navigate = useNavigate();
-  const { portfolios, activePortfolio, activePortfolioId, setActivePortfolioId, createPortfolio, updatePortfolio, deletePortfolio, selectedPortfolios, isAllPortfoliosSelected, loading, error } = usePortfolios();
+  const {
+    portfolios,
+    activePortfolio,
+    activePortfolioId,
+    setActivePortfolioId,
+    createPortfolio,
+    updatePortfolio,
+    deletePortfolio,
+    deletePortfolios,
+    selectedPortfolios,
+    isAllPortfoliosSelected,
+    loading,
+    error,
+  } = usePortfolios();
   const [name, setName] = useState('');
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editName, setEditName] = useState('');
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [selectionMode, setSelectionMode] = useState(false);
+  const [page, setPage] = useState(1);
+
+  const composition = useMemo(
+    () => activePortfolio?.positions.map((p) => ({ name: p.ticker, value: p.quantity })) ?? [],
+    [activePortfolio],
+  );
+
+  const totalPages = Math.max(1, Math.min(MAX_PAGES, Math.ceil(portfolios.length / PAGE_SIZE)));
+  const safePage = Math.min(page, totalPages);
+  const start = (safePage - 1) * PAGE_SIZE;
+  const pagedPortfolios = portfolios.slice(start, start + PAGE_SIZE);
 
   async function handleCreatePortfolio(e: FormEvent) {
     e.preventDefault();
-    if (!name.trim()) return;
+    if (!name.trim() || portfolios.length >= MAX_PORTFOLIOS) return;
     try {
       await createPortfolio({ name: name.trim() });
       setName('');
+      setPage(1);
     } catch {
-      // error handled by context
+      // handled by context
     }
   }
 
@@ -39,25 +69,54 @@ export function PortfoliosPage() {
       setEditingId(null);
       setEditName('');
     } catch {
-      // error handled by context
+      // handled by context
     }
   }
 
-  async function handleDeletePortfolio(id: string, name: string) {
-    const confirmed = window.confirm(`Tem certeza que deseja remover a carteira "${name}"?`);
+  async function handleDeletePortfolio(id: string, portfolioName: string) {
+    const confirmed = window.confirm(`Tem certeza que deseja remover a carteira "${portfolioName}"?`);
     if (!confirmed) return;
     try {
       await deletePortfolio(id);
+      setSelectedIds((prev) => prev.filter((item) => item !== id));
     } catch {
-      // error handled by context
+      // handled by context
     }
   }
 
-  const composition = useMemo(
-    () =>
-      activePortfolio?.positions.map((p) => ({ name: p.ticker, value: p.quantity })) ?? [],
-    [activePortfolio],
-  );
+  async function handleBulkDelete() {
+    if (!selectedIds.length) return;
+    const confirmed = window.confirm(`Remover ${selectedIds.length} carteira(s) selecionada(s)?`);
+    if (!confirmed) return;
+    try {
+      await deletePortfolios(selectedIds);
+      setSelectedIds([]);
+      setSelectionMode(false);
+      const nextTotal = Math.max(0, portfolios.length - selectedIds.length);
+      const nextPages = Math.max(1, Math.min(MAX_PAGES, Math.ceil(nextTotal / PAGE_SIZE)));
+      setPage((prev) => Math.min(prev, nextPages));
+    } catch {
+      // handled by context
+    }
+  }
+
+  function togglePortfolioSelection(id: string) {
+    setSelectedIds((prev) => (
+      prev.includes(id)
+        ? prev.filter((item) => item !== id)
+        : [...prev, id]
+    ));
+  }
+
+  function toggleSelectionMode() {
+    setSelectionMode((prev) => {
+      const next = !prev;
+      if (!next) {
+        setSelectedIds([]);
+      }
+      return next;
+    });
+  }
 
   if (loading) {
     return (
@@ -87,7 +146,7 @@ export function PortfoliosPage() {
             </div>
             <h2 className="mt-4 text-3xl font-bold text-[var(--text-main)] sm:text-4xl">Comece de um jeito simples.</h2>
             <p className="mt-4 text-base leading-7 text-[var(--text-muted)]">
-              1. Crie uma carteira. 2. Adicione ativos. 3. Veja análises na plataforma.
+              1. Crie uma carteira. 2. Adicione ativos. 3. Veja analises na plataforma.
             </p>
           </div>
         </div>
@@ -98,31 +157,91 @@ export function PortfoliosPage() {
           <Card title="Criar carteira">
             <form onSubmit={handleCreatePortfolio} className="space-y-3">
               <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Ex.: Minha reserva e longo prazo" />
-              <Button type="submit" className="gap-2">
+              <Button type="submit" className="gap-2" disabled={portfolios.length >= MAX_PORTFOLIOS}>
                 <FolderPlus size={16} />
                 Salvar carteira
               </Button>
+              <p className="text-xs text-[var(--text-muted)]">
+                {portfolios.length}/{MAX_PORTFOLIOS} carteiras usadas. Limite de 5 paginas com 10 carteiras cada.
+              </p>
             </form>
           </Card>
 
-          <Card title="Carteiras salvas" right={<span className="text-sm text-[var(--text-muted)]">{portfolios.length} carteira(s)</span>}>
+          <Card
+            title="Carteiras salvas"
+            right={(
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-[var(--text-muted)]">{portfolios.length} carteira(s)</span>
+                <button
+                  type="button"
+                  onClick={toggleSelectionMode}
+                  className={`inline-flex h-10 w-10 items-center justify-center rounded-2xl border transition ${
+                    selectionMode
+                      ? 'border-[var(--danger-text)] bg-[var(--danger-text)]/10 text-[var(--danger-text)]'
+                      : 'border-[var(--border-soft)] bg-white text-[var(--text-main)] hover:border-[var(--danger-text)]/40'
+                  }`}
+                  aria-label="Ativar selecao para remover carteiras"
+                >
+                  <Trash2 size={16} />
+                </button>
+              </div>
+            )}
+          >
             {portfolios.length === 0 && (
               <p className="py-4 text-sm text-[var(--text-muted)]">Nenhuma carteira ainda. Crie a primeira acima.</p>
             )}
+
+            {portfolios.length > 0 && selectionMode && (
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3">
+                <p className="text-sm text-[var(--text-main)]">
+                  Clique nos blocos das carteiras para selecionar as que deseja excluir.
+                </p>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-xs text-[var(--text-muted)]">{selectedIds.length} selecionada(s)</span>
+                  <Button type="button" variant="ghost" disabled={!selectedIds.length} onClick={handleBulkDelete}>
+                    <Trash2 size={15} />
+                    Remover selecionadas
+                  </Button>
+                  <Button type="button" variant="ghost" onClick={toggleSelectionMode}>
+                    Cancelar
+                  </Button>
+                </div>
+              </div>
+            )}
+
             <div className="space-y-3">
-              {portfolios.map((portfolio) => {
+              {pagedPortfolios.map((portfolio) => {
                 const isEditing = editingId === portfolio.id;
                 const isActive = activePortfolioId === portfolio.id;
-                const totalQuantity = portfolio.positions.reduce((s, p) => s + p.quantity, 0);
+                const totalQuantity = portfolio.positions.reduce((sum, position) => sum + position.quantity, 0);
+                const isSelected = selectedIds.includes(portfolio.id);
 
                 return (
-                  <article key={portfolio.id} className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4">
+                  <article
+                    key={portfolio.id}
+                    className={`rounded-[24px] border bg-[var(--bg-surface-strong)] p-4 ${
+                      selectionMode ? 'cursor-pointer transition' : ''
+                    } ${
+                      isSelected
+                        ? 'border-[var(--danger-text)] ring-2 ring-[var(--danger-text)]/20'
+                        : 'border-[var(--border-soft)]'
+                    }`}
+                    onClick={() => {
+                      if (selectionMode && !isEditing) {
+                        togglePortfolioSelection(portfolio.id);
+                      }
+                    }}
+                  >
                     {isEditing ? (
-                      <form onSubmit={saveEdit} className="space-y-3">
+                      <form onSubmit={saveEdit} className="space-y-3" onClick={(e) => e.stopPropagation()}>
                         <Input value={editName} onChange={(e) => setEditName(e.target.value)} placeholder="Nome da carteira" />
                         <div className="flex flex-wrap gap-2">
                           <Button type="submit">Salvar</Button>
-                          <Button type="button" className="bg-[#717171] shadow-none hover:bg-[#3E3E3E]" onClick={() => setEditingId(null)}>
+                          <Button
+                            type="button"
+                            className="bg-[#717171] shadow-none hover:bg-[#3E3E3E]"
+                            onClick={() => setEditingId(null)}
+                          >
                             Cancelar
                           </Button>
                         </div>
@@ -133,33 +252,63 @@ export function PortfoliosPage() {
                           <div>
                             <div className="flex flex-wrap items-center gap-2">
                               <p className="text-lg font-semibold text-[var(--text-main)]">{getPortfolioLabel(portfolio)}</p>
-                              {isActive && <span className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-xs font-semibold text-[var(--accent)]">Ativa</span>}
+                              {isActive && (
+                                <span className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-xs font-semibold text-[var(--accent)]">
+                                  Ativa
+                                </span>
+                              )}
+                              {selectionMode && isSelected && (
+                                <span className="rounded-full bg-[var(--danger-text)]/10 px-3 py-1 text-xs font-semibold text-[var(--danger-text)]">
+                                  Selecionada
+                                </span>
+                              )}
                             </div>
                           </div>
                           {!isActive && (
                             <button
                               type="button"
                               className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--text-main)]"
-                              onClick={() => setActivePortfolioId(portfolio.id)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setActivePortfolioId(portfolio.id);
+                              }}
                             >
-                              Usar na análise
+                              Usar na analise
                             </button>
                           )}
                         </div>
+
                         <p className="mt-2 text-xs uppercase tracking-[0.14em] text-[var(--text-muted)]">
                           {portfolio.positions.length} ativo(s) • {totalQuantity.toFixed(0)} unidades
                         </p>
+
                         <div className="mt-4 flex flex-wrap gap-2">
-                          <Button type="button" onClick={() => navigate(`/carteiras/${portfolio.id}`)}>
+                          <Button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              navigate(`/carteiras/${portfolio.id}`);
+                            }}
+                          >
                             Abrir carteira
                           </Button>
-                          <button type="button" className="rounded-2xl border border-[var(--border-soft)] px-4 py-2.5 text-sm font-semibold" onClick={() => startEdit(portfolio)}>
+                          <button
+                            type="button"
+                            className="rounded-2xl border border-[var(--border-soft)] px-4 py-2.5 text-sm font-semibold"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              startEdit(portfolio);
+                            }}
+                          >
                             Editar
                           </button>
                           <button
                             type="button"
                             className="inline-flex items-center gap-2 rounded-2xl border border-[var(--danger-text)]/25 px-4 py-2.5 text-sm font-semibold text-[var(--danger-text)]"
-                            onClick={() => handleDeletePortfolio(portfolio.id, portfolio.name)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleDeletePortfolio(portfolio.id, portfolio.name);
+                            }}
                           >
                             <Trash2 size={15} />
                             Remover
@@ -171,6 +320,34 @@ export function PortfoliosPage() {
                 );
               })}
             </div>
+
+            {portfolios.length > PAGE_SIZE && (
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+                <p className="text-sm text-[var(--text-muted)]">Pagina {safePage} de {totalPages}</p>
+                <div className="flex items-center gap-2">
+                  <Button type="button" variant="ghost" disabled={safePage === 1} onClick={() => setPage((prev) => Math.max(1, prev - 1))}>
+                    ←
+                  </Button>
+                  {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
+                    <button
+                      key={pageNumber}
+                      type="button"
+                      onClick={() => setPage(pageNumber)}
+                      className={`rounded-2xl px-3 py-2 text-sm font-semibold transition ${
+                        pageNumber === safePage
+                          ? 'bg-[var(--brand)] text-white'
+                          : 'border border-[var(--border-soft)] bg-white text-[var(--text-main)]'
+                      }`}
+                    >
+                      {pageNumber}
+                    </button>
+                  ))}
+                  <Button type="button" variant="ghost" disabled={safePage === totalPages} onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}>
+                    →
+                  </Button>
+                </div>
+              </div>
+            )}
           </Card>
         </div>
 
@@ -181,8 +358,8 @@ export function PortfoliosPage() {
             </p>
             <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
               {isAllPortfoliosSelected
-                ? `Entenda rapidamente como as ${selectedPortfolios.length} carteiras estão divididas hoje.`
-                : 'Entenda rapidamente como essa carteira está dividida hoje.'}
+                ? `Entenda rapidamente como as ${selectedPortfolios.length} carteiras estao divididas hoje.`
+                : 'Entenda rapidamente como essa carteira esta dividida hoje.'}
             </p>
             <div className="mt-4 h-64">
               {!!composition.length && (
@@ -197,7 +374,7 @@ export function PortfoliosPage() {
                   </PieChart>
                 </ResponsiveContainer>
               )}
-              {!composition.length && <p className="text-sm text-[var(--text-muted)]">A seleção atual ainda não possui ativos.</p>}
+              {!composition.length && <p className="text-sm text-[var(--text-muted)]">A selecao atual ainda nao possui ativos.</p>}
             </div>
             <Button
               type="button"

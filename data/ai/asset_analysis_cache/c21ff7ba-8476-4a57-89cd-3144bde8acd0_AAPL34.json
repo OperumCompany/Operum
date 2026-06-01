@@ -3,7 +3,7 @@
   "ticker": "AAPL34",
   "asset_name": "Apple BDR",
   "asset_class": "US_STOCK",
-  "generated_at": "2026-05-31T03:45:38.752069+00:00",
+  "generated_at": "2026-06-01T00:49:02.920868+00:00",
   "confidence": "media",
   "status": "ok",
   "current_snapshot": {
@@ -20,77 +20,74 @@
     "volatility_21d_pct": null
   },
   "outlook_3m": {
-    "scenario": "pressionado",
-    "dominant_topics": [
-      "cambio",
-      "juros"
-    ]
+    "scenario": "neutro",
+    "dominant_topics": []
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao mercado americano e ao ciclo global de juros, dólar e crescimento. Cotacao atual aproximada em BRL 78.80. Hoje representa cerca de 4.4% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.33.",
+    "current": "O ativo está exposto ao mercado americano e ao ciclo global de juros, dólar e crescimento. Cotacao atual aproximada em BRL 78.80. Hoje representa cerca de 4.4% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.34.",
     "recent": "Ainda nao ha historico suficiente para resumir os ultimos 3 meses com seguranca.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. Os temas dominantes hoje sao cambio, juros. A confianca dessa leitura e moderada."
+    "outlook": "A perspectiva de 3 meses e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. A confianca dessa leitura e moderada."
   },
   "sources": [
     {
-      "id": "49f33dd8b5d27d450943aaaf91773efc",
-      "title": "Meteoro explode no céu dos EUA e provoca tremores relatados em várias cidades",
+      "id": "b3f2b60c1cd7872a630070a754d402e6",
+      "title": "Nome de Bluetooth ativa protocolo de segurança e faz avião dar meia-volta nos EUA",
       "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mundo/meteoro-explode-no-ceu-dos-eua-e-provoca-tremores-relatados-em-varias-cidades/",
-      "published_at": "2026-05-31T02:54:08.039041+00:00",
-      "summary": "Apesar do susto causado em várias regiões, autoridades não identificaram danos The post Meteoro explode no céu dos EUA e provoca tremores relatados em várias cidades appeared first on InfoMoney.",
+      "source_url": "https://www.infomoney.com.br/mundo/nome-de-bluetooth-ativa-protocolo-de-seguranca-e-faz-aviao-dar-meia-volta-nos-eua/",
+      "published_at": "2026-06-01T00:37:04.345437+00:00",
+      "summary": "Aeronave que seguia para Palma de Mallorca voltou cerca de uma hora após a decolagem; entenda o caso InfoMoney.\n\nO foco principal passa por Tecnologia.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.3
+    },
+    {
+      "id": "5b24c9c5ec49fa07622fdb55d20e0e45",
+      "title": "Brasil atropela o Panamá em último amistoso diante da torcida antes da Copa",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/esportes/brasil-atropela-o-panama-em-ultimo-amistoso-diante-da-torcida-antes-da-copa/",
+      "published_at": "2026-06-01T00:37:04.344491+00:00",
+      "summary": "Após placar de 6 a 2, Seleção embarca para os Estados Unidos para último amisto, contra o Egito InfoMoney.\n\nO foco principal passa por Tecnologia.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.3
+    },
+    {
+      "id": "f07e56f2d2fb727685207f9e35102ea2",
+      "title": "EUA indicam que estão prestes a concluir investigação comercial contra o Brasil",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/eua-indicam-que-estao-prestes-a-concluir-investigacao-comercial-contra-o-brasil.shtml",
+      "published_at": "2026-06-01T00:37:04.342786+00:00",
+      "summary": "EUA indicam que estão prestes a concluir investigação comercial contra o Brasil.\n\nO foco principal passa por Tecnologia.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.3
+    },
+    {
+      "id": "c8a6c22af036def0c570db245175ba5b",
+      "title": "EUA bloqueiam vendas de chips de IA da NVIDIA a empresas chinesas fora da China",
+      "source_name": "Todas as Notícias",
+      "source_url": "https://br.investing.com/news/stock-market-news/eua-bloqueiam-vendas-de-chips-de-ia-da-nvidia-a-empresas-chinesas-fora-da-china-1957399",
+      "published_at": "2026-05-31T23:59:39+00:00",
+      "summary": "EUA bloqueiam vendas de chips de IA da NVIDIA a empresas chinesas fora da China.\n\nO foco principal passa por Tecnologia.",
       "sentiment_score": -0.1,
       "impact_score": 0.28,
       "relevance_score": 0.5,
       "match_score": 0.2999
     },
     {
-      "id": "ab4c9901b71cf86533d19d91ce97f636",
-      "title": "Negociações EUA-Irã esbarram em impasses enquanto conflito no Líbano se intensifica",
-      "source_name": "Todas as Notícias",
-      "source_url": "https://br.investing.com/news/economy-news/negociacoes-euaira-esbarram-em-impasses-enquanto-conflito-no-libano-se-intensifica-1957256",
-      "published_at": "2026-05-31T01:23:02",
-      "summary": "Negociações EUA-Irã esbarram em impasses enquanto conflito no Líbano se intensifica.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
-      "relevance_score": 0.5,
-      "match_score": 0.2997
-    },
-    {
-      "id": "ffb970b59925d8e2ab7817d0ab9dd3a5",
-      "title": "Ibovespa e dólar hoje: mercado avalia fiscal em dia de feriado nos EUA",
-      "source_name": "Todas as Notícias",
-      "source_url": "https://br.investing.com/news/stock-market-news/ibovespa-e-dolar-hoje-mercado-avalia-fiscal-em-dia-de-feriado-nos-eua-1950999",
-      "published_at": "2026-05-25T10:30:15",
-      "summary": "Ibovespa e dólar hoje: mercado avalia fiscal em dia de feriado nos EUA.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
-      "relevance_score": 0.5,
-      "match_score": 0.2809
-    },
-    {
-      "id": "65cf6d31773f415e41b47613a649a7fb",
-      "title": "Acordo com Irã pode abrir espaço para Fed cortar juros, diz Hassett",
+      "id": "919533bf840502e174106d5df59d7690",
+      "title": "Relatórios",
       "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mundo/acordo-com-ira-pode-abrir-espaco-para-fed-cortar-juros-diz-hassett/",
-      "published_at": "2026-05-25T01:19:05.970942+00:00",
-      "summary": "A fala acontece após Trump afirmar que as negociações com Teerã avançaram de forma \"ordenada e construtiva\" The post Acordo com Irã pode abrir espaço para Fed cortar juros, diz Hassett appeared first ",
-      "sentiment_score": -1.0,
-      "impact_score": 0.55,
+      "source_url": "https://www.infomoney.com.br/conteudos/relatorios/",
+      "published_at": "2026-05-31T04:04:31.951890+00:00",
+      "summary": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Relatórios Cursos E-books Planilhas Relatórios Simuladores Aprenda investir em ouroTudo que você precisa saber para proteger sua carteira com o metal precioso.\n\nO texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2797
-    },
-    {
-      "id": "c358f7541295dcc5e000144740406a23",
-      "title": "Maduro envia, de sua prisão nos EUA, mensagem de unidade ao povo da Venezuela",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mundo/maduro-envia-de-sua-prisao-nos-eua-mensagem-de-unidade-ao-povo-da-venezuela/",
-      "published_at": "2026-05-25T01:19:05.970942+00:00",
-      "summary": "O líder venezuelano pede \"pela paz, pela prosperidade e pela liberdade de todos nós\" The post Maduro envia, de sua prisão nos EUA, mensagem de unidade ao povo da Venezuela appeared first on InfoMoney.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
-      "relevance_score": 0.5,
-      "match_score": 0.2797
+      "match_score": 0.2971
     }
   ],
   "portfolio_updated_at": "2026-05-25T01:56:49.326099+00:00"

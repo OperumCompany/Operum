@@ -1,16 +1,16 @@
 {
-  "portfolio_id": "c21ff7ba-8476-4a57-89cd-3144bde8acd0",
+  "portfolio_id": "004a7a99-ea92-4456-974f-fcd646cd1c82",
   "ticker": "PETR4",
   "asset_name": "Petrobras PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T03:48:40.477631+00:00",
-  "recomputed_at": "2026-06-01T03:48:40.477631+00:00",
+  "generated_at": "2026-06-01T02:57:03.555198+00:00",
+  "recomputed_at": "2026-06-01T02:57:03.555198+00:00",
   "confidence": "media",
   "status": "ok",
   "current_snapshot": {
     "current_price": 42.0,
     "currency": "BRL",
-    "weight_pct": 7.81,
+    "weight_pct": 35.04,
     "sector": "Petróleo e Gás",
     "country": "BR"
   },
@@ -27,13 +27,15 @@
     "volatility_21d_pct": null
   },
   "outlook_3m": {
-    "scenario": "neutro",
-    "dominant_topics": []
+    "scenario": "concentrado",
+    "dominant_topics": [
+      "cambio"
+    ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 42.00. Hoje representa cerca de 7.8% da carteira. As noticias recentes tem vies misto e impacto medio de 0.50.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 42.00. Hoje representa cerca de 35.0% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.45.",
     "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.43. Os temas que mais apareceram foram cambio. Os destaques recentes nesse intervalo incluem: Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
-    "outlook": "A perspectiva de 3 meses e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. A confianca dessa leitura e moderada."
+    "outlook": "A perspectiva de 3 meses precisa ser lida junto com o peso elevado na carteira, porque qualquer oscilacao tera impacto relevante no conjunto. Os temas dominantes hoje sao cambio. A confianca dessa leitura e moderada."
   },
   "used_news_count": 12,
   "sources": [
@@ -103,6 +105,45 @@
       "role": "current"
     },
     {
+      "id": "605fa921e3adf0f4949e3f78bc674316",
+      "title": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/crime-custa-ao-menos-r-107-bi-a-industria-brasileira-mostra-cni.shtml",
+      "published_at": "2026-06-01T02:10:35.320489+00:00",
+      "summary": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI.\n\nO foco principal passa por Tecnologia.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.2,
+      "role": "current"
+    },
+    {
+      "id": "914dce4c0b593c2004474e31be229812",
+      "title": "Quando João Fonseca volta a jogar em Roland Garros?",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/esportes/quando-joao-fonseca-volta-a-jogar-em-roland-garros/",
+      "published_at": "2026-06-01T02:10:35.320489+00:00",
+      "summary": "Adversário do brasileiro nas quartas é outro talento da nova geração do tênis: Mensik InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.2,
+      "role": "historical"
+    },
+    {
+      "id": "cdd54ab6f842bca1968858f16944c50f",
+      "title": "Futuros em Wall Street iniciam junho estáveis enquanto petróleo avança",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/futuros-em-wall-street-iniciam-junho-estaveis-enquanto-petroleo-avanca/",
+      "published_at": "2026-06-01T02:10:35.320489+00:00",
+      "summary": "Negociações para estender o cessar-fogo e reabrir o Estreito de Ormuz seguem sem clareza e impactam mercados InfoMoney.\n\nO foco principal passa por Petróleo e Gás, Tecnologia.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.2,
+      "role": "historical"
+    },
+    {
       "id": "ac903b24492fe7646a7b72a477465128",
       "title": "Com Guga na arquibancada, João Fonseca celebra vitória e exalta o ídolo",
       "source_name": "InfoMoney",
@@ -113,7 +154,7 @@
       "impact_score": 0.55,
       "relevance_score": 0.5,
       "match_score": 0.1999,
-      "role": "current"
+      "role": "historical"
     },
     {
       "id": "10fae51991383fcc408ca6dc902c96aa",
@@ -137,45 +178,6 @@
       "summary": "Preços do petróleo sobem com escalada do conflito entre Israel e Líbano.\n\nO foco principal passa por Petróleo e Gás.",
       "sentiment_score": 1.0,
       "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.1999,
-      "role": "historical"
-    },
-    {
-      "id": "605fa921e3adf0f4949e3f78bc674316",
-      "title": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/crime-custa-ao-menos-r-107-bi-a-industria-brasileira-mostra-cni.shtml",
-      "published_at": "2026-06-01T02:10:35.320489+00:00",
-      "summary": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI.\n\nO foco principal passa por Tecnologia.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
-      "relevance_score": 0.5,
-      "match_score": 0.1999,
-      "role": "historical"
-    },
-    {
-      "id": "914dce4c0b593c2004474e31be229812",
-      "title": "Quando João Fonseca volta a jogar em Roland Garros?",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/esportes/quando-joao-fonseca-volta-a-jogar-em-roland-garros/",
-      "published_at": "2026-06-01T02:10:35.320489+00:00",
-      "summary": "Adversário do brasileiro nas quartas é outro talento da nova geração do tênis: Mensik InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
-      "relevance_score": 0.5,
-      "match_score": 0.1999,
-      "role": "historical"
-    },
-    {
-      "id": "cdd54ab6f842bca1968858f16944c50f",
-      "title": "Futuros em Wall Street iniciam junho estáveis enquanto petróleo avança",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/futuros-em-wall-street-iniciam-junho-estaveis-enquanto-petroleo-avanca/",
-      "published_at": "2026-06-01T02:10:35.320489+00:00",
-      "summary": "Negociações para estender o cessar-fogo e reabrir o Estreito de Ormuz seguem sem clareza e impactam mercados InfoMoney.\n\nO foco principal passa por Petróleo e Gás, Tecnologia.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
       "relevance_score": 0.5,
       "match_score": 0.1999,
       "role": "historical"
@@ -226,19 +228,6 @@
           "role": "current"
         },
         {
-          "id": "ac903b24492fe7646a7b72a477465128",
-          "title": "Com Guga na arquibancada, João Fonseca celebra vitória e exalta o ídolo",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/esportes/com-guga-na-arquibancada-joao-fonseca-celebra-vitoria-e-exalta-o-idolo/",
-          "published_at": "2026-06-01T00:37:04.344491+00:00",
-          "summary": "Brasileiro disse que foi especial vencer com o tricampeão nas arquibancadas e lembrou a presença dele em sua estreia no torneio InfoMoney.\n\nO foco principal passa por Tecnologia.",
-          "sentiment_score": 1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.1999,
-          "role": "current"
-        },
-        {
           "id": "914dce4c0b593c2004474e31be229812",
           "title": "Quando João Fonseca volta a jogar em Roland Garros?",
           "source_name": "InfoMoney",
@@ -248,7 +237,7 @@
           "sentiment_score": -0.1,
           "impact_score": 0.28,
           "relevance_score": 0.5,
-          "match_score": 0.1999,
+          "match_score": 0.2,
           "role": "historical"
         },
         {
@@ -260,6 +249,19 @@
           "summary": "Negociações para estender o cessar-fogo e reabrir o Estreito de Ormuz seguem sem clareza e impactam mercados InfoMoney.\n\nO foco principal passa por Petróleo e Gás, Tecnologia.",
           "sentiment_score": -0.1,
           "impact_score": 0.28,
+          "relevance_score": 0.5,
+          "match_score": 0.2,
+          "role": "historical"
+        },
+        {
+          "id": "ac903b24492fe7646a7b72a477465128",
+          "title": "Com Guga na arquibancada, João Fonseca celebra vitória e exalta o ídolo",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/esportes/com-guga-na-arquibancada-joao-fonseca-celebra-vitoria-e-exalta-o-idolo/",
+          "published_at": "2026-06-01T00:37:04.344491+00:00",
+          "summary": "Brasileiro disse que foi especial vencer com o tricampeão nas arquibancadas e lembrou a presença dele em sua estreia no torneio InfoMoney.\n\nO foco principal passa por Tecnologia.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
           "relevance_score": 0.5,
           "match_score": 0.1999,
           "role": "historical"
@@ -342,6 +344,19 @@
           "role": "current"
         },
         {
+          "id": "605fa921e3adf0f4949e3f78bc674316",
+          "title": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/crime-custa-ao-menos-r-107-bi-a-industria-brasileira-mostra-cni.shtml",
+          "published_at": "2026-06-01T02:10:35.320489+00:00",
+          "summary": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI.\n\nO foco principal passa por Tecnologia.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.28,
+          "relevance_score": 0.5,
+          "match_score": 0.2,
+          "role": "current"
+        },
+        {
           "id": "10fae51991383fcc408ca6dc902c96aa",
           "title": "Petróleo abre em alta em meio a incertezas sobre guerra no Irã",
           "source_name": "Folha.com - Mercado - Principal",
@@ -353,22 +368,9 @@
           "relevance_score": 0.5,
           "match_score": 0.1999,
           "role": "historical"
-        },
-        {
-          "id": "605fa921e3adf0f4949e3f78bc674316",
-          "title": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/crime-custa-ao-menos-r-107-bi-a-industria-brasileira-mostra-cni.shtml",
-          "published_at": "2026-06-01T02:10:35.320489+00:00",
-          "summary": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI.\n\nO foco principal passa por Tecnologia.",
-          "sentiment_score": -0.1,
-          "impact_score": 0.28,
-          "relevance_score": 0.5,
-          "match_score": 0.1999,
-          "role": "historical"
         }
       ]
     }
   ],
-  "portfolio_updated_at": "2026-05-25T01:56:49.326099+00:00"
+  "portfolio_updated_at": "2026-06-01T02:57:02.902457+00:00"
 }

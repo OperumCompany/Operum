@@ -1,17 +1,17 @@
 {
-  "portfolio_id": "c21ff7ba-8476-4a57-89cd-3144bde8acd0",
-  "ticker": "VALE3",
-  "asset_name": "Vale ON",
-  "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T03:48:27.548921+00:00",
-  "recomputed_at": "2026-06-01T03:48:27.548921+00:00",
+  "portfolio_id": "004a7a99-ea92-4456-974f-fcd646cd1c82",
+  "ticker": "HGLG11",
+  "asset_name": "CSHG Logística",
+  "asset_class": "FII",
+  "generated_at": "2026-06-01T02:57:03.856112+00:00",
+  "recomputed_at": "2026-06-01T02:57:03.856112+00:00",
   "confidence": "media",
   "status": "ok",
   "current_snapshot": {
-    "current_price": 82.82,
+    "current_price": 155.71,
     "currency": "BRL",
-    "weight_pct": 12.31,
-    "sector": "Mineração",
+    "weight_pct": 64.96,
+    "sector": "Logística",
     "country": "BR"
   },
   "historical_window": {
@@ -27,15 +27,15 @@
     "volatility_21d_pct": null
   },
   "outlook_3m": {
-    "scenario": "neutro",
+    "scenario": "concentrado",
     "dominant_topics": [
       "cambio"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 82.82. Hoje representa cerca de 12.3% da carteira. As noticias recentes tem vies misto e impacto medio de 0.33.",
-    "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.33. Os temas que mais apareceram foram cambio. Os destaques recentes nesse intervalo incluem: Ibovespa e dólar hoje: Trump adia acordo com Irã pré-semana de emprego nos EUA; Com Guga na arquibancada, João Fonseca celebra vitória e exalta o ídolo.",
-    "outlook": "A perspectiva de 3 meses e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. Os temas dominantes hoje sao cambio. A confianca dessa leitura e moderada."
+    "current": "O ativo é um fundo imobiliário e depende de renda, qualidade do portfólio e sensibilidade a juros. Cotacao atual aproximada em BRL 155.71. Hoje representa cerca de 65.0% da carteira. As noticias recentes tem vies misto e impacto medio de 0.33.",
+    "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.33. Os temas que mais apareceram foram cambio. Os destaques recentes nesse intervalo incluem: Ibovespa e dólar hoje: Trump adia acordo com Irã pré-semana de emprego nos EUA; Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI.",
+    "outlook": "A perspectiva de 3 meses precisa ser lida junto com o peso elevado na carteira, porque qualquer oscilacao tera impacto relevante no conjunto. Os temas dominantes hoje sao cambio. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. A confianca dessa leitura e moderada."
   },
   "used_news_count": 12,
   "sources": [
@@ -53,19 +53,6 @@
       "role": "current"
     },
     {
-      "id": "ac903b24492fe7646a7b72a477465128",
-      "title": "Com Guga na arquibancada, João Fonseca celebra vitória e exalta o ídolo",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/esportes/com-guga-na-arquibancada-joao-fonseca-celebra-vitoria-e-exalta-o-idolo/",
-      "published_at": "2026-06-01T00:37:04.344491+00:00",
-      "summary": "Brasileiro disse que foi especial vencer com o tricampeão nas arquibancadas e lembrou a presença dele em sua estreia no torneio InfoMoney.\n\nO foco principal passa por Tecnologia.",
-      "sentiment_score": 1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.1999,
-      "role": "current"
-    },
-    {
       "id": "605fa921e3adf0f4949e3f78bc674316",
       "title": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI",
       "source_name": "Folha.com - Mercado - Principal",
@@ -75,7 +62,7 @@
       "sentiment_score": -0.1,
       "impact_score": 0.28,
       "relevance_score": 0.5,
-      "match_score": 0.1999,
+      "match_score": 0.2,
       "role": "current"
     },
     {
@@ -87,6 +74,19 @@
       "summary": "Adversário do brasileiro nas quartas é outro talento da nova geração do tênis: Mensik InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
       "sentiment_score": -0.1,
       "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.2,
+      "role": "current"
+    },
+    {
+      "id": "ac903b24492fe7646a7b72a477465128",
+      "title": "Com Guga na arquibancada, João Fonseca celebra vitória e exalta o ídolo",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/esportes/com-guga-na-arquibancada-joao-fonseca-celebra-vitoria-e-exalta-o-idolo/",
+      "published_at": "2026-06-01T00:37:04.344491+00:00",
+      "summary": "Brasileiro disse que foi especial vencer com o tricampeão nas arquibancadas e lembrou a presença dele em sua estreia no torneio InfoMoney.\n\nO foco principal passa por Tecnologia.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.55,
       "relevance_score": 0.5,
       "match_score": 0.1999,
       "role": "current"
@@ -202,19 +202,6 @@
       "count": 6,
       "items": [
         {
-          "id": "ac903b24492fe7646a7b72a477465128",
-          "title": "Com Guga na arquibancada, João Fonseca celebra vitória e exalta o ídolo",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/esportes/com-guga-na-arquibancada-joao-fonseca-celebra-vitoria-e-exalta-o-idolo/",
-          "published_at": "2026-06-01T00:37:04.344491+00:00",
-          "summary": "Brasileiro disse que foi especial vencer com o tricampeão nas arquibancadas e lembrou a presença dele em sua estreia no torneio InfoMoney.\n\nO foco principal passa por Tecnologia.",
-          "sentiment_score": 1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.1999,
-          "role": "current"
-        },
-        {
           "id": "914dce4c0b593c2004474e31be229812",
           "title": "Quando João Fonseca volta a jogar em Roland Garros?",
           "source_name": "InfoMoney",
@@ -223,6 +210,19 @@
           "summary": "Adversário do brasileiro nas quartas é outro talento da nova geração do tênis: Mensik InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
           "sentiment_score": -0.1,
           "impact_score": 0.28,
+          "relevance_score": 0.5,
+          "match_score": 0.2,
+          "role": "current"
+        },
+        {
+          "id": "ac903b24492fe7646a7b72a477465128",
+          "title": "Com Guga na arquibancada, João Fonseca celebra vitória e exalta o ídolo",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/esportes/com-guga-na-arquibancada-joao-fonseca-celebra-vitoria-e-exalta-o-idolo/",
+          "published_at": "2026-06-01T00:37:04.344491+00:00",
+          "summary": "Brasileiro disse que foi especial vencer com o tricampeão nas arquibancadas e lembrou a presença dele em sua estreia no torneio InfoMoney.\n\nO foco principal passa por Tecnologia.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
           "relevance_score": 0.5,
           "match_score": 0.1999,
           "role": "current"
@@ -340,7 +340,7 @@
           "sentiment_score": -0.1,
           "impact_score": 0.28,
           "relevance_score": 0.5,
-          "match_score": 0.1999,
+          "match_score": 0.2,
           "role": "current"
         },
         {
@@ -372,5 +372,5 @@
       ]
     }
   ],
-  "portfolio_updated_at": "2026-05-25T01:56:49.326099+00:00"
+  "portfolio_updated_at": "2026-06-01T02:57:02.902457+00:00"
 }

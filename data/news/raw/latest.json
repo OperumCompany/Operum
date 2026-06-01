@@ -1,5 +1,1273 @@
 [
   {
+    "id": "d5ecd4095bbeedf34cc9a96a0f42d8c8",
+    "title": "Ibovespa e dólar hoje: Trump adia acordo com Irã pré-semana de emprego nos EUA",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/stock-market-news/ibovespa-e-dolar-hoje-trump-adia-acordo-com-ira-presemana-de-emprego-nos-eua-1956852",
+    "published_at": "2026-06-01T10:00:00Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia",
+      "Economia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia",
+      "Economia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ibovespa e dólar hoje: Trump adia acordo com Irã pré-semana de emprego nos EUA.\n\nO foco principal passa por Tecnologia, Economia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "432b0f946501e40d8fa4fd72a327bccc",
+    "title": "O alerta de Mastrorosa para quem comprou imóvel na planta",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/blogs/de-grao-em-grao/2026/05/o-alerta-de-mastrorosa-para-quem-comprou-imovel-na-planta.shtml",
+    "published_at": "2026-06-01T03:04:43.716173Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O alerta de Mastrorosa para quem comprou imóvel na planta.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T03:04:43.716173Z"
+  },
+  {
+    "id": "f84df15e5cbb9dd692d5d7c5cfb647c7",
+    "title": "Opinião - Marcos de Vasconcellos: Lobo terá R$ 1 bi na CVM para caçar lobos de Wall Street genéricos",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/colunas/marcos-de-vasconcellos/2026/05/lobo-tera-r-1-bi-na-cvm-para-cacar-lobos-de-wall-street-genericos.shtml",
+    "published_at": "2026-06-01T02:47:19.478680Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Opinião - Marcos de Vasconcellos: Lobo terá R$ 1 bi na CVM para caçar lobos de Wall Street genéricos.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:47:19.478680Z"
+  },
+  {
+    "id": "8affda0d4ea97c17f55264964f32b380",
+    "title": "Ações da LG disparam para máximas históricas com especulações sobre parceria com a Nvidia",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/stock-market-news/acoes-da-lg-disparam-para-maximas-historicas-com-especulacoes-sobre-parceria-com-a-nvidia-1957426",
+    "published_at": "2026-06-01T02:39:39Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ações da LG disparam para máximas históricas com especulações sobre parceria com a Nvidia.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T03:04:43.718178Z"
+  },
+  {
+    "id": "89ef2bd81cecaf437ac52ff34a11cb86",
+    "title": "Influenciadores certificados de finanças ganham primeiro ranking; veja lista",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/influenciadores-certificados-de-financas-ganham-primeiro-ranking-veja-lista.shtml",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Influenciadores certificados de finanças ganham primeiro ranking; veja lista.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "1de694ed1a281c291a9c68613c6abf3a",
+    "title": "Decisão dos EUA tem efeito incerto sobre Pix, e governo teme eventuais sanções a instituições financeiras",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/decisao-dos-eua-tem-efeito-incerto-sobre-pix-e-governo-teme-eventuais-sancoes-a-instituicoes-financeiras.shtml",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Decisão dos EUA tem efeito incerto sobre Pix, e governo teme eventuais sanções a instituições financeiras.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "605fa921e3adf0f4949e3f78bc674316",
+    "title": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/crime-custa-ao-menos-r-107-bi-a-industria-brasileira-mostra-cni.shtml",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "40f046b17da9d7d5262211e95589da94",
+    "title": "Receita volta a receber declarações do Imposto de Renda 2026; veja como é a multa para quem atrasou",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/receita-volta-a-receber-declaracoes-do-imposto-de-renda-2026-veja-como-e-a-multa-para-quem-atrasou.shtml",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Receita volta a receber declarações do Imposto de Renda 2026; veja como é a multa para quem atrasou.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "8af6ecf58c545b0265f33358885fea40",
+    "title": "Berkshire Hathaway compra construtora Taylor Morrison por US$ 8,5 bilhões",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/berkshire-hathaway-compra-construtora-taylor-morrison-por-us-85-bilhoes.shtml",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Berkshire Hathaway compra construtora Taylor Morrison por US$ 8,5 bilhões.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "914dce4c0b593c2004474e31be229812",
+    "title": "Quando João Fonseca volta a jogar em Roland Garros?",
+    "subtitle": null,
+    "content_preview": "Adversário do brasileiro nas quartas é outro talento da nova geração do tênis: Mensik InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/esportes/quando-joao-fonseca-volta-a-jogar-em-roland-garros/",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Adversário do brasileiro nas quartas é outro talento da nova geração do tênis: Mensik InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "b61777d4ce4aeed2d02964091b49b3da",
+    "title": "Trump volta a dizer que acordo de paz envolve Irã não possuir uma arma nuclear",
+    "subtitle": null,
+    "content_preview": "Presidente explicou motivos do esperado acordo ainda não ter sido efetivado InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mundo/trump-volta-a-dizer-que-acordo-de-paz-envolve-ira-nao-possuir-uma-arma-nuclear/",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Presidente explicou motivos do esperado acordo ainda não ter sido efetivado InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "4531ab27fa15f3fa87da8afd35253d7f",
+    "title": "Petro diz não aceitar resultados preliminares da contagem de votos na Colômbia",
+    "subtitle": null,
+    "content_preview": "Apuração indica que país terá 2º turno entre o conservador De la Espriella e o progressista Cepeda InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mundo/petro-diz-nao-aceitar-resultados-preliminares-da-contagem-de-votos-na-colombia/",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Apuração indica que país terá 2º turno entre o conservador De la Espriella e o progressista Cepeda InfoMoney.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "cdd54ab6f842bca1968858f16944c50f",
+    "title": "Futuros em Wall Street iniciam junho estáveis enquanto petróleo avança",
+    "subtitle": null,
+    "content_preview": "Negociações para estender o cessar-fogo e reabrir o Estreito de Ormuz seguem sem clareza e impactam mercados InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mercados/futuros-em-wall-street-iniciam-junho-estaveis-enquanto-petroleo-avanca/",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [
+      "Petróleo e Gás",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Petróleo e Gás",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Negociações para estender o cessar-fogo e reabrir o Estreito de Ormuz seguem sem clareza e impactam mercados InfoMoney.\n\nO foco principal passa por Petróleo e Gás, Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "d7a9aed055fd2ead0a267ede5d61e2c0",
+    "title": "Berkshire Hathaway anuncia primeira aquisição desde saída de Warren Buffett como CEO",
+    "subtitle": null,
+    "content_preview": "Companhia pagará US$ 72,50 por ação em dinheiro, um prêmio de 24% em relação ao preço de fechamento da Taylor Morrison na sexta-feira InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mercados/berkshire-hathaway-anuncia-primeira-aquisicao-desde-saida-de-warren-buffett-como-ceo/",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Companhia pagará US$ 72,50 por ação em dinheiro, um prêmio de 24% em relação ao preço de fechamento da Taylor Morrison na sexta-feira InfoMoney.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "0a01668acf78810e2a554545a3412420",
+    "title": "Secret tunnels and unregistered workers: China's coal mine disaster is a reminder of darker days",
+    "subtitle": null,
+    "content_preview": "China's worst coal mining disaster in 15 years comes amid an ambitious pivot towards green energy.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/cpwpeg57777o?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-06-01T02:10:35.320489Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "China's worst coal mining disaster in 15 years comes amid an ambitious pivot towards green energy.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "d5340a2c72c32cead08bf7eab96fb656",
+    "title": "Atividade manufatureira da China cresce mais que o esperado em maio",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/economic-indicators/atividade-manufatureira-da-china-cresce-mais-que-o-esperado-em-maio-1957421",
+    "published_at": "2026-06-01T01:57:16Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Atividade manufatureira da China cresce mais que o esperado em maio.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:47:19.478680Z"
+  },
+  {
+    "id": "66bb3bdf694a640d29b128db070c4103",
+    "title": "Topicus apresenta proposta revisada de A$ 2,00 por ação para adquirir a ReadyTech",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/company-news/topicus-apresenta-proposta-revisada-de-a-200-por-acao-para-adquirir-a-readytech-93CH-1957419",
+    "published_at": "2026-06-01T01:51:05Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Topicus apresenta proposta revisada de A$ 2,00 por ação para adquirir a ReadyTech.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "4c344291771d18e55e949146db3dbd3a",
+    "title": "Ouro estável em meio à incerteza sobre cessar-fogo com o Irã e riscos de inflação",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/commodities-news/ouro-estavel-em-meio-a-incerteza-sobre-cessarfogo-com-o-ira-e-riscos-de-inflacao-1957418",
+    "published_at": "2026-06-01T01:40:17Z",
+    "language": "pt",
+    "tags": [
+      "Economia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Economia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ouro estável em meio à incerteza sobre cessar-fogo com o Irã e riscos de inflação.\n\nO foco principal passa por Economia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "07b49fb24666eeffa09b908370f845a3",
+    "title": "Transcrição do resultado: Cango Inc. no 1º tri de 2026 revela mudança estratégica em meio a prejuízos",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/transcripts/transcricao-do-resultado-cango-inc-no-1o-tri-de-2026-revela-mudanca-estrategica-em-meio-a-prejuizos-93CH-1957415",
+    "published_at": "2026-06-01T01:39:09Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Transcrição do resultado: Cango Inc. no 1º tri de 2026 revela mudança estratégica em meio a prejuízos.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "0c41539914584799f9514e69f96d65b6",
+    "title": "Berkshire Hathaway anuncia aquisição da construtora Taylor Morrison por US$ 6,8 bilhões",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/stock-market-news/berkshire-hathaway-anuncia-aquisicao-da-construtora-taylor-morrison-por-us-68-bilhoes-1957412",
+    "published_at": "2026-06-01T01:06:25Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Berkshire Hathaway anuncia aquisição da construtora Taylor Morrison por US$ 6,8 bilhões.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "e71be3d35768aae4c972817724d4d983",
+    "title": "Futuros de ações dos EUA sobem com foco em acordo com o Irã e payrolls",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/stock-market-news/futuros-de-acoes-dos-eua-sobem-com-foco-em-acordo-com-o-ira-e-payrolls-1957411",
+    "published_at": "2026-06-01T00:59:54Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Futuros de ações dos EUA sobem com foco em acordo com o Irã e payrolls.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "84a0deb36d04ed21eed8a247bff756b7",
+    "title": "Dell lança notebook XPS 13 por US$ 699 para competir com o MacBook Neo da Apple",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/stock-market-news/dell-lanca-notebook-xps-13-por-us-699-para-competir-com-o-macbook-neo-da-apple-93CH-1957409",
+    "published_at": "2026-06-01T00:45:01Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Dell lança notebook XPS 13 por US$ 699 para competir com o MacBook Neo da Apple.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T02:10:35.320489Z"
+  },
+  {
+    "id": "525445aac39f55d7cbda1b6a4394b3b9",
+    "title": "Put a £5 deposit on vapes to stop littering, say waste companies",
+    "subtitle": null,
+    "content_preview": "The industry body for waste companies says a refundable deposit would help boost vape recycling, but others disagree.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/c4g4vqex028o?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-06-01T00:37:04.346451Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "The industry body for waste companies says a refundable deposit would help boost vape recycling, but others disagree.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.346451Z"
+  },
+  {
+    "id": "529638a699e7e6ae051933cf7d567532",
+    "title": "A year of grief and waiting: What remains when a plane falls from the sky",
+    "subtitle": null,
+    "content_preview": "A year after the Air India crash, a mother still speaks about her dead son in the present tense and a brother waits for answers.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/ce9pp53ky42o?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-06-01T00:37:04.346451Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A year after the Air India crash, a mother still speaks about her dead son in the present tense and a brother waits for answers.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.346451Z"
+  },
+  {
+    "id": "399f5441be538d5cfe3488b7dcf5b32f",
+    "title": "Arrive three hours before flight home, airline boss tells UK holidaymakers",
+    "subtitle": null,
+    "content_preview": "Wizz Air CEO Yvonne Moynihan also advises passengers to carry portable chargers and water due to lengthy queues.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/c8xw2kjlrlxo?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-06-01T00:37:04.346451Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Wizz Air CEO Yvonne Moynihan also advises passengers to carry portable chargers and water due to lengthy queues.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.346451Z"
+  },
+  {
+    "id": "3e4490b74867e3cfb398a62454b12dca",
+    "title": "Why Britain's notoriously bad train wi-fi might soon be a thing of the past",
+    "subtitle": null,
+    "content_preview": "How bad is the signal on our trains? We spoke to commuters to find out.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/cn8pn4l03r7o?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-06-01T00:37:04.346451Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "How bad is the signal on our trains? We spoke to commuters to find out.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.346451Z"
+  },
+  {
+    "id": "d25d2caff6731455f0c1442e5f2300a8",
+    "title": "Caribbean hot sauce producers warn of shortages and higher prices",
+    "subtitle": null,
+    "content_preview": "Manufacturers in Jamaica say the key chilli peppers they need are in limited supply.",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/cq8p1jy3vxlo?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-06-01T00:37:04.346451Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Manufacturers in Jamaica say the key chilli peppers they need are in limited supply.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.346451Z"
+  },
+  {
+    "id": "10328d4f79eaf323967d34ce85a84e49",
+    "title": "How a borough in Merseyside is bucking the UK's youth unemployment trend",
+    "subtitle": null,
+    "content_preview": "Could personalised early intervention help prevent under-16s falling into the Neet trap?",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/cd6p9yyg64vo?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-06-01T00:37:04.346451Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Could personalised early intervention help prevent under-16s falling into the Neet trap?\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.346451Z"
+  },
+  {
+    "id": "0ef58902920b43beb5e318c65b2a0381",
+    "title": "Ex-M&S chief to help government tackle youth unemployment",
+    "subtitle": null,
+    "content_preview": "Marc Bolland will advise on getting young people into work after a review warned of a \"lost generation\".",
+    "full_text_if_available": null,
+    "source_name": "BBC News",
+    "source_url": "https://www.bbc.com/news/articles/cg5p9y25qj1o?at_medium=RSS&at_campaign=rss",
+    "published_at": "2026-06-01T00:37:04.346451Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Marc Bolland will advise on getting young people into work after a review warned of a \"lost generation\".\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.346451Z"
+  },
+  {
+    "id": "e9b88fcda0bbe24b1af7db68b8775ed2",
+    "title": "Moro reage a Gleisi e diz que vai ‘bloquear as pretensões do PT’ no Paraná",
+    "subtitle": null,
+    "content_preview": "Manifestação ocorre após Gleisi afirmar que a esquerda derrotará \"a extrema direita no Brasil e o juiz ladrão no Paraná\" InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/politica/moro-reage-a-gleisi-e-diz-que-vai-bloquear-as-pretensoes-do-pt-no-parana/",
+    "published_at": "2026-06-01T00:37:04.345437Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Manifestação ocorre após Gleisi afirmar que a esquerda derrotará \"a extrema direita no Brasil e o juiz ladrão no Paraná\" InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
+    "id": "de2b1de52af8a09a003ada386bdba5ab",
+    "title": "João Fonseca bate Ruud e volta a colocar Brasil nas quartas de final de Roland Garros",
+    "subtitle": null,
+    "content_preview": "Brasileiro enfrentará o tcheco Jakub Mensik, atual número 28 do ranking da ATP InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/esportes/joao-fonseca-vence-casper-ruud-e-avanca-as-quartas-de-final-de-roland-garros/",
+    "published_at": "2026-06-01T00:37:04.345437Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Brasileiro enfrentará o tcheco Jakub Mensik, atual número 28 do ranking da ATP InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
+    "id": "a39c79ec1f1908f80d6ab9a99f99cdf1",
+    "title": "Ao lado de Leite e Caiado, Gabriel Souza lança pré-candidatura ao governo do RS",
+    "subtitle": null,
+    "content_preview": "Vice-governador critica alianças de adversários com Lula e Flávio Bolsonaro, e diz não ter presidente de 'estimação' InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/politica/ao-lado-de-leite-e-caiado-gabriel-souza-lanca-pre-candidatura-ao-governo-do-rs/",
+    "published_at": "2026-06-01T00:37:04.345437Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Vice-governador critica alianças de adversários com Lula e Flávio Bolsonaro, e diz não ter presidente de 'estimação' InfoMoney.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
+    "id": "b3f2b60c1cd7872a630070a754d402e6",
+    "title": "Nome de Bluetooth ativa protocolo de segurança e faz avião dar meia-volta nos EUA",
+    "subtitle": null,
+    "content_preview": "Aeronave que seguia para Palma de Mallorca voltou cerca de uma hora após a decolagem; entenda o caso InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mundo/nome-de-bluetooth-ativa-protocolo-de-seguranca-e-faz-aviao-dar-meia-volta-nos-eua/",
+    "published_at": "2026-06-01T00:37:04.345437Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Aeronave que seguia para Palma de Mallorca voltou cerca de uma hora após a decolagem; entenda o caso InfoMoney.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
+    "id": "a24066be8d78d023203530020d48cc20",
+    "title": "Caiado diz que não sobe nas pesquisas porque não houve debate e 50% o desconhecem",
+    "subtitle": null,
+    "content_preview": "Segundo ele, reações às acusações contra Flávio Bolsonaro não foram leves, mas \"não se pode criar um racha dentro da direita\" InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mercados/caiado-diz-que-nao-sobe-nas-pesquisas-porque-nao-houve-debate-e-50-o-desconhecem/",
+    "published_at": "2026-06-01T00:37:04.344491Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Segundo ele, reações às acusações contra Flávio Bolsonaro não foram leves, mas \"não se pode criar um racha dentro da direita\" InfoMoney.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.344491Z"
+  },
+  {
+    "id": "ac903b24492fe7646a7b72a477465128",
+    "title": "Com Guga na arquibancada, João Fonseca celebra vitória e exalta o ídolo",
+    "subtitle": null,
+    "content_preview": "Brasileiro disse que foi especial vencer com o tricampeão nas arquibancadas e lembrou a presença dele em sua estreia no torneio InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/esportes/com-guga-na-arquibancada-joao-fonseca-celebra-vitoria-e-exalta-o-idolo/",
+    "published_at": "2026-06-01T00:37:04.344491Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Brasileiro disse que foi especial vencer com o tricampeão nas arquibancadas e lembrou a presença dele em sua estreia no torneio InfoMoney.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.344491Z"
+  },
+  {
+    "id": "5b24c9c5ec49fa07622fdb55d20e0e45",
+    "title": "Brasil atropela o Panamá em último amistoso diante da torcida antes da Copa",
+    "subtitle": null,
+    "content_preview": "Após placar de 6 a 2, Seleção embarca para os Estados Unidos para último amisto, contra o Egito InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/esportes/brasil-atropela-o-panama-em-ultimo-amistoso-diante-da-torcida-antes-da-copa/",
+    "published_at": "2026-06-01T00:37:04.344491Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Após placar de 6 a 2, Seleção embarca para os Estados Unidos para último amisto, contra o Egito InfoMoney.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.344491Z"
+  },
+  {
+    "id": "753e1952ff45d3ef1798161aa1f0f59f",
+    "title": "Colômbia terá 2º turno entre conservador De la Espriella e progressista Cepeda",
+    "subtitle": null,
+    "content_preview": "Ambos se enfrentarão em um segundo turno em 21 de junho InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mundo/colombia-tera-2o-turno-entre-conservador-de-la-espriella-e-progressista-cepeda/",
+    "published_at": "2026-06-01T00:37:04.344491Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ambos se enfrentarão em um segundo turno em 21 de junho InfoMoney.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.344491Z"
+  },
+  {
+    "id": "ee3383092dbcd07f3ea83f69193f1efc",
+    "title": "Vitória milionária: Quanto João Fonseca já faturou e o que ainda pode ganhar em Paris",
+    "subtitle": null,
+    "content_preview": "No comparativo entre os quatro Majors, Roland Garros tem a terceira maior premiação ao campeão InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/mercados/vitoria-milionaria-quanto-joao-fonseca-ja-faturou-e-o-que-ainda-pode-ganhar-em-paris/",
+    "published_at": "2026-06-01T00:37:04.344491Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "No comparativo entre os quatro Majors, Roland Garros tem a terceira maior premiação ao campeão InfoMoney.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.344491Z"
+  },
+  {
+    "id": "632ddb273f8bd226357a38549a19179f",
+    "title": "“O sonho continua”: João Fonseca celebra vitória histórica em Paris",
+    "subtitle": null,
+    "content_preview": "Tenista de 19 anos avançou às quartas de final ao vencer o norueguês Cásper Ruud por 3 a 1 InfoMoney.",
+    "full_text_if_available": null,
+    "source_name": "InfoMoney",
+    "source_url": "https://www.infomoney.com.br/esportes/o-sonho-continua-joao-fonseca-celebra-vitoria-historica-em-paris/",
+    "published_at": "2026-06-01T00:37:04.344491Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Tenista de 19 anos avançou às quartas de final ao vencer o norueguês Cásper Ruud por 3 a 1 InfoMoney.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
+    "id": "178d8f7a3120601c37eccd7fb92fe87a",
+    "title": "'Ser barato não adianta nada', diz João Appolinário, que busca reerguer a Polishop",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/ser-barato-nao-adianta-nada-diz-joao-appolinario-que-busca-reerguer-a-polishop.shtml",
+    "published_at": "2026-06-01T00:37:04.343404Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "'Ser barato não adianta nada', diz João Appolinário, que busca reerguer a Polishop.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.343404Z"
+  },
+  {
+    "id": "ed2795c7d37b39328c4569e9706b83a8",
+    "title": "Excesso de oferta e tarifas provocam crise entre produtores de batata da Europa",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/excesso-de-oferta-e-tarifas-provocam-crise-entre-produtores-de-batata-da-europa.shtml",
+    "published_at": "2026-06-01T00:37:04.343404Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Excesso de oferta e tarifas provocam crise entre produtores de batata da Europa.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.343404Z"
+  },
+  {
+    "id": "701b359fd919a9d3c4e3f23c613f122f",
+    "title": "Quais os possíveis impactos do fim da escala 6x1 no Brasil? Entenda o debate em 6 pontos",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/quais-os-possiveis-impactos-do-fim-da-escala-6x1-no-brasil-entenda-o-debate-em-6-pontos.shtml",
+    "published_at": "2026-06-01T00:37:04.343404Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Quais os possíveis impactos do fim da escala 6x1 no Brasil? Entenda o debate em 6 pontos.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.343404Z"
+  },
+  {
+    "id": "858ff56bde710db286930728ff95966f",
+    "title": "Dell, Nokia e Cisco disparam com boom da IA e revivem auge dos anos 90",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/dell-nokia-e-cisco-disparam-com-boom-da-ia-e-revivem-auge-dos-anos-90.shtml",
+    "published_at": "2026-06-01T00:37:04.343404Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Dell, Nokia e Cisco disparam com boom da IA e revivem auge dos anos 90.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.343404Z"
+  },
+  {
+    "id": "b126b775a2b0da1d4b8e05165d37b17e",
+    "title": "Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/petrobras-anuncia-reducao-de-r-035-no-preco-do-oleo-diesel-para-as-distribuidoras.shtml",
+    "published_at": "2026-06-01T00:37:04.342786Z",
+    "language": "pt",
+    "tags": [
+      "Petróleo e Gás",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "PETR4"
+    ],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Petróleo e Gás",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras.\n\nO texto menciona PETR4. O foco principal passa por Petróleo e Gás, Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.342786Z"
+  },
+  {
+    "id": "883e49c6d8e85e594c20f0432024089d",
+    "title": "Opinião - Ronaldo Lemos: Decretos do Marco Civil da Internet são ataques à Constituição",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/colunas/ronaldolemos/2026/05/decretos-do-marco-civil-da-internet-sao-ataques-a-constituicao.shtml",
+    "published_at": "2026-06-01T00:37:04.342786Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Opinião - Ronaldo Lemos: Decretos do Marco Civil da Internet são ataques à Constituição.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.342786Z"
+  },
+  {
+    "id": "f07e56f2d2fb727685207f9e35102ea2",
+    "title": "EUA indicam que estão prestes a concluir investigação comercial contra o Brasil",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/eua-indicam-que-estao-prestes-a-concluir-investigacao-comercial-contra-o-brasil.shtml",
+    "published_at": "2026-06-01T00:37:04.342786Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "EUA indicam que estão prestes a concluir investigação comercial contra o Brasil.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.343404Z"
+  },
+  {
+    "id": "10fae51991383fcc408ca6dc902c96aa",
+    "title": "Petróleo abre em alta em meio a incertezas sobre guerra no Irã",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/petroleo-abre-em-alta-em-meio-a-incertezas-sobre-guerra-no-ira.shtml",
+    "published_at": "2026-06-01T00:37:04.342359Z",
+    "language": "pt",
+    "tags": [
+      "Petróleo e Gás"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Petróleo e Gás"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Petróleo abre em alta em meio a incertezas sobre guerra no Irã.\n\nO foco principal passa por Petróleo e Gás.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.342786Z"
+  },
+  {
+    "id": "46372d90691fda8c680ed5ec378daa9b",
+    "title": "Tesla resolve disputa de fornecimento de grafite com a Syrah Resources da Austrália",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/stock-market-news/tesla-resolve-disputa-de-fornecimento-de-grafite-com-a-syrah-resources-da-australia-1957406",
+    "published_at": "2026-06-01T00:25:27Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Tesla resolve disputa de fornecimento de grafite com a Syrah Resources da Austrália.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
+    "id": "f910b052da04b3ff5c3c0289b6953008",
+    "title": "Candidato de direita De La Espriella e esquerdista Cepeda farão segundo turno na Colômbia",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/world-news/candidato-de-direita-de-la-espriella-e-esquerdista-cepeda-farao-segundo-turno-na-colombia-1957404",
+    "published_at": "2026-06-01T00:21:29Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Candidato de direita De La Espriella e esquerdista Cepeda farão segundo turno na Colômbia.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
+    "id": "964e65485e8c04289233af650d38c2bf",
+    "title": "Brasil goleia Panamá em despedida antes de viagem para Copa do Mundo",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/world-news/brasil-goleia-panama-em-despedida-antes-de-viagem-para-copa-do-mundo-1957401",
+    "published_at": "2026-06-01T00:07:27Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Brasil goleia Panamá em despedida antes de viagem para Copa do Mundo.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
+    "id": "521522f832c1a4e2a6b9a70ffe1da74c",
+    "title": "Preços do petróleo sobem com escalada do conflito entre Israel e Líbano",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/commodities-news/precos-do-petroleo-sobem-com-escalada-do-conflito-entre-israel-e-libano-1957403",
+    "published_at": "2026-06-01T00:06:18Z",
+    "language": "pt",
+    "tags": [
+      "Petróleo e Gás"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Petróleo e Gás"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Preços do petróleo sobem com escalada do conflito entre Israel e Líbano.\n\nO foco principal passa por Petróleo e Gás.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
+    "id": "c8a6c22af036def0c570db245175ba5b",
+    "title": "EUA bloqueiam vendas de chips de IA da NVIDIA a empresas chinesas fora da China",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/stock-market-news/eua-bloqueiam-vendas-de-chips-de-ia-da-nvidia-a-empresas-chinesas-fora-da-china-1957399",
+    "published_at": "2026-05-31T23:59:39Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "EUA bloqueiam vendas de chips de IA da NVIDIA a empresas chinesas fora da China.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
+    "id": "1c5eab13863fe8eb5b108eaa64037d45",
+    "title": "TiumBio apresenta dados de ensaio clínico para medicamento contra câncer de cabeça e pescoço",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/company-news/tiumbio-apresenta-dados-de-ensaio-clinico-para-medicamento-contra-cancer-de-cabeca-e-pescoco-93CH-1957398",
+    "published_at": "2026-05-31T23:39:29Z",
+    "language": "pt",
+    "tags": [],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "TiumBio apresenta dados de ensaio clínico para medicamento contra câncer de cabeça e pescoço.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.345437Z"
+  },
+  {
     "id": "c8c20d60342637cb9b723f3d02a70e81",
     "title": "Calendário Econômico: Payroll nos EUA é destaque com agenda reduzida no Brasil",
     "subtitle": null,
@@ -22,6 +1290,83 @@
     "summary": "Calendário Econômico: Payroll nos EUA é destaque com agenda reduzida no Brasil.",
     "cluster_id": null,
     "created_at": "2026-05-31T02:54:08.039041Z"
+  },
+  {
+    "id": "c4ff0e74db24bc624aa54c254cd32965",
+    "title": "Rússia - Ações fecharam o pregão em queda e o Índice MOEX Russia Index terminou sem alterações",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/stock-market-news/russia--acoes-fecharam-o-pregao-em-queda-e-o-indice-moex-russia-index-terminou-sem-alteracoes-1957393",
+    "published_at": "2026-05-31T21:20:20Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Rússia - Ações fecharam o pregão em queda e o Índice MOEX Russia Index terminou sem alterações.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.346451Z"
+  },
+  {
+    "id": "19df15397e3b43fd5f5339ce2525d716",
+    "title": "Petrobras reduz em 9,59% preço do diesel para distribuidoras",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/commodities-news/petrobras-reduz-em-959-preco-do-diesel-para-distribuidoras-1957390",
+    "published_at": "2026-05-31T20:56:25Z",
+    "language": "pt",
+    "tags": [
+      "Petróleo e Gás"
+    ],
+    "mentioned_assets": [
+      "PETR4"
+    ],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Petróleo e Gás"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Petrobras reduz em 9,59% preço do diesel para distribuidoras.\n\nO texto menciona PETR4. O foco principal passa por Petróleo e Gás.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.346451Z"
+  },
+  {
+    "id": "f148c30249ee21bf9c120b1a33bbfdaf",
+    "title": "Berkshire Hathaway anuncia aquisição da Taylor Morrison por US$ 8,5 bilhões",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_name": "Todas as Notícias",
+    "source_url": "https://br.investing.com/news/company-news/berkshire-hathaway-anuncia-aquisicao-da-taylor-morrison-por-us-85-bilhoes-93CH-1957389",
+    "published_at": "2026-05-31T20:39:45Z",
+    "language": "pt",
+    "tags": [
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [],
+    "mentioned_sectors": [
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Berkshire Hathaway anuncia aquisição da Taylor Morrison por US$ 8,5 bilhões.\n\nO foco principal passa por Tecnologia.",
+    "cluster_id": null,
+    "created_at": "2026-06-01T00:37:04.346451Z"
   },
   {
     "id": "919533bf840502e174106d5df59d7690",
@@ -3584,422 +4929,5 @@
     "summary": "O prêmio da faixa principal, com 15 acertos, foi de R$ 2 milhões The post Lotofácil hoje, concurso 3692: Confira o resultado sorteado nesta sexta (22) appeared first on InfoMoney.",
     "cluster_id": null,
     "created_at": "2026-05-23T03:32:01.567358Z"
-  },
-  {
-    "id": "0ddcdc4de09ab79af25a3f0055f2ff2b",
-    "title": "CNI entra com ação no Supremo contra fim da taxa das blusinhas",
-    "subtitle": null,
-    "content_preview": "Entidade da indústria questiona MP que zerou imposto sobre compras internacionais de até US$ 50 e afirma que benefício favorece plataformas estrangeiras, ameaça empregos e viola princípios constitucionais The post CNI entra com ação no Supremo contra fim da taxa das blusinhas appeared first on InfoM",
-    "full_text_if_available": null,
-    "source_name": "InfoMoney",
-    "source_url": "https://www.infomoney.com.br/brasil/cni-entra-com-acao-no-supremo-contra-fim-da-taxa-das-blusinhas/",
-    "published_at": "2026-05-23T03:32:01.567358Z",
-    "language": "pt",
-    "tags": [
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [
-      "Tecnologia"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Entidade da indústria questiona MP que zerou imposto sobre compras internacionais de até US$ 50 e afirma que benefício favorece plataformas estrangeiras, ameaça empregos e viola princípios constitucio",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.567358Z"
-  },
-  {
-    "id": "c2905f4e7754326b324cc7b5774f5609",
-    "title": "Empresas dos EUA tentaram resolver problemas comerciais em viagem de Trump à China",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/empresas-dos-eua-tentaram-resolver-problemas-comerciais-em-viagem-de-trump-a-china.shtml",
-    "published_at": "2026-05-23T03:32:01.565348Z",
-    "language": "pt",
-    "tags": [
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Empresas dos EUA tentaram resolver problemas comerciais em viagem de Trump à China.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.565348Z"
-  },
-  {
-    "id": "5c525c22bc0cc8a12f429d5b004e15ca",
-    "title": "Biografia de CEO da DeepMind mostra cientista submetido a dramas corporativos para perseguir 'máquina do infinito'",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/biografia-de-ceo-da-deepmind-mostra-cientista-submetido-a-dramas-corporativos-para-perseguir-maquina-do-infinito.shtml",
-    "published_at": "2026-05-23T03:32:01.565348Z",
-    "language": "pt",
-    "tags": [
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Biografia de CEO da DeepMind mostra cientista submetido a dramas corporativos para perseguir 'máquina do infinito'.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.567358Z"
-  },
-  {
-    "id": "ab975fad9221f1749c32a6440907b7bd",
-    "title": "Futu Holdings recompra US$ 160 milhões em ADSs no programa de recompra",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Todas as Notícias",
-    "source_url": "https://br.investing.com/news/company-news/futu-holdings-recompra-us-160-milhoes-em-adss-no-programa-de-recompra-93CH-1950558",
-    "published_at": "2026-05-23T03:07:03",
-    "language": "pt",
-    "tags": [],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Futu Holdings recompra US$ 160 milhões em ADSs no programa de recompra.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.569108Z"
-  },
-  {
-    "id": "832660aa511a53e23464052bdd1bbfbc",
-    "title": "Análise SWOT da Apollo Global Management: perspectivas melhoram com crescimento acelerado",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Todas as Notícias",
-    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-da-apollo-global-management-perspectivas-melhoram-com-crescimento-acelerado-93CH-1950555",
-    "published_at": "2026-05-23T02:55:17",
-    "language": "pt",
-    "tags": [],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Análise SWOT da Apollo Global Management: perspectivas melhoram com crescimento acelerado.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.569108Z"
-  },
-  {
-    "id": "a575eb6849032dc21a1eb5b060f64f37",
-    "title": "Goldman Sachs alerta para mudança importante na dinâmica do mercado de câmbio",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Todas as Notícias",
-    "source_url": "https://br.investing.com/news/economy-news/goldman-sachs-alerta-para-mudanca-importante-na-dinamica-do-mercado-de-cambio-1950554",
-    "published_at": "2026-05-23T02:38:18",
-    "language": "pt",
-    "tags": [],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Goldman Sachs alerta para mudança importante na dinâmica do mercado de câmbio.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.569108Z"
-  },
-  {
-    "id": "05327d3ac95e74836bac2992ebfcc740",
-    "title": "Análise SWOT da Plug Power: ação de hidrogênio enfrenta teste de lucratividade",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Todas as Notícias",
-    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-da-plug-power-acao-de-hidrogenio-enfrenta-teste-de-lucratividade-93CH-1950550",
-    "published_at": "2026-05-23T02:34:56",
-    "language": "pt",
-    "tags": [],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Análise SWOT da Plug Power: ação de hidrogênio enfrenta teste de lucratividade.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.569108Z"
-  },
-  {
-    "id": "3a29711d020cefd7c7878ad11cb5c4fe",
-    "title": "Análise SWOT da Murphy Oil: ações enfrentam declínio de ativos legados",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Todas as Notícias",
-    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-da-murphy-oil-acoes-enfrentam-declinio-de-ativos-legados-93CH-1950549",
-    "published_at": "2026-05-23T02:14:36",
-    "language": "pt",
-    "tags": [],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Análise SWOT da Murphy Oil: ações enfrentam declínio de ativos legados.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.569108Z"
-  },
-  {
-    "id": "f7158436c94e05263a79745c902961a4",
-    "title": "Análise SWOT da Phillips 66: ações enfrentam preocupações com alavancagem",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Todas as Notícias",
-    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-da-phillips-66-acoes-enfrentam-preocupacoes-com-alavancagem-93CH-1950546",
-    "published_at": "2026-05-23T02:03:20",
-    "language": "pt",
-    "tags": [],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Análise SWOT da Phillips 66: ações enfrentam preocupações com alavancagem.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.569108Z"
-  },
-  {
-    "id": "2bb5212a0593bd80ae0b9b66a77abf33",
-    "title": "Distribuidoras de combustível da Índia aplicam terceiro reajuste em menos de dez dias",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Todas as Notícias",
-    "source_url": "https://br.investing.com/news/economy-news/distribuidoras-de-combustivel-na-india-implementam-terceiro-reajuste-em-menos-de-dez-dias-1950547",
-    "published_at": "2026-05-23T02:01:56",
-    "language": "pt",
-    "tags": [
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Distribuidoras de combustível da Índia aplicam terceiro reajuste em menos de dez dias.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.569108Z"
-  },
-  {
-    "id": "c9695b102af25d4801fca9a9b13a6cc6",
-    "title": "Executivo da NexPoint Diversified Real Estate Trust compra ações por US$ 262.948",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Todas as Notícias",
-    "source_url": "https://br.investing.com/news/insider-trading-news/executivo-da-nexpoint-diversified-real-estate-trust-compra-acoes-por-us-262948-93CH-1950545",
-    "published_at": "2026-05-23T01:54:35",
-    "language": "pt",
-    "tags": [],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Executivo da NexPoint Diversified Real Estate Trust compra ações por US$ 262.948.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.569108Z"
-  },
-  {
-    "id": "7987972f16b2d93b9d42a8af0063c18d",
-    "title": "COO da Black Rock Coffee Bar compra US$ 299.816 em ações",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Todas as Notícias",
-    "source_url": "https://br.investing.com/news/insider-trading-news/coo-da-black-rock-coffee-bar-compra-us-299816-em-acoes-93CH-1950544",
-    "published_at": "2026-05-23T01:48:53",
-    "language": "pt",
-    "tags": [],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "COO da Black Rock Coffee Bar compra US$ 299.816 em ações.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.569108Z"
-  },
-  {
-    "id": "21a701e46e5275773db9ad653bc1e531",
-    "title": "Análise SWOT da CSX: ações da ferrovia enfrentam questionamentos sobre valuation",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_name": "Todas as Notícias",
-    "source_url": "https://br.investing.com/news/swot-analysis/analise-swot-da-csx-acoes-da-ferrovia-enfrentam-questionamentos-sobre-valuation-93CH-1950543",
-    "published_at": "2026-05-23T01:42:27",
-    "language": "pt",
-    "tags": [
-      "Mineração",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [],
-    "mentioned_sectors": [
-      "Mineração",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Análise SWOT da CSX: ações da ferrovia enfrentam questionamentos sobre valuation.",
-    "cluster_id": null,
-    "created_at": "2026-05-23T03:32:01.569108Z"
-  },
-  {
-    "id": "be7f3b146a8f8ac1fd340f0c3329071a",
-    "title": "\"Ponto cego\": as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina",
-    "subtitle": null,
-    "content_preview": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Compar",
-    "full_text_if_available": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise do Bradesco BBI Ponto cego: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades Lara Rizério 22/05/2026 15h00 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Shutterstock) Publicidade Um amplo conjunto de empresas globais com forte exposição à América Latina — mas listadas fora da região — vem sendo negligenciado por investidores, mesmo concentrando um valor de mercado de cerca de US$ 1,3 trilhão. A avaliação é do Bradesco BBI, que classifica esse segmento como um relevante “ponto cego” (ou blind spot) no radar dos mercados. Segundo o relatório, o universo analisado reúne 105 companhias com operações relevantes na América Latina, mas listadas em outras bolsas, somando capitalização e liquidez superiores às do próprio índice MSCI LatAm, referência tradicional da região. Esse conjunto apresenta valor de mercado cerca de 10% maior e volume médio diário de negociação 65% superior ao do índice regional, indicando maior liquidez e potencial de acesso para investidores globais. Universo fora do radar pode gerar “alfa”Na avaliação do banco, a baixa cobertura por analistas e o menor foco dos investidores tradicionais podem abrir espaço para geração de retornos acima da média (alfa). O estudo destaca que esse universo inclui desde em",
-    "source_name": "InfoMoney",
-    "source_url": "https://www.infomoney.com.br/mercados/ponto-cego-as-oportunidades-de-us-13-trilhao-em-acoes-ligadas-a-america-latina/",
-    "published_at": "2026-05-22T18:00:49Z",
-    "language": "pt",
-    "tags": [
-      "Financeiro",
-      "Tecnologia",
-      "Criptomoedas",
-      "Economia",
-      "Renda Fixa"
-    ],
-    "mentioned_assets": [
-      "BBDC4",
-      "B3SA3"
-    ],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Financeiro",
-      "Tecnologia",
-      "Criptomoedas",
-      "Economia",
-      "Renda Fixa"
-    ],
-    "sentiment_score": -0.5,
-    "relevance_score": 0.5,
-    "impact_score": 0.6000000000000001,
-    "summary": "Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise do Bradesco BBI Ponto cego: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades Lara Rizério 22/05/2026 15h00 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Shutterstock) Publicidade Um amplo conjunto de empresas globais com forte exposição à América Latina — mas listadas fora da região — vem sendo negligenciado por investidores, mesmo concentrando um valor de mercado de cerca de US$ 1,3 trilhão. O texto menciona BBDC4, B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-    "cluster_id": null,
-    "created_at": "2026-05-31T04:04:31.945878Z"
-  },
-  {
-    "id": "7cac0a30e9fb0cd92da90213b98508c4",
-    "title": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri",
-    "subtitle": null,
-    "content_preview": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Compar",
-    "full_text_if_available": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise de resultados Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor Felipe Moreira 22/05/2026 13h37 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Foto: Reprodução de Tung Nguyen por Pixabay) Publicidade A temporada de resultados do primeiro trimestre de 2026 (1T26) terminou e os resultados de educacionais foram considerados mistos, com leve assimetria positiva. Na visão do Bank of America (BofA), a Ânima (ANIM3) reportou um sólido 1T26, com a tese de desalavancagem intacta e uma importante recuperação operacional. A Yduqs (YDQS3) superou as expectativas do banco, impulsionada por menor exposição a programas de financiamento (DIS) e maior geração de caixa. A Ser Educacional (SEER3) reportou resultados sólidos, com disciplina de custos sustentando a tese de geração de caixa, apesar da pressão sobre as admissões. A Vitru (VTRU3) apresentou resultados acima do esperado, impulsionada por marketing disciplinado e captação de alunos sustentada, apesar das mudanças regulatórias. A Afya reportou resultados em linha com as expectativas, com o crescimento das mensalidades de cursos de medicina acompanhando a inflação, enquanto o EBITDA (lucro antes de juros, impost",
-    "source_name": "InfoMoney",
-    "source_url": "https://www.infomoney.com.br/mercados/cogna-yduqs-anima-e-mais-quais-acoes-se-destacaram-na-temporada-do-1o-tri/",
-    "published_at": "2026-05-22T16:37:23Z",
-    "language": "pt",
-    "tags": [
-      "Financeiro",
-      "Tecnologia",
-      "Criptomoedas",
-      "Economia",
-      "Renda Fixa"
-    ],
-    "mentioned_assets": [
-      "B3SA3"
-    ],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Financeiro",
-      "Tecnologia",
-      "Criptomoedas",
-      "Economia",
-      "Renda Fixa"
-    ],
-    "sentiment_score": -0.5,
-    "relevance_score": 0.5,
-    "impact_score": 0.6000000000000001,
-    "summary": "Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise de resultados Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor Felipe Moreira 22/05/2026 13h37 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Foto: Reprodução de Tung Nguyen por Pixabay) Publicidade A temporada de resultados do primeiro trimestre de 2026 (1T26) terminou e os resultados de educacionais foram considerados mistos, com leve assimetria positiva. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-    "cluster_id": null,
-    "created_at": "2026-05-31T04:04:31.945878Z"
-  },
-  {
-    "id": "21f8aa5e905ce6a3988e0ecc5e182e51",
-    "title": "Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico",
-    "subtitle": null,
-    "content_preview": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Compar",
-    "full_text_if_available": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Batalha técnica de ações Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico Perda de força após meses de alta leva ações de bancos a regiões decisivas; análise técnica indica cautela no curto prazo Rodrigo Paz 22/05/2026 09h42 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria Publicidade Os grandes bancos brasileiros atravessam um momento técnico mais delicado após meses de forte valorização na Bolsa. Banco do Brasil (BBAS3), Bradesco (BBDC4) e Itaú Unibanco (ITUB4) perderam força nas últimas semanas, passaram a negociar abaixo das médias móveis no gráfico semanal e agora entram em regiões decisivas para definir se o movimento atual seguirá apenas como uma correção dentro da tendência principal de alta ou se abrirá espaço para um ajuste mais amplo no setor financeiro. Na minha leitura, o cenário ainda exige cautela. Apesar de alguns sinais de reação nesta semana — com formação de candles que podem indicar tentativa de recuperação — os três ativos seguem pressionados tecnicamente, em meio à deterioração do fluxo comprador observada desde as máximas recentes. O comportamento próximo das principais regiões de suporte será fundamental para determinar os próximos movimentos dos bancos no médio prazo. Saiba mais: No gráfico semanal, observo que Banco do Brasil (BBAS3) segue com viés mais pressionado após perder",
-    "source_name": "InfoMoney",
-    "source_url": "https://www.infomoney.com.br/mercados/bancos-vao-cair-mais-bbas3-bbdc4-e-itub4-acendem-alerta-no-grafico/",
-    "published_at": "2026-05-22T12:42:35Z",
-    "language": "pt",
-    "tags": [
-      "Financeiro",
-      "Tecnologia",
-      "Criptomoedas",
-      "Economia",
-      "Renda Fixa"
-    ],
-    "mentioned_assets": [
-      "ITUB4",
-      "BBDC4",
-      "BBAS3",
-      "B3SA3"
-    ],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Financeiro",
-      "Tecnologia",
-      "Criptomoedas",
-      "Economia",
-      "Renda Fixa"
-    ],
-    "sentiment_score": -0.5,
-    "relevance_score": 0.5,
-    "impact_score": 0.6000000000000001,
-    "summary": "Banco do Brasil (BBAS3), Bradesco (BBDC4) e Itaú (ITUB4) seguem pressionados no gráfico. Veja análise técnica, suportes, resistências e próximos alvos.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Batalha técnica de ações Bancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
-    "cluster_id": null,
-    "created_at": "2026-05-31T04:04:31.947883Z"
   }
 ]

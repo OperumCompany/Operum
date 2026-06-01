@@ -3,7 +3,7 @@ from app.services.asset_analysis_service import AssetAnalysisService
 from app.services.portfolio_service import PortfolioService
 from app.services.portfolio_analytics_service import PortfolioAnalyticsService
 from app.services.market_data_service import MarketDataService
-from app.schemas.portfolio import Portfolio, PortfolioCreate, PositionAdd
+from app.schemas.portfolio import Portfolio, PortfolioBulkDelete, PortfolioCreate, PositionAdd
 
 router = APIRouter(prefix="/portfolios", tags=["portfolios"])
 service = PortfolioService()
@@ -19,7 +19,17 @@ def list_portfolios():
 
 @router.post("", response_model=Portfolio, status_code=201)
 def create_portfolio(data: PortfolioCreate):
-    return service.create(data)
+    try:
+        return service.create(data)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+
+
+@router.post("/bulk-delete")
+def bulk_delete_portfolios(data: PortfolioBulkDelete):
+    if not data.portfolio_ids:
+        raise HTTPException(status_code=400, detail="Nenhuma carteira foi selecionada")
+    return service.delete_many(data.portfolio_ids)
 
 
 @router.get("/{portfolio_id}", response_model=Portfolio)

@@ -5,6 +5,8 @@ from app.schemas.portfolio import Portfolio, PortfolioCreate, Position, Position
 
 
 class PortfolioService:
+    MAX_PORTFOLIOS = 50
+
     def __init__(self):
         self.storage = LocalStorageService()
         self._dir = "portfolios"
@@ -25,6 +27,9 @@ class PortfolioService:
         return Portfolio(**data)
 
     def create(self, data: PortfolioCreate) -> Portfolio:
+        if len(self.list_all()) >= self.MAX_PORTFOLIOS:
+            raise ValueError(f"Limite maximo de {self.MAX_PORTFOLIOS} carteiras atingido")
+
         now = datetime.now(timezone.utc)
         portfolio = Portfolio(
             id=str(uuid.uuid4()),
@@ -51,6 +56,23 @@ class PortfolioService:
 
     def delete(self, portfolio_id: str) -> bool:
         return self.storage.delete_file(f"{self._dir}/{portfolio_id}.json")
+
+    def delete_many(self, portfolio_ids: list[str]) -> dict:
+        unique_ids = list(dict.fromkeys(portfolio_ids))
+        deleted_ids: list[str] = []
+        missing_ids: list[str] = []
+
+        for portfolio_id in unique_ids:
+            if self.delete(portfolio_id):
+                deleted_ids.append(portfolio_id)
+            else:
+                missing_ids.append(portfolio_id)
+
+        return {
+            "deleted_ids": deleted_ids,
+            "missing_ids": missing_ids,
+            "deleted_count": len(deleted_ids),
+        }
 
     def add_position(self, portfolio_id: str, position_data: PositionAdd) -> Portfolio | None:
         portfolio = self.get_by_id(portfolio_id)

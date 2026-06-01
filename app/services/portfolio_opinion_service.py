@@ -11,6 +11,22 @@ from app.services.portfolio_analytics_service import PortfolioAnalyticsService
 logger = logging.getLogger(__name__)
 
 
+def _group_sources_by_origin(sources: list[dict]) -> list[dict]:
+    grouped: dict[str, list[dict]] = {}
+    for source in sources:
+        source_name = source.get("source_name", "Fonte")
+        grouped.setdefault(source_name, []).append(source)
+
+    return [
+        {
+            "source_name": source_name,
+            "count": len(items),
+            "items": items,
+        }
+        for source_name, items in grouped.items()
+    ]
+
+
 class PortfolioOpinionService:
     def __init__(self):
         self.analytics = PortfolioAnalyticsService()
@@ -79,6 +95,7 @@ class PortfolioOpinionService:
             "final_diagnosis": opinion["final_diagnosis"],
             "conclusion": opinion["conclusion"],
             "sources": opinion["sources"],
+            "source_groups": opinion["source_groups"],
             "portfolio_id": portfolio.id,
             "generated_at": opinion["generated_at"],
         }
@@ -270,15 +287,17 @@ class PortfolioOpinionService:
 
         sources = []
         seen_ids = set()
-        for pos in positions[: min(5, len(positions))]:
+        for pos in positions[: min(6, len(positions))]:
             asset_result = self.asset_analysis.generate_asset_analysis(portfolio, pos.ticker)
-            for source in asset_result.get("sources", [])[:2]:
+            for source in asset_result.get("sources", [])[:3]:
                 if source["id"] in seen_ids:
                     continue
                 seen_ids.add(source["id"])
                 sources.append(source)
-            if len(sources) >= 5:
+            if len(sources) >= 15:
                 break
+
+        source_groups = _group_sources_by_origin(sources[:15])
 
         return {
             "headline": headline,
@@ -289,6 +308,7 @@ class PortfolioOpinionService:
             "block_reviews": block_reviews,
             "final_diagnosis": "No diagnóstico final, " + "; ".join(final_diag_parts) + ".",
             "conclusion": conclusion,
-            "sources": sources[:5],
+            "sources": sources[:15],
+            "source_groups": source_groups,
             "generated_at": datetime.now(timezone.utc).isoformat(),
         }

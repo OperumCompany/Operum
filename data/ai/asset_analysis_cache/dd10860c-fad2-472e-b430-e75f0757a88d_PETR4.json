@@ -1,16 +1,16 @@
 {
-  "portfolio_id": "c21ff7ba-8476-4a57-89cd-3144bde8acd0",
+  "portfolio_id": "dd10860c-fad2-472e-b430-e75f0757a88d",
   "ticker": "PETR4",
   "asset_name": "Petrobras PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T03:48:40.477631+00:00",
-  "recomputed_at": "2026-06-01T03:48:40.477631+00:00",
+  "generated_at": "2026-06-01T02:09:21.760883+00:00",
+  "recomputed_at": "2026-06-01T02:09:21.760883+00:00",
   "confidence": "media",
   "status": "ok",
   "current_snapshot": {
     "current_price": 42.0,
     "currency": "BRL",
-    "weight_pct": 7.81,
+    "weight_pct": 35.04,
     "sector": "Petróleo e Gás",
     "country": "BR"
   },
@@ -27,13 +27,13 @@
     "volatility_21d_pct": null
   },
   "outlook_3m": {
-    "scenario": "neutro",
+    "scenario": "concentrado",
     "dominant_topics": []
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 42.00. Hoje representa cerca de 7.8% da carteira. As noticias recentes tem vies misto e impacto medio de 0.50.",
-    "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.43. Os temas que mais apareceram foram cambio. Os destaques recentes nesse intervalo incluem: Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
-    "outlook": "A perspectiva de 3 meses e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. A confianca dessa leitura e moderada."
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 42.00. Hoje representa cerca de 35.0% da carteira. As noticias recentes tem vies misto e impacto medio de 0.54.",
+    "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.43. Os destaques recentes nesse intervalo incluem: Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
+    "outlook": "A perspectiva de 3 meses precisa ser lida junto com o peso elevado na carteira, porque qualquer oscilacao tera impacto relevante no conjunto. A confianca dessa leitura e moderada."
   },
   "used_news_count": 12,
   "sources": [
@@ -86,20 +86,7 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2986,
-      "role": "current"
-    },
-    {
-      "id": "d5ecd4095bbeedf34cc9a96a0f42d8c8",
-      "title": "Ibovespa e dólar hoje: Trump adia acordo com Irã pré-semana de emprego nos EUA",
-      "source_name": "Todas as Notícias",
-      "source_url": "https://br.investing.com/news/stock-market-news/ibovespa-e-dolar-hoje-trump-adia-acordo-com-ira-presemana-de-emprego-nos-eua-1956852",
-      "published_at": "2026-06-01T10:00:00+00:00",
-      "summary": "Ibovespa e dólar hoje: Trump adia acordo com Irã pré-semana de emprego nos EUA.\n\nO foco principal passa por Tecnologia, Economia.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
-      "relevance_score": 0.5,
-      "match_score": 0.2,
+      "match_score": 0.2987,
       "role": "current"
     },
     {
@@ -126,7 +113,7 @@
       "impact_score": 0.55,
       "relevance_score": 0.5,
       "match_score": 0.1999,
-      "role": "historical"
+      "role": "current"
     },
     {
       "id": "521522f832c1a4e2a6b9a70ffe1da74c",
@@ -142,51 +129,64 @@
       "role": "historical"
     },
     {
-      "id": "605fa921e3adf0f4949e3f78bc674316",
-      "title": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/crime-custa-ao-menos-r-107-bi-a-industria-brasileira-mostra-cni.shtml",
-      "published_at": "2026-06-01T02:10:35.320489+00:00",
-      "summary": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI.\n\nO foco principal passa por Tecnologia.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
-      "relevance_score": 0.5,
-      "match_score": 0.1999,
-      "role": "historical"
-    },
-    {
-      "id": "914dce4c0b593c2004474e31be229812",
-      "title": "Quando João Fonseca volta a jogar em Roland Garros?",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/esportes/quando-joao-fonseca-volta-a-jogar-em-roland-garros/",
-      "published_at": "2026-06-01T02:10:35.320489+00:00",
-      "summary": "Adversário do brasileiro nas quartas é outro talento da nova geração do tênis: Mensik InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
-      "relevance_score": 0.5,
-      "match_score": 0.1999,
-      "role": "historical"
-    },
-    {
-      "id": "cdd54ab6f842bca1968858f16944c50f",
-      "title": "Futuros em Wall Street iniciam junho estáveis enquanto petróleo avança",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/futuros-em-wall-street-iniciam-junho-estaveis-enquanto-petroleo-avanca/",
-      "published_at": "2026-06-01T02:10:35.320489+00:00",
-      "summary": "Negociações para estender o cessar-fogo e reabrir o Estreito de Ormuz seguem sem clareza e impactam mercados InfoMoney.\n\nO foco principal passa por Petróleo e Gás, Tecnologia.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
-      "relevance_score": 0.5,
-      "match_score": 0.1999,
-      "role": "historical"
-    },
-    {
       "id": "e9b88fcda0bbe24b1af7db68b8775ed2",
       "title": "Moro reage a Gleisi e diz que vai ‘bloquear as pretensões do PT’ no Paraná",
       "source_name": "InfoMoney",
       "source_url": "https://www.infomoney.com.br/politica/moro-reage-a-gleisi-e-diz-que-vai-bloquear-as-pretensoes-do-pt-no-parana/",
       "published_at": "2026-06-01T00:37:04.345437+00:00",
       "summary": "Manifestação ocorre após Gleisi afirmar que a esquerda derrotará \"a extrema direita no Brasil e o juiz ladrão no Paraná\" InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.1999,
+      "role": "historical"
+    },
+    {
+      "id": "de2b1de52af8a09a003ada386bdba5ab",
+      "title": "João Fonseca bate Ruud e volta a colocar Brasil nas quartas de final de Roland Garros",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/esportes/joao-fonseca-vence-casper-ruud-e-avanca-as-quartas-de-final-de-roland-garros/",
+      "published_at": "2026-06-01T00:37:04.345437+00:00",
+      "summary": "Brasileiro enfrentará o tcheco Jakub Mensik, atual número 28 do ranking da ATP InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.1999,
+      "role": "historical"
+    },
+    {
+      "id": "5b24c9c5ec49fa07622fdb55d20e0e45",
+      "title": "Brasil atropela o Panamá em último amistoso diante da torcida antes da Copa",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/esportes/brasil-atropela-o-panama-em-ultimo-amistoso-diante-da-torcida-antes-da-copa/",
+      "published_at": "2026-06-01T00:37:04.344491+00:00",
+      "summary": "Após placar de 6 a 2, Seleção embarca para os Estados Unidos para último amisto, contra o Egito InfoMoney.\n\nO foco principal passa por Tecnologia.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.1999,
+      "role": "historical"
+    },
+    {
+      "id": "701b359fd919a9d3c4e3f23c613f122f",
+      "title": "Quais os possíveis impactos do fim da escala 6x1 no Brasil? Entenda o debate em 6 pontos",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/quais-os-possiveis-impactos-do-fim-da-escala-6x1-no-brasil-entenda-o-debate-em-6-pontos.shtml",
+      "published_at": "2026-06-01T00:37:04.343404+00:00",
+      "summary": "Quais os possíveis impactos do fim da escala 6x1 no Brasil? Entenda o debate em 6 pontos.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.1999,
+      "role": "historical"
+    },
+    {
+      "id": "f07e56f2d2fb727685207f9e35102ea2",
+      "title": "EUA indicam que estão prestes a concluir investigação comercial contra o Brasil",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/eua-indicam-que-estao-prestes-a-concluir-investigacao-comercial-contra-o-brasil.shtml",
+      "published_at": "2026-06-01T00:37:04.342786+00:00",
+      "summary": "EUA indicam que estão prestes a concluir investigação comercial contra o Brasil.\n\nO foco principal passa por Tecnologia.",
       "sentiment_score": -0.1,
       "impact_score": 0.28,
       "relevance_score": 0.5,
@@ -222,7 +222,7 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2986,
+          "match_score": 0.2987,
           "role": "current"
         },
         {
@@ -239,32 +239,6 @@
           "role": "current"
         },
         {
-          "id": "914dce4c0b593c2004474e31be229812",
-          "title": "Quando João Fonseca volta a jogar em Roland Garros?",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/esportes/quando-joao-fonseca-volta-a-jogar-em-roland-garros/",
-          "published_at": "2026-06-01T02:10:35.320489+00:00",
-          "summary": "Adversário do brasileiro nas quartas é outro talento da nova geração do tênis: Mensik InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
-          "sentiment_score": -0.1,
-          "impact_score": 0.28,
-          "relevance_score": 0.5,
-          "match_score": 0.1999,
-          "role": "historical"
-        },
-        {
-          "id": "cdd54ab6f842bca1968858f16944c50f",
-          "title": "Futuros em Wall Street iniciam junho estáveis enquanto petróleo avança",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/futuros-em-wall-street-iniciam-junho-estaveis-enquanto-petroleo-avanca/",
-          "published_at": "2026-06-01T02:10:35.320489+00:00",
-          "summary": "Negociações para estender o cessar-fogo e reabrir o Estreito de Ormuz seguem sem clareza e impactam mercados InfoMoney.\n\nO foco principal passa por Petróleo e Gás, Tecnologia.",
-          "sentiment_score": -0.1,
-          "impact_score": 0.28,
-          "relevance_score": 0.5,
-          "match_score": 0.1999,
-          "role": "historical"
-        },
-        {
           "id": "e9b88fcda0bbe24b1af7db68b8775ed2",
           "title": "Moro reage a Gleisi e diz que vai ‘bloquear as pretensões do PT’ no Paraná",
           "source_name": "InfoMoney",
@@ -276,48 +250,29 @@
           "relevance_score": 0.5,
           "match_score": 0.1999,
           "role": "historical"
-        }
-      ]
-    },
-    {
-      "source_name": "Todas as Notícias",
-      "count": 3,
-      "items": [
-        {
-          "id": "19df15397e3b43fd5f5339ce2525d716",
-          "title": "Petrobras reduz em 9,59% preço do diesel para distribuidoras",
-          "source_name": "Todas as Notícias",
-          "source_url": "https://br.investing.com/news/commodities-news/petrobras-reduz-em-959-preco-do-diesel-para-distribuidoras-1957390",
-          "published_at": "2026-05-31T20:56:25+00:00",
-          "summary": "Petrobras reduz em 9,59% preço do diesel para distribuidoras.\n\nO texto menciona PETR4. O foco principal passa por Petróleo e Gás.",
-          "sentiment_score": -0.1,
-          "impact_score": 0.48000000000000004,
-          "relevance_score": 0.5,
-          "match_score": 0.6498,
-          "role": "current"
         },
         {
-          "id": "d5ecd4095bbeedf34cc9a96a0f42d8c8",
-          "title": "Ibovespa e dólar hoje: Trump adia acordo com Irã pré-semana de emprego nos EUA",
-          "source_name": "Todas as Notícias",
-          "source_url": "https://br.investing.com/news/stock-market-news/ibovespa-e-dolar-hoje-trump-adia-acordo-com-ira-presemana-de-emprego-nos-eua-1956852",
-          "published_at": "2026-06-01T10:00:00+00:00",
-          "summary": "Ibovespa e dólar hoje: Trump adia acordo com Irã pré-semana de emprego nos EUA.\n\nO foco principal passa por Tecnologia, Economia.",
+          "id": "de2b1de52af8a09a003ada386bdba5ab",
+          "title": "João Fonseca bate Ruud e volta a colocar Brasil nas quartas de final de Roland Garros",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/esportes/joao-fonseca-vence-casper-ruud-e-avanca-as-quartas-de-final-de-roland-garros/",
+          "published_at": "2026-06-01T00:37:04.345437+00:00",
+          "summary": "Brasileiro enfrentará o tcheco Jakub Mensik, atual número 28 do ranking da ATP InfoMoney.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
           "sentiment_score": -0.1,
           "impact_score": 0.28,
           "relevance_score": 0.5,
-          "match_score": 0.2,
-          "role": "current"
+          "match_score": 0.1999,
+          "role": "historical"
         },
         {
-          "id": "521522f832c1a4e2a6b9a70ffe1da74c",
-          "title": "Preços do petróleo sobem com escalada do conflito entre Israel e Líbano",
-          "source_name": "Todas as Notícias",
-          "source_url": "https://br.investing.com/news/commodities-news/precos-do-petroleo-sobem-com-escalada-do-conflito-entre-israel-e-libano-1957403",
-          "published_at": "2026-06-01T00:06:18+00:00",
-          "summary": "Preços do petróleo sobem com escalada do conflito entre Israel e Líbano.\n\nO foco principal passa por Petróleo e Gás.",
-          "sentiment_score": 1.0,
-          "impact_score": 0.55,
+          "id": "5b24c9c5ec49fa07622fdb55d20e0e45",
+          "title": "Brasil atropela o Panamá em último amistoso diante da torcida antes da Copa",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/esportes/brasil-atropela-o-panama-em-ultimo-amistoso-diante-da-torcida-antes-da-copa/",
+          "published_at": "2026-06-01T00:37:04.344491+00:00",
+          "summary": "Após placar de 6 a 2, Seleção embarca para os Estados Unidos para último amisto, contra o Egito InfoMoney.\n\nO foco principal passa por Tecnologia.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.28,
           "relevance_score": 0.5,
           "match_score": 0.1999,
           "role": "historical"
@@ -326,7 +281,7 @@
     },
     {
       "source_name": "Folha.com - Mercado - Principal",
-      "count": 3,
+      "count": 4,
       "items": [
         {
           "id": "b126b775a2b0da1d4b8e05165d37b17e",
@@ -352,15 +307,28 @@
           "impact_score": 0.55,
           "relevance_score": 0.5,
           "match_score": 0.1999,
+          "role": "current"
+        },
+        {
+          "id": "701b359fd919a9d3c4e3f23c613f122f",
+          "title": "Quais os possíveis impactos do fim da escala 6x1 no Brasil? Entenda o debate em 6 pontos",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/quais-os-possiveis-impactos-do-fim-da-escala-6x1-no-brasil-entenda-o-debate-em-6-pontos.shtml",
+          "published_at": "2026-06-01T00:37:04.343404+00:00",
+          "summary": "Quais os possíveis impactos do fim da escala 6x1 no Brasil? Entenda o debate em 6 pontos.\n\nO impacto potencial depende da evolução do tema e da leitura do mercado sobre o fato.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.28,
+          "relevance_score": 0.5,
+          "match_score": 0.1999,
           "role": "historical"
         },
         {
-          "id": "605fa921e3adf0f4949e3f78bc674316",
-          "title": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI",
+          "id": "f07e56f2d2fb727685207f9e35102ea2",
+          "title": "EUA indicam que estão prestes a concluir investigação comercial contra o Brasil",
           "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/crime-custa-ao-menos-r-107-bi-a-industria-brasileira-mostra-cni.shtml",
-          "published_at": "2026-06-01T02:10:35.320489+00:00",
-          "summary": "Crime custa ao menos R$ 107 bi à indústria brasileira, mostra CNI.\n\nO foco principal passa por Tecnologia.",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/eua-indicam-que-estao-prestes-a-concluir-investigacao-comercial-contra-o-brasil.shtml",
+          "published_at": "2026-06-01T00:37:04.342786+00:00",
+          "summary": "EUA indicam que estão prestes a concluir investigação comercial contra o Brasil.\n\nO foco principal passa por Tecnologia.",
           "sentiment_score": -0.1,
           "impact_score": 0.28,
           "relevance_score": 0.5,
@@ -368,7 +336,39 @@
           "role": "historical"
         }
       ]
+    },
+    {
+      "source_name": "Todas as Notícias",
+      "count": 2,
+      "items": [
+        {
+          "id": "19df15397e3b43fd5f5339ce2525d716",
+          "title": "Petrobras reduz em 9,59% preço do diesel para distribuidoras",
+          "source_name": "Todas as Notícias",
+          "source_url": "https://br.investing.com/news/commodities-news/petrobras-reduz-em-959-preco-do-diesel-para-distribuidoras-1957390",
+          "published_at": "2026-05-31T20:56:25+00:00",
+          "summary": "Petrobras reduz em 9,59% preço do diesel para distribuidoras.\n\nO texto menciona PETR4. O foco principal passa por Petróleo e Gás.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 0.6498,
+          "role": "current"
+        },
+        {
+          "id": "521522f832c1a4e2a6b9a70ffe1da74c",
+          "title": "Preços do petróleo sobem com escalada do conflito entre Israel e Líbano",
+          "source_name": "Todas as Notícias",
+          "source_url": "https://br.investing.com/news/commodities-news/precos-do-petroleo-sobem-com-escalada-do-conflito-entre-israel-e-libano-1957403",
+          "published_at": "2026-06-01T00:06:18+00:00",
+          "summary": "Preços do petróleo sobem com escalada do conflito entre Israel e Líbano.\n\nO foco principal passa por Petróleo e Gás.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.1999,
+          "role": "historical"
+        }
+      ]
     }
   ],
-  "portfolio_updated_at": "2026-05-25T01:56:49.326099+00:00"
+  "portfolio_updated_at": "2026-06-01T02:09:21.260678+00:00"
 }

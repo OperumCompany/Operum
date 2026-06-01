@@ -33,6 +33,10 @@ class PortfolioCreate(BaseModel):
     settings: PortfolioSettings = PortfolioSettings()
 
 
+class PortfolioBulkDelete(BaseModel):
+    portfolio_ids: list[str]
+
+
 class PositionAdd(BaseModel):
     ticker: str
     asset_class: str

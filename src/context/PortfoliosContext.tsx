@@ -17,6 +17,7 @@ type PortfoliosContextType = {
   createPortfolio: (input: { name: string; base_currency?: string }) => Promise<Portfolio>;
   updatePortfolio: (id: string, updates: Partial<Portfolio>) => Promise<void>;
   deletePortfolio: (id: string) => Promise<void>;
+  deletePortfolios: (ids: string[]) => Promise<void>;
   addPosition: (portfolioId: string, data: { ticker: string; asset_class: string; quantity: number; avg_price?: number }) => Promise<void>;
   removePosition: (portfolioId: string, ticker: string) => Promise<void>;
   refreshPortfolios: () => Promise<void>;
@@ -99,11 +100,28 @@ export function PortfoliosProvider({ children }: { children: React.ReactNode }) 
 
   async function deletePortfolio(id: string) {
     await api.del(`/portfolios/${id}`);
-    setPortfolios((prev) => prev.filter((p) => p.id !== id));
-    if (activePortfolioId === id) {
-      const next = portfolios.find((p) => p.id !== id);
-      setActivePortfolioId(next?.id ?? '');
-    }
+    setPortfolios((prev) => {
+      const nextPortfolios = prev.filter((p) => p.id !== id);
+      if (activePortfolioId === id) {
+        const next = nextPortfolios[0];
+        setActivePortfolioId(next?.id ?? '');
+      }
+      return nextPortfolios;
+    });
+  }
+
+  async function deletePortfolios(ids: string[]) {
+    if (!ids.length) return;
+    await api.post('/portfolios/bulk-delete', { portfolio_ids: ids });
+    const selected = new Set(ids);
+    setPortfolios((prev) => {
+      const nextPortfolios = prev.filter((p) => !selected.has(p.id));
+      if (selected.has(activePortfolioId)) {
+        const next = nextPortfolios[0];
+        setActivePortfolioId(next?.id ?? '');
+      }
+      return nextPortfolios;
+    });
   }
 
   async function addPosition(portfolioId: string, data: { ticker: string; asset_class: string; quantity: number; avg_price?: number }) {
@@ -135,6 +153,7 @@ export function PortfoliosProvider({ children }: { children: React.ReactNode }) 
       createPortfolio,
       updatePortfolio,
       deletePortfolio,
+      deletePortfolios,
       addPosition,
       removePosition,
       refreshPortfolios,

@@ -33,6 +33,7 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
   const [data, setData] = useState<PortfolioOpinion | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [expandedSources, setExpandedSources] = useState<Record<string, boolean>>({});
 
   async function loadOpinion() {
     setLoading(true);
@@ -40,11 +41,19 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
     try {
       const result = await api.get<PortfolioOpinion>(`/models/opinion/${portfolioId}`);
       setData(result);
+      setExpandedSources({});
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Erro ao gerar analise');
     } finally {
       setLoading(false);
     }
+  }
+
+  function toggleSourceGroup(sourceName: string) {
+    setExpandedSources((prev) => ({
+      ...prev,
+      [sourceName]: !prev[sourceName],
+    }));
   }
 
   const sl = data ? scoreLabel(data.score) : null;
@@ -146,21 +155,46 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
             <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{data.conclusion}</p>
           </div>
 
-          {!!data.sources.length && (
+          {!!data.source_groups.length && (
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Fontes relacionadas</p>
-              {data.sources.map((source) => (
-                <a
-                  key={source.id}
-                  href={source.source_url}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="block rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3 transition hover:border-[var(--brand)]"
-                >
-                  <p className="text-sm font-semibold text-[var(--text-main)]">{source.title}</p>
-                  <p className="mt-1 text-xs text-[var(--text-muted)]">{source.source_name}</p>
-                </a>
-              ))}
+              <div className="flex flex-wrap gap-2">
+                {data.source_groups.map((group) => (
+                  <button
+                    key={group.source_name}
+                    type="button"
+                    onClick={() => toggleSourceGroup(group.source_name)}
+                    className="rounded-full border border-[var(--border-soft)] bg-white px-3 py-2 text-xs font-semibold text-[var(--text-main)] transition hover:border-[var(--brand)]"
+                  >
+                    {group.source_name} ({group.count})
+                  </button>
+                ))}
+              </div>
+              <div className="space-y-3">
+                {data.source_groups
+                  .filter((group) => expandedSources[group.source_name])
+                  .map((group) => (
+                    <div key={`${group.source_name}-panel`} className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3">
+                      <p className="text-sm font-semibold text-[var(--text-main)]">{group.source_name}</p>
+                      <div className="mt-3 space-y-2">
+                        {group.items.map((item) => (
+                          <a
+                            key={item.id}
+                            href={item.source_url}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="block rounded-2xl border border-[var(--border-soft)] bg-white p-3 transition hover:border-[var(--brand)]"
+                          >
+                            <p className="text-sm font-semibold text-[var(--text-main)]">{item.title}</p>
+                            <p className="mt-1 text-xs text-[var(--text-muted)]">
+                              {new Date(item.published_at).toLocaleDateString('pt-BR')}
+                            </p>
+                          </a>
+                        ))}
+                      </div>
+                    </div>
+                  ))}
+              </div>
             </div>
           )}
 

@@ -1,18 +1,18 @@
 {
-  "portfolio_id": "c21ff7ba-8476-4a57-89cd-3144bde8acd0",
-  "ticker": "ITUB4",
-  "asset_name": "Itaú Unibanco PN",
-  "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T03:48:27.783314+00:00",
-  "recomputed_at": "2026-06-01T03:48:27.783314+00:00",
+  "portfolio_id": "434af592-bb0e-4a5b-946a-24b0d7a73b14",
+  "ticker": "BTC",
+  "asset_name": "Bitcoin",
+  "asset_class": "CRYPTO",
+  "generated_at": "2026-06-01T02:09:23.051654+00:00",
+  "recomputed_at": "2026-06-01T02:09:23.051654+00:00",
   "confidence": "media",
   "status": "ok",
   "current_snapshot": {
-    "current_price": 40.04,
-    "currency": "BRL",
-    "weight_pct": 14.88,
-    "sector": "Financeiro",
-    "country": "BR"
+    "current_price": 73383.73,
+    "currency": "USD",
+    "weight_pct": 100.0,
+    "sector": "Criptomoedas",
+    "country": "global"
   },
   "historical_window": {
     "start_date": "2026-03-03",
@@ -27,42 +27,16 @@
     "volatility_21d_pct": null
   },
   "outlook_3m": {
-    "scenario": "pressionado",
+    "scenario": "volatil",
     "dominant_topics": []
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 40.04. Hoje representa cerca de 14.9% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.60.",
-    "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.60. Os destaques recentes nesse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. A confianca dessa leitura e moderada."
+    "current": "O ativo pertence ao bloco cripto, com potencial de assimetria e volatilidade estruturalmente elevada. Cotacao atual aproximada em USD 73383.73. Hoje representa cerca de 100.0% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.60.",
+    "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.60. Os temas que mais apareceram foram cambio. Os destaques recentes nesse intervalo incluem: Relatórios; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!.",
+    "outlook": "A perspectiva de 3 meses e de oscilacao elevada, com possibilidade de movimentos rapidos em ambas as direcoes. Para cripto, liquidez global e apetite a risco continuam pesando mais do que fundamentos tradicionais. A confianca dessa leitura e moderada."
   },
   "used_news_count": 12,
   "sources": [
-    {
-      "id": "1f13e4f39789c6f4984e581d2390e060",
-      "title": "MERCADOS: Ações, Bolsas e Moedas | InfoMoney",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/page/2/",
-      "published_at": "2026-05-31T04:04:31.943874+00:00",
-      "summary": "Últimas notícias sobre Mercados, Ações, Bolsas de Valores e Moedas. Acompanhe cotações, agenda econômica, resultados, proventos e muito mais.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados PublicidadeMercados“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América LatinaMercadosCogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º triBancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.7492,
-      "role": "current"
-    },
-    {
-      "id": "21f8aa5e905ce6a3988e0ecc5e182e51",
-      "title": "Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/bancos-vao-cair-mais-bbas3-bbdc4-e-itub4-acendem-alerta-no-grafico/",
-      "published_at": "2026-05-22T12:42:35+00:00",
-      "summary": "Banco do Brasil (BBAS3), Bradesco (BBDC4) e Itaú (ITUB4) seguem pressionados no gráfico. Veja análise técnica, suportes, resistências e próximos alvos.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Batalha técnica de ações Bancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.742,
-      "role": "current"
-    },
     {
       "id": "919533bf840502e174106d5df59d7690",
       "title": "Relatórios",
@@ -73,7 +47,7 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2992,
+      "match_score": 0.1992,
       "role": "current"
     },
     {
@@ -86,7 +60,7 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2992,
+      "match_score": 0.1992,
       "role": "current"
     },
     {
@@ -99,7 +73,7 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2992,
+      "match_score": 0.1992,
       "role": "current"
     },
     {
@@ -112,7 +86,20 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2992,
+      "match_score": 0.1992,
+      "role": "current"
+    },
+    {
+      "id": "1f13e4f39789c6f4984e581d2390e060",
+      "title": "MERCADOS: Ações, Bolsas e Moedas | InfoMoney",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/page/2/",
+      "published_at": "2026-05-31T04:04:31.943874+00:00",
+      "summary": "Últimas notícias sobre Mercados, Ações, Bolsas de Valores e Moedas. Acompanhe cotações, agenda econômica, resultados, proventos e muito mais.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados PublicidadeMercados“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América LatinaMercadosCogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º triBancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.1992,
       "role": "current"
     },
     {
@@ -125,8 +112,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2992,
-      "role": "historical"
+      "match_score": 0.1992,
+      "role": "current"
     },
     {
       "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -138,7 +125,7 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2992,
+      "match_score": 0.1992,
       "role": "historical"
     },
     {
@@ -151,7 +138,7 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2986,
+      "match_score": 0.1987,
       "role": "historical"
     },
     {
@@ -164,7 +151,7 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2986,
+      "match_score": 0.1987,
       "role": "historical"
     },
     {
@@ -177,20 +164,33 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2982,
+      "match_score": 0.1983,
       "role": "historical"
     },
     {
-      "id": "d4ad77c8fe0dba39b783708103c1403f",
-      "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
+      "id": "645bc96e1a4e4c459f852c8cc290b56d",
+      "title": "Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar?",
       "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-29052026/",
-      "published_at": "2026-05-29T20:32:36+00:00",
-      "summary": "Acompanhe o que movimenta a bolsa, ações, dólar, juros e commodities nos negócios do pregão desta sexta-feira (29).\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Tempo Real Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo Índices nos EUA fecham positivos e semana e mês de maior também têm ganhos Sextou! O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.6666666666666666,
-      "impact_score": 0.6499999999999999,
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-tem-maior-queda-mensal-desde-2023-com-debandada-dos-gringos-o-que-esperar/",
+      "published_at": "2026-05-29T21:01:22+00:00",
+      "summary": "Índice teve baixa de 7,22%, maior queda desde fevereiro de 2023, quando caiu 7,49%.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Mercado doméstico Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar? O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.6,
+      "impact_score": 0.63,
       "relevance_score": 0.5,
-      "match_score": 0.2981,
+      "match_score": 0.1982,
+      "role": "historical"
+    },
+    {
+      "id": "dbb5a625b865eea29ec971770aeab156",
+      "title": "Dólar sobe a R$ 5,04 em dia negativo para ativos brasileiros; moeda salta 1,8% no mês",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-29052026/",
+      "published_at": "2026-05-29T22:05:05+00:00",
+      "summary": "Em meio à disputa da PTAX, a moeda norte-americana à vista atingiu a cotação máxima da sessão de R$5,0722 (+0,77%) às 11h51.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Câmbio Dólar sobe a R$ 5,04 em dia negativo para ativos brasileiros; moeda salta 1,8% no mês Em meio à disputa da PTAX, a moeda norte-americana à vista atingiu a cotação máxima da sessão de R$5,0722 (+0,77%) às 11h51 Felipe Moreira 29/05/2026 19h05 &bull; Atualizado 1 dia atrás Um funcionário conta cédulas de dólar americano em uma casa de câmbio em Jacarta, na Indonésia, na quarta-feira, 2 de março de 2022 (Dimas Ardian/Bloomberg) Publicidade O dólar fechou a sexta-feira em alta no Brasil, em uma sessão no geral negativa para os ativos brasileiros, com fluxo de saída de estrangeiros da bolsa e cautela em relação ao cenário econômico, enquanto no exterior os agentes aguardavam por um desfecho nas negociações entre EUA e Irã. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.3333333333333333,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.1982,
       "role": "historical"
     }
   ],
@@ -199,32 +199,6 @@
       "source_name": "InfoMoney",
       "count": 12,
       "items": [
-        {
-          "id": "1f13e4f39789c6f4984e581d2390e060",
-          "title": "MERCADOS: Ações, Bolsas e Moedas | InfoMoney",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/page/2/",
-          "published_at": "2026-05-31T04:04:31.943874+00:00",
-          "summary": "Últimas notícias sobre Mercados, Ações, Bolsas de Valores e Moedas. Acompanhe cotações, agenda econômica, resultados, proventos e muito mais.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados PublicidadeMercados“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América LatinaMercadosCogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º triBancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.7492,
-          "role": "current"
-        },
-        {
-          "id": "21f8aa5e905ce6a3988e0ecc5e182e51",
-          "title": "Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/bancos-vao-cair-mais-bbas3-bbdc4-e-itub4-acendem-alerta-no-grafico/",
-          "published_at": "2026-05-22T12:42:35+00:00",
-          "summary": "Banco do Brasil (BBAS3), Bradesco (BBDC4) e Itaú (ITUB4) seguem pressionados no gráfico. Veja análise técnica, suportes, resistências e próximos alvos.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Batalha técnica de ações Bancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.742,
-          "role": "current"
-        },
         {
           "id": "919533bf840502e174106d5df59d7690",
           "title": "Relatórios",
@@ -235,7 +209,7 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2992,
+          "match_score": 0.1992,
           "role": "current"
         },
         {
@@ -248,7 +222,7 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2992,
+          "match_score": 0.1992,
           "role": "current"
         },
         {
@@ -261,7 +235,7 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2992,
+          "match_score": 0.1992,
           "role": "current"
         },
         {
@@ -274,7 +248,20 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2992,
+          "match_score": 0.1992,
+          "role": "current"
+        },
+        {
+          "id": "1f13e4f39789c6f4984e581d2390e060",
+          "title": "MERCADOS: Ações, Bolsas e Moedas | InfoMoney",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/page/2/",
+          "published_at": "2026-05-31T04:04:31.943874+00:00",
+          "summary": "Últimas notícias sobre Mercados, Ações, Bolsas de Valores e Moedas. Acompanhe cotações, agenda econômica, resultados, proventos e muito mais.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados PublicidadeMercados“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América LatinaMercadosCogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º triBancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
+          "sentiment_score": -0.5,
+          "impact_score": 0.6000000000000001,
+          "relevance_score": 0.5,
+          "match_score": 0.1992,
           "role": "current"
         },
         {
@@ -287,8 +274,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2992,
-          "role": "historical"
+          "match_score": 0.1992,
+          "role": "current"
         },
         {
           "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -300,7 +287,7 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2992,
+          "match_score": 0.1992,
           "role": "historical"
         },
         {
@@ -313,7 +300,7 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2986,
+          "match_score": 0.1987,
           "role": "historical"
         },
         {
@@ -326,7 +313,7 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2986,
+          "match_score": 0.1987,
           "role": "historical"
         },
         {
@@ -339,24 +326,37 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2982,
+          "match_score": 0.1983,
           "role": "historical"
         },
         {
-          "id": "d4ad77c8fe0dba39b783708103c1403f",
-          "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
+          "id": "645bc96e1a4e4c459f852c8cc290b56d",
+          "title": "Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar?",
           "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-29052026/",
-          "published_at": "2026-05-29T20:32:36+00:00",
-          "summary": "Acompanhe o que movimenta a bolsa, ações, dólar, juros e commodities nos negócios do pregão desta sexta-feira (29).\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Tempo Real Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo Índices nos EUA fecham positivos e semana e mês de maior também têm ganhos Sextou! O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.6666666666666666,
-          "impact_score": 0.6499999999999999,
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-tem-maior-queda-mensal-desde-2023-com-debandada-dos-gringos-o-que-esperar/",
+          "published_at": "2026-05-29T21:01:22+00:00",
+          "summary": "Índice teve baixa de 7,22%, maior queda desde fevereiro de 2023, quando caiu 7,49%.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Mercado doméstico Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar? O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+          "sentiment_score": -0.6,
+          "impact_score": 0.63,
           "relevance_score": 0.5,
-          "match_score": 0.2981,
+          "match_score": 0.1982,
+          "role": "historical"
+        },
+        {
+          "id": "dbb5a625b865eea29ec971770aeab156",
+          "title": "Dólar sobe a R$ 5,04 em dia negativo para ativos brasileiros; moeda salta 1,8% no mês",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-29052026/",
+          "published_at": "2026-05-29T22:05:05+00:00",
+          "summary": "Em meio à disputa da PTAX, a moeda norte-americana à vista atingiu a cotação máxima da sessão de R$5,0722 (+0,77%) às 11h51.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Câmbio Dólar sobe a R$ 5,04 em dia negativo para ativos brasileiros; moeda salta 1,8% no mês Em meio à disputa da PTAX, a moeda norte-americana à vista atingiu a cotação máxima da sessão de R$5,0722 (+0,77%) às 11h51 Felipe Moreira 29/05/2026 19h05 &bull; Atualizado 1 dia atrás Um funcionário conta cédulas de dólar americano em uma casa de câmbio em Jacarta, na Indonésia, na quarta-feira, 2 de março de 2022 (Dimas Ardian/Bloomberg) Publicidade O dólar fechou a sexta-feira em alta no Brasil, em uma sessão no geral negativa para os ativos brasileiros, com fluxo de saída de estrangeiros da bolsa e cautela em relação ao cenário econômico, enquanto no exterior os agentes aguardavam por um desfecho nas negociações entre EUA e Irã. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+          "sentiment_score": -0.3333333333333333,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.1982,
           "role": "historical"
         }
       ]
     }
   ],
-  "portfolio_updated_at": "2026-05-25T01:56:49.326099+00:00"
+  "portfolio_updated_at": "2026-06-01T02:09:21.989763+00:00"
 }

@@ -44,6 +44,7 @@ type OpinionState = {
   loading: boolean;
   error?: string;
   open: boolean;
+  expandedSources?: Record<string, boolean>;
 };
 
 function resolveDisplayClass(assetClass: string, ticker: string, assets: Asset[]): string {
@@ -184,24 +185,24 @@ export function PortfolioDetailsPage() {
   async function togglePositionOpinion(ticker: string) {
     if (!portfolio) return;
     const existing = positionOpinions[ticker];
-    if (existing?.data) {
+    if (existing?.open) {
       setPositionOpinions((prev) => ({
         ...prev,
-        [ticker]: { ...existing, open: !existing.open },
+        [ticker]: { ...existing, open: false },
       }));
       return;
     }
 
     setPositionOpinions((prev) => ({
       ...prev,
-      [ticker]: { loading: true, open: true },
+      [ticker]: { ...existing, loading: true, open: true, error: undefined },
     }));
 
     try {
       const data = await api.get<PositionOpinion>(`/models/opinion/${portfolio.id}/positions/${ticker}`);
       setPositionOpinions((prev) => ({
         ...prev,
-        [ticker]: { loading: false, open: true, data },
+        [ticker]: { loading: false, open: true, data, expandedSources: {} },
       }));
     } catch (e) {
       setPositionOpinions((prev) => ({
@@ -209,6 +210,22 @@ export function PortfolioDetailsPage() {
         [ticker]: { loading: false, open: true, error: e instanceof Error ? e.message : 'Erro ao gerar analise' },
       }));
     }
+  }
+
+  function toggleSourceGroup(ticker: string, sourceName: string) {
+    setPositionOpinions((prev) => {
+      const current = prev[ticker];
+      if (!current) return prev;
+      const expandedSources = { ...(current.expandedSources ?? {}) };
+      expandedSources[sourceName] = !expandedSources[sourceName];
+      return {
+        ...prev,
+        [ticker]: {
+          ...current,
+          expandedSources,
+        },
+      };
+    });
   }
 
   if (!portfolio) {
@@ -380,7 +397,7 @@ export function PortfolioDetailsPage() {
                           </td>
                         </tr>
                         {opinionState?.open && (
-                          <tr key={`${pos.ticker}-analysis`} className="border-t border-[var(--border-soft)] bg-[var(--bg-surface-strong)]/60">
+                          <tr className="border-t border-[var(--border-soft)] bg-[var(--bg-surface-strong)]/60">
                             <td colSpan={8} className="p-4">
                               {opinionState.loading && (
                                 <div className="flex items-center gap-3">
@@ -401,7 +418,10 @@ export function PortfolioDetailsPage() {
                                         {opinionState.data.ticker} ({opinionState.data.asset_name})
                                       </p>
                                       <p className="text-xs text-[var(--text-muted)]">
-                                        {confidenceLabel(opinionState.data.confidence)} • Cenário 3 meses: {opinionState.data.outlook_3m.scenario}
+                                        {confidenceLabel(opinionState.data.confidence)} • Cenario 3 meses: {opinionState.data.outlook_3m.scenario}
+                                      </p>
+                                      <p className="mt-1 text-xs text-[var(--text-muted)]">
+                                        Janela historica: {opinionState.data.historical_window.start_date} ate {opinionState.data.historical_window.end_date} • {opinionState.data.used_news_count} noticia(s) usada(s)
                                       </p>
                                     </div>
                                     {opinionState.data.current_snapshot.weight_pct != null && (
@@ -426,27 +446,51 @@ export function PortfolioDetailsPage() {
                                     </section>
                                   </div>
 
-                                  {!!opinionState.data.sources.length && (
+                                  {!!opinionState.data.source_groups.length && (
                                     <div className="space-y-2">
                                       <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Fontes usadas</p>
-                                      <div className="grid gap-2 lg:grid-cols-2">
-                                        {opinionState.data.sources.map((source) => (
-                                          <a
-                                            key={source.id}
-                                            href={source.source_url}
-                                            target="_blank"
-                                            rel="noreferrer"
-                                            className="rounded-2xl border border-[var(--border-soft)] bg-white p-3 transition hover:border-[var(--brand)]"
+                                      <div className="flex flex-wrap gap-2">
+                                        {opinionState.data.source_groups.map((group) => (
+                                          <button
+                                            key={group.source_name}
+                                            type="button"
+                                            onClick={() => toggleSourceGroup(pos.ticker, group.source_name)}
+                                            className="rounded-full border border-[var(--border-soft)] bg-white px-3 py-2 text-xs font-semibold text-[var(--text-main)] transition hover:border-[var(--brand)]"
                                           >
-                                            <p className="text-sm font-semibold text-[var(--text-main)]">{source.title}</p>
-                                            <p className="mt-1 text-xs text-[var(--text-muted)]">{source.source_name}</p>
-                                          </a>
+                                            {group.source_name} ({group.count})
+                                          </button>
                                         ))}
+                                      </div>
+                                      <div className="space-y-3">
+                                        {opinionState.data.source_groups
+                                          .filter((group) => opinionState.expandedSources?.[group.source_name])
+                                          .map((group) => (
+                                            <div key={`${group.source_name}-panel`} className="rounded-2xl border border-[var(--border-soft)] bg-white p-3">
+                                              <p className="text-sm font-semibold text-[var(--text-main)]">{group.source_name}</p>
+                                              <div className="mt-3 space-y-2">
+                                                {group.items.map((item) => (
+                                                  <a
+                                                    key={item.id}
+                                                    href={item.source_url}
+                                                    target="_blank"
+                                                    rel="noreferrer"
+                                                    className="block rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3 transition hover:border-[var(--brand)]"
+                                                  >
+                                                    <p className="text-sm font-semibold text-[var(--text-main)]">{item.title}</p>
+                                                    <p className="mt-1 text-xs text-[var(--text-muted)]">
+                                                      {new Date(item.published_at).toLocaleDateString('pt-BR')}
+                                                      {item.role ? ` • ${item.role}` : ''}
+                                                    </p>
+                                                  </a>
+                                                ))}
+                                              </div>
+                                            </div>
+                                          ))}
                                       </div>
                                     </div>
                                   )}
 
-                                  {!opinionState.data.sources.length && (
+                                  {!opinionState.data.source_groups.length && (
                                     <p className="text-sm text-[var(--text-muted)]">Sem noticias suficientes para esse ativo. A leitura foi baseada mais em preco e classe do ativo.</p>
                                   )}
                                 </div>

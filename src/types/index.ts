@@ -147,6 +147,11 @@ export type PortfolioOpinion = {
     relevance_score: number;
     match_score: number;
   }>;
+  source_groups: Array<{
+    source_name: string;
+    count: number;
+    items: Array<PortfolioOpinion['sources'][number] & { role?: string }>;
+  }>;
   portfolio_id: string;
   generated_at: string;
 };
@@ -157,6 +162,7 @@ export type PositionOpinion = {
   asset_name: string;
   asset_class: string;
   generated_at: string;
+  recomputed_at: string;
   confidence: string;
   status: string;
   current_snapshot: {
@@ -165,6 +171,12 @@ export type PositionOpinion = {
     weight_pct: number | null;
     sector: string;
     country: string;
+  };
+  historical_window: {
+    start_date: string;
+    end_date: string;
+    news_count: number;
+    has_price_history: boolean;
   };
   recent_performance: {
     change_1m_pct: number | null;
@@ -181,5 +193,11 @@ export type PositionOpinion = {
     recent: string;
     outlook: string;
   };
+  used_news_count: number;
   sources: PortfolioOpinion['sources'];
+  source_groups: Array<{
+    source_name: string;
+    count: number;
+    items: Array<PortfolioOpinion['sources'][number] & { role?: string }>;
+  }>;
 };

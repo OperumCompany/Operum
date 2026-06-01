@@ -7,7 +7,10 @@ from datetime import datetime
 class LocalStorageService:
     def __init__(self, base_dir: str = None):
         if base_dir is None:
-            base_dir = os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data")
+            base_dir = os.environ.get("OPERUM_DATA_DIR") or os.path.join(
+                os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
+                "data",
+            )
         self.base_dir = base_dir
 
     def _ensure_dir(self, path: str):

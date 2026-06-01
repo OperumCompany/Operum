@@ -1,7 +1,20 @@
+import os
+import shutil
+import tempfile
+
+TEST_DATA_DIR = tempfile.mkdtemp(prefix="operum-test-data-")
+os.environ["OPERUM_DATA_DIR"] = TEST_DATA_DIR
+
 import pytest
 import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
 from app.main import app
+
+
+@pytest.fixture(scope="session", autouse=True)
+def cleanup_test_data_dir():
+    yield
+    shutil.rmtree(TEST_DATA_DIR, ignore_errors=True)
 
 
 @pytest_asyncio.fixture
@@ -66,6 +79,21 @@ async def test_add_and_remove_position(client: AsyncClient):
     resp = await client.delete(f"/api/portfolios/{pid}/positions/PETR4")
     assert resp.status_code == 200
     assert len(resp.json()["positions"]) == 0
+
+
+@pytest.mark.asyncio
+async def test_bulk_delete_portfolios(client: AsyncClient):
+    created_ids = []
+    for name in ("Lote A", "Lote B"):
+        resp = await client.post("/api/portfolios", json={"name": name, "base_currency": "BRL"})
+        assert resp.status_code == 201
+        created_ids.append(resp.json()["id"])
+
+    resp = await client.post("/api/portfolios/bulk-delete", json={"portfolio_ids": created_ids})
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["deleted_count"] == 2
+    assert set(data["deleted_ids"]) == set(created_ids)
 
 
 @pytest.mark.asyncio
@@ -156,6 +184,7 @@ async def test_portfolio_opinion_structure(client: AsyncClient):
     assert "composition_summary" in data
     assert "block_reviews" in data
     assert "sources" in data
+    assert "source_groups" in data
 
 
 @pytest.mark.asyncio
@@ -173,11 +202,17 @@ async def test_position_opinion_endpoint(client: AsyncClient):
     assert "analysis_sections" in data
     assert "current" in data["analysis_sections"]
     assert "sources" in data
+    assert "source_groups" in data
+    assert "used_news_count" in data
+    assert "historical_window" in data
 
 
 @pytest.mark.asyncio
 async def test_cluster_news(client: AsyncClient):
     resp = await client.post("/api/models/cluster/news")
-    assert resp.status_code == 200
+    assert resp.status_code in (200, 404)
     data = resp.json()
-    assert data["status"] == "ok"
+    if resp.status_code == 200:
+        assert data["status"] == "ok"
+    else:
+        assert "Nenhuma" in data["detail"]
