@@ -371,3 +371,4 @@
 2026-06-01 13:26:53 | INFO     | app.services.news_ingestion_service | Ingestao: 24 noticias novas de 134 unicas
 2026-06-01 13:26:53 | INFO     | app.main | Ingestao automatica: 24 noticias novas
 2026-06-01 13:26:53 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-06-01 13:26:57 | INFO     | app.main | Cache de precos atualizado para 12 ativos
