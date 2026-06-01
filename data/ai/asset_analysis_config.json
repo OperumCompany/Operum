@@ -42,6 +42,10 @@
     ],
     "CEEB3": [
       "coelba"
+    ],
+    "PETR4": [
+      "petrobras",
+      "petroleo brasileiro"
     ]
   },
   "source_confidence": {
@@ -56,6 +60,70 @@
     "CRYPTO": "O ativo pertence ao bloco cripto, com potencial de assimetria e volatilidade estruturalmente elevada.",
     "FIXED_INCOME": "O ativo pertence à renda fixa, com comportamento mais ligado a juros, duration e previsibilidade do fluxo.",
     "US_STOCK": "O ativo está exposto ao mercado americano e ao ciclo global de juros, dólar e crescimento.",
-    "BR_STOCK": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local."
+    "BR_STOCK": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local.",
+    "BDR": "O ativo e um BDR e combina a tese da empresa estrangeira com variacao cambial e fluxo local."
+  },
+  "topic_synonyms": {
+    "juros": [
+      "juros",
+      "selic",
+      "copom",
+      "fed",
+      "treasury",
+      "rates"
+    ],
+    "inflacao": [
+      "inflacao",
+      "inflacao",
+      "ipca",
+      "cpi",
+      "inflation"
+    ],
+    "cambio": [
+      "dolar",
+      "dolar",
+      "cambio",
+      "fx",
+      "real"
+    ],
+    "commodities": [
+      "petroleo",
+      "brent",
+      "commodity",
+      "commodities",
+      "minerio",
+      "oil"
+    ],
+    "fiscal/politica": [
+      "fiscal",
+      "governo",
+      "congresso",
+      "tribut",
+      "arcabouco",
+      "eleicao"
+    ],
+    "geopolitica": [
+      "guerra",
+      "iran",
+      "israel",
+      "russia",
+      "ucrania",
+      "tarifa",
+      "tariffs"
+    ],
+    "dividendos": [
+      "dividend",
+      "dividendo",
+      "provento",
+      "yield"
+    ],
+    "resultados": [
+      "resultado",
+      "lucro",
+      "receita",
+      "ebitda",
+      "balanco",
+      "balanco"
+    ]
   }
 }

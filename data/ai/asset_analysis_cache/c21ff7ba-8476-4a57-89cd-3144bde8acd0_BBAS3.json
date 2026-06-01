@@ -3,10 +3,12 @@
   "ticker": "BBAS3",
   "asset_name": "Banco do Brasil ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T15:03:31.253753+00:00",
-  "recomputed_at": "2026-06-01T15:03:31.253753+00:00",
+  "generated_at": "2026-06-01T16:32:20.396667+00:00",
+  "recomputed_at": "2026-06-01T16:32:20.396667+00:00",
   "confidence": "media",
   "status": "ok",
+  "selected_history_horizon": "3m",
+  "selected_outlook_horizon": "3m",
   "current_snapshot": {
     "current_price": 20.16,
     "currency": "BRL",
@@ -15,33 +17,339 @@
     "country": "BR"
   },
   "historical_window": {
-    "start_date": "2026-03-03",
+    "start_date": "2026-01-26",
     "end_date": "2026-06-01",
     "news_count": 12,
     "has_price_history": false
   },
+  "historical_series": [],
+  "forecast_series": [
+    {
+      "date": "2026-06-01",
+      "value": 20.17
+    },
+    {
+      "date": "2026-06-02",
+      "value": 20.1
+    },
+    {
+      "date": "2026-06-03",
+      "value": 20.03
+    },
+    {
+      "date": "2026-06-04",
+      "value": 19.95
+    },
+    {
+      "date": "2026-06-05",
+      "value": 19.88
+    },
+    {
+      "date": "2026-06-08",
+      "value": 19.81
+    },
+    {
+      "date": "2026-06-09",
+      "value": 19.83
+    },
+    {
+      "date": "2026-06-10",
+      "value": 19.86
+    },
+    {
+      "date": "2026-06-11",
+      "value": 19.88
+    },
+    {
+      "date": "2026-06-12",
+      "value": 19.91
+    },
+    {
+      "date": "2026-06-15",
+      "value": 19.93
+    },
+    {
+      "date": "2026-06-16",
+      "value": 19.96
+    },
+    {
+      "date": "2026-06-17",
+      "value": 19.98
+    },
+    {
+      "date": "2026-06-18",
+      "value": 20.0
+    },
+    {
+      "date": "2026-06-19",
+      "value": 20.03
+    },
+    {
+      "date": "2026-06-22",
+      "value": 20.05
+    },
+    {
+      "date": "2026-06-23",
+      "value": 20.08
+    },
+    {
+      "date": "2026-06-24",
+      "value": 20.1
+    },
+    {
+      "date": "2026-06-25",
+      "value": 20.13
+    },
+    {
+      "date": "2026-06-26",
+      "value": 20.15
+    },
+    {
+      "date": "2026-06-29",
+      "value": 20.18
+    },
+    {
+      "date": "2026-06-30",
+      "value": 20.2
+    },
+    {
+      "date": "2026-07-01",
+      "value": 20.3
+    },
+    {
+      "date": "2026-07-02",
+      "value": 20.4
+    },
+    {
+      "date": "2026-07-03",
+      "value": 20.5
+    },
+    {
+      "date": "2026-07-06",
+      "value": 20.59
+    },
+    {
+      "date": "2026-07-07",
+      "value": 20.69
+    },
+    {
+      "date": "2026-07-08",
+      "value": 20.79
+    },
+    {
+      "date": "2026-07-09",
+      "value": 20.89
+    },
+    {
+      "date": "2026-07-10",
+      "value": 20.99
+    },
+    {
+      "date": "2026-07-13",
+      "value": 21.09
+    },
+    {
+      "date": "2026-07-14",
+      "value": 21.19
+    },
+    {
+      "date": "2026-07-15",
+      "value": 21.28
+    },
+    {
+      "date": "2026-07-16",
+      "value": 21.38
+    },
+    {
+      "date": "2026-07-17",
+      "value": 21.48
+    },
+    {
+      "date": "2026-07-20",
+      "value": 21.58
+    },
+    {
+      "date": "2026-07-21",
+      "value": 21.68
+    },
+    {
+      "date": "2026-07-22",
+      "value": 21.78
+    },
+    {
+      "date": "2026-07-23",
+      "value": 21.88
+    },
+    {
+      "date": "2026-07-24",
+      "value": 21.97
+    },
+    {
+      "date": "2026-07-27",
+      "value": 22.07
+    },
+    {
+      "date": "2026-07-28",
+      "value": 22.17
+    },
+    {
+      "date": "2026-07-29",
+      "value": 22.27
+    },
+    {
+      "date": "2026-07-30",
+      "value": 22.19
+    },
+    {
+      "date": "2026-07-31",
+      "value": 22.11
+    },
+    {
+      "date": "2026-08-03",
+      "value": 22.03
+    },
+    {
+      "date": "2026-08-04",
+      "value": 21.94
+    },
+    {
+      "date": "2026-08-05",
+      "value": 21.86
+    },
+    {
+      "date": "2026-08-06",
+      "value": 21.78
+    },
+    {
+      "date": "2026-08-07",
+      "value": 21.7
+    },
+    {
+      "date": "2026-08-10",
+      "value": 21.62
+    },
+    {
+      "date": "2026-08-11",
+      "value": 21.54
+    },
+    {
+      "date": "2026-08-12",
+      "value": 21.46
+    },
+    {
+      "date": "2026-08-13",
+      "value": 21.37
+    },
+    {
+      "date": "2026-08-14",
+      "value": 21.29
+    },
+    {
+      "date": "2026-08-17",
+      "value": 21.21
+    },
+    {
+      "date": "2026-08-18",
+      "value": 21.13
+    },
+    {
+      "date": "2026-08-19",
+      "value": 21.05
+    },
+    {
+      "date": "2026-08-20",
+      "value": 20.97
+    },
+    {
+      "date": "2026-08-21",
+      "value": 20.89
+    },
+    {
+      "date": "2026-08-24",
+      "value": 20.8
+    },
+    {
+      "date": "2026-08-25",
+      "value": 20.72
+    },
+    {
+      "date": "2026-08-26",
+      "value": 20.64
+    },
+    {
+      "date": "2026-08-27",
+      "value": 20.56
+    }
+  ],
+  "forecast_anchor_points": [
+    {
+      "date": "1w",
+      "horizon_days": 5,
+      "predicted_price": 19.81,
+      "predicted_return": -0.017746,
+      "confidence": 0.2104
+    },
+    {
+      "date": "1m",
+      "horizon_days": 21,
+      "predicted_price": 20.2,
+      "predicted_return": 0.001482,
+      "confidence": 0.1537
+    },
+    {
+      "date": "2m",
+      "horizon_days": 42,
+      "predicted_price": 22.27,
+      "predicted_return": 0.104075,
+      "confidence": 0.06
+    },
+    {
+      "date": "3m",
+      "horizon_days": 63,
+      "predicted_price": 20.56,
+      "predicted_return": 0.019153,
+      "confidence": 0.05
+    }
+  ],
   "recent_performance": {
+    "change_selected_pct": null,
     "change_1m_pct": null,
+    "change_2m_pct": null,
     "change_3m_pct": null,
     "change_12m_pct": null,
-    "volatility_21d_pct": null,
-    "drawdown_90d_pct": null,
-    "beta_63d": null,
-    "correlation_63d": null,
-    "benchmark_ticker": "IBOV"
+    "volatility_selected_pct": null,
+    "drawdown_selected_pct": null,
+    "beta_selected": null,
+    "correlation_selected": null,
+    "benchmark_ticker": "IBOV",
+    "forecast_return_selected_pct": 1.92,
+    "forecast_price_selected": 20.56,
+    "forecast_confidence_selected": 0.05
   },
   "outlook_3m": {
     "scenario": "pressionado",
     "dominant_topics": [
       "juros",
       "inflacao",
-      "cambio"
+      "cambio",
+      "dividendos"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 20.16. Hoje representa cerca de 5.7% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.61.",
-    "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.59. Os temas que mais apareceram foram juros, inflacao, cambio. Os destaques recentes nesse intervalo incluem: Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; MERCADOS: Ações, Bolsas e Moedas | InfoMoney.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. Os temas dominantes hoje sao juros, inflacao, cambio. A confianca dessa leitura e moderada."
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 20.16. Hoje representa cerca de 5.7% da carteira. O modelo de 3 meses hoje aponta alta, com retorno estimado de +1.9% e confianca de 5%. As noticias recentes tem vies negativo e impacto medio de 0.61.",
+    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +1.9% e preco estimado perto de 20.56. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
+    "recent_by_horizon": {
+      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
+      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
+      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo."
+    },
+    "outlook_by_horizon": {
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -1.8% e preco estimado perto de 19.81. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +0.1% e preco estimado perto de 20.20. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +10.4% e preco estimado perto de 22.27. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +1.9% e preco estimado perto de 20.56. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada."
+    }
   },
   "used_news_count": 12,
   "sources": [
@@ -56,7 +364,7 @@
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
       "match_score": 1.0,
-      "rank_score": 0.8495,
+      "rank_score": 0.842,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
@@ -73,8 +381,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.8779,
-      "rank_score": 0.7823,
+      "match_score": 0.8773,
+      "rank_score": 0.7782,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
@@ -91,8 +399,8 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.4488,
-      "rank_score": 0.5523,
+      "match_score": 0.448,
+      "rank_score": 0.5685,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -109,8 +417,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4529,
-      "rank_score": 0.5471,
+      "match_score": 0.4523,
+      "rank_score": 0.5632,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -127,8 +435,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4529,
-      "rank_score": 0.5471,
+      "match_score": 0.4523,
+      "rank_score": 0.5632,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -145,8 +453,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4508,
-      "rank_score": 0.5459,
+      "match_score": 0.4501,
+      "rank_score": 0.5621,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -163,8 +471,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4507,
-      "rank_score": 0.5459,
+      "match_score": 0.4501,
+      "rank_score": 0.5621,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -181,8 +489,8 @@
       "sentiment_score": 0.14285714285714285,
       "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.4488,
-      "rank_score": 0.5288,
+      "match_score": 0.448,
+      "rank_score": 0.5449,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -199,12 +507,30 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4244,
-      "rank_score": 0.5189,
+      "match_score": 0.4236,
+      "rank_score": 0.5283,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
+      "role": "historical"
+    },
+    {
+      "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
+      "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
+      "source_name": "Tesouro Nacional - Noticias",
+      "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
+      "published_at": "2026-04-28T00:00:00+00:00",
+      "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
+      "sentiment_score": -0.3333333333333333,
+      "impact_score": 0.35,
+      "relevance_score": 0.5,
+      "match_score": 0.405,
+      "rank_score": 0.5241,
+      "source_category": "treasury",
+      "is_official": true,
+      "context_role": "sector",
+      "source_confidence_weight": 0.95,
       "role": "historical"
     },
     {
@@ -217,8 +543,8 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.424,
-      "rank_score": 0.5112,
+      "match_score": 0.4232,
+      "rank_score": 0.5206,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -235,26 +561,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4045,
-      "rank_score": 0.508,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.72,
-      "role": "historical"
-    },
-    {
-      "id": "7cac0a30e9fb0cd92da90213b98508c4",
-      "title": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/cogna-yduqs-anima-e-mais-quais-acoes-se-destacaram-na-temporada-do-1o-tri/",
-      "published_at": "2026-05-22T16:37:23+00:00",
-      "summary": "Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise de resultados Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor Felipe Moreira 22/05/2026 13h37 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Foto: Reprodução de Tung Nguyen por Pixabay) Publicidade A temporada de resultados do primeiro trimestre de 2026 (1T26) terminou e os resultados de educacionais foram considerados mistos, com leve assimetria positiva. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.4044,
-      "rank_score": 0.5079,
+      "match_score": 0.4027,
+      "rank_score": 0.5174,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -265,7 +573,7 @@
   "source_groups": [
     {
       "source_name": "InfoMoney",
-      "count": 12,
+      "count": 11,
       "items": [
         {
           "id": "21f8aa5e905ce6a3988e0ecc5e182e51",
@@ -278,7 +586,7 @@
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
           "match_score": 1.0,
-          "rank_score": 0.8495,
+          "rank_score": 0.842,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -295,8 +603,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.8779,
-          "rank_score": 0.7823,
+          "match_score": 0.8773,
+          "rank_score": 0.7782,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -313,8 +621,8 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.4488,
-          "rank_score": 0.5523,
+          "match_score": 0.448,
+          "rank_score": 0.5685,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -331,8 +639,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4529,
-          "rank_score": 0.5471,
+          "match_score": 0.4523,
+          "rank_score": 0.5632,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -349,8 +657,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4529,
-          "rank_score": 0.5471,
+          "match_score": 0.4523,
+          "rank_score": 0.5632,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -367,8 +675,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4508,
-          "rank_score": 0.5459,
+          "match_score": 0.4501,
+          "rank_score": 0.5621,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -385,8 +693,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4507,
-          "rank_score": 0.5459,
+          "match_score": 0.4501,
+          "rank_score": 0.5621,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -403,8 +711,8 @@
           "sentiment_score": 0.14285714285714285,
           "impact_score": 0.4928571428571429,
           "relevance_score": 0.5,
-          "match_score": 0.4488,
-          "rank_score": 0.5288,
+          "match_score": 0.448,
+          "rank_score": 0.5449,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -421,8 +729,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4244,
-          "rank_score": 0.5189,
+          "match_score": 0.4236,
+          "rank_score": 0.5283,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -439,8 +747,8 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.424,
-          "rank_score": 0.5112,
+          "match_score": 0.4232,
+          "rank_score": 0.5206,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -457,30 +765,36 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4045,
-          "rank_score": 0.508,
+          "match_score": 0.4027,
+          "rank_score": 0.5174,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
           "role": "historical"
-        },
+        }
+      ]
+    },
+    {
+      "source_name": "Tesouro Nacional - Noticias",
+      "count": 1,
+      "items": [
         {
-          "id": "7cac0a30e9fb0cd92da90213b98508c4",
-          "title": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/cogna-yduqs-anima-e-mais-quais-acoes-se-destacaram-na-temporada-do-1o-tri/",
-          "published_at": "2026-05-22T16:37:23+00:00",
-          "summary": "Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise de resultados Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor Felipe Moreira 22/05/2026 13h37 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Foto: Reprodução de Tung Nguyen por Pixabay) Publicidade A temporada de resultados do primeiro trimestre de 2026 (1T26) terminou e os resultados de educacionais foram considerados mistos, com leve assimetria positiva. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
+          "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
+          "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
+          "source_name": "Tesouro Nacional - Noticias",
+          "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
+          "published_at": "2026-04-28T00:00:00+00:00",
+          "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
+          "sentiment_score": -0.3333333333333333,
+          "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.4044,
-          "rank_score": 0.5079,
-          "source_category": null,
-          "is_official": false,
+          "match_score": 0.405,
+          "rank_score": 0.5241,
+          "source_category": "treasury",
+          "is_official": true,
           "context_role": "sector",
-          "source_confidence_weight": 0.72,
+          "source_confidence_weight": 0.95,
           "role": "historical"
         }
       ]

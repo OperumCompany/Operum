@@ -3,45 +3,353 @@
   "ticker": "PETR4",
   "asset_name": "Petrobras PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T15:03:30.263009+00:00",
-  "recomputed_at": "2026-06-01T15:03:30.263009+00:00",
+  "generated_at": "2026-06-01T16:32:08.765914+00:00",
+  "recomputed_at": "2026-06-01T16:32:08.765914+00:00",
   "confidence": "media",
   "status": "ok",
+  "selected_history_horizon": "3m",
+  "selected_outlook_horizon": "3m",
   "current_snapshot": {
-    "current_price": 42.85,
+    "current_price": 42.54,
     "currency": "BRL",
-    "weight_pct": 8.07,
+    "weight_pct": 8.02,
     "sector": "Petróleo e Gás",
     "country": "BR"
   },
   "historical_window": {
-    "start_date": "2026-03-03",
+    "start_date": "2026-01-26",
     "end_date": "2026-06-01",
     "news_count": 12,
     "has_price_history": false
   },
+  "historical_series": [],
+  "forecast_series": [
+    {
+      "date": "2026-06-01",
+      "value": 42.56
+    },
+    {
+      "date": "2026-06-02",
+      "value": 42.84
+    },
+    {
+      "date": "2026-06-03",
+      "value": 43.13
+    },
+    {
+      "date": "2026-06-04",
+      "value": 43.41
+    },
+    {
+      "date": "2026-06-05",
+      "value": 43.7
+    },
+    {
+      "date": "2026-06-08",
+      "value": 43.98
+    },
+    {
+      "date": "2026-06-09",
+      "value": 43.76
+    },
+    {
+      "date": "2026-06-10",
+      "value": 43.53
+    },
+    {
+      "date": "2026-06-11",
+      "value": 43.31
+    },
+    {
+      "date": "2026-06-12",
+      "value": 43.08
+    },
+    {
+      "date": "2026-06-15",
+      "value": 42.86
+    },
+    {
+      "date": "2026-06-16",
+      "value": 42.63
+    },
+    {
+      "date": "2026-06-17",
+      "value": 42.41
+    },
+    {
+      "date": "2026-06-18",
+      "value": 42.19
+    },
+    {
+      "date": "2026-06-19",
+      "value": 41.96
+    },
+    {
+      "date": "2026-06-22",
+      "value": 41.74
+    },
+    {
+      "date": "2026-06-23",
+      "value": 41.51
+    },
+    {
+      "date": "2026-06-24",
+      "value": 41.29
+    },
+    {
+      "date": "2026-06-25",
+      "value": 41.06
+    },
+    {
+      "date": "2026-06-26",
+      "value": 40.84
+    },
+    {
+      "date": "2026-06-29",
+      "value": 40.61
+    },
+    {
+      "date": "2026-06-30",
+      "value": 40.39
+    },
+    {
+      "date": "2026-07-01",
+      "value": 40.4
+    },
+    {
+      "date": "2026-07-02",
+      "value": 40.41
+    },
+    {
+      "date": "2026-07-03",
+      "value": 40.43
+    },
+    {
+      "date": "2026-07-06",
+      "value": 40.44
+    },
+    {
+      "date": "2026-07-07",
+      "value": 40.45
+    },
+    {
+      "date": "2026-07-08",
+      "value": 40.46
+    },
+    {
+      "date": "2026-07-09",
+      "value": 40.48
+    },
+    {
+      "date": "2026-07-10",
+      "value": 40.49
+    },
+    {
+      "date": "2026-07-13",
+      "value": 40.5
+    },
+    {
+      "date": "2026-07-14",
+      "value": 40.51
+    },
+    {
+      "date": "2026-07-15",
+      "value": 40.53
+    },
+    {
+      "date": "2026-07-16",
+      "value": 40.54
+    },
+    {
+      "date": "2026-07-17",
+      "value": 40.55
+    },
+    {
+      "date": "2026-07-20",
+      "value": 40.56
+    },
+    {
+      "date": "2026-07-21",
+      "value": 40.58
+    },
+    {
+      "date": "2026-07-22",
+      "value": 40.59
+    },
+    {
+      "date": "2026-07-23",
+      "value": 40.6
+    },
+    {
+      "date": "2026-07-24",
+      "value": 40.61
+    },
+    {
+      "date": "2026-07-27",
+      "value": 40.63
+    },
+    {
+      "date": "2026-07-28",
+      "value": 40.64
+    },
+    {
+      "date": "2026-07-29",
+      "value": 40.65
+    },
+    {
+      "date": "2026-07-30",
+      "value": 40.78
+    },
+    {
+      "date": "2026-07-31",
+      "value": 40.91
+    },
+    {
+      "date": "2026-08-03",
+      "value": 41.03
+    },
+    {
+      "date": "2026-08-04",
+      "value": 41.16
+    },
+    {
+      "date": "2026-08-05",
+      "value": 41.29
+    },
+    {
+      "date": "2026-08-06",
+      "value": 41.42
+    },
+    {
+      "date": "2026-08-07",
+      "value": 41.54
+    },
+    {
+      "date": "2026-08-10",
+      "value": 41.67
+    },
+    {
+      "date": "2026-08-11",
+      "value": 41.8
+    },
+    {
+      "date": "2026-08-12",
+      "value": 41.93
+    },
+    {
+      "date": "2026-08-13",
+      "value": 42.05
+    },
+    {
+      "date": "2026-08-14",
+      "value": 42.18
+    },
+    {
+      "date": "2026-08-17",
+      "value": 42.31
+    },
+    {
+      "date": "2026-08-18",
+      "value": 42.44
+    },
+    {
+      "date": "2026-08-19",
+      "value": 42.56
+    },
+    {
+      "date": "2026-08-20",
+      "value": 42.69
+    },
+    {
+      "date": "2026-08-21",
+      "value": 42.82
+    },
+    {
+      "date": "2026-08-24",
+      "value": 42.95
+    },
+    {
+      "date": "2026-08-25",
+      "value": 43.07
+    },
+    {
+      "date": "2026-08-26",
+      "value": 43.2
+    },
+    {
+      "date": "2026-08-27",
+      "value": 43.33
+    }
+  ],
+  "forecast_anchor_points": [
+    {
+      "date": "1w",
+      "horizon_days": 5,
+      "predicted_price": 43.98,
+      "predicted_return": 0.033479,
+      "confidence": 0.1786
+    },
+    {
+      "date": "1m",
+      "horizon_days": 21,
+      "predicted_price": 40.39,
+      "predicted_return": -0.050966,
+      "confidence": 0.06
+    },
+    {
+      "date": "2m",
+      "horizon_days": 42,
+      "predicted_price": 40.65,
+      "predicted_return": -0.04479,
+      "confidence": 0.06
+    },
+    {
+      "date": "3m",
+      "horizon_days": 63,
+      "predicted_price": 43.33,
+      "predicted_return": 0.018182,
+      "confidence": 0.05
+    }
+  ],
   "recent_performance": {
+    "change_selected_pct": null,
     "change_1m_pct": null,
+    "change_2m_pct": null,
     "change_3m_pct": null,
     "change_12m_pct": null,
-    "volatility_21d_pct": null,
-    "drawdown_90d_pct": null,
-    "beta_63d": null,
-    "correlation_63d": null,
-    "benchmark_ticker": "IBOV"
+    "volatility_selected_pct": null,
+    "drawdown_selected_pct": null,
+    "beta_selected": null,
+    "correlation_selected": null,
+    "benchmark_ticker": "IBOV",
+    "forecast_return_selected_pct": 1.82,
+    "forecast_price_selected": 43.33,
+    "forecast_confidence_selected": 0.05
   },
   "outlook_3m": {
-    "scenario": "pressionado",
+    "scenario": "neutro",
     "dominant_topics": [
       "commodities",
       "juros",
-      "inflacao"
+      "inflacao",
+      "cambio"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 42.85. Hoje representa cerca de 8.1% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.52.",
-    "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.53. Os temas que mais apareceram foram commodities, juros, inflacao. Os destaques recentes nesse intervalo incluem: Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. Os temas dominantes hoje sao commodities, juros, inflacao. A confianca dessa leitura e moderada."
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 42.54. Hoje representa cerca de 8.0% da carteira. O modelo de 3 meses hoje aponta alta, com retorno estimado de +1.8% e confianca de 5%. As noticias recentes tem vies negativo e impacto medio de 0.50.",
+    "recent": "No noticiario do periodo, os temas mais recorrentes foram commodities, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.52. Os destaques desse intervalo incluem: Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras; Goldman Sachs segue otimista com petroleiras e reitera compra para Petrobras; entenda.",
+    "outlook": "A perspectiva de 3 meses e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. O modelo para 3 meses projeta retorno de +1.8% e preco estimado perto de 43.33. Os temas dominantes agora sao commodities, juros, inflacao, cambio. A confianca dessa leitura e moderada.",
+    "recent_by_horizon": {
+      "1m": "No noticiario do periodo, os temas mais recorrentes foram commodities, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.52. Os destaques desse intervalo incluem: Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras; Goldman Sachs segue otimista com petroleiras e reitera compra para Petrobras; entenda.",
+      "2m": "No noticiario do periodo, os temas mais recorrentes foram commodities, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.52. Os destaques desse intervalo incluem: Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras; Goldman Sachs segue otimista com petroleiras e reitera compra para Petrobras; entenda.",
+      "3m": "No noticiario do periodo, os temas mais recorrentes foram commodities, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.52. Os destaques desse intervalo incluem: Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras; Goldman Sachs segue otimista com petroleiras e reitera compra para Petrobras; entenda."
+    },
+    "outlook_by_horizon": {
+      "1w": "A perspectiva de 1 semana e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. O modelo para 1 semana projeta retorno de +3.3% e preco estimado perto de 43.98. Os temas dominantes agora sao commodities, juros, inflacao, cambio. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -5.1% e preco estimado perto de 40.39. Os temas dominantes agora sao commodities, juros, inflacao, cambio. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. O modelo para 2 meses projeta retorno de -4.5% e preco estimado perto de 40.65. Os temas dominantes agora sao commodities, juros, inflacao, cambio. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. O modelo para 3 meses projeta retorno de +1.8% e preco estimado perto de 43.33. Os temas dominantes agora sao commodities, juros, inflacao, cambio. A confianca dessa leitura e moderada."
+    }
   },
   "used_news_count": 12,
   "sources": [
@@ -55,8 +363,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.7756,
-      "rank_score": 0.7056,
+      "match_score": 1.0,
+      "rank_score": 0.824,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
@@ -73,12 +381,30 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.7751,
-      "rank_score": 0.7053,
+      "match_score": 1.0,
+      "rank_score": 0.824,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.72,
+      "role": "current"
+    },
+    {
+      "id": "f13ea90c9a1ec2623c6ca13aab5f90c8",
+      "title": "Goldman Sachs segue otimista com petroleiras e reitera compra para Petrobras; entenda",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/goldman-sachs-segue-otimista-com-petroleiras-e-reitera-compra-para-petrobras-entenda/",
+      "published_at": "2026-06-01T16:26:53.546598+00:00",
+      "summary": "Goldman Sachs segue otimista com petroleiras e reitera compra para Petrobras; entenda.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.48000000000000004,
+      "relevance_score": 0.5,
+      "match_score": 1.0,
+      "rank_score": 0.767,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.75,
       "role": "current"
     },
     {
@@ -91,8 +417,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.81,
-      "rank_score": 0.6925,
+      "match_score": 1.0,
+      "rank_score": 0.767,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -109,8 +435,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.8073,
-      "rank_score": 0.688,
+      "match_score": 1.0,
+      "rank_score": 0.764,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -127,8 +453,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4529,
-      "rank_score": 0.5471,
+      "match_score": 0.4523,
+      "rank_score": 0.5632,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -145,13 +471,13 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4507,
-      "rank_score": 0.5459,
+      "match_score": 0.4501,
+      "rank_score": 0.5621,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "role": "historical"
     },
     {
       "id": "c9ea071b5e56dc0f36f203d1f9085142",
@@ -163,8 +489,8 @@
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.43,
-      "rank_score": 0.515,
+      "match_score": 0.4348,
+      "rank_score": 0.5296,
       "source_category": "press",
       "is_official": false,
       "context_role": "sector",
@@ -181,8 +507,8 @@
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.4254,
-      "rank_score": 0.5095,
+      "match_score": 0.4301,
+      "rank_score": 0.5242,
       "source_category": "press",
       "is_official": false,
       "context_role": "sector",
@@ -199,8 +525,8 @@
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.4254,
-      "rank_score": 0.5095,
+      "match_score": 0.4301,
+      "rank_score": 0.5242,
       "source_category": "press",
       "is_official": false,
       "context_role": "sector",
@@ -217,8 +543,8 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.4075,
-      "rank_score": 0.5076,
+      "match_score": 0.405,
+      "rank_score": 0.5241,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "sector",
@@ -235,26 +561,8 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.3488,
-      "rank_score": 0.4903,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "role": "historical"
-    },
-    {
-      "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
-      "title": "Global",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/business/global/",
-      "published_at": "2026-05-31T04:04:31.943874+00:00",
-      "summary": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Global AgroEnergiaGlobalInovaçãoESGNegócios do Esportecom reportagens de 1º carro elétrico da Ferrari sofre forte reação negativa na Itália e em outros países 2 dias atrás Bilionário das finanças chamava IA de “lixo”, mas mudou de ideia e ficou “deprimido” 2 dias atrás CEO da Amazon, Andy Jassy, diz o que jovens profissionais devem fazer para o sucesso 2 dias atrás Por que o bilionário Peter Thiel está se mudando para a Argentina 2 dias atrás Continua depois da publicidade Comer alimentos saudáveis?\n\nNão, eles estão comendo “à moda bíblica” 2 dias atrás Anthropic supera OpenAI e se torna a startup de IA mais valiosa do mundo 2 dias atrás Filho de imigrantes cubanos, secretário de Trump se aproxima da meta de mudar a ilha 3 dias atrás Tribunais na China barram demissões por IA e pressionam empresas a manter empregos 3 dias atrás InfoMoney Últimas Notícias Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Brasil Consumo Esportes Carreira Saúde Colunistas Aprenda Relatórios Conteúdos Planilhas e Calculadoras Cursos Ebooks Multimídia Newsletters WhatsApp Podcasts Vídeos Web Stories Veja mais Fazer login Quem somos Anuncie Política de privacidade Política de cookies Preferências de Cookies Fale conosco © 2000-2026 InfoMoney. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.3529,
-      "rank_score": 0.4851,
+      "match_score": 0.348,
+      "rank_score": 0.5095,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -268,6 +576,24 @@
       "count": 6,
       "items": [
         {
+          "id": "f13ea90c9a1ec2623c6ca13aab5f90c8",
+          "title": "Goldman Sachs segue otimista com petroleiras e reitera compra para Petrobras; entenda",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/goldman-sachs-segue-otimista-com-petroleiras-e-reitera-compra-para-petrobras-entenda/",
+          "published_at": "2026-06-01T16:26:53.546598+00:00",
+          "summary": "Goldman Sachs segue otimista com petroleiras e reitera compra para Petrobras; entenda.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 1.0,
+          "rank_score": 0.767,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.75,
+          "role": "current"
+        },
+        {
           "id": "25778b34dc2f7cd24411b33e8708bb38",
           "title": "Petrobras: subsídio ao diesel alivia preços, mas pode apertar caixa",
           "source_name": "InfoMoney",
@@ -277,8 +603,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.81,
-          "rank_score": 0.6925,
+          "match_score": 1.0,
+          "rank_score": 0.767,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -295,8 +621,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4529,
-          "rank_score": 0.5471,
+          "match_score": 0.4523,
+          "rank_score": 0.5632,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -313,13 +639,13 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4507,
-          "rank_score": 0.5459,
+          "match_score": 0.4501,
+          "rank_score": 0.5621,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "role": "historical"
         },
         {
           "id": "c9ea071b5e56dc0f36f203d1f9085142",
@@ -331,8 +657,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.43,
-          "rank_score": 0.515,
+          "match_score": 0.4348,
+          "rank_score": 0.5296,
           "source_category": "press",
           "is_official": false,
           "context_role": "sector",
@@ -349,26 +675,8 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.3488,
-          "rank_score": 0.4903,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "role": "historical"
-        },
-        {
-          "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
-          "title": "Global",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/business/global/",
-          "published_at": "2026-05-31T04:04:31.943874+00:00",
-          "summary": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Global AgroEnergiaGlobalInovaçãoESGNegócios do Esportecom reportagens de 1º carro elétrico da Ferrari sofre forte reação negativa na Itália e em outros países 2 dias atrás Bilionário das finanças chamava IA de “lixo”, mas mudou de ideia e ficou “deprimido” 2 dias atrás CEO da Amazon, Andy Jassy, diz o que jovens profissionais devem fazer para o sucesso 2 dias atrás Por que o bilionário Peter Thiel está se mudando para a Argentina 2 dias atrás Continua depois da publicidade Comer alimentos saudáveis?\n\nNão, eles estão comendo “à moda bíblica” 2 dias atrás Anthropic supera OpenAI e se torna a startup de IA mais valiosa do mundo 2 dias atrás Filho de imigrantes cubanos, secretário de Trump se aproxima da meta de mudar a ilha 3 dias atrás Tribunais na China barram demissões por IA e pressionam empresas a manter empregos 3 dias atrás InfoMoney Últimas Notícias Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Brasil Consumo Esportes Carreira Saúde Colunistas Aprenda Relatórios Conteúdos Planilhas e Calculadoras Cursos Ebooks Multimídia Newsletters WhatsApp Podcasts Vídeos Web Stories Veja mais Fazer login Quem somos Anuncie Política de privacidade Política de cookies Preferências de Cookies Fale conosco © 2000-2026 InfoMoney. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.3529,
-          "rank_score": 0.4851,
+          "match_score": 0.348,
+          "rank_score": 0.5095,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -391,8 +699,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.7756,
-          "rank_score": 0.7056,
+          "match_score": 1.0,
+          "rank_score": 0.824,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -409,8 +717,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.8073,
-          "rank_score": 0.688,
+          "match_score": 1.0,
+          "rank_score": 0.764,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -427,8 +735,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.4254,
-          "rank_score": 0.5095,
+          "match_score": 0.4301,
+          "rank_score": 0.5242,
           "source_category": "press",
           "is_official": false,
           "context_role": "sector",
@@ -445,8 +753,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.4254,
-          "rank_score": 0.5095,
+          "match_score": 0.4301,
+          "rank_score": 0.5242,
           "source_category": "press",
           "is_official": false,
           "context_role": "sector",
@@ -469,8 +777,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.7751,
-          "rank_score": 0.7053,
+          "match_score": 1.0,
+          "rank_score": 0.824,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -493,8 +801,8 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.4075,
-          "rank_score": 0.5076,
+          "match_score": 0.405,
+          "rank_score": 0.5241,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "sector",

@@ -247,7 +247,7 @@ async def test_portfolio_opinion_structure(client: AsyncClient):
         headers=headers,
         json={"ticker": "HGLG11", "asset_class": "FII", "quantity": 10, "avg_price": 165},
     )
-    resp = await client.get(f"/api/models/opinion/{pid}", headers=headers)
+    resp = await client.get(f"/api/models/opinion/{pid}?analysis_horizon=2m", headers=headers)
     assert resp.status_code == 200
     data = resp.json()
     assert "headline" in data
@@ -256,6 +256,7 @@ async def test_portfolio_opinion_structure(client: AsyncClient):
     assert "sources" in data
     assert "source_groups" in data
     assert "benchmark" in data
+    assert data["selected_analysis_horizon"] == "2m"
 
 
 @pytest.mark.asyncio
@@ -268,7 +269,10 @@ async def test_position_opinion_endpoint(client: AsyncClient):
         headers=headers,
         json={"ticker": "BTC", "asset_class": "CRYPTO", "quantity": 0.05},
     )
-    resp = await client.get(f"/api/models/opinion/{pid}/positions/BTC", headers=headers)
+    resp = await client.get(
+        f"/api/models/opinion/{pid}/positions/BTC?history_horizon=1m&outlook_horizon=1w",
+        headers=headers,
+    )
     assert resp.status_code == 200
     data = resp.json()
     assert data["ticker"] == "BTC"
@@ -278,7 +282,13 @@ async def test_position_opinion_endpoint(client: AsyncClient):
     assert "source_groups" in data
     assert "used_news_count" in data
     assert "historical_window" in data
-    assert "beta_63d" in data["recent_performance"]
+    assert data["selected_history_horizon"] == "1m"
+    assert data["selected_outlook_horizon"] == "1w"
+    assert "historical_series" in data
+    assert "forecast_series" in data
+    assert "beta_selected" in data["recent_performance"]
+    assert "recent_by_horizon" in data["analysis_sections"]
+    assert "outlook_by_horizon" in data["analysis_sections"]
 
 
 @pytest.mark.asyncio

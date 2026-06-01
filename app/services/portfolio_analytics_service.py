@@ -81,6 +81,7 @@ class PortfolioAnalyticsService:
         benchmark_used = "Sem benchmark"
         benchmark_ticker = None
         benchmark_return_21d = None
+        benchmark_return_42d = None
         benchmark_return_63d = None
         benchmark_return_252d = None
         volatility_window_days = 252
@@ -163,6 +164,7 @@ class PortfolioAnalyticsService:
                                 last = float(closes.iloc[-1])
                                 return ((last / base) - 1.0) * 100 if base else None
                             benchmark_return_21d = _pct(21)
+                            benchmark_return_42d = _pct(42)
                             benchmark_return_63d = _pct(63)
                             benchmark_return_252d = _pct(252)
 
@@ -198,6 +200,7 @@ class PortfolioAnalyticsService:
                 "ticker": benchmark_ticker,
                 "label": benchmark_used,
                 "return_21d_pct": round(benchmark_return_21d, 2) if benchmark_return_21d is not None else None,
+                "return_42d_pct": round(benchmark_return_42d, 2) if benchmark_return_42d is not None else None,
                 "return_63d_pct": round(benchmark_return_63d, 2) if benchmark_return_63d is not None else None,
                 "return_252d_pct": round(benchmark_return_252d, 2) if benchmark_return_252d is not None else None,
             },
@@ -229,6 +232,7 @@ class PortfolioAnalyticsService:
                 "ticker": None,
                 "label": "Sem benchmark",
                 "return_21d_pct": None,
+                "return_42d_pct": None,
                 "return_63d_pct": None,
                 "return_252d_pct": None,
             },

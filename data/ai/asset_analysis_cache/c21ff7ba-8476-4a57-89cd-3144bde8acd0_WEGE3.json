@@ -3,45 +3,353 @@
   "ticker": "WEGE3",
   "asset_name": "WEG ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T15:03:30.956867+00:00",
-  "recomputed_at": "2026-06-01T15:03:30.956867+00:00",
+  "generated_at": "2026-06-01T16:32:17.483472+00:00",
+  "recomputed_at": "2026-06-01T16:32:17.483472+00:00",
   "confidence": "media",
   "status": "ok",
+  "selected_history_horizon": "3m",
+  "selected_outlook_horizon": "3m",
   "current_snapshot": {
-    "current_price": 43.24,
+    "current_price": 43.37,
     "currency": "BRL",
-    "weight_pct": 9.78,
+    "weight_pct": 9.81,
     "sector": "Equipamentos Elétricos",
     "country": "BR"
   },
   "historical_window": {
-    "start_date": "2026-03-03",
+    "start_date": "2026-01-26",
     "end_date": "2026-06-01",
     "news_count": 12,
     "has_price_history": false
   },
+  "historical_series": [],
+  "forecast_series": [
+    {
+      "date": "2026-06-01",
+      "value": 43.23
+    },
+    {
+      "date": "2026-06-02",
+      "value": 42.99
+    },
+    {
+      "date": "2026-06-03",
+      "value": 42.75
+    },
+    {
+      "date": "2026-06-04",
+      "value": 42.5
+    },
+    {
+      "date": "2026-06-05",
+      "value": 42.26
+    },
+    {
+      "date": "2026-06-08",
+      "value": 42.02
+    },
+    {
+      "date": "2026-06-09",
+      "value": 42.07
+    },
+    {
+      "date": "2026-06-10",
+      "value": 42.11
+    },
+    {
+      "date": "2026-06-11",
+      "value": 42.16
+    },
+    {
+      "date": "2026-06-12",
+      "value": 42.2
+    },
+    {
+      "date": "2026-06-15",
+      "value": 42.25
+    },
+    {
+      "date": "2026-06-16",
+      "value": 42.29
+    },
+    {
+      "date": "2026-06-17",
+      "value": 42.34
+    },
+    {
+      "date": "2026-06-18",
+      "value": 42.38
+    },
+    {
+      "date": "2026-06-19",
+      "value": 42.43
+    },
+    {
+      "date": "2026-06-22",
+      "value": 42.47
+    },
+    {
+      "date": "2026-06-23",
+      "value": 42.52
+    },
+    {
+      "date": "2026-06-24",
+      "value": 42.56
+    },
+    {
+      "date": "2026-06-25",
+      "value": 42.61
+    },
+    {
+      "date": "2026-06-26",
+      "value": 42.65
+    },
+    {
+      "date": "2026-06-29",
+      "value": 42.7
+    },
+    {
+      "date": "2026-06-30",
+      "value": 42.74
+    },
+    {
+      "date": "2026-07-01",
+      "value": 42.64
+    },
+    {
+      "date": "2026-07-02",
+      "value": 42.54
+    },
+    {
+      "date": "2026-07-03",
+      "value": 42.44
+    },
+    {
+      "date": "2026-07-06",
+      "value": 42.34
+    },
+    {
+      "date": "2026-07-07",
+      "value": 42.24
+    },
+    {
+      "date": "2026-07-08",
+      "value": 42.14
+    },
+    {
+      "date": "2026-07-09",
+      "value": 42.04
+    },
+    {
+      "date": "2026-07-10",
+      "value": 41.94
+    },
+    {
+      "date": "2026-07-13",
+      "value": 41.84
+    },
+    {
+      "date": "2026-07-14",
+      "value": 41.74
+    },
+    {
+      "date": "2026-07-15",
+      "value": 41.65
+    },
+    {
+      "date": "2026-07-16",
+      "value": 41.55
+    },
+    {
+      "date": "2026-07-17",
+      "value": 41.45
+    },
+    {
+      "date": "2026-07-20",
+      "value": 41.35
+    },
+    {
+      "date": "2026-07-21",
+      "value": 41.25
+    },
+    {
+      "date": "2026-07-22",
+      "value": 41.15
+    },
+    {
+      "date": "2026-07-23",
+      "value": 41.05
+    },
+    {
+      "date": "2026-07-24",
+      "value": 40.95
+    },
+    {
+      "date": "2026-07-27",
+      "value": 40.85
+    },
+    {
+      "date": "2026-07-28",
+      "value": 40.75
+    },
+    {
+      "date": "2026-07-29",
+      "value": 40.65
+    },
+    {
+      "date": "2026-07-30",
+      "value": 40.49
+    },
+    {
+      "date": "2026-07-31",
+      "value": 40.33
+    },
+    {
+      "date": "2026-08-03",
+      "value": 40.16
+    },
+    {
+      "date": "2026-08-04",
+      "value": 40.0
+    },
+    {
+      "date": "2026-08-05",
+      "value": 39.84
+    },
+    {
+      "date": "2026-08-06",
+      "value": 39.68
+    },
+    {
+      "date": "2026-08-07",
+      "value": 39.51
+    },
+    {
+      "date": "2026-08-10",
+      "value": 39.35
+    },
+    {
+      "date": "2026-08-11",
+      "value": 39.19
+    },
+    {
+      "date": "2026-08-12",
+      "value": 39.03
+    },
+    {
+      "date": "2026-08-13",
+      "value": 38.86
+    },
+    {
+      "date": "2026-08-14",
+      "value": 38.7
+    },
+    {
+      "date": "2026-08-17",
+      "value": 38.54
+    },
+    {
+      "date": "2026-08-18",
+      "value": 38.38
+    },
+    {
+      "date": "2026-08-19",
+      "value": 38.21
+    },
+    {
+      "date": "2026-08-20",
+      "value": 38.05
+    },
+    {
+      "date": "2026-08-21",
+      "value": 37.89
+    },
+    {
+      "date": "2026-08-24",
+      "value": 37.73
+    },
+    {
+      "date": "2026-08-25",
+      "value": 37.56
+    },
+    {
+      "date": "2026-08-26",
+      "value": 37.4
+    },
+    {
+      "date": "2026-08-27",
+      "value": 37.24
+    }
+  ],
+  "forecast_anchor_points": [
+    {
+      "date": "1w",
+      "horizon_days": 5,
+      "predicted_price": 42.02,
+      "predicted_return": -0.027971,
+      "confidence": 0.208
+    },
+    {
+      "date": "1m",
+      "horizon_days": 21,
+      "predicted_price": 42.74,
+      "predicted_return": -0.011302,
+      "confidence": 0.06
+    },
+    {
+      "date": "2m",
+      "horizon_days": 42,
+      "predicted_price": 40.65,
+      "predicted_return": -0.059726,
+      "confidence": 0.06
+    },
+    {
+      "date": "3m",
+      "horizon_days": 63,
+      "predicted_price": 37.24,
+      "predicted_return": -0.138629,
+      "confidence": 0.05
+    }
+  ],
   "recent_performance": {
+    "change_selected_pct": null,
     "change_1m_pct": null,
+    "change_2m_pct": null,
     "change_3m_pct": null,
     "change_12m_pct": null,
-    "volatility_21d_pct": null,
-    "drawdown_90d_pct": null,
-    "beta_63d": null,
-    "correlation_63d": null,
-    "benchmark_ticker": "IBOV"
+    "volatility_selected_pct": null,
+    "drawdown_selected_pct": null,
+    "beta_selected": null,
+    "correlation_selected": null,
+    "benchmark_ticker": "IBOV",
+    "forecast_return_selected_pct": -13.86,
+    "forecast_price_selected": 37.24,
+    "forecast_confidence_selected": 0.05
   },
   "outlook_3m": {
     "scenario": "pressionado",
     "dominant_topics": [
       "juros",
       "inflacao",
-      "cambio"
+      "cambio",
+      "commodities"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 43.24. Hoje representa cerca de 9.8% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.59.",
-    "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os temas que mais apareceram foram juros, inflacao, cambio. Os destaques recentes nesse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. Os temas dominantes hoje sao juros, inflacao, cambio. A confianca dessa leitura e moderada."
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 43.37. Hoje representa cerca de 9.8% da carteira. O modelo de 3 meses hoje aponta queda, com retorno estimado de -13.9% e confianca de 5%. As noticias recentes tem vies negativo e impacto medio de 0.59.",
+    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -13.9% e preco estimado perto de 37.24. Os temas dominantes agora sao juros, inflacao, cambio, commodities. A confianca dessa leitura e moderada.",
+    "recent_by_horizon": {
+      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
+      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
+      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global."
+    },
+    "outlook_by_horizon": {
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -2.8% e preco estimado perto de 42.02. Os temas dominantes agora sao inflacao, juros, cambio, commodities. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -1.1% e preco estimado perto de 42.74. Os temas dominantes agora sao juros, inflacao, cambio, commodities. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -6.0% e preco estimado perto de 40.65. Os temas dominantes agora sao juros, inflacao, cambio, commodities. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -13.9% e preco estimado perto de 37.24. Os temas dominantes agora sao juros, inflacao, cambio, commodities. A confianca dessa leitura e moderada."
+    }
   },
   "used_news_count": 12,
   "sources": [
@@ -55,8 +363,8 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.3488,
-      "rank_score": 0.4903,
+      "match_score": 0.348,
+      "rank_score": 0.5095,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -73,8 +381,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3529,
-      "rank_score": 0.4851,
+      "match_score": 0.3523,
+      "rank_score": 0.5042,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -91,8 +399,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3529,
-      "rank_score": 0.4851,
+      "match_score": 0.3523,
+      "rank_score": 0.5042,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -109,8 +417,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3508,
-      "rank_score": 0.4839,
+      "match_score": 0.3501,
+      "rank_score": 0.5031,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -127,8 +435,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3507,
-      "rank_score": 0.4839,
+      "match_score": 0.3501,
+      "rank_score": 0.5031,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -145,31 +453,13 @@
       "sentiment_score": 0.14285714285714285,
       "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.3488,
-      "rank_score": 0.4668,
+      "match_score": 0.348,
+      "rank_score": 0.4859,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "role": "current"
-    },
-    {
-      "id": "3dbeed313bcadecfe40d2b70e190d0ca",
-      "title": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS",
-      "source_name": "Todas as Notícias",
-      "source_url": "https://br.investing.com/news/analyst-ratings/sofrendo-com-o-ibovespa-esta-acao-da-b3-escolhida-por-ia-sobe-quase-20-neste-mes-1949007",
-      "published_at": "2026-05-25T00:21:25+00:00",
-      "summary": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS. Notícia menciona B3SA3.",
-      "sentiment_score": 1.0,
-      "impact_score": 0.75,
-      "relevance_score": 0.5,
-      "match_score": 0.2902,
-      "rank_score": 0.4506,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "role": "historical"
     },
     {
       "id": "7cbaf75733e1b76778881ee3877a6adb",
@@ -181,8 +471,8 @@
       "sentiment_score": 0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.3573,
-      "rank_score": 0.45,
+      "match_score": 0.357,
+      "rank_score": 0.4691,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -199,12 +489,30 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.3075,
-      "rank_score": 0.4456,
+      "match_score": 0.305,
+      "rank_score": 0.4651,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "macro",
       "source_confidence_weight": 0.95,
+      "role": "historical"
+    },
+    {
+      "id": "3dbeed313bcadecfe40d2b70e190d0ca",
+      "title": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS",
+      "source_name": "Todas as Notícias",
+      "source_url": "https://br.investing.com/news/analyst-ratings/sofrendo-com-o-ibovespa-esta-acao-da-b3-escolhida-por-ia-sobe-quase-20-neste-mes-1949007",
+      "published_at": "2026-05-25T00:21:25+00:00",
+      "summary": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS. Notícia menciona B3SA3.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.75,
+      "relevance_score": 0.5,
+      "match_score": 0.2886,
+      "rank_score": 0.4576,
+      "source_category": null,
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
       "role": "historical"
     },
     {
@@ -217,8 +525,8 @@
       "sentiment_score": -0.6,
       "impact_score": 0.63,
       "relevance_score": 0.5,
-      "match_score": 0.3038,
-      "rank_score": 0.4401,
+      "match_score": 0.303,
+      "rank_score": 0.4471,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -235,8 +543,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3079,
-      "rank_score": 0.4378,
+      "match_score": 0.3073,
+      "rank_score": 0.4448,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -253,8 +561,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3079,
-      "rank_score": 0.4378,
+      "match_score": 0.3073,
+      "rank_score": 0.4448,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -277,8 +585,8 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.3488,
-          "rank_score": 0.4903,
+          "match_score": 0.348,
+          "rank_score": 0.5095,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -295,8 +603,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3529,
-          "rank_score": 0.4851,
+          "match_score": 0.3523,
+          "rank_score": 0.5042,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -313,8 +621,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3529,
-          "rank_score": 0.4851,
+          "match_score": 0.3523,
+          "rank_score": 0.5042,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -331,8 +639,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3508,
-          "rank_score": 0.4839,
+          "match_score": 0.3501,
+          "rank_score": 0.5031,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -349,8 +657,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3507,
-          "rank_score": 0.4839,
+          "match_score": 0.3501,
+          "rank_score": 0.5031,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -367,8 +675,8 @@
           "sentiment_score": 0.14285714285714285,
           "impact_score": 0.4928571428571429,
           "relevance_score": 0.5,
-          "match_score": 0.3488,
-          "rank_score": 0.4668,
+          "match_score": 0.348,
+          "rank_score": 0.4859,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -385,8 +693,8 @@
           "sentiment_score": -0.6,
           "impact_score": 0.63,
           "relevance_score": 0.5,
-          "match_score": 0.3038,
-          "rank_score": 0.4401,
+          "match_score": 0.303,
+          "rank_score": 0.4471,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -403,8 +711,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3079,
-          "rank_score": 0.4378,
+          "match_score": 0.3073,
+          "rank_score": 0.4448,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -421,8 +729,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3079,
-          "rank_score": 0.4378,
+          "match_score": 0.3073,
+          "rank_score": 0.4448,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -445,8 +753,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.2902,
-          "rank_score": 0.4506,
+          "match_score": 0.2886,
+          "rank_score": 0.4576,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -469,8 +777,8 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.3075,
-          "rank_score": 0.4456,
+          "match_score": 0.305,
+          "rank_score": 0.4651,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "macro",
@@ -493,8 +801,8 @@
           "sentiment_score": 0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.3573,
-          "rank_score": 0.45,
+          "match_score": 0.357,
+          "rank_score": 0.4691,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",

@@ -99,6 +99,7 @@ export type PortfolioAnalysis = {
     ticker: string | null;
     label: string;
     return_21d_pct: number | null;
+    return_42d_pct: number | null;
     return_63d_pct: number | null;
     return_252d_pct: number | null;
   };
@@ -176,8 +177,14 @@ export type PortfolioOpinion = {
     count: number;
     items: Array<PortfolioOpinion['sources'][number] & { role?: string }>;
   }>;
+  selected_analysis_horizon?: '1m' | '2m' | '3m';
   portfolio_id: string;
   generated_at: string;
+};
+
+export type HorizonSeriesPoint = {
+  date: string;
+  value: number;
 };
 
 export type PositionOpinion = {
@@ -189,6 +196,8 @@ export type PositionOpinion = {
   recomputed_at: string;
   confidence: string;
   status: string;
+  selected_history_horizon: '1m' | '2m' | '3m';
+  selected_outlook_horizon: '1w' | '1m' | '2m' | '3m';
   current_snapshot: {
     current_price: number | null;
     currency: string;
@@ -202,15 +211,29 @@ export type PositionOpinion = {
     news_count: number;
     has_price_history: boolean;
   };
+  historical_series: HorizonSeriesPoint[];
+  forecast_series: HorizonSeriesPoint[];
+  forecast_anchor_points: Array<{
+    date: string;
+    horizon_days: number;
+    predicted_price: number;
+    predicted_return: number;
+    confidence: number;
+  }>;
   recent_performance: {
+    change_selected_pct: number | null;
     change_1m_pct: number | null;
+    change_2m_pct: number | null;
     change_3m_pct: number | null;
     change_12m_pct: number | null;
-    volatility_21d_pct: number | null;
-    drawdown_90d_pct?: number | null;
-    beta_63d?: number | null;
-    correlation_63d?: number | null;
+    volatility_selected_pct: number | null;
+    drawdown_selected_pct?: number | null;
+    beta_selected?: number | null;
+    correlation_selected?: number | null;
     benchmark_ticker?: string | null;
+    forecast_return_selected_pct?: number | null;
+    forecast_price_selected?: number | null;
+    forecast_confidence_selected?: number | null;
   };
   outlook_3m: {
     scenario: string;
@@ -220,6 +243,8 @@ export type PositionOpinion = {
     current: string;
     recent: string;
     outlook: string;
+    recent_by_horizon: Record<string, string>;
+    outlook_by_horizon: Record<string, string>;
   };
   used_news_count: number;
   sources: PortfolioOpinion['sources'];

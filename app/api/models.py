@@ -1,6 +1,6 @@
 import logging
 
-from fastapi import APIRouter, Depends, HTTPException
+from fastapi import APIRouter, Depends, HTTPException, Query
 
 from app.api.auth import require_current_user
 from app.services.forecast_service import ForecastService
@@ -75,7 +75,11 @@ def cluster_news():
 
 
 @router.get("/opinion/{portfolio_id}")
-def get_portfolio_opinion(portfolio_id: str, current=Depends(require_current_user)):
+def get_portfolio_opinion(
+    portfolio_id: str,
+    analysis_horizon: str = Query("3m", pattern="^(1m|2m|3m)$"),
+    current=Depends(require_current_user),
+):
     portfolio = portfolio_service.get_by_id(portfolio_id, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
@@ -89,17 +93,33 @@ def get_portfolio_opinion(portfolio_id: str, current=Depends(require_current_use
             prices_data[pos.ticker] = df
 
     analysis = analytics_service.analyze(portfolio, prices_data if prices_data else None)
-    opinion = opinion_service.generate_opinion(portfolio, analysis, prices_data if prices_data else None)
+    opinion = opinion_service.generate_opinion(
+        portfolio,
+        analysis,
+        prices_data if prices_data else None,
+        analysis_horizon=analysis_horizon,
+    )
     return opinion
 
 
 @router.get("/opinion/{portfolio_id}/positions/{ticker}")
-def get_position_opinion(portfolio_id: str, ticker: str, current=Depends(require_current_user)):
+def get_position_opinion(
+    portfolio_id: str,
+    ticker: str,
+    history_horizon: str = Query("3m", pattern="^(1m|2m|3m)$"),
+    outlook_horizon: str = Query("3m", pattern="^(1w|1m|2m|3m)$"),
+    current=Depends(require_current_user),
+):
     portfolio = portfolio_service.get_by_id(portfolio_id, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira nÃ£o encontrada")
 
-    result = asset_analysis_service.generate_asset_analysis(portfolio, ticker.upper())
+    result = asset_analysis_service.generate_asset_analysis(
+        portfolio,
+        ticker.upper(),
+        history_horizon=history_horizon,
+        outlook_horizon=outlook_horizon,
+    )
     if result.get("status") == "not_found":
         raise HTTPException(status_code=404, detail="Ativo nÃ£o encontrado na carteira")
     return result

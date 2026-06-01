@@ -2,6 +2,8 @@ import logging
 from collections import Counter
 from datetime import datetime, timezone
 
+import pandas as pd
+
 from app.schemas.portfolio import Portfolio
 from app.services.asset_analysis_service import AssetAnalysisService
 from app.services.asset_universe_service import AssetUniverseService
@@ -11,19 +13,16 @@ from app.services.portfolio_analytics_service import PortfolioAnalyticsService
 
 logger = logging.getLogger(__name__)
 
+ANALYSIS_HORIZON_DAYS = {"1m": 21, "2m": 42, "3m": 63}
+
 
 def _group_sources_by_origin(sources: list[dict]) -> list[dict]:
     grouped: dict[str, list[dict]] = {}
     for source in sources:
         source_name = source.get("source_name", "Fonte")
         grouped.setdefault(source_name, []).append(source)
-
     return [
-        {
-            "source_name": source_name,
-            "count": len(items),
-            "items": items,
-        }
+        {"source_name": source_name, "count": len(items), "items": items}
         for source_name, items in grouped.items()
     ]
 
@@ -41,7 +40,9 @@ class PortfolioOpinionService:
         portfolio: Portfolio,
         analysis: dict | None = None,
         prices_data: dict | None = None,
+        analysis_horizon: str = "3m",
     ) -> dict:
+        analysis_horizon = analysis_horizon if analysis_horizon in ANALYSIS_HORIZON_DAYS else "3m"
         if analysis is None:
             analysis = self.analytics.analyze(portfolio, prices_data)
 
@@ -60,9 +61,9 @@ class PortfolioOpinionService:
         forecast_risk = self._compute_forecast_risk(portfolio, analysis)
 
         portfolio_score = (
-            0.30 * diversification_score
-            + 0.20 * (1.0 - correlation_risk)
-            + 0.20 * (1.0 - news_impact)
+            0.28 * diversification_score
+            + 0.22 * (1.0 - correlation_risk)
+            + 0.2 * (1.0 - news_impact)
             + 0.15 * (1.0 - macro_sensitivity)
             + 0.15 * (1.0 - forecast_risk)
         )
@@ -75,6 +76,8 @@ class PortfolioOpinionService:
             forecast_risk,
             portfolio,
             analysis,
+            prices_data or {},
+            analysis_horizon,
         )
 
         return {
@@ -98,6 +101,7 @@ class PortfolioOpinionService:
             "sources": opinion["sources"],
             "source_groups": opinion["source_groups"],
             "benchmark": opinion["benchmark"],
+            "selected_analysis_horizon": analysis_horizon,
             "portfolio_id": portfolio.id,
             "generated_at": opinion["generated_at"],
         }
@@ -123,7 +127,7 @@ class PortfolioOpinionService:
         macro_exposed = 0.0
         total = 0.0
         for cls, weight in class_weights.items():
-            if cls in ("BR_STOCK", "US_STOCK", "CRYPTO"):
+            if cls in ("BR_STOCK", "US_STOCK", "CRYPTO", "BDR"):
                 macro_exposed += weight
             total += weight
         return macro_exposed / total if total > 0 else 0.5
@@ -146,6 +150,44 @@ class PortfolioOpinionService:
         predictability_penalty = 1.0 - (sum(confidences) / len(confidences))
         return round(min(1.0, structural_risk * 0.6 + predictability_penalty * 0.4), 4)
 
+    def _portfolio_return_for_window(self, portfolio: Portfolio, analysis: dict, prices_data: dict, horizon_days: int) -> float | None:
+        weights = analysis.get("weights", {})
+        returns = []
+        for position in portfolio.positions:
+            df = prices_data.get(position.ticker)
+            if df is None or df.empty or len(df) <= horizon_days:
+                continue
+            closes = df["close"].astype(float).reset_index(drop=True)
+            base = float(closes.iloc[-horizon_days - 1])
+            last = float(closes.iloc[-1])
+            if base == 0:
+                continue
+            ret = ((last / base) - 1.0) * 100
+            returns.append(ret * float(weights.get(position.ticker, 0.0)))
+        if not returns:
+            return None
+        return sum(returns)
+
+    def _block_return_for_window(self, positions: list, analysis: dict, prices_data: dict, horizon_days: int) -> float | None:
+        weights = analysis.get("weights", {})
+        weighted = []
+        total_weight = 0.0
+        for position in positions:
+            df = prices_data.get(position.ticker)
+            if df is None or df.empty or len(df) <= horizon_days:
+                continue
+            closes = df["close"].astype(float).reset_index(drop=True)
+            base = float(closes.iloc[-horizon_days - 1])
+            last = float(closes.iloc[-1])
+            if base == 0:
+                continue
+            weight = float(weights.get(position.ticker, 0.0))
+            total_weight += weight
+            weighted.append((((last / base) - 1.0) * 100) * weight)
+        if not weighted or total_weight == 0:
+            return None
+        return sum(weighted) / total_weight
+
     def _generate_text(
         self,
         score: float,
@@ -154,6 +196,8 @@ class PortfolioOpinionService:
         forecast_risk: float,
         portfolio: Portfolio,
         analysis: dict,
+        prices_data: dict,
+        analysis_horizon: str,
     ) -> dict:
         all_assets = {asset.ticker: asset for asset in self.assets.get_all()}
         positions = sorted(
@@ -164,6 +208,8 @@ class PortfolioOpinionService:
         weights = analysis.get("weights", {})
         class_weights = analysis.get("class_weights", {})
         top_tickers = [pos.ticker for pos in positions[:5]]
+        horizon_days = ANALYSIS_HORIZON_DAYS[analysis_horizon]
+        horizon_label = {"1m": "1 mes", "2m": "2 meses", "3m": "3 meses"}[analysis_horizon]
 
         us_weight = sum(
             weight
@@ -173,6 +219,13 @@ class PortfolioOpinionService:
         crypto_weight = class_weights.get("CRYPTO", 0.0)
         fii_weight = class_weights.get("FII", 0.0)
         fixed_weight = class_weights.get("FIXED_INCOME", 0.0)
+
+        benchmark = analysis.get("benchmark", {})
+        benchmark_return = benchmark.get(
+            {"1m": "return_21d_pct", "2m": "return_42d_pct", "3m": "return_63d_pct"}[analysis_horizon],
+            benchmark.get("return_63d_pct"),
+        )
+        portfolio_return_window = self._portfolio_return_for_window(portfolio, analysis, prices_data, horizon_days)
 
         if score >= 0.78:
             grade = "8,5 / 10"
@@ -190,10 +243,12 @@ class PortfolioOpinionService:
             strengths.append("A carteira tem boa diversificacao entre classes de ativos, o que reduz a dependencia de um unico mercado.")
         if fixed_weight > 0:
             strengths.append("Existe um bloco mais defensivo em renda fixa ou caixa, o que ajuda a suavizar a volatilidade do conjunto.")
-        if any(all_assets.get(ticker) and all_assets[ticker].asset_class == "US_STOCK" for ticker in weights):
+        if us_weight > 0.15:
             strengths.append("A exposicao internacional amplia o acesso a dolar e a motores de crescimento fora do mercado domestico.")
         if any(all_assets.get(ticker) and all_assets[ticker].asset_class == "BR_STOCK" for ticker in weights):
             strengths.append("A parte brasileira traz ativos geradores de caixa e setores conhecidos pelo investidor local.")
+        if portfolio_return_window is not None and benchmark_return is not None and portfolio_return_window >= benchmark_return:
+            strengths.append(f"No recorte de {horizon_label}, a carteira acompanha ou supera o benchmark principal.")
         if not strengths:
             strengths.append("A carteira tem uma logica basica de diversificacao, mas ainda depende bastante de poucos vetores.")
 
@@ -222,12 +277,6 @@ class PortfolioOpinionService:
         repeated_sectors = [sector for sector, count in sectors.items() if sector != "Desconhecido" and count >= 2]
         if repeated_sectors:
             overlaps.append(f"Ha repeticao setorial relevante em {', '.join(repeated_sectors[:3])}.")
-        countries = Counter(
-            (all_assets.get(pos.ticker).country if all_assets.get(pos.ticker) else "Desconhecido")
-            for pos in positions
-        )
-        if countries.get("US", 0) >= 3:
-            overlaps.append("Existe sobreposicao geografica relevante em ativos ligados aos Estados Unidos.")
 
         block_reviews = []
         br_positions = [pos for pos in positions if pos.asset_class == "BR_STOCK"]
@@ -237,12 +286,18 @@ class PortfolioOpinionService:
                 for pos in br_positions
             )
             top_sector, _ = sectors_br.most_common(1)[0]
-            block_reviews.append({
-                "title": "Acoes brasileiras",
-                "assessment": "Bom para renda e estabilidade, mas ainda concentrado em setores dominantes da carteira."
-                if len(sectors_br) <= 4 else "Bloco razoavelmente distribuido entre setores locais.",
-                "highlights": f"Maior concentracao setorial em {top_sector}.",
-            })
+            block_return = self._block_return_for_window(br_positions, analysis, prices_data, horizon_days)
+            block_reviews.append(
+                {
+                    "title": "Acoes brasileiras",
+                    "assessment": "Bloco com perfil de renda e estabilidade, mas ainda sensivel ao ambiente domestico e a concentracao setorial."
+                    if len(sectors_br) <= 4
+                    else "Bloco razoavelmente distribuido entre setores locais, ainda dependente de macro Brasil.",
+                    "highlights": f"Maior concentracao setorial em {top_sector}. Retorno do bloco em {horizon_label}: {block_return:+.1f}%."
+                    if block_return is not None
+                    else f"Maior concentracao setorial em {top_sector}.",
+                }
+            )
 
         fii_positions = [pos for pos in positions if pos.asset_class == "FII"]
         if fii_positions:
@@ -251,35 +306,55 @@ class PortfolioOpinionService:
                 sector = all_assets.get(pos.ticker).sector if all_assets.get(pos.ticker) else ""
                 if any(word in sector.lower() for word in ["credito", "hibrido"]):
                     credit_like += 1
-            block_reviews.append({
-                "title": "FIIs",
-                "assessment": "Bom para renda mensal, mas com atencao ao risco de credito e ao comportamento dos juros."
-                if credit_like else "Bloco de FIIs mais equilibrado entre renda e tijolo.",
-                "highlights": f"{credit_like} fundo(s) tem perfil mais proximo de credito ou hibrido.",
-            })
+            block_return = self._block_return_for_window(fii_positions, analysis, prices_data, horizon_days)
+            block_reviews.append(
+                {
+                    "title": "FIIs",
+                    "assessment": "Bom para renda mensal, mas com atencao ao risco de credito e ao comportamento dos juros."
+                    if credit_like
+                    else "Bloco de FIIs mais equilibrado entre renda e tijolo.",
+                    "highlights": (
+                        f"{credit_like} fundo(s) tem perfil mais proximo de credito ou hibrido. Retorno do bloco em {horizon_label}: {block_return:+.1f}%."
+                        if block_return is not None
+                        else f"{credit_like} fundo(s) tem perfil mais proximo de credito ou hibrido."
+                    ),
+                }
+            )
 
-        us_positions = [pos for pos in positions if pos.asset_class == "US_STOCK"]
+        us_positions = [pos for pos in positions if pos.asset_class in ("US_STOCK", "BDR")]
         if us_positions:
-            block_reviews.append({
-                "title": "Exterior",
-                "assessment": "Bloco importante para diversificacao geografica, mas sensivel ao ciclo de juros e ao peso excessivo em indices parecidos."
-                if us_weight >= 0.3 else "Bloco externo ajuda a diversificar sem dominar a carteira.",
-                "highlights": f"Peso agregado aproximado de {us_weight * 100:.1f}% em ativos ligados aos EUA.",
-            })
+            block_return = self._block_return_for_window(us_positions, analysis, prices_data, horizon_days)
+            block_reviews.append(
+                {
+                    "title": "Exterior",
+                    "assessment": "Bloco importante para diversificacao geografica, mas sensivel ao ciclo de juros e ao peso excessivo em indices parecidos."
+                    if us_weight >= 0.3
+                    else "Bloco externo ajuda a diversificar sem dominar a carteira.",
+                    "highlights": (
+                        f"Peso agregado aproximado de {us_weight * 100:.1f}% em ativos ligados aos EUA. Retorno do bloco em {horizon_label}: {block_return:+.1f}%."
+                        if block_return is not None
+                        else f"Peso agregado aproximado de {us_weight * 100:.1f}% em ativos ligados aos EUA."
+                    ),
+                }
+            )
 
         if fixed_weight > 0:
-            block_reviews.append({
-                "title": "Renda fixa",
-                "assessment": "Bloco defensivo util para equilibrio da carteira.",
-                "highlights": f"Peso aproximado de {fixed_weight * 100:.1f}% na composicao.",
-            })
+            block_reviews.append(
+                {
+                    "title": "Renda fixa",
+                    "assessment": "Bloco defensivo util para equilibrio da carteira.",
+                    "highlights": f"Peso aproximado de {fixed_weight * 100:.1f}% na composicao.",
+                }
+            )
 
         if crypto_weight > 0:
-            block_reviews.append({
-                "title": "Cripto",
-                "assessment": "Bloco com potencial de assimetria, mas com volatilidade estruturalmente alta.",
-                "highlights": f"Peso aproximado de {crypto_weight * 100:.1f}% em criptoativos.",
-            })
+            block_reviews.append(
+                {
+                    "title": "Cripto",
+                    "assessment": "Bloco com potencial de assimetria, mas com volatilidade estruturalmente alta.",
+                    "highlights": f"Peso aproximado de {crypto_weight * 100:.1f}% em criptoativos.",
+                }
+            )
 
         headline_risks = []
         if us_weight >= 0.35:
@@ -291,16 +366,24 @@ class PortfolioOpinionService:
         suffix = f", mas com risco concentrado em {', '.join(headline_risks)}" if headline_risks else ""
 
         if score >= 0.7:
-            headline = f"A avaliacao final da carteira e: boa, diversificada em classes de ativos{suffix}."
+            headline = f"A avaliacao final da carteira em {horizon_label} e: boa, diversificada em classes de ativos{suffix}."
         elif score >= 0.45:
-            headline = f"A avaliacao final da carteira e: razoavel, com bons ativos, porem com sobreposicoes e riscos que merecem ajuste{suffix}."
+            headline = f"A avaliacao final da carteira em {horizon_label} e: razoavel, com bons ativos, porem com sobreposicoes e riscos que merecem ajuste{suffix}."
         else:
-            headline = f"A avaliacao final da carteira e: fragil na construcao atual, com concentracao e correlacao elevadas{suffix}."
+            headline = f"A avaliacao final da carteira em {horizon_label} e: fragil na construcao atual, com concentracao e correlacao elevadas{suffix}."
 
         summary_parts = [
             "Nao e uma carteira ruim.",
             f"Ela combina {len(class_weights)} classe(s) de ativos e hoje tem seus maiores pesos em {', '.join(top_tickers[:4])}.",
         ]
+        if portfolio_return_window is not None:
+            summary_parts.append(
+                f"No recorte de {horizon_label}, o retorno agregado estimado da carteira ficou em {portfolio_return_window:+.1f}%."
+            )
+        if benchmark_return is not None and benchmark.get("label"):
+            summary_parts.append(
+                f"No mesmo periodo, o benchmark de referencia {benchmark.get('label')} variou {benchmark_return:+.1f}%."
+            )
         if overlaps:
             summary_parts.append("O principal ponto de atencao esta na sobreposicao entre ativos com funcao parecida e no risco escondido em alguns blocos.")
         if forecast_risk > 0.5:
@@ -316,12 +399,17 @@ class PortfolioOpinionService:
         if not final_diag_parts:
             final_diag_parts.append("a carteira esta funcional, mas ainda pode ficar mais limpa e coerente")
 
-        conclusion = "O maior ajuste conceitual e reduzir redundancias, explicitar a funcao de cada bloco e limitar os riscos que hoje parecem diversificacao, mas ainda representam exposicao repetida."
+        conclusion = f"O maior ajuste conceitual para o recorte de {horizon_label} e reduzir redundancias, explicitar a funcao de cada bloco e limitar os riscos que hoje parecem diversificacao, mas ainda representam exposicao repetida."
 
         sources = []
         seen_ids = set()
         for pos in positions[: min(6, len(positions))]:
-            asset_result = self.asset_analysis.generate_asset_analysis(portfolio, pos.ticker)
+            asset_result = self.asset_analysis.generate_asset_analysis(
+                portfolio,
+                pos.ticker,
+                history_horizon=analysis_horizon,
+                outlook_horizon=analysis_horizon,
+            )
             for source in asset_result.get("sources", [])[:3]:
                 if source["id"] in seen_ids:
                     continue

@@ -3,45 +3,353 @@
   "ticker": "ITUB4",
   "asset_name": "Itaú Unibanco PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T15:03:30.585184+00:00",
-  "recomputed_at": "2026-06-01T15:03:30.585184+00:00",
+  "generated_at": "2026-06-01T16:33:49.842535+00:00",
+  "recomputed_at": "2026-06-01T16:33:49.842535+00:00",
   "confidence": "media",
   "status": "ok",
+  "selected_history_horizon": "2m",
+  "selected_outlook_horizon": "2m",
   "current_snapshot": {
-    "current_price": 39.57,
+    "current_price": 39.39,
     "currency": "BRL",
-    "weight_pct": 14.91,
+    "weight_pct": 14.84,
     "sector": "Financeiro",
     "country": "BR"
   },
   "historical_window": {
-    "start_date": "2026-03-03",
+    "start_date": "2026-03-09",
     "end_date": "2026-06-01",
     "news_count": 12,
     "has_price_history": false
   },
+  "historical_series": [],
+  "forecast_series": [
+    {
+      "date": "2026-06-01",
+      "value": 39.32
+    },
+    {
+      "date": "2026-06-02",
+      "value": 39.32
+    },
+    {
+      "date": "2026-06-03",
+      "value": 39.31
+    },
+    {
+      "date": "2026-06-04",
+      "value": 39.31
+    },
+    {
+      "date": "2026-06-05",
+      "value": 39.3
+    },
+    {
+      "date": "2026-06-08",
+      "value": 39.3
+    },
+    {
+      "date": "2026-06-09",
+      "value": 39.37
+    },
+    {
+      "date": "2026-06-10",
+      "value": 39.44
+    },
+    {
+      "date": "2026-06-11",
+      "value": 39.5
+    },
+    {
+      "date": "2026-06-12",
+      "value": 39.57
+    },
+    {
+      "date": "2026-06-15",
+      "value": 39.64
+    },
+    {
+      "date": "2026-06-16",
+      "value": 39.71
+    },
+    {
+      "date": "2026-06-17",
+      "value": 39.78
+    },
+    {
+      "date": "2026-06-18",
+      "value": 39.84
+    },
+    {
+      "date": "2026-06-19",
+      "value": 39.91
+    },
+    {
+      "date": "2026-06-22",
+      "value": 39.98
+    },
+    {
+      "date": "2026-06-23",
+      "value": 40.05
+    },
+    {
+      "date": "2026-06-24",
+      "value": 40.12
+    },
+    {
+      "date": "2026-06-25",
+      "value": 40.19
+    },
+    {
+      "date": "2026-06-26",
+      "value": 40.25
+    },
+    {
+      "date": "2026-06-29",
+      "value": 40.32
+    },
+    {
+      "date": "2026-06-30",
+      "value": 40.39
+    },
+    {
+      "date": "2026-07-01",
+      "value": 40.47
+    },
+    {
+      "date": "2026-07-02",
+      "value": 40.54
+    },
+    {
+      "date": "2026-07-03",
+      "value": 40.62
+    },
+    {
+      "date": "2026-07-06",
+      "value": 40.69
+    },
+    {
+      "date": "2026-07-07",
+      "value": 40.77
+    },
+    {
+      "date": "2026-07-08",
+      "value": 40.84
+    },
+    {
+      "date": "2026-07-09",
+      "value": 40.92
+    },
+    {
+      "date": "2026-07-10",
+      "value": 40.99
+    },
+    {
+      "date": "2026-07-13",
+      "value": 41.07
+    },
+    {
+      "date": "2026-07-14",
+      "value": 41.14
+    },
+    {
+      "date": "2026-07-15",
+      "value": 41.22
+    },
+    {
+      "date": "2026-07-16",
+      "value": 41.29
+    },
+    {
+      "date": "2026-07-17",
+      "value": 41.37
+    },
+    {
+      "date": "2026-07-20",
+      "value": 41.44
+    },
+    {
+      "date": "2026-07-21",
+      "value": 41.52
+    },
+    {
+      "date": "2026-07-22",
+      "value": 41.59
+    },
+    {
+      "date": "2026-07-23",
+      "value": 41.67
+    },
+    {
+      "date": "2026-07-24",
+      "value": 41.74
+    },
+    {
+      "date": "2026-07-27",
+      "value": 41.82
+    },
+    {
+      "date": "2026-07-28",
+      "value": 41.89
+    },
+    {
+      "date": "2026-07-29",
+      "value": 41.97
+    },
+    {
+      "date": "2026-07-30",
+      "value": 42.06
+    },
+    {
+      "date": "2026-07-31",
+      "value": 42.16
+    },
+    {
+      "date": "2026-08-03",
+      "value": 42.25
+    },
+    {
+      "date": "2026-08-04",
+      "value": 42.34
+    },
+    {
+      "date": "2026-08-05",
+      "value": 42.43
+    },
+    {
+      "date": "2026-08-06",
+      "value": 42.53
+    },
+    {
+      "date": "2026-08-07",
+      "value": 42.62
+    },
+    {
+      "date": "2026-08-10",
+      "value": 42.71
+    },
+    {
+      "date": "2026-08-11",
+      "value": 42.81
+    },
+    {
+      "date": "2026-08-12",
+      "value": 42.9
+    },
+    {
+      "date": "2026-08-13",
+      "value": 42.99
+    },
+    {
+      "date": "2026-08-14",
+      "value": 43.08
+    },
+    {
+      "date": "2026-08-17",
+      "value": 43.18
+    },
+    {
+      "date": "2026-08-18",
+      "value": 43.27
+    },
+    {
+      "date": "2026-08-19",
+      "value": 43.36
+    },
+    {
+      "date": "2026-08-20",
+      "value": 43.46
+    },
+    {
+      "date": "2026-08-21",
+      "value": 43.55
+    },
+    {
+      "date": "2026-08-24",
+      "value": 43.64
+    },
+    {
+      "date": "2026-08-25",
+      "value": 43.73
+    },
+    {
+      "date": "2026-08-26",
+      "value": 43.83
+    },
+    {
+      "date": "2026-08-27",
+      "value": 43.92
+    }
+  ],
+  "forecast_anchor_points": [
+    {
+      "date": "1w",
+      "horizon_days": 5,
+      "predicted_price": 39.3,
+      "predicted_return": -0.000535,
+      "confidence": 0.2047
+    },
+    {
+      "date": "1m",
+      "horizon_days": 21,
+      "predicted_price": 40.39,
+      "predicted_return": 0.027145,
+      "confidence": 0.0714
+    },
+    {
+      "date": "2m",
+      "horizon_days": 42,
+      "predicted_price": 41.97,
+      "predicted_return": 0.067371,
+      "confidence": 0.06
+    },
+    {
+      "date": "3m",
+      "horizon_days": 63,
+      "predicted_price": 43.92,
+      "predicted_return": 0.116987,
+      "confidence": 0.05
+    }
+  ],
   "recent_performance": {
+    "change_selected_pct": null,
     "change_1m_pct": null,
+    "change_2m_pct": null,
     "change_3m_pct": null,
     "change_12m_pct": null,
-    "volatility_21d_pct": null,
-    "drawdown_90d_pct": null,
-    "beta_63d": null,
-    "correlation_63d": null,
-    "benchmark_ticker": "IBOV"
+    "volatility_selected_pct": null,
+    "drawdown_selected_pct": null,
+    "beta_selected": null,
+    "correlation_selected": null,
+    "benchmark_ticker": "IBOV",
+    "forecast_return_selected_pct": 6.74,
+    "forecast_price_selected": 41.97,
+    "forecast_confidence_selected": 0.06
   },
   "outlook_3m": {
     "scenario": "pressionado",
     "dominant_topics": [
       "juros",
       "inflacao",
-      "cambio"
+      "cambio",
+      "resultados"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 39.57. Hoje representa cerca de 14.9% da carteira. As noticias recentes tem vies negativo e impacto medio de 0.61.",
-    "recent": "No retrospecto de noticias do periodo, houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.59. Os temas que mais apareceram foram juros, inflacao, cambio. Os destaques recentes nesse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. Os temas dominantes hoje sao juros, inflacao, cambio. A confianca dessa leitura e moderada."
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Cotacao atual aproximada em BRL 39.39. Hoje representa cerca de 14.8% da carteira. O modelo de 2 meses hoje aponta alta, com retorno estimado de +6.7% e confianca de 6%. As noticias recentes tem vies negativo e impacto medio de 0.63.",
+    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+    "outlook": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +6.7% e preco estimado perto de 41.97. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
+    "recent_by_horizon": {
+      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro."
+    },
+    "outlook_by_horizon": {
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -0.1% e preco estimado perto de 39.30. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +2.7% e preco estimado perto de 40.39. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +6.7% e preco estimado perto de 41.97. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +11.7% e preco estimado perto de 43.92. Os temas dominantes agora sao juros, inflacao, cambio, resultados. A confianca dessa leitura e moderada."
+    }
   },
   "used_news_count": 12,
   "sources": [
@@ -55,8 +363,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.8779,
-      "rank_score": 0.7823,
+      "match_score": 0.8773,
+      "rank_score": 0.7782,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
@@ -73,12 +381,30 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.854,
-      "rank_score": 0.7692,
+      "match_score": 0.8522,
+      "rank_score": 0.7651,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.72,
+      "role": "current"
+    },
+    {
+      "id": "7f9fc289b8eb917c98f45337ecbae744",
+      "title": "Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/lojas-renner-lren3-itau-bba-eleva-recomendacao-para-compra-com-alta-nas-projecoes-de-lucro/",
+      "published_at": "2026-06-01T16:26:53.546598+00:00",
+      "summary": "Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.\n\nO texto menciona ITUB4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.75,
+      "relevance_score": 0.5,
+      "match_score": 0.71,
+      "rank_score": 0.6567,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.75,
       "role": "current"
     },
     {
@@ -91,8 +417,8 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.4488,
-      "rank_score": 0.5523,
+      "match_score": 0.448,
+      "rank_score": 0.5685,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -109,8 +435,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4529,
-      "rank_score": 0.5471,
+      "match_score": 0.4523,
+      "rank_score": 0.5632,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -127,8 +453,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4529,
-      "rank_score": 0.5471,
+      "match_score": 0.4523,
+      "rank_score": 0.5632,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -145,13 +471,13 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4508,
-      "rank_score": 0.5459,
+      "match_score": 0.4501,
+      "rank_score": 0.5621,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
-      "role": "current"
+      "role": "historical"
     },
     {
       "id": "629cddfde78d45fdde8891b65e011167",
@@ -163,8 +489,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4507,
-      "rank_score": 0.5459,
+      "match_score": 0.45,
+      "rank_score": 0.562,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -181,8 +507,8 @@
       "sentiment_score": 0.14285714285714285,
       "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.4488,
-      "rank_score": 0.5288,
+      "match_score": 0.448,
+      "rank_score": 0.5449,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -199,12 +525,30 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4244,
-      "rank_score": 0.5189,
+      "match_score": 0.4236,
+      "rank_score": 0.5283,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
+      "role": "historical"
+    },
+    {
+      "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
+      "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
+      "source_name": "Tesouro Nacional - Noticias",
+      "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
+      "published_at": "2026-04-28T00:00:00+00:00",
+      "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
+      "sentiment_score": -0.3333333333333333,
+      "impact_score": 0.35,
+      "relevance_score": 0.5,
+      "match_score": 0.405,
+      "rank_score": 0.5241,
+      "source_category": "treasury",
+      "is_official": true,
+      "context_role": "sector",
+      "source_confidence_weight": 0.95,
       "role": "historical"
     },
     {
@@ -217,44 +561,8 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.424,
-      "rank_score": 0.5112,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.72,
-      "role": "historical"
-    },
-    {
-      "id": "be7f3b146a8f8ac1fd340f0c3329071a",
-      "title": "\"Ponto cego\": as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ponto-cego-as-oportunidades-de-us-13-trilhao-em-acoes-ligadas-a-america-latina/",
-      "published_at": "2026-05-22T18:00:49+00:00",
-      "summary": "Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise do Bradesco BBI Ponto cego: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades Lara Rizério 22/05/2026 15h00 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Shutterstock) Publicidade Um amplo conjunto de empresas globais com forte exposição à América Latina — mas listadas fora da região — vem sendo negligenciado por investidores, mesmo concentrando um valor de mercado de cerca de US$ 1,3 trilhão. O texto menciona BBDC4, B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.4045,
-      "rank_score": 0.508,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.72,
-      "role": "historical"
-    },
-    {
-      "id": "7cac0a30e9fb0cd92da90213b98508c4",
-      "title": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/cogna-yduqs-anima-e-mais-quais-acoes-se-destacaram-na-temporada-do-1o-tri/",
-      "published_at": "2026-05-22T16:37:23+00:00",
-      "summary": "Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise de resultados Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor Felipe Moreira 22/05/2026 13h37 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Foto: Reprodução de Tung Nguyen por Pixabay) Publicidade A temporada de resultados do primeiro trimestre de 2026 (1T26) terminou e os resultados de educacionais foram considerados mistos, com leve assimetria positiva. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.4044,
-      "rank_score": 0.5079,
+      "match_score": 0.4232,
+      "rank_score": 0.5206,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -265,7 +573,7 @@
   "source_groups": [
     {
       "source_name": "InfoMoney",
-      "count": 12,
+      "count": 11,
       "items": [
         {
           "id": "1f13e4f39789c6f4984e581d2390e060",
@@ -277,8 +585,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.8779,
-          "rank_score": 0.7823,
+          "match_score": 0.8773,
+          "rank_score": 0.7782,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -295,12 +603,30 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.854,
-          "rank_score": 0.7692,
+          "match_score": 0.8522,
+          "rank_score": 0.7651,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
           "source_confidence_weight": 0.72,
+          "role": "current"
+        },
+        {
+          "id": "7f9fc289b8eb917c98f45337ecbae744",
+          "title": "Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/lojas-renner-lren3-itau-bba-eleva-recomendacao-para-compra-com-alta-nas-projecoes-de-lucro/",
+          "published_at": "2026-06-01T16:26:53.546598+00:00",
+          "summary": "Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.\n\nO texto menciona ITUB4. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.75,
+          "relevance_score": 0.5,
+          "match_score": 0.71,
+          "rank_score": 0.6567,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.75,
           "role": "current"
         },
         {
@@ -313,8 +639,8 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.4488,
-          "rank_score": 0.5523,
+          "match_score": 0.448,
+          "rank_score": 0.5685,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -331,8 +657,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4529,
-          "rank_score": 0.5471,
+          "match_score": 0.4523,
+          "rank_score": 0.5632,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -349,8 +675,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4529,
-          "rank_score": 0.5471,
+          "match_score": 0.4523,
+          "rank_score": 0.5632,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -367,13 +693,13 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4508,
-          "rank_score": 0.5459,
+          "match_score": 0.4501,
+          "rank_score": 0.5621,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
-          "role": "current"
+          "role": "historical"
         },
         {
           "id": "629cddfde78d45fdde8891b65e011167",
@@ -385,8 +711,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4507,
-          "rank_score": 0.5459,
+          "match_score": 0.45,
+          "rank_score": 0.562,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -403,8 +729,8 @@
           "sentiment_score": 0.14285714285714285,
           "impact_score": 0.4928571428571429,
           "relevance_score": 0.5,
-          "match_score": 0.4488,
-          "rank_score": 0.5288,
+          "match_score": 0.448,
+          "rank_score": 0.5449,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -421,8 +747,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4244,
-          "rank_score": 0.5189,
+          "match_score": 0.4236,
+          "rank_score": 0.5283,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -439,48 +765,36 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.424,
-          "rank_score": 0.5112,
+          "match_score": 0.4232,
+          "rank_score": 0.5206,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
           "role": "historical"
-        },
+        }
+      ]
+    },
+    {
+      "source_name": "Tesouro Nacional - Noticias",
+      "count": 1,
+      "items": [
         {
-          "id": "be7f3b146a8f8ac1fd340f0c3329071a",
-          "title": "\"Ponto cego\": as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ponto-cego-as-oportunidades-de-us-13-trilhao-em-acoes-ligadas-a-america-latina/",
-          "published_at": "2026-05-22T18:00:49+00:00",
-          "summary": "Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise do Bradesco BBI Ponto cego: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades Lara Rizério 22/05/2026 15h00 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Shutterstock) Publicidade Um amplo conjunto de empresas globais com forte exposição à América Latina — mas listadas fora da região — vem sendo negligenciado por investidores, mesmo concentrando um valor de mercado de cerca de US$ 1,3 trilhão. O texto menciona BBDC4, B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
+          "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
+          "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
+          "source_name": "Tesouro Nacional - Noticias",
+          "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
+          "published_at": "2026-04-28T00:00:00+00:00",
+          "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
+          "sentiment_score": -0.3333333333333333,
+          "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.4045,
-          "rank_score": 0.508,
-          "source_category": null,
-          "is_official": false,
+          "match_score": 0.405,
+          "rank_score": 0.5241,
+          "source_category": "treasury",
+          "is_official": true,
           "context_role": "sector",
-          "source_confidence_weight": 0.72,
-          "role": "historical"
-        },
-        {
-          "id": "7cac0a30e9fb0cd92da90213b98508c4",
-          "title": "Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/cogna-yduqs-anima-e-mais-quais-acoes-se-destacaram-na-temporada-do-1o-tri/",
-          "published_at": "2026-05-22T16:37:23+00:00",
-          "summary": "Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise de resultados Cogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º tri Banco destaca desaceleração nos volumes, além de maior pressão de custos ao longo do trimestre, refletindo um ambiente operacional mais desafiador para o setor Felipe Moreira 22/05/2026 13h37 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Foto: Reprodução de Tung Nguyen por Pixabay) Publicidade A temporada de resultados do primeiro trimestre de 2026 (1T26) terminou e os resultados de educacionais foram considerados mistos, com leve assimetria positiva. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.4044,
-          "rank_score": 0.5079,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "sector",
-          "source_confidence_weight": 0.72,
+          "source_confidence_weight": 0.95,
           "role": "historical"
         }
       ]

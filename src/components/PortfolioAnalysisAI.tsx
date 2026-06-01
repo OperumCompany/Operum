@@ -21,7 +21,10 @@ function ComponentBar({ label, value, invert }: { label: string; value: number; 
       <div className="h-2 flex-1 overflow-hidden rounded-full bg-[var(--bg-surface-strong)]">
         <div
           className="h-full rounded-full transition-all duration-500"
-          style={{ width: `${displayValue * 100}%`, backgroundColor: displayValue >= 0.6 ? '#22c55e' : displayValue >= 0.3 ? '#eab308' : '#ef4444' }}
+          style={{
+            width: `${displayValue * 100}%`,
+            backgroundColor: displayValue >= 0.6 ? '#22c55e' : displayValue >= 0.3 ? '#eab308' : '#ef4444',
+          }}
         />
       </div>
       <span className="w-12 text-right text-sm font-medium">{pct(displayValue)}</span>
@@ -29,23 +32,37 @@ function ComponentBar({ label, value, invert }: { label: string; value: number; 
   );
 }
 
+const HORIZONS = [
+  { key: '1m', label: '1 mes' },
+  { key: '2m', label: '2 meses' },
+  { key: '3m', label: '3 meses' },
+] as const;
+
 export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
   const [data, setData] = useState<PortfolioOpinion | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [expandedSources, setExpandedSources] = useState<Record<string, boolean>>({});
+  const [analysisHorizon, setAnalysisHorizon] = useState<'1m' | '2m' | '3m'>('3m');
 
-  async function loadOpinion() {
+  async function loadOpinion(nextHorizon = analysisHorizon) {
     setLoading(true);
     setError(null);
     try {
-      const result = await api.get<PortfolioOpinion>(`/models/opinion/${portfolioId}`);
+      const result = await api.get<PortfolioOpinion>(`/models/opinion/${portfolioId}?analysis_horizon=${nextHorizon}`);
       setData(result);
       setExpandedSources({});
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Erro ao gerar analise');
     } finally {
       setLoading(false);
+    }
+  }
+
+  async function changeHorizon(nextHorizon: '1m' | '2m' | '3m') {
+    setAnalysisHorizon(nextHorizon);
+    if (data || loading) {
+      await loadOpinion(nextHorizon);
     }
   }
 
@@ -65,9 +82,29 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
           <p className="text-sm text-[var(--text-muted)]">
             Gere uma analise detalhada com base nos ativos, noticias e indicadores de risco.
           </p>
-          <Button type="button" onClick={loadOpinion}>
+          <Button type="button" onClick={() => loadOpinion()}>
             Gerar analise por IA
           </Button>
+        </div>
+      )}
+
+      {(loading || data) && (
+        <div className="mb-4 flex flex-wrap items-center gap-2">
+          <span className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Janela</span>
+          {HORIZONS.map((horizon) => (
+            <button
+              key={horizon.key}
+              type="button"
+              onClick={() => changeHorizon(horizon.key)}
+              className={`rounded-full px-3 py-2 text-xs font-semibold transition ${
+                analysisHorizon === horizon.key
+                  ? 'bg-[var(--brand)] text-white'
+                  : 'border border-[var(--border-soft)] bg-white text-[var(--text-main)] hover:border-[var(--brand)]'
+              }`}
+            >
+              {horizon.label}
+            </button>
+          ))}
         </div>
       )}
 
@@ -81,7 +118,9 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
       {error && (
         <div className="space-y-3 py-2">
           <p className="text-sm text-[var(--danger-text)]">{error}</p>
-          <Button type="button" onClick={loadOpinion}>Tentar novamente</Button>
+          <Button type="button" onClick={() => loadOpinion()}>
+            Tentar novamente
+          </Button>
         </div>
       )}
 
@@ -95,7 +134,9 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
               {pct(data.score)}
             </div>
             <div>
-              <p className="text-lg font-bold" style={{ color: sl.color }}>{sl.label}</p>
+              <p className="text-lg font-bold" style={{ color: sl.color }}>
+                {sl.label}
+              </p>
               <p className="text-xs text-[var(--text-muted)]">Score consolidado da carteira</p>
             </div>
           </div>
@@ -122,7 +163,9 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Pontos fortes</p>
               {data.strengths.map((item) => (
-                <p key={item} className="text-sm leading-relaxed text-[var(--text-main)]">{item}</p>
+                <p key={item} className="text-sm leading-relaxed text-[var(--text-main)]">
+                  {item}
+                </p>
               ))}
             </div>
           )}
@@ -131,7 +174,9 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
             <div className="space-y-2">
               <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Sobreposicoes e riscos</p>
               {data.overlaps.map((item) => (
-                <p key={item} className="text-sm leading-relaxed text-[var(--text-main)]">{item}</p>
+                <p key={item} className="text-sm leading-relaxed text-[var(--text-main)]">
+                  {item}
+                </p>
               ))}
             </div>
           )}
@@ -186,9 +231,7 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
                             className="block rounded-2xl border border-[var(--border-soft)] bg-white p-3 transition hover:border-[var(--brand)]"
                           >
                             <p className="text-sm font-semibold text-[var(--text-main)]">{item.title}</p>
-                            <p className="mt-1 text-xs text-[var(--text-muted)]">
-                              {new Date(item.published_at).toLocaleDateString('pt-BR')}
-                            </p>
+                            <p className="mt-1 text-xs text-[var(--text-muted)]">{new Date(item.published_at).toLocaleDateString('pt-BR')}</p>
                           </a>
                         ))}
                       </div>
@@ -198,7 +241,7 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
             </div>
           )}
 
-          <Button type="button" variant="ghost" onClick={loadOpinion}>
+          <Button type="button" variant="ghost" onClick={() => loadOpinion()}>
             Regenerar analise
           </Button>
         </div>

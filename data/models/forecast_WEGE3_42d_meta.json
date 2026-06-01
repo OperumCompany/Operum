@@ -1,0 +1,10 @@
+{
+  "ticker": "WEGE3",
+  "horizon_days": 42,
+  "train_r2": 0.958861,
+  "test_r2": -0.95412,
+  "rmse": 0.120481,
+  "train_samples": 328,
+  "test_samples": 82,
+  "trained_at": "2026-06-01T16:32:17.195987+00:00"
+}
