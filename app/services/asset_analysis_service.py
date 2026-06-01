@@ -23,17 +23,15 @@ class AssetAnalysisService:
         self._config = self._load_or_init_config()
 
     def _load_or_init_config(self) -> dict:
-        config = self.storage.load_json(self._config_path)
-        if config:
-            return config
-
-        config = {
+        defaults = {
             "weights": {
-                "direct_match": 0.45,
-                "name_alias": 0.25,
+                "direct_match": 0.36,
+                "name_alias": 0.2,
                 "sector_match": 0.1,
-                "country_match": 0.1,
-                "recency": 0.1,
+                "country_match": 0.08,
+                "recency": 0.08,
+                "source_confidence": 0.08,
+                "macro_context": 0.1,
             },
             "aliases": {
                 "B3SA3": ["b3", "bolsa brasileira", "bolsa de valores"],
@@ -47,6 +45,13 @@ class AssetAnalysisService:
                 "CMIG4": ["cemig"],
                 "CEEB3": ["coelba"],
             },
+            "source_confidence": {
+                "official_notice_feed": 1.0,
+                "official_listing": 0.95,
+                "rss": 0.72,
+                "editorial_listing": 0.75,
+                "api_proxy": 0.45,
+            },
             "class_templates": {
                 "FII": "O ativo é um fundo imobiliário e depende de renda, qualidade do portfólio e sensibilidade a juros.",
                 "CRYPTO": "O ativo pertence ao bloco cripto, com potencial de assimetria e volatilidade estruturalmente elevada.",
@@ -55,8 +60,19 @@ class AssetAnalysisService:
                 "BR_STOCK": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local.",
             },
         }
-        self.storage.save_json(self._config_path, config)
-        return config
+        config = self.storage.load_json(self._config_path)
+        if not config:
+            self.storage.save_json(self._config_path, defaults)
+            return defaults
+
+        merged = defaults.copy()
+        for key, value in config.items():
+            if isinstance(value, dict) and isinstance(merged.get(key), dict):
+                merged[key] = {**merged[key], **value}
+            else:
+                merged[key] = value
+        self.storage.save_json(self._config_path, merged)
+        return merged
 
     def _cache_key(self, portfolio_id: str, ticker: str) -> str:
         return f"{self._cache_dir}/{portfolio_id}_{ticker.upper()}.json"
@@ -90,7 +106,44 @@ class AssetAnalysisService:
     def _safe_dt(self, dt: datetime) -> datetime:
         return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
 
-    def _matches_asset(self, news: NewsItem, meta: dict) -> tuple[bool, float]:
+    def _source_confidence_weight(self, news: NewsItem) -> float:
+        source_type = getattr(news, "source_type", "") or ""
+        is_official = bool(getattr(news, "is_official", False))
+        source_map = self._config.get("source_confidence", {})
+        base = float(source_map.get(source_type, 0.6))
+        if is_official:
+            return min(1.0, max(base, 0.9))
+        return base
+
+    def _macro_context_weight(self, text: str, meta: dict) -> float:
+        asset_class = meta.get("asset_class", "")
+        country = meta.get("country", "")
+        sector = self._normalize_text(meta.get("sector", ""))
+
+        keywords = {
+            "BR": ["juros", "selic", "copom", "fiscal", "governo", "congresso", "ibovespa", "real", "dolar", "dólar", "inflacao", "inflação"],
+            "US": ["fed", "treasury", "payroll", "sp500", "s&p", "nasdaq", "wall street", "inflation", "rates", "tariffs"],
+            "GLOBAL": ["guerra", "geopolitica", "geopolítica", "petroleo", "petróleo", "commodity", "commodities", "china", "opep"],
+            "CRYPTO": ["bitcoin", "ethereum", "etf", "stablecoin", "regulacao", "regulação", "liquidez", "halving"],
+        }
+
+        score = 0.0
+        if any(term in text for term in keywords["GLOBAL"]):
+            score += 0.45
+        if country == "BR" and any(term in text for term in keywords["BR"]):
+            score += 0.55
+        if country == "US" and any(term in text for term in keywords["US"]):
+            score += 0.55
+        if asset_class == "CRYPTO" and any(term in text for term in keywords["CRYPTO"]):
+            score += 0.55
+        if "petroleo" in sector or "petróleo" in sector:
+            if "petroleo" in text or "petróleo" in text or "brent" in text:
+                score += 0.25
+        if "financeiro" in sector and any(term in text for term in ["banco", "credito", "crédito", "inadimplencia", "inadimplência"]):
+            score += 0.2
+        return min(1.0, score)
+
+    def _matches_asset(self, news: NewsItem, meta: dict) -> tuple[bool, float, str, float, float]:
         ticker = meta["ticker"].upper()
         text = self._normalize_text(
             f"{news.title} {news.summary} {news.content_preview} {news.full_text_if_available or ''}"
@@ -99,40 +152,76 @@ class AssetAnalysisService:
         weights = self._config["weights"]
 
         score = 0.0
-        if ticker in [a.upper() for a in news.mentioned_assets]:
+        has_direct_match = ticker in [a.upper() for a in news.mentioned_assets]
+        if has_direct_match:
             score += weights["direct_match"]
-        if any(alias in text for alias in aliases):
+        has_alias_match = any(alias in text for alias in aliases)
+        if has_alias_match:
             score += weights["name_alias"]
 
         sector = self._normalize_text(meta.get("sector", ""))
-        if sector and any(sector in self._normalize_text(s) for s in news.mentioned_sectors):
+        has_sector_match = sector and any(sector in self._normalize_text(s) for s in news.mentioned_sectors)
+        if has_sector_match:
             score += weights["sector_match"]
 
         country = self._normalize_text(meta.get("country", ""))
-        if country and any(country in self._normalize_text(c) for c in news.mentioned_countries):
+        has_country_match = country and any(country in self._normalize_text(c) for c in news.mentioned_countries)
+        if has_country_match:
             score += weights["country_match"]
 
         published = self._safe_dt(news.published_at)
         age_days = max(0.0, (datetime.now(timezone.utc) - published).total_seconds() / 86400)
         recency_score = max(0.0, 1.0 - min(age_days / 120.0, 1.0))
         score += recency_score * weights["recency"]
-        return score > 0.15, round(min(score, 1.0), 4)
+        source_confidence = self._source_confidence_weight(news)
+        score += source_confidence * weights["source_confidence"]
+        macro_context = self._macro_context_weight(text, meta)
+        score += macro_context * weights["macro_context"]
+
+        if has_direct_match or has_alias_match:
+            context_role = "asset"
+        elif has_sector_match:
+            context_role = "sector"
+        elif macro_context > 0.2 or has_country_match:
+            context_role = "macro"
+        else:
+            context_role = "asset"
+
+        return score > 0.18, round(min(score, 1.0), 4), context_role, round(source_confidence, 4), round(macro_context, 4)
 
     def get_related_news(self, ticker: str, limit: int = 20, days_back: int | None = None) -> list[dict]:
         meta = self._asset_meta(ticker)
         now = datetime.now(timezone.utc)
         matches: list[dict] = []
         for news in self.news.get_all_raw():
-            matched, match_score = self._matches_asset(news, meta)
+            matched, match_score, context_role, source_confidence_weight, macro_context_weight = self._matches_asset(news, meta)
             if not matched:
                 continue
             published = self._safe_dt(news.published_at)
             if days_back is not None and published < now - timedelta(days=days_back):
                 continue
-            matches.append({"match_score": match_score, "news": news, "published": published})
+            context_priority = {"asset": 1.0, "sector": 0.72, "macro": 0.58}.get(context_role, 0.5)
+            rank_score = (
+                match_score * 0.55
+                + news.impact_score * 0.15
+                + news.relevance_score * 0.1
+                + source_confidence_weight * 0.1
+                + macro_context_weight * 0.05
+                + context_priority * 0.05
+            )
+            matches.append({
+                "match_score": match_score,
+                "rank_score": round(rank_score, 4),
+                "context_role": context_role,
+                "source_confidence_weight": source_confidence_weight,
+                "macro_context_weight": macro_context_weight,
+                "news": news,
+                "published": published,
+            })
 
         matches.sort(
             key=lambda item: (
+                item["rank_score"],
                 item["match_score"],
                 item["news"].impact_score,
                 item["news"].relevance_score,
@@ -155,6 +244,11 @@ class AssetAnalysisService:
                 "impact_score": news.impact_score,
                 "relevance_score": news.relevance_score,
                 "match_score": item["match_score"],
+                "rank_score": item["rank_score"],
+                "source_category": getattr(news, "source_category", None),
+                "is_official": bool(getattr(news, "is_official", False)),
+                "context_role": item["context_role"],
+                "source_confidence_weight": item["source_confidence_weight"],
             })
         return results
 
@@ -256,13 +350,19 @@ class AssetAnalysisService:
     def _dominant_topics(self, news_list: list[dict]) -> list[str]:
         terms = []
         for item in news_list:
-            text = self._normalize_text(item["title"])
+            text = self._normalize_text(f"{item['title']} {item.get('summary', '')}")
             if "juros" in text or "selic" in text or "fed" in text:
                 terms.append("juros")
             if "inflacao" in text or "inflação" in text:
                 terms.append("inflacao")
             if "dolar" in text or "dólar" in text or "cambio" in text or "câmbio" in text:
                 terms.append("cambio")
+            if "petroleo" in text or "petróleo" in text or "brent" in text or "commodity" in text:
+                terms.append("commodities")
+            if "fiscal" in text or "governo" in text or "congresso" in text or "tribut" in text:
+                terms.append("fiscal/politica")
+            if "guerra" in text or "iran" in text or "israel" in text or "geopolit" in text:
+                terms.append("geopolitica")
             if "dividend" in text or "dividendo" in text:
                 terms.append("dividendos")
             if "resultado" in text or "lucro" in text or "receita" in text:
@@ -370,7 +470,7 @@ class AssetAnalysisService:
         all_related_news = self.get_related_news(ticker, limit=25, days_back=120)
         current_news = all_related_news[:6]
         historical_news = [item for item in all_related_news if self._safe_dt(datetime.fromisoformat(item["published_at"].replace("Z", "+00:00"))) >= datetime.now(timezone.utc) - timedelta(days=90)][:12]
-        outlook_news = sorted(all_related_news[:8], key=lambda item: (item["impact_score"], item["match_score"]), reverse=True)[:6]
+        outlook_news = sorted(all_related_news[:10], key=lambda item: (item.get("rank_score", item["match_score"]), item["impact_score"]), reverse=True)[:6]
 
         for item in current_news:
             item["role"] = "current"
@@ -385,6 +485,7 @@ class AssetAnalysisService:
         used_news = sorted(
             used_news_map.values(),
             key=lambda item: (
+                item.get("rank_score", item["match_score"]),
                 item["match_score"],
                 item["impact_score"],
                 item["published_at"],

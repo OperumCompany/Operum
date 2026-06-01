@@ -97,7 +97,11 @@ export type NewsItem = {
   subtitle: string | null;
   content_preview: string;
   full_text_if_available: string | null;
+  source_id?: string;
   source_name: string;
+  source_type?: string;
+  is_official?: boolean;
+  source_category?: string | null;
   source_url: string;
   published_at: string;
   language: string;
@@ -146,6 +150,11 @@ export type PortfolioOpinion = {
     impact_score: number;
     relevance_score: number;
     match_score: number;
+    rank_score?: number;
+    source_category?: string | null;
+    is_official?: boolean;
+    context_role?: string;
+    source_confidence_weight?: number;
   }>;
   source_groups: Array<{
     source_name: string;

@@ -6,5 +6,23 @@
     "completed_at": "2026-05-31T04:04:32.091827+00:00",
     "pages_scanned": 12,
     "items_found": 18
+  },
+  "backfill_sources": {
+    "b3_comunicados": {
+      "completed": true,
+      "start_date": "2026-05-01",
+      "last_run_at": "2026-06-01T04:44:10.174438+00:00",
+      "oldest_date_loaded": "2026-05-11",
+      "items_found": 19,
+      "new_count": 0
+    },
+    "tesouro_noticias": {
+      "completed": true,
+      "start_date": "2026-05-01",
+      "last_run_at": "2026-06-01T04:44:10.174438+00:00",
+      "oldest_date_loaded": "2026-05-11",
+      "items_found": 19,
+      "new_count": 0
+    }
   }
 }

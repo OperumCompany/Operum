@@ -129,8 +129,11 @@ def reindex_news():
 
 
 @router.post("/backfill")
-def backfill_news(start_date: str = Query("2026-05-01", description="Data inicial ISO")):
-    result = ingestion_service.backfill_history(start_date=start_date)
+def backfill_news(
+    start_date: str = Query("2026-05-01", description="Data inicial ISO"),
+    source_id: str | None = Query(None, description="Fonte especifica para backfill"),
+):
+    result = ingestion_service.backfill_history(start_date=start_date, source_id=source_id)
     return {"status": "ok", **result}
 
 

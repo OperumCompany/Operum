@@ -122,6 +122,11 @@ async def test_news_list(client: AsyncClient):
     assert "items" in data
     assert "total" in data
     assert "total_pages" in data
+    if data["items"]:
+        first = data["items"][0]
+        assert "source_id" in first
+        assert "source_type" in first
+        assert "is_official" in first
 
 
 @pytest.mark.asyncio
@@ -132,6 +137,15 @@ async def test_news_query_and_pagination_metadata(client: AsyncClient):
     assert data["page"] == 1
     assert data["page_size"] == 30
     assert "total_pages" in data
+
+
+@pytest.mark.asyncio
+async def test_news_backfill_accepts_source_scope(client: AsyncClient):
+    resp = await client.post("/api/news/backfill?start_date=2026-05-01&source_id=tesouro_noticias")
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["status"] == "ok"
+    assert "sources" in data
 
 
 @pytest.mark.asyncio

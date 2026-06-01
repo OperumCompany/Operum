@@ -4,7 +4,9 @@
     "name_alias": 0.25,
     "sector_match": 0.1,
     "country_match": 0.1,
-    "recency": 0.1
+    "recency": 0.1,
+    "source_confidence": 0.08,
+    "macro_context": 0.1
   },
   "aliases": {
     "B3SA3": [
@@ -41,6 +43,13 @@
     "CEEB3": [
       "coelba"
     ]
+  },
+  "source_confidence": {
+    "official_notice_feed": 1.0,
+    "official_listing": 0.95,
+    "rss": 0.72,
+    "editorial_listing": 0.75,
+    "api_proxy": 0.45
   },
   "class_templates": {
     "FII": "O ativo é um fundo imobiliário e depende de renda, qualidade do portfólio e sensibilidade a juros.",
