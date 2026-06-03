@@ -1,5 +1,1664 @@
 [
   {
+    "id": "9faf9cc1f6a4d025ce3cf23c16912c30",
+    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "subtitle": null,
+    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
+    "published_at": "2026-06-03T15:37:34.696716Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+    "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+    "subtitle": null,
+    "content_preview": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+    "published_at": "2026-06-03T15:37:34.696716Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "03c1287e89071e3c85b905d8a3e57db4",
+    "title": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica",
+    "subtitle": null,
+    "content_preview": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
+    "published_at": "2026-06-03T15:37:34.696716Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "420d69f65b3e39ae9a9b6d83ad67f216",
+    "title": "Agibank (AGBK): XP inicia cobertura com compra apoiada em três pilares",
+    "subtitle": null,
+    "content_preview": "Agibank (AGBK): XP inicia cobertura com compra apoiada em três pilares",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/agibank-agbk-xp-inicia-cobertura-com-compra-apoiada-em-tres-pilares/",
+    "published_at": "2026-06-03T15:37:34.696716Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Agibank (AGBK): XP inicia cobertura com compra apoiada em três pilares.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "592c63defe4022219b4771950113dc0e",
+    "title": "Irã condena ataque dos EUA a petroleiro em Ormuz e ameaça retaliar países da região",
+    "subtitle": null,
+    "content_preview": "Irã condena ataque dos EUA a petroleiro em Ormuz e ameaça retaliar países da região",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ira-condena-ataque-dos-eua-a-petroleiro-em-ormuz-e-ameaca-retaliar-paises-da-regiao/",
+    "published_at": "2026-06-03T15:37:34.696716Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Irã condena ataque dos EUA a petroleiro em Ormuz e ameaça retaliar países da região.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "b488591fc37c435a71132683ba892f8d",
+    "title": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação salta",
+    "subtitle": null,
+    "content_preview": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação salta",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/minerva-jpmorgan-aposta-em-recuperacao-apos-queda-e-eleva-beef3-a-compra-acao-salta/",
+    "published_at": "2026-06-03T15:37:34.696716Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 0.3333333333333333,
+    "relevance_score": 0.5,
+    "impact_score": 0.35,
+    "summary": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação salta.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "1a3b4ffc62209c5b1812c8db228382de",
+    "title": "BCE solicitará aos bancos medidas específicas para combater o risco de IA",
+    "subtitle": null,
+    "content_preview": "BCE solicitará aos bancos medidas específicas para combater o risco de IA",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/bce-solicitara-aos-bancos-medidas-especificas-para-combater-o-risco-de-ia/",
+    "published_at": "2026-06-03T15:37:34.696716Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "BCE solicitará aos bancos medidas específicas para combater o risco de IA.\n\nO foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "c79a9977eb447575f4330a7154ba8867",
+    "title": "Dólar hoje sobe após dados de emprego nos EUA acima do esperado",
+    "subtitle": null,
+    "content_preview": "Dólar hoje sobe após dados de emprego nos EUA acima do esperado",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-03062026/",
+    "published_at": "2026-06-03T15:37:34.696716Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Dólar hoje sobe após dados de emprego nos EUA acima do esperado.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "68a81656efa93710020c480199d07e98",
+    "title": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
+    "subtitle": null,
+    "content_preview": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/estrangeiros-tiram-r-149-bilhoes-da-b3-em-maio-em-maior-saida-mensal-desde-2022/",
+    "published_at": "2026-06-03T15:37:34.695406Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.695406Z"
+  },
+  {
+    "id": "d0904271770a506eea7b350a6e5c3f5e",
+    "title": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
+    "subtitle": null,
+    "content_preview": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/smart-fit-smft3-mercado-precifica-riscos-mas-ignora-todo-potencial-do-totalpass/",
+    "published_at": "2026-06-03T15:37:34.695406Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "61ae94ca43394675ca213c17e746c22d",
+    "title": "Turquia - Ações fecharam o pregão em queda e o Índice BIST 100 recuou 1,65%",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/turquia--acoes-fecharam-o-pregao-em-queda-e-o-indice-bist-100-recuou-165-1961581",
+    "published_at": "2026-06-03T15:30:44Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Turquia - Ações fecharam o pregão em queda e o Índice BIST 100 recuou 1,65%.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "3eca2a7d9fe78a376fb043cc6cb41d62",
+    "title": "Dinamarca - Ações fecharam o pregão em queda e o Índice OMX Copenhagen 20 recuou 1,29%",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/dinamarca--acoes-fecharam-o-pregao-em-queda-e-o-indice-omx-copenhagen-20-recuou-129-1961580",
+    "published_at": "2026-06-03T15:30:20Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Dinamarca - Ações fecharam o pregão em queda e o Índice OMX Copenhagen 20 recuou 1,29%.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "c7ecd4f6b0da0837151a166cd854da30",
+    "title": "Northrop Grumman entrega segmentos finais do propulsor para a missão Artemis III",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/northrop-grumman-entrega-segmentos-finais-do-propulsor-para-a-missao-artemis-iii-93CH-1961578",
+    "published_at": "2026-06-03T15:26:41Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Northrop Grumman entrega segmentos finais do propulsor para a missão Artemis III.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "de0ebebb6124076154d13a59fe501e8b",
+    "title": "Estoques de petróleo bruto dos EUA caem 8 milhões de barris, diz EIA",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/commodities-news/estoques-de-petroleo-bruto-dos-eua-caem-8-milhoes-de-barris-diz-eia-93CH-1961577",
+    "published_at": "2026-06-03T15:26:35Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Estoques de petróleo bruto dos EUA caem 8 milhões de barris, diz EIA.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "98a5580c4b0f68113f07c66bb447782f",
+    "title": "Por que as ações da Celcuity estão caindo hoje?",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/por-que-as-acoes-da-celcuity-estao-caindo-hoje-93CH-1961575",
+    "published_at": "2026-06-03T15:23:19Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Por que as ações da Celcuity estão caindo hoje?\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "0290ff56e8e28708ee247e5cb015856b",
+    "title": "Lionheart Capital negocia aquisição de campos de petróleo na Venezuela",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/lionheart-capital-negocia-aquisicao-de-campos-de-petroleo-na-venezuela-93CH-1961574",
+    "published_at": "2026-06-03T15:22:54Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Lionheart Capital negocia aquisição de campos de petróleo na Venezuela.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "d6c49532a5fe386db9b53a097bc5efcf",
+    "title": "Netanyahu diz que Trump decidirá sobre retorno à ação militar em larga escala contra Irã",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/world-news/netanyahu-diz-que-trump-decidira-sobre-retorno-a-acao-militar-em-larga-escala-contra-ira-1961573",
+    "published_at": "2026-06-03T15:21:25Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Netanyahu diz que Trump decidirá sobre retorno à ação militar em larga escala contra Irã.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.696716Z"
+  },
+  {
+    "id": "618c095a71c710cdb207746a59bd0d61",
+    "title": "Raízen realiza assembleia nesta quarta para discutir plano de recuperação extrajudicial",
+    "subtitle": null,
+    "content_preview": "A Raízen divulgou que serão realizadas nesta quarta-feira (3) assembleias gerais de titulares de debêntures emitidas pela companhia e pela Raízen Energia, bem como de certificados de recebíveis do agronegócio (CRAs) lastreados em direitos creditórios devidos pela Raízen Energia e sujeitos à recuperação extrajudicial. Leia mais (06/03/2026 - 12h17)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/raizen-realiza-assembleia-nesta-quarta-para-discutir-plano-de-recuperacao-extrajudicial.shtml",
+    "published_at": "2026-06-03T12:17:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Renda Fixa",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Renda Fixa",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A Raízen divulgou que serão realizadas nesta quarta-feira (3) assembleias gerais de titulares de debêntures emitidas pela companhia e pela Raízen Energia, bem como de certificados de recebíveis do agronegócio (CRAs) lastreados em direitos creditórios devidos pela Raízen Energia e sujeitos à recuperação extrajudicial.\n\nLeia mais (06/03/2026 - 12h17). O foco principal passa por Economia, Energia Eletrica.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.681569Z"
+  },
+  {
+    "id": "be21f282187ddd83d2a39c020704bbf9",
+    "title": "Governo amplia Brasil Soberano e reduz exigência para financiar exportadores para EUA e Oriente Médio",
+    "subtitle": null,
+    "content_preview": "Os ministérios da Fazenda e do Desenvolvimento, Indústria, Comércio e Serviços anunciam nesta quarta-feira (3) portaria que amplia o acesso de empresas ao Plano Brasil Soberano. O programa é operado pelo BNDES (Banco Nacional de Desenvolvimento Econômico e Social). Oferece linhas de crédito a exportadores e fornecedores impactados por instabilidades externas. Leia mais (06/03/2026 - 12h16)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/governo-amplia-brasil-soberano-e-reduz-exigencia-para-financiar-exportadores-para-eua-e-oriente-medio.shtml",
+    "published_at": "2026-06-03T12:16:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 0.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.25,
+    "summary": "Os ministérios da Fazenda e do Desenvolvimento, Indústria, Comércio e Serviços anunciam nesta quarta-feira (3) portaria que amplia o acesso de empresas ao Plano Brasil Soberano.\n\nO programa é operado pelo BNDES (Banco Nacional de Desenvolvimento Econômico e Social). Oferece linhas de crédito a exportadores e fornecedores impactados por instabilidades externas. O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.681569Z"
+  },
+  {
+    "id": "b01b6d869a1fcbf8d6be7ea7daced0f9",
+    "title": "George Santos, ex-deputado dos EUA filho de brasileiros, é investigado por suposta fraude em apostas",
+    "subtitle": null,
+    "content_preview": "Autoridades federais dos EUA estão investigando se o ex-deputado republicano George Santos, que é filho de brasileiros, praticou \"insider trading\" ao apostar em um mercado de previsões se ele próprio compareceria ou não ao discurso do Estado da União do presidente Donald Trump, no final de fevereiro. Leia mais (06/03/2026 - 12h16)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mundo/2026/06/george-santos-ex-deputado-dos-eua-filho-de-brasileiros-e-investigado-por-fraude-em-apostas.shtml",
+    "published_at": "2026-06-03T12:16:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Autoridades federais dos EUA estão investigando se o ex-deputado republicano George Santos, que é filho de brasileiros, praticou \"insider trading\" ao apostar em um mercado de previsões se ele próprio compareceria ou não ao discurso do Estado da União do presidente Donald Trump, no final de fevereiro.\n\nLeia mais (06/03/2026 - 12h16). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "91dbd5b8fd95229305e136a271b0efdf",
+    "title": "Após tarifaço, representante dos EUA fala em 'diálogo' em encontro com Mauro Vieira",
+    "subtitle": null,
+    "content_preview": "Após o anúncio da conclusão de duas investigações sob a seção 301 que pode trazer novas tarifas ao Braisl, o representante do comércio dos EUA, Jamieson Greer, e o ministro Mauro Vieira tiveram um breve encontro nesta quarta-feira (3). Leia mais (06/03/2026 - 11h58)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/apos-tarifaco-representante-dos-eua-fala-em-dialogo-em-encontro-com-mauro-vieira.shtml",
+    "published_at": "2026-06-03T11:58:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Após o anúncio da conclusão de duas investigações sob a seção 301 que pode trazer novas tarifas ao Braisl, o representante do comércio dos EUA, Jamieson Greer, e o ministro Mauro Vieira tiveram um breve encontro nesta quarta-feira (3).\n\nLeia mais (06/03/2026 - 11h58). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "ecf3f4895e39910d03e024e8dc499ac9",
+    "title": "Lula diz não aceitar tratamento dos EUA com tarifaço e chama Rubio de 'latino-americano frustrado'",
+    "subtitle": null,
+    "content_preview": "O presidente Luiz Inácio Lula da Silva disse nesta quarta-feira (3) que o Brasil não pode aceitar o tratamento dispensado pelos Estados Unidos. Ele deu a declaração na abertura de uma reunião ministerial no Palácio do Planalto, após autoridades americanas proporem um novo tarifaço contra produtos brasileiros. Leia mais (06/03/2026 - 11h58)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/lula-diz-nao-aceitar-tratamento-dos-eua-com-tarifaco-e-chama-rubio-de-latinoamericano-frustrado.shtml",
+    "published_at": "2026-06-03T11:58:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia",
+      "Varejo"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia",
+      "Varejo"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O presidente Luiz Inácio Lula da Silva disse nesta quarta-feira (3) que o Brasil não pode aceitar o tratamento dispensado pelos Estados Unidos.\n\nEle deu a declaração na abertura de uma reunião ministerial no Palácio do Planalto, após autoridades americanas proporem um novo tarifaço contra produtos brasileiros. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "db473338bb6ad2878703c9e95ea4ace2",
+    "title": "Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas",
+    "subtitle": null,
+    "content_preview": "A Anvisa (Agência Nacional de Vigilância Sanitária) determinou a suspensão da venda, distribuição e consumo de um lote de água mineral sem gás da marca Crystal após a identificação da bactéria Pseudomonas aeruginosa em uma amostra do produto. A medida vale apenas para um lote específico fabricado pela Mineração Bom Jesus, em Luziânia (GO). Leia mais (06/03/2026 - 11h48)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/como-saber-qual-agua-crystal-foi-suspensa-pela-anvisa-tire-duvidas.shtml",
+    "published_at": "2026-06-03T11:48:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Mineracao",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "VALE3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Mineracao",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "A Anvisa (Agência Nacional de Vigilância Sanitária) determinou a suspensão da venda, distribuição e consumo de um lote de água mineral sem gás da marca Crystal após a identificação da bactéria Pseudomonas aeruginosa em uma amostra do produto.\n\nA medida vale apenas para um lote específico fabricado pela Mineração Bom Jesus, em Luziânia (GO). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "d22739848a35fb9ce04df983f7cf7d03",
+    "title": "CPTM registra 700 mil pagamentos por aproximação no primeiro mês do sistema",
+    "subtitle": null,
+    "content_preview": "O sistema de pagamentos com cartão de crédito e débito nas catracas do sistema ferroviário metropolitano de São Paulo registrou 700 mil transações no primeiro mês de funcionamento -cerca de R$ 3,78 milhões transacionados, considerando o preço da passagem unitária, hoje em R$ 5,40. Leia mais (06/03/2026 - 11h38)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/cptm-registra-700-mil-pagamentos-por-aproximacao-no-primeiro-mes-do-sistema.shtml",
+    "published_at": "2026-06-03T11:38:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Mineracao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Mineracao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O sistema de pagamentos com cartão de crédito e débito nas catracas do sistema ferroviário metropolitano de São Paulo registrou 700 mil transações no primeiro mês de funcionamento -cerca de R$ 3,78 milhões transacionados, considerando o preço da passagem unitária, hoje em R$ 5,40.\n\nLeia mais (06/03/2026 - 11h38). O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "0c76b1aa62d628a749b7ee0665710b58",
+    "title": "Lula quer lançar linha de crédito para compra de motos e mira entregadores",
+    "subtitle": null,
+    "content_preview": "O presidente Luiz Inácio Lula da Silva (PT) quer lançar uma nova linha de crédito, agora para financiar a compra de motos para beneficiar entregadores. Leia mais (06/03/2026 - 11h33)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/lula-quer-lancar-linha-de-credito-para-compra-de-motos-e-mira-entregadores.shtml",
+    "published_at": "2026-06-03T11:33:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O presidente Luiz Inácio Lula da Silva (PT) quer lançar uma nova linha de crédito, agora para financiar a compra de motos para beneficiar entregadores.\n\nLeia mais (06/03/2026 - 11h33). O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "7d5217235e6fa092b6da52363fa118a9",
+    "title": "Veja a lista completa de produtos isentos da nova tarifa de Trump",
+    "subtitle": null,
+    "content_preview": "Ao propor uma nova tarifa de 12,5% contra seus principais parceiros comerciais na terça-feira (2), o governo americano poupou produtos considerados estratégicos para a economia dos Estados Unidos ou que poderiam provocar aumento de preços e problemas de abastecimento caso fossem sobretaxados. Leia mais (06/03/2026 - 11h33)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/veja-a-lista-completa-de-produtos-isentos-da-nova-tarifa-de-trump.shtml",
+    "published_at": "2026-06-03T11:33:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ao propor uma nova tarifa de 12,5% contra seus principais parceiros comerciais na terça-feira (2), o governo americano poupou produtos considerados estratégicos para a economia dos Estados Unidos ou que poderiam provocar aumento de preços e problemas de abastecimento caso fossem sobretaxados.\n\nLeia mais (06/03/2026 - 11h33). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "b787ddffd93e7a0df84747bea57abf6e",
+    "title": "O novo PNE e o desconforto de transformar equidade racial em prioridade",
+    "subtitle": null,
+    "content_preview": "Durante a tramitação do novo PNE (Plano Nacional de Educação), um aspecto chamou atenção pelo seu peso político: a quantidade de disputas em torno do conceito de equidade étnico-racial ao longo do texto. Leia mais (06/03/2026 - 11h30)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/blogs/politicas-e-justica/2026/06/o-novo-pne-e-o-desconforto-de-transformar-equidade-racial-em-prioridade.shtml",
+    "published_at": "2026-06-03T11:30:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Durante a tramitação do novo PNE (Plano Nacional de Educação), um aspecto chamou atenção pelo seu peso político: a quantidade de disputas em torno do conceito de equidade étnico-racial ao longo do texto.\n\nLeia mais (06/03/2026 - 11h30). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "8d7fa8e7990f4081d1340b4165cf7cee",
+    "title": "Petróleo sobe quase 3% e fica próximo de voltar aos US$ 100",
+    "subtitle": null,
+    "content_preview": "O preço do petróleo chegou a subir quase 3% nesta quarta-feira (3) com os novos ataques do Irã a países aliados dos EUA no Oriente Médio, e outro dia de bombardeios de Israel ao Líbano. Leia mais (06/03/2026 - 11h27)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petroleo-sobe-quase-3-e-fica-proximo-de-voltar-aos-us-100.shtml",
+    "published_at": "2026-06-03T11:27:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O preço do petróleo chegou a subir quase 3% nesta quarta-feira (3) com os novos ataques do Irã a países aliados dos EUA no Oriente Médio, e outro dia de bombardeios de Israel ao Líbano.\n\nLeia mais (06/03/2026 - 11h27). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "e72380460fad4550727ac047738daacc",
+    "title": "Atlas suspende US$ 1 bilhão em investimentos em energias renováveis no Brasil",
+    "subtitle": null,
+    "content_preview": "O presidente-executivo da Atlas Renewable Energy, Carlos Barrera, anunciou que a empresa suspendeu planos de US$1 bilhão (R$ 5,04 bilhões) em novos investimentos no Brasil, conforme uma quantidade cada vez maior de energia renovável tem sido rejeitada na operação do sistema elétrico brasileiro. Leia mais (06/03/2026 - 10h52)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/atlas-suspende-us-1-bilhao-em-investimentos-em-energias-renovaveis-no-brasil.shtml",
+    "published_at": "2026-06-03T10:52:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O presidente-executivo da Atlas Renewable Energy, Carlos Barrera, anunciou que a empresa suspendeu planos de US$1 bilhão (R$ 5,04 bilhões) em novos investimentos no Brasil, conforme uma quantidade cada vez maior de energia renovável tem sido rejeitada na operação do sistema elétrico brasileiro.\n\nLeia mais (06/03/2026 - 10h52). O foco principal passa por Economia, Energia Eletrica.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "0f1e16ca70243a1cd954d13db72af8ac",
+    "title": "BC alerta que endividamento das famílias está historicamente alto e segue aumentando",
+    "subtitle": null,
+    "content_preview": "O Comef (Comitê de Estabilidade Financeira) do Banco Central alertou, em ata divulgada nesta quarta-feira (3), que o endividamento e o comprometimento de renda das famílias brasileiras estão historicamente elevados e seguiram crescendo. Leia mais (06/03/2026 - 10h48)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/bc-alerta-que-endividamento-das-familias-esta-historicamente-alto-e-segue-aumentando.shtml",
+    "published_at": "2026-06-03T10:48:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O Comef (Comitê de Estabilidade Financeira) do Banco Central alertou, em ata divulgada nesta quarta-feira (3), que o endividamento e o comprometimento de renda das famílias brasileiras estão historicamente elevados e seguiram crescendo.\n\nLeia mais (06/03/2026 - 10h48). O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "6476d1826c1e6586e530d9f9f2a7577b",
+    "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
+    "subtitle": null,
+    "content_preview": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha. A medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
+    "published_at": "2026-06-03T10:39:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "dff53d1d639f6ae7d571c4340f1784e1",
+    "title": "Leilão de baterias terá disputa para produto nacional e bônus para projetos em Minas e no Nordeste",
+    "subtitle": null,
+    "content_preview": "O primeiro leilão para contratação de baterias para o setor elétrico brasileiro terá uma disputa separada para sistemas com conteúdo nacional e priorizará projetos localizados em estados do Nordeste e em Minas Gerais, conforme documentos divulgados pelo governo federal nesta quarta-feira (3). Leia mais (06/03/2026 - 10h33)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/leilao-de-baterias-tera-disputa-para-produto-nacional-e-bonus-para-projetos-em-minas-e-no-nordeste.shtml",
+    "published_at": "2026-06-03T10:33:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O primeiro leilão para contratação de baterias para o setor elétrico brasileiro terá uma disputa separada para sistemas com conteúdo nacional e priorizará projetos localizados em estados do Nordeste e em Minas Gerais, conforme documentos divulgados pelo governo federal nesta quarta-feira (3).\n\nLeia mais (06/03/2026 - 10h33). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.682751Z"
+  },
+  {
+    "id": "27503d8453aeebf82893e2baaf902511",
+    "title": "Greve geral em Portugal paralisa trens, fecha escolas e cancela voos em protesto contra reforma trabalhista",
+    "subtitle": null,
+    "content_preview": "A segunda greve geral em seis meses interrompeu serviços em Portugal nesta quarta-feira (3), paralisando trens, cancelando centenas de voos e fechando escolas, enquanto sindicatos protestavam contra os planos de reforma trabalhista do governo. Leia mais (06/03/2026 - 10h19)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/greve-geral-em-portugal-paralisa-trens-fecha-escolas-e-cancela-voos-em-protesto-contra-reforma-trabalhista.shtml",
+    "published_at": "2026-06-03T10:19:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A segunda greve geral em seis meses interrompeu serviços em Portugal nesta quarta-feira (3), paralisando trens, cancelando centenas de voos e fechando escolas, enquanto sindicatos protestavam contra os planos de reforma trabalhista do governo.\n\nLeia mais (06/03/2026 - 10h19). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.688593Z"
+  },
+  {
+    "id": "60976af466e1e37157bde8b040835b8e",
+    "title": "Dólar sobe forte com guerra no Irã e tarifas dos EUA sobre o Brasil em foco; Bolsa cai mais de 1%",
+    "subtitle": null,
+    "content_preview": "O dólar registra forte alta nesta quarta-feira (3), com incertezas sobre guerra no Irã e novas tarifas dos EUA sobre o Brasil pressionando o apetite dos investidores por risco. Leia mais (06/03/2026 - 10h06)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/dolar-abre-em-alta-com-guerra-no-ira-e-tarifas-dos-eua-sobre-o-brasil-em-foco.shtml",
+    "published_at": "2026-06-03T10:06:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 0.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.25,
+    "summary": "O dólar registra forte alta nesta quarta-feira (3), com incertezas sobre guerra no Irã e novas tarifas dos EUA sobre o Brasil pressionando o apetite dos investidores por risco.\n\nLeia mais (06/03/2026 - 10h06). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.688593Z"
+  },
+  {
+    "id": "662a500051a1af50ee10ce1b50e6cba5",
+    "title": "Tarifaço contra o Brasil pode bater em 37,5% com soma de investigações",
+    "subtitle": null,
+    "content_preview": "A nova tarifa proposta pelo governo Donald Trump na investigação comercial sobre trabalho escravo pode se somar à sobretaxa de 25% contra o Brasil sugerida na madrugada de terça (2), de acordo com membros do governo Lula (PT) e especialistas do setor privado. Isso elevaria o tarifaço contra itens nacionais a 37,5%. Leia mais (06/03/2026 - 09h39)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/tarifaco-contra-o-brasil-pode-bater-em-375-com-soma-de-investigacoes.shtml",
+    "published_at": "2026-06-03T09:39:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A nova tarifa proposta pelo governo Donald Trump na investigação comercial sobre trabalho escravo pode se somar à sobretaxa de 25% contra o Brasil sugerida na madrugada de terça (2), de acordo com membros do governo Lula (PT) e especialistas do setor privado.\n\nIsso elevaria o tarifaço contra itens nacionais a 37,5%. Leia mais (06/03/2026 - 09h39). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.689811Z"
+  },
+  {
+    "id": "dfe3e74fe5fd841b2bf7931227eb3163",
+    "title": "Trump começa a reconstruir seu paredão de tarifas citando trabalho forçado",
+    "subtitle": null,
+    "content_preview": "Os EUA estão propondo novas tarifas de pelo menos 10% sobre importações de 60 parceiros comerciais, no maior movimento do presidente do país, Donald Trump, para reconstruir sua barreira protecionista desde que suas taxas anteriores foram derrubadas pela Suprema Corte. Leia mais (06/03/2026 - 09h20)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/trump-comeca-a-reconstruir-seu-paredao-de-tarifas-citando-trabalho-forcado.shtml",
+    "published_at": "2026-06-03T09:20:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Os EUA estão propondo novas tarifas de pelo menos 10% sobre importações de 60 parceiros comerciais, no maior movimento do presidente do país, Donald Trump, para reconstruir sua barreira protecionista desde que suas taxas anteriores foram derrubadas pela Suprema Corte.\n\nLeia mais (06/03/2026 - 09h20). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.689811Z"
+  },
+  {
+    "id": "1cf4d18296ea5966e3f99eb46d32ace7",
+    "title": "Em Lisboa, Febraban vê mal-entendido dos EUA sobre Pix",
+    "subtitle": null,
+    "content_preview": "O presidente da Febrabaan (Federação Brasileira de Bancos), Isaac Sidney, declarou nesta quarta-feira (3) que a ofensiva dos EUA sobre o Pix deve ser fruto de \"mal-entendido\". Participante de um dos debates do Fórum de Lisboa, capitaneado pelo ministro do STF (Supremo Tribunal Federal) Gilmar Mendes, Sidney afirmou que \"deve ter algum mal-entendido, na medida em que não faz sentido enxergar no Pix problemas anticompetitivos\". Leia mais (06/03/2026 - 08h36)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/em-lisboa-febraban-ve-mal-entendido-dos-eua-sobre-pix.shtml",
+    "published_at": "2026-06-03T08:36:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O presidente da Febrabaan (Federação Brasileira de Bancos), Isaac Sidney, declarou nesta quarta-feira (3) que a ofensiva dos EUA sobre o Pix deve ser fruto de \"mal-entendido\".\n\nParticipante de um dos debates do Fórum de Lisboa, capitaneado pelo ministro do STF (Supremo Tribunal Federal) Gilmar Mendes, Sidney afirmou que \"deve ter algum mal-entendido, na medida em que não faz sentido enxergar no Pix problemas anticompetitivos\". O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.689811Z"
+  },
+  {
+    "id": "c11c8bd10358be5de11c4286869d9747",
+    "title": "Anvisa suspende lote de água mineral Crystal após teste encontrar bactéria",
+    "subtitle": null,
+    "content_preview": "A Anvisa (Agência Nacional de Vigilância Sanitária) determinou a suspensão da venda, distribuição e consumo de um lote de água mineral sem gás da marca Crystal, que é parte do sistema Coca-Cola, e fabricada pela Mineração Bom Jesus Ltda, em Luziânia (GO). Na decisão, a Anvisa comunica que a empresa faz o recolhimento voluntário. A partir dessa publicação, segundo a Anvisa, o recolhimento passa a ser obrigatório. Leia mais (06/03/2026 - 08h24)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/anvisa-manda-recolher-lote-de-agua-mineral-crystal-apos-teste-encontrar-bacteria.shtml",
+    "published_at": "2026-06-03T08:24:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Mineracao",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Mineracao",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Anvisa (Agência Nacional de Vigilância Sanitária) determinou a suspensão da venda, distribuição e consumo de um lote de água mineral sem gás da marca Crystal, que é parte do sistema Coca-Cola, e fabricada pela Mineração Bom Jesus Ltda, em Luziânia (GO).\n\nNa decisão, a Anvisa comunica que a empresa faz o recolhimento voluntário. A partir dessa publicação, segundo a Anvisa, o recolhimento passa a ser obrigatório. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.689811Z"
+  },
+  {
+    "id": "45630a15ceb6bd970ea17d63fcef50a7",
+    "title": "Novo console apela para nostalgia ao levar jogos do arcade para dentro de casa",
+    "subtitle": null,
+    "content_preview": "Esta é a edição da Combo, a newsletter de games da Folha. Quer recebê-la todas as terças no seu email? Inscreva-se abaixo. Leia mais (06/03/2026 - 08h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/tec/2026/06/novo-console-apela-para-nostalgia-ao-levar-jogos-do-arcade-para-dentro-de-casa.shtml",
+    "published_at": "2026-06-03T08:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Esta é a edição da Combo, a newsletter de games da Folha. Quer recebê-la todas as terças no seu email? Inscreva-se abaixo.\n\nLeia mais (06/03/2026 - 08h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.689811Z"
+  },
+  {
+    "id": "1352a7c533af92270fccdb250ece272d",
+    "title": "Bolsa Família e informalidade do trabalho",
+    "subtitle": null,
+    "content_preview": "O Bolsa Família voltou ao noticiário depois de declarações de Luciano Huck em um fórum empresarial. A reação à fala, mais do que a fala em si, saiu do tom e impediu discussão mais séria. Esse é o desfecho esperado em ano eleitoral e também o menos proveitoso. Leia mais (06/03/2026 - 08h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/bolsa-familia-e-informalidade-do-trabalho.shtml",
+    "published_at": "2026-06-03T08:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O Bolsa Família voltou ao noticiário depois de declarações de Luciano Huck em um fórum empresarial. A reação à fala, mais do que a fala em si, saiu do tom e impediu discussão mais séria.\n\nEsse é o desfecho esperado em ano eleitoral e também o menos proveitoso. Leia mais (06/03/2026 - 08h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.689811Z"
+  },
+  {
+    "id": "f581add17e46b0d5018ee209572cec77",
+    "title": "Reforma tributária e concessões de infraestrutura: impactos e reequilíbrio de contratos",
+    "subtitle": null,
+    "content_preview": "A reforma tributária do consumo, instituída pela emenda constitucional 132/2023 e regulamentada pela lei complementar 214/2025, entra em vigor a partir de 2027 e atinge regime pleno em 2033. Para concessões e parcerias público-privadas -contratos longos, em que a tarifa cobrada do usuário, contraprestação, aporte ou outorga foram calibradas anos atrás sob outra estrutura tributária-, a reforma é um evento clássico de desequilíbrio. A variação tributária é risco atribuído por lei ao poder concedente. As alterações da reforma, portanto, geram direito a compensação ao concessionário, se houver aumento do custo tributário; e direito a compensação ao poder público ou aos usuários do serviço, se houver redução do custo tributário do concessionário. Leia mais (06/03/2026 - 07h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/mauricio-portugal-ribeiro/2026/06/reforma-tributaria-e-concessoes-de-infraestrutura-impactos-e-reequilibrio-de-contratos.shtml",
+    "published_at": "2026-06-03T07:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A reforma tributária do consumo, instituída pela emenda constitucional 132/2023 e regulamentada pela lei complementar 214/2025, entra em vigor a partir de 2027 e atinge regime pleno em 2033.\n\nPara concessões e parcerias público-privadas -contratos longos, em que a tarifa cobrada do usuário, contraprestação, aporte ou outorga foram calibradas anos atrás sob outra estrutura tributária-, a reforma é um evento clássico de desequilíbrio. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.689811Z"
+  },
+  {
+    "id": "31810b85f864eaf42feb16e39cab3efb",
+    "title": "Reforma se tornou experimento inédito de cooperação entre autoridades tributárias",
+    "subtitle": null,
+    "content_preview": "A reforma tributária se tornou um experimento inédito de cooperação entre as autoridades tributárias brasileiras. Isso pode ser visto tanto na elaboração das leis complementares como no regulamento feito em conjunto por integrantes da Receita Federal e do Comitê Gestor do IBS (Imposto sobre Bens e Serviços). Leia mais (06/03/2026 - 07h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/blogs/que-imposto-e-esse/2026/06/reforma-se-tornou-experimento-inedito-de-cooperacao-entre-autoridades-tributarias.shtml",
+    "published_at": "2026-06-03T07:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A reforma tributária se tornou um experimento inédito de cooperação entre as autoridades tributárias brasileiras. Isso pode ser visto tanto na elaboração das leis complementares como no regulamento feito em conjunto por integrantes da Receita Federal e do Comitê Gestor do IBS (Imposto sobre Bens e Serviços).\n\nLeia mais (06/03/2026 - 07h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.695406Z"
+  },
+  {
+    "id": "74a842fff3e7565a6eb70602b62c9f6c",
+    "title": "ATA DA REUNIÃO DO COLEGIADO DE REGULAÇÃO Nº 27 DE 03.12.2025",
+    "subtitle": null,
+    "content_preview": "Tipo: Regulação Participantes: • MARINA PALMA COPOLA DE CARVALHO – DIRETORA • LUÍS FELIPE MARQUES LOBIANCO – DIRETOR SUBSTITUTO (*) • THIAGO PAIVA CHAVES – DIRETOR SUBSTITUTO (*) (*) Atuou como Diretor Substituto nos termos do art. 92, § 2º, do Anexo I à Resolução CVM nº 24/2021 e de acordo com a Portaria MF nº 136/2025 e a Portaria CVM/PTE/Nº 105/2025. Reunião realizada eletronicamente, por videoconferência.   Ata divulgada no site em 02.06.2026.",
+    "full_text_if_available": null,
+    "source_id": "cvm_decisoes",
+    "source_name": "CVM - Decisoes do Colegiado",
+    "source_type": "official_notice_feed",
+    "is_official": true,
+    "source_category": "regulator",
+    "source_url": "http://www.cvm.gov.br/decisoes/2025/20251203_R1.html",
+    "published_at": "2026-06-02T18:01:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Tipo: Regulação Participantes: • MARINA PALMA COPOLA DE CARVALHO – DIRETORA • LUÍS FELIPE MARQUES LOBIANCO – DIRETOR SUBSTITUTO (*) • THIAGO PAIVA CHAVES – DIRETOR SUBSTITUTO (*) (*) Atuou como Diretor Substituto nos termos do art.\n\n92, § 2º, do Anexo I à Resolução CVM nº 24/2021 e de acordo com a Portaria MF nº 136/2025 e a Portaria CVM/PTE/Nº 105/2025. O foco principal passa por Mercado de Capitais, Regulacao.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.640430Z"
+  },
+  {
+    "id": "1124dce55b405a50a45c7ec641722b50",
+    "title": "024-2026-VPC-Ofício Circular",
+    "subtitle": null,
+    "content_preview": "A nova tabela e valores serão válidos a partir de 02/07/2026.",
+    "full_text_if_available": null,
+    "source_id": "b3_comunicados",
+    "source_name": "B3 - Oficios e Comunicados",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "exchange",
+    "source_url": "https://www.b3.com.br/data/files/99/27/19/73/D6A8E91064BF82E9AC094EA8/OC 024-2026-VPC ATUALIZACAO TABELA TARIFAS DE INTEROPERABILIDADE  INTEROPERABILIDADE DE ARRANJOS DE PAG.pdf",
+    "published_at": "2026-06-02T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A nova tabela e valores serão válidos a partir de 02/07/2026.\n\nO foco principal passa por B3, Mercado de Capitais.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.668282Z"
+  },
+  {
+    "id": "ca05126b18763722dd33683852c839c1",
+    "title": "004-2026-VPE-Comunicado Externo",
+    "subtitle": null,
+    "content_preview": "Dia 06/06/2026 o processamento da Câmara B3 e da Depositária de Listados será executado em site alternativo, utilizando a infraestrutura tecnológica de contingência.",
+    "full_text_if_available": null,
+    "source_id": "b3_comunicados",
+    "source_name": "B3 - Oficios e Comunicados",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "exchange",
+    "source_url": "https://www.b3.com.br/data/files/BA/81/84/F5/22A8E91064BF82E9AC094EA8/CE 004-2026-VPE PROCESSAMENTO DA CAMARA B3 E DA DEPOSITARIA DE LISTADOS POR MEIO DA INFRAESTRUTURA DE CONTINGENCIA_PT.pdf",
+    "published_at": "2026-06-02T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "B3SA3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Dia 06/06/2026 o processamento da Câmara B3 e da Depositária de Listados será executado em site alternativo, utilizando a infraestrutura tecnológica de contingência.\n\nO texto menciona B3SA3. O foco principal passa por B3, Mercado de Capitais.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.668282Z"
+  },
+  {
+    "id": "c6bd493f5cd86929dce4d4380a2ae7c1",
+    "title": "003-2026-VPE-Comunicado Externo",
+    "subtitle": null,
+    "content_preview": "Em 06/06/2026, o processamento do Tesouro Direto será executado em site alternativo, utilizando a infraestrutura tecnológica de contingência.",
+    "full_text_if_available": null,
+    "source_id": "b3_comunicados",
+    "source_name": "B3 - Oficios e Comunicados",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "exchange",
+    "source_url": "https://www.b3.com.br/data/files/3A/71/20/2D/F1A8E91064BF82E9AC094EA8/CE 003-2026-VPE PROCESSAMENTO DO TESOURO DIRETO POR MEIO DA INFRAESTRUTURA DE CONTINGENCIA_PT.pdf",
+    "published_at": "2026-06-02T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Renda Fixa",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Renda Fixa",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Em 06/06/2026, o processamento do Tesouro Direto será executado em site alternativo, utilizando a infraestrutura tecnológica de contingência.\n\nO foco principal passa por B3, Mercado de Capitais.",
+    "cluster_id": null,
+    "created_at": "2026-06-03T15:37:34.668282Z"
+  },
+  {
     "id": "ff5319f6ce521f89dc4665884cdbbe2a",
     "title": "IRB conclui obrigações com Departamento de Justiça dos EUA após \"caso Buffett\"",
     "subtitle": null,

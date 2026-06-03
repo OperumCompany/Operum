@@ -378,3 +378,9 @@
 2026-06-01 20:33:02 | INFO     | app.main | Ingestao automatica: 36 noticias novas
 2026-06-01 20:33:02 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
 2026-06-01 20:33:04 | INFO     | app.main | Cache de precos atualizado para 12 ativos
+2026-06-03 12:37:21 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-06-03 12:37:21 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-06-03 12:37:34 | INFO     | app.services.news_ingestion_service | Ingestao: 46 noticias novas de 132 unicas
+2026-06-03 12:37:34 | INFO     | app.main | Ingestao automatica: 46 noticias novas
+2026-06-03 12:37:34 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-06-03 12:37:42 | INFO     | app.main | Cache de precos atualizado para 12 ativos

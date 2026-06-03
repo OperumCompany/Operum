@@ -1,10 +1,10 @@
 {
   "ticker": "HGLG11",
   "horizon_days": 21,
-  "train_r2": 0.946719,
-  "test_r2": -3.194564,
-  "rmse": 0.017427,
-  "train_samples": 361,
+  "train_r2": 0.948409,
+  "test_r2": -3.583879,
+  "rmse": 0.018187,
+  "train_samples": 363,
   "test_samples": 91,
-  "trained_at": "2026-06-01T23:38:44.676336+00:00"
+  "trained_at": "2026-06-03T15:50:18.102950+00:00"
 }

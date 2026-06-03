@@ -3,314 +3,314 @@
   "ticker": "VALE3",
   "asset_name": "Vale ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T23:38:33.528325+00:00",
-  "recomputed_at": "2026-06-01T23:38:33.528325+00:00",
+  "generated_at": "2026-06-03T15:52:41.114262+00:00",
+  "recomputed_at": "2026-06-03T15:52:41.114262+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
   "asset_function": "estabilidade",
   "current_snapshot": {
-    "current_price": 81.7,
+    "current_price": 82.19,
     "currency": "BRL",
-    "weight_pct": 12.33,
+    "weight_pct": 12.5,
     "sector": "Mineração",
     "country": "BR",
     "asset_function": "estabilidade"
   },
   "historical_window": {
-    "start_date": "2026-01-26",
-    "end_date": "2026-06-01",
+    "start_date": "2026-01-28",
+    "end_date": "2026-06-03",
     "news_count": 12,
     "has_price_history": false
   },
   "historical_series": [],
   "forecast_series": [
     {
-      "date": "2026-06-01",
-      "value": 81.7
-    },
-    {
-      "date": "2026-06-02",
-      "value": 81.06
-    },
-    {
       "date": "2026-06-03",
-      "value": 80.43
+      "value": 81.99
     },
     {
       "date": "2026-06-04",
-      "value": 79.79
+      "value": 81.01
     },
     {
       "date": "2026-06-05",
-      "value": 79.16
+      "value": 80.03
     },
     {
       "date": "2026-06-08",
-      "value": 78.52
+      "value": 79.05
     },
     {
       "date": "2026-06-09",
-      "value": 78.86
+      "value": 78.07
     },
     {
       "date": "2026-06-10",
-      "value": 79.2
+      "value": 77.09
     },
     {
       "date": "2026-06-11",
-      "value": 79.54
+      "value": 76.93
     },
     {
       "date": "2026-06-12",
-      "value": 79.88
+      "value": 76.77
     },
     {
       "date": "2026-06-15",
-      "value": 80.22
+      "value": 76.61
     },
     {
       "date": "2026-06-16",
-      "value": 80.56
+      "value": 76.45
     },
     {
       "date": "2026-06-17",
-      "value": 80.9
+      "value": 76.29
     },
     {
       "date": "2026-06-18",
-      "value": 81.25
+      "value": 76.13
     },
     {
       "date": "2026-06-19",
-      "value": 81.59
+      "value": 75.97
     },
     {
       "date": "2026-06-22",
-      "value": 81.93
+      "value": 75.81
     },
     {
       "date": "2026-06-23",
-      "value": 82.27
+      "value": 75.65
     },
     {
       "date": "2026-06-24",
-      "value": 82.61
+      "value": 75.49
     },
     {
       "date": "2026-06-25",
-      "value": 82.95
+      "value": 75.33
     },
     {
       "date": "2026-06-26",
-      "value": 83.29
+      "value": 75.17
     },
     {
       "date": "2026-06-29",
-      "value": 83.63
+      "value": 75.01
     },
     {
       "date": "2026-06-30",
-      "value": 83.97
+      "value": 74.85
     },
     {
       "date": "2026-07-01",
-      "value": 84.01
+      "value": 74.69
     },
     {
       "date": "2026-07-02",
-      "value": 84.06
+      "value": 74.53
     },
     {
       "date": "2026-07-03",
-      "value": 84.1
+      "value": 74.57
     },
     {
       "date": "2026-07-06",
-      "value": 84.15
+      "value": 74.61
     },
     {
       "date": "2026-07-07",
-      "value": 84.19
+      "value": 74.65
     },
     {
       "date": "2026-07-08",
-      "value": 84.23
+      "value": 74.69
     },
     {
       "date": "2026-07-09",
-      "value": 84.28
+      "value": 74.73
     },
     {
       "date": "2026-07-10",
-      "value": 84.32
+      "value": 74.77
     },
     {
       "date": "2026-07-13",
-      "value": 84.36
+      "value": 74.81
     },
     {
       "date": "2026-07-14",
-      "value": 84.41
+      "value": 74.85
     },
     {
       "date": "2026-07-15",
-      "value": 84.45
+      "value": 74.89
     },
     {
       "date": "2026-07-16",
-      "value": 84.5
+      "value": 74.93
     },
     {
       "date": "2026-07-17",
-      "value": 84.54
+      "value": 74.97
     },
     {
       "date": "2026-07-20",
-      "value": 84.58
+      "value": 75.01
     },
     {
       "date": "2026-07-21",
-      "value": 84.63
+      "value": 75.05
     },
     {
       "date": "2026-07-22",
-      "value": 84.67
+      "value": 75.09
     },
     {
       "date": "2026-07-23",
-      "value": 84.71
+      "value": 75.13
     },
     {
       "date": "2026-07-24",
-      "value": 84.76
+      "value": 75.17
     },
     {
       "date": "2026-07-27",
-      "value": 84.8
+      "value": 75.21
     },
     {
       "date": "2026-07-28",
-      "value": 84.85
+      "value": 75.25
     },
     {
       "date": "2026-07-29",
-      "value": 84.89
+      "value": 75.29
     },
     {
       "date": "2026-07-30",
-      "value": 84.9
+      "value": 75.33
     },
     {
       "date": "2026-07-31",
-      "value": 84.91
+      "value": 75.37
     },
     {
       "date": "2026-08-03",
-      "value": 84.92
+      "value": 75.39
     },
     {
       "date": "2026-08-04",
-      "value": 84.94
+      "value": 75.41
     },
     {
       "date": "2026-08-05",
-      "value": 84.95
+      "value": 75.43
     },
     {
       "date": "2026-08-06",
-      "value": 84.96
+      "value": 75.44
     },
     {
       "date": "2026-08-07",
-      "value": 84.97
+      "value": 75.46
     },
     {
       "date": "2026-08-10",
-      "value": 84.98
+      "value": 75.48
     },
     {
       "date": "2026-08-11",
-      "value": 84.99
+      "value": 75.5
     },
     {
       "date": "2026-08-12",
-      "value": 85.0
+      "value": 75.52
     },
     {
       "date": "2026-08-13",
-      "value": 85.02
+      "value": 75.54
     },
     {
       "date": "2026-08-14",
-      "value": 85.03
+      "value": 75.56
     },
     {
       "date": "2026-08-17",
-      "value": 85.04
+      "value": 75.57
     },
     {
       "date": "2026-08-18",
-      "value": 85.05
+      "value": 75.59
     },
     {
       "date": "2026-08-19",
-      "value": 85.06
+      "value": 75.61
     },
     {
       "date": "2026-08-20",
-      "value": 85.07
+      "value": 75.63
     },
     {
       "date": "2026-08-21",
-      "value": 85.08
+      "value": 75.65
     },
     {
       "date": "2026-08-24",
-      "value": 85.1
+      "value": 75.67
     },
     {
       "date": "2026-08-25",
-      "value": 85.11
+      "value": 75.69
     },
     {
       "date": "2026-08-26",
-      "value": 85.12
+      "value": 75.7
     },
     {
       "date": "2026-08-27",
-      "value": 85.13
+      "value": 75.72
+    },
+    {
+      "date": "2026-08-28",
+      "value": 75.74
+    },
+    {
+      "date": "2026-08-31",
+      "value": 75.76
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 78.52,
-      "predicted_return": -0.038939,
-      "confidence": 0.2836
+      "predicted_price": 77.09,
+      "predicted_return": -0.059762,
+      "confidence": 0.2988
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 83.97,
-      "predicted_return": 0.027809,
-      "confidence": 0.3909
+      "predicted_price": 74.53,
+      "predicted_return": -0.091008,
+      "confidence": 0.4856
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 84.89,
-      "predicted_return": 0.038988,
-      "confidence": 0.3103
+      "predicted_price": 75.37,
+      "predicted_return": -0.080732,
+      "confidence": 0.3002
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 85.13,
-      "predicted_return": 0.041924,
-      "confidence": 0.5017
+      "predicted_price": 75.76,
+      "predicted_return": -0.076031,
+      "confidence": 0.5216
     }
   ],
   "recent_performance": {
@@ -324,10 +324,10 @@
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 4.19,
-    "forecast_price_selected": 85.13,
-    "forecast_confidence_selected": 0.5017,
-    "forecast_news_adjustment_pct": -1.68
+    "forecast_return_selected_pct": -7.6,
+    "forecast_price_selected": 75.76,
+    "forecast_confidence_selected": 0.5216,
+    "forecast_news_adjustment_pct": -1.87
   },
   "outlook_3m": {
     "scenario": "pressionado",
@@ -339,23 +339,42 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 81.70. Hoje representa cerca de 12.3% da carteira. O modelo de 3 meses hoje aponta alta, com retorno estimado de +4.2% e confianca de 50%. O ajuste contextual das noticias adiciona -1.7% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.55. Nesse conjunto, o peso informacional esta distribuido em fundamento (2), macro (2), setorial (0) e fluxo (2).",
-    "recent": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +4.2% e preco estimado perto de 85.13. O contexto de noticias ajusta essa leitura em -1.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 82.19. Hoje representa cerca de 12.5% da carteira. O modelo de 3 meses hoje aponta queda, com retorno estimado de -7.6% e confianca de 52%. O ajuste contextual das noticias adiciona -1.9% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.52. Nesse conjunto, o peso informacional esta distribuido em fundamento (1), macro (2), setorial (0) e fluxo (3).",
+    "recent": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas; 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -7.6% e preco estimado perto de 75.76. O contexto de noticias ajusta essa leitura em -2.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras.",
-      "2m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras.",
-      "3m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras."
+      "1m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas; 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?.",
+      "2m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas; 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?.",
+      "3m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas; 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -3.9% e preco estimado perto de 78.52. O contexto de noticias ajusta essa leitura em -1.0%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +2.8% e preco estimado perto de 83.97. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +3.9% e preco estimado perto de 84.89. O contexto de noticias ajusta essa leitura em -1.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +4.2% e preco estimado perto de 85.13. O contexto de noticias ajusta essa leitura em -1.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -6.0% e preco estimado perto de 77.09. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -9.1% e preco estimado perto de 74.53. O contexto de noticias ajusta essa leitura em -1.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -8.1% e preco estimado perto de 75.37. O contexto de noticias ajusta essa leitura em -2.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -7.6% e preco estimado perto de 75.76. O contexto de noticias ajusta essa leitura em -2.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
   "sources": [
+    {
+      "id": "db473338bb6ad2878703c9e95ea4ace2",
+      "title": "Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/como-saber-qual-agua-crystal-foi-suspensa-pela-anvisa-tire-duvidas.shtml",
+      "published_at": "2026-06-03T11:48:00-03:00",
+      "summary": "A Anvisa (Agência Nacional de Vigilância Sanitária) determinou a suspensão da venda, distribuição e consumo de um lote de água mineral sem gás da marca Crystal após a identificação da bactéria Pseudomonas aeruginosa em uma amostra do produto.\n\nA medida vale apenas para um lote específico fabricado pela Mineração Bom Jesus, em Luziânia (GO). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.48000000000000004,
+      "relevance_score": 0.5,
+      "match_score": 0.8074,
+      "rank_score": 0.6638,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fluxo",
+      "role": "outlook"
+    },
     {
       "id": "43542efd7d93d3cf1cdd932b574a0302",
       "title": "4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal",
@@ -366,8 +385,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.7012,
-      "rank_score": 0.6316,
+      "match_score": 0.6968,
+      "rank_score": 0.6293,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "asset",
@@ -385,8 +404,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.7073,
-      "rank_score": 0.6118,
+      "match_score": 0.7016,
+      "rank_score": 0.6088,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -404,8 +423,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.7037,
-      "rank_score": 0.6099,
+      "match_score": 0.6981,
+      "rank_score": 0.607,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -423,14 +442,52 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.347,
-      "rank_score": 0.5089,
+      "match_score": 0.3418,
+      "rank_score": 0.5062,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
       "role": "outlook"
+    },
+    {
+      "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+      "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+      "published_at": "2026-06-03T15:37:34.696716+00:00",
+      "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.36,
+      "rank_score": 0.5037,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "03c1287e89071e3c85b905d8a3e57db4",
+      "title": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
+      "published_at": "2026-06-03T15:37:34.696716+00:00",
+      "summary": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.\n\nO foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.36,
+      "rank_score": 0.5037,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "historical"
     },
     {
       "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -442,14 +499,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3513,
-      "rank_score": 0.5037,
+      "match_score": 0.3459,
+      "rank_score": 0.5009,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "fundamento",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -461,14 +518,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3513,
-      "rank_score": 0.5037,
+      "match_score": 0.3459,
+      "rank_score": 0.5009,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -480,8 +537,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3492,
-      "rank_score": 0.5026,
+      "match_score": 0.3439,
+      "rank_score": 0.4998,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -499,8 +556,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3491,
-      "rank_score": 0.5025,
+      "match_score": 0.3438,
+      "rank_score": 0.4998,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -509,79 +566,22 @@
       "role": "historical"
     },
     {
-      "id": "68fa2f4903ea31a203e21b6b4233a73e",
-      "title": "Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-sobem-com-otimismo-por-acordo-entre-eua-e-ira-indices-renovam-maximas/",
-      "published_at": "2026-05-29T20:55:27+00:00",
-      "summary": "Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados EUA Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio Estadão Conteúdo 29/05/2026 17h55 &bull; Atualizado 1 dia atrás Publicidade As bolsas de Nova York fecharam em alta nesta sexta-feira, 29, com os três principais índices renovando máximas intraday e de fechamento, enquanto investidores permanecem otimistas de que um acordo entre os EUA e o Irã será oficializado em breve. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": 0.14285714285714285,
-      "impact_score": 0.4928571428571429,
-      "relevance_score": 0.5,
-      "match_score": 0.3471,
-      "rank_score": 0.4854,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "cdd7cde965d0db8917bcc712e4a3459b",
-      "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
-      "published_at": "2026-06-01T23:33:02.846612+00:00",
-      "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
-      "sentiment_score": -1.0,
-      "impact_score": 0.75,
-      "relevance_score": 0.5,
-      "match_score": 0.315,
-      "rank_score": 0.4743,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.75,
-      "analysis_category": "fluxo",
-      "role": "historical"
-    },
-    {
-      "id": "7cbaf75733e1b76778881ee3877a6adb",
-      "title": "Economistas sobem previsão da inflação para 2026 e os dois próximos anos",
+      "id": "6476d1826c1e6586e530d9f9f2a7577b",
+      "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
       "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/economistas-sobem-previsao-da-inflacao-para-2026-e-os-dois-proximos-anos.shtml",
-      "published_at": "2026-06-01T09:35:00-03:00",
-      "summary": "Os economistas elevaram a previsão da inflação neste ano e para os dois próximos com o impacto da guerra no Irã afetando os preços dos combustíveis e dos alimentos em todo o mundo.\n\nLeia mais (06/01/2026 - 09h35). O foco principal passa por Alimentos, Economia.",
-      "sentiment_score": 0.3333333333333333,
-      "impact_score": 0.35,
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
+      "published_at": "2026-06-03T10:39:00-03:00",
+      "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.356,
-      "rank_score": 0.4686,
+      "match_score": 0.3573,
+      "rank_score": 0.4993,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
-      "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
-      "source_name": "Tesouro Nacional - Noticias",
-      "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
-      "published_at": "2026-04-28T00:00:00+00:00",
-      "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
-      "sentiment_score": -0.3333333333333333,
-      "impact_score": 0.35,
-      "relevance_score": 0.5,
-      "match_score": 0.3047,
-      "rank_score": 0.4649,
-      "source_category": "treasury",
-      "is_official": true,
-      "context_role": "macro",
-      "source_confidence_weight": 0.95,
-      "analysis_category": "fundamento",
       "role": "historical"
     }
   ],
@@ -600,14 +600,52 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.347,
-          "rank_score": 0.5089,
+          "match_score": 0.3418,
+          "rank_score": 0.5062,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
           "role": "outlook"
+        },
+        {
+          "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+          "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+          "published_at": "2026-06-03T15:37:34.696716+00:00",
+          "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.36,
+          "rank_score": 0.5037,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "03c1287e89071e3c85b905d8a3e57db4",
+          "title": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
+          "published_at": "2026-06-03T15:37:34.696716+00:00",
+          "summary": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.\n\nO foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.36,
+          "rank_score": 0.5037,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "historical"
         },
         {
           "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -619,14 +657,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3513,
-          "rank_score": 0.5037,
+          "match_score": 0.3459,
+          "rank_score": 0.5009,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "fundamento",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -638,14 +676,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3513,
-          "rank_score": 0.5037,
+          "match_score": 0.3459,
+          "rank_score": 0.5009,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -657,8 +695,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3492,
-          "rank_score": 0.5026,
+          "match_score": 0.3439,
+          "rank_score": 0.4998,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -676,59 +714,40 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3491,
-          "rank_score": 0.5025,
+          "match_score": 0.3438,
+          "rank_score": 0.4998,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "fundamento",
           "role": "historical"
-        },
-        {
-          "id": "68fa2f4903ea31a203e21b6b4233a73e",
-          "title": "Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-sobem-com-otimismo-por-acordo-entre-eua-e-ira-indices-renovam-maximas/",
-          "published_at": "2026-05-29T20:55:27+00:00",
-          "summary": "Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados EUA Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio Estadão Conteúdo 29/05/2026 17h55 &bull; Atualizado 1 dia atrás Publicidade As bolsas de Nova York fecharam em alta nesta sexta-feira, 29, com os três principais índices renovando máximas intraday e de fechamento, enquanto investidores permanecem otimistas de que um acordo entre os EUA e o Irã será oficializado em breve. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": 0.14285714285714285,
-          "impact_score": 0.4928571428571429,
-          "relevance_score": 0.5,
-          "match_score": 0.3471,
-          "rank_score": 0.4854,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "cdd7cde965d0db8917bcc712e4a3459b",
-          "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
-          "published_at": "2026-06-01T23:33:02.846612+00:00",
-          "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
-          "sentiment_score": -1.0,
-          "impact_score": 0.75,
-          "relevance_score": 0.5,
-          "match_score": 0.315,
-          "rank_score": 0.4743,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.75,
-          "analysis_category": "fluxo",
-          "role": "historical"
         }
       ]
     },
     {
       "source_name": "Folha.com - Mercado - Principal",
-      "count": 3,
+      "count": 4,
       "items": [
+        {
+          "id": "db473338bb6ad2878703c9e95ea4ace2",
+          "title": "Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/como-saber-qual-agua-crystal-foi-suspensa-pela-anvisa-tire-duvidas.shtml",
+          "published_at": "2026-06-03T11:48:00-03:00",
+          "summary": "A Anvisa (Agência Nacional de Vigilância Sanitária) determinou a suspensão da venda, distribuição e consumo de um lote de água mineral sem gás da marca Crystal após a identificação da bactéria Pseudomonas aeruginosa em uma amostra do produto.\n\nA medida vale apenas para um lote específico fabricado pela Mineração Bom Jesus, em Luziânia (GO). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 0.8074,
+          "rank_score": 0.6638,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
         {
           "id": "e832f883055e6f76417a69aaf8db15c6",
           "title": "Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?",
@@ -739,8 +758,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.7073,
-          "rank_score": 0.6118,
+          "match_score": 0.7016,
+          "rank_score": 0.6088,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -758,8 +777,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.7037,
-          "rank_score": 0.6099,
+          "match_score": 0.6981,
+          "rank_score": 0.607,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -768,17 +787,17 @@
           "role": "outlook"
         },
         {
-          "id": "7cbaf75733e1b76778881ee3877a6adb",
-          "title": "Economistas sobem previsão da inflação para 2026 e os dois próximos anos",
+          "id": "6476d1826c1e6586e530d9f9f2a7577b",
+          "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
           "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/economistas-sobem-previsao-da-inflacao-para-2026-e-os-dois-proximos-anos.shtml",
-          "published_at": "2026-06-01T09:35:00-03:00",
-          "summary": "Os economistas elevaram a previsão da inflação neste ano e para os dois próximos com o impacto da guerra no Irã afetando os preços dos combustíveis e dos alimentos em todo o mundo.\n\nLeia mais (06/01/2026 - 09h35). O foco principal passa por Alimentos, Economia.",
-          "sentiment_score": 0.3333333333333333,
-          "impact_score": 0.35,
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
+          "published_at": "2026-06-03T10:39:00-03:00",
+          "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.356,
-          "rank_score": 0.4686,
+          "match_score": 0.3573,
+          "rank_score": 0.4993,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -790,7 +809,7 @@
     },
     {
       "source_name": "Tesouro Nacional - Noticias",
-      "count": 2,
+      "count": 1,
       "items": [
         {
           "id": "43542efd7d93d3cf1cdd932b574a0302",
@@ -802,33 +821,14 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.7012,
-          "rank_score": 0.6316,
+          "match_score": 0.6968,
+          "rank_score": 0.6293,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "asset",
           "source_confidence_weight": 0.95,
           "analysis_category": "fundamento",
           "role": "outlook"
-        },
-        {
-          "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
-          "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
-          "source_name": "Tesouro Nacional - Noticias",
-          "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
-          "published_at": "2026-04-28T00:00:00+00:00",
-          "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
-          "sentiment_score": -0.3333333333333333,
-          "impact_score": 0.35,
-          "relevance_score": 0.5,
-          "match_score": 0.3047,
-          "rank_score": 0.4649,
-          "source_category": "treasury",
-          "is_official": true,
-          "context_role": "macro",
-          "source_confidence_weight": 0.95,
-          "analysis_category": "fundamento",
-          "role": "historical"
         }
       ]
     }

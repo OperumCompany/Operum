@@ -3,314 +3,314 @@
   "ticker": "BBAS3",
   "asset_name": "Banco do Brasil ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T23:43:58.589541+00:00",
-  "recomputed_at": "2026-06-01T23:43:58.589541+00:00",
+  "generated_at": "2026-06-03T15:52:45.973748+00:00",
+  "recomputed_at": "2026-06-03T15:52:45.973748+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
   "asset_function": "estabilidade",
   "current_snapshot": {
-    "current_price": 20.08,
+    "current_price": 19.66,
     "currency": "BRL",
-    "weight_pct": 5.68,
+    "weight_pct": 5.61,
     "sector": "Financeiro",
     "country": "BR",
     "asset_function": "estabilidade"
   },
   "historical_window": {
-    "start_date": "2026-01-26",
-    "end_date": "2026-06-01",
+    "start_date": "2026-01-28",
+    "end_date": "2026-06-03",
     "news_count": 12,
     "has_price_history": false
   },
   "historical_series": [],
   "forecast_series": [
     {
-      "date": "2026-06-01",
-      "value": 20.08
-    },
-    {
-      "date": "2026-06-02",
-      "value": 19.89
-    },
-    {
       "date": "2026-06-03",
-      "value": 19.71
+      "value": 19.62
     },
     {
       "date": "2026-06-04",
-      "value": 19.52
-    },
-    {
-      "date": "2026-06-05",
-      "value": 19.34
-    },
-    {
-      "date": "2026-06-08",
-      "value": 19.15
-    },
-    {
-      "date": "2026-06-09",
-      "value": 19.2
-    },
-    {
-      "date": "2026-06-10",
-      "value": 19.25
-    },
-    {
-      "date": "2026-06-11",
-      "value": 19.29
-    },
-    {
-      "date": "2026-06-12",
-      "value": 19.34
-    },
-    {
-      "date": "2026-06-15",
       "value": 19.39
     },
     {
+      "date": "2026-06-05",
+      "value": 19.16
+    },
+    {
+      "date": "2026-06-08",
+      "value": 18.92
+    },
+    {
+      "date": "2026-06-09",
+      "value": 18.69
+    },
+    {
+      "date": "2026-06-10",
+      "value": 18.46
+    },
+    {
+      "date": "2026-06-11",
+      "value": 18.58
+    },
+    {
+      "date": "2026-06-12",
+      "value": 18.7
+    },
+    {
+      "date": "2026-06-15",
+      "value": 18.82
+    },
+    {
       "date": "2026-06-16",
-      "value": 19.44
+      "value": 18.94
     },
     {
       "date": "2026-06-17",
-      "value": 19.49
+      "value": 19.06
     },
     {
       "date": "2026-06-18",
-      "value": 19.54
+      "value": 19.18
     },
     {
       "date": "2026-06-19",
-      "value": 19.58
+      "value": 19.3
     },
     {
       "date": "2026-06-22",
-      "value": 19.63
+      "value": 19.43
     },
     {
       "date": "2026-06-23",
-      "value": 19.68
+      "value": 19.55
     },
     {
       "date": "2026-06-24",
-      "value": 19.73
+      "value": 19.67
     },
     {
       "date": "2026-06-25",
-      "value": 19.78
+      "value": 19.79
     },
     {
       "date": "2026-06-26",
-      "value": 19.82
+      "value": 19.91
     },
     {
       "date": "2026-06-29",
-      "value": 19.87
+      "value": 20.03
     },
     {
       "date": "2026-06-30",
-      "value": 19.92
+      "value": 20.15
     },
     {
       "date": "2026-07-01",
-      "value": 20.01
+      "value": 20.27
     },
     {
       "date": "2026-07-02",
-      "value": 20.11
-    },
-    {
-      "date": "2026-07-03",
-      "value": 20.2
-    },
-    {
-      "date": "2026-07-06",
-      "value": 20.3
-    },
-    {
-      "date": "2026-07-07",
       "value": 20.39
     },
     {
+      "date": "2026-07-03",
+      "value": 20.44
+    },
+    {
+      "date": "2026-07-06",
+      "value": 20.5
+    },
+    {
+      "date": "2026-07-07",
+      "value": 20.55
+    },
+    {
       "date": "2026-07-08",
-      "value": 20.49
+      "value": 20.6
     },
     {
       "date": "2026-07-09",
-      "value": 20.58
+      "value": 20.66
     },
     {
       "date": "2026-07-10",
-      "value": 20.68
+      "value": 20.71
     },
     {
       "date": "2026-07-13",
-      "value": 20.77
+      "value": 20.76
     },
     {
       "date": "2026-07-14",
-      "value": 20.87
+      "value": 20.82
     },
     {
       "date": "2026-07-15",
-      "value": 20.96
+      "value": 20.87
     },
     {
       "date": "2026-07-16",
-      "value": 21.06
+      "value": 20.92
     },
     {
       "date": "2026-07-17",
-      "value": 21.15
+      "value": 20.98
     },
     {
       "date": "2026-07-20",
-      "value": 21.25
+      "value": 21.03
     },
     {
       "date": "2026-07-21",
-      "value": 21.34
+      "value": 21.08
     },
     {
       "date": "2026-07-22",
-      "value": 21.44
+      "value": 21.14
     },
     {
       "date": "2026-07-23",
-      "value": 21.53
+      "value": 21.19
     },
     {
       "date": "2026-07-24",
-      "value": 21.63
+      "value": 21.24
     },
     {
       "date": "2026-07-27",
-      "value": 21.72
+      "value": 21.3
     },
     {
       "date": "2026-07-28",
-      "value": 21.82
+      "value": 21.35
     },
     {
       "date": "2026-07-29",
-      "value": 21.91
+      "value": 21.4
     },
     {
       "date": "2026-07-30",
-      "value": 21.83
+      "value": 21.46
     },
     {
       "date": "2026-07-31",
-      "value": 21.75
-    },
-    {
-      "date": "2026-08-03",
-      "value": 21.67
-    },
-    {
-      "date": "2026-08-04",
-      "value": 21.59
-    },
-    {
-      "date": "2026-08-05",
       "value": 21.51
     },
     {
-      "date": "2026-08-06",
+      "date": "2026-08-03",
+      "value": 21.49
+    },
+    {
+      "date": "2026-08-04",
+      "value": 21.47
+    },
+    {
+      "date": "2026-08-05",
       "value": 21.44
     },
     {
+      "date": "2026-08-06",
+      "value": 21.42
+    },
+    {
       "date": "2026-08-07",
-      "value": 21.36
+      "value": 21.4
     },
     {
       "date": "2026-08-10",
-      "value": 21.28
+      "value": 21.38
     },
     {
       "date": "2026-08-11",
-      "value": 21.2
+      "value": 21.35
     },
     {
       "date": "2026-08-12",
-      "value": 21.12
+      "value": 21.33
     },
     {
       "date": "2026-08-13",
-      "value": 21.04
+      "value": 21.31
     },
     {
       "date": "2026-08-14",
-      "value": 20.96
+      "value": 21.29
     },
     {
       "date": "2026-08-17",
-      "value": 20.88
+      "value": 21.26
     },
     {
       "date": "2026-08-18",
-      "value": 20.8
+      "value": 21.24
     },
     {
       "date": "2026-08-19",
-      "value": 20.72
+      "value": 21.22
     },
     {
       "date": "2026-08-20",
-      "value": 20.65
+      "value": 21.2
     },
     {
       "date": "2026-08-21",
-      "value": 20.57
+      "value": 21.17
     },
     {
       "date": "2026-08-24",
-      "value": 20.49
+      "value": 21.15
     },
     {
       "date": "2026-08-25",
-      "value": 20.41
+      "value": 21.13
     },
     {
       "date": "2026-08-26",
-      "value": 20.33
+      "value": 21.11
     },
     {
       "date": "2026-08-27",
-      "value": 20.25
+      "value": 21.08
+    },
+    {
+      "date": "2026-08-28",
+      "value": 21.06
+    },
+    {
+      "date": "2026-08-31",
+      "value": 21.04
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 19.15,
-      "predicted_return": -0.046461,
-      "confidence": 0.2106
+      "predicted_price": 18.46,
+      "predicted_return": -0.059023,
+      "confidence": 0.2096
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 19.92,
-      "predicted_return": -0.007913,
-      "confidence": 0.1535
+      "predicted_price": 20.39,
+      "predicted_return": 0.039088,
+      "confidence": 0.1109
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 21.91,
-      "predicted_return": 0.09102,
-      "confidence": 0.06
+      "predicted_price": 21.51,
+      "predicted_return": 0.096466,
+      "confidence": 0.05
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 20.25,
-      "predicted_return": 0.008378,
-      "confidence": 0.05
+      "predicted_price": 21.04,
+      "predicted_return": 0.072493,
+      "confidence": 0.0592
     }
   ],
   "recent_performance": {
@@ -324,10 +324,10 @@
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 0.84,
-    "forecast_price_selected": 20.25,
-    "forecast_confidence_selected": 0.05,
-    "forecast_news_adjustment_pct": -2.3
+    "forecast_return_selected_pct": 7.25,
+    "forecast_price_selected": 21.04,
+    "forecast_confidence_selected": 0.0592,
+    "forecast_news_adjustment_pct": -2.55
   },
   "outlook_3m": {
     "scenario": "pressionado",
@@ -339,19 +339,19 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 20.08. Hoje representa cerca de 5.7% da carteira. O modelo de 3 meses hoje aponta estabilidade, com retorno estimado de +0.8% e confianca de 5%. O ajuste contextual das noticias adiciona -2.3% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.61. Nesse conjunto, o peso informacional esta distribuido em fundamento (2), macro (4), setorial (0) e fluxo (0).",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 19.66. Hoje representa cerca de 5.6% da carteira. O modelo de 3 meses hoje aponta alta, com retorno estimado de +7.2% e confianca de 6%. O ajuste contextual das noticias adiciona -2.5% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.60. Nesse conjunto, o peso informacional esta distribuido em fundamento (2), macro (4), setorial (0) e fluxo (0).",
     "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +0.8% e preco estimado perto de 20.25. O contexto de noticias ajusta essa leitura em -2.0%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +7.2% e preco estimado perto de 21.04. O contexto de noticias ajusta essa leitura em -2.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
       "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
       "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
       "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -4.6% e preco estimado perto de 19.15. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -0.8% e preco estimado perto de 19.92. O contexto de noticias ajusta essa leitura em -1.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +9.1% e preco estimado perto de 21.91. O contexto de noticias ajusta essa leitura em -2.0%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +0.8% e preco estimado perto de 20.25. O contexto de noticias ajusta essa leitura em -2.0%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -5.9% e preco estimado perto de 18.46. O contexto de noticias ajusta essa leitura em -1.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +3.9% e preco estimado perto de 20.39. O contexto de noticias ajusta essa leitura em -2.0%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +9.6% e preco estimado perto de 21.51. O contexto de noticias ajusta essa leitura em -2.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +7.2% e preco estimado perto de 21.04. O contexto de noticias ajusta essa leitura em -2.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
@@ -385,8 +385,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.8763,
-      "rank_score": 0.7777,
+      "match_score": 0.8709,
+      "rank_score": 0.7749,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
@@ -404,12 +404,31 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.447,
-      "rank_score": 0.5679,
+      "match_score": 0.4418,
+      "rank_score": 0.5652,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+      "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+      "published_at": "2026-06-03T15:37:34.696716+00:00",
+      "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.46,
+      "rank_score": 0.5627,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.75,
       "analysis_category": "macro",
       "role": "outlook"
     },
@@ -423,8 +442,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4513,
-      "rank_score": 0.5627,
+      "match_score": 0.4459,
+      "rank_score": 0.5599,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -442,8 +461,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4513,
-      "rank_score": 0.5627,
+      "match_score": 0.4459,
+      "rank_score": 0.5599,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -461,14 +480,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4492,
-      "rank_score": 0.5616,
+      "match_score": 0.4439,
+      "rank_score": 0.5588,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "629cddfde78d45fdde8891b65e011167",
@@ -480,8 +499,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4491,
-      "rank_score": 0.5615,
+      "match_score": 0.4438,
+      "rank_score": 0.5588,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -499,8 +518,8 @@
       "sentiment_score": 0.14285714285714285,
       "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.4471,
-      "rank_score": 0.5444,
+      "match_score": 0.4419,
+      "rank_score": 0.5417,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -518,8 +537,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4226,
-      "rank_score": 0.5278,
+      "match_score": 0.4174,
+      "rank_score": 0.525,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -537,8 +556,8 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.4047,
-      "rank_score": 0.5239,
+      "match_score": 0.403,
+      "rank_score": 0.5231,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "sector",
@@ -556,27 +575,8 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.4222,
-      "rank_score": 0.52,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "be7f3b146a8f8ac1fd340f0c3329071a",
-      "title": "\"Ponto cego\": as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ponto-cego-as-oportunidades-de-us-13-trilhao-em-acoes-ligadas-a-america-latina/",
-      "published_at": "2026-05-22T18:00:49+00:00",
-      "summary": "Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise do Bradesco BBI Ponto cego: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades Lara Rizério 22/05/2026 15h00 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Shutterstock) Publicidade Um amplo conjunto de empresas globais com forte exposição à América Latina — mas listadas fora da região — vem sendo negligenciado por investidores, mesmo concentrando um valor de mercado de cerca de US$ 1,3 trilhão. O texto menciona BBDC4, B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.402,
-      "rank_score": 0.517,
+      "match_score": 0.417,
+      "rank_score": 0.5173,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -619,8 +619,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.8763,
-          "rank_score": 0.7777,
+          "match_score": 0.8709,
+          "rank_score": 0.7749,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -638,12 +638,31 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.447,
-          "rank_score": 0.5679,
+          "match_score": 0.4418,
+          "rank_score": 0.5652,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+          "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+          "published_at": "2026-06-03T15:37:34.696716+00:00",
+          "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.46,
+          "rank_score": 0.5627,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.75,
           "analysis_category": "macro",
           "role": "outlook"
         },
@@ -657,8 +676,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4513,
-          "rank_score": 0.5627,
+          "match_score": 0.4459,
+          "rank_score": 0.5599,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -676,8 +695,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4513,
-          "rank_score": 0.5627,
+          "match_score": 0.4459,
+          "rank_score": 0.5599,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -695,14 +714,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4492,
-          "rank_score": 0.5616,
+          "match_score": 0.4439,
+          "rank_score": 0.5588,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "629cddfde78d45fdde8891b65e011167",
@@ -714,8 +733,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4491,
-          "rank_score": 0.5615,
+          "match_score": 0.4438,
+          "rank_score": 0.5588,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -733,8 +752,8 @@
           "sentiment_score": 0.14285714285714285,
           "impact_score": 0.4928571428571429,
           "relevance_score": 0.5,
-          "match_score": 0.4471,
-          "rank_score": 0.5444,
+          "match_score": 0.4419,
+          "rank_score": 0.5417,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -752,8 +771,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4226,
-          "rank_score": 0.5278,
+          "match_score": 0.4174,
+          "rank_score": 0.525,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -771,27 +790,8 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.4222,
-          "rank_score": 0.52,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "sector",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "be7f3b146a8f8ac1fd340f0c3329071a",
-          "title": "\"Ponto cego\": as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ponto-cego-as-oportunidades-de-us-13-trilhao-em-acoes-ligadas-a-america-latina/",
-          "published_at": "2026-05-22T18:00:49+00:00",
-          "summary": "Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Análise do Bradesco BBI Ponto cego: as oportunidades de US$ 1,3 trilhão em ações ligadas à América Latina Universo fora do radar reúne valor trilionário em ações ligadas à região e pode oferecer oportunidades Lara Rizério 22/05/2026 15h00 &bull; Atualizado 1 semana atrás Ativos mencionados na matéria (Shutterstock) Publicidade Um amplo conjunto de empresas globais com forte exposição à América Latina — mas listadas fora da região — vem sendo negligenciado por investidores, mesmo concentrando um valor de mercado de cerca de US$ 1,3 trilhão. O texto menciona BBDC4, B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.402,
-          "rank_score": 0.517,
+          "match_score": 0.417,
+          "rank_score": 0.5173,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -815,8 +815,8 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.4047,
-          "rank_score": 0.5239,
+          "match_score": 0.403,
+          "rank_score": 0.5231,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "sector",

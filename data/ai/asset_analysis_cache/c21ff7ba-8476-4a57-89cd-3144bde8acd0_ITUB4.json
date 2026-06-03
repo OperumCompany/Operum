@@ -3,313 +3,313 @@
   "ticker": "ITUB4",
   "asset_name": "Itaú Unibanco PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T23:45:37.460743+00:00",
-  "recomputed_at": "2026-06-01T23:45:37.460743+00:00",
+  "generated_at": "2026-06-03T15:52:42.956336+00:00",
+  "recomputed_at": "2026-06-03T15:52:42.956336+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
   "asset_function": "estabilidade",
   "current_snapshot": {
-    "current_price": 39.36,
+    "current_price": 38.85,
     "currency": "BRL",
-    "weight_pct": 14.85,
+    "weight_pct": 14.77,
     "sector": "Financeiro",
     "country": "BR",
     "asset_function": "estabilidade"
   },
   "historical_window": {
-    "start_date": "2026-01-26",
-    "end_date": "2026-06-01",
+    "start_date": "2026-01-28",
+    "end_date": "2026-06-03",
     "news_count": 12,
     "has_price_history": false
   },
   "historical_series": [],
   "forecast_series": [
     {
-      "date": "2026-06-01",
-      "value": 39.36
-    },
-    {
-      "date": "2026-06-02",
-      "value": 39.3
-    },
-    {
       "date": "2026-06-03",
-      "value": 39.24
+      "value": 38.83
     },
     {
       "date": "2026-06-04",
-      "value": 39.19
+      "value": 38.69
     },
     {
       "date": "2026-06-05",
-      "value": 39.13
+      "value": 38.55
     },
     {
       "date": "2026-06-08",
-      "value": 39.07
+      "value": 38.42
     },
     {
       "date": "2026-06-09",
-      "value": 39.14
+      "value": 38.28
     },
     {
       "date": "2026-06-10",
-      "value": 39.2
+      "value": 38.14
     },
     {
       "date": "2026-06-11",
-      "value": 39.27
+      "value": 38.3
     },
     {
       "date": "2026-06-12",
-      "value": 39.33
+      "value": 38.46
     },
     {
       "date": "2026-06-15",
-      "value": 39.4
+      "value": 38.62
     },
     {
       "date": "2026-06-16",
-      "value": 39.46
+      "value": 38.78
     },
     {
       "date": "2026-06-17",
-      "value": 39.53
+      "value": 38.94
     },
     {
       "date": "2026-06-18",
-      "value": 39.59
+      "value": 39.1
     },
     {
       "date": "2026-06-19",
-      "value": 39.66
+      "value": 39.26
     },
     {
       "date": "2026-06-22",
-      "value": 39.73
+      "value": 39.41
     },
     {
       "date": "2026-06-23",
-      "value": 39.79
+      "value": 39.57
     },
     {
       "date": "2026-06-24",
-      "value": 39.86
+      "value": 39.73
     },
     {
       "date": "2026-06-25",
-      "value": 39.92
+      "value": 39.89
     },
     {
       "date": "2026-06-26",
-      "value": 39.99
-    },
-    {
-      "date": "2026-06-29",
       "value": 40.05
     },
     {
+      "date": "2026-06-29",
+      "value": 40.21
+    },
+    {
       "date": "2026-06-30",
-      "value": 40.12
+      "value": 40.37
     },
     {
       "date": "2026-07-01",
-      "value": 40.2
+      "value": 40.53
     },
     {
       "date": "2026-07-02",
-      "value": 40.27
+      "value": 40.69
     },
     {
       "date": "2026-07-03",
-      "value": 40.35
+      "value": 40.72
     },
     {
       "date": "2026-07-06",
-      "value": 40.42
+      "value": 40.74
     },
     {
       "date": "2026-07-07",
-      "value": 40.5
+      "value": 40.77
     },
     {
       "date": "2026-07-08",
-      "value": 40.57
-    },
-    {
-      "date": "2026-07-09",
-      "value": 40.65
-    },
-    {
-      "date": "2026-07-10",
-      "value": 40.73
-    },
-    {
-      "date": "2026-07-13",
       "value": 40.8
     },
     {
-      "date": "2026-07-14",
+      "date": "2026-07-09",
+      "value": 40.83
+    },
+    {
+      "date": "2026-07-10",
+      "value": 40.85
+    },
+    {
+      "date": "2026-07-13",
       "value": 40.88
     },
     {
+      "date": "2026-07-14",
+      "value": 40.91
+    },
+    {
       "date": "2026-07-15",
-      "value": 40.95
+      "value": 40.93
     },
     {
       "date": "2026-07-16",
-      "value": 41.03
+      "value": 40.96
     },
     {
       "date": "2026-07-17",
-      "value": 41.1
+      "value": 40.99
     },
     {
       "date": "2026-07-20",
-      "value": 41.18
+      "value": 41.02
     },
     {
       "date": "2026-07-21",
-      "value": 41.26
+      "value": 41.04
     },
     {
       "date": "2026-07-22",
-      "value": 41.33
+      "value": 41.07
     },
     {
       "date": "2026-07-23",
-      "value": 41.41
+      "value": 41.1
     },
     {
       "date": "2026-07-24",
-      "value": 41.48
+      "value": 41.12
     },
     {
       "date": "2026-07-27",
-      "value": 41.56
+      "value": 41.15
     },
     {
       "date": "2026-07-28",
-      "value": 41.63
+      "value": 41.18
     },
     {
       "date": "2026-07-29",
-      "value": 41.71
+      "value": 41.21
     },
     {
       "date": "2026-07-30",
-      "value": 41.81
+      "value": 41.23
     },
     {
       "date": "2026-07-31",
-      "value": 41.91
+      "value": 41.26
     },
     {
       "date": "2026-08-03",
-      "value": 42.01
+      "value": 41.34
     },
     {
       "date": "2026-08-04",
-      "value": 42.11
+      "value": 41.43
     },
     {
       "date": "2026-08-05",
-      "value": 42.21
+      "value": 41.51
     },
     {
       "date": "2026-08-06",
-      "value": 42.3
+      "value": 41.59
     },
     {
       "date": "2026-08-07",
-      "value": 42.4
+      "value": 41.68
     },
     {
       "date": "2026-08-10",
-      "value": 42.5
+      "value": 41.76
     },
     {
       "date": "2026-08-11",
-      "value": 42.6
+      "value": 41.84
     },
     {
       "date": "2026-08-12",
-      "value": 42.7
+      "value": 41.93
     },
     {
       "date": "2026-08-13",
-      "value": 42.8
+      "value": 42.01
     },
     {
       "date": "2026-08-14",
-      "value": 42.9
+      "value": 42.09
     },
     {
       "date": "2026-08-17",
-      "value": 43.0
+      "value": 42.18
     },
     {
       "date": "2026-08-18",
-      "value": 43.1
+      "value": 42.26
     },
     {
       "date": "2026-08-19",
-      "value": 43.2
+      "value": 42.34
     },
     {
       "date": "2026-08-20",
-      "value": 43.29
+      "value": 42.43
     },
     {
       "date": "2026-08-21",
-      "value": 43.39
+      "value": 42.51
     },
     {
       "date": "2026-08-24",
-      "value": 43.49
+      "value": 42.59
     },
     {
       "date": "2026-08-25",
-      "value": 43.59
+      "value": 42.68
     },
     {
       "date": "2026-08-26",
-      "value": 43.69
+      "value": 42.76
     },
     {
       "date": "2026-08-27",
-      "value": 43.79
+      "value": 42.84
+    },
+    {
+      "date": "2026-08-28",
+      "value": 42.93
+    },
+    {
+      "date": "2026-08-31",
+      "value": 43.01
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 39.07,
-      "predicted_return": -0.007427,
-      "confidence": 0.2048
+      "predicted_price": 38.14,
+      "predicted_return": -0.017744,
+      "confidence": 0.208
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 40.12,
-      "predicted_return": 0.019385,
-      "confidence": 0.0716
+      "predicted_price": 40.69,
+      "predicted_return": 0.047801,
+      "confidence": 0.081
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 41.71,
-      "predicted_return": 0.059611,
+      "predicted_price": 41.26,
+      "predicted_return": 0.062565,
       "confidence": 0.06
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 43.79,
-      "predicted_return": 0.112492,
+      "predicted_price": 43.01,
+      "predicted_return": 0.10755,
       "confidence": 0.05
     }
   ],
@@ -324,10 +324,10 @@
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 11.25,
-    "forecast_price_selected": 43.79,
+    "forecast_return_selected_pct": 10.76,
+    "forecast_price_selected": 43.01,
     "forecast_confidence_selected": 0.05,
-    "forecast_news_adjustment_pct": -0.78
+    "forecast_news_adjustment_pct": -1.02
   },
   "outlook_3m": {
     "scenario": "pressionado",
@@ -339,19 +339,19 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 39.36. Hoje representa cerca de 14.8% da carteira. O modelo de 3 meses hoje aponta alta, com retorno estimado de +11.2% e confianca de 5%. O ajuste contextual das noticias adiciona -0.8% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.63. Nesse conjunto, o peso informacional esta distribuido em fundamento (3), macro (3), setorial (0) e fluxo (0).",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 38.85. Hoje representa cerca de 14.8% da carteira. O modelo de 3 meses hoje aponta alta, com retorno estimado de +10.8% e confianca de 5%. O ajuste contextual das noticias adiciona -1.0% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.62. Nesse conjunto, o peso informacional esta distribuido em fundamento (3), macro (3), setorial (0) e fluxo (0).",
     "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de fundamento, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +11.2% e preco estimado perto de 43.79. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +10.8% e preco estimado perto de 43.01. O contexto de noticias ajusta essa leitura em -1.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
       "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de fundamento, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
       "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de fundamento, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
       "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de fundamento, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -0.7% e preco estimado perto de 39.07. O contexto de noticias ajusta essa leitura em -0.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +1.9% e preco estimado perto de 40.12. O contexto de noticias ajusta essa leitura em -0.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +6.0% e preco estimado perto de 41.71. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +11.2% e preco estimado perto de 43.79. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -1.8% e preco estimado perto de 38.14. O contexto de noticias ajusta essa leitura em -0.7%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +4.8% e preco estimado perto de 40.69. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +6.3% e preco estimado perto de 41.26. O contexto de noticias ajusta essa leitura em -1.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +10.8% e preco estimado perto de 43.01. O contexto de noticias ajusta essa leitura em -1.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
@@ -366,8 +366,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.8763,
-      "rank_score": 0.7777,
+      "match_score": 0.8709,
+      "rank_score": 0.7749,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
@@ -385,8 +385,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.8514,
-      "rank_score": 0.7647,
+      "match_score": 0.8474,
+      "rank_score": 0.7626,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
@@ -404,8 +404,8 @@
       "sentiment_score": 1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.7089,
-      "rank_score": 0.6561,
+      "match_score": 0.7032,
+      "rank_score": 0.6532,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -423,12 +423,31 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.447,
-      "rank_score": 0.5679,
+      "match_score": 0.4418,
+      "rank_score": 0.5652,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+      "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+      "published_at": "2026-06-03T15:37:34.696716+00:00",
+      "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.46,
+      "rank_score": 0.5627,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.75,
       "analysis_category": "macro",
       "role": "outlook"
     },
@@ -442,8 +461,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4513,
-      "rank_score": 0.5627,
+      "match_score": 0.4459,
+      "rank_score": 0.5599,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -461,14 +480,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4513,
-      "rank_score": 0.5627,
+      "match_score": 0.4459,
+      "rank_score": 0.5599,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -480,8 +499,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4492,
-      "rank_score": 0.5616,
+      "match_score": 0.4439,
+      "rank_score": 0.5588,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -499,8 +518,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4491,
-      "rank_score": 0.5615,
+      "match_score": 0.4438,
+      "rank_score": 0.5588,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -518,8 +537,8 @@
       "sentiment_score": 0.14285714285714285,
       "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.4471,
-      "rank_score": 0.5444,
+      "match_score": 0.4419,
+      "rank_score": 0.5417,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -537,8 +556,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4226,
-      "rank_score": 0.5278,
+      "match_score": 0.4174,
+      "rank_score": 0.525,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -556,32 +575,13 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.4047,
-      "rank_score": 0.5239,
+      "match_score": 0.403,
+      "rank_score": 0.5231,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "sector",
       "source_confidence_weight": 0.95,
       "analysis_category": "fundamento",
-      "role": "historical"
-    },
-    {
-      "id": "dbb5a625b865eea29ec971770aeab156",
-      "title": "Dólar sobe a R$ 5,04 em dia negativo para ativos brasileiros; moeda salta 1,8% no mês",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-29052026/",
-      "published_at": "2026-05-29T22:05:05+00:00",
-      "summary": "Em meio à disputa da PTAX, a moeda norte-americana à vista atingiu a cotação máxima da sessão de R$5,0722 (+0,77%) às 11h51.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Câmbio Dólar sobe a R$ 5,04 em dia negativo para ativos brasileiros; moeda salta 1,8% no mês Em meio à disputa da PTAX, a moeda norte-americana à vista atingiu a cotação máxima da sessão de R$5,0722 (+0,77%) às 11h51 Felipe Moreira 29/05/2026 19h05 &bull; Atualizado 1 dia atrás Um funcionário conta cédulas de dólar americano em uma casa de câmbio em Jacarta, na Indonésia, na quarta-feira, 2 de março de 2022 (Dimas Ardian/Bloomberg) Publicidade O dólar fechou a sexta-feira em alta no Brasil, em uma sessão no geral negativa para os ativos brasileiros, com fluxo de saída de estrangeiros da bolsa e cautela em relação ao cenário econômico, enquanto no exterior os agentes aguardavam por um desfecho nas negociações entre EUA e Irã. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.3333333333333333,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.4222,
-      "rank_score": 0.52,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
       "role": "historical"
     }
   ],
@@ -600,8 +600,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.8763,
-          "rank_score": 0.7777,
+          "match_score": 0.8709,
+          "rank_score": 0.7749,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -619,8 +619,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.8514,
-          "rank_score": 0.7647,
+          "match_score": 0.8474,
+          "rank_score": 0.7626,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -638,8 +638,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.7089,
-          "rank_score": 0.6561,
+          "match_score": 0.7032,
+          "rank_score": 0.6532,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -657,12 +657,31 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.447,
-          "rank_score": 0.5679,
+          "match_score": 0.4418,
+          "rank_score": 0.5652,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+          "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+          "published_at": "2026-06-03T15:37:34.696716+00:00",
+          "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.46,
+          "rank_score": 0.5627,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.75,
           "analysis_category": "macro",
           "role": "outlook"
         },
@@ -676,8 +695,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4513,
-          "rank_score": 0.5627,
+          "match_score": 0.4459,
+          "rank_score": 0.5599,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -695,14 +714,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4513,
-          "rank_score": 0.5627,
+          "match_score": 0.4459,
+          "rank_score": 0.5599,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -714,8 +733,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4492,
-          "rank_score": 0.5616,
+          "match_score": 0.4439,
+          "rank_score": 0.5588,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -733,8 +752,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4491,
-          "rank_score": 0.5615,
+          "match_score": 0.4438,
+          "rank_score": 0.5588,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -752,8 +771,8 @@
           "sentiment_score": 0.14285714285714285,
           "impact_score": 0.4928571428571429,
           "relevance_score": 0.5,
-          "match_score": 0.4471,
-          "rank_score": 0.5444,
+          "match_score": 0.4419,
+          "rank_score": 0.5417,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -771,32 +790,13 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4226,
-          "rank_score": 0.5278,
+          "match_score": 0.4174,
+          "rank_score": 0.525,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
           "analysis_category": "fundamento",
-          "role": "historical"
-        },
-        {
-          "id": "dbb5a625b865eea29ec971770aeab156",
-          "title": "Dólar sobe a R$ 5,04 em dia negativo para ativos brasileiros; moeda salta 1,8% no mês",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-29052026/",
-          "published_at": "2026-05-29T22:05:05+00:00",
-          "summary": "Em meio à disputa da PTAX, a moeda norte-americana à vista atingiu a cotação máxima da sessão de R$5,0722 (+0,77%) às 11h51.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Câmbio Dólar sobe a R$ 5,04 em dia negativo para ativos brasileiros; moeda salta 1,8% no mês Em meio à disputa da PTAX, a moeda norte-americana à vista atingiu a cotação máxima da sessão de R$5,0722 (+0,77%) às 11h51 Felipe Moreira 29/05/2026 19h05 &bull; Atualizado 1 dia atrás Um funcionário conta cédulas de dólar americano em uma casa de câmbio em Jacarta, na Indonésia, na quarta-feira, 2 de março de 2022 (Dimas Ardian/Bloomberg) Publicidade O dólar fechou a sexta-feira em alta no Brasil, em uma sessão no geral negativa para os ativos brasileiros, com fluxo de saída de estrangeiros da bolsa e cautela em relação ao cenário econômico, enquanto no exterior os agentes aguardavam por um desfecho nas negociações entre EUA e Irã. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.3333333333333333,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.4222,
-          "rank_score": 0.52,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "sector",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
           "role": "historical"
         }
       ]
@@ -815,8 +815,8 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.4047,
-          "rank_score": 0.5239,
+          "match_score": 0.403,
+          "rank_score": 0.5231,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "sector",

@@ -3,313 +3,313 @@
   "ticker": "PETR4",
   "asset_name": "Petrobras PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T23:38:30.323161+00:00",
-  "recomputed_at": "2026-06-01T23:38:30.323161+00:00",
+  "generated_at": "2026-06-03T15:52:39.819078+00:00",
+  "recomputed_at": "2026-06-03T15:52:39.819078+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
   "asset_function": "crescimento",
   "current_snapshot": {
-    "current_price": 42.37,
+    "current_price": 41.56,
     "currency": "BRL",
-    "weight_pct": 7.99,
+    "weight_pct": 7.9,
     "sector": "Petróleo e Gás",
     "country": "BR",
     "asset_function": "crescimento"
   },
   "historical_window": {
-    "start_date": "2026-01-26",
-    "end_date": "2026-06-01",
+    "start_date": "2026-01-28",
+    "end_date": "2026-06-03",
     "news_count": 12,
     "has_price_history": false
   },
   "historical_series": [],
   "forecast_series": [
     {
-      "date": "2026-06-01",
-      "value": 42.37
-    },
-    {
-      "date": "2026-06-02",
-      "value": 42.55
-    },
-    {
       "date": "2026-06-03",
-      "value": 42.73
+      "value": 41.62
     },
     {
       "date": "2026-06-04",
-      "value": 42.91
+      "value": 41.68
     },
     {
       "date": "2026-06-05",
-      "value": 43.09
+      "value": 41.74
     },
     {
       "date": "2026-06-08",
-      "value": 43.27
+      "value": 41.81
     },
     {
       "date": "2026-06-09",
-      "value": 43.07
+      "value": 41.87
     },
     {
       "date": "2026-06-10",
-      "value": 42.87
+      "value": 41.93
     },
     {
       "date": "2026-06-11",
-      "value": 42.66
+      "value": 41.85
     },
     {
       "date": "2026-06-12",
-      "value": 42.46
+      "value": 41.78
     },
     {
       "date": "2026-06-15",
-      "value": 42.26
+      "value": 41.7
     },
     {
       "date": "2026-06-16",
-      "value": 42.06
+      "value": 41.62
     },
     {
       "date": "2026-06-17",
-      "value": 41.86
+      "value": 41.55
     },
     {
       "date": "2026-06-18",
-      "value": 41.66
+      "value": 41.47
     },
     {
       "date": "2026-06-19",
-      "value": 41.45
+      "value": 41.4
     },
     {
       "date": "2026-06-22",
-      "value": 41.25
+      "value": 41.32
     },
     {
       "date": "2026-06-23",
-      "value": 41.05
+      "value": 41.24
     },
     {
       "date": "2026-06-24",
-      "value": 40.85
+      "value": 41.17
     },
     {
       "date": "2026-06-25",
-      "value": 40.65
+      "value": 41.09
     },
     {
       "date": "2026-06-26",
-      "value": 40.44
+      "value": 41.02
     },
     {
       "date": "2026-06-29",
-      "value": 40.24
+      "value": 40.94
     },
     {
       "date": "2026-06-30",
-      "value": 40.04
+      "value": 40.86
     },
     {
       "date": "2026-07-01",
-      "value": 40.04
+      "value": 40.79
     },
     {
       "date": "2026-07-02",
-      "value": 40.04
+      "value": 40.71
     },
     {
       "date": "2026-07-03",
-      "value": 40.03
-    },
-    {
-      "date": "2026-07-06",
-      "value": 40.03
-    },
-    {
-      "date": "2026-07-07",
-      "value": 40.03
-    },
-    {
-      "date": "2026-07-08",
-      "value": 40.03
-    },
-    {
-      "date": "2026-07-09",
-      "value": 40.02
-    },
-    {
-      "date": "2026-07-10",
-      "value": 40.02
-    },
-    {
-      "date": "2026-07-13",
-      "value": 40.02
-    },
-    {
-      "date": "2026-07-14",
-      "value": 40.02
-    },
-    {
-      "date": "2026-07-15",
-      "value": 40.01
-    },
-    {
-      "date": "2026-07-16",
-      "value": 40.01
-    },
-    {
-      "date": "2026-07-17",
-      "value": 40.01
-    },
-    {
-      "date": "2026-07-20",
-      "value": 40.01
-    },
-    {
-      "date": "2026-07-21",
-      "value": 40.0
-    },
-    {
-      "date": "2026-07-22",
-      "value": 40.0
-    },
-    {
-      "date": "2026-07-23",
-      "value": 40.0
-    },
-    {
-      "date": "2026-07-24",
-      "value": 40.0
-    },
-    {
-      "date": "2026-07-27",
-      "value": 39.99
-    },
-    {
-      "date": "2026-07-28",
-      "value": 39.99
-    },
-    {
-      "date": "2026-07-29",
-      "value": 39.99
-    },
-    {
-      "date": "2026-07-30",
-      "value": 40.06
-    },
-    {
-      "date": "2026-07-31",
-      "value": 40.13
-    },
-    {
-      "date": "2026-08-03",
-      "value": 40.2
-    },
-    {
-      "date": "2026-08-04",
-      "value": 40.28
-    },
-    {
-      "date": "2026-08-05",
-      "value": 40.35
-    },
-    {
-      "date": "2026-08-06",
-      "value": 40.42
-    },
-    {
-      "date": "2026-08-07",
-      "value": 40.49
-    },
-    {
-      "date": "2026-08-10",
-      "value": 40.56
-    },
-    {
-      "date": "2026-08-11",
-      "value": 40.63
-    },
-    {
-      "date": "2026-08-12",
       "value": 40.7
     },
     {
-      "date": "2026-08-13",
-      "value": 40.78
+      "date": "2026-07-06",
+      "value": 40.68
     },
     {
-      "date": "2026-08-14",
-      "value": 40.85
+      "date": "2026-07-07",
+      "value": 40.67
     },
     {
-      "date": "2026-08-17",
-      "value": 40.92
+      "date": "2026-07-08",
+      "value": 40.65
     },
     {
-      "date": "2026-08-18",
-      "value": 40.99
+      "date": "2026-07-09",
+      "value": 40.64
     },
     {
-      "date": "2026-08-19",
+      "date": "2026-07-10",
+      "value": 40.62
+    },
+    {
+      "date": "2026-07-13",
+      "value": 40.61
+    },
+    {
+      "date": "2026-07-14",
+      "value": 40.59
+    },
+    {
+      "date": "2026-07-15",
+      "value": 40.58
+    },
+    {
+      "date": "2026-07-16",
+      "value": 40.56
+    },
+    {
+      "date": "2026-07-17",
+      "value": 40.55
+    },
+    {
+      "date": "2026-07-20",
+      "value": 40.53
+    },
+    {
+      "date": "2026-07-21",
+      "value": 40.52
+    },
+    {
+      "date": "2026-07-22",
+      "value": 40.5
+    },
+    {
+      "date": "2026-07-23",
+      "value": 40.49
+    },
+    {
+      "date": "2026-07-24",
+      "value": 40.47
+    },
+    {
+      "date": "2026-07-27",
+      "value": 40.46
+    },
+    {
+      "date": "2026-07-28",
+      "value": 40.44
+    },
+    {
+      "date": "2026-07-29",
+      "value": 40.43
+    },
+    {
+      "date": "2026-07-30",
+      "value": 40.41
+    },
+    {
+      "date": "2026-07-31",
+      "value": 40.4
+    },
+    {
+      "date": "2026-08-03",
+      "value": 40.62
+    },
+    {
+      "date": "2026-08-04",
+      "value": 40.84
+    },
+    {
+      "date": "2026-08-05",
       "value": 41.06
     },
     {
-      "date": "2026-08-20",
-      "value": 41.13
-    },
-    {
-      "date": "2026-08-21",
-      "value": 41.2
-    },
-    {
-      "date": "2026-08-24",
+      "date": "2026-08-06",
       "value": 41.28
     },
     {
+      "date": "2026-08-07",
+      "value": 41.5
+    },
+    {
+      "date": "2026-08-10",
+      "value": 41.72
+    },
+    {
+      "date": "2026-08-11",
+      "value": 41.94
+    },
+    {
+      "date": "2026-08-12",
+      "value": 42.16
+    },
+    {
+      "date": "2026-08-13",
+      "value": 42.38
+    },
+    {
+      "date": "2026-08-14",
+      "value": 42.6
+    },
+    {
+      "date": "2026-08-17",
+      "value": 42.83
+    },
+    {
+      "date": "2026-08-18",
+      "value": 43.05
+    },
+    {
+      "date": "2026-08-19",
+      "value": 43.27
+    },
+    {
+      "date": "2026-08-20",
+      "value": 43.49
+    },
+    {
+      "date": "2026-08-21",
+      "value": 43.71
+    },
+    {
+      "date": "2026-08-24",
+      "value": 43.93
+    },
+    {
       "date": "2026-08-25",
-      "value": 41.35
+      "value": 44.15
     },
     {
       "date": "2026-08-26",
-      "value": 41.42
+      "value": 44.37
     },
     {
       "date": "2026-08-27",
-      "value": 41.49
+      "value": 44.59
+    },
+    {
+      "date": "2026-08-28",
+      "value": 44.81
+    },
+    {
+      "date": "2026-08-31",
+      "value": 45.03
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 43.27,
-      "predicted_return": 0.021266,
-      "confidence": 0.1786
+      "predicted_price": 41.93,
+      "predicted_return": 0.007353,
+      "confidence": 0.1777
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 40.04,
-      "predicted_return": -0.055018,
+      "predicted_price": 40.71,
+      "predicted_return": -0.021787,
       "confidence": 0.06
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 39.99,
-      "predicted_return": -0.056133,
+      "predicted_price": 40.4,
+      "predicted_return": -0.029254,
       "confidence": 0.06
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 41.49,
-      "predicted_return": -0.020849,
+      "predicted_price": 45.03,
+      "predicted_return": 0.082029,
       "confidence": 0.05
     }
   ],
@@ -324,8 +324,8 @@
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": -2.08,
-    "forecast_price_selected": 41.49,
+    "forecast_return_selected_pct": 8.2,
+    "forecast_price_selected": 45.03,
     "forecast_confidence_selected": 0.05,
     "forecast_news_adjustment_pct": -0.75
   },
@@ -336,19 +336,19 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 42.37. Hoje representa cerca de 8.0% da carteira. O modelo de 3 meses hoje aponta queda, com retorno estimado de -2.1% e confianca de 5%. O ajuste contextual das noticias adiciona -0.8% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.53. Nesse conjunto, o peso informacional esta distribuido em fundamento (0), macro (2), setorial (0) e fluxo (4).",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 41.56. Hoje representa cerca de 7.9% da carteira. O modelo de 3 meses hoje aponta alta, com retorno estimado de +8.2% e confianca de 5%. O ajuste contextual das noticias adiciona -0.8% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.53. Nesse conjunto, o peso informacional esta distribuido em fundamento (0), macro (2), setorial (0) e fluxo (4).",
     "recent": "No noticiario do periodo, os temas mais recorrentes foram commodities, juros, resultados, inflacao. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.53. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -2.1% e preco estimado perto de 41.49. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +8.2% e preco estimado perto de 45.03. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
       "1m": "No noticiario do periodo, os temas mais recorrentes foram commodities, juros, resultados, inflacao. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.53. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
       "2m": "No noticiario do periodo, os temas mais recorrentes foram commodities, juros, resultados, inflacao. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.53. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
       "3m": "No noticiario do periodo, os temas mais recorrentes foram commodities, juros, resultados, inflacao. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.53. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +2.1% e preco estimado perto de 43.27. O contexto de noticias ajusta essa leitura em -0.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -5.5% e preco estimado perto de 40.04. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -5.6% e preco estimado perto de 39.99. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -2.1% e preco estimado perto de 41.49. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +0.7% e preco estimado perto de 41.93. O contexto de noticias ajusta essa leitura em -0.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -2.2% e preco estimado perto de 40.71. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -2.9% e preco estimado perto de 40.40. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +8.2% e preco estimado perto de 45.03. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
@@ -477,8 +477,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4513,
-      "rank_score": 0.5627,
+      "match_score": 0.4459,
+      "rank_score": 0.5599,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -496,8 +496,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4491,
-      "rank_score": 0.5615,
+      "match_score": 0.4438,
+      "rank_score": 0.5588,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -515,8 +515,8 @@
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.435,
-      "rank_score": 0.5297,
+      "match_score": 0.4292,
+      "rank_score": 0.5267,
       "source_category": "press",
       "is_official": false,
       "context_role": "sector",
@@ -534,12 +534,31 @@
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.4337,
-      "rank_score": 0.529,
+      "match_score": 0.428,
+      "rank_score": 0.5261,
       "source_category": "press",
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "8d7fa8e7990f4081d1340b4165cf7cee",
+      "title": "Petróleo sobe quase 3% e fica próximo de voltar aos US$ 100",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petroleo-sobe-quase-3-e-fica-proximo-de-voltar-aos-us-100.shtml",
+      "published_at": "2026-06-03T11:27:00-03:00",
+      "summary": "O preço do petróleo chegou a subir quase 3% nesta quarta-feira (3) com os novos ataques do Irã a países aliados dos EUA no Oriente Médio, e outro dia de bombardeios de Israel ao Líbano.\n\nLeia mais (06/03/2026 - 11h27). O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.4324,
+      "rank_score": 0.5253,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.72,
       "analysis_category": "macro",
       "role": "historical"
     },
@@ -553,32 +572,13 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.4047,
-      "rank_score": 0.5239,
+      "match_score": 0.403,
+      "rank_score": 0.5231,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "sector",
       "source_confidence_weight": 0.95,
       "analysis_category": "fundamento",
-      "role": "historical"
-    },
-    {
-      "id": "eac70ddaa40489a34996e6ace8c76051",
-      "title": "Petróleo abre em alta em meio a incertezas sobre guerra no Irã",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/petroleo-abre-em-alta-em-meio-a-incertezas-sobre-guerra-no-ira.shtml",
-      "published_at": "2026-05-31T20:22:00-03:00",
-      "summary": "O petróleo abriu em alta de 1% nas negociações referentes à segunda-feira (1º), com investidores reagindo às incertezas em torno de uma resolução da guerra no Oriente Médio.\n\nLeia mais (05/31/2026 - 20h22). O foco principal passa por Economia, Mercado.",
-      "sentiment_score": 1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.4291,
-      "rank_score": 0.5236,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
       "role": "historical"
     }
   ],
@@ -654,8 +654,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4513,
-          "rank_score": 0.5627,
+          "match_score": 0.4459,
+          "rank_score": 0.5599,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -673,8 +673,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4491,
-          "rank_score": 0.5615,
+          "match_score": 0.4438,
+          "rank_score": 0.5588,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -692,8 +692,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.435,
-          "rank_score": 0.5297,
+          "match_score": 0.4292,
+          "rank_score": 0.5267,
           "source_category": "press",
           "is_official": false,
           "context_role": "sector",
@@ -711,8 +711,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.4337,
-          "rank_score": 0.529,
+          "match_score": 0.428,
+          "rank_score": 0.5261,
           "source_category": "press",
           "is_official": false,
           "context_role": "sector",
@@ -765,17 +765,17 @@
           "role": "outlook"
         },
         {
-          "id": "eac70ddaa40489a34996e6ace8c76051",
-          "title": "Petróleo abre em alta em meio a incertezas sobre guerra no Irã",
+          "id": "8d7fa8e7990f4081d1340b4165cf7cee",
+          "title": "Petróleo sobe quase 3% e fica próximo de voltar aos US$ 100",
           "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/petroleo-abre-em-alta-em-meio-a-incertezas-sobre-guerra-no-ira.shtml",
-          "published_at": "2026-05-31T20:22:00-03:00",
-          "summary": "O petróleo abriu em alta de 1% nas negociações referentes à segunda-feira (1º), com investidores reagindo às incertezas em torno de uma resolução da guerra no Oriente Médio.\n\nLeia mais (05/31/2026 - 20h22). O foco principal passa por Economia, Mercado.",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petroleo-sobe-quase-3-e-fica-proximo-de-voltar-aos-us-100.shtml",
+          "published_at": "2026-06-03T11:27:00-03:00",
+          "summary": "O preço do petróleo chegou a subir quase 3% nesta quarta-feira (3) com os novos ataques do Irã a países aliados dos EUA no Oriente Médio, e outro dia de bombardeios de Israel ao Líbano.\n\nLeia mais (06/03/2026 - 11h27). O foco principal passa por Economia, Mercado.",
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.4291,
-          "rank_score": 0.5236,
+          "match_score": 0.4324,
+          "rank_score": 0.5253,
           "source_category": "press",
           "is_official": false,
           "context_role": "sector",
@@ -824,8 +824,8 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.4047,
-          "rank_score": 0.5239,
+          "match_score": 0.403,
+          "rank_score": 0.5231,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "sector",

@@ -3,313 +3,313 @@
   "ticker": "WEGE3",
   "asset_name": "WEG ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-01T23:38:39.169675+00:00",
-  "recomputed_at": "2026-06-01T23:38:39.169675+00:00",
+  "generated_at": "2026-06-03T15:52:44.393345+00:00",
+  "recomputed_at": "2026-06-03T15:52:44.393345+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
   "asset_function": "crescimento",
   "current_snapshot": {
-    "current_price": 43.0,
+    "current_price": 42.25,
     "currency": "BRL",
-    "weight_pct": 9.73,
+    "weight_pct": 9.64,
     "sector": "Equipamentos Elétricos",
     "country": "BR",
     "asset_function": "crescimento"
   },
   "historical_window": {
-    "start_date": "2026-01-26",
-    "end_date": "2026-06-01",
+    "start_date": "2026-01-28",
+    "end_date": "2026-06-03",
     "news_count": 12,
     "has_price_history": false
   },
   "historical_series": [],
   "forecast_series": [
     {
-      "date": "2026-06-01",
-      "value": 43.0
-    },
-    {
-      "date": "2026-06-02",
-      "value": 42.68
-    },
-    {
       "date": "2026-06-03",
-      "value": 42.36
-    },
-    {
-      "date": "2026-06-04",
-      "value": 42.03
-    },
-    {
-      "date": "2026-06-05",
-      "value": 41.71
-    },
-    {
-      "date": "2026-06-08",
-      "value": 41.39
-    },
-    {
-      "date": "2026-06-09",
-      "value": 41.46
-    },
-    {
-      "date": "2026-06-10",
-      "value": 41.53
-    },
-    {
-      "date": "2026-06-11",
-      "value": 41.6
-    },
-    {
-      "date": "2026-06-12",
-      "value": 41.66
-    },
-    {
-      "date": "2026-06-15",
-      "value": 41.73
-    },
-    {
-      "date": "2026-06-16",
-      "value": 41.8
-    },
-    {
-      "date": "2026-06-17",
-      "value": 41.87
-    },
-    {
-      "date": "2026-06-18",
-      "value": 41.94
-    },
-    {
-      "date": "2026-06-19",
-      "value": 42.01
-    },
-    {
-      "date": "2026-06-22",
-      "value": 42.08
-    },
-    {
-      "date": "2026-06-23",
-      "value": 42.15
-    },
-    {
-      "date": "2026-06-24",
-      "value": 42.22
-    },
-    {
-      "date": "2026-06-25",
-      "value": 42.28
-    },
-    {
-      "date": "2026-06-26",
-      "value": 42.35
-    },
-    {
-      "date": "2026-06-29",
-      "value": 42.42
-    },
-    {
-      "date": "2026-06-30",
-      "value": 42.49
-    },
-    {
-      "date": "2026-07-01",
-      "value": 42.45
-    },
-    {
-      "date": "2026-07-02",
-      "value": 42.42
-    },
-    {
-      "date": "2026-07-03",
-      "value": 42.38
-    },
-    {
-      "date": "2026-07-06",
-      "value": 42.35
-    },
-    {
-      "date": "2026-07-07",
-      "value": 42.31
-    },
-    {
-      "date": "2026-07-08",
-      "value": 42.27
-    },
-    {
-      "date": "2026-07-09",
-      "value": 42.24
-    },
-    {
-      "date": "2026-07-10",
-      "value": 42.2
-    },
-    {
-      "date": "2026-07-13",
       "value": 42.16
     },
     {
-      "date": "2026-07-14",
-      "value": 42.13
+      "date": "2026-06-04",
+      "value": 41.88
     },
     {
-      "date": "2026-07-15",
-      "value": 42.09
+      "date": "2026-06-05",
+      "value": 41.6
     },
     {
-      "date": "2026-07-16",
-      "value": 42.06
+      "date": "2026-06-08",
+      "value": 41.32
     },
     {
-      "date": "2026-07-17",
-      "value": 42.02
+      "date": "2026-06-09",
+      "value": 41.04
     },
     {
-      "date": "2026-07-20",
-      "value": 41.98
+      "date": "2026-06-10",
+      "value": 40.76
     },
     {
-      "date": "2026-07-21",
-      "value": 41.95
+      "date": "2026-06-11",
+      "value": 40.74
     },
     {
-      "date": "2026-07-22",
-      "value": 41.91
+      "date": "2026-06-12",
+      "value": 40.73
     },
     {
-      "date": "2026-07-23",
-      "value": 41.87
+      "date": "2026-06-15",
+      "value": 40.71
     },
     {
-      "date": "2026-07-24",
-      "value": 41.84
+      "date": "2026-06-16",
+      "value": 40.7
     },
     {
-      "date": "2026-07-27",
-      "value": 41.8
-    },
-    {
-      "date": "2026-07-28",
-      "value": 41.77
-    },
-    {
-      "date": "2026-07-29",
-      "value": 41.73
-    },
-    {
-      "date": "2026-07-30",
-      "value": 41.52
-    },
-    {
-      "date": "2026-07-31",
-      "value": 41.31
-    },
-    {
-      "date": "2026-08-03",
-      "value": 41.1
-    },
-    {
-      "date": "2026-08-04",
-      "value": 40.89
-    },
-    {
-      "date": "2026-08-05",
+      "date": "2026-06-17",
       "value": 40.68
     },
     {
-      "date": "2026-08-06",
-      "value": 40.48
+      "date": "2026-06-18",
+      "value": 40.66
     },
     {
-      "date": "2026-08-07",
-      "value": 40.27
+      "date": "2026-06-19",
+      "value": 40.65
     },
     {
-      "date": "2026-08-10",
+      "date": "2026-06-22",
+      "value": 40.63
+    },
+    {
+      "date": "2026-06-23",
+      "value": 40.61
+    },
+    {
+      "date": "2026-06-24",
+      "value": 40.6
+    },
+    {
+      "date": "2026-06-25",
+      "value": 40.58
+    },
+    {
+      "date": "2026-06-26",
+      "value": 40.56
+    },
+    {
+      "date": "2026-06-29",
+      "value": 40.55
+    },
+    {
+      "date": "2026-06-30",
+      "value": 40.53
+    },
+    {
+      "date": "2026-07-01",
+      "value": 40.52
+    },
+    {
+      "date": "2026-07-02",
+      "value": 40.5
+    },
+    {
+      "date": "2026-07-03",
+      "value": 40.41
+    },
+    {
+      "date": "2026-07-06",
+      "value": 40.33
+    },
+    {
+      "date": "2026-07-07",
+      "value": 40.24
+    },
+    {
+      "date": "2026-07-08",
+      "value": 40.15
+    },
+    {
+      "date": "2026-07-09",
       "value": 40.06
     },
     {
-      "date": "2026-08-11",
-      "value": 39.85
+      "date": "2026-07-10",
+      "value": 39.98
     },
     {
-      "date": "2026-08-12",
-      "value": 39.64
+      "date": "2026-07-13",
+      "value": 39.89
     },
     {
-      "date": "2026-08-13",
-      "value": 39.43
+      "date": "2026-07-14",
+      "value": 39.8
     },
     {
-      "date": "2026-08-14",
-      "value": 39.22
+      "date": "2026-07-15",
+      "value": 39.72
     },
     {
-      "date": "2026-08-17",
-      "value": 39.01
+      "date": "2026-07-16",
+      "value": 39.63
     },
     {
-      "date": "2026-08-18",
-      "value": 38.8
+      "date": "2026-07-17",
+      "value": 39.54
     },
     {
-      "date": "2026-08-19",
-      "value": 38.59
+      "date": "2026-07-20",
+      "value": 39.45
     },
     {
-      "date": "2026-08-20",
+      "date": "2026-07-21",
+      "value": 39.37
+    },
+    {
+      "date": "2026-07-22",
+      "value": 39.28
+    },
+    {
+      "date": "2026-07-23",
+      "value": 39.19
+    },
+    {
+      "date": "2026-07-24",
+      "value": 39.11
+    },
+    {
+      "date": "2026-07-27",
+      "value": 39.02
+    },
+    {
+      "date": "2026-07-28",
+      "value": 38.93
+    },
+    {
+      "date": "2026-07-29",
+      "value": 38.84
+    },
+    {
+      "date": "2026-07-30",
+      "value": 38.76
+    },
+    {
+      "date": "2026-07-31",
+      "value": 38.67
+    },
+    {
+      "date": "2026-08-03",
+      "value": 38.53
+    },
+    {
+      "date": "2026-08-04",
       "value": 38.39
     },
     {
+      "date": "2026-08-05",
+      "value": 38.24
+    },
+    {
+      "date": "2026-08-06",
+      "value": 38.1
+    },
+    {
+      "date": "2026-08-07",
+      "value": 37.96
+    },
+    {
+      "date": "2026-08-10",
+      "value": 37.82
+    },
+    {
+      "date": "2026-08-11",
+      "value": 37.67
+    },
+    {
+      "date": "2026-08-12",
+      "value": 37.53
+    },
+    {
+      "date": "2026-08-13",
+      "value": 37.39
+    },
+    {
+      "date": "2026-08-14",
+      "value": 37.25
+    },
+    {
+      "date": "2026-08-17",
+      "value": 37.1
+    },
+    {
+      "date": "2026-08-18",
+      "value": 36.96
+    },
+    {
+      "date": "2026-08-19",
+      "value": 36.82
+    },
+    {
+      "date": "2026-08-20",
+      "value": 36.68
+    },
+    {
       "date": "2026-08-21",
-      "value": 38.18
+      "value": 36.53
     },
     {
       "date": "2026-08-24",
-      "value": 37.97
+      "value": 36.39
     },
     {
       "date": "2026-08-25",
-      "value": 37.76
+      "value": 36.25
     },
     {
       "date": "2026-08-26",
-      "value": 37.55
+      "value": 36.11
     },
     {
       "date": "2026-08-27",
-      "value": 37.34
+      "value": 35.96
+    },
+    {
+      "date": "2026-08-28",
+      "value": 35.82
+    },
+    {
+      "date": "2026-08-31",
+      "value": 35.68
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 41.39,
-      "predicted_return": -0.037511,
-      "confidence": 0.2081
+      "predicted_price": 40.76,
+      "predicted_return": -0.033295,
+      "confidence": 0.2593
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 42.49,
-      "predicted_return": -0.011762,
+      "predicted_price": 40.5,
+      "predicted_return": -0.039488,
       "confidence": 0.06
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 41.73,
-      "predicted_return": -0.029606,
+      "predicted_price": 38.67,
+      "predicted_return": -0.082726,
       "confidence": 0.06
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 37.34,
-      "predicted_return": -0.131601,
+      "predicted_price": 35.68,
+      "predicted_return": -0.153705,
       "confidence": 0.05
     }
   ],
@@ -324,10 +324,10 @@
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": -13.16,
-    "forecast_price_selected": 37.34,
+    "forecast_return_selected_pct": -15.37,
+    "forecast_price_selected": 35.68,
     "forecast_confidence_selected": 0.05,
-    "forecast_news_adjustment_pct": -1.92
+    "forecast_news_adjustment_pct": -2.86
   },
   "outlook_3m": {
     "scenario": "pressionado",
@@ -335,23 +335,23 @@
       "juros",
       "inflacao",
       "cambio",
-      "commodities"
+      "geopolitica"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 43.00. Hoje representa cerca de 9.7% da carteira. O modelo de 3 meses hoje aponta queda, com retorno estimado de -13.2% e confianca de 5%. O ajuste contextual das noticias adiciona -1.9% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.59. Nesse conjunto, o peso informacional esta distribuido em fundamento (2), macro (4), setorial (0) e fluxo (0).",
-    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -13.2% e preco estimado perto de 37.34. O contexto de noticias ajusta essa leitura em -1.7%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 42.25. Hoje representa cerca de 9.6% da carteira. O modelo de 3 meses hoje aponta queda, com retorno estimado de -15.4% e confianca de 5%. O ajuste contextual das noticias adiciona -2.9% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.59. Nesse conjunto, o peso informacional esta distribuido em fundamento (1), macro (5), setorial (0) e fluxo (0).",
+    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%; Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -15.4% e preco estimado perto de 35.68. O contexto de noticias ajusta essa leitura em -2.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
-      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global.",
-      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, commodities. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Planilhas e Calculadoras on-line e gratuitas. Baixe agora!; Global."
+      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%; Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.",
+      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%; Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.",
+      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%; Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -3.8% e preco estimado perto de 41.39. O contexto de noticias ajusta essa leitura em -0.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -1.2% e preco estimado perto de 42.49. O contexto de noticias ajusta essa leitura em -1.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -3.0% e preco estimado perto de 41.73. O contexto de noticias ajusta essa leitura em -1.7%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -13.2% e preco estimado perto de 37.34. O contexto de noticias ajusta essa leitura em -1.7%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -3.3% e preco estimado perto de 40.76. O contexto de noticias ajusta essa leitura em -1.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -3.9% e preco estimado perto de 40.50. O contexto de noticias ajusta essa leitura em -2.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -8.3% e preco estimado perto de 38.67. O contexto de noticias ajusta essa leitura em -2.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -15.4% e preco estimado perto de 35.68. O contexto de noticias ajusta essa leitura em -2.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
@@ -366,12 +366,50 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.347,
-      "rank_score": 0.5089,
+      "match_score": 0.3418,
+      "rank_score": 0.5062,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+      "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+      "published_at": "2026-06-03T15:37:34.696716+00:00",
+      "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.36,
+      "rank_score": 0.5037,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "03c1287e89071e3c85b905d8a3e57db4",
+      "title": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
+      "published_at": "2026-06-03T15:37:34.696716+00:00",
+      "summary": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.\n\nO foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.36,
+      "rank_score": 0.5037,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
       "analysis_category": "macro",
       "role": "outlook"
     },
@@ -385,8 +423,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3513,
-      "rank_score": 0.5037,
+      "match_score": 0.3459,
+      "rank_score": 0.5009,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -404,8 +442,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3513,
-      "rank_score": 0.5037,
+      "match_score": 0.3459,
+      "rank_score": 0.5009,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -423,8 +461,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3492,
-      "rank_score": 0.5026,
+      "match_score": 0.3439,
+      "rank_score": 0.4998,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -442,14 +480,33 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3491,
-      "rank_score": 0.5025,
+      "match_score": 0.3438,
+      "rank_score": 0.4998,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "fundamento",
-      "role": "outlook"
+      "role": "historical"
+    },
+    {
+      "id": "6476d1826c1e6586e530d9f9f2a7577b",
+      "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
+      "published_at": "2026-06-03T10:39:00-03:00",
+      "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.3573,
+      "rank_score": 0.4993,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "historical"
     },
     {
       "id": "68fa2f4903ea31a203e21b6b4233a73e",
@@ -461,14 +518,14 @@
       "sentiment_score": 0.14285714285714285,
       "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.3471,
-      "rank_score": 0.4854,
+      "match_score": 0.3419,
+      "rank_score": 0.4827,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "cdd7cde965d0db8917bcc712e4a3459b",
@@ -480,8 +537,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.315,
-      "rank_score": 0.4743,
+      "match_score": 0.3092,
+      "rank_score": 0.4713,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -499,8 +556,8 @@
       "sentiment_score": 0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.356,
-      "rank_score": 0.4686,
+      "match_score": 0.3503,
+      "rank_score": 0.4657,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -518,77 +575,20 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.3047,
-      "rank_score": 0.4649,
+      "match_score": 0.303,
+      "rank_score": 0.4641,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "macro",
       "source_confidence_weight": 0.95,
       "analysis_category": "fundamento",
       "role": "historical"
-    },
-    {
-      "id": "c3af7442b703c36b5ddd454858c4a7bc",
-      "title": "Governo atrasa novamente pagamento de subvenção ao diesel",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/governo-atrasa-novamente-pagamento-de-subvencao-ao-diesel.shtml",
-      "published_at": "2026-06-01T19:30:00-03:00",
-      "summary": "Empresas que aderiram ao programa de subvenção ao óleo diesel criado pelo governo para enfrentar efeitos da guerra no Irã seguem sem receber ressarcimento pelas vendas do produto.\n\nNa sexta-feira (29), venceu o prazo para o pagamento do mês de abril. Leia mais (06/01/2026 - 19h30). O foco principal passa por Economia, Mercado.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.28,
-      "relevance_score": 0.5,
-      "match_score": 0.3574,
-      "rank_score": 0.4588,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "3dbeed313bcadecfe40d2b70e190d0ca",
-      "title": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS",
-      "source_name": "Todas as Notícias",
-      "source_url": "https://br.investing.com/news/analyst-ratings/sofrendo-com-o-ibovespa-esta-acao-da-b3-escolhida-por-ia-sobe-quase-20-neste-mes-1949007",
-      "published_at": "2026-05-25T00:21:25+00:00",
-      "summary": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS. Notícia menciona B3SA3.",
-      "sentiment_score": 1.0,
-      "impact_score": 0.75,
-      "relevance_score": 0.5,
-      "match_score": 0.2878,
-      "rank_score": 0.4572,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "fluxo",
-      "role": "historical"
-    },
-    {
-      "id": "645bc96e1a4e4c459f852c8cc290b56d",
-      "title": "Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar?",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-tem-maior-queda-mensal-desde-2023-com-debandada-dos-gringos-o-que-esperar/",
-      "published_at": "2026-05-29T21:01:22+00:00",
-      "summary": "Índice teve baixa de 7,22%, maior queda desde fevereiro de 2023, quando caiu 7,49%.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Mercado doméstico Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar? O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.6,
-      "impact_score": 0.63,
-      "relevance_score": 0.5,
-      "match_score": 0.3021,
-      "rank_score": 0.4466,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
     }
   ],
   "source_groups": [
     {
       "source_name": "InfoMoney",
-      "count": 8,
+      "count": 9,
       "items": [
         {
           "id": "d4ad77c8fe0dba39b783708103c1403f",
@@ -600,12 +600,50 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.347,
-          "rank_score": 0.5089,
+          "match_score": 0.3418,
+          "rank_score": 0.5062,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+          "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+          "published_at": "2026-06-03T15:37:34.696716+00:00",
+          "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.36,
+          "rank_score": 0.5037,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "03c1287e89071e3c85b905d8a3e57db4",
+          "title": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
+          "published_at": "2026-06-03T15:37:34.696716+00:00",
+          "summary": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.\n\nO foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.36,
+          "rank_score": 0.5037,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
           "analysis_category": "macro",
           "role": "outlook"
         },
@@ -619,8 +657,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3513,
-          "rank_score": 0.5037,
+          "match_score": 0.3459,
+          "rank_score": 0.5009,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -638,8 +676,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3513,
-          "rank_score": 0.5037,
+          "match_score": 0.3459,
+          "rank_score": 0.5009,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -657,8 +695,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3492,
-          "rank_score": 0.5026,
+          "match_score": 0.3439,
+          "rank_score": 0.4998,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -676,14 +714,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3491,
-          "rank_score": 0.5025,
+          "match_score": 0.3438,
+          "rank_score": 0.4998,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "fundamento",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "68fa2f4903ea31a203e21b6b4233a73e",
@@ -695,14 +733,14 @@
           "sentiment_score": 0.14285714285714285,
           "impact_score": 0.4928571428571429,
           "relevance_score": 0.5,
-          "match_score": 0.3471,
-          "rank_score": 0.4854,
+          "match_score": 0.3419,
+          "rank_score": 0.4827,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "cdd7cde965d0db8917bcc712e4a3459b",
@@ -714,32 +752,13 @@
           "sentiment_score": -1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.315,
-          "rank_score": 0.4743,
+          "match_score": 0.3092,
+          "rank_score": 0.4713,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.75,
           "analysis_category": "fluxo",
-          "role": "historical"
-        },
-        {
-          "id": "645bc96e1a4e4c459f852c8cc290b56d",
-          "title": "Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar?",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-tem-maior-queda-mensal-desde-2023-com-debandada-dos-gringos-o-que-esperar/",
-          "published_at": "2026-05-29T21:01:22+00:00",
-          "summary": "Índice teve baixa de 7,22%, maior queda desde fevereiro de 2023, quando caiu 7,49%.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Mercado doméstico Ibovespa tem maior queda mensal desde 2023 com debandada dos gringos: o que esperar? O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.6,
-          "impact_score": 0.63,
-          "relevance_score": 0.5,
-          "match_score": 0.3021,
-          "rank_score": 0.4466,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
           "role": "historical"
         }
       ]
@@ -748,6 +767,25 @@
       "source_name": "Folha.com - Mercado - Principal",
       "count": 2,
       "items": [
+        {
+          "id": "6476d1826c1e6586e530d9f9f2a7577b",
+          "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
+          "published_at": "2026-06-03T10:39:00-03:00",
+          "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.3573,
+          "rank_score": 0.4993,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "historical"
+        },
         {
           "id": "7cbaf75733e1b76778881ee3877a6adb",
           "title": "Economistas sobem previsão da inflação para 2026 e os dois próximos anos",
@@ -758,57 +796,13 @@
           "sentiment_score": 0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.356,
-          "rank_score": 0.4686,
+          "match_score": 0.3503,
+          "rank_score": 0.4657,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "c3af7442b703c36b5ddd454858c4a7bc",
-          "title": "Governo atrasa novamente pagamento de subvenção ao diesel",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/governo-atrasa-novamente-pagamento-de-subvencao-ao-diesel.shtml",
-          "published_at": "2026-06-01T19:30:00-03:00",
-          "summary": "Empresas que aderiram ao programa de subvenção ao óleo diesel criado pelo governo para enfrentar efeitos da guerra no Irã seguem sem receber ressarcimento pelas vendas do produto.\n\nNa sexta-feira (29), venceu o prazo para o pagamento do mês de abril. Leia mais (06/01/2026 - 19h30). O foco principal passa por Economia, Mercado.",
-          "sentiment_score": -0.1,
-          "impact_score": 0.28,
-          "relevance_score": 0.5,
-          "match_score": 0.3574,
-          "rank_score": 0.4588,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
-        }
-      ]
-    },
-    {
-      "source_name": "Todas as Notícias",
-      "count": 1,
-      "items": [
-        {
-          "id": "3dbeed313bcadecfe40d2b70e190d0ca",
-          "title": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS",
-          "source_name": "Todas as Notícias",
-          "source_url": "https://br.investing.com/news/analyst-ratings/sofrendo-com-o-ibovespa-esta-acao-da-b3-escolhida-por-ia-sobe-quase-20-neste-mes-1949007",
-          "published_at": "2026-05-25T00:21:25+00:00",
-          "summary": "Sofrendo com o Ibovespa? Esta ação da B3 escolhida por IA SOBE quase 25% NESTE MÊS. Notícia menciona B3SA3.",
-          "sentiment_score": 1.0,
-          "impact_score": 0.75,
-          "relevance_score": 0.5,
-          "match_score": 0.2878,
-          "rank_score": 0.4572,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "fluxo",
           "role": "historical"
         }
       ]
@@ -827,8 +821,8 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.3047,
-          "rank_score": 0.4649,
+          "match_score": 0.303,
+          "rank_score": 0.4641,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "macro",
