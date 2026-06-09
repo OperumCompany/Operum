@@ -137,6 +137,12 @@ class ForecastService:
                 return None
             if isinstance(df.columns, pd.MultiIndex):
                 df.columns = [col[0] if isinstance(col, tuple) else col for col in df.columns]
+            numeric_cols = [col for col in ["Close", "High", "Low", "Open", "Volume"] if col in df.columns]
+            if numeric_cols:
+                df[numeric_cols] = df[numeric_cols].apply(pd.to_numeric, errors="coerce")
+                df = df.dropna(subset=["Close"])
+            if df.empty:
+                return None
             return df
         except Exception as e:
             logger.debug(f"Erro ao baixar dados de {ticker}: {e}")
@@ -171,9 +177,11 @@ class ForecastService:
 
             future_price = px[i + horizon_days]
             current_price = px[i]
-            if current_price == 0:
+            if current_price == 0 or not np.isfinite(current_price) or not np.isfinite(future_price):
                 continue
             future_return = float((future_price / current_price) - 1.0)
+            if not np.isfinite(future_return):
+                continue
 
             X_list.append(feat)
             y_list.append(future_return)
@@ -181,12 +189,28 @@ class ForecastService:
         if len(X_list) < 20:
             return {"status": "error", "error": f"Poucas amostras para horizonte {horizon_days}d"}
 
-        X = pd.DataFrame(X_list).fillna(0)
-        y = np.array(y_list)
+        X = pd.DataFrame(X_list).replace([np.inf, -np.inf], np.nan).fillna(0.0)
+        y = np.array(y_list, dtype=float)
+
+        valid_mask = np.isfinite(y)
+        if not valid_mask.all():
+            X = X.loc[valid_mask].reset_index(drop=True)
+            y = y[valid_mask]
+
+        if len(X) < 20 or len(y) < 20:
+            return {"status": "error", "error": f"Dados invalidos apos limpeza para horizonte {horizon_days}d"}
 
         split = int(len(X) * 0.8)
         X_train, X_test = X.iloc[:split], X.iloc[split:]
         y_train, y_test = y[:split], y[split:]
+
+        if len(X_train) < 5 or not np.isfinite(y_train).all():
+            return {"status": "error", "error": f"Base de treino invalida para horizonte {horizon_days}d"}
+
+        if len(y_test) and not np.isfinite(y_test).all():
+            valid_test_mask = np.isfinite(y_test)
+            X_test = X_test.iloc[valid_test_mask]
+            y_test = y_test[valid_test_mask]
 
         model = xgb.XGBRegressor(
             n_estimators=220,
@@ -237,7 +261,11 @@ class ForecastService:
         horizons = horizons or sorted(set(FORECAST_HORIZONS.values()))
         results = []
         for horizon_days in horizons:
-            results.append(self._train_single_horizon(ticker, df, horizon_days))
+            try:
+                results.append(self._train_single_horizon(ticker, df, horizon_days))
+            except Exception as exc:
+                logger.exception("Falha ao treinar horizonte %sd para %s", horizon_days, ticker)
+                results.append({"status": "error", "error": f"Falha no treino {horizon_days}d: {exc}"})
 
         errors = [item["error"] for item in results if item.get("status") == "error"]
         trained = [item for item in results if item.get("status") == "trained"]
@@ -262,11 +290,15 @@ class ForecastService:
             if not loaded:
                 return None
 
-        features = self._prepare_features(df).fillna(0)
+        features = self._prepare_features(df).replace([np.inf, -np.inf], np.nan).fillna(0.0)
         model = self.models[ticker][horizon_days]
         pred_return = float(model.predict(features)[0])
         last_price = float(df["Close"].values[-1])
+        if not np.isfinite(pred_return) or not np.isfinite(last_price):
+            return None
         predicted_price = last_price * (1 + pred_return)
+        if not np.isfinite(predicted_price):
+            return None
         confidence = self._estimate_confidence(ticker, horizon_days, pred_return, df)
         label = next((key for key, value in FORECAST_HORIZONS.items() if value == horizon_days), f"{horizon_days}d")
         return {

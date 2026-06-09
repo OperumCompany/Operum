@@ -3,359 +3,651 @@
   "ticker": "VALE3",
   "asset_name": "Vale ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-03T15:52:41.114262+00:00",
-  "recomputed_at": "2026-06-03T15:52:41.114262+00:00",
+  "generated_at": "2026-06-09T00:59:28.309526+00:00",
+  "recomputed_at": "2026-06-09T00:59:28.309526+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
-  "asset_function": "estabilidade",
+  "asset_function": "crescimento",
   "current_snapshot": {
-    "current_price": 82.19,
+    "current_price": 78.07,
     "currency": "BRL",
-    "weight_pct": 12.5,
+    "weight_pct": 12.0,
     "sector": "Mineração",
     "country": "BR",
-    "asset_function": "estabilidade"
+    "asset_function": "crescimento"
   },
   "historical_window": {
-    "start_date": "2026-01-28",
-    "end_date": "2026-06-03",
+    "start_date": "2026-02-03",
+    "end_date": "2026-06-09",
     "news_count": 12,
-    "has_price_history": false
+    "has_price_history": true
   },
-  "historical_series": [],
-  "forecast_series": [
+  "historical_series": [
     {
-      "date": "2026-06-03",
-      "value": 81.99
+      "date": "2026-03-05",
+      "value": 81.29
     },
     {
-      "date": "2026-06-04",
-      "value": 81.01
+      "date": "2026-03-06",
+      "value": 78.86
+    },
+    {
+      "date": "2026-03-09",
+      "value": 79.26
+    },
+    {
+      "date": "2026-03-10",
+      "value": 80.56
+    },
+    {
+      "date": "2026-03-11",
+      "value": 79.85
+    },
+    {
+      "date": "2026-03-12",
+      "value": 79.24
+    },
+    {
+      "date": "2026-03-13",
+      "value": 78.3
+    },
+    {
+      "date": "2026-03-16",
+      "value": 78.84
+    },
+    {
+      "date": "2026-03-17",
+      "value": 78.96
+    },
+    {
+      "date": "2026-03-18",
+      "value": 77.13
+    },
+    {
+      "date": "2026-03-19",
+      "value": 76.63
+    },
+    {
+      "date": "2026-03-20",
+      "value": 75.55
+    },
+    {
+      "date": "2026-03-23",
+      "value": 77.49
+    },
+    {
+      "date": "2026-03-24",
+      "value": 78.1
+    },
+    {
+      "date": "2026-03-25",
+      "value": 79.55
+    },
+    {
+      "date": "2026-03-26",
+      "value": 78.91
+    },
+    {
+      "date": "2026-03-27",
+      "value": 79.0
+    },
+    {
+      "date": "2026-03-30",
+      "value": 79.5
+    },
+    {
+      "date": "2026-03-31",
+      "value": 82.48
+    },
+    {
+      "date": "2026-04-01",
+      "value": 83.0
+    },
+    {
+      "date": "2026-04-02",
+      "value": 83.55
+    },
+    {
+      "date": "2026-04-06",
+      "value": 83.09
+    },
+    {
+      "date": "2026-04-07",
+      "value": 83.69
+    },
+    {
+      "date": "2026-04-08",
+      "value": 85.59
+    },
+    {
+      "date": "2026-04-09",
+      "value": 84.69
+    },
+    {
+      "date": "2026-04-10",
+      "value": 85.59
+    },
+    {
+      "date": "2026-04-13",
+      "value": 87.36
+    },
+    {
+      "date": "2026-04-14",
+      "value": 88.3
+    },
+    {
+      "date": "2026-04-15",
+      "value": 88.44
+    },
+    {
+      "date": "2026-04-16",
+      "value": 87.44
+    },
+    {
+      "date": "2026-04-17",
+      "value": 89.75
+    },
+    {
+      "date": "2026-04-20",
+      "value": 88.73
+    },
+    {
+      "date": "2026-04-22",
+      "value": 87.22
+    },
+    {
+      "date": "2026-04-23",
+      "value": 85.97
+    },
+    {
+      "date": "2026-04-24",
+      "value": 85.87
+    },
+    {
+      "date": "2026-04-27",
+      "value": 85.5
+    },
+    {
+      "date": "2026-04-28",
+      "value": 84.39
+    },
+    {
+      "date": "2026-04-29",
+      "value": 79.44
+    },
+    {
+      "date": "2026-04-30",
+      "value": 81.18
+    },
+    {
+      "date": "2026-05-04",
+      "value": 78.66
+    },
+    {
+      "date": "2026-05-05",
+      "value": 78.39
+    },
+    {
+      "date": "2026-05-06",
+      "value": 81.23
+    },
+    {
+      "date": "2026-05-07",
+      "value": 80.07
+    },
+    {
+      "date": "2026-05-08",
+      "value": 80.8
+    },
+    {
+      "date": "2026-05-11",
+      "value": 83.45
+    },
+    {
+      "date": "2026-05-12",
+      "value": 83.25
+    },
+    {
+      "date": "2026-05-13",
+      "value": 84.3
+    },
+    {
+      "date": "2026-05-14",
+      "value": 82.87
+    },
+    {
+      "date": "2026-05-15",
+      "value": 83.5
+    },
+    {
+      "date": "2026-05-18",
+      "value": 81.83
+    },
+    {
+      "date": "2026-05-19",
+      "value": 81.02
+    },
+    {
+      "date": "2026-05-20",
+      "value": 82.0
+    },
+    {
+      "date": "2026-05-21",
+      "value": 82.63
+    },
+    {
+      "date": "2026-05-22",
+      "value": 83.1
+    },
+    {
+      "date": "2026-05-25",
+      "value": 83.59
+    },
+    {
+      "date": "2026-05-26",
+      "value": 83.07
+    },
+    {
+      "date": "2026-05-27",
+      "value": 83.45
+    },
+    {
+      "date": "2026-05-28",
+      "value": 83.96
+    },
+    {
+      "date": "2026-05-29",
+      "value": 82.82
+    },
+    {
+      "date": "2026-06-01",
+      "value": 81.7
+    },
+    {
+      "date": "2026-06-02",
+      "value": 85.0
+    },
+    {
+      "date": "2026-06-03",
+      "value": 81.79
     },
     {
       "date": "2026-06-05",
-      "value": 80.03
+      "value": 78.7
     },
     {
       "date": "2026-06-08",
-      "value": 79.05
-    },
+      "value": 78.07
+    }
+  ],
+  "forecast_series": [
     {
       "date": "2026-06-09",
       "value": 78.07
     },
     {
       "date": "2026-06-10",
-      "value": 77.09
+      "value": 78.2
     },
     {
       "date": "2026-06-11",
-      "value": 76.93
+      "value": 78.33
     },
     {
       "date": "2026-06-12",
-      "value": 76.77
+      "value": 78.45
     },
     {
       "date": "2026-06-15",
-      "value": 76.61
+      "value": 78.58
     },
     {
       "date": "2026-06-16",
-      "value": 76.45
+      "value": 78.71
     },
     {
       "date": "2026-06-17",
-      "value": 76.29
+      "value": 78.54
     },
     {
       "date": "2026-06-18",
-      "value": 76.13
+      "value": 78.37
     },
     {
       "date": "2026-06-19",
-      "value": 75.97
+      "value": 78.2
     },
     {
       "date": "2026-06-22",
-      "value": 75.81
+      "value": 78.02
     },
     {
       "date": "2026-06-23",
-      "value": 75.65
+      "value": 77.85
     },
     {
       "date": "2026-06-24",
-      "value": 75.49
+      "value": 77.68
     },
     {
       "date": "2026-06-25",
-      "value": 75.33
+      "value": 77.51
     },
     {
       "date": "2026-06-26",
-      "value": 75.17
+      "value": 77.34
     },
     {
       "date": "2026-06-29",
-      "value": 75.01
+      "value": 77.17
     },
     {
       "date": "2026-06-30",
-      "value": 74.85
+      "value": 77.0
     },
     {
       "date": "2026-07-01",
-      "value": 74.69
+      "value": 76.83
     },
     {
       "date": "2026-07-02",
-      "value": 74.53
+      "value": 76.66
     },
     {
       "date": "2026-07-03",
-      "value": 74.57
+      "value": 76.48
     },
     {
       "date": "2026-07-06",
-      "value": 74.61
+      "value": 76.31
     },
     {
       "date": "2026-07-07",
-      "value": 74.65
+      "value": 76.14
     },
     {
       "date": "2026-07-08",
-      "value": 74.69
+      "value": 75.97
     },
     {
       "date": "2026-07-09",
-      "value": 74.73
+      "value": 75.92
     },
     {
       "date": "2026-07-10",
-      "value": 74.77
+      "value": 75.86
     },
     {
       "date": "2026-07-13",
-      "value": 74.81
+      "value": 75.81
     },
     {
       "date": "2026-07-14",
-      "value": 74.85
+      "value": 75.75
     },
     {
       "date": "2026-07-15",
-      "value": 74.89
-    },
-    {
-      "date": "2026-07-16",
-      "value": 74.93
-    },
-    {
-      "date": "2026-07-17",
-      "value": 74.97
-    },
-    {
-      "date": "2026-07-20",
-      "value": 75.01
-    },
-    {
-      "date": "2026-07-21",
-      "value": 75.05
-    },
-    {
-      "date": "2026-07-22",
-      "value": 75.09
-    },
-    {
-      "date": "2026-07-23",
-      "value": 75.13
-    },
-    {
-      "date": "2026-07-24",
-      "value": 75.17
-    },
-    {
-      "date": "2026-07-27",
-      "value": 75.21
-    },
-    {
-      "date": "2026-07-28",
-      "value": 75.25
-    },
-    {
-      "date": "2026-07-29",
-      "value": 75.29
-    },
-    {
-      "date": "2026-07-30",
-      "value": 75.33
-    },
-    {
-      "date": "2026-07-31",
-      "value": 75.37
-    },
-    {
-      "date": "2026-08-03",
-      "value": 75.39
-    },
-    {
-      "date": "2026-08-04",
-      "value": 75.41
-    },
-    {
-      "date": "2026-08-05",
-      "value": 75.43
-    },
-    {
-      "date": "2026-08-06",
-      "value": 75.44
-    },
-    {
-      "date": "2026-08-07",
-      "value": 75.46
-    },
-    {
-      "date": "2026-08-10",
-      "value": 75.48
-    },
-    {
-      "date": "2026-08-11",
-      "value": 75.5
-    },
-    {
-      "date": "2026-08-12",
-      "value": 75.52
-    },
-    {
-      "date": "2026-08-13",
-      "value": 75.54
-    },
-    {
-      "date": "2026-08-14",
-      "value": 75.56
-    },
-    {
-      "date": "2026-08-17",
-      "value": 75.57
-    },
-    {
-      "date": "2026-08-18",
-      "value": 75.59
-    },
-    {
-      "date": "2026-08-19",
-      "value": 75.61
-    },
-    {
-      "date": "2026-08-20",
-      "value": 75.63
-    },
-    {
-      "date": "2026-08-21",
-      "value": 75.65
-    },
-    {
-      "date": "2026-08-24",
-      "value": 75.67
-    },
-    {
-      "date": "2026-08-25",
-      "value": 75.69
-    },
-    {
-      "date": "2026-08-26",
       "value": 75.7
     },
     {
+      "date": "2026-07-16",
+      "value": 75.64
+    },
+    {
+      "date": "2026-07-17",
+      "value": 75.59
+    },
+    {
+      "date": "2026-07-20",
+      "value": 75.53
+    },
+    {
+      "date": "2026-07-21",
+      "value": 75.48
+    },
+    {
+      "date": "2026-07-22",
+      "value": 75.42
+    },
+    {
+      "date": "2026-07-23",
+      "value": 75.37
+    },
+    {
+      "date": "2026-07-24",
+      "value": 75.31
+    },
+    {
+      "date": "2026-07-27",
+      "value": 75.26
+    },
+    {
+      "date": "2026-07-28",
+      "value": 75.2
+    },
+    {
+      "date": "2026-07-29",
+      "value": 75.15
+    },
+    {
+      "date": "2026-07-30",
+      "value": 75.09
+    },
+    {
+      "date": "2026-07-31",
+      "value": 75.04
+    },
+    {
+      "date": "2026-08-03",
+      "value": 74.98
+    },
+    {
+      "date": "2026-08-04",
+      "value": 74.93
+    },
+    {
+      "date": "2026-08-05",
+      "value": 74.87
+    },
+    {
+      "date": "2026-08-06",
+      "value": 74.82
+    },
+    {
+      "date": "2026-08-07",
+      "value": 75.02
+    },
+    {
+      "date": "2026-08-10",
+      "value": 75.23
+    },
+    {
+      "date": "2026-08-11",
+      "value": 75.43
+    },
+    {
+      "date": "2026-08-12",
+      "value": 75.64
+    },
+    {
+      "date": "2026-08-13",
+      "value": 75.84
+    },
+    {
+      "date": "2026-08-14",
+      "value": 76.04
+    },
+    {
+      "date": "2026-08-17",
+      "value": 76.25
+    },
+    {
+      "date": "2026-08-18",
+      "value": 76.45
+    },
+    {
+      "date": "2026-08-19",
+      "value": 76.65
+    },
+    {
+      "date": "2026-08-20",
+      "value": 76.86
+    },
+    {
+      "date": "2026-08-21",
+      "value": 77.06
+    },
+    {
+      "date": "2026-08-24",
+      "value": 77.27
+    },
+    {
+      "date": "2026-08-25",
+      "value": 77.47
+    },
+    {
+      "date": "2026-08-26",
+      "value": 77.67
+    },
+    {
       "date": "2026-08-27",
-      "value": 75.72
+      "value": 77.88
     },
     {
       "date": "2026-08-28",
-      "value": 75.74
+      "value": 78.08
     },
     {
       "date": "2026-08-31",
-      "value": 75.76
+      "value": 78.28
+    },
+    {
+      "date": "2026-09-01",
+      "value": 78.49
+    },
+    {
+      "date": "2026-09-02",
+      "value": 78.69
+    },
+    {
+      "date": "2026-09-03",
+      "value": 78.9
+    },
+    {
+      "date": "2026-09-04",
+      "value": 79.1
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 77.09,
-      "predicted_return": -0.059762,
-      "confidence": 0.2988
+      "predicted_price": 78.71,
+      "predicted_return": 0.008217,
+      "confidence": 0.2958
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 74.53,
-      "predicted_return": -0.091008,
-      "confidence": 0.4856
+      "predicted_price": 75.97,
+      "predicted_return": -0.026885,
+      "confidence": 0.4248
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 75.37,
-      "predicted_return": -0.080732,
-      "confidence": 0.3002
+      "predicted_price": 74.82,
+      "predicted_return": -0.041682,
+      "confidence": 0.1697
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 75.76,
-      "predicted_return": -0.076031,
-      "confidence": 0.5216
+      "predicted_price": 79.1,
+      "predicted_return": 0.013254,
+      "confidence": 0.465
     }
   ],
   "recent_performance": {
-    "change_selected_pct": null,
-    "change_1m_pct": null,
-    "change_2m_pct": null,
-    "change_3m_pct": null,
+    "change_selected_pct": -3.96,
+    "change_1m_pct": -2.5,
+    "change_2m_pct": -6.04,
+    "change_3m_pct": -3.96,
     "change_12m_pct": null,
-    "volatility_selected_pct": null,
-    "drawdown_selected_pct": null,
-    "beta_selected": null,
-    "correlation_selected": null,
+    "volatility_selected_pct": 29.77,
+    "drawdown_selected_pct": -13.01,
+    "beta_selected": 0.93,
+    "correlation_selected": 0.59,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": -7.6,
-    "forecast_price_selected": 75.76,
-    "forecast_confidence_selected": 0.5216,
-    "forecast_news_adjustment_pct": -1.87
+    "forecast_return_selected_pct": 1.33,
+    "forecast_price_selected": 79.1,
+    "forecast_confidence_selected": 0.465,
+    "forecast_news_adjustment_pct": -0.76
   },
   "outlook_3m": {
     "scenario": "pressionado",
     "dominant_topics": [
-      "inflacao",
-      "juros",
-      "cambio",
-      "commodities"
+      "inflacao"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 82.19. Hoje representa cerca de 12.5% da carteira. O modelo de 3 meses hoje aponta queda, com retorno estimado de -7.6% e confianca de 52%. O ajuste contextual das noticias adiciona -1.9% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.52. Nesse conjunto, o peso informacional esta distribuido em fundamento (1), macro (2), setorial (0) e fluxo (3).",
-    "recent": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas; 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -7.6% e preco estimado perto de 75.76. O contexto de noticias ajusta essa leitura em -2.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 78.07. Hoje representa cerca de 12.0% da carteira. No curto prazo, o momentum de 1 mes esta em -2.5%. O modelo de 3 meses hoje aponta estabilidade, com retorno estimado de +1.3% e confianca de 46%. O ajuste contextual das noticias adiciona -0.8% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.52. Nesse conjunto, o peso informacional esta distribuido em fundamento (1), macro (0), setorial (0) e fluxo (5).",
+    "recent": "No recorte dos ultimos 3 meses, o ativo variou -4.0%. A volatilidade anualizada equivalente ficou perto de 29.8%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 0.93, com correlacao de 0.59. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +1.3% e preco estimado perto de 79.10. O contexto de noticias ajusta essa leitura em +0.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas; 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?.",
-      "2m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas; 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?.",
-      "3m": "No noticiario do periodo, os temas mais recorrentes foram inflacao, juros, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas; 4º leilão do Eco Invest Brasil destrava R$ 13,2 bi para bioeconomia, turismo sustentável e infraestrutura no país, com foco na Amazônia Legal; Audiência vale mais que currículo? Que tal Virginia Fonseca operar seu coração?."
+      "1m": "No recorte dos ultimo mes, o ativo variou -2.5%. A volatilidade anualizada equivalente ficou perto de 30.6%. No mesmo intervalo, o drawdown observado foi de -8.2%. Contra IBOV, o beta estimado da janela ficou em 0.76, com correlacao de 0.38. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
+      "2m": "No recorte dos ultimos 2 meses, o ativo variou -6.0%. A volatilidade anualizada equivalente ficou perto de 32.1%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 1.00, com correlacao de 0.52. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
+      "3m": "No recorte dos ultimos 3 meses, o ativo variou -4.0%. A volatilidade anualizada equivalente ficou perto de 29.8%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 0.93, com correlacao de 0.59. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -6.0% e preco estimado perto de 77.09. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -9.1% e preco estimado perto de 74.53. O contexto de noticias ajusta essa leitura em -1.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -8.1% e preco estimado perto de 75.37. O contexto de noticias ajusta essa leitura em -2.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -7.6% e preco estimado perto de 75.76. O contexto de noticias ajusta essa leitura em -2.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +0.8% e preco estimado perto de 78.71. O contexto de noticias ajusta essa leitura em +0.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -2.7% e preco estimado perto de 75.97. O contexto de noticias ajusta essa leitura em +0.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -4.2% e preco estimado perto de 74.82. O contexto de noticias ajusta essa leitura em +0.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +1.3% e preco estimado perto de 79.10. O contexto de noticias ajusta essa leitura em +0.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
   "sources": [
+    {
+      "id": "68658711ddcb0c7f6d8dd1ad091aee8f",
+      "title": "Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-08062026/",
+      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "summary": "Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.75,
+      "relevance_score": 0.5,
+      "match_score": 0.765,
+      "rank_score": 0.7293,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "fluxo",
+      "role": "outlook"
+    },
+    {
+      "id": "ea48af19e250f4dd56c98737ac3df90f",
+      "title": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-de-02-com-pressao-de-vale-weg-sobe-apos-recomendacao/",
+      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "summary": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação.\n\nO texto menciona VALE3, WEGE3. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 0.0,
+      "impact_score": 0.45,
+      "relevance_score": 0.5,
+      "match_score": 0.765,
+      "rank_score": 0.6843,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "fluxo",
+      "role": "outlook"
+    },
     {
       "id": "db473338bb6ad2878703c9e95ea4ace2",
       "title": "Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas",
@@ -366,8 +658,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.8074,
-      "rank_score": 0.6638,
+      "match_score": 0.79,
+      "rank_score": 0.6548,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -385,13 +677,32 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.6968,
-      "rank_score": 0.6293,
+      "match_score": 0.6844,
+      "rank_score": 0.6229,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "asset",
       "source_confidence_weight": 0.95,
       "analysis_category": "fundamento",
+      "role": "outlook"
+    },
+    {
+      "id": "930c6eea8e04ae05754e6c39a38204ba",
+      "title": "iFood confirma vazamento de dados de 1,2 milhão de usuários",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/ifood-confirma-vazamento-de-dados-de-12-milhao-de-usuarios.shtml",
+      "published_at": "2026-06-03T14:45:00-03:00",
+      "summary": "O iFood disse nesta quarta-feira (3) que registrou o vazamento de dados de 1,2 milhão de seus usuários, o que equivale a 2% da base de usuários da empresa.\n\nSegundo a companhia, o ataque de hackers ocorreu em dezembro de 2025, mas teria sido contido rapidamente. O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.48000000000000004,
+      "relevance_score": 0.5,
+      "match_score": 0.6903,
+      "rank_score": 0.603,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fluxo",
       "role": "outlook"
     },
     {
@@ -404,8 +715,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.7016,
-      "rank_score": 0.6088,
+      "match_score": 0.6851,
+      "rank_score": 0.6003,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -423,14 +734,33 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.6981,
-      "rank_score": 0.607,
+      "match_score": 0.6823,
+      "rank_score": 0.5988,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.72,
       "analysis_category": "fluxo",
-      "role": "outlook"
+      "role": "historical"
+    },
+    {
+      "id": "6e9191d69b5ef07628b501c138106f88",
+      "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
+      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.36,
+      "rank_score": 0.5037,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "historical"
     },
     {
       "id": "d4ad77c8fe0dba39b783708103c1403f",
@@ -442,145 +772,69 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.3418,
-      "rank_score": 0.5062,
+      "match_score": 0.3271,
+      "rank_score": 0.4986,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
-      "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
-      "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+      "id": "497d48bcf07bb1a9442cb63a1d330df4",
+      "title": "Trump relança sua guerra tarifária a tempo de substituir outras taxas",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/trump-relanca-sua-guerra-tarifaria-a-tempo-de-substituir-outras-taxas.shtml",
+      "published_at": "2026-06-07T10:00:00-03:00",
+      "summary": "O presidente dos EUA, Donald Trump, emitiu uma enxurrada de ações comerciais esta semana enquanto seu governo busca reimpor novas tarifas sobre parceiros comerciais após a Suprema Corte derrubar as taxas impostas pelo presidente.\n\nLeia mais (06/07/2026 - 10h00). O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.3524,
+      "rank_score": 0.4967,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "0048229a6179b8807618d2898aa2f022",
+      "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
       "source_name": "InfoMoney",
       "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
-      "published_at": "2026-06-03T15:37:34.696716+00:00",
-      "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+      "published_at": "2026-06-04T04:03:05.260410+00:00",
+      "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.36,
-      "rank_score": 0.5037,
+      "match_score": 0.344,
+      "rank_score": 0.4954,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.75,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
-      "id": "03c1287e89071e3c85b905d8a3e57db4",
-      "title": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica",
+      "id": "d5d0f308cbddead43530d6a54a31afef",
+      "title": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
       "source_name": "InfoMoney",
       "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
-      "published_at": "2026-06-03T15:37:34.696716+00:00",
-      "summary": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.\n\nO foco principal passa por Economia, Mercado.",
+      "published_at": "2026-06-04T04:03:05.260410+00:00",
+      "summary": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros.\n\nO foco principal passa por Economia, Mercado.",
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.36,
-      "rank_score": 0.5037,
+      "match_score": 0.344,
+      "rank_score": 0.4954,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.75,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "1389a5a785c51cbd5efc0d383728baba",
-      "title": "Planilhas e Calculadoras on-line e gratuitas. Baixe agora!",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/conteudos/planilhas/",
-      "published_at": "2026-05-31T04:04:31.951890+00:00",
-      "summary": "As melhores planilhas e calculadoras do mercado financeiro! Planilha de controle financeiro, simulador de renda fixa, dividendos e muito mais!.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Planilhas Cursos E-books Relatórios Planilhas Simuladores Planilha de Gastos MensaisMonitore gastos e receitas para organizar seu orçamento e controle financeiro! O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.3459,
-      "rank_score": 0.5009,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "fundamento",
-      "role": "historical"
-    },
-    {
-      "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
-      "title": "Global",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/business/global/",
-      "published_at": "2026-05-31T04:04:31.943874+00:00",
-      "summary": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Global AgroEnergiaGlobalInovaçãoESGNegócios do Esportecom reportagens de 1º carro elétrico da Ferrari sofre forte reação negativa na Itália e em outros países 2 dias atrás Bilionário das finanças chamava IA de “lixo”, mas mudou de ideia e ficou “deprimido” 2 dias atrás CEO da Amazon, Andy Jassy, diz o que jovens profissionais devem fazer para o sucesso 2 dias atrás Por que o bilionário Peter Thiel está se mudando para a Argentina 2 dias atrás Continua depois da publicidade Comer alimentos saudáveis?\n\nNão, eles estão comendo “à moda bíblica” 2 dias atrás Anthropic supera OpenAI e se torna a startup de IA mais valiosa do mundo 2 dias atrás Filho de imigrantes cubanos, secretário de Trump se aproxima da meta de mudar a ilha 3 dias atrás Tribunais na China barram demissões por IA e pressionam empresas a manter empregos 3 dias atrás InfoMoney Últimas Notícias Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Brasil Consumo Esportes Carreira Saúde Colunistas Aprenda Relatórios Conteúdos Planilhas e Calculadoras Cursos Ebooks Multimídia Newsletters WhatsApp Podcasts Vídeos Web Stories Veja mais Fazer login Quem somos Anuncie Política de privacidade Política de cookies Preferências de Cookies Fale conosco © 2000-2026 InfoMoney. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.3459,
-      "rank_score": 0.5009,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
-      "title": "Irã avança com projeto que consolida gestão de Ormuz; assessor iraniano critica Trump",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ira-avanca-com-projeto-que-consolida-gestao-de-ormuz-assessor-iraniano-critica-trump/",
-      "published_at": "2026-05-30T12:30:00+00:00",
-      "summary": "De acordo com Salimi, a proposta deverá se tornar uma lei permanente após a tramitação legislativa.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Guerra Irã avança com projeto que consolida gestão de Ormuz; assessor iraniano critica Trump De acordo com Salimi, a proposta deverá se tornar uma lei permanente após a tramitação legislativa Estadão Conteúdo 30/05/2026 09h30 &bull; Atualizado 15 horas atrás Publicidade O Parlamento do Irã deverá aprovar em breve um projeto para formalizar a gestão e a soberania iraniana sobre o Estreito de Ormuz, declarou o integrante da Mesa Diretora da Casa, Alireza Salimi, à agência iraniana ISNA. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.3439,
-      "rank_score": 0.4998,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "629cddfde78d45fdde8891b65e011167",
-      "title": "EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/eua-determinam-inspecoes-em-jatos-embraer-phenom-300-apos-problema-em-testes/",
-      "published_at": "2026-05-30T11:48:00+00:00",
-      "summary": "Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Aviação EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações Estadão Conteúdo 30/05/2026 08h48 &bull; Atualizado 12 horas atrás Publicidade A Federal Aviation Administration (FAA), agência reguladora da aviação civil dos Estados Unidos, publicará na segunda-feira, 1º, no Federal Register, o diário oficial dos EUA, uma nova diretriz de aeronavegabilidade (AD, na sigla em inglês) para determinados jatos executivos Embraer Phenom 300 (EMB-505), após identificar a possibilidade de resultados inválidos em testes do estabilizador horizontal realizados em algumas aeronaves. O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.3438,
-      "rank_score": 0.4998,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "fundamento",
-      "role": "historical"
-    },
-    {
-      "id": "6476d1826c1e6586e530d9f9f2a7577b",
-      "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
-      "published_at": "2026-06-03T10:39:00-03:00",
-      "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
-      "sentiment_score": -1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.3573,
-      "rank_score": 0.4993,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
       "analysis_category": "macro",
       "role": "historical"
     }
@@ -588,8 +842,65 @@
   "source_groups": [
     {
       "source_name": "InfoMoney",
-      "count": 7,
+      "count": 6,
       "items": [
+        {
+          "id": "68658711ddcb0c7f6d8dd1ad091aee8f",
+          "title": "Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-08062026/",
+          "published_at": "2026-06-09T00:58:38.980555+00:00",
+          "summary": "Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.75,
+          "relevance_score": 0.5,
+          "match_score": 0.765,
+          "rank_score": 0.7293,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
+        {
+          "id": "ea48af19e250f4dd56c98737ac3df90f",
+          "title": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-de-02-com-pressao-de-vale-weg-sobe-apos-recomendacao/",
+          "published_at": "2026-06-09T00:58:38.980555+00:00",
+          "summary": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação.\n\nO texto menciona VALE3, WEGE3. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 0.0,
+          "impact_score": 0.45,
+          "relevance_score": 0.5,
+          "match_score": 0.765,
+          "rank_score": 0.6843,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
+        {
+          "id": "6e9191d69b5ef07628b501c138106f88",
+          "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
+          "published_at": "2026-06-09T00:58:38.980555+00:00",
+          "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.36,
+          "rank_score": 0.5037,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "historical"
+        },
         {
           "id": "d4ad77c8fe0dba39b783708103c1403f",
           "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
@@ -600,134 +911,58 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.3418,
-          "rank_score": 0.5062,
+          "match_score": 0.3271,
+          "rank_score": 0.4986,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
-          "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
-          "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+          "id": "0048229a6179b8807618d2898aa2f022",
+          "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
           "source_name": "InfoMoney",
           "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
-          "published_at": "2026-06-03T15:37:34.696716+00:00",
-          "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+          "published_at": "2026-06-04T04:03:05.260410+00:00",
+          "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.36,
-          "rank_score": 0.5037,
+          "match_score": 0.344,
+          "rank_score": 0.4954,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.75,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
-          "id": "03c1287e89071e3c85b905d8a3e57db4",
-          "title": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica",
+          "id": "d5d0f308cbddead43530d6a54a31afef",
+          "title": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
           "source_name": "InfoMoney",
           "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
-          "published_at": "2026-06-03T15:37:34.696716+00:00",
-          "summary": "Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.\n\nO foco principal passa por Economia, Mercado.",
+          "published_at": "2026-06-04T04:03:05.260410+00:00",
+          "summary": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros.\n\nO foco principal passa por Economia, Mercado.",
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.36,
-          "rank_score": 0.5037,
+          "match_score": 0.344,
+          "rank_score": 0.4954,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.75,
           "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "1389a5a785c51cbd5efc0d383728baba",
-          "title": "Planilhas e Calculadoras on-line e gratuitas. Baixe agora!",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/conteudos/planilhas/",
-          "published_at": "2026-05-31T04:04:31.951890+00:00",
-          "summary": "As melhores planilhas e calculadoras do mercado financeiro! Planilha de controle financeiro, simulador de renda fixa, dividendos e muito mais!.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Planilhas Cursos E-books Relatórios Planilhas Simuladores Planilha de Gastos MensaisMonitore gastos e receitas para organizar seu orçamento e controle financeiro! O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.3459,
-          "rank_score": 0.5009,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "fundamento",
-          "role": "historical"
-        },
-        {
-          "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
-          "title": "Global",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/business/global/",
-          "published_at": "2026-05-31T04:04:31.943874+00:00",
-          "summary": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Global AgroEnergiaGlobalInovaçãoESGNegócios do Esportecom reportagens de 1º carro elétrico da Ferrari sofre forte reação negativa na Itália e em outros países 2 dias atrás Bilionário das finanças chamava IA de “lixo”, mas mudou de ideia e ficou “deprimido” 2 dias atrás CEO da Amazon, Andy Jassy, diz o que jovens profissionais devem fazer para o sucesso 2 dias atrás Por que o bilionário Peter Thiel está se mudando para a Argentina 2 dias atrás Continua depois da publicidade Comer alimentos saudáveis?\n\nNão, eles estão comendo “à moda bíblica” 2 dias atrás Anthropic supera OpenAI e se torna a startup de IA mais valiosa do mundo 2 dias atrás Filho de imigrantes cubanos, secretário de Trump se aproxima da meta de mudar a ilha 3 dias atrás Tribunais na China barram demissões por IA e pressionam empresas a manter empregos 3 dias atrás InfoMoney Últimas Notícias Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Brasil Consumo Esportes Carreira Saúde Colunistas Aprenda Relatórios Conteúdos Planilhas e Calculadoras Cursos Ebooks Multimídia Newsletters WhatsApp Podcasts Vídeos Web Stories Veja mais Fazer login Quem somos Anuncie Política de privacidade Política de cookies Preferências de Cookies Fale conosco © 2000-2026 InfoMoney. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.3459,
-          "rank_score": 0.5009,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
-          "title": "Irã avança com projeto que consolida gestão de Ormuz; assessor iraniano critica Trump",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ira-avanca-com-projeto-que-consolida-gestao-de-ormuz-assessor-iraniano-critica-trump/",
-          "published_at": "2026-05-30T12:30:00+00:00",
-          "summary": "De acordo com Salimi, a proposta deverá se tornar uma lei permanente após a tramitação legislativa.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Guerra Irã avança com projeto que consolida gestão de Ormuz; assessor iraniano critica Trump De acordo com Salimi, a proposta deverá se tornar uma lei permanente após a tramitação legislativa Estadão Conteúdo 30/05/2026 09h30 &bull; Atualizado 15 horas atrás Publicidade O Parlamento do Irã deverá aprovar em breve um projeto para formalizar a gestão e a soberania iraniana sobre o Estreito de Ormuz, declarou o integrante da Mesa Diretora da Casa, Alireza Salimi, à agência iraniana ISNA. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.3439,
-          "rank_score": 0.4998,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "629cddfde78d45fdde8891b65e011167",
-          "title": "EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/eua-determinam-inspecoes-em-jatos-embraer-phenom-300-apos-problema-em-testes/",
-          "published_at": "2026-05-30T11:48:00+00:00",
-          "summary": "Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Aviação EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações Estadão Conteúdo 30/05/2026 08h48 &bull; Atualizado 12 horas atrás Publicidade A Federal Aviation Administration (FAA), agência reguladora da aviação civil dos Estados Unidos, publicará na segunda-feira, 1º, no Federal Register, o diário oficial dos EUA, uma nova diretriz de aeronavegabilidade (AD, na sigla em inglês) para determinados jatos executivos Embraer Phenom 300 (EMB-505), após identificar a possibilidade de resultados inválidos em testes do estabilizador horizontal realizados em algumas aeronaves. O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.3438,
-          "rank_score": 0.4998,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "fundamento",
           "role": "historical"
         }
       ]
     },
     {
       "source_name": "Folha.com - Mercado - Principal",
-      "count": 4,
+      "count": 5,
       "items": [
         {
           "id": "db473338bb6ad2878703c9e95ea4ace2",
@@ -739,8 +974,27 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.8074,
-          "rank_score": 0.6638,
+          "match_score": 0.79,
+          "rank_score": 0.6548,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
+        {
+          "id": "930c6eea8e04ae05754e6c39a38204ba",
+          "title": "iFood confirma vazamento de dados de 1,2 milhão de usuários",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/ifood-confirma-vazamento-de-dados-de-12-milhao-de-usuarios.shtml",
+          "published_at": "2026-06-03T14:45:00-03:00",
+          "summary": "O iFood disse nesta quarta-feira (3) que registrou o vazamento de dados de 1,2 milhão de seus usuários, o que equivale a 2% da base de usuários da empresa.\n\nSegundo a companhia, o ataque de hackers ocorreu em dezembro de 2025, mas teria sido contido rapidamente. O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 0.6903,
+          "rank_score": 0.603,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -758,8 +1012,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.7016,
-          "rank_score": 0.6088,
+          "match_score": 0.6851,
+          "rank_score": 0.6003,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -777,27 +1031,27 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.6981,
-          "rank_score": 0.607,
+          "match_score": 0.6823,
+          "rank_score": 0.5988,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
           "source_confidence_weight": 0.72,
           "analysis_category": "fluxo",
-          "role": "outlook"
+          "role": "historical"
         },
         {
-          "id": "6476d1826c1e6586e530d9f9f2a7577b",
-          "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
+          "id": "497d48bcf07bb1a9442cb63a1d330df4",
+          "title": "Trump relança sua guerra tarifária a tempo de substituir outras taxas",
           "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
-          "published_at": "2026-06-03T10:39:00-03:00",
-          "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/trump-relanca-sua-guerra-tarifaria-a-tempo-de-substituir-outras-taxas.shtml",
+          "published_at": "2026-06-07T10:00:00-03:00",
+          "summary": "O presidente dos EUA, Donald Trump, emitiu uma enxurrada de ações comerciais esta semana enquanto seu governo busca reimpor novas tarifas sobre parceiros comerciais após a Suprema Corte derrubar as taxas impostas pelo presidente.\n\nLeia mais (06/07/2026 - 10h00). O foco principal passa por Economia, Mercado.",
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3573,
-          "rank_score": 0.4993,
+          "match_score": 0.3524,
+          "rank_score": 0.4967,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -821,8 +1075,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.6968,
-          "rank_score": 0.6293,
+          "match_score": 0.6844,
+          "rank_score": 0.6229,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "asset",

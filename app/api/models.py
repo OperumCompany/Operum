@@ -106,7 +106,7 @@ def get_portfolio_opinion(
 def get_position_opinion(
     portfolio_id: str,
     ticker: str,
-    history_horizon: str = Query("3m", pattern="^(1m|2m|3m)$"),
+    history_horizon: str = Query("3m", pattern="^(1w|1m|2m|3m)$"),
     outlook_horizon: str = Query("3m", pattern="^(1w|1m|2m|3m)$"),
     current=Depends(require_current_user),
 ):

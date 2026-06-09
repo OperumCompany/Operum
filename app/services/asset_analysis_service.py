@@ -13,7 +13,7 @@ from app.services.local_storage_service import LocalStorageService
 from app.services.market_data_service import MarketDataService
 from app.services.news_ingestion_service import NewsIngestionService
 
-HISTORY_WINDOW_DAYS = {"1m": 21, "2m": 42, "3m": 63}
+HISTORY_WINDOW_DAYS = {"1w": 5, "1m": 21, "2m": 42, "3m": 63}
 OUTLOOK_WINDOW_DAYS = {"1w": 5, "1m": 21, "2m": 42, "3m": 63}
 
 
@@ -544,7 +544,12 @@ class AssetAnalysisService:
         return adjusted
 
     def _history_label(self, history_horizon: str) -> str:
-        return {"1m": "ultimo mes", "2m": "ultimos 2 meses", "3m": "ultimos 3 meses"}.get(history_horizon, "ultimos 3 meses")
+        return {
+            "1w": "ultima semana",
+            "1m": "ultimo mes",
+            "2m": "ultimos 2 meses",
+            "3m": "ultimos 3 meses",
+        }.get(history_horizon, "ultimos 3 meses")
 
     def _outlook_label(self, outlook_horizon: str) -> str:
         return {"1w": "1 semana", "1m": "1 mes", "2m": "2 meses", "3m": "3 meses"}.get(outlook_horizon, "3 meses")
@@ -795,7 +800,7 @@ class AssetAnalysisService:
         now = datetime.now(timezone.utc)
 
         recent_by_horizon = {}
-        for horizon_key in ["1m", "2m", "3m"]:
+        for horizon_key in ["1w", "1m", "2m", "3m"]:
             recent_perf = self._performance_snapshot(ticker, position.avg_price, horizon_key)
             recent_news = self._categorize_news(self._windowed_news(all_related_news, HISTORY_WINDOW_DAYS[horizon_key])[:12], meta)
             recent_by_horizon[horizon_key] = self._recent_section(recent_perf, recent_news, horizon_key, asset_function)

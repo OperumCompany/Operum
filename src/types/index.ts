@@ -198,7 +198,7 @@ export type PositionOpinion = {
   recomputed_at: string;
   confidence: string;
   status: string;
-  selected_history_horizon: '1m' | '2m' | '3m';
+  selected_history_horizon: '1w' | '1m' | '2m' | '3m';
   selected_outlook_horizon: '1w' | '1m' | '2m' | '3m';
   current_snapshot: {
     current_price: number | null;

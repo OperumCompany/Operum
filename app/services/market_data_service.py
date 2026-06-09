@@ -100,6 +100,15 @@ class MarketDataService:
             if df.empty:
                 return None
 
+            if isinstance(df.columns, pd.MultiIndex):
+                df.columns = [col[0] if isinstance(col, tuple) else col for col in df.columns]
+            numeric_cols = [col for col in ["Open", "High", "Low", "Close", "Volume"] if col in df.columns]
+            if numeric_cols:
+                df[numeric_cols] = df[numeric_cols].apply(pd.to_numeric, errors="coerce")
+                df = df.dropna(subset=["Close"])
+            if df.empty:
+                return None
+
             df = df.reset_index()
             prices = []
             for _, row in df.iterrows():

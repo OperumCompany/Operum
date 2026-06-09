@@ -2,11 +2,14 @@ import { FormEvent, Fragment, useEffect, useMemo, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Sparkles, ChevronDown, ChevronUp, ArrowDownUp } from 'lucide-react';
 import {
+  Area,
   CartesianGrid,
   Legend,
   Line,
-  LineChart,
+  ComposedChart,
   ResponsiveContainer,
+  ReferenceDot,
+  ReferenceLine,
   Tooltip,
   XAxis,
   YAxis,
@@ -43,6 +46,7 @@ type PricesResponse = {
 
 const ASSET_CLASSES = ['BR_STOCK', 'FII', 'BDR', 'CRYPTO', 'US_STOCK', 'FIXED_INCOME'] as const;
 const HISTORY_OPTIONS = [
+  { key: '1w', label: '1 semana' },
   { key: '1m', label: '1 mes' },
   { key: '2m', label: '2 meses' },
   { key: '3m', label: '3 meses' },
@@ -69,11 +73,22 @@ type OpinionState = {
   error?: string;
   open: boolean;
   expandedSources?: Record<string, boolean>;
-  historyHorizon: '1m' | '2m' | '3m';
+  historyHorizon: '1w' | '1m' | '2m' | '3m';
   outlookHorizon: '1w' | '1m' | '2m' | '3m';
 };
 
 type SortKey = 'ticker' | 'quantity' | 'current_price' | 'total_value' | 'weight_pct' | 'unrealized_pnl';
+type HistoryHorizonKey = OpinionState['historyHorizon'];
+type ChartPoint = {
+  date: string;
+  label: string;
+  historico: number | null;
+  perspectiva: number | null;
+  areaHistorico: number | null;
+  areaPerspectiva: number | null;
+  precoAtual: number | null;
+  isToday: boolean;
+};
 
 function resolveDisplayClass(assetClass: string, ticker: string, assets: Asset[]): string {
   if (assetClass === 'US_STOCK') {
@@ -95,14 +110,57 @@ function fmtMoney(value: number | null | undefined, currency = 'BRL') {
   return `${prefix} ${value.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 }
 
-function mergeChartSeries(historical: HorizonSeriesPoint[], forecast: HorizonSeriesPoint[]) {
+function fmtPct(value: number | null | undefined) {
+  if (value == null) return '-';
+  return `${value >= 0 ? '+' : ''}${value.toFixed(1)}%`;
+}
+
+function historyOptionLabel(horizon: HistoryHorizonKey) {
+  return HISTORY_OPTIONS.find((option) => option.key === horizon)?.label ?? '3 meses';
+}
+
+function historySectionTitle(horizon: HistoryHorizonKey) {
+  return horizon === '1w' ? 'Ultima semana' : `Ultimos ${historyOptionLabel(horizon)}`;
+}
+
+function horizonButtonClass(isActive: boolean) {
+  return `rounded-full px-3 py-1.5 text-xs font-semibold transition ${
+    isActive
+      ? 'bg-[var(--accent-soft)] text-[var(--accent)] ring-1 ring-[var(--accent)]'
+      : 'border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] text-[var(--text-main)] hover:border-[var(--accent)]'
+  }`;
+}
+
+function formatChartDate(value: string) {
+  return new Date(`${value}T00:00:00`).toLocaleDateString('pt-BR', {
+    day: '2-digit',
+    month: '2-digit',
+  });
+}
+
+function mergeChartSeries(
+  historical: HorizonSeriesPoint[],
+  forecast: HorizonSeriesPoint[],
+  currentPrice: number | null | undefined,
+): ChartPoint[] {
   const historicalMap = new Map(historical.map((point) => [point.date, point.value]));
   const forecastMap = new Map(forecast.map((point) => [point.date, point.value]));
   const dates = Array.from(new Set([...historicalMap.keys(), ...forecastMap.keys()])).sort();
+  const todayDate = historical.length
+    ? historical[historical.length - 1].date
+    : forecast.length
+      ? forecast[0].date
+      : null;
+
   return dates.map((date) => ({
     date,
-    historico: historicalMap.has(date) ? historicalMap.get(date) : null,
-    perspectiva: forecastMap.has(date) ? forecastMap.get(date) : null,
+    label: formatChartDate(date),
+    historico: historicalMap.has(date) ? (historicalMap.get(date) ?? null) : null,
+    perspectiva: forecastMap.has(date) ? (forecastMap.get(date) ?? null) : null,
+    areaHistorico: historicalMap.has(date) ? (historicalMap.get(date) ?? null) : null,
+    areaPerspectiva: forecastMap.has(date) ? (forecastMap.get(date) ?? null) : null,
+    precoAtual: date === todayDate ? currentPrice ?? historicalMap.get(date) ?? forecastMap.get(date) ?? null : null,
+    isToday: date === todayDate,
   }));
 }
 
@@ -503,7 +561,11 @@ export function PortfolioDetailsPage() {
                     const priceInfo = getPriceInfo(pos.ticker);
                     const opinionState = positionOpinions[pos.ticker];
                     const chartData = opinionState?.data
-                      ? mergeChartSeries(opinionState.data.historical_series, opinionState.data.forecast_series)
+                      ? mergeChartSeries(
+                          opinionState.data.historical_series,
+                          opinionState.data.forecast_series,
+                          opinionState.data.current_snapshot.current_price,
+                        )
                       : [];
                     return (
                       <Fragment key={pos.ticker}>
@@ -553,192 +615,183 @@ export function PortfolioDetailsPage() {
 
                               {!opinionState.loading && opinionState.data && (
                                 <div className="space-y-4">
-                                  <div className="flex flex-wrap items-start justify-between gap-3">
-                                    <div>
-                                      <p className="text-base font-semibold text-[var(--text-main)]">
-                                        {opinionState.data.ticker} ({opinionState.data.asset_name})
-                                      </p>
-                                      <p className="text-xs text-[var(--text-muted)]">
-                                        {confidenceLabel(opinionState.data.confidence)} â€¢ Cenario: {opinionState.data.outlook_3m.scenario}
-                                      </p>
-                                      <p className="mt-1 text-xs text-[var(--text-muted)]">
-                                        Janela historica: {opinionState.data.historical_window.start_date} ate {opinionState.data.historical_window.end_date} â€¢ {opinionState.data.used_news_count} noticia(s) usada(s)
-                                      </p>
-                                      {opinionState.data.current_snapshot.asset_function && (
-                                        <p className="mt-1 text-xs text-[var(--text-muted)]">
-                                          Funcao do ativo: {opinionState.data.current_snapshot.asset_function.replace('_', ' ')}
+                                  <div className="rounded-[28px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,rgba(61,77,156,0.06)_0%,rgba(255,255,255,0.96)_45%,rgba(199,85,155,0.08)_100%)] p-5 shadow-[var(--shadow-card)]">
+                                    <div className="flex flex-wrap items-start justify-between gap-4">
+                                      <div className="space-y-1">
+                                        <p className="text-lg font-semibold text-[var(--text-main)]">
+                                          {opinionState.data.ticker} ({opinionState.data.asset_name})
                                         </p>
-                                      )}
-                                    </div>
-                                    {opinionState.data.current_snapshot.weight_pct != null && (
-                                      <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--text-main)]">
-                                        {opinionState.data.current_snapshot.weight_pct.toFixed(1)}% da carteira
-                                      </span>
-                                    )}
-                                  </div>
-
-                                  <div className="grid gap-3 xl:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)]">
-                                    <section className="rounded-2xl bg-white p-4">
-                                      <div className="flex flex-wrap items-center gap-4">
-                                        <div className="flex flex-wrap items-center gap-2">
-                                          <span className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Ultimos</span>
-                                          {HISTORY_OPTIONS.map((option) => (
-                                            <button
-                                              key={option.key}
-                                              type="button"
-                                              onClick={() => loadPositionOpinion(pos.ticker, { historyHorizon: option.key, keepOpen: true })}
-                                              className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
-                                                opinionState.historyHorizon === option.key
-                                                  ? 'bg-[var(--brand)] text-white'
-                                                  : 'border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] text-[var(--text-main)] hover:border-[var(--brand)]'
-                                              }`}
-                                            >
-                                              {option.label}
-                                            </button>
-                                          ))}
-                                        </div>
-                                        <div className="flex flex-wrap items-center gap-2">
-                                          <span className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Perspectiva</span>
-                                          {OUTLOOK_OPTIONS.map((option) => (
-                                            <button
-                                              key={option.key}
-                                              type="button"
-                                              onClick={() => loadPositionOpinion(pos.ticker, { outlookHorizon: option.key, keepOpen: true })}
-                                              className={`rounded-full px-3 py-1.5 text-xs font-semibold transition ${
-                                                opinionState.outlookHorizon === option.key
-                                                  ? 'bg-[#3D9C72] text-white'
-                                                  : 'border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] text-[var(--text-main)] hover:border-[#3D9C72]'
-                                              }`}
-                                            >
-                                              {option.label}
-                                            </button>
-                                          ))}
-                                        </div>
-                                      </div>
-
-                                      <div className="mt-4 h-72 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3">
-                                        {chartData.length ? (
-                                          <ResponsiveContainer width="100%" height="100%">
-                                            <LineChart data={chartData}>
-                                              <CartesianGrid strokeDasharray="3 3" stroke="#e5e7eb" />
-                                              <XAxis dataKey="date" tick={{ fontSize: 11 }} minTickGap={24} />
-                                              <YAxis tick={{ fontSize: 11 }} domain={['auto', 'auto']} />
-                                              <Tooltip
-                                                formatter={(value) =>
-                                                  typeof value !== 'number'
-                                                    ? '-'
-                                                    : fmtMoney(value, opinionState.data?.current_snapshot.currency)
-                                                }
-                                              />
-                                              <Legend />
-                                              <Line
-                                                type="monotone"
-                                                dataKey="historico"
-                                                name="Historico"
-                                                stroke="#3D4D9C"
-                                                strokeWidth={2.5}
-                                                dot={false}
-                                                connectNulls
-                                              />
-                                              <Line
-                                                type="monotone"
-                                                dataKey="perspectiva"
-                                                name="Perspectiva estimada"
-                                                stroke="#3D9C72"
-                                                strokeWidth={2.5}
-                                                strokeDasharray="5 4"
-                                                dot={false}
-                                                connectNulls
-                                              />
-                                            </LineChart>
-                                          </ResponsiveContainer>
-                                        ) : (
-                                          <div className="flex h-full items-center justify-center text-sm text-[var(--text-muted)]">
-                                            Sem serie suficiente para montar o grafico desse ativo.
-                                          </div>
+                                        <p className="text-sm text-[var(--text-muted)]">
+                                          {confidenceLabel(opinionState.data.confidence)} | Cenario: {opinionState.data.outlook_3m.scenario}
+                                        </p>
+                                        <p className="text-xs text-[var(--text-muted)]">
+                                          Janela historica: {opinionState.data.historical_window.start_date} ate {opinionState.data.historical_window.end_date} | {opinionState.data.used_news_count} noticia(s) usada(s)
+                                        </p>
+                                        {opinionState.data.current_snapshot.asset_function && (
+                                          <p className="text-xs text-[var(--text-muted)]">
+                                            Funcao do ativo: {opinionState.data.current_snapshot.asset_function.replace('_', ' ')}
+                                          </p>
                                         )}
                                       </div>
-                                      <p className="mt-2 text-xs text-[var(--text-muted)]">
-                                        A linha projetada representa uma perspectiva estimada pelo modelo treinavel do Operum, nao uma garantia de preco futuro.
-                                      </p>
-                                    </section>
+                                      {opinionState.data.current_snapshot.weight_pct != null && (
+                                        <span className="rounded-full border border-[var(--border-soft)] bg-white/90 px-3 py-1.5 text-xs font-semibold text-[var(--text-main)] shadow-sm">
+                                          {opinionState.data.current_snapshot.weight_pct.toFixed(1)}% da carteira
+                                        </span>
+                                      )}
+                                    </div>
 
-                                    <section className="space-y-3 rounded-2xl bg-white p-4">
-                                      <div>
-                                        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Situacao atual</p>
-                                        <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{opinionState.data.analysis_sections.current}</p>
-                                      </div>
-                                      <div>
-                                        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-                                          Ultimos {HISTORY_OPTIONS.find((option) => option.key === opinionState.historyHorizon)?.label}
-                                        </p>
+                                    <div className="mt-4 grid gap-3 lg:grid-cols-3">
+                                      <section className="rounded-3xl border border-[var(--border-soft)] bg-white/90 p-4">
+                                        <div className="flex flex-wrap items-center gap-3">
+                                          <p className="text-sm font-semibold text-[var(--text-main)]">{historySectionTitle(opinionState.historyHorizon)}:</p>
+                                          <div className="flex flex-wrap gap-2">
+                                            {HISTORY_OPTIONS.map((option) => (
+                                              <button
+                                                key={option.key}
+                                                type="button"
+                                                onClick={() => loadPositionOpinion(pos.ticker, { historyHorizon: option.key, keepOpen: true })}
+                                                className={horizonButtonClass(opinionState.historyHorizon === option.key)}
+                                              >
+                                                {option.label}
+                                              </button>
+                                            ))}
+                                          </div>
+                                        </div>
                                         <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">
                                           {opinionState.data.analysis_sections.recent_by_horizon[opinionState.historyHorizon]}
                                         </p>
-                                      </div>
-                                      <div>
-                                        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">
-                                          Perspectiva {OUTLOOK_OPTIONS.find((option) => option.key === opinionState.outlookHorizon)?.label}
-                                        </p>
+                                      </section>
+                                      <section className="rounded-3xl border border-[var(--border-soft)] bg-white/90 p-4">
+                                        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">Situacao atual</p>
+                                        <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{opinionState.data.analysis_sections.current}</p>
+                                      </section>
+                                      <section className="rounded-3xl border border-[var(--border-soft)] bg-white/90 p-4">
+                                        <div className="flex flex-wrap items-center gap-3">
+                                          <p className="text-sm font-semibold text-[var(--text-main)]">Perspectiva:</p>
+                                          <div className="flex flex-wrap gap-2">
+                                            {OUTLOOK_OPTIONS.map((option) => (
+                                              <button
+                                                key={option.key}
+                                                type="button"
+                                                onClick={() => loadPositionOpinion(pos.ticker, { outlookHorizon: option.key, keepOpen: true })}
+                                                className={horizonButtonClass(opinionState.outlookHorizon === option.key)}
+                                              >
+                                                {option.label}
+                                              </button>
+                                            ))}
+                                          </div>
+                                        </div>
                                         <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">
                                           {opinionState.data.analysis_sections.outlook_by_horizon[opinionState.outlookHorizon]}
                                         </p>
-                                      </div>
-                                    </section>
+                                      </section>
+                                    </div>
                                   </div>
 
-                                  <section className="rounded-2xl bg-white p-4">
-                                    <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Snapshot quantitativo</p>
-                                    <div className="mt-3 grid gap-3 sm:grid-cols-2 xl:grid-cols-4">
-                                      <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-3 text-sm">
-                                        <p className="text-xs text-[var(--text-muted)]">Variacao janela</p>
-                                        <p className="mt-1 font-semibold text-[var(--text-main)]">
-                                          {opinionState.data.recent_performance.change_selected_pct != null ? `${opinionState.data.recent_performance.change_selected_pct.toFixed(1)}%` : '-'}
-                                        </p>
+                                  <section className="rounded-[28px] border border-[var(--border-soft)] bg-white p-5 shadow-[var(--shadow-card)]">
+                                    <div className="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
+                                      <div className="space-y-2">
+                                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">Preco</p>
+                                        <div className="flex flex-wrap items-end gap-3">
+                                          <p className="text-4xl font-bold leading-none text-[var(--text-main)]">
+                                            {fmtMoney(opinionState.data.current_snapshot.current_price, opinionState.data.current_snapshot.currency)}
+                                          </p>
+                                          <div className="pb-1">
+                                            <span className={`text-sm font-semibold ${(opinionState.data.recent_performance.change_selected_pct ?? 0) >= 0 ? 'text-[var(--brand)]' : 'text-[var(--danger-text)]'}`}>
+                                              {fmtPct(opinionState.data.recent_performance.change_selected_pct)}
+                                            </span>
+                                            <span className="ml-2 text-sm uppercase tracking-wider text-[var(--text-muted)]">
+                                              vs {historyOptionLabel(opinionState.historyHorizon)}
+                                            </span>
+                                          </div>
+                                        </div>
                                       </div>
-                                      <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-3 text-sm">
-                                        <p className="text-xs text-[var(--text-muted)]">Volatilidade</p>
-                                        <p className="mt-1 font-semibold text-[var(--text-main)]">
-                                          {opinionState.data.recent_performance.volatility_selected_pct != null ? `${opinionState.data.recent_performance.volatility_selected_pct.toFixed(1)}%` : '-'}
-                                        </p>
-                                      </div>
-                                      <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-3 text-sm">
-                                        <p className="text-xs text-[var(--text-muted)]">Drawdown</p>
-                                        <p className="mt-1 font-semibold text-[var(--text-main)]">
-                                          {opinionState.data.recent_performance.drawdown_selected_pct != null ? `${opinionState.data.recent_performance.drawdown_selected_pct.toFixed(1)}%` : '-'}
-                                        </p>
-                                      </div>
-                                      <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-3 text-sm">
-                                        <p className="text-xs text-[var(--text-muted)]">Benchmark</p>
-                                        <p className="mt-1 font-semibold text-[var(--text-main)]">{opinionState.data.recent_performance.benchmark_ticker ?? '-'}</p>
-                                      </div>
-                                      <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-3 text-sm">
-                                        <p className="text-xs text-[var(--text-muted)]">Beta</p>
-                                        <p className="mt-1 font-semibold text-[var(--text-main)]">{opinionState.data.recent_performance.beta_selected ?? '-'}</p>
-                                      </div>
-                                      <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-3 text-sm">
-                                        <p className="text-xs text-[var(--text-muted)]">Correlacao</p>
-                                        <p className="mt-1 font-semibold text-[var(--text-main)]">{opinionState.data.recent_performance.correlation_selected ?? '-'}</p>
-                                      </div>
-                                      <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-3 text-sm">
-                                        <p className="text-xs text-[var(--text-muted)]">Retorno estimado</p>
-                                        <p className="mt-1 font-semibold text-[var(--text-main)]">
-                                          {opinionState.data.recent_performance.forecast_return_selected_pct != null ? `${opinionState.data.recent_performance.forecast_return_selected_pct.toFixed(1)}%` : '-'}
-                                        </p>
-                                      </div>
-                                      <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-3 text-sm">
-                                        <p className="text-xs text-[var(--text-muted)]">Confianca modelo</p>
-                                        <p className="mt-1 font-semibold text-[var(--text-main)]">
-                                          {opinionState.data.recent_performance.forecast_confidence_selected != null ? `${(opinionState.data.recent_performance.forecast_confidence_selected * 100).toFixed(0)}%` : '-'}
-                                        </p>
-                                      </div>
-                                      <div className="rounded-2xl bg-[var(--bg-surface-strong)] p-3 text-sm">
-                                        <p className="text-xs text-[var(--text-muted)]">Ajuste por noticias</p>
-                                        <p className="mt-1 font-semibold text-[var(--text-main)]">
-                                          {opinionState.data.recent_performance.forecast_news_adjustment_pct != null ? `${opinionState.data.recent_performance.forecast_news_adjustment_pct.toFixed(1)}%` : '-'}
-                                        </p>
+
+                                      <div className="grid gap-3 sm:grid-cols-2 xl:min-w-[320px]">
+                                        <div className="space-y-2">
+                                          <p className="text-sm font-semibold text-[var(--text-main)]">Ultimos</p>
+                                          <div className="flex flex-wrap gap-2">
+                                            {HISTORY_OPTIONS.map((option) => (
+                                              <button
+                                                key={option.key}
+                                                type="button"
+                                                onClick={() => loadPositionOpinion(pos.ticker, { historyHorizon: option.key, keepOpen: true })}
+                                                className={horizonButtonClass(opinionState.historyHorizon === option.key)}
+                                              >
+                                                {option.label}
+                                              </button>
+                                            ))}
+                                          </div>
+                                        </div>
+
+                                        <div className="space-y-2">
+                                          <p className="text-sm font-semibold text-[var(--text-main)]">Perspectiva</p>
+                                          <div className="flex flex-wrap gap-2">
+                                            {OUTLOOK_OPTIONS.map((option) => (
+                                              <button
+                                                key={option.key}
+                                                type="button"
+                                                onClick={() => loadPositionOpinion(pos.ticker, { outlookHorizon: option.key, keepOpen: true })}
+                                                className={horizonButtonClass(opinionState.outlookHorizon === option.key)}
+                                              >
+                                                {option.label}
+                                              </button>
+                                            ))}
+                                          </div>
+                                        </div>
                                       </div>
                                     </div>
+
+                                    <div className="mt-6 h-[26rem] rounded-[24px] border border-[var(--border-soft)] bg-[linear-gradient(180deg,rgba(61,77,156,0.04)_0%,rgba(255,255,255,0.96)_24%,rgba(199,85,155,0.05)_100%)] p-4">
+                                      {chartData.length ? (
+                                        <ResponsiveContainer width="100%" height="100%">
+                                          <ComposedChart data={chartData} margin={{ top: 18, right: 16, left: 8, bottom: 12 }}>
+                                            <defs>
+                                              <linearGradient id={`historyFill-${pos.ticker}`} x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stopColor="#3D4D9C" stopOpacity={0.22} />
+                                                <stop offset="100%" stopColor="#3D4D9C" stopOpacity={0.02} />
+                                              </linearGradient>
+                                              <linearGradient id={`outlookFill-${pos.ticker}`} x1="0" y1="0" x2="0" y2="1">
+                                                <stop offset="0%" stopColor="#C7559B" stopOpacity={0.22} />
+                                                <stop offset="100%" stopColor="#C7559B" stopOpacity={0.02} />
+                                              </linearGradient>
+                                            </defs>
+                                            <CartesianGrid vertical={false} stroke="rgba(113,113,113,0.16)" />
+                                            <XAxis dataKey="label" tick={{ fontSize: 11, fill: '#717171' }} axisLine={false} tickLine={false} minTickGap={24} />
+                                            <YAxis tick={{ fontSize: 11, fill: '#717171' }} axisLine={false} tickLine={false} width={72} domain={['auto', 'auto']} tickFormatter={(value) => fmtMoney(Number(value), opinionState.data!.current_snapshot.currency)} />
+                                            <Tooltip content={({ active, payload, label }) => {
+                                              if (!active || !payload?.length) return null;
+                                              const dataPoint = payload[0]?.payload as ChartPoint | undefined;
+                                              const displayValue = dataPoint?.precoAtual ?? dataPoint?.historico ?? dataPoint?.perspectiva ?? null;
+                                              return (
+                                                <div className="rounded-2xl border border-[var(--border-soft)] bg-white px-4 py-3 shadow-[var(--shadow-card)]">
+                                                  <p className="text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">{dataPoint?.isToday ? 'Hoje' : label}</p>
+                                                  <p className="mt-1 text-sm font-semibold text-[var(--text-main)]">{fmtMoney(displayValue, opinionState.data!.current_snapshot.currency)}</p>
+                                                </div>
+                                              );
+                                            }} />
+                                            <Legend wrapperStyle={{ paddingTop: 8 }} />
+                                            <Area type="monotone" dataKey="areaHistorico" stroke="none" fill={`url(#historyFill-${pos.ticker})`} isAnimationActive={false} connectNulls legendType="none" />
+                                            <Area type="monotone" dataKey="areaPerspectiva" stroke="none" fill={`url(#outlookFill-${pos.ticker})`} isAnimationActive={false} connectNulls legendType="none" />
+                                            <Line type="monotone" dataKey="historico" name="Historico" stroke="#3D4D9C" strokeWidth={3} dot={false} connectNulls isAnimationActive={false} />
+                                            <Line type="monotone" dataKey="perspectiva" name="Perspectiva estimada" stroke="#C7559B" strokeWidth={3} dot={false} connectNulls isAnimationActive={false} />
+                                            {chartData.some((point) => point.isToday) && (
+                                              <>
+                                                <ReferenceLine x={chartData.find((point) => point.isToday)?.label} stroke="rgba(199,85,155,0.55)" strokeDasharray="4 6" />
+                                                <ReferenceDot x={chartData.find((point) => point.isToday)?.label} y={chartData.find((point) => point.isToday)?.precoAtual ?? undefined} r={6} fill="#C7559B" stroke="#ffffff" strokeWidth={3} />
+                                              </>
+                                            )}
+                                          </ComposedChart>
+                                        </ResponsiveContainer>
+                                      ) : (
+                                        <div className="flex h-full items-center justify-center text-sm text-[var(--text-muted)]">
+                                          Sem serie suficiente para montar o grafico desse ativo.
+                                        </div>
+                                      )}
+                                    </div>
+                                    <p className="mt-3 text-xs text-[var(--text-muted)]">
+                                      O grafico combina precos historicos e perspectiva estimada do Operum. A projecao nao representa garantia de preco futuro.
+                                    </p>
                                   </section>
 
                                   {!!opinionState.data.source_groups.length && (

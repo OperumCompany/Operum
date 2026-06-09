@@ -3,359 +3,654 @@
   "ticker": "WEGE3",
   "asset_name": "WEG ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-03T15:52:44.393345+00:00",
-  "recomputed_at": "2026-06-03T15:52:44.393345+00:00",
+  "generated_at": "2026-06-09T00:59:31.874550+00:00",
+  "recomputed_at": "2026-06-09T00:59:31.874550+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
   "asset_function": "crescimento",
   "current_snapshot": {
-    "current_price": 42.25,
+    "current_price": 44.0,
     "currency": "BRL",
-    "weight_pct": 9.64,
+    "weight_pct": 10.14,
     "sector": "Equipamentos Elétricos",
     "country": "BR",
     "asset_function": "crescimento"
   },
   "historical_window": {
-    "start_date": "2026-01-28",
-    "end_date": "2026-06-03",
+    "start_date": "2026-02-03",
+    "end_date": "2026-06-09",
     "news_count": 12,
-    "has_price_history": false
+    "has_price_history": true
   },
-  "historical_series": [],
-  "forecast_series": [
+  "historical_series": [
     {
-      "date": "2026-06-03",
-      "value": 42.16
+      "date": "2026-03-05",
+      "value": 46.61
     },
     {
-      "date": "2026-06-04",
-      "value": 41.88
+      "date": "2026-03-06",
+      "value": 46.52
+    },
+    {
+      "date": "2026-03-09",
+      "value": 46.48
+    },
+    {
+      "date": "2026-03-10",
+      "value": 47.09
+    },
+    {
+      "date": "2026-03-11",
+      "value": 46.78
+    },
+    {
+      "date": "2026-03-12",
+      "value": 45.72
+    },
+    {
+      "date": "2026-03-13",
+      "value": 46.11
+    },
+    {
+      "date": "2026-03-16",
+      "value": 45.87
+    },
+    {
+      "date": "2026-03-17",
+      "value": 46.1
+    },
+    {
+      "date": "2026-03-18",
+      "value": 46.06
+    },
+    {
+      "date": "2026-03-19",
+      "value": 46.49
+    },
+    {
+      "date": "2026-03-20",
+      "value": 45.86
+    },
+    {
+      "date": "2026-03-23",
+      "value": 47.25
+    },
+    {
+      "date": "2026-03-24",
+      "value": 47.45
+    },
+    {
+      "date": "2026-03-25",
+      "value": 48.18
+    },
+    {
+      "date": "2026-03-26",
+      "value": 47.52
+    },
+    {
+      "date": "2026-03-27",
+      "value": 47.41
+    },
+    {
+      "date": "2026-03-30",
+      "value": 49.05
+    },
+    {
+      "date": "2026-03-31",
+      "value": 51.01
+    },
+    {
+      "date": "2026-04-01",
+      "value": 51.01
+    },
+    {
+      "date": "2026-04-02",
+      "value": 50.31
+    },
+    {
+      "date": "2026-04-06",
+      "value": 50.62
+    },
+    {
+      "date": "2026-04-07",
+      "value": 50.65
+    },
+    {
+      "date": "2026-04-08",
+      "value": 52.77
+    },
+    {
+      "date": "2026-04-09",
+      "value": 52.5
+    },
+    {
+      "date": "2026-04-10",
+      "value": 52.88
+    },
+    {
+      "date": "2026-04-13",
+      "value": 52.04
+    },
+    {
+      "date": "2026-04-14",
+      "value": 51.9
+    },
+    {
+      "date": "2026-04-15",
+      "value": 49.96
+    },
+    {
+      "date": "2026-04-16",
+      "value": 48.4
+    },
+    {
+      "date": "2026-04-17",
+      "value": 48.65
+    },
+    {
+      "date": "2026-04-20",
+      "value": 48.48
+    },
+    {
+      "date": "2026-04-22",
+      "value": 47.19
+    },
+    {
+      "date": "2026-04-23",
+      "value": 48.28
+    },
+    {
+      "date": "2026-04-24",
+      "value": 47.8
+    },
+    {
+      "date": "2026-04-27",
+      "value": 48.19
+    },
+    {
+      "date": "2026-04-28",
+      "value": 47.29
+    },
+    {
+      "date": "2026-04-29",
+      "value": 44.1
+    },
+    {
+      "date": "2026-04-30",
+      "value": 44.86
+    },
+    {
+      "date": "2026-05-04",
+      "value": 44.36
+    },
+    {
+      "date": "2026-05-05",
+      "value": 43.54
+    },
+    {
+      "date": "2026-05-06",
+      "value": 44.94
+    },
+    {
+      "date": "2026-05-07",
+      "value": 44.31
+    },
+    {
+      "date": "2026-05-08",
+      "value": 45.52
+    },
+    {
+      "date": "2026-05-11",
+      "value": 44.16
+    },
+    {
+      "date": "2026-05-12",
+      "value": 43.39
+    },
+    {
+      "date": "2026-05-13",
+      "value": 43.31
+    },
+    {
+      "date": "2026-05-14",
+      "value": 43.72
+    },
+    {
+      "date": "2026-05-15",
+      "value": 43.13
+    },
+    {
+      "date": "2026-05-18",
+      "value": 42.34
+    },
+    {
+      "date": "2026-05-19",
+      "value": 41.82
+    },
+    {
+      "date": "2026-05-20",
+      "value": 42.58
+    },
+    {
+      "date": "2026-05-21",
+      "value": 42.47
+    },
+    {
+      "date": "2026-05-22",
+      "value": 42.73
+    },
+    {
+      "date": "2026-05-25",
+      "value": 43.31
+    },
+    {
+      "date": "2026-05-26",
+      "value": 43.44
+    },
+    {
+      "date": "2026-05-27",
+      "value": 43.45
+    },
+    {
+      "date": "2026-05-28",
+      "value": 43.72
+    },
+    {
+      "date": "2026-05-29",
+      "value": 44.1
+    },
+    {
+      "date": "2026-06-01",
+      "value": 43.0
+    },
+    {
+      "date": "2026-06-02",
+      "value": 42.0
+    },
+    {
+      "date": "2026-06-03",
+      "value": 41.78
     },
     {
       "date": "2026-06-05",
-      "value": 41.6
+      "value": 42.46
     },
     {
       "date": "2026-06-08",
-      "value": 41.32
-    },
+      "value": 44.0
+    }
+  ],
+  "forecast_series": [
     {
       "date": "2026-06-09",
-      "value": 41.04
+      "value": 44.0
     },
     {
       "date": "2026-06-10",
-      "value": 40.76
+      "value": 43.81
     },
     {
       "date": "2026-06-11",
-      "value": 40.74
+      "value": 43.62
     },
     {
       "date": "2026-06-12",
-      "value": 40.73
+      "value": 43.42
     },
     {
       "date": "2026-06-15",
-      "value": 40.71
+      "value": 43.23
     },
     {
       "date": "2026-06-16",
-      "value": 40.7
+      "value": 43.04
     },
     {
       "date": "2026-06-17",
-      "value": 40.68
+      "value": 43.09
     },
     {
       "date": "2026-06-18",
-      "value": 40.66
+      "value": 43.13
     },
     {
       "date": "2026-06-19",
-      "value": 40.65
+      "value": 43.18
     },
     {
       "date": "2026-06-22",
-      "value": 40.63
+      "value": 43.23
     },
     {
       "date": "2026-06-23",
-      "value": 40.61
+      "value": 43.28
     },
     {
       "date": "2026-06-24",
-      "value": 40.6
+      "value": 43.32
     },
     {
       "date": "2026-06-25",
-      "value": 40.58
+      "value": 43.37
     },
     {
       "date": "2026-06-26",
-      "value": 40.56
+      "value": 43.42
     },
     {
       "date": "2026-06-29",
-      "value": 40.55
+      "value": 43.47
     },
     {
       "date": "2026-06-30",
-      "value": 40.53
+      "value": 43.52
     },
     {
       "date": "2026-07-01",
-      "value": 40.52
+      "value": 43.56
     },
     {
       "date": "2026-07-02",
-      "value": 40.5
+      "value": 43.61
     },
     {
       "date": "2026-07-03",
-      "value": 40.41
+      "value": 43.66
     },
     {
       "date": "2026-07-06",
-      "value": 40.33
+      "value": 43.7
     },
     {
       "date": "2026-07-07",
-      "value": 40.24
+      "value": 43.75
     },
     {
       "date": "2026-07-08",
-      "value": 40.15
+      "value": 43.8
     },
     {
       "date": "2026-07-09",
-      "value": 40.06
+      "value": 43.86
     },
     {
       "date": "2026-07-10",
-      "value": 39.98
+      "value": 43.92
     },
     {
       "date": "2026-07-13",
-      "value": 39.89
+      "value": 43.97
     },
     {
       "date": "2026-07-14",
-      "value": 39.8
+      "value": 44.03
     },
     {
       "date": "2026-07-15",
-      "value": 39.72
+      "value": 44.09
     },
     {
       "date": "2026-07-16",
-      "value": 39.63
+      "value": 44.15
     },
     {
       "date": "2026-07-17",
-      "value": 39.54
+      "value": 44.2
     },
     {
       "date": "2026-07-20",
-      "value": 39.45
+      "value": 44.26
     },
     {
       "date": "2026-07-21",
-      "value": 39.37
+      "value": 44.32
     },
     {
       "date": "2026-07-22",
-      "value": 39.28
+      "value": 44.38
     },
     {
       "date": "2026-07-23",
-      "value": 39.19
+      "value": 44.43
     },
     {
       "date": "2026-07-24",
-      "value": 39.11
+      "value": 44.49
     },
     {
       "date": "2026-07-27",
-      "value": 39.02
+      "value": 44.55
     },
     {
       "date": "2026-07-28",
-      "value": 38.93
+      "value": 44.61
     },
     {
       "date": "2026-07-29",
-      "value": 38.84
+      "value": 44.66
     },
     {
       "date": "2026-07-30",
-      "value": 38.76
+      "value": 44.72
     },
     {
       "date": "2026-07-31",
-      "value": 38.67
+      "value": 44.78
     },
     {
       "date": "2026-08-03",
-      "value": 38.53
+      "value": 44.84
     },
     {
       "date": "2026-08-04",
-      "value": 38.39
+      "value": 44.89
     },
     {
       "date": "2026-08-05",
-      "value": 38.24
+      "value": 44.95
     },
     {
       "date": "2026-08-06",
-      "value": 38.1
+      "value": 45.01
     },
     {
       "date": "2026-08-07",
-      "value": 37.96
+      "value": 45.03
     },
     {
       "date": "2026-08-10",
-      "value": 37.82
+      "value": 45.05
     },
     {
       "date": "2026-08-11",
-      "value": 37.67
+      "value": 45.06
     },
     {
       "date": "2026-08-12",
-      "value": 37.53
+      "value": 45.08
     },
     {
       "date": "2026-08-13",
-      "value": 37.39
+      "value": 45.1
     },
     {
       "date": "2026-08-14",
-      "value": 37.25
+      "value": 45.12
     },
     {
       "date": "2026-08-17",
-      "value": 37.1
+      "value": 45.14
     },
     {
       "date": "2026-08-18",
-      "value": 36.96
+      "value": 45.15
     },
     {
       "date": "2026-08-19",
-      "value": 36.82
+      "value": 45.17
     },
     {
       "date": "2026-08-20",
-      "value": 36.68
+      "value": 45.19
     },
     {
       "date": "2026-08-21",
-      "value": 36.53
+      "value": 45.21
     },
     {
       "date": "2026-08-24",
-      "value": 36.39
+      "value": 45.23
     },
     {
       "date": "2026-08-25",
-      "value": 36.25
+      "value": 45.25
     },
     {
       "date": "2026-08-26",
-      "value": 36.11
+      "value": 45.26
     },
     {
       "date": "2026-08-27",
-      "value": 35.96
+      "value": 45.28
     },
     {
       "date": "2026-08-28",
-      "value": 35.82
+      "value": 45.3
     },
     {
       "date": "2026-08-31",
-      "value": 35.68
+      "value": 45.32
+    },
+    {
+      "date": "2026-09-01",
+      "value": 45.34
+    },
+    {
+      "date": "2026-09-02",
+      "value": 45.35
+    },
+    {
+      "date": "2026-09-03",
+      "value": 45.37
+    },
+    {
+      "date": "2026-09-04",
+      "value": 45.39
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 40.76,
-      "predicted_return": -0.033295,
-      "confidence": 0.2593
+      "predicted_price": 43.04,
+      "predicted_return": -0.021915,
+      "confidence": 0.2348
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 40.5,
-      "predicted_return": -0.039488,
+      "predicted_price": 43.8,
+      "predicted_return": -0.004621,
       "confidence": 0.06
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 38.67,
-      "predicted_return": -0.082726,
+      "predicted_price": 45.01,
+      "predicted_return": 0.022856,
       "confidence": 0.06
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 35.68,
-      "predicted_return": -0.153705,
+      "predicted_price": 45.39,
+      "predicted_return": 0.031492,
       "confidence": 0.05
     }
   ],
   "recent_performance": {
-    "change_selected_pct": null,
-    "change_1m_pct": null,
-    "change_2m_pct": null,
-    "change_3m_pct": null,
+    "change_selected_pct": -5.6,
+    "change_1m_pct": -0.7,
+    "change_2m_pct": -13.08,
+    "change_3m_pct": -5.6,
     "change_12m_pct": null,
-    "volatility_selected_pct": null,
-    "drawdown_selected_pct": null,
-    "beta_selected": null,
-    "correlation_selected": null,
+    "volatility_selected_pct": 31.52,
+    "drawdown_selected_pct": -20.99,
+    "beta_selected": 0.94,
+    "correlation_selected": 0.57,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": -15.37,
-    "forecast_price_selected": 35.68,
+    "forecast_return_selected_pct": 3.15,
+    "forecast_price_selected": 45.39,
     "forecast_confidence_selected": 0.05,
-    "forecast_news_adjustment_pct": -2.86
+    "forecast_news_adjustment_pct": -2.11
   },
   "outlook_3m": {
     "scenario": "pressionado",
     "dominant_topics": [
-      "juros",
-      "inflacao",
+      "geopolitica",
       "cambio",
-      "geopolitica"
+      "juros",
+      "inflacao"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 42.25. Hoje representa cerca de 9.6% da carteira. O modelo de 3 meses hoje aponta queda, com retorno estimado de -15.4% e confianca de 5%. O ajuste contextual das noticias adiciona -2.9% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.59. Nesse conjunto, o peso informacional esta distribuido em fundamento (1), macro (5), setorial (0) e fluxo (0).",
-    "recent": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%; Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -15.4% e preco estimado perto de 35.68. O contexto de noticias ajusta essa leitura em -2.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 44.00. Hoje representa cerca de 10.1% da carteira. No curto prazo, o momentum de 1 mes esta em -0.7%. O modelo de 3 meses hoje aponta alta, com retorno estimado de +3.1% e confianca de 5%. O ajuste contextual das noticias adiciona -2.1% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.55. Nesse conjunto, o peso informacional esta distribuido em fundamento (0), macro (5), setorial (0) e fluxo (1).",
+    "recent": "No recorte dos ultimos 3 meses, o ativo variou -5.6%. A volatilidade anualizada equivalente ficou perto de 31.5%. No mesmo intervalo, o drawdown observado foi de -21.0%. Contra IBOV, o beta estimado da janela ficou em 0.94, com correlacao de 0.57. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +3.1% e preco estimado perto de 45.39. O contexto de noticias ajusta essa leitura em -2.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%; Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.",
-      "2m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%; Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica.",
-      "3m": "No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, geopolitica. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%; Ibovespa Hoje Ao Vivo: Bolsa cai 1% com peso de tarifas dos EUA e geopolítica."
+      "1m": "No recorte dos ultimo mes, o ativo variou -0.7%. A volatilidade anualizada equivalente ficou perto de 27.9%. No mesmo intervalo, o drawdown observado foi de -8.2%. Contra IBOV, o beta estimado da janela ficou em 0.61, com correlacao de 0.34. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
+      "2m": "No recorte dos ultimos 2 meses, o ativo variou -13.1%. A volatilidade anualizada equivalente ficou perto de 33.8%. No mesmo intervalo, o drawdown observado foi de -21.0%. Contra IBOV, o beta estimado da janela ficou em 0.96, com correlacao de 0.48. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
+      "3m": "No recorte dos ultimos 3 meses, o ativo variou -5.6%. A volatilidade anualizada equivalente ficou perto de 31.5%. No mesmo intervalo, o drawdown observado foi de -21.0%. Contra IBOV, o beta estimado da janela ficou em 0.94, com correlacao de 0.57. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -3.3% e preco estimado perto de 40.76. O contexto de noticias ajusta essa leitura em -1.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -3.9% e preco estimado perto de 40.50. O contexto de noticias ajusta essa leitura em -2.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -8.3% e preco estimado perto de 38.67. O contexto de noticias ajusta essa leitura em -2.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de -15.4% e preco estimado perto de 35.68. O contexto de noticias ajusta essa leitura em -2.9%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -2.2% e preco estimado perto de 43.04. O contexto de noticias ajusta essa leitura em -1.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -0.5% e preco estimado perto de 43.80. O contexto de noticias ajusta essa leitura em -2.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +2.3% e preco estimado perto de 45.01. O contexto de noticias ajusta essa leitura em -2.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +3.1% e preco estimado perto de 45.39. O contexto de noticias ajusta essa leitura em -2.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
   "sources": [
+    {
+      "id": "ea48af19e250f4dd56c98737ac3df90f",
+      "title": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-de-02-com-pressao-de-vale-weg-sobe-apos-recomendacao/",
+      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "summary": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação.\n\nO texto menciona VALE3, WEGE3. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 0.0,
+      "impact_score": 0.45,
+      "relevance_score": 0.5,
+      "match_score": 0.765,
+      "rank_score": 0.6843,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "fluxo",
+      "role": "outlook"
+    },
+    {
+      "id": "6e9191d69b5ef07628b501c138106f88",
+      "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
+      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.36,
+      "rank_score": 0.5037,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
     {
       "id": "d4ad77c8fe0dba39b783708103c1403f",
       "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
@@ -366,12 +661,69 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.3418,
-      "rank_score": 0.5062,
+      "match_score": 0.3271,
+      "rank_score": 0.4986,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "497d48bcf07bb1a9442cb63a1d330df4",
+      "title": "Trump relança sua guerra tarifária a tempo de substituir outras taxas",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/trump-relanca-sua-guerra-tarifaria-a-tempo-de-substituir-outras-taxas.shtml",
+      "published_at": "2026-06-07T10:00:00-03:00",
+      "summary": "O presidente dos EUA, Donald Trump, emitiu uma enxurrada de ações comerciais esta semana enquanto seu governo busca reimpor novas tarifas sobre parceiros comerciais após a Suprema Corte derrubar as taxas impostas pelo presidente.\n\nLeia mais (06/07/2026 - 10h00). O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.3524,
+      "rank_score": 0.4967,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "0048229a6179b8807618d2898aa2f022",
+      "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+      "published_at": "2026-06-04T04:03:05.260410+00:00",
+      "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.344,
+      "rank_score": 0.4954,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "d5d0f308cbddead43530d6a54a31afef",
+      "title": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
+      "published_at": "2026-06-04T04:03:05.260410+00:00",
+      "summary": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros.\n\nO foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.344,
+      "rank_score": 0.4954,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
       "analysis_category": "macro",
       "role": "outlook"
     },
@@ -385,14 +737,14 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.36,
-      "rank_score": 0.5037,
+      "match_score": 0.3425,
+      "rank_score": 0.4946,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.75,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "03c1287e89071e3c85b905d8a3e57db4",
@@ -404,14 +756,14 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.36,
-      "rank_score": 0.5037,
+      "match_score": 0.3425,
+      "rank_score": 0.4946,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.75,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -423,14 +775,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3459,
-      "rank_score": 0.5009,
+      "match_score": 0.3304,
+      "rank_score": 0.4928,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "fundamento",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -442,14 +794,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3459,
-      "rank_score": 0.5009,
+      "match_score": 0.3304,
+      "rank_score": 0.4928,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -461,14 +813,14 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3439,
-      "rank_score": 0.4998,
+      "match_score": 0.3288,
+      "rank_score": 0.492,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "629cddfde78d45fdde8891b65e011167",
@@ -480,107 +832,12 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3438,
-      "rank_score": 0.4998,
+      "match_score": 0.3287,
+      "rank_score": 0.4919,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "analysis_category": "fundamento",
-      "role": "historical"
-    },
-    {
-      "id": "6476d1826c1e6586e530d9f9f2a7577b",
-      "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
-      "published_at": "2026-06-03T10:39:00-03:00",
-      "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
-      "sentiment_score": -1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.3573,
-      "rank_score": 0.4993,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "68fa2f4903ea31a203e21b6b4233a73e",
-      "title": "Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-sobem-com-otimismo-por-acordo-entre-eua-e-ira-indices-renovam-maximas/",
-      "published_at": "2026-05-29T20:55:27+00:00",
-      "summary": "Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados EUA Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio Estadão Conteúdo 29/05/2026 17h55 &bull; Atualizado 1 dia atrás Publicidade As bolsas de Nova York fecharam em alta nesta sexta-feira, 29, com os três principais índices renovando máximas intraday e de fechamento, enquanto investidores permanecem otimistas de que um acordo entre os EUA e o Irã será oficializado em breve. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": 0.14285714285714285,
-      "impact_score": 0.4928571428571429,
-      "relevance_score": 0.5,
-      "match_score": 0.3419,
-      "rank_score": 0.4827,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "cdd7cde965d0db8917bcc712e4a3459b",
-      "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
-      "published_at": "2026-06-01T23:33:02.846612+00:00",
-      "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
-      "sentiment_score": -1.0,
-      "impact_score": 0.75,
-      "relevance_score": 0.5,
-      "match_score": 0.3092,
-      "rank_score": 0.4713,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.75,
-      "analysis_category": "fluxo",
-      "role": "historical"
-    },
-    {
-      "id": "7cbaf75733e1b76778881ee3877a6adb",
-      "title": "Economistas sobem previsão da inflação para 2026 e os dois próximos anos",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/economistas-sobem-previsao-da-inflacao-para-2026-e-os-dois-proximos-anos.shtml",
-      "published_at": "2026-06-01T09:35:00-03:00",
-      "summary": "Os economistas elevaram a previsão da inflação neste ano e para os dois próximos com o impacto da guerra no Irã afetando os preços dos combustíveis e dos alimentos em todo o mundo.\n\nLeia mais (06/01/2026 - 09h35). O foco principal passa por Alimentos, Economia.",
-      "sentiment_score": 0.3333333333333333,
-      "impact_score": 0.35,
-      "relevance_score": 0.5,
-      "match_score": 0.3503,
-      "rank_score": 0.4657,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
-      "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
-      "source_name": "Tesouro Nacional - Noticias",
-      "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
-      "published_at": "2026-04-28T00:00:00+00:00",
-      "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
-      "sentiment_score": -0.3333333333333333,
-      "impact_score": 0.35,
-      "relevance_score": 0.5,
-      "match_score": 0.303,
-      "rank_score": 0.4641,
-      "source_category": "treasury",
-      "is_official": true,
-      "context_role": "macro",
-      "source_confidence_weight": 0.95,
       "analysis_category": "fundamento",
       "role": "historical"
     }
@@ -588,8 +845,46 @@
   "source_groups": [
     {
       "source_name": "InfoMoney",
-      "count": 9,
+      "count": 11,
       "items": [
+        {
+          "id": "ea48af19e250f4dd56c98737ac3df90f",
+          "title": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-de-02-com-pressao-de-vale-weg-sobe-apos-recomendacao/",
+          "published_at": "2026-06-09T00:58:38.980555+00:00",
+          "summary": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação.\n\nO texto menciona VALE3, WEGE3. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 0.0,
+          "impact_score": 0.45,
+          "relevance_score": 0.5,
+          "match_score": 0.765,
+          "rank_score": 0.6843,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
+        {
+          "id": "6e9191d69b5ef07628b501c138106f88",
+          "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
+          "published_at": "2026-06-09T00:58:38.980555+00:00",
+          "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.36,
+          "rank_score": 0.5037,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
         {
           "id": "d4ad77c8fe0dba39b783708103c1403f",
           "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
@@ -600,12 +895,50 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.3418,
-          "rank_score": 0.5062,
+          "match_score": 0.3271,
+          "rank_score": 0.4986,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "0048229a6179b8807618d2898aa2f022",
+          "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+          "published_at": "2026-06-04T04:03:05.260410+00:00",
+          "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.344,
+          "rank_score": 0.4954,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "d5d0f308cbddead43530d6a54a31afef",
+          "title": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
+          "published_at": "2026-06-04T04:03:05.260410+00:00",
+          "summary": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros.\n\nO foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.344,
+          "rank_score": 0.4954,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
           "analysis_category": "macro",
           "role": "outlook"
         },
@@ -619,14 +952,14 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.36,
-          "rank_score": 0.5037,
+          "match_score": 0.3425,
+          "rank_score": 0.4946,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.75,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "03c1287e89071e3c85b905d8a3e57db4",
@@ -638,14 +971,14 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.36,
-          "rank_score": 0.5037,
+          "match_score": 0.3425,
+          "rank_score": 0.4946,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.75,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -657,14 +990,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3459,
-          "rank_score": 0.5009,
+          "match_score": 0.3304,
+          "rank_score": 0.4928,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "fundamento",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -676,14 +1009,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3459,
-          "rank_score": 0.5009,
+          "match_score": 0.3304,
+          "rank_score": 0.4928,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
@@ -695,14 +1028,14 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3439,
-          "rank_score": 0.4998,
+          "match_score": 0.3288,
+          "rank_score": 0.492,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "629cddfde78d45fdde8891b65e011167",
@@ -714,121 +1047,39 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3438,
-          "rank_score": 0.4998,
+          "match_score": 0.3287,
+          "rank_score": 0.4919,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "fundamento",
-          "role": "historical"
-        },
-        {
-          "id": "68fa2f4903ea31a203e21b6b4233a73e",
-          "title": "Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-sobem-com-otimismo-por-acordo-entre-eua-e-ira-indices-renovam-maximas/",
-          "published_at": "2026-05-29T20:55:27+00:00",
-          "summary": "Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados EUA Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio Estadão Conteúdo 29/05/2026 17h55 &bull; Atualizado 1 dia atrás Publicidade As bolsas de Nova York fecharam em alta nesta sexta-feira, 29, com os três principais índices renovando máximas intraday e de fechamento, enquanto investidores permanecem otimistas de que um acordo entre os EUA e o Irã será oficializado em breve. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": 0.14285714285714285,
-          "impact_score": 0.4928571428571429,
-          "relevance_score": 0.5,
-          "match_score": 0.3419,
-          "rank_score": 0.4827,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "cdd7cde965d0db8917bcc712e4a3459b",
-          "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
-          "published_at": "2026-06-01T23:33:02.846612+00:00",
-          "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
-          "sentiment_score": -1.0,
-          "impact_score": 0.75,
-          "relevance_score": 0.5,
-          "match_score": 0.3092,
-          "rank_score": 0.4713,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.75,
-          "analysis_category": "fluxo",
           "role": "historical"
         }
       ]
     },
     {
       "source_name": "Folha.com - Mercado - Principal",
-      "count": 2,
-      "items": [
-        {
-          "id": "6476d1826c1e6586e530d9f9f2a7577b",
-          "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
-          "published_at": "2026-06-03T10:39:00-03:00",
-          "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
-          "sentiment_score": -1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.3573,
-          "rank_score": 0.4993,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "7cbaf75733e1b76778881ee3877a6adb",
-          "title": "Economistas sobem previsão da inflação para 2026 e os dois próximos anos",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/economistas-sobem-previsao-da-inflacao-para-2026-e-os-dois-proximos-anos.shtml",
-          "published_at": "2026-06-01T09:35:00-03:00",
-          "summary": "Os economistas elevaram a previsão da inflação neste ano e para os dois próximos com o impacto da guerra no Irã afetando os preços dos combustíveis e dos alimentos em todo o mundo.\n\nLeia mais (06/01/2026 - 09h35). O foco principal passa por Alimentos, Economia.",
-          "sentiment_score": 0.3333333333333333,
-          "impact_score": 0.35,
-          "relevance_score": 0.5,
-          "match_score": 0.3503,
-          "rank_score": 0.4657,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
-        }
-      ]
-    },
-    {
-      "source_name": "Tesouro Nacional - Noticias",
       "count": 1,
       "items": [
         {
-          "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
-          "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
-          "source_name": "Tesouro Nacional - Noticias",
-          "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
-          "published_at": "2026-04-28T00:00:00+00:00",
-          "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
-          "sentiment_score": -0.3333333333333333,
-          "impact_score": 0.35,
+          "id": "497d48bcf07bb1a9442cb63a1d330df4",
+          "title": "Trump relança sua guerra tarifária a tempo de substituir outras taxas",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/trump-relanca-sua-guerra-tarifaria-a-tempo-de-substituir-outras-taxas.shtml",
+          "published_at": "2026-06-07T10:00:00-03:00",
+          "summary": "O presidente dos EUA, Donald Trump, emitiu uma enxurrada de ações comerciais esta semana enquanto seu governo busca reimpor novas tarifas sobre parceiros comerciais após a Suprema Corte derrubar as taxas impostas pelo presidente.\n\nLeia mais (06/07/2026 - 10h00). O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.303,
-          "rank_score": 0.4641,
-          "source_category": "treasury",
-          "is_official": true,
+          "match_score": 0.3524,
+          "rank_score": 0.4967,
+          "source_category": "press",
+          "is_official": false,
           "context_role": "macro",
-          "source_confidence_weight": 0.95,
-          "analysis_category": "fundamento",
-          "role": "historical"
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
         }
       ]
     }

@@ -1,0 +1,10 @@
+{
+  "ticker": "MXRF11",
+  "horizon_days": 21,
+  "train_r2": 0.972532,
+  "test_r2": -0.508894,
+  "rmse": 0.016886,
+  "train_samples": 360,
+  "test_samples": 91,
+  "trained_at": "2026-06-09T00:59:21.802761+00:00"
+}

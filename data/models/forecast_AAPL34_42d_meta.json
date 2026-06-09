@@ -1,0 +1,10 @@
+{
+  "ticker": "AAPL34",
+  "horizon_days": 42,
+  "train_r2": 0.952458,
+  "test_r2": -1.161844,
+  "rmse": 0.133299,
+  "train_samples": 329,
+  "test_samples": 83,
+  "trained_at": "2026-06-04T13:41:48.309982+00:00"
+}
