@@ -21,10 +21,29 @@ class AuthService:
         self._users_path = "auth/users.json"
         self._sessions_path = "auth/sessions.json"
         self._preferences_dir = "auth/preferences"
+        self._demo_email = "demo@operum.app"
+        self._demo_password = "Operum123"
+
+    def _ensure_seed_user(self, users: list[UserRecord]) -> list[UserRecord]:
+        if any(user.email == self._demo_email for user in users):
+            return users
+
+        now = datetime.now(timezone.utc)
+        users.append(UserRecord(
+            id=secrets.token_hex(16),
+            name="Demo Operum",
+            email=self._demo_email,
+            password_hash=self._hash_password(self._demo_password),
+            created_at=now,
+            updated_at=now,
+        ))
+        self._save_users(users)
+        return users
 
     def _load_users(self) -> list[UserRecord]:
         raw = self.storage.load_json(self._users_path) or []
-        return [UserRecord(**item) for item in raw]
+        users = [UserRecord(**item) for item in raw]
+        return self._ensure_seed_user(users)
 
     def _save_users(self, users: list[UserRecord]) -> None:
         self.storage.save_json(self._users_path, [user.model_dump(mode="json") for user in users])

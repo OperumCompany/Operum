@@ -1,10 +1,10 @@
 {
   "ticker": "KNRI11",
   "horizon_days": 1,
-  "train_r2": 0.881605,
-  "test_r2": -0.216277,
+  "train_r2": 0.881604,
+  "test_r2": -0.216274,
   "rmse": 0.01077,
   "train_samples": 377,
   "test_samples": 95,
-  "trained_at": "2026-06-09T00:59:19.686367+00:00"
+  "trained_at": "2026-06-09T11:53:12.609798+00:00"
 }

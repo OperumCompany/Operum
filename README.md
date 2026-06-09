@@ -52,6 +52,10 @@ npm run dev
 
 Frontend em `http://localhost:5173` com proxy `/api` para `localhost:8001`.
 
+Credenciais locais de desenvolvimento:
+- `demo@operum.app`
+- `Operum123`
+
 ## Modulos
 
 ### Noticias

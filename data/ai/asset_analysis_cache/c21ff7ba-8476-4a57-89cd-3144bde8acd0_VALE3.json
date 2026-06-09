@@ -3,8 +3,8 @@
   "ticker": "VALE3",
   "asset_name": "Vale ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-09T00:59:28.309526+00:00",
-  "recomputed_at": "2026-06-09T00:59:28.309526+00:00",
+  "generated_at": "2026-06-09T11:55:09.899879+00:00",
+  "recomputed_at": "2026-06-09T11:55:09.899879+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
@@ -309,147 +309,147 @@
     },
     {
       "date": "2026-06-17",
-      "value": 78.54
+      "value": 78.57
     },
     {
       "date": "2026-06-18",
-      "value": 78.37
+      "value": 78.42
     },
     {
       "date": "2026-06-19",
-      "value": 78.2
+      "value": 78.28
     },
     {
       "date": "2026-06-22",
-      "value": 78.02
+      "value": 78.14
     },
     {
       "date": "2026-06-23",
-      "value": 77.85
+      "value": 77.99
     },
     {
       "date": "2026-06-24",
-      "value": 77.68
+      "value": 77.85
     },
     {
       "date": "2026-06-25",
-      "value": 77.51
+      "value": 77.71
     },
     {
       "date": "2026-06-26",
-      "value": 77.34
+      "value": 77.56
     },
     {
       "date": "2026-06-29",
-      "value": 77.17
+      "value": 77.42
     },
     {
       "date": "2026-06-30",
-      "value": 77.0
+      "value": 77.28
     },
     {
       "date": "2026-07-01",
-      "value": 76.83
+      "value": 77.14
     },
     {
       "date": "2026-07-02",
-      "value": 76.66
+      "value": 76.99
     },
     {
       "date": "2026-07-03",
-      "value": 76.48
+      "value": 76.85
     },
     {
       "date": "2026-07-06",
-      "value": 76.31
+      "value": 76.71
     },
     {
       "date": "2026-07-07",
-      "value": 76.14
+      "value": 76.56
     },
     {
       "date": "2026-07-08",
-      "value": 75.97
+      "value": 76.42
     },
     {
       "date": "2026-07-09",
-      "value": 75.92
+      "value": 76.34
     },
     {
       "date": "2026-07-10",
-      "value": 75.86
+      "value": 76.27
     },
     {
       "date": "2026-07-13",
-      "value": 75.81
+      "value": 76.19
     },
     {
       "date": "2026-07-14",
-      "value": 75.75
+      "value": 76.12
     },
     {
       "date": "2026-07-15",
-      "value": 75.7
+      "value": 76.04
     },
     {
       "date": "2026-07-16",
-      "value": 75.64
+      "value": 75.96
     },
     {
       "date": "2026-07-17",
-      "value": 75.59
+      "value": 75.89
     },
     {
       "date": "2026-07-20",
-      "value": 75.53
+      "value": 75.81
     },
     {
       "date": "2026-07-21",
-      "value": 75.48
+      "value": 75.73
     },
     {
       "date": "2026-07-22",
-      "value": 75.42
+      "value": 75.66
     },
     {
       "date": "2026-07-23",
-      "value": 75.37
+      "value": 75.58
     },
     {
       "date": "2026-07-24",
-      "value": 75.31
+      "value": 75.51
     },
     {
       "date": "2026-07-27",
-      "value": 75.26
+      "value": 75.43
     },
     {
       "date": "2026-07-28",
-      "value": 75.2
+      "value": 75.35
     },
     {
       "date": "2026-07-29",
-      "value": 75.15
+      "value": 75.28
     },
     {
       "date": "2026-07-30",
-      "value": 75.09
+      "value": 75.2
     },
     {
       "date": "2026-07-31",
-      "value": 75.04
+      "value": 75.12
     },
     {
       "date": "2026-08-03",
-      "value": 74.98
+      "value": 75.05
     },
     {
       "date": "2026-08-04",
-      "value": 74.93
+      "value": 74.97
     },
     {
       "date": "2026-08-05",
-      "value": 74.87
+      "value": 74.9
     },
     {
       "date": "2026-08-06",
@@ -551,8 +551,8 @@
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 75.97,
-      "predicted_return": -0.026885,
+      "predicted_price": 76.42,
+      "predicted_return": -0.021139,
       "confidence": 0.4248
     },
     {
@@ -594,16 +594,17 @@
   },
   "analysis_sections": {
     "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 78.07. Hoje representa cerca de 12.0% da carteira. No curto prazo, o momentum de 1 mes esta em -2.5%. O modelo de 3 meses hoje aponta estabilidade, com retorno estimado de +1.3% e confianca de 46%. O ajuste contextual das noticias adiciona -0.8% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.52. Nesse conjunto, o peso informacional esta distribuido em fundamento (1), macro (0), setorial (0) e fluxo (5).",
-    "recent": "No recorte dos ultimos 3 meses, o ativo variou -4.0%. A volatilidade anualizada equivalente ficou perto de 29.8%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 0.93, com correlacao de 0.59. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
+    "recent": "No recorte dos ultimos 3 meses, o ativo variou -4.0%. A volatilidade anualizada equivalente ficou perto de 29.8%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 0.93, com correlacao de 0.59. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
     "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +1.3% e preco estimado perto de 79.10. O contexto de noticias ajusta essa leitura em +0.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No recorte dos ultimo mes, o ativo variou -2.5%. A volatilidade anualizada equivalente ficou perto de 30.6%. No mesmo intervalo, o drawdown observado foi de -8.2%. Contra IBOV, o beta estimado da janela ficou em 0.76, com correlacao de 0.38. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
-      "2m": "No recorte dos ultimos 2 meses, o ativo variou -6.0%. A volatilidade anualizada equivalente ficou perto de 32.1%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 1.00, com correlacao de 0.52. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
-      "3m": "No recorte dos ultimos 3 meses, o ativo variou -4.0%. A volatilidade anualizada equivalente ficou perto de 29.8%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 0.93, com correlacao de 0.59. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas."
+      "1w": "No recorte dos ultima semana, o ativo variou -5.7%. A volatilidade anualizada equivalente ficou perto de 50.8%. No mesmo intervalo, o drawdown observado foi de -8.2%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
+      "1m": "No recorte dos ultimo mes, o ativo variou -2.5%. A volatilidade anualizada equivalente ficou perto de 30.6%. No mesmo intervalo, o drawdown observado foi de -8.2%. Contra IBOV, o beta estimado da janela ficou em 0.76, com correlacao de 0.38. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
+      "2m": "No recorte dos ultimos 2 meses, o ativo variou -6.0%. A volatilidade anualizada equivalente ficou perto de 32.1%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 1.00, com correlacao de 0.52. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
+      "3m": "No recorte dos ultimos 3 meses, o ativo variou -4.0%. A volatilidade anualizada equivalente ficou perto de 29.8%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 0.93, com correlacao de 0.59. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas."
     },
     "outlook_by_horizon": {
       "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +0.8% e preco estimado perto de 78.71. O contexto de noticias ajusta essa leitura em +0.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -2.7% e preco estimado perto de 75.97. O contexto de noticias ajusta essa leitura em +0.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -2.1% e preco estimado perto de 76.42. O contexto de noticias ajusta essa leitura em +0.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
       "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -4.2% e preco estimado perto de 74.82. O contexto de noticias ajusta essa leitura em +0.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
       "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +1.3% e preco estimado perto de 79.10. O contexto de noticias ajusta essa leitura em +0.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
     }
@@ -611,17 +612,17 @@
   "used_news_count": 12,
   "sources": [
     {
-      "id": "68658711ddcb0c7f6d8dd1ad091aee8f",
+      "id": "b73c9c583923e44f7d46740dfc6be22b",
       "title": "Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos",
       "source_name": "InfoMoney",
       "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-08062026/",
-      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "published_at": "2026-06-09T01:24:32.225679+00:00",
       "summary": "Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
       "sentiment_score": -1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.765,
-      "rank_score": 0.7293,
+      "match_score": 0.7634,
+      "rank_score": 0.7285,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -630,17 +631,17 @@
       "role": "outlook"
     },
     {
-      "id": "ea48af19e250f4dd56c98737ac3df90f",
+      "id": "f3d40feb2fc0a771ca274ad4f8c881d4",
       "title": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação",
       "source_name": "InfoMoney",
       "source_url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-de-02-com-pressao-de-vale-weg-sobe-apos-recomendacao/",
-      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "published_at": "2026-06-09T01:24:32.225679+00:00",
       "summary": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação.\n\nO texto menciona VALE3, WEGE3. O foco principal passa por Economia, Mercado.",
       "sentiment_score": 0.0,
       "impact_score": 0.45,
       "relevance_score": 0.5,
-      "match_score": 0.765,
-      "rank_score": 0.6843,
+      "match_score": 0.7634,
+      "rank_score": 0.6835,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -658,8 +659,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.79,
-      "rank_score": 0.6548,
+      "match_score": 0.7887,
+      "rank_score": 0.6541,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -677,8 +678,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.6844,
-      "rank_score": 0.6229,
+      "match_score": 0.6835,
+      "rank_score": 0.6224,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "asset",
@@ -696,8 +697,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.6903,
-      "rank_score": 0.603,
+      "match_score": 0.689,
+      "rank_score": 0.6023,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -715,8 +716,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.6851,
-      "rank_score": 0.6003,
+      "match_score": 0.6839,
+      "rank_score": 0.5996,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -734,8 +735,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.6823,
-      "rank_score": 0.5988,
+      "match_score": 0.6811,
+      "rank_score": 0.5982,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -744,22 +745,41 @@
       "role": "historical"
     },
     {
-      "id": "6e9191d69b5ef07628b501c138106f88",
+      "id": "e6d14079ca927804706e0273610d797a",
       "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
       "source_name": "InfoMoney",
       "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
-      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "published_at": "2026-06-09T01:24:32.225679+00:00",
       "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.36,
-      "rank_score": 0.5037,
+      "match_score": 0.3584,
+      "rank_score": 0.5029,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.75,
       "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "919be7be949dce06cc3c17f20c24471d",
+      "title": "Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/receita-de-royalties-do-petroleo-dispara-com-guerra-e-bate-recorde-de-r-8-bi-em-maio.shtml",
+      "published_at": "2026-06-09T04:00:00-03:00",
+      "summary": "A arrecadação com royalties sobre a produção de petróleo disparou após o início da guerra no Irã e atingiu recorde em maio, com mais de R$ 8 bilhões.\n\nA receita extra beneficia o governo federal e deve ajudar o Rio de Janeiro a fechar o ano com déficit bem inferior ao previsto. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.3569,
+      "rank_score": 0.4991,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
       "role": "historical"
     },
     {
@@ -772,8 +792,8 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.3271,
-      "rank_score": 0.4986,
+      "match_score": 0.326,
+      "rank_score": 0.498,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -791,8 +811,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3524,
-      "rank_score": 0.4967,
+      "match_score": 0.3509,
+      "rank_score": 0.496,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -810,27 +830,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.344,
-      "rank_score": 0.4954,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.75,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "d5d0f308cbddead43530d6a54a31afef",
-      "title": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
-      "published_at": "2026-06-04T04:03:05.260410+00:00",
-      "summary": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros.\n\nO foco principal passa por Economia, Mercado.",
-      "sentiment_score": -1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.344,
-      "rank_score": 0.4954,
+      "match_score": 0.3427,
+      "rank_score": 0.4947,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -841,128 +842,8 @@
   ],
   "source_groups": [
     {
-      "source_name": "InfoMoney",
-      "count": 6,
-      "items": [
-        {
-          "id": "68658711ddcb0c7f6d8dd1ad091aee8f",
-          "title": "Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-08062026/",
-          "published_at": "2026-06-09T00:58:38.980555+00:00",
-          "summary": "Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-          "sentiment_score": -1.0,
-          "impact_score": 0.75,
-          "relevance_score": 0.5,
-          "match_score": 0.765,
-          "rank_score": 0.7293,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "asset",
-          "source_confidence_weight": 0.75,
-          "analysis_category": "fluxo",
-          "role": "outlook"
-        },
-        {
-          "id": "ea48af19e250f4dd56c98737ac3df90f",
-          "title": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-de-02-com-pressao-de-vale-weg-sobe-apos-recomendacao/",
-          "published_at": "2026-06-09T00:58:38.980555+00:00",
-          "summary": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação.\n\nO texto menciona VALE3, WEGE3. O foco principal passa por Economia, Mercado.",
-          "sentiment_score": 0.0,
-          "impact_score": 0.45,
-          "relevance_score": 0.5,
-          "match_score": 0.765,
-          "rank_score": 0.6843,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "asset",
-          "source_confidence_weight": 0.75,
-          "analysis_category": "fluxo",
-          "role": "outlook"
-        },
-        {
-          "id": "6e9191d69b5ef07628b501c138106f88",
-          "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
-          "published_at": "2026-06-09T00:58:38.980555+00:00",
-          "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
-          "sentiment_score": 1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.36,
-          "rank_score": 0.5037,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.75,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "d4ad77c8fe0dba39b783708103c1403f",
-          "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-29052026/",
-          "published_at": "2026-05-29T20:32:36+00:00",
-          "summary": "Acompanhe o que movimenta a bolsa, ações, dólar, juros e commodities nos negócios do pregão desta sexta-feira (29).\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Tempo Real Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo Índices nos EUA fecham positivos e semana e mês de maior também têm ganhos Sextou! O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-          "sentiment_score": -0.6666666666666666,
-          "impact_score": 0.6499999999999999,
-          "relevance_score": 0.5,
-          "match_score": 0.3271,
-          "rank_score": 0.4986,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "0048229a6179b8807618d2898aa2f022",
-          "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
-          "published_at": "2026-06-04T04:03:05.260410+00:00",
-          "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
-          "sentiment_score": -1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.344,
-          "rank_score": 0.4954,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.75,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "d5d0f308cbddead43530d6a54a31afef",
-          "title": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
-          "published_at": "2026-06-04T04:03:05.260410+00:00",
-          "summary": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros.\n\nO foco principal passa por Economia, Mercado.",
-          "sentiment_score": -1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.344,
-          "rank_score": 0.4954,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.75,
-          "analysis_category": "macro",
-          "role": "historical"
-        }
-      ]
-    },
-    {
       "source_name": "Folha.com - Mercado - Principal",
-      "count": 5,
+      "count": 6,
       "items": [
         {
           "id": "db473338bb6ad2878703c9e95ea4ace2",
@@ -974,8 +855,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.79,
-          "rank_score": 0.6548,
+          "match_score": 0.7887,
+          "rank_score": 0.6541,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -993,8 +874,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.6903,
-          "rank_score": 0.603,
+          "match_score": 0.689,
+          "rank_score": 0.6023,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -1012,8 +893,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.6851,
-          "rank_score": 0.6003,
+          "match_score": 0.6839,
+          "rank_score": 0.5996,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -1031,13 +912,32 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.6823,
-          "rank_score": 0.5988,
+          "match_score": 0.6811,
+          "rank_score": 0.5982,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
           "source_confidence_weight": 0.72,
           "analysis_category": "fluxo",
+          "role": "historical"
+        },
+        {
+          "id": "919be7be949dce06cc3c17f20c24471d",
+          "title": "Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/receita-de-royalties-do-petroleo-dispara-com-guerra-e-bate-recorde-de-r-8-bi-em-maio.shtml",
+          "published_at": "2026-06-09T04:00:00-03:00",
+          "summary": "A arrecadação com royalties sobre a produção de petróleo disparou após o início da guerra no Irã e atingiu recorde em maio, com mais de R$ 8 bilhões.\n\nA receita extra beneficia o governo federal e deve ajudar o Rio de Janeiro a fechar o ano com déficit bem inferior ao previsto. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.3569,
+          "rank_score": 0.4991,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
           "role": "historical"
         },
         {
@@ -1050,12 +950,113 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3524,
-          "rank_score": 0.4967,
+          "match_score": 0.3509,
+          "rank_score": 0.496,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "historical"
+        }
+      ]
+    },
+    {
+      "source_name": "InfoMoney",
+      "count": 5,
+      "items": [
+        {
+          "id": "b73c9c583923e44f7d46740dfc6be22b",
+          "title": "Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-08062026/",
+          "published_at": "2026-06-09T01:24:32.225679+00:00",
+          "summary": "Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.75,
+          "relevance_score": 0.5,
+          "match_score": 0.7634,
+          "rank_score": 0.7285,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
+        {
+          "id": "f3d40feb2fc0a771ca274ad4f8c881d4",
+          "title": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-de-02-com-pressao-de-vale-weg-sobe-apos-recomendacao/",
+          "published_at": "2026-06-09T01:24:32.225679+00:00",
+          "summary": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação.\n\nO texto menciona VALE3, WEGE3. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 0.0,
+          "impact_score": 0.45,
+          "relevance_score": 0.5,
+          "match_score": 0.7634,
+          "rank_score": 0.6835,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
+        {
+          "id": "e6d14079ca927804706e0273610d797a",
+          "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
+          "published_at": "2026-06-09T01:24:32.225679+00:00",
+          "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.3584,
+          "rank_score": 0.5029,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "historical"
+        },
+        {
+          "id": "d4ad77c8fe0dba39b783708103c1403f",
+          "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-29052026/",
+          "published_at": "2026-05-29T20:32:36+00:00",
+          "summary": "Acompanhe o que movimenta a bolsa, ações, dólar, juros e commodities nos negócios do pregão desta sexta-feira (29).\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Tempo Real Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo Índices nos EUA fecham positivos e semana e mês de maior também têm ganhos Sextou! O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+          "sentiment_score": -0.6666666666666666,
+          "impact_score": 0.6499999999999999,
+          "relevance_score": 0.5,
+          "match_score": 0.326,
+          "rank_score": 0.498,
+          "source_category": null,
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "historical"
+        },
+        {
+          "id": "0048229a6179b8807618d2898aa2f022",
+          "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+          "published_at": "2026-06-04T04:03:05.260410+00:00",
+          "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.3427,
+          "rank_score": 0.4947,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
           "analysis_category": "macro",
           "role": "historical"
         }
@@ -1075,8 +1076,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.6844,
-          "rank_score": 0.6229,
+          "match_score": 0.6835,
+          "rank_score": 0.6224,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "asset",

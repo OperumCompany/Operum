@@ -1,5 +1,1137 @@
 [
   {
+    "id": "4f966ce8d1698edf341190e0b6f23da5",
+    "title": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
+    "subtitle": null,
+    "content_preview": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/estrangeiros-tiram-r-149-bilhoes-da-b3-em-maio-em-maior-saida-mensal-desde-2022/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "b48513a237130e4534701cb95e9a7057",
+    "title": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
+    "subtitle": null,
+    "content_preview": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/smart-fit-smft3-mercado-precifica-riscos-mas-ignora-todo-potencial-do-totalpass/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "ceeaf98d210057e6105068d7dcf84217",
+    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "subtitle": null,
+    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "eb217bb503f66e5eca9663c257f36b6e",
+    "title": "XP eleva preços-alvo para petroleiras e reforça compra para Petrobras, PRIO e Brava",
+    "subtitle": null,
+    "content_preview": "XP eleva preços-alvo para petroleiras e reforça compra para Petrobras, PRIO e Brava",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/xp-eleva-precos-alvo-para-petroleiras-e-reforca-compra-para-petrobras-prio-e-brava/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "mentioned_assets": [
+      "PETR4"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "XP eleva preços-alvo para petroleiras e reforça compra para Petrobras, PRIO e Brava.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "59bee696d3a0026eb1098e6948657365",
+    "title": "Brava (BRAV3) obtém aval de debenturistas para venda de controle para Ecopetrol",
+    "subtitle": null,
+    "content_preview": "Brava (BRAV3) obtém aval de debenturistas para venda de controle para Ecopetrol",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/brava-brav3-obtem-aval-de-debenturistas-para-venda-de-controle-para-ecopetrol/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Brava (BRAV3) obtém aval de debenturistas para venda de controle para Ecopetrol.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "3066a3cf645735e90af14b054cbf9fdf",
+    "title": "Ibovespa Hoje Ao Vivo: Confira o que movimenta Bolsa, Dólar e Juros nesta terça",
+    "subtitle": null,
+    "content_preview": "Ibovespa Hoje Ao Vivo: Confira o que movimenta Bolsa, Dólar e Juros nesta terça",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-09062026/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ibovespa Hoje Ao Vivo: Confira o que movimenta Bolsa, Dólar e Juros nesta terça.\n\nO foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "1898a8ebbcf2832ea4a10c2df738c642",
+    "title": "PetroRecôncavo (RECV3) registra baixa de 1,9% na produção de maio",
+    "subtitle": null,
+    "content_preview": "PetroRecôncavo (RECV3) registra baixa de 1,9% na produção de maio",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/petroreconcavo-recv3-registra-baixa-de-19-na-producao-de-maio/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "PetroRecôncavo (RECV3) registra baixa de 1,9% na produção de maio.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "6694754ec101222901f420c41b3e776f",
+    "title": "Axia Energia (AXIA3) conclui migração para segmento Novo Mercado",
+    "subtitle": null,
+    "content_preview": "Axia Energia (AXIA3) conclui migração para segmento Novo Mercado",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/axia-energia-axia3-conclui-migracao-para-segmento-novo-mercado/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Axia Energia (AXIA3) conclui migração para segmento Novo Mercado.\n\nO foco principal passa por Economia, Energia Eletrica.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "d875f60b685863ca3c743fdfa3a5602c",
+    "title": "Novo presidente da CVM troca titulares de superintendências como 1º ato",
+    "subtitle": null,
+    "content_preview": "Novo presidente da CVM troca titulares de superintendências como 1º ato",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/novo-presidente-da-cvm-troca-titulares-de-superintendencias-como-1o-ato/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Novo presidente da CVM troca titulares de superintendências como 1º ato.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "4f744ea3a4cd979a27e22b85753afc35",
+    "title": "Viver tem prejuízo líquido de R$ 5,6 milhões no 1º tri",
+    "subtitle": null,
+    "content_preview": "Viver tem prejuízo líquido de R$ 5,6 milhões no 1º tri",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/viver-tem-prejuizo-liquido-de-r-56-milhoes-no-1o-tri/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Viver tem prejuízo líquido de R$ 5,6 milhões no 1º tri.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "066e450307141c740c28d373829993b8",
+    "title": "Segundo dia da Semana dos Minicontratos terá aula de Igor Monteiro",
+    "subtitle": null,
+    "content_preview": "Segundo dia da Semana dos Minicontratos terá aula de Igor Monteiro",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/segundo-dia-da-semana-dos-minicontratos-tera-aula-de-igor-monteiro/",
+    "published_at": "2026-06-09T11:35:39.408781Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Segundo dia da Semana dos Minicontratos terá aula de Igor Monteiro.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "5db815830a306b4c24785691e7fd32ca",
+    "title": "Ações da Jumia Technologies sobem 5% no pré-mercado",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/acoes-da-jumia-technologies-sobem-5-no-premercado-93CH-1966826",
+    "published_at": "2026-06-09T11:23:45Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ações da Jumia Technologies sobem 5% no pré-mercado.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "50b517a81b49ed12deb9ac3bb6ec3686",
+    "title": "Kepler rebaixa Uniqa citando valorização limitada apesar de perspectiva mais forte",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/kepler-rebaixa-uniqa-citando-valorizacao-limitada-apesar-de-perspectiva-mais-forte-1966825",
+    "published_at": "2026-06-09T11:22:16Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": 0.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.25,
+    "summary": "Kepler rebaixa Uniqa citando valorização limitada apesar de perspectiva mais forte.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "67e615dc2fbadd4d7d7f12f5ea44ac4d",
+    "title": "Wilton Pereira Sampaio vai apitar partida de abertura da Copa do Mundo",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/world-news/wilton-pereira-sampaio-vai-apitar-partida-de-abertura-da-copa-do-mundo-1966824",
+    "published_at": "2026-06-09T11:21:26Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Wilton Pereira Sampaio vai apitar partida de abertura da Copa do Mundo.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "fa2b467a9b04572d6c515f589cba4bf7",
+    "title": "CoreWeave estuda emissão de títulos em euros para investidores europeus",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/coreweave-estuda-emissao-de-titulos-em-euros-para-investidores-europeus-1966818",
+    "published_at": "2026-06-09T11:17:45Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "CoreWeave estuda emissão de títulos em euros para investidores europeus.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "b57553e587b7d70cbe40e85382b6610d",
+    "title": "Pesquisa do Barclays mostra que fundos de hedge lideram adoção de IA",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/pesquisa-do-barclays-mostra-que-fundos-de-hedge-lideram-adocao-de-ia-93CH-1966816",
+    "published_at": "2026-06-09T11:16:46Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Pesquisa do Barclays mostra que fundos de hedge lideram adoção de IA.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "754ecbb738e48f947b39b9e1fbfba87a",
+    "title": "Como funciona o mercado de apostas sobre resultados de eleições, jogos e celebridades",
+    "subtitle": null,
+    "content_preview": "Kalshi, Polymarket e outras empresas do chamado mercado de previsão funcionam como bolsas de apostas sobre eleições, jogos, reality shows e celebridades. Leia mais (06/09/2026 - 08h11)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/como-funciona-o-mercado-de-apostas-sobre-resultados-de-eleicoes-jogos-e-celebridades.shtml",
+    "published_at": "2026-06-09T08:11:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Kalshi, Polymarket e outras empresas do chamado mercado de previsão funcionam como bolsas de apostas sobre eleições, jogos, reality shows e celebridades.\n\nLeia mais (06/09/2026 - 08h11). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "0891c287e3499e257a4d3877b1430554",
+    "title": "Entre EUA e China, Coreia do Sul aposta em 'terceira via' para inteligência artificial",
+    "subtitle": null,
+    "content_preview": "Entre os Estados Unidos, que lideram o desenvolvimento dos modelos mais avançados de inteligência artificial, e a China, que corre atrás para reduzir sua dependência tecnológica, a Coreia do Sul tenta construir um caminho próprio. Leia mais (06/09/2026 - 07h29)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entre-eua-e-china-coreia-do-sul-aposta-em-terceira-via-para-inteligencia-artificial.shtml",
+    "published_at": "2026-06-09T07:29:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Entre os Estados Unidos, que lideram o desenvolvimento dos modelos mais avançados de inteligência artificial, e a China, que corre atrás para reduzir sua dependência tecnológica, a Coreia do Sul tenta construir um caminho próprio.\n\nLeia mais (06/09/2026 - 07h29). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "db69abfb73d27623ebc1ad97edb613ad",
+    "title": "Brasil podia evitar veto à carne, mas não fez, diz porta-voz da União Europeia",
+    "subtitle": null,
+    "content_preview": "A União Europeia avisou o Brasil sobre a possibilidade de vetos à importação de carne e soja, mas o país e o setor agropecuário não fizeram mudanças para se adaptar às restrições, mesmo tendo capacidade para isso. Desta forma, o embargo foi efetivado, segundo relato do porta-voz da UE para comércio, Olof Gill, que diz acreditar que o atrito não deve afetar o acordo entre o bloco europeu e o Mercosul. Leia mais (06/09/2026 - 07h22)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/brasil-podia-evitar-veto-a-carne-mas-nao-fez-diz-porta-voz-da-uniao-europeia.shtml",
+    "published_at": "2026-06-09T07:22:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Alimentos",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Alimentos",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A União Europeia avisou o Brasil sobre a possibilidade de vetos à importação de carne e soja, mas o país e o setor agropecuário não fizeram mudanças para se adaptar às restrições, mesmo tendo capacidade para isso.\n\nDesta forma, o embargo foi efetivado, segundo relato do porta-voz da UE para comércio, Olof Gill, que diz acreditar que o atrito não deve afetar o acordo entre o bloco europeu e o Mercosul. O foco principal passa por Alimentos, Economia.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "c4eec6e5d87110da0b1508e7b0751196",
+    "title": "Bets e instituto condenam sigilo a documentos imposto pelo governo federal",
+    "subtitle": null,
+    "content_preview": "Não foi bem recebida por bets ouvidas pela coluna a decisão do governo federal de impor sigilo de até 100 anos a documentos de processos de autorização e outorga de apostas esportivas. Leia mais (06/09/2026 - 07h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/bets-e-instituto-condenam-sigilo-a-documentos-imposto-pelo-governo-federal.shtml",
+    "published_at": "2026-06-09T07:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Não foi bem recebida por bets ouvidas pela coluna a decisão do governo federal de impor sigilo de até 100 anos a documentos de processos de autorização e outorga de apostas esportivas.\n\nLeia mais (06/09/2026 - 07h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "29c1056e19223145a10aafb1795faf2f",
+    "title": "Reforma tributária exige previsibilidade para preservar competitividade e evitar novos desequilíbrios no varejo de moda",
+    "subtitle": null,
+    "content_preview": "A regulamentação da reforma tributária avança no Brasil com o objetivo legítimo de simplificar regras, reduzir distorções e modernizar o sistema de arrecadação. No entanto, à medida que novas leis complementares entram em vigor, cresce também a necessidade de atenção aos impactos práticos sobre setores altamente sensíveis a custos e margens, como é o caso da cadeia da moda. Leia mais (06/09/2026 - 07h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/blogs/que-imposto-e-esse/2026/06/reforma-tributaria-exige-previsibilidade-para-preservar-competitividade-e-evitar-novos-desequilibrios-no-varejo-de-moda.shtml",
+    "published_at": "2026-06-09T07:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia",
+      "Varejo"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia",
+      "Varejo"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A regulamentação da reforma tributária avança no Brasil com o objetivo legítimo de simplificar regras, reduzir distorções e modernizar o sistema de arrecadação.\n\nNo entanto, à medida que novas leis complementares entram em vigor, cresce também a necessidade de atenção aos impactos práticos sobre setores altamente sensíveis a custos e margens, como é o caso da cadeia da moda. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "147d76efbc8d37e1f729c05e1961d819",
+    "title": "Carro elétrico emite mais carbono na fabricação e exige quilometragem maior para benefício ambiental",
+    "subtitle": null,
+    "content_preview": "A fabricação de carros elétricos emite até três vezes mais gases do efeito estufa em relação à manufatura de veículos a combustão, fazendo com que automóveis movidos a bateria precisem percorrer distâncias maiores para compensar a diferença e trazer benefícios ao meio ambiente. Leia mais (06/09/2026 - 06h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/carro-eletrico-emite-mais-carbono-na-fabricacao-e-exige-quilometragem-maior-para-beneficio-ambiental.shtml",
+    "published_at": "2026-06-09T06:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A fabricação de carros elétricos emite até três vezes mais gases do efeito estufa em relação à manufatura de veículos a combustão, fazendo com que automóveis movidos a bateria precisem percorrer distâncias maiores para compensar a diferença e trazer benefícios ao meio ambiente.\n\nLeia mais (06/09/2026 - 06h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "e232c2a327195436dbcbc68b32cf461a",
+    "title": "Leilão da Receita Federal tem carro por R$ 10 mil, eletrodomésticos e joias",
+    "subtitle": null,
+    "content_preview": "A Receita Federal faz neste mês um leilão eletrônico em São Paulo com mercadorias apreendidas ou abandonadas que incluem veículos, eletrodomésticos, joias, equipamentos eletrônicos, itens de vestuário e máquinas agrícolas. Leia mais (06/09/2026 - 04h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/leilao-da-receita-federal-tem-carro-por-r-10-mil-eletrodomesticos-e-joias.shtml",
+    "published_at": "2026-06-09T04:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Receita Federal faz neste mês um leilão eletrônico em São Paulo com mercadorias apreendidas ou abandonadas que incluem veículos, eletrodomésticos, joias, equipamentos eletrônicos, itens de vestuário e máquinas agrícolas.\n\nLeia mais (06/09/2026 - 04h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "980131e0a0784cfa507132599242d174",
+    "title": "Jovens usam mais IA que outras gerações, mas temem efeitos no mercado de trabalho e na criatividade",
+    "subtitle": null,
+    "content_preview": "A promessa para os jovens era de que a IA (inteligência artificial) os tornaria mais produtivos, mais criativos e mais empregáveis. Agora, muitos deles temem que ela possa torná-los menos valiosos. Leia mais (06/09/2026 - 04h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/tec/2026/06/jovens-usam-mais-ia-que-outras-geracoes-mas-temem-efeitos-no-mercado-de-trabalho-e-na-criatividade.shtml",
+    "published_at": "2026-06-09T04:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A promessa para os jovens era de que a IA (inteligência artificial) os tornaria mais produtivos, mais criativos e mais empregáveis.\n\nAgora, muitos deles temem que ela possa torná-los menos valiosos. Leia mais (06/09/2026 - 04h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "919be7be949dce06cc3c17f20c24471d",
+    "title": "Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio",
+    "subtitle": null,
+    "content_preview": "A arrecadação com royalties sobre a produção de petróleo disparou após o início da guerra no Irã e atingiu recorde em maio, com mais de R$ 8 bilhões. A receita extra beneficia o governo federal e deve ajudar o Rio de Janeiro a fechar o ano com déficit bem inferior ao previsto. Leia mais (06/09/2026 - 04h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/receita-de-royalties-do-petroleo-dispara-com-guerra-e-bate-recorde-de-r-8-bi-em-maio.shtml",
+    "published_at": "2026-06-09T04:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A arrecadação com royalties sobre a produção de petróleo disparou após o início da guerra no Irã e atingiu recorde em maio, com mais de R$ 8 bilhões.\n\nA receita extra beneficia o governo federal e deve ajudar o Rio de Janeiro a fechar o ano com déficit bem inferior ao previsto. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "24503026162e84a425d2227a224838d7",
+    "title": "Copa do Mundo muda ritmo de trabalho e pode custar US$ 17 bi em perda de produtividade, diz pesquisa",
+    "subtitle": null,
+    "content_preview": "No momento em que a Copa do Mundo está prestes a dominar as conversas, os empregadores podem ter problemas para manter os funcionários concentrados durante a competição -e até mesmo para levá-los ao trabalho presencial, sugere pesquisa da UKG, que estima que o Mundial, que vai desta quinta (11) a 19 de julho, pode custar aos empregadores globais cerca de US$ 17 bilhões (R$ 85 bi) em perda de produtividade, com 37% dos trabalhadores planejando ajustar seus horários por causa dos jogos. Leia mais (06/09/2026 - 04h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/copa-do-mundo-muda-ritmo-de-trabalho-e-pode-custar-us-17-bi-em-perda-de-produtividade-diz-pesquisa.shtml",
+    "published_at": "2026-06-09T04:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "No momento em que a Copa do Mundo está prestes a dominar as conversas, os empregadores podem ter problemas para manter os funcionários concentrados durante a competição -e até mesmo para levá-los ao trabalho presencial, sugere pesquisa da UKG, que estima que o Mundial, que vai desta quinta (11) a 19 de julho, pode custar aos empregadores globais cerca de US$ 17 bilhões (R$ 85 bi) em perda de produtividade, com 37% dos trabalhadores planejando ajustar seus horários por causa dos jogos.\n\nLeia mais (06/09/2026 - 04h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "f8157cf6ca3e0dd61a31fd1320ce38ab",
+    "title": "Corredores verdes destravam o mercado de caminhões movidos a biometano",
+    "subtitle": null,
+    "content_preview": "Os caminhões movidos a gás estão perdendo o caráter experimental que os caracterizavam nos idos de 2019, quando a Scania iniciou os primeiros testes. Com o avanço dos chamados corredores verdes (rotas com disponibilidade do combustível nos postos), esses veículos passaram a ter viabilidade comercial, com as frotas mais limpas ganhando volume no país. Leia mais (06/08/2026 - 23h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/corredores-verdes-destravam-o-mercado-de-caminhoes-movidos-a-biometano.shtml",
+    "published_at": "2026-06-08T23:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Os caminhões movidos a gás estão perdendo o caráter experimental que os caracterizavam nos idos de 2019, quando a Scania iniciou os primeiros testes.\n\nCom o avanço dos chamados corredores verdes (rotas com disponibilidade do combustível nos postos), esses veículos passaram a ter viabilidade comercial, com as frotas mais limpas ganhando volume no país. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "c7c63c972eb770fe9ffacb9e940d6dc5",
+    "title": "Boreal consome menos etanol que Corolla Cross 2.0, mas perde em eficiência com gasolina; confira teste",
+    "subtitle": null,
+    "content_preview": "Toyota e Renault demoraram a ingressar no segmento de SUVs médios nacionais. Enquanto a marca japonesa só entrou na disputa em 2021 com o Corolla Cross, a francesa estreou apenas em 2025 com o Boreal. Leia mais (06/08/2026 - 23h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/boreal-consome-menos-etanol-que-corolla-cross-20-mas-perde-em-eficiencia-com-gasolina-confira-teste.shtml",
+    "published_at": "2026-06-08T23:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Toyota e Renault demoraram a ingressar no segmento de SUVs médios nacionais. Enquanto a marca japonesa só entrou na disputa em 2021 com o Corolla Cross, a francesa estreou apenas em 2025 com o Boreal.\n\nLeia mais (06/08/2026 - 23h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "c971da17f184436852e4df81ab084358",
+    "title": "Falta de conhecimento levou governo a bloquear Kalshi, diz brasileira bilionária que fundou a empresa",
+    "subtitle": null,
+    "content_preview": "A Kalshi espera reverter a decisão do governo brasileiro de proibir a operação dos chamados mercados preditivos no país, segundo a sua cofundadora, a brasileira Luana Lopes Lara, 29. \"Vamos tentar explicar o que a gente faz, porque foi mais um gap educacional do que qualquer outra coisa.\" Leia mais (06/08/2026 - 23h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/falta-de-conhecimento-levou-governo-a-bloquear-kalshi-diz-brasileira-bilionaria-que-fundou-a-empresa.shtml",
+    "published_at": "2026-06-08T23:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "A Kalshi espera reverter a decisão do governo brasileiro de proibir a operação dos chamados mercados preditivos no país, segundo a sua cofundadora, a brasileira Luana Lopes Lara, 29.\n\n\"Vamos tentar explicar o que a gente faz, porque foi mais um gap educacional do que qualquer outra coisa.\" Leia mais (06/08/2026 - 23h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "ebf7c02fe32cc9fa0dacb2f6b40dc5ff",
+    "title": "TCU fará ressalvas a contas do governo Lula por uso de fundos e estatais para driblar Orçamento",
+    "subtitle": null,
+    "content_preview": "O uso de fundos e de empresas estatais para facilitar despesas e contornar os limites do Orçamento vai motivar uma ressalva nas contas do governo do presidente Luiz Inácio Lula da Silva (PT) de 2025, a serem julgadas pelo TCU (Tribunal de Contas da União) na próxima quarta-feira (10). Leia mais (06/08/2026 - 23h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/tcu-fara-ressalvas-a-contas-do-governo-lula-por-uso-de-fundos-e-estatais-para-driblar-orcamento.shtml",
+    "published_at": "2026-06-08T23:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O uso de fundos e de empresas estatais para facilitar despesas e contornar os limites do Orçamento vai motivar uma ressalva nas contas do governo do presidente Luiz Inácio Lula da Silva (PT) de 2025, a serem julgadas pelo TCU (Tribunal de Contas da União) na próxima quarta-feira (10).\n\nLeia mais (06/08/2026 - 23h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "da239edf321cb82e7244dae4404fdf56",
+    "title": "Governo vai flexibilizar regra de fundo voltado à inovação para liberar crédito ao agro",
+    "subtitle": null,
+    "content_preview": "O governo Luiz Inácio Lula da Silva (PT) vai flexibilizar regras de aplicação dos recursos do FNDCT (Fundo Nacional de Desenvolvimento Científico e Tecnológico) para destravar a linha de crédito para compra de máquinas agrícolas, anunciada no fim de abril pelo vice-presidente Geraldo Alckmin e que até hoje não foi lançada. Leia mais (06/08/2026 - 23h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/governo-vai-flexibilizar-regra-de-fundo-voltado-a-inovacao-para-liberar-credito-ao-agro.shtml",
+    "published_at": "2026-06-08T23:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O governo Luiz Inácio Lula da Silva (PT) vai flexibilizar regras de aplicação dos recursos do FNDCT (Fundo Nacional de Desenvolvimento Científico e Tecnológico) para destravar a linha de crédito para compra de máquinas agrícolas, anunciada no fim de abril pelo vice-presidente Geraldo Alckmin e que até hoje não foi lançada.\n\nLeia mais (06/08/2026 - 23h00). O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
+    "id": "8c0046cd4c119196af06bef57deb8b85",
+    "title": "Otto Lobo retira sete superintendentes em primeiro ato à frente da CVM",
+    "subtitle": null,
+    "content_preview": "O recém-empossado presidente da CVM (Comissão de Valores Mobiliários), Otto Lobo, retirou sete nomes de cargos de confiança em seu primeiro ato à frente da autarquia nesta segunda-feira (8). As mudanças afetam áreas que não são responsáveis diretas pela fiscalização do mercado de valores mobiliários. Leia mais (06/08/2026 - 22h53)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/otto-lobo-retira-sete-superintendentes-em-primeiro-ato-a-frente-da-cvm.shtml",
+    "published_at": "2026-06-08T22:53:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O recém-empossado presidente da CVM (Comissão de Valores Mobiliários), Otto Lobo, retirou sete nomes de cargos de confiança em seu primeiro ato à frente da autarquia nesta segunda-feira (8).\n\nAs mudanças afetam áreas que não são responsáveis diretas pela fiscalização do mercado de valores mobiliários. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-09T11:35:39.408781Z"
+  },
+  {
     "id": "f3d40feb2fc0a771ca274ad4f8c881d4",
     "title": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação",
     "subtitle": null,

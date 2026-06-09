@@ -68,6 +68,13 @@ export function LoginPage() {
               <Button type="submit" className="w-full">Entrar</Button>
             </div>
 
+            <div className="mt-4 rounded-[24px] border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4 text-sm leading-6 text-[var(--text-muted)]">
+              Ambiente local de desenvolvimento:
+              <strong className="ml-1 text-[var(--text-main)]">demo@operum.app</strong>
+              {" / "}
+              <strong className="text-[var(--text-main)]">Operum123</strong>
+            </div>
+
             {message && (
               <p className={`mt-4 text-sm ${message.ok ? 'text-[var(--success-text)]' : 'text-[var(--danger-text)]'}`}>
                 {message.text}

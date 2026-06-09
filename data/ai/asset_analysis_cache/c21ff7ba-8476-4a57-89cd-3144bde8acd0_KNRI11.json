@@ -3,8 +3,8 @@
   "ticker": "KNRI11",
   "asset_name": "Kinea Renda Imobiliária",
   "asset_class": "FII",
-  "generated_at": "2026-06-09T00:59:30.098255+00:00",
-  "recomputed_at": "2026-06-09T00:59:30.098255+00:00",
+  "generated_at": "2026-06-09T11:55:10.180127+00:00",
+  "recomputed_at": "2026-06-09T11:55:10.180127+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
@@ -289,285 +289,285 @@
     },
     {
       "date": "2026-06-10",
-      "value": 153.05
+      "value": 153.47
     },
     {
       "date": "2026-06-11",
-      "value": 153.1
+      "value": 153.93
     },
     {
       "date": "2026-06-12",
-      "value": 153.14
+      "value": 154.4
     },
     {
       "date": "2026-06-15",
-      "value": 153.19
+      "value": 154.86
     },
     {
       "date": "2026-06-16",
-      "value": 153.24
+      "value": 155.33
     },
     {
       "date": "2026-06-17",
-      "value": 153.44
+      "value": 155.53
     },
     {
       "date": "2026-06-18",
-      "value": 153.64
+      "value": 155.73
     },
     {
       "date": "2026-06-19",
-      "value": 153.83
+      "value": 155.92
     },
     {
       "date": "2026-06-22",
-      "value": 154.03
+      "value": 156.12
     },
     {
       "date": "2026-06-23",
-      "value": 154.23
+      "value": 156.32
     },
     {
       "date": "2026-06-24",
-      "value": 154.43
+      "value": 156.52
     },
     {
       "date": "2026-06-25",
-      "value": 154.62
+      "value": 156.72
     },
     {
       "date": "2026-06-26",
-      "value": 154.82
+      "value": 156.92
     },
     {
       "date": "2026-06-29",
-      "value": 155.02
+      "value": 157.11
     },
     {
       "date": "2026-06-30",
-      "value": 155.22
+      "value": 157.31
     },
     {
       "date": "2026-07-01",
-      "value": 155.41
-    },
-    {
-      "date": "2026-07-02",
-      "value": 155.61
-    },
-    {
-      "date": "2026-07-03",
-      "value": 155.81
-    },
-    {
-      "date": "2026-07-06",
-      "value": 156.0
-    },
-    {
-      "date": "2026-07-07",
-      "value": 156.2
-    },
-    {
-      "date": "2026-07-08",
-      "value": 156.4
-    },
-    {
-      "date": "2026-07-09",
-      "value": 156.42
-    },
-    {
-      "date": "2026-07-10",
-      "value": 156.44
-    },
-    {
-      "date": "2026-07-13",
-      "value": 156.47
-    },
-    {
-      "date": "2026-07-14",
-      "value": 156.49
-    },
-    {
-      "date": "2026-07-15",
-      "value": 156.51
-    },
-    {
-      "date": "2026-07-16",
-      "value": 156.53
-    },
-    {
-      "date": "2026-07-17",
-      "value": 156.56
-    },
-    {
-      "date": "2026-07-20",
-      "value": 156.58
-    },
-    {
-      "date": "2026-07-21",
-      "value": 156.6
-    },
-    {
-      "date": "2026-07-22",
-      "value": 156.62
-    },
-    {
-      "date": "2026-07-23",
-      "value": 156.65
-    },
-    {
-      "date": "2026-07-24",
-      "value": 156.67
-    },
-    {
-      "date": "2026-07-27",
-      "value": 156.69
-    },
-    {
-      "date": "2026-07-28",
-      "value": 156.71
-    },
-    {
-      "date": "2026-07-29",
-      "value": 156.74
-    },
-    {
-      "date": "2026-07-30",
-      "value": 156.76
-    },
-    {
-      "date": "2026-07-31",
-      "value": 156.78
-    },
-    {
-      "date": "2026-08-03",
-      "value": 156.8
-    },
-    {
-      "date": "2026-08-04",
-      "value": 156.83
-    },
-    {
-      "date": "2026-08-05",
-      "value": 156.85
-    },
-    {
-      "date": "2026-08-06",
-      "value": 156.87
-    },
-    {
-      "date": "2026-08-07",
-      "value": 157.19
-    },
-    {
-      "date": "2026-08-10",
       "value": 157.51
     },
     {
+      "date": "2026-07-02",
+      "value": 157.71
+    },
+    {
+      "date": "2026-07-03",
+      "value": 157.91
+    },
+    {
+      "date": "2026-07-06",
+      "value": 158.1
+    },
+    {
+      "date": "2026-07-07",
+      "value": 158.3
+    },
+    {
+      "date": "2026-07-08",
+      "value": 158.5
+    },
+    {
+      "date": "2026-07-09",
+      "value": 158.51
+    },
+    {
+      "date": "2026-07-10",
+      "value": 158.52
+    },
+    {
+      "date": "2026-07-13",
+      "value": 158.53
+    },
+    {
+      "date": "2026-07-14",
+      "value": 158.54
+    },
+    {
+      "date": "2026-07-15",
+      "value": 158.55
+    },
+    {
+      "date": "2026-07-16",
+      "value": 158.55
+    },
+    {
+      "date": "2026-07-17",
+      "value": 158.56
+    },
+    {
+      "date": "2026-07-20",
+      "value": 158.57
+    },
+    {
+      "date": "2026-07-21",
+      "value": 158.58
+    },
+    {
+      "date": "2026-07-22",
+      "value": 158.59
+    },
+    {
+      "date": "2026-07-23",
+      "value": 158.6
+    },
+    {
+      "date": "2026-07-24",
+      "value": 158.61
+    },
+    {
+      "date": "2026-07-27",
+      "value": 158.62
+    },
+    {
+      "date": "2026-07-28",
+      "value": 158.63
+    },
+    {
+      "date": "2026-07-29",
+      "value": 158.64
+    },
+    {
+      "date": "2026-07-30",
+      "value": 158.64
+    },
+    {
+      "date": "2026-07-31",
+      "value": 158.65
+    },
+    {
+      "date": "2026-08-03",
+      "value": 158.66
+    },
+    {
+      "date": "2026-08-04",
+      "value": 158.67
+    },
+    {
+      "date": "2026-08-05",
+      "value": 158.68
+    },
+    {
+      "date": "2026-08-06",
+      "value": 158.69
+    },
+    {
+      "date": "2026-08-07",
+      "value": 159.03
+    },
+    {
+      "date": "2026-08-10",
+      "value": 159.36
+    },
+    {
       "date": "2026-08-11",
-      "value": 157.83
+      "value": 159.7
     },
     {
       "date": "2026-08-12",
-      "value": 158.16
+      "value": 160.03
     },
     {
       "date": "2026-08-13",
-      "value": 158.48
+      "value": 160.37
     },
     {
       "date": "2026-08-14",
-      "value": 158.8
+      "value": 160.71
     },
     {
       "date": "2026-08-17",
-      "value": 159.12
+      "value": 161.04
     },
     {
       "date": "2026-08-18",
-      "value": 159.44
+      "value": 161.38
     },
     {
       "date": "2026-08-19",
-      "value": 159.76
+      "value": 161.72
     },
     {
       "date": "2026-08-20",
-      "value": 160.08
+      "value": 162.05
     },
     {
       "date": "2026-08-21",
-      "value": 160.41
+      "value": 162.39
     },
     {
       "date": "2026-08-24",
-      "value": 160.73
+      "value": 162.72
     },
     {
       "date": "2026-08-25",
-      "value": 161.05
+      "value": 163.06
     },
     {
       "date": "2026-08-26",
-      "value": 161.37
+      "value": 163.4
     },
     {
       "date": "2026-08-27",
-      "value": 161.69
+      "value": 163.73
     },
     {
       "date": "2026-08-28",
-      "value": 162.01
+      "value": 164.07
     },
     {
       "date": "2026-08-31",
-      "value": 162.33
+      "value": 164.41
     },
     {
       "date": "2026-09-01",
-      "value": 162.66
+      "value": 164.74
     },
     {
       "date": "2026-09-02",
-      "value": 162.98
+      "value": 165.08
     },
     {
       "date": "2026-09-03",
-      "value": 163.3
+      "value": 165.41
     },
     {
       "date": "2026-09-04",
-      "value": 163.62
+      "value": 165.75
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 153.24,
-      "predicted_return": 0.001564,
-      "confidence": 0.2986
+      "predicted_price": 155.33,
+      "predicted_return": 0.015209,
+      "confidence": 0.2988
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 156.4,
-      "predicted_return": 0.022212,
-      "confidence": 0.3823
+      "predicted_price": 158.5,
+      "predicted_return": 0.035935,
+      "confidence": 0.3829
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 156.87,
-      "predicted_return": 0.025317,
-      "confidence": 0.1932
+      "predicted_price": 158.69,
+      "predicted_return": 0.037218,
+      "confidence": 0.1956
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 163.62,
-      "predicted_return": 0.069393,
-      "confidence": 0.1512
+      "predicted_price": 165.75,
+      "predicted_return": 0.083344,
+      "confidence": 0.1543
     }
   ],
   "recent_performance": {
@@ -581,10 +581,10 @@
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IFIX",
-    "forecast_return_selected_pct": 6.94,
-    "forecast_price_selected": 163.62,
-    "forecast_confidence_selected": 0.1512,
-    "forecast_news_adjustment_pct": -2.0
+    "forecast_return_selected_pct": 8.33,
+    "forecast_price_selected": 165.75,
+    "forecast_confidence_selected": 0.1543,
+    "forecast_news_adjustment_pct": -0.63
   },
   "outlook_3m": {
     "scenario": "pressionado",
@@ -592,44 +592,64 @@
       "geopolitica",
       "juros",
       "cambio",
-      "inflacao"
+      "commodities"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo é um fundo imobiliário e depende de renda, qualidade do portfólio e sensibilidade a juros. Dentro da carteira, a funcao principal deste ativo hoje e renda. Cotacao atual aproximada em BRL 153.00. Hoje representa cerca de 11.8% da carteira. No curto prazo, o momentum de 1 mes esta em -8.4%. O modelo de 3 meses hoje aponta alta, com retorno estimado de +6.9% e confianca de 15%. O ajuste contextual das noticias adiciona -2.0% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.57. Nesse conjunto, o peso informacional esta distribuido em fundamento (0), macro (6), setorial (0) e fluxo (0).",
-    "recent": "No recorte dos ultimos 3 meses, o ativo variou -5.4%. A volatilidade anualizada equivalente ficou perto de 16.9%. No mesmo intervalo, o drawdown observado foi de -9.4%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Trump relança sua guerra tarifária a tempo de substituir outras taxas.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +6.9% e preco estimado perto de 163.62. O contexto de noticias ajusta essa leitura em -2.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
+    "current": "O ativo é um fundo imobiliário e depende de renda, qualidade do portfólio e sensibilidade a juros. Dentro da carteira, a funcao principal deste ativo hoje e renda. Cotacao atual aproximada em BRL 153.00. Hoje representa cerca de 11.8% da carteira. No curto prazo, o momentum de 1 mes esta em -8.4%. O modelo de 3 meses hoje aponta alta, com retorno estimado de +8.3% e confianca de 15%. O ajuste contextual das noticias adiciona -0.6% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.57. Nesse conjunto, o peso informacional esta distribuido em fundamento (1), macro (5), setorial (0) e fluxo (0).",
+    "recent": "No recorte dos ultimos 3 meses, o ativo variou -5.4%. A volatilidade anualizada equivalente ficou perto de 16.9%. No mesmo intervalo, o drawdown observado foi de -9.4%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +8.3% e preco estimado perto de 165.75. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No recorte dos ultimo mes, o ativo variou -8.4%. A volatilidade anualizada equivalente ficou perto de 21.0%. No mesmo intervalo, o drawdown observado foi de -8.4%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Trump relança sua guerra tarifária a tempo de substituir outras taxas.",
-      "2m": "No recorte dos ultimos 2 meses, o ativo variou -7.2%. A volatilidade anualizada equivalente ficou perto de 19.1%. No mesmo intervalo, o drawdown observado foi de -9.4%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Trump relança sua guerra tarifária a tempo de substituir outras taxas.",
-      "3m": "No recorte dos ultimos 3 meses, o ativo variou -5.4%. A volatilidade anualizada equivalente ficou perto de 16.9%. No mesmo intervalo, o drawdown observado foi de -9.4%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo; Trump relança sua guerra tarifária a tempo de substituir outras taxas."
+      "1w": "No recorte dos ultima semana, o ativo variou -5.2%. A volatilidade anualizada equivalente ficou perto de 21.1%. No mesmo intervalo, o drawdown observado foi de -5.2%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
+      "1m": "No recorte dos ultimo mes, o ativo variou -8.4%. A volatilidade anualizada equivalente ficou perto de 21.0%. No mesmo intervalo, o drawdown observado foi de -8.4%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
+      "2m": "No recorte dos ultimos 2 meses, o ativo variou -7.2%. A volatilidade anualizada equivalente ficou perto de 19.1%. No mesmo intervalo, o drawdown observado foi de -9.4%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
+      "3m": "No recorte dos ultimos 3 meses, o ativo variou -5.4%. A volatilidade anualizada equivalente ficou perto de 16.9%. No mesmo intervalo, o drawdown observado foi de -9.4%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de renda. Os destaques desse intervalo incluem: Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +0.2% e preco estimado perto de 153.24. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +2.2% e preco estimado perto de 156.40. O contexto de noticias ajusta essa leitura em -1.7%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +2.5% e preco estimado perto de 156.87. O contexto de noticias ajusta essa leitura em -2.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +6.9% e preco estimado perto de 163.62. O contexto de noticias ajusta essa leitura em -2.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +1.5% e preco estimado perto de 155.33. O contexto de noticias ajusta essa leitura em -0.7%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +3.6% e preco estimado perto de 158.50. O contexto de noticias ajusta essa leitura em -1.0%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +3.7% e preco estimado perto de 158.69. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +8.3% e preco estimado perto de 165.75. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, commodities. Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de renda. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
   "sources": [
     {
-      "id": "6e9191d69b5ef07628b501c138106f88",
+      "id": "e6d14079ca927804706e0273610d797a",
       "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
       "source_name": "InfoMoney",
       "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
-      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "published_at": "2026-06-09T01:24:32.225679+00:00",
       "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.36,
-      "rank_score": 0.5037,
+      "match_score": 0.3584,
+      "rank_score": 0.5029,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.75,
       "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "919be7be949dce06cc3c17f20c24471d",
+      "title": "Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/receita-de-royalties-do-petroleo-dispara-com-guerra-e-bate-recorde-de-r-8-bi-em-maio.shtml",
+      "published_at": "2026-06-09T04:00:00-03:00",
+      "summary": "A arrecadação com royalties sobre a produção de petróleo disparou após o início da guerra no Irã e atingiu recorde em maio, com mais de R$ 8 bilhões.\n\nA receita extra beneficia o governo federal e deve ajudar o Rio de Janeiro a fechar o ano com déficit bem inferior ao previsto. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.3569,
+      "rank_score": 0.4991,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
       "role": "outlook"
     },
     {
@@ -642,8 +662,8 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.3271,
-      "rank_score": 0.4986,
+      "match_score": 0.326,
+      "rank_score": 0.498,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -661,8 +681,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3524,
-      "rank_score": 0.4967,
+      "match_score": 0.3509,
+      "rank_score": 0.496,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -680,8 +700,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.344,
-      "rank_score": 0.4954,
+      "match_score": 0.3427,
+      "rank_score": 0.4947,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -699,8 +719,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.344,
-      "rank_score": 0.4954,
+      "match_score": 0.3427,
+      "rank_score": 0.4947,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -718,14 +738,14 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3425,
-      "rank_score": 0.4946,
+      "match_score": 0.3412,
+      "rank_score": 0.4939,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.75,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "03c1287e89071e3c85b905d8a3e57db4",
@@ -737,8 +757,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3425,
-      "rank_score": 0.4946,
+      "match_score": 0.3412,
+      "rank_score": 0.4939,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -756,8 +776,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3304,
-      "rank_score": 0.4928,
+      "match_score": 0.3293,
+      "rank_score": 0.4922,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -775,8 +795,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3304,
-      "rank_score": 0.4928,
+      "match_score": 0.3293,
+      "rank_score": 0.4922,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -794,8 +814,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3288,
-      "rank_score": 0.492,
+      "match_score": 0.3276,
+      "rank_score": 0.4914,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -813,32 +833,13 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3287,
-      "rank_score": 0.4919,
+      "match_score": 0.3276,
+      "rank_score": 0.4914,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "fundamento",
-      "role": "historical"
-    },
-    {
-      "id": "6476d1826c1e6586e530d9f9f2a7577b",
-      "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
-      "published_at": "2026-06-03T10:39:00-03:00",
-      "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
-      "sentiment_score": -1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.3398,
-      "rank_score": 0.4902,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
       "role": "historical"
     }
   ],
@@ -848,17 +849,17 @@
       "count": 10,
       "items": [
         {
-          "id": "6e9191d69b5ef07628b501c138106f88",
+          "id": "e6d14079ca927804706e0273610d797a",
           "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
           "source_name": "InfoMoney",
           "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
-          "published_at": "2026-06-09T00:58:38.980555+00:00",
+          "published_at": "2026-06-09T01:24:32.225679+00:00",
           "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.36,
-          "rank_score": 0.5037,
+          "match_score": 0.3584,
+          "rank_score": 0.5029,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -876,8 +877,8 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.3271,
-          "rank_score": 0.4986,
+          "match_score": 0.326,
+          "rank_score": 0.498,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -895,8 +896,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.344,
-          "rank_score": 0.4954,
+          "match_score": 0.3427,
+          "rank_score": 0.4947,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -914,8 +915,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.344,
-          "rank_score": 0.4954,
+          "match_score": 0.3427,
+          "rank_score": 0.4947,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -933,14 +934,14 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3425,
-          "rank_score": 0.4946,
+          "match_score": 0.3412,
+          "rank_score": 0.4939,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.75,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "03c1287e89071e3c85b905d8a3e57db4",
@@ -952,8 +953,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3425,
-          "rank_score": 0.4946,
+          "match_score": 0.3412,
+          "rank_score": 0.4939,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -971,8 +972,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3304,
-          "rank_score": 0.4928,
+          "match_score": 0.3293,
+          "rank_score": 0.4922,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -990,8 +991,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3304,
-          "rank_score": 0.4928,
+          "match_score": 0.3293,
+          "rank_score": 0.4922,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -1009,8 +1010,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3288,
-          "rank_score": 0.492,
+          "match_score": 0.3276,
+          "rank_score": 0.4914,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -1028,8 +1029,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3287,
-          "rank_score": 0.4919,
+          "match_score": 0.3276,
+          "rank_score": 0.4914,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -1044,6 +1045,25 @@
       "count": 2,
       "items": [
         {
+          "id": "919be7be949dce06cc3c17f20c24471d",
+          "title": "Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/receita-de-royalties-do-petroleo-dispara-com-guerra-e-bate-recorde-de-r-8-bi-em-maio.shtml",
+          "published_at": "2026-06-09T04:00:00-03:00",
+          "summary": "A arrecadação com royalties sobre a produção de petróleo disparou após o início da guerra no Irã e atingiu recorde em maio, com mais de R$ 8 bilhões.\n\nA receita extra beneficia o governo federal e deve ajudar o Rio de Janeiro a fechar o ano com déficit bem inferior ao previsto. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.3569,
+          "rank_score": 0.4991,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
+          "role": "outlook"
+        },
+        {
           "id": "497d48bcf07bb1a9442cb63a1d330df4",
           "title": "Trump relança sua guerra tarifária a tempo de substituir outras taxas",
           "source_name": "Folha.com - Mercado - Principal",
@@ -1053,33 +1073,14 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3524,
-          "rank_score": 0.4967,
+          "match_score": 0.3509,
+          "rank_score": 0.496,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
           "role": "outlook"
-        },
-        {
-          "id": "6476d1826c1e6586e530d9f9f2a7577b",
-          "title": "Entenda como nova tarifa de Trump pune Brasil duas vezes e coloca China na mira",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/entenda-como-nova-tarifa-de-trump-pune-brasil-duas-vezes-e-coloca-china-na-mira.shtml",
-          "published_at": "2026-06-03T10:39:00-03:00",
-          "summary": "O governo Trump usou uma investigação sobre trabalho forçado para elevar sua tarifa global de 10% para 12,5% e colocar o comércio com a China no alvo, segundo especialistas ouvidos pela Folha.\n\nA medida foi detalhada em um relatório publicado na madrugada de terça-feira (2). Leia mais (06/03/2026 - 10h39). O foco principal passa por Economia, Mercado.",
-          "sentiment_score": -1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.3398,
-          "rank_score": 0.4902,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
         }
       ]
     }

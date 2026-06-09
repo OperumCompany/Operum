@@ -3,8 +3,8 @@
   "ticker": "WEGE3",
   "asset_name": "WEG ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-09T00:59:31.874550+00:00",
-  "recomputed_at": "2026-06-09T00:59:31.874550+00:00",
+  "generated_at": "2026-06-09T11:55:10.520167+00:00",
+  "recomputed_at": "2026-06-09T11:55:10.520167+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
@@ -289,284 +289,284 @@
     },
     {
       "date": "2026-06-10",
-      "value": 43.81
-    },
-    {
-      "date": "2026-06-11",
-      "value": 43.62
-    },
-    {
-      "date": "2026-06-12",
-      "value": 43.42
-    },
-    {
-      "date": "2026-06-15",
-      "value": 43.23
-    },
-    {
-      "date": "2026-06-16",
-      "value": 43.04
-    },
-    {
-      "date": "2026-06-17",
-      "value": 43.09
-    },
-    {
-      "date": "2026-06-18",
-      "value": 43.13
-    },
-    {
-      "date": "2026-06-19",
-      "value": 43.18
-    },
-    {
-      "date": "2026-06-22",
-      "value": 43.23
-    },
-    {
-      "date": "2026-06-23",
-      "value": 43.28
-    },
-    {
-      "date": "2026-06-24",
-      "value": 43.32
-    },
-    {
-      "date": "2026-06-25",
-      "value": 43.37
-    },
-    {
-      "date": "2026-06-26",
-      "value": 43.42
-    },
-    {
-      "date": "2026-06-29",
-      "value": 43.47
-    },
-    {
-      "date": "2026-06-30",
-      "value": 43.52
-    },
-    {
-      "date": "2026-07-01",
-      "value": 43.56
-    },
-    {
-      "date": "2026-07-02",
-      "value": 43.61
-    },
-    {
-      "date": "2026-07-03",
-      "value": 43.66
-    },
-    {
-      "date": "2026-07-06",
-      "value": 43.7
-    },
-    {
-      "date": "2026-07-07",
-      "value": 43.75
-    },
-    {
-      "date": "2026-07-08",
-      "value": 43.8
-    },
-    {
-      "date": "2026-07-09",
-      "value": 43.86
-    },
-    {
-      "date": "2026-07-10",
       "value": 43.92
     },
     {
+      "date": "2026-06-11",
+      "value": 43.83
+    },
+    {
+      "date": "2026-06-12",
+      "value": 43.75
+    },
+    {
+      "date": "2026-06-15",
+      "value": 43.66
+    },
+    {
+      "date": "2026-06-16",
+      "value": 43.58
+    },
+    {
+      "date": "2026-06-17",
+      "value": 43.6
+    },
+    {
+      "date": "2026-06-18",
+      "value": 43.62
+    },
+    {
+      "date": "2026-06-19",
+      "value": 43.65
+    },
+    {
+      "date": "2026-06-22",
+      "value": 43.67
+    },
+    {
+      "date": "2026-06-23",
+      "value": 43.69
+    },
+    {
+      "date": "2026-06-24",
+      "value": 43.71
+    },
+    {
+      "date": "2026-06-25",
+      "value": 43.73
+    },
+    {
+      "date": "2026-06-26",
+      "value": 43.75
+    },
+    {
+      "date": "2026-06-29",
+      "value": 43.78
+    },
+    {
+      "date": "2026-06-30",
+      "value": 43.8
+    },
+    {
+      "date": "2026-07-01",
+      "value": 43.82
+    },
+    {
+      "date": "2026-07-02",
+      "value": 43.84
+    },
+    {
+      "date": "2026-07-03",
+      "value": 43.86
+    },
+    {
+      "date": "2026-07-06",
+      "value": 43.89
+    },
+    {
+      "date": "2026-07-07",
+      "value": 43.91
+    },
+    {
+      "date": "2026-07-08",
+      "value": 43.93
+    },
+    {
+      "date": "2026-07-09",
+      "value": 44.01
+    },
+    {
+      "date": "2026-07-10",
+      "value": 44.1
+    },
+    {
       "date": "2026-07-13",
-      "value": 43.97
+      "value": 44.18
     },
     {
       "date": "2026-07-14",
-      "value": 44.03
-    },
-    {
-      "date": "2026-07-15",
-      "value": 44.09
-    },
-    {
-      "date": "2026-07-16",
-      "value": 44.15
-    },
-    {
-      "date": "2026-07-17",
-      "value": 44.2
-    },
-    {
-      "date": "2026-07-20",
       "value": 44.26
     },
     {
-      "date": "2026-07-21",
-      "value": 44.32
+      "date": "2026-07-15",
+      "value": 44.35
     },
     {
-      "date": "2026-07-22",
-      "value": 44.38
-    },
-    {
-      "date": "2026-07-23",
+      "date": "2026-07-16",
       "value": 44.43
     },
     {
+      "date": "2026-07-17",
+      "value": 44.51
+    },
+    {
+      "date": "2026-07-20",
+      "value": 44.6
+    },
+    {
+      "date": "2026-07-21",
+      "value": 44.68
+    },
+    {
+      "date": "2026-07-22",
+      "value": 44.76
+    },
+    {
+      "date": "2026-07-23",
+      "value": 44.85
+    },
+    {
       "date": "2026-07-24",
-      "value": 44.49
+      "value": 44.93
     },
     {
       "date": "2026-07-27",
-      "value": 44.55
-    },
-    {
-      "date": "2026-07-28",
-      "value": 44.61
-    },
-    {
-      "date": "2026-07-29",
-      "value": 44.66
-    },
-    {
-      "date": "2026-07-30",
-      "value": 44.72
-    },
-    {
-      "date": "2026-07-31",
-      "value": 44.78
-    },
-    {
-      "date": "2026-08-03",
-      "value": 44.84
-    },
-    {
-      "date": "2026-08-04",
-      "value": 44.89
-    },
-    {
-      "date": "2026-08-05",
-      "value": 44.95
-    },
-    {
-      "date": "2026-08-06",
       "value": 45.01
     },
     {
-      "date": "2026-08-07",
-      "value": 45.03
-    },
-    {
-      "date": "2026-08-10",
-      "value": 45.05
-    },
-    {
-      "date": "2026-08-11",
-      "value": 45.06
-    },
-    {
-      "date": "2026-08-12",
-      "value": 45.08
-    },
-    {
-      "date": "2026-08-13",
+      "date": "2026-07-28",
       "value": 45.1
     },
     {
-      "date": "2026-08-14",
-      "value": 45.12
+      "date": "2026-07-29",
+      "value": 45.18
     },
     {
-      "date": "2026-08-17",
-      "value": 45.14
-    },
-    {
-      "date": "2026-08-18",
-      "value": 45.15
-    },
-    {
-      "date": "2026-08-19",
-      "value": 45.17
-    },
-    {
-      "date": "2026-08-20",
-      "value": 45.19
-    },
-    {
-      "date": "2026-08-21",
-      "value": 45.21
-    },
-    {
-      "date": "2026-08-24",
-      "value": 45.23
-    },
-    {
-      "date": "2026-08-25",
-      "value": 45.25
-    },
-    {
-      "date": "2026-08-26",
+      "date": "2026-07-30",
       "value": 45.26
     },
     {
-      "date": "2026-08-27",
-      "value": 45.28
-    },
-    {
-      "date": "2026-08-28",
-      "value": 45.3
-    },
-    {
-      "date": "2026-08-31",
-      "value": 45.32
-    },
-    {
-      "date": "2026-09-01",
-      "value": 45.34
-    },
-    {
-      "date": "2026-09-02",
+      "date": "2026-07-31",
       "value": 45.35
     },
     {
+      "date": "2026-08-03",
+      "value": 45.43
+    },
+    {
+      "date": "2026-08-04",
+      "value": 45.51
+    },
+    {
+      "date": "2026-08-05",
+      "value": 45.6
+    },
+    {
+      "date": "2026-08-06",
+      "value": 45.68
+    },
+    {
+      "date": "2026-08-07",
+      "value": 45.85
+    },
+    {
+      "date": "2026-08-10",
+      "value": 46.02
+    },
+    {
+      "date": "2026-08-11",
+      "value": 46.19
+    },
+    {
+      "date": "2026-08-12",
+      "value": 46.36
+    },
+    {
+      "date": "2026-08-13",
+      "value": 46.53
+    },
+    {
+      "date": "2026-08-14",
+      "value": 46.7
+    },
+    {
+      "date": "2026-08-17",
+      "value": 46.87
+    },
+    {
+      "date": "2026-08-18",
+      "value": 47.04
+    },
+    {
+      "date": "2026-08-19",
+      "value": 47.21
+    },
+    {
+      "date": "2026-08-20",
+      "value": 47.38
+    },
+    {
+      "date": "2026-08-21",
+      "value": 47.54
+    },
+    {
+      "date": "2026-08-24",
+      "value": 47.71
+    },
+    {
+      "date": "2026-08-25",
+      "value": 47.88
+    },
+    {
+      "date": "2026-08-26",
+      "value": 48.05
+    },
+    {
+      "date": "2026-08-27",
+      "value": 48.22
+    },
+    {
+      "date": "2026-08-28",
+      "value": 48.39
+    },
+    {
+      "date": "2026-08-31",
+      "value": 48.56
+    },
+    {
+      "date": "2026-09-01",
+      "value": 48.73
+    },
+    {
+      "date": "2026-09-02",
+      "value": 48.9
+    },
+    {
       "date": "2026-09-03",
-      "value": 45.37
+      "value": 49.07
     },
     {
       "date": "2026-09-04",
-      "value": 45.39
+      "value": 49.24
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 43.04,
-      "predicted_return": -0.021915,
+      "predicted_price": 43.58,
+      "predicted_return": -0.00945,
       "confidence": 0.2348
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 43.8,
-      "predicted_return": -0.004621,
+      "predicted_price": 43.93,
+      "predicted_return": -0.001508,
       "confidence": 0.06
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 45.01,
-      "predicted_return": 0.022856,
+      "predicted_price": 45.68,
+      "predicted_return": 0.038167,
       "confidence": 0.06
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 45.39,
-      "predicted_return": 0.031492,
+      "predicted_price": 49.24,
+      "predicted_return": 0.118992,
       "confidence": 0.05
     }
   ],
@@ -581,50 +581,51 @@
     "beta_selected": 0.94,
     "correlation_selected": 0.57,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 3.15,
-    "forecast_price_selected": 45.39,
+    "forecast_return_selected_pct": 11.9,
+    "forecast_price_selected": 49.24,
     "forecast_confidence_selected": 0.05,
-    "forecast_news_adjustment_pct": -2.11
+    "forecast_news_adjustment_pct": -0.2
   },
   "outlook_3m": {
     "scenario": "pressionado",
     "dominant_topics": [
       "geopolitica",
-      "cambio",
       "juros",
-      "inflacao"
+      "cambio",
+      "commodities"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 44.00. Hoje representa cerca de 10.1% da carteira. No curto prazo, o momentum de 1 mes esta em -0.7%. O modelo de 3 meses hoje aponta alta, com retorno estimado de +3.1% e confianca de 5%. O ajuste contextual das noticias adiciona -2.1% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.55. Nesse conjunto, o peso informacional esta distribuido em fundamento (0), macro (5), setorial (0) e fluxo (1).",
-    "recent": "No recorte dos ultimos 3 meses, o ativo variou -5.6%. A volatilidade anualizada equivalente ficou perto de 31.5%. No mesmo intervalo, o drawdown observado foi de -21.0%. Contra IBOV, o beta estimado da janela ficou em 0.94, com correlacao de 0.57. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +3.1% e preco estimado perto de 45.39. O contexto de noticias ajusta essa leitura em -2.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 44.00. Hoje representa cerca de 10.1% da carteira. No curto prazo, o momentum de 1 mes esta em -0.7%. O modelo de 3 meses hoje aponta alta, com retorno estimado de +11.9% e confianca de 5%. O ajuste contextual das noticias adiciona -0.2% ao cenario-base projetado. As noticias recentes tem vies misto e impacto medio de 0.55. Nesse conjunto, o peso informacional esta distribuido em fundamento (1), macro (4), setorial (0) e fluxo (1).",
+    "recent": "No recorte dos ultimos 3 meses, o ativo variou -5.6%. A volatilidade anualizada equivalente ficou perto de 31.5%. No mesmo intervalo, o drawdown observado foi de -21.0%. Contra IBOV, o beta estimado da janela ficou em 0.94, com correlacao de 0.57. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.56. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +11.9% e preco estimado perto de 49.24. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No recorte dos ultimo mes, o ativo variou -0.7%. A volatilidade anualizada equivalente ficou perto de 27.9%. No mesmo intervalo, o drawdown observado foi de -8.2%. Contra IBOV, o beta estimado da janela ficou em 0.61, com correlacao de 0.34. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
-      "2m": "No recorte dos ultimos 2 meses, o ativo variou -13.1%. A volatilidade anualizada equivalente ficou perto de 33.8%. No mesmo intervalo, o drawdown observado foi de -21.0%. Contra IBOV, o beta estimado da janela ficou em 0.96, com correlacao de 0.48. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo.",
-      "3m": "No recorte dos ultimos 3 meses, o ativo variou -5.6%. A volatilidade anualizada equivalente ficou perto de 31.5%. No mesmo intervalo, o drawdown observado foi de -21.0%. Contra IBOV, o beta estimado da janela ficou em 0.94, com correlacao de 0.57. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo."
+      "1w": "No recorte dos ultima semana, o ativo variou -0.2%. A volatilidade anualizada equivalente ficou perto de 41.8%. No mesmo intervalo, o drawdown observado foi de -5.3%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.56. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio.",
+      "1m": "No recorte dos ultimo mes, o ativo variou -0.7%. A volatilidade anualizada equivalente ficou perto de 27.9%. No mesmo intervalo, o drawdown observado foi de -8.2%. Contra IBOV, o beta estimado da janela ficou em 0.61, com correlacao de 0.34. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.56. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio.",
+      "2m": "No recorte dos ultimos 2 meses, o ativo variou -13.1%. A volatilidade anualizada equivalente ficou perto de 33.8%. No mesmo intervalo, o drawdown observado foi de -21.0%. Contra IBOV, o beta estimado da janela ficou em 0.96, com correlacao de 0.48. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.56. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio.",
+      "3m": "No recorte dos ultimos 3 meses, o ativo variou -5.6%. A volatilidade anualizada equivalente ficou perto de 31.5%. No mesmo intervalo, o drawdown observado foi de -21.0%. Contra IBOV, o beta estimado da janela ficou em 0.94, com correlacao de 0.57. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, cambio, inflacao. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.56. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio; Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -2.2% e preco estimado perto de 43.04. O contexto de noticias ajusta essa leitura em -1.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -0.5% e preco estimado perto de 43.80. O contexto de noticias ajusta essa leitura em -2.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +2.3% e preco estimado perto de 45.01. O contexto de noticias ajusta essa leitura em -2.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +3.1% e preco estimado perto de 45.39. O contexto de noticias ajusta essa leitura em -2.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -0.9% e preco estimado perto de 43.58. O contexto de noticias ajusta essa leitura em -0.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -0.2% e preco estimado perto de 43.93. O contexto de noticias ajusta essa leitura em -1.0%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +3.8% e preco estimado perto de 45.68. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +11.9% e preco estimado perto de 49.24. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao geopolitica, juros, cambio, commodities. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
   "sources": [
     {
-      "id": "ea48af19e250f4dd56c98737ac3df90f",
+      "id": "f3d40feb2fc0a771ca274ad4f8c881d4",
       "title": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação",
       "source_name": "InfoMoney",
       "source_url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-de-02-com-pressao-de-vale-weg-sobe-apos-recomendacao/",
-      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "published_at": "2026-06-09T01:24:32.225679+00:00",
       "summary": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação.\n\nO texto menciona VALE3, WEGE3. O foco principal passa por Economia, Mercado.",
       "sentiment_score": 0.0,
       "impact_score": 0.45,
       "relevance_score": 0.5,
-      "match_score": 0.765,
-      "rank_score": 0.6843,
+      "match_score": 0.7634,
+      "rank_score": 0.6835,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -633,22 +634,41 @@
       "role": "outlook"
     },
     {
-      "id": "6e9191d69b5ef07628b501c138106f88",
+      "id": "e6d14079ca927804706e0273610d797a",
       "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
       "source_name": "InfoMoney",
       "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
-      "published_at": "2026-06-09T00:58:38.980555+00:00",
+      "published_at": "2026-06-09T01:24:32.225679+00:00",
       "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.36,
-      "rank_score": 0.5037,
+      "match_score": 0.3584,
+      "rank_score": 0.5029,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.75,
       "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "919be7be949dce06cc3c17f20c24471d",
+      "title": "Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/receita-de-royalties-do-petroleo-dispara-com-guerra-e-bate-recorde-de-r-8-bi-em-maio.shtml",
+      "published_at": "2026-06-09T04:00:00-03:00",
+      "summary": "A arrecadação com royalties sobre a produção de petróleo disparou após o início da guerra no Irã e atingiu recorde em maio, com mais de R$ 8 bilhões.\n\nA receita extra beneficia o governo federal e deve ajudar o Rio de Janeiro a fechar o ano com déficit bem inferior ao previsto. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.3569,
+      "rank_score": 0.4991,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
       "role": "outlook"
     },
     {
@@ -661,8 +681,8 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.3271,
-      "rank_score": 0.4986,
+      "match_score": 0.326,
+      "rank_score": 0.498,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -680,8 +700,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3524,
-      "rank_score": 0.4967,
+      "match_score": 0.3509,
+      "rank_score": 0.496,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -699,8 +719,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.344,
-      "rank_score": 0.4954,
+      "match_score": 0.3427,
+      "rank_score": 0.4947,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -718,14 +738,14 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.344,
-      "rank_score": 0.4954,
+      "match_score": 0.3427,
+      "rank_score": 0.4947,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.75,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
@@ -737,8 +757,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3425,
-      "rank_score": 0.4946,
+      "match_score": 0.3412,
+      "rank_score": 0.4939,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -756,8 +776,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3425,
-      "rank_score": 0.4946,
+      "match_score": 0.3412,
+      "rank_score": 0.4939,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -775,8 +795,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3304,
-      "rank_score": 0.4928,
+      "match_score": 0.3293,
+      "rank_score": 0.4922,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -794,8 +814,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3304,
-      "rank_score": 0.4928,
+      "match_score": 0.3293,
+      "rank_score": 0.4922,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -813,52 +833,33 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.3288,
-      "rank_score": 0.492,
+      "match_score": 0.3276,
+      "rank_score": 0.4914,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
       "role": "historical"
-    },
-    {
-      "id": "629cddfde78d45fdde8891b65e011167",
-      "title": "EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/eua-determinam-inspecoes-em-jatos-embraer-phenom-300-apos-problema-em-testes/",
-      "published_at": "2026-05-30T11:48:00+00:00",
-      "summary": "Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Aviação EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações Estadão Conteúdo 30/05/2026 08h48 &bull; Atualizado 12 horas atrás Publicidade A Federal Aviation Administration (FAA), agência reguladora da aviação civil dos Estados Unidos, publicará na segunda-feira, 1º, no Federal Register, o diário oficial dos EUA, uma nova diretriz de aeronavegabilidade (AD, na sigla em inglês) para determinados jatos executivos Embraer Phenom 300 (EMB-505), após identificar a possibilidade de resultados inválidos em testes do estabilizador horizontal realizados em algumas aeronaves. O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.3287,
-      "rank_score": 0.4919,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "fundamento",
-      "role": "historical"
     }
   ],
   "source_groups": [
     {
       "source_name": "InfoMoney",
-      "count": 11,
+      "count": 10,
       "items": [
         {
-          "id": "ea48af19e250f4dd56c98737ac3df90f",
+          "id": "f3d40feb2fc0a771ca274ad4f8c881d4",
           "title": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação",
           "source_name": "InfoMoney",
           "source_url": "https://www.infomoney.com.br/mercados/ibovespa-fecha-em-queda-de-02-com-pressao-de-vale-weg-sobe-apos-recomendacao/",
-          "published_at": "2026-06-09T00:58:38.980555+00:00",
+          "published_at": "2026-06-09T01:24:32.225679+00:00",
           "summary": "Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação.\n\nO texto menciona VALE3, WEGE3. O foco principal passa por Economia, Mercado.",
           "sentiment_score": 0.0,
           "impact_score": 0.45,
           "relevance_score": 0.5,
-          "match_score": 0.765,
-          "rank_score": 0.6843,
+          "match_score": 0.7634,
+          "rank_score": 0.6835,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -867,17 +868,17 @@
           "role": "outlook"
         },
         {
-          "id": "6e9191d69b5ef07628b501c138106f88",
+          "id": "e6d14079ca927804706e0273610d797a",
           "title": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio",
           "source_name": "InfoMoney",
           "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-08062026/",
-          "published_at": "2026-06-09T00:58:38.980555+00:00",
+          "published_at": "2026-06-09T01:24:32.225679+00:00",
           "summary": "Dólar sobe pela 3ª sessão seguida, a R$ 5,18, com foco em guerra no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.36,
-          "rank_score": 0.5037,
+          "match_score": 0.3584,
+          "rank_score": 0.5029,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -895,8 +896,8 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.3271,
-          "rank_score": 0.4986,
+          "match_score": 0.326,
+          "rank_score": 0.498,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -914,8 +915,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.344,
-          "rank_score": 0.4954,
+          "match_score": 0.3427,
+          "rank_score": 0.4947,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -933,14 +934,14 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.344,
-          "rank_score": 0.4954,
+          "match_score": 0.3427,
+          "rank_score": 0.4947,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.75,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
@@ -952,8 +953,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3425,
-          "rank_score": 0.4946,
+          "match_score": 0.3412,
+          "rank_score": 0.4939,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -971,8 +972,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3425,
-          "rank_score": 0.4946,
+          "match_score": 0.3412,
+          "rank_score": 0.4939,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -990,8 +991,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3304,
-          "rank_score": 0.4928,
+          "match_score": 0.3293,
+          "rank_score": 0.4922,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -1009,8 +1010,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3304,
-          "rank_score": 0.4928,
+          "match_score": 0.3293,
+          "rank_score": 0.4922,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -1028,40 +1029,40 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.3288,
-          "rank_score": 0.492,
+          "match_score": 0.3276,
+          "rank_score": 0.4914,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
           "role": "historical"
-        },
-        {
-          "id": "629cddfde78d45fdde8891b65e011167",
-          "title": "EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/eua-determinam-inspecoes-em-jatos-embraer-phenom-300-apos-problema-em-testes/",
-          "published_at": "2026-05-30T11:48:00+00:00",
-          "summary": "Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Aviação EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações Estadão Conteúdo 30/05/2026 08h48 &bull; Atualizado 12 horas atrás Publicidade A Federal Aviation Administration (FAA), agência reguladora da aviação civil dos Estados Unidos, publicará na segunda-feira, 1º, no Federal Register, o diário oficial dos EUA, uma nova diretriz de aeronavegabilidade (AD, na sigla em inglês) para determinados jatos executivos Embraer Phenom 300 (EMB-505), após identificar a possibilidade de resultados inválidos em testes do estabilizador horizontal realizados em algumas aeronaves. O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.3287,
-          "rank_score": 0.4919,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "fundamento",
-          "role": "historical"
         }
       ]
     },
     {
       "source_name": "Folha.com - Mercado - Principal",
-      "count": 1,
+      "count": 2,
       "items": [
+        {
+          "id": "919be7be949dce06cc3c17f20c24471d",
+          "title": "Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/receita-de-royalties-do-petroleo-dispara-com-guerra-e-bate-recorde-de-r-8-bi-em-maio.shtml",
+          "published_at": "2026-06-09T04:00:00-03:00",
+          "summary": "A arrecadação com royalties sobre a produção de petróleo disparou após o início da guerra no Irã e atingiu recorde em maio, com mais de R$ 8 bilhões.\n\nA receita extra beneficia o governo federal e deve ajudar o Rio de Janeiro a fechar o ano com déficit bem inferior ao previsto. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.3569,
+          "rank_score": 0.4991,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
+          "role": "outlook"
+        },
         {
           "id": "497d48bcf07bb1a9442cb63a1d330df4",
           "title": "Trump relança sua guerra tarifária a tempo de substituir outras taxas",
@@ -1072,8 +1073,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3524,
-          "rank_score": 0.4967,
+          "match_score": 0.3509,
+          "rank_score": 0.496,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
