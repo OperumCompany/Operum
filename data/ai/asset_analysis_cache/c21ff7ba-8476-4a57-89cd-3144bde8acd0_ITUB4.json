@@ -3,40 +3,28 @@
   "ticker": "ITUB4",
   "asset_name": "Itaú Unibanco PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-09T12:00:36.927155+00:00",
-  "recomputed_at": "2026-06-09T12:00:36.927155+00:00",
+  "generated_at": "2026-06-12T01:27:21.544100+00:00",
+  "recomputed_at": "2026-06-12T01:27:21.544100+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
   "asset_function": "estabilidade",
   "current_snapshot": {
-    "current_price": 38.52,
+    "current_price": 40.5,
     "currency": "BRL",
-    "weight_pct": 14.8,
+    "weight_pct": 15.51,
     "sector": "Financeiro",
     "country": "BR",
     "asset_function": "estabilidade"
   },
   "historical_window": {
-    "start_date": "2026-02-03",
-    "end_date": "2026-06-09",
+    "start_date": "2026-02-06",
+    "end_date": "2026-06-12",
     "news_count": 12,
     "has_price_history": true
   },
   "historical_series": [
-    {
-      "date": "2026-03-05",
-      "value": 43.1
-    },
-    {
-      "date": "2026-03-06",
-      "value": 42.52
-    },
-    {
-      "date": "2026-03-09",
-      "value": 42.75
-    },
     {
       "date": "2026-03-10",
       "value": 43.38
@@ -280,309 +268,321 @@
     {
       "date": "2026-06-08",
       "value": 38.52
+    },
+    {
+      "date": "2026-06-09",
+      "value": 39.22
+    },
+    {
+      "date": "2026-06-10",
+      "value": 39.36
+    },
+    {
+      "date": "2026-06-11",
+      "value": 40.5
     }
   ],
   "forecast_series": [
     {
-      "date": "2026-06-09",
-      "value": 38.52
-    },
-    {
-      "date": "2026-06-10",
-      "value": 38.36
-    },
-    {
-      "date": "2026-06-11",
-      "value": 38.2
-    },
-    {
       "date": "2026-06-12",
-      "value": 38.05
+      "value": 40.5
     },
     {
       "date": "2026-06-15",
-      "value": 37.89
+      "value": 40.52
     },
     {
       "date": "2026-06-16",
-      "value": 37.73
+      "value": 40.53
     },
     {
       "date": "2026-06-17",
-      "value": 37.79
+      "value": 40.55
     },
     {
       "date": "2026-06-18",
-      "value": 37.85
+      "value": 40.56
     },
     {
       "date": "2026-06-19",
-      "value": 37.91
+      "value": 40.58
     },
     {
       "date": "2026-06-22",
-      "value": 37.97
+      "value": 40.57
     },
     {
       "date": "2026-06-23",
-      "value": 38.03
+      "value": 40.56
     },
     {
       "date": "2026-06-24",
-      "value": 38.09
+      "value": 40.55
     },
     {
       "date": "2026-06-25",
-      "value": 38.15
+      "value": 40.54
     },
     {
       "date": "2026-06-26",
-      "value": 38.2
+      "value": 40.53
     },
     {
       "date": "2026-06-29",
-      "value": 38.26
+      "value": 40.52
     },
     {
       "date": "2026-06-30",
-      "value": 38.32
+      "value": 40.51
     },
     {
       "date": "2026-07-01",
-      "value": 38.38
+      "value": 40.49
     },
     {
       "date": "2026-07-02",
-      "value": 38.44
+      "value": 40.48
     },
     {
       "date": "2026-07-03",
-      "value": 38.5
-    },
-    {
-      "date": "2026-07-06",
-      "value": 38.56
-    },
-    {
-      "date": "2026-07-07",
-      "value": 38.62
-    },
-    {
-      "date": "2026-07-08",
-      "value": 38.68
-    },
-    {
-      "date": "2026-07-09",
-      "value": 38.8
-    },
-    {
-      "date": "2026-07-10",
-      "value": 38.92
-    },
-    {
-      "date": "2026-07-13",
-      "value": 39.04
-    },
-    {
-      "date": "2026-07-14",
-      "value": 39.16
-    },
-    {
-      "date": "2026-07-15",
-      "value": 39.28
-    },
-    {
-      "date": "2026-07-16",
-      "value": 39.4
-    },
-    {
-      "date": "2026-07-17",
-      "value": 39.52
-    },
-    {
-      "date": "2026-07-20",
-      "value": 39.64
-    },
-    {
-      "date": "2026-07-21",
-      "value": 39.76
-    },
-    {
-      "date": "2026-07-22",
-      "value": 39.88
-    },
-    {
-      "date": "2026-07-23",
-      "value": 39.99
-    },
-    {
-      "date": "2026-07-24",
-      "value": 40.11
-    },
-    {
-      "date": "2026-07-27",
-      "value": 40.23
-    },
-    {
-      "date": "2026-07-28",
-      "value": 40.35
-    },
-    {
-      "date": "2026-07-29",
       "value": 40.47
     },
     {
-      "date": "2026-07-30",
-      "value": 40.59
+      "date": "2026-07-06",
+      "value": 40.46
     },
     {
-      "date": "2026-07-31",
-      "value": 40.71
+      "date": "2026-07-07",
+      "value": 40.45
     },
     {
-      "date": "2026-08-03",
-      "value": 40.83
+      "date": "2026-07-08",
+      "value": 40.44
     },
     {
-      "date": "2026-08-04",
-      "value": 40.95
+      "date": "2026-07-09",
+      "value": 40.43
     },
     {
-      "date": "2026-08-05",
-      "value": 41.07
+      "date": "2026-07-10",
+      "value": 40.42
     },
     {
-      "date": "2026-08-06",
-      "value": 41.19
+      "date": "2026-07-13",
+      "value": 40.41
     },
     {
-      "date": "2026-08-07",
-      "value": 41.24
+      "date": "2026-07-14",
+      "value": 40.7
     },
     {
-      "date": "2026-08-10",
+      "date": "2026-07-15",
+      "value": 40.99
+    },
+    {
+      "date": "2026-07-16",
       "value": 41.28
     },
     {
+      "date": "2026-07-17",
+      "value": 41.57
+    },
+    {
+      "date": "2026-07-20",
+      "value": 41.86
+    },
+    {
+      "date": "2026-07-21",
+      "value": 42.14
+    },
+    {
+      "date": "2026-07-22",
+      "value": 42.43
+    },
+    {
+      "date": "2026-07-23",
+      "value": 42.72
+    },
+    {
+      "date": "2026-07-24",
+      "value": 43.01
+    },
+    {
+      "date": "2026-07-27",
+      "value": 43.3
+    },
+    {
+      "date": "2026-07-28",
+      "value": 43.59
+    },
+    {
+      "date": "2026-07-29",
+      "value": 43.88
+    },
+    {
+      "date": "2026-07-30",
+      "value": 44.17
+    },
+    {
+      "date": "2026-07-31",
+      "value": 44.46
+    },
+    {
+      "date": "2026-08-03",
+      "value": 44.75
+    },
+    {
+      "date": "2026-08-04",
+      "value": 45.03
+    },
+    {
+      "date": "2026-08-05",
+      "value": 45.32
+    },
+    {
+      "date": "2026-08-06",
+      "value": 45.61
+    },
+    {
+      "date": "2026-08-07",
+      "value": 45.9
+    },
+    {
+      "date": "2026-08-10",
+      "value": 46.19
+    },
+    {
       "date": "2026-08-11",
-      "value": 41.33
+      "value": 46.48
     },
     {
       "date": "2026-08-12",
-      "value": 41.37
+      "value": 46.38
     },
     {
       "date": "2026-08-13",
-      "value": 41.42
+      "value": 46.28
     },
     {
       "date": "2026-08-14",
-      "value": 41.47
+      "value": 46.19
     },
     {
       "date": "2026-08-17",
-      "value": 41.51
+      "value": 46.09
     },
     {
       "date": "2026-08-18",
-      "value": 41.56
+      "value": 45.99
     },
     {
       "date": "2026-08-19",
-      "value": 41.61
+      "value": 45.89
     },
     {
       "date": "2026-08-20",
-      "value": 41.65
+      "value": 45.8
     },
     {
       "date": "2026-08-21",
-      "value": 41.7
+      "value": 45.7
     },
     {
       "date": "2026-08-24",
-      "value": 41.74
+      "value": 45.6
     },
     {
       "date": "2026-08-25",
-      "value": 41.79
+      "value": 45.5
     },
     {
       "date": "2026-08-26",
-      "value": 41.84
+      "value": 45.41
     },
     {
       "date": "2026-08-27",
-      "value": 41.88
+      "value": 45.31
     },
     {
       "date": "2026-08-28",
-      "value": 41.93
+      "value": 45.21
     },
     {
       "date": "2026-08-31",
-      "value": 41.98
+      "value": 45.11
     },
     {
       "date": "2026-09-01",
-      "value": 42.02
+      "value": 45.02
     },
     {
       "date": "2026-09-02",
-      "value": 42.07
+      "value": 44.92
     },
     {
       "date": "2026-09-03",
-      "value": 42.11
+      "value": 44.82
     },
     {
       "date": "2026-09-04",
-      "value": 42.16
+      "value": 44.72
+    },
+    {
+      "date": "2026-09-07",
+      "value": 44.63
+    },
+    {
+      "date": "2026-09-08",
+      "value": 44.53
+    },
+    {
+      "date": "2026-09-09",
+      "value": 44.43
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 37.73,
-      "predicted_return": -0.020574,
-      "confidence": 0.2032
+      "predicted_price": 40.58,
+      "predicted_return": 0.002007,
+      "confidence": 0.2094
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 38.68,
-      "predicted_return": 0.00416,
+      "predicted_price": 40.41,
+      "predicted_return": -0.002256,
       "confidence": 0.06
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 41.19,
-      "predicted_return": 0.069394,
-      "confidence": 0.06
+      "predicted_price": 46.48,
+      "predicted_return": 0.147568,
+      "confidence": 0.05
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 42.16,
-      "predicted_return": 0.094396,
+      "predicted_price": 44.43,
+      "predicted_return": 0.097028,
       "confidence": 0.05
     }
   ],
   "recent_performance": {
-    "change_selected_pct": -10.62,
-    "change_1m_pct": -5.52,
-    "change_2m_pct": -11.35,
-    "change_3m_pct": -10.62,
+    "change_selected_pct": -6.65,
+    "change_1m_pct": 1.63,
+    "change_2m_pct": -11.4,
+    "change_3m_pct": -6.65,
     "change_12m_pct": null,
-    "volatility_selected_pct": 25.2,
+    "volatility_selected_pct": 25.89,
     "drawdown_selected_pct": -18.04,
-    "beta_selected": 1.13,
+    "beta_selected": 1.16,
     "correlation_selected": 0.85,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 9.44,
-    "forecast_price_selected": 42.16,
+    "forecast_return_selected_pct": 9.7,
+    "forecast_price_selected": 44.43,
     "forecast_confidence_selected": 0.05,
     "forecast_news_adjustment_pct": -1.19
   },
@@ -596,20 +596,20 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 38.52. Hoje representa cerca de 14.8% da carteira. No curto prazo, o momentum de 1 mes esta em -5.5%. O modelo de 3 meses hoje aponta alta, com retorno estimado de +9.4% e confianca de 5%. O ajuste contextual das noticias adiciona -1.2% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.62. Nesse conjunto, o peso informacional esta distribuido em fundamento (2), macro (4), setorial (0) e fluxo (0).",
-    "recent": "No recorte dos ultimos 3 meses, o ativo variou -10.6%. A volatilidade anualizada equivalente ficou perto de 25.2%. No mesmo intervalo, o drawdown observado foi de -18.0%. Contra IBOV, o beta estimado da janela ficou em 1.13, com correlacao de 0.85. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +9.4% e preco estimado perto de 42.16. O contexto de noticias ajusta essa leitura em -1.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 40.50. Hoje representa cerca de 15.5% da carteira. No curto prazo, o momentum de 1 mes esta em +1.6%. O modelo de 3 meses hoje aponta alta, com retorno estimado de +9.7% e confianca de 5%. O ajuste contextual das noticias adiciona -1.2% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.62. Nesse conjunto, o peso informacional esta distribuido em fundamento (2), macro (4), setorial (0) e fluxo (0).",
+    "recent": "No recorte dos ultimos 3 meses, o ativo variou -6.7%. A volatilidade anualizada equivalente ficou perto de 25.9%. No mesmo intervalo, o drawdown observado foi de -18.0%. Contra IBOV, o beta estimado da janela ficou em 1.16, com correlacao de 0.85. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +9.7% e preco estimado perto de 44.43. O contexto de noticias ajusta essa leitura em -1.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1w": "No recorte dos ultima semana, o ativo variou -3.8%. A volatilidade anualizada equivalente ficou perto de 18.4%. No mesmo intervalo, o drawdown observado foi de -3.8%. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.60. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
-      "1m": "No recorte dos ultimo mes, o ativo variou -5.5%. A volatilidade anualizada equivalente ficou perto de 23.1%. No mesmo intervalo, o drawdown observado foi de -6.6%. Contra IBOV, o beta estimado da janela ficou em 1.22, com correlacao de 0.82. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.60. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
-      "2m": "No recorte dos ultimos 2 meses, o ativo variou -11.3%. A volatilidade anualizada equivalente ficou perto de 24.0%. No mesmo intervalo, o drawdown observado foi de -18.0%. Contra IBOV, o beta estimado da janela ficou em 1.15, com correlacao de 0.81. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
-      "3m": "No recorte dos ultimos 3 meses, o ativo variou -10.6%. A volatilidade anualizada equivalente ficou perto de 25.2%. No mesmo intervalo, o drawdown observado foi de -18.0%. Contra IBOV, o beta estimado da janela ficou em 1.13, com correlacao de 0.85. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro."
+      "1w": "No recorte dos ultima semana, o ativo variou +4.6%. A volatilidade anualizada equivalente ficou perto de 23.0%. No mesmo intervalo, o drawdown observado foi de -0.8%. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.60. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+      "1m": "No recorte dos ultimo mes, o ativo variou +1.6%. A volatilidade anualizada equivalente ficou perto de 24.5%. No mesmo intervalo, o drawdown observado foi de -4.6%. Contra IBOV, o beta estimado da janela ficou em 1.22, com correlacao de 0.84. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.60. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+      "2m": "No recorte dos ultimos 2 meses, o ativo variou -11.4%. A volatilidade anualizada equivalente ficou perto de 23.6%. No mesmo intervalo, o drawdown observado foi de -18.0%. Contra IBOV, o beta estimado da janela ficou em 1.15, com correlacao de 0.78. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+      "3m": "No recorte dos ultimos 3 meses, o ativo variou -6.7%. A volatilidade anualizada equivalente ficou perto de 25.9%. No mesmo intervalo, o drawdown observado foi de -18.0%. Contra IBOV, o beta estimado da janela ficou em 1.16, com correlacao de 0.85. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de -2.1% e preco estimado perto de 37.73. O contexto de noticias ajusta essa leitura em -0.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +0.4% e preco estimado perto de 38.68. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +6.9% e preco estimado perto de 41.19. O contexto de noticias ajusta essa leitura em -1.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +9.4% e preco estimado perto de 42.16. O contexto de noticias ajusta essa leitura em -1.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +0.2% e preco estimado perto de 40.58. O contexto de noticias ajusta essa leitura em -0.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -0.2% e preco estimado perto de 40.41. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +14.8% e preco estimado perto de 46.48. O contexto de noticias ajusta essa leitura em -1.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +9.7% e preco estimado perto de 44.43. O contexto de noticias ajusta essa leitura em -1.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
@@ -624,8 +624,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.8543,
-      "rank_score": 0.7662,
+      "match_score": 0.848,
+      "rank_score": 0.763,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
@@ -643,8 +643,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.8352,
-      "rank_score": 0.7563,
+      "match_score": 0.8306,
+      "rank_score": 0.7539,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
@@ -662,8 +662,8 @@
       "sentiment_score": 1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.6856,
-      "rank_score": 0.644,
+      "match_score": 0.679,
+      "rank_score": 0.6406,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -681,8 +681,8 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.426,
-      "rank_score": 0.557,
+      "match_score": 0.42,
+      "rank_score": 0.5539,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -700,8 +700,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.4427,
-      "rank_score": 0.5537,
+      "match_score": 0.4354,
+      "rank_score": 0.5499,
       "source_category": "press",
       "is_official": false,
       "context_role": "sector",
@@ -719,8 +719,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.4411,
-      "rank_score": 0.5529,
+      "match_score": 0.4341,
+      "rank_score": 0.5492,
       "source_category": "press",
       "is_official": false,
       "context_role": "sector",
@@ -738,8 +738,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4293,
-      "rank_score": 0.5512,
+      "match_score": 0.423,
+      "rank_score": 0.548,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -757,8 +757,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4293,
-      "rank_score": 0.5512,
+      "match_score": 0.423,
+      "rank_score": 0.548,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -776,8 +776,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4276,
-      "rank_score": 0.5504,
+      "match_score": 0.4215,
+      "rank_score": 0.5472,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -795,8 +795,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4275,
-      "rank_score": 0.5503,
+      "match_score": 0.4214,
+      "rank_score": 0.5471,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -814,8 +814,8 @@
       "sentiment_score": 0.14285714285714285,
       "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.426,
-      "rank_score": 0.5334,
+      "match_score": 0.42,
+      "rank_score": 0.5303,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
@@ -833,8 +833,8 @@
       "sentiment_score": -0.3333333333333333,
       "impact_score": 0.35,
       "relevance_score": 0.5,
-      "match_score": 0.3979,
-      "rank_score": 0.5204,
+      "match_score": 0.396,
+      "rank_score": 0.5194,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "sector",
@@ -858,8 +858,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.8543,
-          "rank_score": 0.7662,
+          "match_score": 0.848,
+          "rank_score": 0.763,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -877,8 +877,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.8352,
-          "rank_score": 0.7563,
+          "match_score": 0.8306,
+          "rank_score": 0.7539,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -896,8 +896,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.6856,
-          "rank_score": 0.644,
+          "match_score": 0.679,
+          "rank_score": 0.6406,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -915,8 +915,8 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.426,
-          "rank_score": 0.557,
+          "match_score": 0.42,
+          "rank_score": 0.5539,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -934,8 +934,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.4427,
-          "rank_score": 0.5537,
+          "match_score": 0.4354,
+          "rank_score": 0.5499,
           "source_category": "press",
           "is_official": false,
           "context_role": "sector",
@@ -953,8 +953,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.4411,
-          "rank_score": 0.5529,
+          "match_score": 0.4341,
+          "rank_score": 0.5492,
           "source_category": "press",
           "is_official": false,
           "context_role": "sector",
@@ -972,8 +972,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4293,
-          "rank_score": 0.5512,
+          "match_score": 0.423,
+          "rank_score": 0.548,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -991,8 +991,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4293,
-          "rank_score": 0.5512,
+          "match_score": 0.423,
+          "rank_score": 0.548,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -1010,8 +1010,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4276,
-          "rank_score": 0.5504,
+          "match_score": 0.4215,
+          "rank_score": 0.5472,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -1029,8 +1029,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4275,
-          "rank_score": 0.5503,
+          "match_score": 0.4214,
+          "rank_score": 0.5471,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -1048,8 +1048,8 @@
           "sentiment_score": 0.14285714285714285,
           "impact_score": 0.4928571428571429,
           "relevance_score": 0.5,
-          "match_score": 0.426,
-          "rank_score": 0.5334,
+          "match_score": 0.42,
+          "rank_score": 0.5303,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
@@ -1073,8 +1073,8 @@
           "sentiment_score": -0.3333333333333333,
           "impact_score": 0.35,
           "relevance_score": 0.5,
-          "match_score": 0.3979,
-          "rank_score": 0.5204,
+          "match_score": 0.396,
+          "rank_score": 0.5194,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "sector",

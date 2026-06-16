@@ -1,10 +1,10 @@
 {
   "ticker": "ITUB4",
   "horizon_days": 42,
-  "train_r2": 0.960504,
-  "test_r2": -0.59598,
-  "rmse": 0.152669,
-  "train_samples": 327,
-  "test_samples": 82,
-  "trained_at": "2026-06-09T12:00:36.622589+00:00"
+  "train_r2": 0.961355,
+  "test_r2": -0.696068,
+  "rmse": 0.157375,
+  "train_samples": 328,
+  "test_samples": 83,
+  "trained_at": "2026-06-12T01:12:00.507986+00:00"
 }

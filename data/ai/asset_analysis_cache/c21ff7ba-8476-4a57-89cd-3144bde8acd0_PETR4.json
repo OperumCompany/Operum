@@ -3,52 +3,28 @@
   "ticker": "PETR4",
   "asset_name": "Petrobras PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-04T04:04:27.706796+00:00",
-  "recomputed_at": "2026-06-04T04:04:27.706796+00:00",
+  "generated_at": "2026-06-12T01:11:37.235405+00:00",
+  "recomputed_at": "2026-06-12T01:11:37.235405+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
   "asset_function": "crescimento",
   "current_snapshot": {
-    "current_price": 41.25,
+    "current_price": 41.76,
     "currency": "BRL",
-    "weight_pct": 7.87,
+    "weight_pct": 8.0,
     "sector": "Petróleo e Gás",
     "country": "BR",
     "asset_function": "crescimento"
   },
   "historical_window": {
-    "start_date": "2026-01-29",
-    "end_date": "2026-06-04",
+    "start_date": "2026-02-06",
+    "end_date": "2026-06-12",
     "news_count": 12,
     "has_price_history": true
   },
   "historical_series": [
-    {
-      "date": "2026-03-02",
-      "value": 39.9
-    },
-    {
-      "date": "2026-03-03",
-      "value": 39.73
-    },
-    {
-      "date": "2026-03-04",
-      "value": 39.29
-    },
-    {
-      "date": "2026-03-05",
-      "value": 39.48
-    },
-    {
-      "date": "2026-03-06",
-      "value": 40.9
-    },
-    {
-      "date": "2026-03-09",
-      "value": 41.87
-    },
     {
       "date": "2026-03-10",
       "value": 41.65
@@ -280,309 +256,333 @@
     {
       "date": "2026-06-02",
       "value": 41.57
+    },
+    {
+      "date": "2026-06-03",
+      "value": 41.25
+    },
+    {
+      "date": "2026-06-05",
+      "value": 40.89
+    },
+    {
+      "date": "2026-06-08",
+      "value": 41.22
+    },
+    {
+      "date": "2026-06-09",
+      "value": 41.17
+    },
+    {
+      "date": "2026-06-10",
+      "value": 41.65
+    },
+    {
+      "date": "2026-06-11",
+      "value": 41.76
     }
   ],
   "forecast_series": [
     {
-      "date": "2026-06-04",
-      "value": 41.57
-    },
-    {
-      "date": "2026-06-05",
+      "date": "2026-06-12",
       "value": 41.76
     },
     {
-      "date": "2026-06-08",
+      "date": "2026-06-15",
       "value": 41.96
     },
     {
-      "date": "2026-06-09",
-      "value": 42.15
-    },
-    {
-      "date": "2026-06-10",
-      "value": 42.35
-    },
-    {
-      "date": "2026-06-11",
-      "value": 42.54
-    },
-    {
-      "date": "2026-06-12",
-      "value": 42.45
-    },
-    {
-      "date": "2026-06-15",
-      "value": 42.35
-    },
-    {
       "date": "2026-06-16",
-      "value": 42.26
+      "value": 42.16
     },
     {
       "date": "2026-06-17",
-      "value": 42.17
+      "value": 42.36
     },
     {
       "date": "2026-06-18",
-      "value": 42.07
+      "value": 42.56
     },
     {
       "date": "2026-06-19",
-      "value": 41.98
+      "value": 42.76
     },
     {
       "date": "2026-06-22",
-      "value": 41.89
+      "value": 42.78
     },
     {
       "date": "2026-06-23",
-      "value": 41.8
+      "value": 42.8
     },
     {
       "date": "2026-06-24",
-      "value": 41.7
+      "value": 42.83
     },
     {
       "date": "2026-06-25",
-      "value": 41.61
+      "value": 42.85
     },
     {
       "date": "2026-06-26",
-      "value": 41.52
+      "value": 42.87
     },
     {
       "date": "2026-06-29",
-      "value": 41.42
+      "value": 42.89
     },
     {
       "date": "2026-06-30",
-      "value": 41.33
+      "value": 42.91
     },
     {
       "date": "2026-07-01",
-      "value": 41.24
+      "value": 42.94
     },
     {
       "date": "2026-07-02",
-      "value": 41.14
+      "value": 42.96
     },
     {
       "date": "2026-07-03",
-      "value": 41.05
+      "value": 42.98
     },
     {
       "date": "2026-07-06",
-      "value": 40.96
+      "value": 43.0
     },
     {
       "date": "2026-07-07",
-      "value": 40.88
+      "value": 43.02
     },
     {
       "date": "2026-07-08",
-      "value": 40.79
+      "value": 43.04
     },
     {
       "date": "2026-07-09",
-      "value": 40.71
+      "value": 43.07
     },
     {
       "date": "2026-07-10",
-      "value": 40.62
+      "value": 43.09
     },
     {
       "date": "2026-07-13",
-      "value": 40.54
+      "value": 43.11
     },
     {
       "date": "2026-07-14",
-      "value": 40.45
+      "value": 43.17
     },
     {
       "date": "2026-07-15",
-      "value": 40.36
+      "value": 43.23
     },
     {
       "date": "2026-07-16",
-      "value": 40.28
+      "value": 43.29
     },
     {
       "date": "2026-07-17",
-      "value": 40.19
+      "value": 43.35
     },
     {
       "date": "2026-07-20",
-      "value": 40.11
+      "value": 43.41
     },
     {
       "date": "2026-07-21",
-      "value": 40.02
+      "value": 43.48
     },
     {
       "date": "2026-07-22",
-      "value": 39.94
+      "value": 43.54
     },
     {
       "date": "2026-07-23",
-      "value": 39.85
+      "value": 43.6
     },
     {
       "date": "2026-07-24",
-      "value": 39.76
+      "value": 43.66
     },
     {
       "date": "2026-07-27",
-      "value": 39.68
+      "value": 43.72
     },
     {
       "date": "2026-07-28",
-      "value": 39.59
+      "value": 43.78
     },
     {
       "date": "2026-07-29",
-      "value": 39.51
+      "value": 43.84
     },
     {
       "date": "2026-07-30",
-      "value": 39.42
+      "value": 43.9
     },
     {
       "date": "2026-07-31",
-      "value": 39.34
+      "value": 43.96
     },
     {
       "date": "2026-08-03",
-      "value": 39.25
+      "value": 44.02
     },
     {
       "date": "2026-08-04",
-      "value": 39.37
+      "value": 44.09
     },
     {
       "date": "2026-08-05",
-      "value": 39.5
+      "value": 44.15
     },
     {
       "date": "2026-08-06",
-      "value": 39.62
+      "value": 44.21
     },
     {
       "date": "2026-08-07",
-      "value": 39.75
+      "value": 44.27
     },
     {
       "date": "2026-08-10",
-      "value": 39.87
+      "value": 44.33
     },
     {
       "date": "2026-08-11",
-      "value": 39.99
+      "value": 44.39
     },
     {
       "date": "2026-08-12",
-      "value": 40.12
+      "value": 44.35
     },
     {
       "date": "2026-08-13",
-      "value": 40.24
+      "value": 44.31
     },
     {
       "date": "2026-08-14",
-      "value": 40.36
+      "value": 44.27
     },
     {
       "date": "2026-08-17",
-      "value": 40.49
+      "value": 44.23
     },
     {
       "date": "2026-08-18",
-      "value": 40.61
+      "value": 44.19
     },
     {
       "date": "2026-08-19",
-      "value": 40.74
+      "value": 44.15
     },
     {
       "date": "2026-08-20",
-      "value": 40.86
+      "value": 44.11
     },
     {
       "date": "2026-08-21",
-      "value": 40.98
+      "value": 44.07
     },
     {
       "date": "2026-08-24",
-      "value": 41.11
+      "value": 44.03
     },
     {
       "date": "2026-08-25",
-      "value": 41.23
+      "value": 43.99
     },
     {
       "date": "2026-08-26",
-      "value": 41.35
+      "value": 43.96
     },
     {
       "date": "2026-08-27",
-      "value": 41.48
+      "value": 43.92
     },
     {
       "date": "2026-08-28",
-      "value": 41.6
+      "value": 43.88
     },
     {
       "date": "2026-08-31",
-      "value": 41.73
+      "value": 43.84
     },
     {
       "date": "2026-09-01",
-      "value": 41.85
+      "value": 43.8
+    },
+    {
+      "date": "2026-09-02",
+      "value": 43.76
+    },
+    {
+      "date": "2026-09-03",
+      "value": 43.72
+    },
+    {
+      "date": "2026-09-04",
+      "value": 43.68
+    },
+    {
+      "date": "2026-09-07",
+      "value": 43.64
+    },
+    {
+      "date": "2026-09-08",
+      "value": 43.6
+    },
+    {
+      "date": "2026-09-09",
+      "value": 43.56
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 42.54,
-      "predicted_return": 0.023393,
-      "confidence": 0.1775
+      "predicted_price": 42.76,
+      "predicted_return": 0.024038,
+      "confidence": 0.1761
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 41.05,
-      "predicted_return": -0.012609,
+      "predicted_price": 43.11,
+      "predicted_return": 0.032232,
       "confidence": 0.06
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 39.25,
-      "predicted_return": -0.055789,
+      "predicted_price": 44.39,
+      "predicted_return": 0.062978,
       "confidence": 0.06
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 41.85,
-      "predicted_return": 0.006822,
+      "predicted_price": 43.56,
+      "predicted_return": 0.043135,
       "confidence": 0.05
     }
   ],
   "recent_performance": {
-    "change_selected_pct": 4.17,
-    "change_1m_pct": -14.33,
-    "change_2m_pct": -11.96,
-    "change_3m_pct": 4.17,
+    "change_selected_pct": 0.26,
+    "change_1m_pct": -7.04,
+    "change_2m_pct": -10.14,
+    "change_3m_pct": 0.26,
     "change_12m_pct": null,
-    "volatility_selected_pct": 32.14,
-    "drawdown_selected_pct": -14.88,
-    "beta_selected": -0.04,
+    "volatility_selected_pct": 31.06,
+    "drawdown_selected_pct": -15.73,
+    "beta_selected": -0.03,
     "correlation_selected": -0.02,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 0.68,
-    "forecast_price_selected": 41.85,
+    "forecast_return_selected_pct": 4.31,
+    "forecast_price_selected": 43.56,
     "forecast_confidence_selected": 0.05,
     "forecast_news_adjustment_pct": -0.75
   },
@@ -593,19 +593,20 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 41.25. Hoje representa cerca de 7.9% da carteira. No curto prazo, o momentum de 1 mes esta em -14.3%. O modelo de 3 meses hoje aponta estabilidade, com retorno estimado de +0.7% e confianca de 5%. O ajuste contextual das noticias adiciona -0.8% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.53. Nesse conjunto, o peso informacional esta distribuido em fundamento (0), macro (2), setorial (0) e fluxo (4).",
-    "recent": "No recorte dos ultimos 3 meses, o ativo variou +4.2%. A volatilidade anualizada equivalente ficou perto de 32.1%. No mesmo intervalo, o drawdown observado foi de -14.9%. Contra IBOV, o beta estimado da janela ficou em -0.04, com correlacao de -0.02. No noticiario do periodo, os temas mais recorrentes foram commodities, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +0.7% e preco estimado perto de 41.85. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 41.76. Hoje representa cerca de 8.0% da carteira. No curto prazo, o momentum de 1 mes esta em -7.0%. O modelo de 3 meses hoje aponta alta, com retorno estimado de +4.3% e confianca de 5%. O ajuste contextual das noticias adiciona -0.8% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.53. Nesse conjunto, o peso informacional esta distribuido em fundamento (0), macro (2), setorial (0) e fluxo (4).",
+    "recent": "No recorte dos ultimos 3 meses, o ativo variou +0.3%. A volatilidade anualizada equivalente ficou perto de 31.1%. No mesmo intervalo, o drawdown observado foi de -15.7%. Contra IBOV, o beta estimado da janela ficou em -0.03, com correlacao de -0.02. No noticiario do periodo, os temas mais recorrentes foram commodities, juros, geopolitica, resultados. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.50. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +4.3% e preco estimado perto de 43.56. O contexto de noticias ajusta essa leitura em -0.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1m": "No recorte dos ultimo mes, o ativo variou -14.3%. A volatilidade anualizada equivalente ficou perto de 24.3%. No mesmo intervalo, o drawdown observado foi de -14.9%. Contra IBOV, o beta estimado da janela ficou em -0.12, com correlacao de -0.09. No noticiario do periodo, os temas mais recorrentes foram commodities, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
-      "2m": "No recorte dos ultimos 2 meses, o ativo variou -12.0%. A volatilidade anualizada equivalente ficou perto de 32.6%. No mesmo intervalo, o drawdown observado foi de -14.9%. Contra IBOV, o beta estimado da janela ficou em -0.06, com correlacao de -0.03. No noticiario do periodo, os temas mais recorrentes foram commodities, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
-      "3m": "No recorte dos ultimos 3 meses, o ativo variou +4.2%. A volatilidade anualizada equivalente ficou perto de 32.1%. No mesmo intervalo, o drawdown observado foi de -14.9%. Contra IBOV, o beta estimado da janela ficou em -0.04, com correlacao de -0.02. No noticiario do periodo, os temas mais recorrentes foram commodities, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras."
+      "1w": "No recorte dos ultima semana, o ativo variou +1.2%. A volatilidade anualizada equivalente ficou perto de 12.7%. No mesmo intervalo, o drawdown observado foi de -0.9%. No noticiario do periodo, os temas mais recorrentes foram commodities, juros, geopolitica, resultados. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.50. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
+      "1m": "No recorte dos ultimo mes, o ativo variou -7.0%. A volatilidade anualizada equivalente ficou perto de 21.6%. No mesmo intervalo, o drawdown observado foi de -10.5%. Contra IBOV, o beta estimado da janela ficou em -0.01, com correlacao de -0.01. No noticiario do periodo, os temas mais recorrentes foram commodities, juros, geopolitica, resultados. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.50. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
+      "2m": "No recorte dos ultimos 2 meses, o ativo variou -10.1%. A volatilidade anualizada equivalente ficou perto de 29.4%. No mesmo intervalo, o drawdown observado foi de -15.7%. Contra IBOV, o beta estimado da janela ficou em -0.13, com correlacao de -0.07. No noticiario do periodo, os temas mais recorrentes foram commodities, juros, geopolitica, resultados. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.50. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras.",
+      "3m": "No recorte dos ultimos 3 meses, o ativo variou +0.3%. A volatilidade anualizada equivalente ficou perto de 31.1%. No mesmo intervalo, o drawdown observado foi de -15.7%. Contra IBOV, o beta estimado da janela ficou em -0.03, com correlacao de -0.02. No noticiario do periodo, os temas mais recorrentes foram commodities, juros, geopolitica, resultados. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.50. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva; Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras; Petrobras reduz em 9,59% preço do diesel para distribuidoras."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +2.3% e preco estimado perto de 42.54. O contexto de noticias ajusta essa leitura em -0.8%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -1.3% e preco estimado perto de 41.05. O contexto de noticias ajusta essa leitura em -1.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -5.6% e preco estimado perto de 39.25. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +0.7% e preco estimado perto de 41.85. O contexto de noticias ajusta essa leitura em -1.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros, inflacao, cambio. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +2.4% e preco estimado perto de 42.76. O contexto de noticias ajusta essa leitura em -0.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de +3.2% e preco estimado perto de 43.11. O contexto de noticias ajusta essa leitura em -0.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de +6.3% e preco estimado perto de 44.39. O contexto de noticias ajusta essa leitura em -0.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +4.3% e preco estimado perto de 43.56. O contexto de noticias ajusta essa leitura em -0.6%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao commodities, juros. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
@@ -658,13 +659,32 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 1.0,
-      "rank_score": 0.824,
+      "match_score": 0.9997,
+      "rank_score": 0.8238,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "eb217bb503f66e5eca9663c257f36b6e",
+      "title": "XP eleva preços-alvo para petroleiras e reforça compra para Petrobras, PRIO e Brava",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/xp-eleva-precos-alvo-para-petroleiras-e-reforca-compra-para-petrobras-prio-e-brava/",
+      "published_at": "2026-06-09T11:35:39.408781+00:00",
+      "summary": "XP eleva preços-alvo para petroleiras e reforça compra para Petrobras, PRIO e Brava.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.48000000000000004,
+      "relevance_score": 0.5,
+      "match_score": 1.0,
+      "rank_score": 0.767,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "fluxo",
       "role": "outlook"
     },
     {
@@ -706,6 +726,44 @@
       "role": "outlook"
     },
     {
+      "id": "9fd8a7bf92fc8a7d9c7a39ceedaa3f34",
+      "title": "Polícia do DF descobre falsa oficina suspeita de furtar combustível da Petrobras",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/policia-do-df-desmonta-oficina-de-fachada-suspeita-de-furtar-diesel-direto-de-oleoduto-da-petrobras.shtml",
+      "published_at": "2026-06-07T11:29:00-03:00",
+      "summary": "A Polícia Civil do Distrito Federal prendeu três homens sob suspeita de furtar gasolina e óleo diesel diretamente de um oleoduto da Petrobras.\n\nLeia mais (06/07/2026 - 11h29). O texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.48000000000000004,
+      "relevance_score": 0.5,
+      "match_score": 1.0,
+      "rank_score": 0.764,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "b788574e15b5f063657d4c39e4e34afa",
+      "title": "Petrobras e IG4 tornam-se co-controladores da Braskem",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petrobras-e-ig4-tornam-se-co-controladores-da-braskem.shtml",
+      "published_at": "2026-06-04T09:26:00-03:00",
+      "summary": "A gestora de private equity IG4 e a Petrobras tornaram-se co-controladores da petroquímica Braskem, concluindo um negócio assinado em abril, informou a empresa em comunicado nessa quarta-feira (3).\n\nLeia mais (06/04/2026 - 09h26). O texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.48000000000000004,
+      "relevance_score": 0.5,
+      "match_score": 1.0,
+      "rank_score": 0.764,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fluxo",
+      "role": "historical"
+    },
+    {
       "id": "327a88c1d7b49d4716e172c44b9fd600",
       "title": "Petrobras reduz em 14,2% preço do querosene de aviação a partir desta segunda",
       "source_name": "Folha.com - Mercado - Principal",
@@ -722,7 +780,45 @@
       "context_role": "asset",
       "source_confidence_weight": 0.72,
       "analysis_category": "fluxo",
-      "role": "outlook"
+      "role": "historical"
+    },
+    {
+      "id": "6bffd6da0d100588a02f2ecb2d9d5411",
+      "title": "Itamaraty articula venda de petróleo para Japão após fechamento de Hormuz",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/itamaraty-articula-venda-de-petroleo-para-japao-apos-fechamento-de-hormuz.shtml",
+      "published_at": "2026-06-04T04:00:00-03:00",
+      "summary": "O Itamaraty está articulando a venda de petróleo brasileiro para o Japão, um dos países mais afetados pelo fechamento do estreito de Hormuz em decorrência da guerra entre Irã, Estados Unidos e Israel.\n\nLeia mais (06/04/2026 - 04h00). O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.6584,
+      "rank_score": 0.6164,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "919be7be949dce06cc3c17f20c24471d",
+      "title": "Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/receita-de-royalties-do-petroleo-dispara-com-guerra-e-bate-recorde-de-r-8-bi-em-maio.shtml",
+      "published_at": "2026-06-09T04:00:00-03:00",
+      "summary": "A arrecadação com royalties sobre a produção de petróleo disparou após o início da guerra no Irã e atingiu recorde em maio, com mais de R$ 8 bilhões.\n\nA receita extra beneficia o governo federal e deve ajudar o Rio de Janeiro a fechar o ano com déficit bem inferior ao previsto. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.4482,
+      "rank_score": 0.5536,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
+      "role": "historical"
     },
     {
       "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -734,115 +830,140 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.4443,
-      "rank_score": 0.559,
+      "match_score": 0.423,
+      "rank_score": 0.548,
       "source_category": null,
       "is_official": false,
       "context_role": "sector",
       "source_confidence_weight": 0.72,
       "analysis_category": "fundamento",
-      "role": "historical"
-    },
-    {
-      "id": "629cddfde78d45fdde8891b65e011167",
-      "title": "EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/eua-determinam-inspecoes-em-jatos-embraer-phenom-300-apos-problema-em-testes/",
-      "published_at": "2026-05-30T11:48:00+00:00",
-      "summary": "Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Aviação EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações Estadão Conteúdo 30/05/2026 08h48 &bull; Atualizado 12 horas atrás Publicidade A Federal Aviation Administration (FAA), agência reguladora da aviação civil dos Estados Unidos, publicará na segunda-feira, 1º, no Federal Register, o diário oficial dos EUA, uma nova diretriz de aeronavegabilidade (AD, na sigla em inglês) para determinados jatos executivos Embraer Phenom 300 (EMB-505), após identificar a possibilidade de resultados inválidos em testes do estabilizador horizontal realizados em algumas aeronaves. O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
-      "sentiment_score": -0.5,
-      "impact_score": 0.6000000000000001,
-      "relevance_score": 0.5,
-      "match_score": 0.4422,
-      "rank_score": 0.5579,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "fundamento",
-      "role": "historical"
-    },
-    {
-      "id": "2d540794d0dddec602686eeaad1d144a",
-      "title": "Bolsas em NY fecham em alta e descolam do petróleo impulsionadas por techs",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/bolsas-em-ny-fecham-em-alta-e-descolam-do-petroleo-impulsionadas-por-techs/",
-      "published_at": "2026-06-01T23:33:02.845617+00:00",
-      "summary": "Bolsas em NY fecham em alta e descolam do petróleo impulsionadas por techs.\n\nO foco principal passa por Economia, Mercado.",
-      "sentiment_score": 1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.4275,
-      "rank_score": 0.5258,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.75,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "c9ea071b5e56dc0f36f203d1f9085142",
-      "title": "Preços do petróleo saltam 5% após notícia sobre suspensão de negociações EUA-Irã",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/precos-do-petroleo-aceleram-apos-noticia-sobre-suspensao-de-negociacoes-eua-ira/",
-      "published_at": "2026-06-01T15:00:15.353680+00:00",
-      "summary": "Preços do petróleo saltam 5% após notícia sobre suspensão de negociações EUA-Irã.\n\nO foco principal passa por Economia, Mercado.",
-      "sentiment_score": 1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.4263,
-      "rank_score": 0.5252,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.75,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "4416d7709ba1f19a53823990efbfbe1c",
-      "title": "Petróleo recua após três dias de alta com tensões no Oriente Médio",
-      "source_name": "Investing.com Brasil",
-      "source_url": "https://br.investing.com/news/commodities-news/petroleo-recua-apos-tres-dias-de-alta-com-tensoes-no-golfo-e-queda-nos-estoques-dos-eua-1962160",
-      "published_at": "2026-06-04T00:18:19+00:00",
-      "summary": "Petróleo recua após três dias de alta com tensões no Oriente Médio.\n\nO foco principal passa por Macroeconomia, Mercado.",
-      "sentiment_score": 1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.432,
-      "rank_score": 0.5251,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "8d7fa8e7990f4081d1340b4165cf7cee",
-      "title": "Petróleo sobe quase 3% e fica próximo de voltar aos US$ 100",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petroleo-sobe-quase-3-e-fica-proximo-de-voltar-aos-us-100.shtml",
-      "published_at": "2026-06-03T11:27:00-03:00",
-      "summary": "O preço do petróleo chegou a subir quase 3% nesta quarta-feira (3) com os novos ataques do Irã a países aliados dos EUA no Oriente Médio, e outro dia de bombardeios de Israel ao Líbano.\n\nLeia mais (06/03/2026 - 11h27). O foco principal passa por Economia, Mercado.",
-      "sentiment_score": 1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.4306,
-      "rank_score": 0.5244,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "sector",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
       "role": "historical"
     }
   ],
   "source_groups": [
     {
+      "source_name": "Folha.com - Mercado - Principal",
+      "count": 6,
+      "items": [
+        {
+          "id": "b126b775a2b0da1d4b8e05165d37b17e",
+          "title": "Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/petrobras-anuncia-reducao-de-r-035-no-preco-do-oleo-diesel-para-as-distribuidoras.shtml",
+          "published_at": "2026-06-01T00:37:04.342786+00:00",
+          "summary": "Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras.\n\nO texto menciona PETR4. O foco principal passa por Petróleo e Gás, Tecnologia.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 1.0,
+          "rank_score": 0.824,
+          "source_category": null,
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "9fd8a7bf92fc8a7d9c7a39ceedaa3f34",
+          "title": "Polícia do DF descobre falsa oficina suspeita de furtar combustível da Petrobras",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/policia-do-df-desmonta-oficina-de-fachada-suspeita-de-furtar-diesel-direto-de-oleoduto-da-petrobras.shtml",
+          "published_at": "2026-06-07T11:29:00-03:00",
+          "summary": "A Polícia Civil do Distrito Federal prendeu três homens sob suspeita de furtar gasolina e óleo diesel diretamente de um oleoduto da Petrobras.\n\nLeia mais (06/07/2026 - 11h29). O texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 1.0,
+          "rank_score": 0.764,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "historical"
+        },
+        {
+          "id": "b788574e15b5f063657d4c39e4e34afa",
+          "title": "Petrobras e IG4 tornam-se co-controladores da Braskem",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petrobras-e-ig4-tornam-se-co-controladores-da-braskem.shtml",
+          "published_at": "2026-06-04T09:26:00-03:00",
+          "summary": "A gestora de private equity IG4 e a Petrobras tornaram-se co-controladores da petroquímica Braskem, concluindo um negócio assinado em abril, informou a empresa em comunicado nessa quarta-feira (3).\n\nLeia mais (06/04/2026 - 09h26). O texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 1.0,
+          "rank_score": 0.764,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fluxo",
+          "role": "historical"
+        },
+        {
+          "id": "327a88c1d7b49d4716e172c44b9fd600",
+          "title": "Petrobras reduz em 14,2% preço do querosene de aviação a partir desta segunda",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petrobras-reduz-em-142-preco-do-querosene-de-aviacao-a-partir-desta-segunda.shtml",
+          "published_at": "2026-06-01T10:02:00-03:00",
+          "summary": "A Petrobras vai reduzir em 14,2% o preço médio de venda do querosene de aviação (QAV) para distribuidoras a partir de junho, o que corresponde a uma diminuição de R$ 0,93 por litro frente ao mês anterior, informou a estatal em comunicado nesta segunda-feira (1º).\n\nLeia mais (06/01/2026 - 10h02). O texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 1.0,
+          "rank_score": 0.764,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fluxo",
+          "role": "historical"
+        },
+        {
+          "id": "6bffd6da0d100588a02f2ecb2d9d5411",
+          "title": "Itamaraty articula venda de petróleo para Japão após fechamento de Hormuz",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/itamaraty-articula-venda-de-petroleo-para-japao-apos-fechamento-de-hormuz.shtml",
+          "published_at": "2026-06-04T04:00:00-03:00",
+          "summary": "O Itamaraty está articulando a venda de petróleo brasileiro para o Japão, um dos países mais afetados pelo fechamento do estreito de Hormuz em decorrência da guerra entre Irã, Estados Unidos e Israel.\n\nLeia mais (06/04/2026 - 04h00). O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.28,
+          "relevance_score": 0.5,
+          "match_score": 0.6584,
+          "rank_score": 0.6164,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "historical"
+        },
+        {
+          "id": "919be7be949dce06cc3c17f20c24471d",
+          "title": "Receita de royalties do petróleo dispara com guerra e bate recorde de R$ 8 bi em maio",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/receita-de-royalties-do-petroleo-dispara-com-guerra-e-bate-recorde-de-r-8-bi-em-maio.shtml",
+          "published_at": "2026-06-09T04:00:00-03:00",
+          "summary": "A arrecadação com royalties sobre a produção de petróleo disparou após o início da guerra no Irã e atingiu recorde em maio, com mais de R$ 8 bilhões.\n\nA receita extra beneficia o governo federal e deve ajudar o Rio de Janeiro a fechar o ano com déficit bem inferior ao previsto. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.4482,
+          "rank_score": 0.5536,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
+          "role": "historical"
+        }
+      ]
+    },
+    {
       "source_name": "InfoMoney",
-      "count": 7,
+      "count": 5,
       "items": [
         {
           "id": "cdd7cde965d0db8917bcc712e4a3459b",
@@ -856,6 +977,25 @@
           "relevance_score": 0.5,
           "match_score": 1.0,
           "rank_score": 0.8515,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
+        {
+          "id": "eb217bb503f66e5eca9663c257f36b6e",
+          "title": "XP eleva preços-alvo para petroleiras e reforça compra para Petrobras, PRIO e Brava",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/xp-eleva-precos-alvo-para-petroleiras-e-reforca-compra-para-petrobras-prio-e-brava/",
+          "published_at": "2026-06-09T11:35:39.408781+00:00",
+          "summary": "XP eleva preços-alvo para petroleiras e reforça compra para Petrobras, PRIO e Brava.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 1.0,
+          "rank_score": 0.767,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -911,133 +1051,13 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.4443,
-          "rank_score": 0.559,
+          "match_score": 0.423,
+          "rank_score": 0.548,
           "source_category": null,
           "is_official": false,
           "context_role": "sector",
           "source_confidence_weight": 0.72,
           "analysis_category": "fundamento",
-          "role": "historical"
-        },
-        {
-          "id": "629cddfde78d45fdde8891b65e011167",
-          "title": "EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/eua-determinam-inspecoes-em-jatos-embraer-phenom-300-apos-problema-em-testes/",
-          "published_at": "2026-05-30T11:48:00+00:00",
-          "summary": "Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Aviação EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações Estadão Conteúdo 30/05/2026 08h48 &bull; Atualizado 12 horas atrás Publicidade A Federal Aviation Administration (FAA), agência reguladora da aviação civil dos Estados Unidos, publicará na segunda-feira, 1º, no Federal Register, o diário oficial dos EUA, uma nova diretriz de aeronavegabilidade (AD, na sigla em inglês) para determinados jatos executivos Embraer Phenom 300 (EMB-505), após identificar a possibilidade de resultados inválidos em testes do estabilizador horizontal realizados em algumas aeronaves. O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
-          "sentiment_score": -0.5,
-          "impact_score": 0.6000000000000001,
-          "relevance_score": 0.5,
-          "match_score": 0.4422,
-          "rank_score": 0.5579,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "sector",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "fundamento",
-          "role": "historical"
-        },
-        {
-          "id": "2d540794d0dddec602686eeaad1d144a",
-          "title": "Bolsas em NY fecham em alta e descolam do petróleo impulsionadas por techs",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/bolsas-em-ny-fecham-em-alta-e-descolam-do-petroleo-impulsionadas-por-techs/",
-          "published_at": "2026-06-01T23:33:02.845617+00:00",
-          "summary": "Bolsas em NY fecham em alta e descolam do petróleo impulsionadas por techs.\n\nO foco principal passa por Economia, Mercado.",
-          "sentiment_score": 1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.4275,
-          "rank_score": 0.5258,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "sector",
-          "source_confidence_weight": 0.75,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "c9ea071b5e56dc0f36f203d1f9085142",
-          "title": "Preços do petróleo saltam 5% após notícia sobre suspensão de negociações EUA-Irã",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/precos-do-petroleo-aceleram-apos-noticia-sobre-suspensao-de-negociacoes-eua-ira/",
-          "published_at": "2026-06-01T15:00:15.353680+00:00",
-          "summary": "Preços do petróleo saltam 5% após notícia sobre suspensão de negociações EUA-Irã.\n\nO foco principal passa por Economia, Mercado.",
-          "sentiment_score": 1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.4263,
-          "rank_score": 0.5252,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "sector",
-          "source_confidence_weight": 0.75,
-          "analysis_category": "macro",
-          "role": "historical"
-        }
-      ]
-    },
-    {
-      "source_name": "Folha.com - Mercado - Principal",
-      "count": 3,
-      "items": [
-        {
-          "id": "b126b775a2b0da1d4b8e05165d37b17e",
-          "title": "Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/05/petrobras-anuncia-reducao-de-r-035-no-preco-do-oleo-diesel-para-as-distribuidoras.shtml",
-          "published_at": "2026-06-01T00:37:04.342786+00:00",
-          "summary": "Petrobras anuncia redução de R$ 0,35 no preço do óleo diesel para as distribuidoras.\n\nO texto menciona PETR4. O foco principal passa por Petróleo e Gás, Tecnologia.",
-          "sentiment_score": -0.1,
-          "impact_score": 0.48000000000000004,
-          "relevance_score": 0.5,
-          "match_score": 1.0,
-          "rank_score": 0.824,
-          "source_category": null,
-          "is_official": false,
-          "context_role": "asset",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "outlook"
-        },
-        {
-          "id": "327a88c1d7b49d4716e172c44b9fd600",
-          "title": "Petrobras reduz em 14,2% preço do querosene de aviação a partir desta segunda",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petrobras-reduz-em-142-preco-do-querosene-de-aviacao-a-partir-desta-segunda.shtml",
-          "published_at": "2026-06-01T10:02:00-03:00",
-          "summary": "A Petrobras vai reduzir em 14,2% o preço médio de venda do querosene de aviação (QAV) para distribuidoras a partir de junho, o que corresponde a uma diminuição de R$ 0,93 por litro frente ao mês anterior, informou a estatal em comunicado nesta segunda-feira (1º).\n\nLeia mais (06/01/2026 - 10h02). O texto menciona PETR4. O foco principal passa por Economia, Mercado.",
-          "sentiment_score": -0.1,
-          "impact_score": 0.48000000000000004,
-          "relevance_score": 0.5,
-          "match_score": 1.0,
-          "rank_score": 0.764,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "asset",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "fluxo",
-          "role": "outlook"
-        },
-        {
-          "id": "8d7fa8e7990f4081d1340b4165cf7cee",
-          "title": "Petróleo sobe quase 3% e fica próximo de voltar aos US$ 100",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petroleo-sobe-quase-3-e-fica-proximo-de-voltar-aos-us-100.shtml",
-          "published_at": "2026-06-03T11:27:00-03:00",
-          "summary": "O preço do petróleo chegou a subir quase 3% nesta quarta-feira (3) com os novos ataques do Irã a países aliados dos EUA no Oriente Médio, e outro dia de bombardeios de Israel ao Líbano.\n\nLeia mais (06/03/2026 - 11h27). O foco principal passa por Economia, Mercado.",
-          "sentiment_score": 1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.4306,
-          "rank_score": 0.5244,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "sector",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
           "role": "historical"
         }
       ]
@@ -1056,39 +1076,14 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 1.0,
-          "rank_score": 0.824,
+          "match_score": 0.9997,
+          "rank_score": 0.8238,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
           "role": "outlook"
-        }
-      ]
-    },
-    {
-      "source_name": "Investing.com Brasil",
-      "count": 1,
-      "items": [
-        {
-          "id": "4416d7709ba1f19a53823990efbfbe1c",
-          "title": "Petróleo recua após três dias de alta com tensões no Oriente Médio",
-          "source_name": "Investing.com Brasil",
-          "source_url": "https://br.investing.com/news/commodities-news/petroleo-recua-apos-tres-dias-de-alta-com-tensoes-no-golfo-e-queda-nos-estoques-dos-eua-1962160",
-          "published_at": "2026-06-04T00:18:19+00:00",
-          "summary": "Petróleo recua após três dias de alta com tensões no Oriente Médio.\n\nO foco principal passa por Macroeconomia, Mercado.",
-          "sentiment_score": 1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.432,
-          "rank_score": 0.5251,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "sector",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
         }
       ]
     }

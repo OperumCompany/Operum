@@ -3,40 +3,28 @@
   "ticker": "VALE3",
   "asset_name": "Vale ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-06-09T11:55:09.899879+00:00",
-  "recomputed_at": "2026-06-09T11:55:09.899879+00:00",
+  "generated_at": "2026-06-12T01:27:22.761517+00:00",
+  "recomputed_at": "2026-06-12T01:27:22.761517+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
-  "asset_function": "crescimento",
+  "asset_function": "estabilidade",
   "current_snapshot": {
-    "current_price": 78.07,
+    "current_price": 78.8,
     "currency": "BRL",
-    "weight_pct": 12.0,
+    "weight_pct": 12.07,
     "sector": "Mineração",
     "country": "BR",
-    "asset_function": "crescimento"
+    "asset_function": "estabilidade"
   },
   "historical_window": {
-    "start_date": "2026-02-03",
-    "end_date": "2026-06-09",
+    "start_date": "2026-02-06",
+    "end_date": "2026-06-12",
     "news_count": 12,
     "has_price_history": true
   },
   "historical_series": [
-    {
-      "date": "2026-03-05",
-      "value": 81.29
-    },
-    {
-      "date": "2026-03-06",
-      "value": 78.86
-    },
-    {
-      "date": "2026-03-09",
-      "value": 79.26
-    },
     {
       "date": "2026-03-10",
       "value": 80.56
@@ -280,333 +268,343 @@
     {
       "date": "2026-06-08",
       "value": 78.07
+    },
+    {
+      "date": "2026-06-09",
+      "value": 78.5
+    },
+    {
+      "date": "2026-06-10",
+      "value": 77.7
+    },
+    {
+      "date": "2026-06-11",
+      "value": 78.8
     }
   ],
   "forecast_series": [
     {
-      "date": "2026-06-09",
-      "value": 78.07
-    },
-    {
-      "date": "2026-06-10",
-      "value": 78.2
-    },
-    {
-      "date": "2026-06-11",
-      "value": 78.33
-    },
-    {
       "date": "2026-06-12",
-      "value": 78.45
+      "value": 78.8
     },
     {
       "date": "2026-06-15",
-      "value": 78.58
+      "value": 78.92
     },
     {
       "date": "2026-06-16",
-      "value": 78.71
+      "value": 79.05
     },
     {
       "date": "2026-06-17",
-      "value": 78.57
+      "value": 79.17
     },
     {
       "date": "2026-06-18",
-      "value": 78.42
+      "value": 79.3
     },
     {
       "date": "2026-06-19",
-      "value": 78.28
+      "value": 79.42
     },
     {
       "date": "2026-06-22",
-      "value": 78.14
+      "value": 79.18
     },
     {
       "date": "2026-06-23",
-      "value": 77.99
+      "value": 78.95
     },
     {
       "date": "2026-06-24",
-      "value": 77.85
+      "value": 78.71
     },
     {
       "date": "2026-06-25",
-      "value": 77.71
+      "value": 78.47
     },
     {
       "date": "2026-06-26",
-      "value": 77.56
+      "value": 78.24
     },
     {
       "date": "2026-06-29",
-      "value": 77.42
+      "value": 78.0
     },
     {
       "date": "2026-06-30",
-      "value": 77.28
+      "value": 77.77
     },
     {
       "date": "2026-07-01",
-      "value": 77.14
+      "value": 77.53
     },
     {
       "date": "2026-07-02",
-      "value": 76.99
+      "value": 77.29
     },
     {
       "date": "2026-07-03",
-      "value": 76.85
-    },
-    {
-      "date": "2026-07-06",
-      "value": 76.71
-    },
-    {
-      "date": "2026-07-07",
-      "value": 76.56
-    },
-    {
-      "date": "2026-07-08",
-      "value": 76.42
-    },
-    {
-      "date": "2026-07-09",
-      "value": 76.34
-    },
-    {
-      "date": "2026-07-10",
-      "value": 76.27
-    },
-    {
-      "date": "2026-07-13",
-      "value": 76.19
-    },
-    {
-      "date": "2026-07-14",
-      "value": 76.12
-    },
-    {
-      "date": "2026-07-15",
-      "value": 76.04
-    },
-    {
-      "date": "2026-07-16",
-      "value": 75.96
-    },
-    {
-      "date": "2026-07-17",
-      "value": 75.89
-    },
-    {
-      "date": "2026-07-20",
-      "value": 75.81
-    },
-    {
-      "date": "2026-07-21",
-      "value": 75.73
-    },
-    {
-      "date": "2026-07-22",
-      "value": 75.66
-    },
-    {
-      "date": "2026-07-23",
-      "value": 75.58
-    },
-    {
-      "date": "2026-07-24",
-      "value": 75.51
-    },
-    {
-      "date": "2026-07-27",
-      "value": 75.43
-    },
-    {
-      "date": "2026-07-28",
-      "value": 75.35
-    },
-    {
-      "date": "2026-07-29",
-      "value": 75.28
-    },
-    {
-      "date": "2026-07-30",
-      "value": 75.2
-    },
-    {
-      "date": "2026-07-31",
-      "value": 75.12
-    },
-    {
-      "date": "2026-08-03",
-      "value": 75.05
-    },
-    {
-      "date": "2026-08-04",
-      "value": 74.97
-    },
-    {
-      "date": "2026-08-05",
-      "value": 74.9
-    },
-    {
-      "date": "2026-08-06",
-      "value": 74.82
-    },
-    {
-      "date": "2026-08-07",
-      "value": 75.02
-    },
-    {
-      "date": "2026-08-10",
-      "value": 75.23
-    },
-    {
-      "date": "2026-08-11",
-      "value": 75.43
-    },
-    {
-      "date": "2026-08-12",
-      "value": 75.64
-    },
-    {
-      "date": "2026-08-13",
-      "value": 75.84
-    },
-    {
-      "date": "2026-08-14",
-      "value": 76.04
-    },
-    {
-      "date": "2026-08-17",
-      "value": 76.25
-    },
-    {
-      "date": "2026-08-18",
-      "value": 76.45
-    },
-    {
-      "date": "2026-08-19",
-      "value": 76.65
-    },
-    {
-      "date": "2026-08-20",
-      "value": 76.86
-    },
-    {
-      "date": "2026-08-21",
       "value": 77.06
     },
     {
+      "date": "2026-07-06",
+      "value": 76.82
+    },
+    {
+      "date": "2026-07-07",
+      "value": 76.59
+    },
+    {
+      "date": "2026-07-08",
+      "value": 76.35
+    },
+    {
+      "date": "2026-07-09",
+      "value": 76.11
+    },
+    {
+      "date": "2026-07-10",
+      "value": 75.88
+    },
+    {
+      "date": "2026-07-13",
+      "value": 75.64
+    },
+    {
+      "date": "2026-07-14",
+      "value": 75.79
+    },
+    {
+      "date": "2026-07-15",
+      "value": 75.93
+    },
+    {
+      "date": "2026-07-16",
+      "value": 76.08
+    },
+    {
+      "date": "2026-07-17",
+      "value": 76.23
+    },
+    {
+      "date": "2026-07-20",
+      "value": 76.38
+    },
+    {
+      "date": "2026-07-21",
+      "value": 76.52
+    },
+    {
+      "date": "2026-07-22",
+      "value": 76.67
+    },
+    {
+      "date": "2026-07-23",
+      "value": 76.82
+    },
+    {
+      "date": "2026-07-24",
+      "value": 76.96
+    },
+    {
+      "date": "2026-07-27",
+      "value": 77.11
+    },
+    {
+      "date": "2026-07-28",
+      "value": 77.26
+    },
+    {
+      "date": "2026-07-29",
+      "value": 77.41
+    },
+    {
+      "date": "2026-07-30",
+      "value": 77.55
+    },
+    {
+      "date": "2026-07-31",
+      "value": 77.7
+    },
+    {
+      "date": "2026-08-03",
+      "value": 77.85
+    },
+    {
+      "date": "2026-08-04",
+      "value": 77.99
+    },
+    {
+      "date": "2026-08-05",
+      "value": 78.14
+    },
+    {
+      "date": "2026-08-06",
+      "value": 78.29
+    },
+    {
+      "date": "2026-08-07",
+      "value": 78.44
+    },
+    {
+      "date": "2026-08-10",
+      "value": 78.58
+    },
+    {
+      "date": "2026-08-11",
+      "value": 78.73
+    },
+    {
+      "date": "2026-08-12",
+      "value": 78.95
+    },
+    {
+      "date": "2026-08-13",
+      "value": 79.16
+    },
+    {
+      "date": "2026-08-14",
+      "value": 79.38
+    },
+    {
+      "date": "2026-08-17",
+      "value": 79.6
+    },
+    {
+      "date": "2026-08-18",
+      "value": 79.82
+    },
+    {
+      "date": "2026-08-19",
+      "value": 80.03
+    },
+    {
+      "date": "2026-08-20",
+      "value": 80.25
+    },
+    {
+      "date": "2026-08-21",
+      "value": 80.47
+    },
+    {
       "date": "2026-08-24",
-      "value": 77.27
+      "value": 80.68
     },
     {
       "date": "2026-08-25",
-      "value": 77.47
+      "value": 80.9
     },
     {
       "date": "2026-08-26",
-      "value": 77.67
+      "value": 81.12
     },
     {
       "date": "2026-08-27",
-      "value": 77.88
+      "value": 81.34
     },
     {
       "date": "2026-08-28",
-      "value": 78.08
+      "value": 81.55
     },
     {
       "date": "2026-08-31",
-      "value": 78.28
+      "value": 81.77
     },
     {
       "date": "2026-09-01",
-      "value": 78.49
+      "value": 81.99
     },
     {
       "date": "2026-09-02",
-      "value": 78.69
+      "value": 82.2
     },
     {
       "date": "2026-09-03",
-      "value": 78.9
+      "value": 82.42
     },
     {
       "date": "2026-09-04",
-      "value": 79.1
+      "value": 82.64
+    },
+    {
+      "date": "2026-09-07",
+      "value": 82.86
+    },
+    {
+      "date": "2026-09-08",
+      "value": 83.07
+    },
+    {
+      "date": "2026-09-09",
+      "value": 83.29
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "1w",
       "horizon_days": 5,
-      "predicted_price": 78.71,
-      "predicted_return": 0.008217,
-      "confidence": 0.2958
+      "predicted_price": 79.42,
+      "predicted_return": 0.007838,
+      "confidence": 0.354
     },
     {
       "date": "1m",
       "horizon_days": 21,
-      "predicted_price": 76.42,
-      "predicted_return": -0.021139,
-      "confidence": 0.4248
+      "predicted_price": 75.64,
+      "predicted_return": -0.040058,
+      "confidence": 0.4806
     },
     {
       "date": "2m",
       "horizon_days": 42,
-      "predicted_price": 74.82,
-      "predicted_return": -0.041682,
-      "confidence": 0.1697
+      "predicted_price": 78.73,
+      "predicted_return": -0.000836,
+      "confidence": 0.0757
     },
     {
       "date": "3m",
       "horizon_days": 63,
-      "predicted_price": 79.1,
-      "predicted_return": 0.013254,
-      "confidence": 0.465
+      "predicted_price": 83.29,
+      "predicted_return": 0.057009,
+      "confidence": 0.3959
     }
   ],
   "recent_performance": {
-    "change_selected_pct": -3.96,
-    "change_1m_pct": -2.5,
-    "change_2m_pct": -6.04,
-    "change_3m_pct": -3.96,
+    "change_selected_pct": -2.18,
+    "change_1m_pct": -5.35,
+    "change_2m_pct": -6.95,
+    "change_3m_pct": -2.18,
     "change_12m_pct": null,
-    "volatility_selected_pct": 29.77,
-    "drawdown_selected_pct": -13.01,
-    "beta_selected": 0.93,
+    "volatility_selected_pct": 29.19,
+    "drawdown_selected_pct": -13.43,
+    "beta_selected": 0.91,
     "correlation_selected": 0.59,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 1.33,
-    "forecast_price_selected": 79.1,
-    "forecast_confidence_selected": 0.465,
-    "forecast_news_adjustment_pct": -0.76
+    "forecast_return_selected_pct": 5.7,
+    "forecast_price_selected": 83.29,
+    "forecast_confidence_selected": 0.3959,
+    "forecast_news_adjustment_pct": -0.25
   },
   "outlook_3m": {
-    "scenario": "pressionado",
-    "dominant_topics": [
-      "inflacao"
-    ]
+    "scenario": "neutro",
+    "dominant_topics": []
   },
   "analysis_sections": {
-    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e crescimento. Cotacao atual aproximada em BRL 78.07. Hoje representa cerca de 12.0% da carteira. No curto prazo, o momentum de 1 mes esta em -2.5%. O modelo de 3 meses hoje aponta estabilidade, com retorno estimado de +1.3% e confianca de 46%. O ajuste contextual das noticias adiciona -0.8% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.52. Nesse conjunto, o peso informacional esta distribuido em fundamento (1), macro (0), setorial (0) e fluxo (5).",
-    "recent": "No recorte dos ultimos 3 meses, o ativo variou -4.0%. A volatilidade anualizada equivalente ficou perto de 29.8%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 0.93, com correlacao de 0.59. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +1.3% e preco estimado perto de 79.10. O contexto de noticias ajusta essa leitura em +0.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
+    "current": "O ativo está exposto ao ambiente doméstico, incluindo juros, fluxo para a bolsa e atividade econômica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 78.80. Hoje representa cerca de 12.1% da carteira. No curto prazo, o momentum de 1 mes esta em -5.3%. O modelo de 3 meses hoje aponta alta, com retorno estimado de +5.7% e confianca de 40%. O ajuste contextual das noticias adiciona -0.2% ao cenario-base projetado. As noticias recentes tem vies misto e impacto medio de 0.57. Nesse conjunto, o peso informacional esta distribuido em fundamento (1), macro (0), setorial (0) e fluxo (5).",
+    "recent": "No recorte dos ultimos 3 meses, o ativo variou -2.2%. A volatilidade anualizada equivalente ficou perto de 29.2%. No mesmo intervalo, o drawdown observado foi de -13.4%. Contra IBOV, o beta estimado da janela ficou em 0.91, com correlacao de 0.59. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Vale inaugura usina com IA em Minas Gerais e aumenta produtividade em 25%.",
+    "outlook": "A perspectiva de 3 meses e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. O modelo para 3 meses projeta retorno de +5.7% e preco estimado perto de 83.29. O contexto de noticias ajusta essa leitura em -0.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
     "recent_by_horizon": {
-      "1w": "No recorte dos ultima semana, o ativo variou -5.7%. A volatilidade anualizada equivalente ficou perto de 50.8%. No mesmo intervalo, o drawdown observado foi de -8.2%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
-      "1m": "No recorte dos ultimo mes, o ativo variou -2.5%. A volatilidade anualizada equivalente ficou perto de 30.6%. No mesmo intervalo, o drawdown observado foi de -8.2%. Contra IBOV, o beta estimado da janela ficou em 0.76, com correlacao de 0.38. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
-      "2m": "No recorte dos ultimos 2 meses, o ativo variou -6.0%. A volatilidade anualizada equivalente ficou perto de 32.1%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 1.00, com correlacao de 0.52. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas.",
-      "3m": "No recorte dos ultimos 3 meses, o ativo variou -4.0%. A volatilidade anualizada equivalente ficou perto de 29.8%. No mesmo intervalo, o drawdown observado foi de -13.0%. Contra IBOV, o beta estimado da janela ficou em 0.93, com correlacao de 0.59. No noticiario do periodo, os temas mais recorrentes foram geopolitica, juros, inflacao, cambio. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.54. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de crescimento. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas."
+      "1w": "No recorte dos ultima semana, o ativo variou -3.7%. A volatilidade anualizada equivalente ficou perto de 31.4%. No mesmo intervalo, o drawdown observado foi de -5.0%. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Vale inaugura usina com IA em Minas Gerais e aumenta produtividade em 25%.",
+      "1m": "No recorte dos ultimo mes, o ativo variou -5.3%. A volatilidade anualizada equivalente ficou perto de 28.6%. No mesmo intervalo, o drawdown observado foi de -8.6%. Contra IBOV, o beta estimado da janela ficou em 0.92, com correlacao de 0.54. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Vale inaugura usina com IA em Minas Gerais e aumenta produtividade em 25%.",
+      "2m": "No recorte dos ultimos 2 meses, o ativo variou -7.0%. A volatilidade anualizada equivalente ficou perto de 31.8%. No mesmo intervalo, o drawdown observado foi de -13.4%. Contra IBOV, o beta estimado da janela ficou em 1.09, com correlacao de 0.55. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Vale inaugura usina com IA em Minas Gerais e aumenta produtividade em 25%.",
+      "3m": "No recorte dos ultimos 3 meses, o ativo variou -2.2%. A volatilidade anualizada equivalente ficou perto de 29.2%. No mesmo intervalo, o drawdown observado foi de -13.4%. Contra IBOV, o beta estimado da janela ficou em 0.91, com correlacao de 0.59. No noticiario do periodo, os temas mais recorrentes foram geopolitica, inflacao, cambio, juros. Houve 12 evento(s) relevante(s), com vies misto e impacto medio de 0.55. A leitura desse intervalo foi puxada principalmente por noticias de fluxo, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Ibovespa fecha com nova baixa, em meio a queda de Vale e ruídos geopolíticos; Ibovespa fecha em queda de 0,2% com pressão de Vale; WEG sobe após recomendação; Vale inaugura usina com IA em Minas Gerais e aumenta produtividade em 25%."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 semana projeta retorno de +0.8% e preco estimado perto de 78.71. O contexto de noticias ajusta essa leitura em +0.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "1m": "A perspectiva de 1 mes pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 1 mes projeta retorno de -2.1% e preco estimado perto de 76.42. O contexto de noticias ajusta essa leitura em +0.4%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 2 meses projeta retorno de -4.2% e preco estimado perto de 74.82. O contexto de noticias ajusta essa leitura em +0.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados. O modelo para 3 meses projeta retorno de +1.3% e preco estimado perto de 79.10. O contexto de noticias ajusta essa leitura em +0.5%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao, cambio, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de crescimento. A confianca dessa leitura e moderada."
+      "1w": "A perspectiva de 1 semana e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. O modelo para 1 semana projeta retorno de +0.8% e preco estimado perto de 79.42. O contexto de noticias ajusta essa leitura em -0.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. O modelo para 1 mes projeta retorno de -4.0% e preco estimado perto de 75.64. O contexto de noticias ajusta essa leitura em -0.2%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. O modelo para 2 meses projeta retorno de -0.1% e preco estimado perto de 78.73. O contexto de noticias ajusta essa leitura em -0.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado. O modelo para 3 meses projeta retorno de +5.7% e preco estimado perto de 83.29. O contexto de noticias ajusta essa leitura em -0.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao inflacao. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
     }
   },
   "used_news_count": 12,
@@ -621,8 +619,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.7634,
-      "rank_score": 0.7285,
+      "match_score": 0.7548,
+      "rank_score": 0.724,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -640,12 +638,31 @@
       "sentiment_score": 0.0,
       "impact_score": 0.45,
       "relevance_score": 0.5,
-      "match_score": 0.7634,
-      "rank_score": 0.6835,
+      "match_score": 0.7548,
+      "rank_score": 0.679,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.75,
+      "analysis_category": "fluxo",
+      "role": "outlook"
+    },
+    {
+      "id": "c80ed563c29ded6c846c026cbf65dbf3",
+      "title": "Vale inaugura usina com IA em Minas Gerais e aumenta produtividade em 25%",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/vale-inaugura-usina-com-ia-em-minas-gerais-e-aumenta-produtividade-em-25.shtml",
+      "published_at": "2026-06-11T14:03:00-03:00",
+      "summary": "A Vale inaugurou em Itabira (MG) sua primeira usina de alta tecnologia, com uso de inteligência artificial, após modernizar a planta Conceição 2, alcançando ganho de produtividade de 25% em menos de dois anos de projeto piloto, informou a companhia nessa quarta-feira (10).\n\nLeia mais (06/11/2026 - 14h03). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.75,
+      "relevance_score": 0.5,
+      "match_score": 0.7064,
+      "rank_score": 0.6518,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.72,
       "analysis_category": "fluxo",
       "role": "outlook"
     },
@@ -659,8 +676,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.7887,
-      "rank_score": 0.6541,
+      "match_score": 0.7816,
+      "rank_score": 0.6504,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -678,8 +695,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.6835,
-      "rank_score": 0.6224,
+      "match_score": 0.6785,
+      "rank_score": 0.6198,
       "source_category": "treasury",
       "is_official": true,
       "context_role": "asset",
@@ -697,8 +714,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.689,
-      "rank_score": 0.6023,
+      "match_score": 0.6819,
+      "rank_score": 0.5986,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -716,14 +733,14 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.6839,
-      "rank_score": 0.5996,
+      "match_score": 0.6772,
+      "rank_score": 0.5961,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.72,
       "analysis_category": "fluxo",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "becd03b804844cc70fbc3330bee50a5c",
@@ -735,8 +752,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.6811,
-      "rank_score": 0.5982,
+      "match_score": 0.6747,
+      "rank_score": 0.5948,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -754,12 +771,31 @@
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3584,
-      "rank_score": 0.5029,
+      "match_score": 0.3498,
+      "rank_score": 0.4984,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "d4ad77c8fe0dba39b783708103c1403f",
+      "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-29052026/",
+      "published_at": "2026-05-29T20:32:36+00:00",
+      "summary": "Acompanhe o que movimenta a bolsa, ações, dólar, juros e commodities nos negócios do pregão desta sexta-feira (29).\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Tempo Real Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo Índices nos EUA fecham positivos e semana e mês de maior também têm ganhos Sextou! O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.6666666666666666,
+      "impact_score": 0.6499999999999999,
+      "relevance_score": 0.5,
+      "match_score": 0.32,
+      "rank_score": 0.4949,
+      "source_category": null,
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
       "analysis_category": "macro",
       "role": "historical"
     },
@@ -773,32 +809,13 @@
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3569,
-      "rank_score": 0.4991,
+      "match_score": 0.3482,
+      "rank_score": 0.4946,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
       "analysis_category": "fundamento",
-      "role": "historical"
-    },
-    {
-      "id": "d4ad77c8fe0dba39b783708103c1403f",
-      "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-29052026/",
-      "published_at": "2026-05-29T20:32:36+00:00",
-      "summary": "Acompanhe o que movimenta a bolsa, ações, dólar, juros e commodities nos negócios do pregão desta sexta-feira (29).\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Tempo Real Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo Índices nos EUA fecham positivos e semana e mês de maior também têm ganhos Sextou! O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
-      "sentiment_score": -0.6666666666666666,
-      "impact_score": 0.6499999999999999,
-      "relevance_score": 0.5,
-      "match_score": 0.326,
-      "rank_score": 0.498,
-      "source_category": null,
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
       "role": "historical"
     },
     {
@@ -811,31 +828,12 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3509,
-      "rank_score": 0.496,
+      "match_score": 0.3427,
+      "rank_score": 0.4917,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
       "source_confidence_weight": 0.72,
-      "analysis_category": "macro",
-      "role": "historical"
-    },
-    {
-      "id": "0048229a6179b8807618d2898aa2f022",
-      "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
-      "published_at": "2026-06-04T04:03:05.260410+00:00",
-      "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
-      "sentiment_score": -1.0,
-      "impact_score": 0.55,
-      "relevance_score": 0.5,
-      "match_score": 0.3427,
-      "rank_score": 0.4947,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.75,
       "analysis_category": "macro",
       "role": "historical"
     }
@@ -843,8 +841,27 @@
   "source_groups": [
     {
       "source_name": "Folha.com - Mercado - Principal",
-      "count": 6,
+      "count": 7,
       "items": [
+        {
+          "id": "c80ed563c29ded6c846c026cbf65dbf3",
+          "title": "Vale inaugura usina com IA em Minas Gerais e aumenta produtividade em 25%",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/vale-inaugura-usina-com-ia-em-minas-gerais-e-aumenta-produtividade-em-25.shtml",
+          "published_at": "2026-06-11T14:03:00-03:00",
+          "summary": "A Vale inaugurou em Itabira (MG) sua primeira usina de alta tecnologia, com uso de inteligência artificial, após modernizar a planta Conceição 2, alcançando ganho de produtividade de 25% em menos de dois anos de projeto piloto, informou a companhia nessa quarta-feira (10).\n\nLeia mais (06/11/2026 - 14h03). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.75,
+          "relevance_score": 0.5,
+          "match_score": 0.7064,
+          "rank_score": 0.6518,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fluxo",
+          "role": "outlook"
+        },
         {
           "id": "db473338bb6ad2878703c9e95ea4ace2",
           "title": "Como saber qual água Crystal foi suspensa pela Anvisa? Tire dúvidas",
@@ -855,8 +872,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.7887,
-          "rank_score": 0.6541,
+          "match_score": 0.7816,
+          "rank_score": 0.6504,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -874,8 +891,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.689,
-          "rank_score": 0.6023,
+          "match_score": 0.6819,
+          "rank_score": 0.5986,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -893,14 +910,14 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.6839,
-          "rank_score": 0.5996,
+          "match_score": 0.6772,
+          "rank_score": 0.5961,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
           "source_confidence_weight": 0.72,
           "analysis_category": "fluxo",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "becd03b804844cc70fbc3330bee50a5c",
@@ -912,8 +929,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.6811,
-          "rank_score": 0.5982,
+          "match_score": 0.6747,
+          "rank_score": 0.5948,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -931,8 +948,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3569,
-          "rank_score": 0.4991,
+          "match_score": 0.3482,
+          "rank_score": 0.4946,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -950,8 +967,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3509,
-          "rank_score": 0.496,
+          "match_score": 0.3427,
+          "rank_score": 0.4917,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -963,7 +980,7 @@
     },
     {
       "source_name": "InfoMoney",
-      "count": 5,
+      "count": 4,
       "items": [
         {
           "id": "b73c9c583923e44f7d46740dfc6be22b",
@@ -975,8 +992,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.7634,
-          "rank_score": 0.7285,
+          "match_score": 0.7548,
+          "rank_score": 0.724,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -994,8 +1011,8 @@
           "sentiment_score": 0.0,
           "impact_score": 0.45,
           "relevance_score": 0.5,
-          "match_score": 0.7634,
-          "rank_score": 0.6835,
+          "match_score": 0.7548,
+          "rank_score": 0.679,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -1013,8 +1030,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3584,
-          "rank_score": 0.5029,
+          "match_score": 0.3498,
+          "rank_score": 0.4984,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -1032,31 +1049,12 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.326,
-          "rank_score": 0.498,
+          "match_score": 0.32,
+          "rank_score": 0.4949,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
           "source_confidence_weight": 0.72,
-          "analysis_category": "macro",
-          "role": "historical"
-        },
-        {
-          "id": "0048229a6179b8807618d2898aa2f022",
-          "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
-          "source_name": "InfoMoney",
-          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
-          "published_at": "2026-06-04T04:03:05.260410+00:00",
-          "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
-          "sentiment_score": -1.0,
-          "impact_score": 0.55,
-          "relevance_score": 0.5,
-          "match_score": 0.3427,
-          "rank_score": 0.4947,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.75,
           "analysis_category": "macro",
           "role": "historical"
         }
@@ -1076,8 +1074,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.6835,
-          "rank_score": 0.6224,
+          "match_score": 0.6785,
+          "rank_score": 0.6198,
           "source_category": "treasury",
           "is_official": true,
           "context_role": "asset",

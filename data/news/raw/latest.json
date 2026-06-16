@@ -1,5 +1,1696 @@
 [
   {
+    "id": "7498200d0d5b7c3a176fb72ee9874688",
+    "title": "Dólar hoje cai 1,37%, a R$ 5,10, com fala de Trump sobre acordo com Irã",
+    "subtitle": null,
+    "content_preview": "Dólar hoje cai 1,37%, a R$ 5,10, com fala de Trump sobre acordo com Irã",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-11062026/",
+    "published_at": "2026-06-12T01:06:32.000638Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Dólar hoje cai 1,37%, a R$ 5,10, com fala de Trump sobre acordo com Irã.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:06:32.000638Z"
+  },
+  {
+    "id": "507ca247d18fec78cbe7fce5ef8bd8e8",
+    "title": "Ibovespa salta 1,71% e supera os 171 mil pontos com expectativa por acordo EUA-Irã",
+    "subtitle": null,
+    "content_preview": "Ibovespa salta 1,71% e supera os 171 mil pontos com expectativa por acordo EUA-Irã",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-salta-171-e-supera-os-171-mil-pontos-com-expectativa-por-acordo-eua-ira/",
+    "published_at": "2026-06-12T01:06:31.999640Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ibovespa salta 1,71% e supera os 171 mil pontos com expectativa por acordo EUA-Irã.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:06:31.999640Z"
+  },
+  {
+    "id": "cfe7478c0cf15bf4830fd407fe7f7211",
+    "title": "Petróleo cai quase 3% após Trump cancelar ataques contra o Irã",
+    "subtitle": null,
+    "content_preview": "Petróleo cai quase 3% após Trump cancelar ataques contra o Irã",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/petroleo-abertura-fechamento-ira-eua-11062026/",
+    "published_at": "2026-06-12T01:06:31.999640Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Petróleo cai quase 3% após Trump cancelar ataques contra o Irã.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:06:32.000638Z"
+  },
+  {
+    "id": "1c95ff6d4746ad7a1f1b0d73e18ff285",
+    "title": "Criptomoedas: bitcoin sobe com cancelamento de ataques dos EUA contra Irã",
+    "subtitle": null,
+    "content_preview": "Criptomoedas: bitcoin sobe com cancelamento de ataques dos EUA contra Irã",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/criptomoedas-bitcoin-sobe-com-cancelamento-de-ataques-dos-eua-contra-ira/",
+    "published_at": "2026-06-12T01:06:31.998624Z",
+    "language": "pt",
+    "tags": [
+      "Criptomoedas",
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [
+      "BTC"
+    ],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Criptomoedas",
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.75,
+    "summary": "Criptomoedas: bitcoin sobe com cancelamento de ataques dos EUA contra Irã.\n\nO texto menciona BTC. O foco principal passa por Criptomoedas, Economia.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:06:31.998624Z"
+  },
+  {
+    "id": "c41cc9cf83b48cd97ad1b16c05249836",
+    "title": "Revolut nomeia Paulo Guedes para integrar conselho consultivo no Brasil",
+    "subtitle": null,
+    "content_preview": "Revolut nomeia Paulo Guedes para integrar conselho consultivo no Brasil",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/revolut-nomeia-paulo-guedes-para-integrar-conselho-consultivo-no-brasil/",
+    "published_at": "2026-06-12T01:06:31.998624Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Revolut nomeia Paulo Guedes para integrar conselho consultivo no Brasil.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:06:31.998624Z"
+  },
+  {
+    "id": "25c791bbf830d2084ba1f230afeec658",
+    "title": "Wall Street dispara após falas de Trump sobre acordo com Irã no próximo fim de semana",
+    "subtitle": null,
+    "content_preview": "Wall Street dispara após falas de Trump sobre acordo com Irã no próximo fim de semana",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/wall-street-dispara-apos-falas-de-trump-sobre-acordo-com-ira-no-proximo-fim-de-semana/",
+    "published_at": "2026-06-12T01:06:31.998624Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Wall Street dispara após falas de Trump sobre acordo com Irã no próximo fim de semana.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:06:31.999640Z"
+  },
+  {
+    "id": "1a5ee3e0a2e25db41760afd17af5f5ea",
+    "title": "Ministra anuncia lançamento de fundo imobiliário da União, administrado pela Caixa",
+    "subtitle": null,
+    "content_preview": "Ministra anuncia lançamento de fundo imobiliário da União, administrado pela Caixa",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ministra-anuncia-lancamento-de-fundo-imobiliario-da-uniao-administrado-pela-caixa/",
+    "published_at": "2026-06-12T01:06:31.997110Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ministra anuncia lançamento de fundo imobiliário da União, administrado pela Caixa.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:06:31.997110Z"
+  },
+  {
+    "id": "18f6393b5fb7f9cc90cf38e4131492de",
+    "title": "PetroRecôncavo: Citi eleva RECV3 a compra com visão de mais dividendos e ação sobe 6%",
+    "subtitle": null,
+    "content_preview": "PetroRecôncavo: Citi eleva RECV3 a compra com visão de mais dividendos e ação sobe 6%",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/petroreconcavo-citi-eleva-recv3-a-compra-com-visao-de-mais-dividendos-e-acoes-saltam/",
+    "published_at": "2026-06-12T01:06:31.996110Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "PetroRecôncavo: Citi eleva RECV3 a compra com visão de mais dividendos e ação sobe 6%.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:06:31.996110Z"
+  },
+  {
+    "id": "d8e78722a9a656ba8a06492c953bbeab",
+    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "subtitle": null,
+    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
+    "published_at": "2026-06-12T01:06:31.996110Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:06:31.997110Z"
+  },
+  {
+    "id": "0c9de0d367db868db7ecef5549e235f2",
+    "title": "Ibovespa dispara e volta aos 171 mil, após Trump falar sobre acordo próximo",
+    "subtitle": null,
+    "content_preview": "Ibovespa dispara e volta aos 171 mil, após Trump falar sobre acordo próximo",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-11062026/",
+    "published_at": "2026-06-12T01:06:31.995113Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ibovespa dispara e volta aos 171 mil, após Trump falar sobre acordo próximo.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:06:31.995113Z"
+  },
+  {
+    "id": "29f49b1b39c77daa7d41bbd5d6428b01",
+    "title": "Dólar hoje cai 1,37%, a R$ 5,10, com fala de Trump sobre acordo com Irã",
+    "subtitle": null,
+    "content_preview": "Dólar hoje cai 1,37%, a R$ 5,10, com fala de Trump sobre acordo com Irã",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-11062026/",
+    "published_at": "2026-06-12T01:02:13.137897Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Dólar hoje cai 1,37%, a R$ 5,10, com fala de Trump sobre acordo com Irã.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.137897Z"
+  },
+  {
+    "id": "5f1bb731fdcfecf3a9f0165e7e41e656",
+    "title": "Wall Street dispara após falas de Trump sobre acordo com Irã no próximo fim de semana",
+    "subtitle": null,
+    "content_preview": "Wall Street dispara após falas de Trump sobre acordo com Irã no próximo fim de semana",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/wall-street-dispara-apos-falas-de-trump-sobre-acordo-com-ira-no-proximo-fim-de-semana/",
+    "published_at": "2026-06-12T01:02:13.136871Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Wall Street dispara após falas de Trump sobre acordo com Irã no próximo fim de semana.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.136871Z"
+  },
+  {
+    "id": "12310048a9b4c5698ff5e7cd9cb50b22",
+    "title": "Ibovespa salta 1,71% e supera os 171 mil pontos com expectativa por acordo EUA-Irã",
+    "subtitle": null,
+    "content_preview": "Ibovespa salta 1,71% e supera os 171 mil pontos com expectativa por acordo EUA-Irã",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-salta-171-e-supera-os-171-mil-pontos-com-expectativa-por-acordo-eua-ira/",
+    "published_at": "2026-06-12T01:02:13.136871Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ibovespa salta 1,71% e supera os 171 mil pontos com expectativa por acordo EUA-Irã.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.136871Z"
+  },
+  {
+    "id": "d5e31331eff996851d7bf2a2a26af525",
+    "title": "Petróleo cai quase 3% após Trump cancelar ataques contra o Irã",
+    "subtitle": null,
+    "content_preview": "Petróleo cai quase 3% após Trump cancelar ataques contra o Irã",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/petroleo-abertura-fechamento-ira-eua-11062026/",
+    "published_at": "2026-06-12T01:02:13.136871Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Petróleo cai quase 3% após Trump cancelar ataques contra o Irã.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.137897Z"
+  },
+  {
+    "id": "8ca582456ea7fb1484e5255a3bcd9743",
+    "title": "Revolut nomeia Paulo Guedes para integrar conselho consultivo no Brasil",
+    "subtitle": null,
+    "content_preview": "Revolut nomeia Paulo Guedes para integrar conselho consultivo no Brasil",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/revolut-nomeia-paulo-guedes-para-integrar-conselho-consultivo-no-brasil/",
+    "published_at": "2026-06-12T01:02:13.135871Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Revolut nomeia Paulo Guedes para integrar conselho consultivo no Brasil.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.135871Z"
+  },
+  {
+    "id": "91ccc3e8a4d8be2e11c67ba6bda1fc8a",
+    "title": "Ministra anuncia lançamento de fundo imobiliário da União, administrado pela Caixa",
+    "subtitle": null,
+    "content_preview": "Ministra anuncia lançamento de fundo imobiliário da União, administrado pela Caixa",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ministra-anuncia-lancamento-de-fundo-imobiliario-da-uniao-administrado-pela-caixa/",
+    "published_at": "2026-06-12T01:02:13.134894Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ministra anuncia lançamento de fundo imobiliário da União, administrado pela Caixa.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.134894Z"
+  },
+  {
+    "id": "dc8b125a68f6ac2e2e3998784c9b322e",
+    "title": "Criptomoedas: bitcoin sobe com cancelamento de ataques dos EUA contra Irã",
+    "subtitle": null,
+    "content_preview": "Criptomoedas: bitcoin sobe com cancelamento de ataques dos EUA contra Irã",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/criptomoedas-bitcoin-sobe-com-cancelamento-de-ataques-dos-eua-contra-ira/",
+    "published_at": "2026-06-12T01:02:13.134894Z",
+    "language": "pt",
+    "tags": [
+      "Criptomoedas",
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [
+      "BTC"
+    ],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Criptomoedas",
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.75,
+    "summary": "Criptomoedas: bitcoin sobe com cancelamento de ataques dos EUA contra Irã.\n\nO texto menciona BTC. O foco principal passa por Criptomoedas, Economia.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.135871Z"
+  },
+  {
+    "id": "bb7a948a6aa5624b553e604d2e801bd6",
+    "title": "PetroRecôncavo: Citi eleva RECV3 a compra com visão de mais dividendos e ação sobe 6%",
+    "subtitle": null,
+    "content_preview": "PetroRecôncavo: Citi eleva RECV3 a compra com visão de mais dividendos e ação sobe 6%",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/petroreconcavo-citi-eleva-recv3-a-compra-com-visao-de-mais-dividendos-e-acoes-saltam/",
+    "published_at": "2026-06-12T01:02:13.133867Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "PetroRecôncavo: Citi eleva RECV3 a compra com visão de mais dividendos e ação sobe 6%.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.133867Z"
+  },
+  {
+    "id": "90f5c05435f82ec4487d2d4d8975c52a",
+    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "subtitle": null,
+    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
+    "published_at": "2026-06-12T01:02:13.133867Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.133867Z"
+  },
+  {
+    "id": "7db538c4702b7bb33c67256f6b15283e",
+    "title": "Ibovespa dispara e volta aos 171 mil, após Trump falar sobre acordo próximo",
+    "subtitle": null,
+    "content_preview": "Ibovespa dispara e volta aos 171 mil, após Trump falar sobre acordo próximo",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-11062026/",
+    "published_at": "2026-06-12T01:02:13.132871Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ibovespa dispara e volta aos 171 mil, após Trump falar sobre acordo próximo.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.132871Z"
+  },
+  {
+    "id": "e5bda2878020b80c93b4c78a82e39191",
+    "title": "Por que as ações da CoreWeave estão subindo no after-hours?",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/por-que-as-acoes-da-coreweave-estao-subindo-no-afterhours-93CH-1971038",
+    "published_at": "2026-06-12T00:51:02Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Por que as ações da CoreWeave estão subindo no after-hours?\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.137897Z"
+  },
+  {
+    "id": "4d18881d266c923bf4751de92a8efb49",
+    "title": "Sem Copa em 2026, o Brasil do futebol mitológico vai bater recorde de derrotas",
+    "subtitle": null,
+    "content_preview": "Jamais o Brasil ficou mais de cinco Copas seguidas sem ganhar o título mundial. Caso não vença neste 2026, a sexta, será um \"recorde\", como gosta de dizer o jornalismo que lida com números quaisquer. Leia mais (06/11/2026 - 21h51)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/viniciustorres/2026/06/sem-copa-em-2026-o-brasil-do-futebol-mitologico-vai-bater-recorde-de-derrotas.shtml",
+    "published_at": "2026-06-11T21:51:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Jamais o Brasil ficou mais de cinco Copas seguidas sem ganhar o título mundial. Caso não vença neste 2026, a sexta, será um \"recorde\", como gosta de dizer o jornalismo que lida com números quaisquer.\n\nLeia mais (06/11/2026 - 21h51). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.111597Z"
+  },
+  {
+    "id": "6c491d80cbae4e244e406f37e2e80990",
+    "title": "Petróleo cai e caminha para perda semanal após Trump sinalizar acordo com Irã",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/commodities-news/petroleo-cai-e-caminha-para-perda-semanal-apos-trump-sinalizar-acordo-com-ira-1971031",
+    "published_at": "2026-06-12T00:28:52Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Petróleo cai e caminha para perda semanal após Trump sinalizar acordo com Irã.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.138879Z"
+  },
+  {
+    "id": "83a069a1513f2a47f1a93d8136a46d20",
+    "title": "Dívidas de paulistanos atingem maior nível em quatro anos, diz pesquisa",
+    "subtitle": null,
+    "content_preview": "O nível de endividamento dos paulistanos voltou a subir em maio e já atinge quase 8 em cada 10 famílias, o maior registro dos últimos quatro anos na Peic (Pesquisa de Endividamento e Inadimplência do Consumidor), realizada mensalmente pela FecomercioSP. Leia mais (06/11/2026 - 21h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/dividas-de-paulistanos-atingem-maior-nivel-em-quatro-anos-diz-pesquisa.shtml",
+    "published_at": "2026-06-11T21:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O nível de endividamento dos paulistanos voltou a subir em maio e já atinge quase 8 em cada 10 famílias, o maior registro dos últimos quatro anos na Peic (Pesquisa de Endividamento e Inadimplência do Consumidor), realizada mensalmente pela FecomercioSP.\n\nLeia mais (06/11/2026 - 21h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.113115Z"
+  },
+  {
+    "id": "8f8bb8f17cf5bdb37fd81779442d7f46",
+    "title": "Tribunal nos EUA mantém bloqueio de decisão contra tarifa global de 10% de Trump",
+    "subtitle": null,
+    "content_preview": "Um tribunal de apelações dos Estados Unidos estendeu nesta quinta-feira (11) o bloqueio a uma decisão de instância inferior contra a tarifa global de 10% do governo Trump, prevista na Seção 122 da Lei de Comércio, mantendo as tarifas em vigor para três importadores que haviam obtido uma suspensão das taxas na semana passada. Leia mais (06/11/2026 - 20h56)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://aovivo.folha.uol.com.br/mercado/2026/06/01/6449-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post451055",
+    "published_at": "2026-06-11T20:56:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Um tribunal de apelações dos Estados Unidos estendeu nesta quinta-feira (11) o bloqueio a uma decisão de instância inferior contra a tarifa global de 10% do governo Trump, prevista na Seção 122 da Lei de Comércio, mantendo as tarifas em vigor para três importadores que haviam obtido uma suspensão das taxas na semana passada.\n\nLeia mais (06/11/2026 - 20h56). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.114129Z"
+  },
+  {
+    "id": "77fc81c0c7127d0ec2d67a43436b8fbd",
+    "title": "PF comunica ao STF que negou segunda tentativa de delação de Vorcaro",
+    "subtitle": null,
+    "content_preview": "A Polícia Federal comunicou ao STF (Supremo Tribunal Federal), na noite desta quinta-feira (11), que negou a nova proposta de delação premiada apresentada por Daniel Vorcaro, do Banco Master. Leia mais (06/11/2026 - 20h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/pf-comunica-ao-stf-que-negou-segunda-tentativa-de-delacao-de-vorcaro.shtml",
+    "published_at": "2026-06-11T20:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Polícia Federal comunicou ao STF (Supremo Tribunal Federal), na noite desta quinta-feira (11), que negou a nova proposta de delação premiada apresentada por Daniel Vorcaro, do Banco Master.\n\nLeia mais (06/11/2026 - 20h00). O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.115155Z"
+  },
+  {
+    "id": "23b5e8521383a8b378f5683a80a2b7fa",
+    "title": "Governo calcula impacto fiscal de R$ 111 bi por ano com pautas-bomba no Congresso",
+    "subtitle": null,
+    "content_preview": "Os ministérios da Fazenda e do Planejamento divulgaram nota conjunta informando que nove pautas-bomba em tramitação no Congresso Nacional têm um impacto anual estimado em R$ 111 bilhões para as contas públicas. Leia mais (06/11/2026 - 19h25)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/governo-calcula-impacto-fiscal-de-r-111-bi-por-ano-com-pautas-bomba-no-congresso.shtml",
+    "published_at": "2026-06-11T19:25:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Os ministérios da Fazenda e do Planejamento divulgaram nota conjunta informando que nove pautas-bomba em tramitação no Congresso Nacional têm um impacto anual estimado em R$ 111 bilhões para as contas públicas.\n\nLeia mais (06/11/2026 - 19h25). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.115155Z"
+  },
+  {
+    "id": "0f2fb657a42132e51cee9ee59b5601c1",
+    "title": "Agência pode adiar decisão sobre mudança em botijão de gás enquanto governo e empresas pressionam",
+    "subtitle": null,
+    "content_preview": "Pessoas próximas à ANP (Agência Nacional de Petróleo, Gás e Biocombustível) acreditam que a votação sobre mudanças nas regras de venda do gás de botijão deverá ser adiada. A reunião para tratar do assunto está marcada para esta sexta-feira (12). A explicação é que há temas mais urgentes a serem resolvidos, relacionados à Guerra no Irã. Leia mais (06/11/2026 - 19h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/agencia-pode-adiar-decisao-sobre-mudanca-em-botijao-de-gas-enquanto-governo-e-empresas-pressionam.shtml",
+    "published_at": "2026-06-11T19:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Pessoas próximas à ANP (Agência Nacional de Petróleo, Gás e Biocombustível) acreditam que a votação sobre mudanças nas regras de venda do gás de botijão deverá ser adiada.\n\nA reunião para tratar do assunto está marcada para esta sexta-feira (12). A explicação é que há temas mais urgentes a serem resolvidos, relacionados à Guerra no Irã. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.116159Z"
+  },
+  {
+    "id": "60a85a41ff09d7bba402c2e505db9686",
+    "title": "Lula confirma promessa de zerar fila de pedidos represados do INSS antes da eleição",
+    "subtitle": null,
+    "content_preview": "O presidente Luiz Inácio Lula da Silva (PT) confirmou nesta quinta-feira (6) a promessa de zerar a fila do INSS até setembro, antes da eleição. Ele falou sobre o tema em cerimônia no Palácio do Planalto. Leia mais (06/11/2026 - 18h31)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/blogs/brasilia-hoje/2026/06/lula-confirma-promessa-de-zerar-fila-de-pedidos-represados-do-inss-antes-da-eleicao.shtml",
+    "published_at": "2026-06-11T18:31:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O presidente Luiz Inácio Lula da Silva (PT) confirmou nesta quinta-feira (6) a promessa de zerar a fila do INSS até setembro, antes da eleição.\n\nEle falou sobre o tema em cerimônia no Palácio do Planalto. Leia mais (06/11/2026 - 18h31). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.117123Z"
+  },
+  {
+    "id": "4a0ca55af38a61e84d67c276a195e5cb",
+    "title": "Motta dribla governo e decide pautar projeto sobre 6x1 com mesmo teor de PEC",
+    "subtitle": null,
+    "content_preview": "O presidente da Câmara dos Deputados, Hugo Motta (Republicanos-PB), decidiu pautar o projeto do governo Lula (PT) que acaba com a escala 6x1, mas tornando-o exatamente igual à PEC (proposta de emenda à Constituição) que reduz a jornada de trabalho, aprovada em maio. Leia mais (06/11/2026 - 18h22)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/motta-dribla-governo-e-decide-pautar-projeto-sobre-6x1-com-mesmo-teor-de-pec.shtml",
+    "published_at": "2026-06-11T18:22:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O presidente da Câmara dos Deputados, Hugo Motta (Republicanos-PB), decidiu pautar o projeto do governo Lula (PT) que acaba com a escala 6x1, mas tornando-o exatamente igual à PEC (proposta de emenda à Constituição) que reduz a jornada de trabalho, aprovada em maio.\n\nLeia mais (06/11/2026 - 18h22). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.117123Z"
+  },
+  {
+    "id": "8edbf0db980a85d5b9b2cd02d3a5c731",
+    "title": "O Brasil era a aposta do ano, mas o mercado mudou de ideia",
+    "subtitle": null,
+    "content_preview": "\"Os homens não tropeçam nas montanhas, mas nos montinhos.\" A frase, popularmente atribuída a Confúcio, descreve bem o que aconteceu com a Bolsa brasileira em 2026. No início do ano, parecia que finalmente havia chegado a vez do Brasil. Leia mais (06/11/2026 - 18h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/blogs/de-grao-em-grao/2026/06/o-brasil-era-a-aposta-do-ano-mas-o-mercado-mudou-de-ideia.shtml",
+    "published_at": "2026-06-11T18:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "\"Os homens não tropeçam nas montanhas, mas nos montinhos.\" A frase, popularmente atribuída a Confúcio, descreve bem o que aconteceu com a Bolsa brasileira em 2026.\n\nNo início do ano, parecia que finalmente havia chegado a vez do Brasil. Leia mais (06/11/2026 - 18h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.118264Z"
+  },
+  {
+    "id": "67812b1186abb5001d9612b170999d57",
+    "title": "SpaceX, de Musk, capta US$ 75 bilhões no maior IPO da história",
+    "subtitle": null,
+    "content_preview": "Com forte demanda dos investidores, a SpaceX captou US$ 75 bilhões no maior IPO (oferta pública inicial de ações) da história. Com ações precificadas em US$ 135, a fabricante de foguetes foi impulsionada à lista de empresas mais valiosas do mundo e seu dono, Elon Musk, ficará ainda mais rico, no caminho para se tornar o primeiro trilionário do mundo. Leia mais (06/11/2026 - 16h55)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/spacex-confirma-maior-ipo-da-historia-dos-eua-com-preco-de-us-135-por-acao.shtml",
+    "published_at": "2026-06-11T16:55:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Com forte demanda dos investidores, a SpaceX captou US$ 75 bilhões no maior IPO (oferta pública inicial de ações) da história.\n\nCom ações precificadas em US$ 135, a fabricante de foguetes foi impulsionada à lista de empresas mais valiosas do mundo e seu dono, Elon Musk, ficará ainda mais rico, no caminho para se tornar o primeiro trilionário do mundo. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.119681Z"
+  },
+  {
+    "id": "fea1455eaced6066df46924c7e2aa846",
+    "title": "O volume de precatórios expedidos para o orçamento de 2027 é de R$ 44,9 bi, diz levantamento",
+    "subtitle": null,
+    "content_preview": "O volume de precatórios expedidos para o orçamento de 2027 é de R$ 44,9 bilhões, segundo levantamento da Precato, fintech de antecipação de precatórios. O número é baseado em dados da SOF (Secretaria do Orçamento Federal). Leia mais (06/11/2026 - 16h39)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/o-volume-de-precatorios-expedidos-para-o-orcamento-de-2027-e-de-r-449-bi-diz-levantamento.shtml",
+    "published_at": "2026-06-11T16:39:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O volume de precatórios expedidos para o orçamento de 2027 é de R$ 44,9 bilhões, segundo levantamento da Precato, fintech de antecipação de precatórios.\n\nO número é baseado em dados da SOF (Secretaria do Orçamento Federal). Leia mais (06/11/2026 - 16h39). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.119681Z"
+  },
+  {
+    "id": "38c68276f2a441d5c813764b2cf35148",
+    "title": "Ajustar emendas parlamentares economizaria R$ 550 bilhões em dez anos",
+    "subtitle": null,
+    "content_preview": "O noticiário dos últimos dias no Brasil tem sido dominado pelas chamadas \"pautas-bombas\" fiscais que estão sendo discutidas no Congresso Nacional. Caso as medidas contempladas por essa marcha da insensatez sejam aprovadas, os impactos fiscais podem ser aproximar dos R$ 300 bilhões em dez anos. O próprio presidente do Senado, Davi Alcolumbre, em um momento de sincericídio, reconheceu que \"vai precisar de dez Brasis para pagar tudo isso\". Leia mais (06/11/2026 - 16h17)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/braulio-borges/2026/06/ajustar-emendas-parlamentares-economizaria-r-550-bilhoes-em-dez-anos.shtml",
+    "published_at": "2026-06-11T16:17:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O noticiário dos últimos dias no Brasil tem sido dominado pelas chamadas \"pautas-bombas\" fiscais que estão sendo discutidas no Congresso Nacional.\n\nCaso as medidas contempladas por essa marcha da insensatez sejam aprovadas, os impactos fiscais podem ser aproximar dos R$ 300 bilhões em dez anos. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.121779Z"
+  },
+  {
+    "id": "504b9af627d3e25a02d44d50ddef5659",
+    "title": "Reino Unido investiga aérea Ryanair por cobrar taxa de pais para sentarem ao lado de filhos",
+    "subtitle": null,
+    "content_preview": "A CMA (Autoridade Britânica de Concorrência e Mercados) anunciou nesta quinta-feira (11) a abertura de uma investigação contra a companhia aérea Ryanair pelas taxas que cobra dos pais para se sentarem ao lado de seus filhos. Leia mais (06/11/2026 - 16h11)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/reino-unido-investiga-aerea-ryanair-por-cobrar-taxa-de-pais-para-sentarem-ao-lado-de-filhos.shtml",
+    "published_at": "2026-06-11T16:11:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A CMA (Autoridade Britânica de Concorrência e Mercados) anunciou nesta quinta-feira (11) a abertura de uma investigação contra a companhia aérea Ryanair pelas taxas que cobra dos pais para se sentarem ao lado de seus filhos.\n\nLeia mais (06/11/2026 - 16h11). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.121779Z"
+  },
+  {
+    "id": "05ae62ba5a3f429ff04d8be500925119",
+    "title": "Apostas sobre Copa rendem quase US$ 2 bi a mercados de previsão; Uzbequistão é destaque",
+    "subtitle": null,
+    "content_preview": "Os mercados de previsão já receberam um total de quase US$ 2 bilhões (R$ 10,34 bilhões) em apostas sobre qual país vencerá a Copa do Mundo, colocando-os no caminho de potencialmente quebrar o recorde do maior mercado da história mais de cinco semanas antes da final. Leia mais (06/11/2026 - 15h38)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/apostas-sobre-copa-rendem-quase-us-2-bi-a-mercados-de-previsao-uzbequistao-e-destaque.shtml",
+    "published_at": "2026-06-11T15:38:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Os mercados de previsão já receberam um total de quase US$ 2 bilhões (R$ 10,34 bilhões) em apostas sobre qual país vencerá a Copa do Mundo, colocando-os no caminho de potencialmente quebrar o recorde do maior mercado da história mais de cinco semanas antes da final.\n\nLeia mais (06/11/2026 - 15h38). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.123309Z"
+  },
+  {
+    "id": "4e28b20783f350bcbe0150dc86c91104",
+    "title": "Brasil terá esquema especial de energia durante jogos da seleção na Copa",
+    "subtitle": null,
+    "content_preview": "O ONS (Operador Nacional do Sistema Elétrico) anunciou nesta quinta-feira (11) um esquema especial para garantir o suprimento de eletricidade durante os jogos do Brasil na Copa do Mundo. Leia mais (06/11/2026 - 15h30)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/brasil-tera-esquema-especial-de-energia-durante-jogos-da-selecao-na-copa.shtml",
+    "published_at": "2026-06-11T15:30:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O ONS (Operador Nacional do Sistema Elétrico) anunciou nesta quinta-feira (11) um esquema especial para garantir o suprimento de eletricidade durante os jogos do Brasil na Copa do Mundo.\n\nLeia mais (06/11/2026 - 15h30). O foco principal passa por Economia, Energia Eletrica.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.123309Z"
+  },
+  {
+    "id": "b1f7a5d58eb99fe692b529a3067a394b",
+    "title": "União Europeia descarta previsão para fim do veto à carne e cita ciclo animal",
+    "subtitle": null,
+    "content_preview": "O fim do veto europeu à importação de carne brasileira não tem data para acontecer e dependerá do ciclo de vida de cada cadeia produtiva afetada por uso excessivo de antimicrobianos, afirmam autoridades europeias. Quando o Brasil conseguir demonstrar que se adequou às regras sanitárias, os embarques serão novamente autorizados. Leia mais (06/11/2026 - 15h22)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/uniao-europeia-descarta-previsao-para-fim-do-veto-a-carne-e-cita-ciclo-animal.shtml",
+    "published_at": "2026-06-11T15:22:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Alimentos",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Alimentos",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O fim do veto europeu à importação de carne brasileira não tem data para acontecer e dependerá do ciclo de vida de cada cadeia produtiva afetada por uso excessivo de antimicrobianos, afirmam autoridades europeias.\n\nQuando o Brasil conseguir demonstrar que se adequou às regras sanitárias, os embarques serão novamente autorizados. O foco principal passa por Alimentos, Economia.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.124387Z"
+  },
+  {
+    "id": "d253dabf75953c632255e4482a01a40e",
+    "title": "Banco Mundial diz que guerra no Irã pode reduzir crescimento mundial a 1,3%, o menor desde a Covid",
+    "subtitle": null,
+    "content_preview": "O Banco Mundial reduziu nesta quinta-feira sua previsão de crescimento global para 2026 a 2,5% devido à guerra no Oriente Médio, e afirmou que a expansão pode desacelerar para apenas 1,3% caso as interrupções no abastecimento de energia se revelem mais graves e sejam acompanhadas de tensões significativas nos mercados financeiros. Leia mais (06/11/2026 - 15h16)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/banco-mundial-diz-que-guerra-no-ira-pode-reduzir-crescimento-mundial-a-13-o-menor-desde-a-covid.shtml",
+    "published_at": "2026-06-11T15:16:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Energia Eletrica",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Energia Eletrica",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O Banco Mundial reduziu nesta quinta-feira sua previsão de crescimento global para 2026 a 2,5% devido à guerra no Oriente Médio, e afirmou que a expansão pode desacelerar para apenas 1,3% caso as interrupções no abastecimento de energia se revelem mais graves e sejam acompanhadas de tensões significativas nos mercados financeiros.\n\nLeia mais (06/11/2026 - 15h16). O foco principal passa por Economia, Energia Eletrica.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.125405Z"
+  },
+  {
+    "id": "563e6fe32bbde8df745596ef9e53532f",
+    "title": "ANP retoma votação sobre mudanças nas regras de venda do gás de botijão",
+    "subtitle": null,
+    "content_preview": "A diretoria ANP (Agência Nacional do Petróleo, Gás e Biocombustíveis) retoma nesta sexta-feira (12) votação sobre mudanças nas regras de venda do gás de botijão, que podem acabar com a exclusividade de marca do vasilhame. Leia mais (06/11/2026 - 15h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/anp-retoma-votacao-sobre-mudancas-nas-regras-de-venda-do-gas-de-botijao.shtml",
+    "published_at": "2026-06-11T15:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A diretoria ANP (Agência Nacional do Petróleo, Gás e Biocombustíveis) retoma nesta sexta-feira (12) votação sobre mudanças nas regras de venda do gás de botijão, que podem acabar com a exclusividade de marca do vasilhame.\n\nLeia mais (06/11/2026 - 15h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.126328Z"
+  },
+  {
+    "id": "332d14e3715856eea4a66cbbdd4cc970",
+    "title": "UE aprova controles de preços mais rigorosos para novo mercado de carbono",
+    "subtitle": null,
+    "content_preview": "A União Europeia aprovou nesta quinta-feira (11) medidas mais rigorosas para controlar os preços em seu novo mercado de carbono, em resposta a preocupações dos governos de que a iniciativa de redução de emissões possa aumentar as contas de combustível. Leia mais (06/11/2026 - 14h53)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/ue-aprova-controles-de-precos-mais-rigorosos-para-novo-mercado-de-carbono.shtml",
+    "published_at": "2026-06-11T14:53:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A União Europeia aprovou nesta quinta-feira (11) medidas mais rigorosas para controlar os preços em seu novo mercado de carbono, em resposta a preocupações dos governos de que a iniciativa de redução de emissões possa aumentar as contas de combustível.\n\nLeia mais (06/11/2026 - 14h53). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.126328Z"
+  },
+  {
+    "id": "8fe9ccf85f0574d6eb594dfff91445ad",
+    "title": "Preços ao produtor nos EUA aumentam mais que o esperado em maio por custos da energia",
+    "subtitle": null,
+    "content_preview": "Os preços ao produtor nos Estados Unidos subiram mais do que o esperado em maio, levando ao maior aumento anual em três anos e meio, uma vez que o conflito no Oriente Médio elevou o custo dos produtos energéticos. Leia mais (06/11/2026 - 14h41)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://aovivo.folha.uol.com.br/mercado/2026/06/01/6449-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post450861",
+    "published_at": "2026-06-11T14:41:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Energia Eletrica",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Os preços ao produtor nos Estados Unidos subiram mais do que o esperado em maio, levando ao maior aumento anual em três anos e meio, uma vez que o conflito no Oriente Médio elevou o custo dos produtos energéticos.\n\nLeia mais (06/11/2026 - 14h41). O foco principal passa por Economia, Energia Eletrica.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.127344Z"
+  },
+  {
+    "id": "634baaf415f15993e4a174aee4507cc4",
+    "title": "Bonecas com inteligência artificial cuidam de idosos na Coreia do Sul",
+    "subtitle": null,
+    "content_preview": "Em seu pequeno apartamento na Coreia do Sul, onde mora sozinha, Bang Chun-ja, de 78 anos, passa os dias com uma boneca de inteligência artificial com a qual se dá às mil maravilhas. Ela a prefere às pessoas. Leia mais (06/11/2026 - 14h34)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/tec/2026/06/bonecas-com-inteligencia-artificial-cuidam-de-idosos-na-coreia-do-sul.shtml",
+    "published_at": "2026-06-11T14:34:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Em seu pequeno apartamento na Coreia do Sul, onde mora sozinha, Bang Chun-ja, de 78 anos, passa os dias com uma boneca de inteligência artificial com a qual se dá às mil maravilhas.\n\nEla a prefere às pessoas. Leia mais (06/11/2026 - 14h34). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.128856Z"
+  },
+  {
+    "id": "7f682e56944fe9733f8502a131c31c73",
+    "title": "Justiça rejeita ação da Fiesp contra benefício da reforma tributária para Zona Franca de Manaus",
+    "subtitle": null,
+    "content_preview": "A Justiça do Distrito Federal extinguiu, nesta quarta-feira (10), a ação civil pública ajuizada pela Fiesp (Federação das Indústrias do Estado de São Paulo) para tentar suspender os benefícios fiscais previstos na reforma tributária para a Zona Franca de Manaus. Leia mais (06/11/2026 - 14h04)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/blogs/que-imposto-e-esse/2026/06/justica-rejeita-acao-da-fiesp-contra-beneficio-da-reforma-tributaria-para-zona-franca-de-manaus.shtml",
+    "published_at": "2026-06-11T14:04:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Justiça do Distrito Federal extinguiu, nesta quarta-feira (10), a ação civil pública ajuizada pela Fiesp (Federação das Indústrias do Estado de São Paulo) para tentar suspender os benefícios fiscais previstos na reforma tributária para a Zona Franca de Manaus.\n\nLeia mais (06/11/2026 - 14h04). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.129899Z"
+  },
+  {
+    "id": "c80ed563c29ded6c846c026cbf65dbf3",
+    "title": "Vale inaugura usina com IA em Minas Gerais e aumenta produtividade em 25%",
+    "subtitle": null,
+    "content_preview": "A Vale inaugurou em Itabira (MG) sua primeira usina de alta tecnologia, com uso de inteligência artificial, após modernizar a planta Conceição 2, alcançando ganho de produtividade de 25% em menos de dois anos de projeto piloto, informou a companhia nessa quarta-feira (10). Leia mais (06/11/2026 - 14h03)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/vale-inaugura-usina-com-ia-em-minas-gerais-e-aumenta-produtividade-em-25.shtml",
+    "published_at": "2026-06-11T14:03:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "VALE3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.75,
+    "summary": "A Vale inaugurou em Itabira (MG) sua primeira usina de alta tecnologia, com uso de inteligência artificial, após modernizar a planta Conceição 2, alcançando ganho de produtividade de 25% em menos de dois anos de projeto piloto, informou a companhia nessa quarta-feira (10).\n\nLeia mais (06/11/2026 - 14h03). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.130898Z"
+  },
+  {
+    "id": "e6b015647c46cf9aec63f270481e3dfc",
+    "title": "Globo expande portfólio de apostas com compra de Bingão do Brasil de Luciano Huck",
+    "subtitle": null,
+    "content_preview": "A Boa Lion, que tem participação do Grupo Globo, informou ao Cade (Conselho Administrativo de Defesa Econômica), em 3 de junho, que pretende comprar a empresa de videobingos Bingão do Brasil, negócio que integra o portfólio do apresentador Luciano Huck. A operação foi aprovada pelo órgão antitruste em 8 de junho. Leia mais (06/11/2026 - 13h56)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/globo-expande-portfolio-de-apostas-com-compra-de-bingao-do-brasil-de-luciano-huck.shtml",
+    "published_at": "2026-06-11T13:56:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A Boa Lion, que tem participação do Grupo Globo, informou ao Cade (Conselho Administrativo de Defesa Econômica), em 3 de junho, que pretende comprar a empresa de videobingos Bingão do Brasil, negócio que integra o portfólio do apresentador Luciano Huck.\n\nA operação foi aprovada pelo órgão antitruste em 8 de junho. Leia mais (06/11/2026 - 13h56). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.130898Z"
+  },
+  {
+    "id": "4b008f7771971f50618fc32c144f4b8e",
+    "title": "Safra deste ano é recorde, mas produção de arroz, feijão, milho e trigo cai",
+    "subtitle": null,
+    "content_preview": "Conab e IBGE (Instituto Brasileiro de Geografia e Estatística) reavaliam a safra nacional de grãos e projetam volumes ainda maiores do que o recorde previsto anteriormente. Em ambos os casos, a produção de soja foi responsável por esse aumento, conforme os dados divulgados nesta quinta-feira (11). Entre os itens mais importantes da produção nacional de grãos, a oleaginosa é a única que deverá ter aumento nesta safra 2025/26, uma vez que milho, arroz e trigo terão recuo. Leia mais (06/11/2026 - 13h26)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/vaivem/2026/06/safra-deste-ano-e-recorde-mas-producao-de-arroz-feijao-milho-e-trigo-cai.shtml",
+    "published_at": "2026-06-11T13:26:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Conab e IBGE (Instituto Brasileiro de Geografia e Estatística) reavaliam a safra nacional de grãos e projetam volumes ainda maiores do que o recorde previsto anteriormente.\n\nEm ambos os casos, a produção de soja foi responsável por esse aumento, conforme os dados divulgados nesta quinta-feira (11). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.132871Z"
+  },
+  {
+    "id": "16fa47f9d1de2f18a15aff54f66e008c",
+    "title": "030-2026-VNC-Comunicado Externo",
+    "subtitle": null,
+    "content_preview": "Conheça as mudanças vigentes a partir de 01/07/2026.",
+    "full_text_if_available": null,
+    "source_id": "b3_comunicados",
+    "source_name": "B3 - Oficios e Comunicados",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "exchange",
+    "source_url": "https://www.b3.com.br/data/files/87/40/BC/3B/1E7BE910ADC36BE9AC094EA8/CE 030-2026-VNC IMPLEMENTACAO DA FUNCIONALIDADE DE GERACAO DE CODIGO DE INVESTIDOR INVESTORID PELA B3_PT.pdf",
+    "published_at": "2026-06-11T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Conheça as mudanças vigentes a partir de 01/07/2026.\n\nO foco principal passa por B3, Mercado de Capitais.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.092297Z"
+  },
+  {
     "id": "4f966ce8d1698edf341190e0b6f23da5",
     "title": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
     "subtitle": null,
@@ -2101,6 +3792,199 @@
     "summary": "Preços do petróleo estáveis em meio a trégua frágil entre Israel e Irã.\n\nO foco principal passa por Macroeconomia, Mercado.",
     "cluster_id": null,
     "created_at": "2026-06-09T00:58:38.980555Z"
+  },
+  {
+    "id": "8b314a99c4256bb45fbaf07261e5a716",
+    "title": "037-2026-VNC-Ofício Circular",
+    "subtitle": null,
+    "content_preview": "Aprimoramento da funcionalidade de sincronização dos leilões, com extensão para todos os leilões do pregão, a partir de 13/07/2026.",
+    "full_text_if_available": null,
+    "source_id": "b3_comunicados",
+    "source_name": "B3 - Oficios e Comunicados",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "exchange",
+    "source_url": "https://www.b3.com.br/data/files/9A/90/CE/73/AEDAE91064BF82E9AC094EA8/OC 037-2026-VNC FUNCIONALIDADE DE SINCRONIZACAO DOS LEILOES DE PRE-ABERTURA_PT.pdf",
+    "published_at": "2026-06-09T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Aprimoramento da funcionalidade de sincronização dos leilões, com extensão para todos os leilões do pregão, a partir de 13/07/2026.\n\nO foco principal passa por B3, Mercado de Capitais.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.093336Z"
+  },
+  {
+    "id": "90b2b7d0b6479c50155533ef961128f9",
+    "title": "029-2026-VNC-Comunicado Externo",
+    "subtitle": null,
+    "content_preview": "As datas das sessões de negociação simulada com a participação do mercado, para teste do PUMA Trading System, estão disponíveis no Calendário do site Clientes B3.",
+    "full_text_if_available": null,
+    "source_id": "b3_comunicados",
+    "source_name": "B3 - Oficios e Comunicados",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "exchange",
+    "source_url": "https://www.b3.com.br/data/files/4E/07/0E/71/7ECAE91064BF82E9AC094EA8/CE 029-2026-VNC CALENDARIO DAS SESSOES DE NEGOCIACAO SIMULADA DO 2º SEMESTRE DE 2026_PT.pdf",
+    "published_at": "2026-06-09T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "B3SA3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "As datas das sessões de negociação simulada com a participação do mercado, para teste do PUMA Trading System, estão disponíveis no Calendário do site Clientes B3.\n\nO texto menciona B3SA3. O foco principal passa por B3, Mercado de Capitais.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.094350Z"
+  },
+  {
+    "id": "9c5edabbcf40e04d2e0ec435fe6f9e40",
+    "title": "028-2026-VNC-Comunicado Externo",
+    "subtitle": null,
+    "content_preview": "As novas métricas estarão disponíveis a partir do dia 15/06/2026.",
+    "full_text_if_available": null,
+    "source_id": "b3_comunicados",
+    "source_name": "B3 - Oficios e Comunicados",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "exchange",
+    "source_url": "https://www.b3.com.br/data/files/A7/06/54/A3/4ECAE91064BF82E9AC094EA8/CE 028-2026-VNC NOVAS METRICAS TRADING BRPC E BRPV_PT.pdf",
+    "published_at": "2026-06-09T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "B3",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "As novas métricas estarão disponíveis a partir do dia 15/06/2026.\n\nO foco principal passa por B3, Mercado de Capitais.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.095303Z"
+  },
+  {
+    "id": "6edfbfc42b91293a36a408126f2ae635",
+    "title": "026-2026-VPC-Ofício Circular",
+    "subtitle": null,
+    "content_preview": "Os novos Contratos de Eventos de IPCA e PIB estarão disponíveis para negociação a partir de 29/06/2026.",
+    "full_text_if_available": null,
+    "source_id": "b3_comunicados",
+    "source_name": "B3 - Oficios e Comunicados",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "exchange",
+    "source_url": "https://www.b3.com.br/data/files/F1/47/43/B0/41EAE91064BF82E9AC094EA8/OC 026-2026-VPC LANCAMENTO DOS CONTRATOS DE EVENTOS DE IPCA E PIB_PT.pdf",
+    "published_at": "2026-06-09T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "B3",
+      "Economia",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "B3",
+      "Economia",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Os novos Contratos de Eventos de IPCA e PIB estarão disponíveis para negociação a partir de 29/06/2026.\n\nO foco principal passa por B3, Economia.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.095303Z"
+  },
+  {
+    "id": "f8343a3238292693ea1c84b55499874a",
+    "title": "025-2026-VPC-Ofício Circular",
+    "subtitle": null,
+    "content_preview": "Opções sobre Futuro de Bitcoin em Reais, Ethereum e Solana estarão disponíveis para negociação a partir de 06/07/2026.",
+    "full_text_if_available": null,
+    "source_id": "b3_comunicados",
+    "source_name": "B3 - Oficios e Comunicados",
+    "source_type": "official_listing",
+    "is_official": true,
+    "source_category": "exchange",
+    "source_url": "https://www.b3.com.br/data/files/4F/A6/81/8C/EACAE91064BF82E9AC094EA8/OC 025-2026-VPC Lancamento Opções sobre Futuro de Cripto PT.pdf",
+    "published_at": "2026-06-09T00:00:00Z",
+    "language": "pt",
+    "tags": [
+      "B3",
+      "Criptomoedas",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "BTC",
+      "ETH",
+      "SOL"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "B3",
+      "Criptomoedas",
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Opções sobre Futuro de Bitcoin em Reais, Ethereum e Solana estarão disponíveis para negociação a partir de 06/07/2026.\n\nO texto menciona BTC, ETH, SOL. O foco principal passa por B3, Criptomoedas.",
+    "cluster_id": null,
+    "created_at": "2026-06-12T01:02:13.096320Z"
   },
   {
     "id": "7b72b287ac393f7d0dd0df1e81446854",
@@ -5177,1846 +7061,5 @@
     "summary": "As assembleias de debenturistas da Raízen aprovaram nessa quarta-feira (3) a suspensão das reuniões realizadas no dia e as remarcaram para segunda-feira (8), segundo atas publicadas pela companhia de açúcar e etanol.\n\nLeia mais (06/04/2026 - 09h29). O foco principal passa por Economia, Mercado.",
     "cluster_id": null,
     "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "b788574e15b5f063657d4c39e4e34afa",
-    "title": "Petrobras e IG4 tornam-se co-controladores da Braskem",
-    "subtitle": null,
-    "content_preview": "A gestora de private equity IG4 e a Petrobras tornaram-se co-controladores da petroquímica Braskem, concluindo um negócio assinado em abril, informou a empresa em comunicado nessa quarta-feira (3). Leia mais (06/04/2026 - 09h26)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petrobras-e-ig4-tornam-se-co-controladores-da-braskem.shtml",
-    "published_at": "2026-06-04T09:26:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Petroleo e Gas",
-      "Regulacao",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [
-      "PETR4"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Petroleo e Gas",
-      "Regulacao",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.48000000000000004,
-    "summary": "A gestora de private equity IG4 e a Petrobras tornaram-se co-controladores da petroquímica Braskem, concluindo um negócio assinado em abril, informou a empresa em comunicado nessa quarta-feira (3).\n\nLeia mais (06/04/2026 - 09h26). O texto menciona PETR4. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "b6ba90300bc04216971dfe0c44e0f991",
-    "title": "Quem criou o Pix? Como nasceu o sistema de pagamentos que está na mira do governo Trump",
-    "subtitle": null,
-    "content_preview": "Os novos ataques do governo dos Estados Unidos contra o sistema de pagamentos Pix nesta semana reacendeu no Brasil um debate sobre quando e por quem foi criada a tecnologia. Leia mais (06/04/2026 - 09h16)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/quem-criou-o-pix-como-nasceu-o-sistema-de-pagamentos-que-esta-na-mira-do-governo-trump.shtml",
-    "published_at": "2026-06-04T09:16:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Os novos ataques do governo dos Estados Unidos contra o sistema de pagamentos Pix nesta semana reacendeu no Brasil um debate sobre quando e por quem foi criada a tecnologia.\n\nLeia mais (06/04/2026 - 09h16). O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "c9d13c54f5ebd85dfdaeb5696d610ff5",
-    "title": "O Reino Unido está preso na fila da montanha-russa",
-    "subtitle": null,
-    "content_preview": "Para aqueles de nós frustrados com o fato de que a ministra das Finanças do Reino Unido, Rachel Reeves, vinha oferecendo a solução errada para o problema certo, houve recentemente um progresso, de certo modo: agora ela está oferecendo a solução errada para o problema errado. Leia mais (06/04/2026 - 08h14)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/o-reino-unido-esta-preso-na-fila-da-montanha-russa.shtml",
-    "published_at": "2026-06-04T08:14:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Para aqueles de nós frustrados com o fato de que a ministra das Finanças do Reino Unido, Rachel Reeves, vinha oferecendo a solução errada para o problema certo, houve recentemente um progresso, de certo modo: agora ela está oferecendo a solução errada para o problema errado.\n\nLeia mais (06/04/2026 - 08h14). O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "dc4b12b4b7e15d2f30233af231cb9a29",
-    "title": "Decisão do STF sobre aposentadoria especial pode liberar benefício negado; entenda o que muda",
-    "subtitle": null,
-    "content_preview": "A decisão do STF (Supremo Tribunal Federal) que derrubou a idade mínima na aposentadoria especial do INSS (Instituto Nacional do Seguro Social) imposta na reforma da Previdência de 2019 deve beneficiar segurados que tiveram o benefício negado pela Previdência Social e abre brecha para pedidos de revisão, segundo especialistas. Leia mais (06/04/2026 - 07h41)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/decisao-do-stf-sobre-aposentadoria-especial-pode-liberar-beneficio-negado-entenda-o-que-muda.shtml",
-    "published_at": "2026-06-04T07:41:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A decisão do STF (Supremo Tribunal Federal) que derrubou a idade mínima na aposentadoria especial do INSS (Instituto Nacional do Seguro Social) imposta na reforma da Previdência de 2019 deve beneficiar segurados que tiveram o benefício negado pela Previdência Social e abre brecha para pedidos de revisão, segundo especialistas.\n\nLeia mais (06/04/2026 - 07h41). O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "37d3d2443c1e7c95e11dabb78eedc3c5",
-    "title": "Melhor momento para emigrar para Portugal pode estar prestes a chegar",
-    "subtitle": null,
-    "content_preview": "Depois da crise financeira de 2008, o Bank of America estava sob enorme pressão, com receios sobre perdas hipotecárias, capital, litígios e solvência. Muitos investidores venderam ações às pressas, tomados pelo pânico. Porém, em 2011, a Berkshire Hathaway de Warren Buffett decidiu investir US$ 5 bilhões. A tese era que o banco tinha problemas graves, mas também uma franquia bancária enorme, depósitos, escala e capacidade de normalizar resultados ao longo do tempo. Não faltam exemplos do que é conhecido no mercado como \"contrarian investing\", uma estratégia de investimento que procura oportunidades de lucro em operações que vão contra o sentimento predominante. Acredita-se que o preço pode cair mais depressa do que o valor. Leia mais (06/04/2026 - 07h00)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/colunas/rodrigo-tavares/2026/06/melhor-momento-para-emigrar-para-portugal-pode-estar-prestes-a-chegar.shtml",
-    "published_at": "2026-06-04T07:00:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Financeiro",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Financeiro",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 0.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.25,
-    "summary": "Depois da crise financeira de 2008, o Bank of America estava sob enorme pressão, com receios sobre perdas hipotecárias, capital, litígios e solvência.\n\nMuitos investidores venderam ações às pressas, tomados pelo pânico. Porém, em 2011, a Berkshire Hathaway de Warren Buffett decidiu investir US$ 5 bilhões. O foco principal passa por Economia, Financeiro.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "669c0c16ccfb09aecf3fff57b4888003",
-    "title": "Sistema financeiro faz lobby contra 'Lei Magnitsky bancária' no Brasil e nos EUA",
-    "subtitle": null,
-    "content_preview": "Pessoas do mercado financeiro e bancário ouvidos pela coluna chamam a possibilidade de sanções do governo norte-americano por causa do Pix de \"Lei Magnitsky dos bancos\". Leia mais (06/04/2026 - 07h00)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/06/sistema-financeiro-faz-lobby-contra-lei-magnitsky-bancaria-no-brasil-e-nos-eua.shtml",
-    "published_at": "2026-06-04T07:00:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Financeiro",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Financeiro",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Pessoas do mercado financeiro e bancário ouvidos pela coluna chamam a possibilidade de sanções do governo norte-americano por causa do Pix de \"Lei Magnitsky dos bancos\".\n\nLeia mais (06/04/2026 - 07h00). O foco principal passa por Economia, Financeiro.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "acf606659343b8a1cda03384586c3c79",
-    "title": "Patrocinadores saem, e Parada LGBT+ busca verba de parlamentares para compensar",
-    "subtitle": null,
-    "content_preview": "Realizada desde 1997 na avenida Paulista, em São Paulo, a Parada do Orgulho LGBT+ perdeu patrocinadores e recursos desde seu auge na arrecadação. Segundo a organização do evento, nas edições de 2022 e 2023, a Parada amealhou cerca de R$ 5 milhões com sete marcas em cada temporada, realidade distante dos R$ 2 milhões estimados para este ano, em que a Amstel, do grupo Heineken, e a L'Oréal são as únicas patrocinadoras. Leia mais (06/04/2026 - 06h00)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/patrocinadores-saem-e-parada-lgbt-busca-verba-de-parlamentares-para-compensar.shtml",
-    "published_at": "2026-06-04T06:00:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Realizada desde 1997 na avenida Paulista, em São Paulo, a Parada do Orgulho LGBT+ perdeu patrocinadores e recursos desde seu auge na arrecadação.\n\nSegundo a organização do evento, nas edições de 2022 e 2023, a Parada amealhou cerca de R$ 5 milhões com sete marcas em cada temporada, realidade distante dos R$ 2 milhões estimados para este ano, em que a Amstel, do grupo Heineken, e a L'Oréal são as únicas patrocinadoras. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "46b8df3124d5695c72fe066831556fd6",
-    "title": "Um guia para quem está perplexo com a IA",
-    "subtitle": null,
-    "content_preview": "Como alguém que não sabe quase nada sobre IA (inteligência artificial) deveria pensar sobre suas implicações para a humanidade? Embora seja ousado, não é absurdo usar a formulação do sábio judeu Maimônides ao abordar a relação entre revelação e filosofia. Afinal, nem mesmo o maior dos sábios consegue compreender plenamente a divindade. Leia mais (06/04/2026 - 04h00)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/colunas/martinwolf/2026/06/um-guia-para-quem-esta-perplexo-com-a-ia.shtml",
-    "published_at": "2026-06-04T04:00:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Como alguém que não sabe quase nada sobre IA (inteligência artificial) deveria pensar sobre suas implicações para a humanidade?\n\nEmbora seja ousado, não é absurdo usar a formulação do sábio judeu Maimônides ao abordar a relação entre revelação e filosofia. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "5e63eb5e199383c3500d0694d5b92d37",
-    "title": "Alcolumbre vê atuação do governo para pressioná-lo nas redes por votação da PEC 6x1",
-    "subtitle": null,
-    "content_preview": "O presidente do Senado, Davi Alcolumbre (União Brasil-AP), se queixou a aliados sobre o que considera uma estratégia do governo Lula (PT) para acuá-lo e forçá-lo a colocar em votação rapidamente a PEC (Proposta de Emenda à Constituição) do fim da escala 6x1. Ele afirmou, no entanto, que não agirá sobre pressão e que permitirá que os senadores debatam a matéria sem açodamento. Leia mais (06/04/2026 - 04h00)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/alcolumbre-ve-atuacao-do-governo-para-pressiona-lo-nas-redes-por-votacao-da-pec-6x1.shtml",
-    "published_at": "2026-06-04T04:00:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "O presidente do Senado, Davi Alcolumbre (União Brasil-AP), se queixou a aliados sobre o que considera uma estratégia do governo Lula (PT) para acuá-lo e forçá-lo a colocar em votação rapidamente a PEC (Proposta de Emenda à Constituição) do fim da escala 6x1.\n\nEle afirmou, no entanto, que não agirá sobre pressão e que permitirá que os senadores debatam a matéria sem açodamento. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "6bffd6da0d100588a02f2ecb2d9d5411",
-    "title": "Itamaraty articula venda de petróleo para Japão após fechamento de Hormuz",
-    "subtitle": null,
-    "content_preview": "O Itamaraty está articulando a venda de petróleo brasileiro para o Japão, um dos países mais afetados pelo fechamento do estreito de Hormuz em decorrência da guerra entre Irã, Estados Unidos e Israel. Leia mais (06/04/2026 - 04h00)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/itamaraty-articula-venda-de-petroleo-para-japao-apos-fechamento-de-hormuz.shtml",
-    "published_at": "2026-06-04T04:00:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Petroleo e Gas",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Petroleo e Gas",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "O Itamaraty está articulando a venda de petróleo brasileiro para o Japão, um dos países mais afetados pelo fechamento do estreito de Hormuz em decorrência da guerra entre Irã, Estados Unidos e Israel.\n\nLeia mais (06/04/2026 - 04h00). O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T13:27:17.235390Z"
-  },
-  {
-    "id": "fbf2f474c22fa6176132391e53a77063",
-    "title": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
-    "subtitle": null,
-    "content_preview": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/estrangeiros-tiram-r-149-bilhoes-da-b3-em-maio-em-maior-saida-mensal-desde-2022/",
-    "published_at": "2026-06-04T04:03:05.260410Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T04:03:05.260410Z"
-  },
-  {
-    "id": "fd080b6f0274e7133cb8ff2d959bb7c9",
-    "title": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
-    "subtitle": null,
-    "content_preview": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/smart-fit-smft3-mercado-precifica-riscos-mas-ignora-todo-potencial-do-totalpass/",
-    "published_at": "2026-06-04T04:03:05.260410Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T04:03:05.260410Z"
-  },
-  {
-    "id": "64e7d0016da81233c2f239c624b28dd4",
-    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "subtitle": null,
-    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
-    "published_at": "2026-06-04T04:03:05.260410Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T04:03:05.260410Z"
-  },
-  {
-    "id": "243c7d153ac0c13a10790100696dc49d",
-    "title": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão",
-    "subtitle": null,
-    "content_preview": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/spacex-define-acao-a-us-135-em-mega-ipo-que-avaliaria-empresa-em-us-177-trilhao/",
-    "published_at": "2026-06-04T04:03:05.260410Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T04:03:05.260410Z"
-  },
-  {
-    "id": "5db10706e08e84e101bfb71ae28224ce",
-    "title": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro",
-    "subtitle": null,
-    "content_preview": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ray-dalio-ve-bolha-em-ia-e-alerta-que-estouro-vira-na-hora-de-provar-lucro/",
-    "published_at": "2026-06-04T04:03:05.260410Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T04:03:05.260410Z"
-  },
-  {
-    "id": "29fcc9f2b2071d58fa2ff8b490567990",
-    "title": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial",
-    "subtitle": null,
-    "content_preview": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/copasa-csmg3-acao-salta-13-nos-minutos-finais-com-noticia-de-oferta-da-equatorial-privatizacao/",
-    "published_at": "2026-06-04T04:03:05.260410Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T04:03:05.260410Z"
-  },
-  {
-    "id": "1c11559be16cdfe81a2d410607ed8264",
-    "title": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-caem-forte-apos-tensoes-no-oriente-medio-puxarem-gatilho-da-correcao/",
-    "published_at": "2026-06-04T04:03:05.260410Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T04:03:05.260410Z"
-  },
-  {
-    "id": "0048229a6179b8807618d2898aa2f022",
-    "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
-    "subtitle": null,
-    "content_preview": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
-    "published_at": "2026-06-04T04:03:05.260410Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Financeiro",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Financeiro",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T04:03:05.260410Z"
-  },
-  {
-    "id": "d5d0f308cbddead43530d6a54a31afef",
-    "title": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
-    "subtitle": null,
-    "content_preview": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
-    "published_at": "2026-06-04T04:03:05.260410Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T04:03:05.260410Z"
-  },
-  {
-    "id": "9997b6fc62754c2c0c9ce3b0e790018f",
-    "title": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação sobe",
-    "subtitle": null,
-    "content_preview": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação sobe",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/minerva-jpmorgan-aposta-em-recuperacao-apos-queda-e-eleva-beef3-a-compra-acao-salta/",
-    "published_at": "2026-06-04T04:03:05.260410Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 0.3333333333333333,
-    "relevance_score": 0.5,
-    "impact_score": 0.35,
-    "summary": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação sobe.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T04:03:05.260410Z"
-  },
-  {
-    "id": "71c30dd70cc1e148ecad4b4ad35ee9bc",
-    "title": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
-    "subtitle": null,
-    "content_preview": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/estrangeiros-tiram-r-149-bilhoes-da-b3-em-maio-em-maior-saida-mensal-desde-2022/",
-    "published_at": "2026-06-04T03:58:33.853102Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:58:33.853102Z"
-  },
-  {
-    "id": "56cf90b9905ca098448188da20800e84",
-    "title": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
-    "subtitle": null,
-    "content_preview": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/smart-fit-smft3-mercado-precifica-riscos-mas-ignora-todo-potencial-do-totalpass/",
-    "published_at": "2026-06-04T03:58:33.853102Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:58:33.853102Z"
-  },
-  {
-    "id": "82c8fd2b11af938f14a7a8fe8baf8f62",
-    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "subtitle": null,
-    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
-    "published_at": "2026-06-04T03:58:33.853102Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:58:33.853102Z"
-  },
-  {
-    "id": "4b8019a49236034eb508324244b1a450",
-    "title": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão",
-    "subtitle": null,
-    "content_preview": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/spacex-define-acao-a-us-135-em-mega-ipo-que-avaliaria-empresa-em-us-177-trilhao/",
-    "published_at": "2026-06-04T03:58:33.853102Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:58:33.853102Z"
-  },
-  {
-    "id": "4275f827df2381d9d30048ac43c163f9",
-    "title": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro",
-    "subtitle": null,
-    "content_preview": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ray-dalio-ve-bolha-em-ia-e-alerta-que-estouro-vira-na-hora-de-provar-lucro/",
-    "published_at": "2026-06-04T03:58:33.853102Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:58:33.853102Z"
-  },
-  {
-    "id": "795a09f19a8886ac3decb0b93589938a",
-    "title": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial",
-    "subtitle": null,
-    "content_preview": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/copasa-csmg3-acao-salta-13-nos-minutos-finais-com-noticia-de-oferta-da-equatorial-privatizacao/",
-    "published_at": "2026-06-04T03:58:33.853102Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:58:33.853102Z"
-  },
-  {
-    "id": "d4ce6a1941f89d2cbd4d8722b27a8e24",
-    "title": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-caem-forte-apos-tensoes-no-oriente-medio-puxarem-gatilho-da-correcao/",
-    "published_at": "2026-06-04T03:58:33.853102Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:58:33.853102Z"
-  },
-  {
-    "id": "79e1c5425b78a58df4ecafa51b9d1afe",
-    "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
-    "subtitle": null,
-    "content_preview": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
-    "published_at": "2026-06-04T03:58:33.853102Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Financeiro",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Financeiro",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:58:33.853102Z"
-  },
-  {
-    "id": "d491f66ceef3443f226e1cb70ce49a06",
-    "title": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
-    "subtitle": null,
-    "content_preview": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
-    "published_at": "2026-06-04T03:58:33.853102Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:58:33.853102Z"
-  },
-  {
-    "id": "aa4f7e021e7eeb402f672a97db656c7f",
-    "title": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação sobe",
-    "subtitle": null,
-    "content_preview": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação sobe",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/minerva-jpmorgan-aposta-em-recuperacao-apos-queda-e-eleva-beef3-a-compra-acao-salta/",
-    "published_at": "2026-06-04T03:58:33.853102Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 0.3333333333333333,
-    "relevance_score": 0.5,
-    "impact_score": 0.35,
-    "summary": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação sobe.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:58:33.853102Z"
-  },
-  {
-    "id": "26074497fd8665dd8f604f3d42fbf6a8",
-    "title": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
-    "subtitle": null,
-    "content_preview": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/estrangeiros-tiram-r-149-bilhoes-da-b3-em-maio-em-maior-saida-mensal-desde-2022/",
-    "published_at": "2026-06-04T03:53:38.117723Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "926dc570428a98e64851a42e0e7d6238",
-    "title": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
-    "subtitle": null,
-    "content_preview": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/smart-fit-smft3-mercado-precifica-riscos-mas-ignora-todo-potencial-do-totalpass/",
-    "published_at": "2026-06-04T03:53:38.117723Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "7e6ceac135a441af79c8c620f9e42d6a",
-    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "subtitle": null,
-    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
-    "published_at": "2026-06-04T03:53:38.117723Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "4e1fb8a1562fa6b51ac565f7f897a1d4",
-    "title": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão",
-    "subtitle": null,
-    "content_preview": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/spacex-define-acao-a-us-135-em-mega-ipo-que-avaliaria-empresa-em-us-177-trilhao/",
-    "published_at": "2026-06-04T03:53:38.117723Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "c4cf7f772f2e1f585344ad5f2fd040ee",
-    "title": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro",
-    "subtitle": null,
-    "content_preview": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ray-dalio-ve-bolha-em-ia-e-alerta-que-estouro-vira-na-hora-de-provar-lucro/",
-    "published_at": "2026-06-04T03:53:38.117723Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "79505d256bbbc7023f667016a71214a5",
-    "title": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial",
-    "subtitle": null,
-    "content_preview": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/copasa-csmg3-acao-salta-13-nos-minutos-finais-com-noticia-de-oferta-da-equatorial-privatizacao/",
-    "published_at": "2026-06-04T03:53:38.117723Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "e4afa5df60883f6276f318fc2fa4e075",
-    "title": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-caem-forte-apos-tensoes-no-oriente-medio-puxarem-gatilho-da-correcao/",
-    "published_at": "2026-06-04T03:53:38.117723Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "cd13d8cacce832157d509b8c9d781df8",
-    "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
-    "subtitle": null,
-    "content_preview": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
-    "published_at": "2026-06-04T03:53:38.117723Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Financeiro",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Financeiro",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "cf2ca75437d8453a7dc68a5d5325137d",
-    "title": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
-    "subtitle": null,
-    "content_preview": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-03062026/",
-    "published_at": "2026-06-04T03:53:38.117723Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Ibovespa despenca mais de 2%, com tarifaço, guerra e saída de estrangeiros.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "6457b20ef20fbfba11c66c0dd3525029",
-    "title": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação sobe",
-    "subtitle": null,
-    "content_preview": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação sobe",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/minerva-jpmorgan-aposta-em-recuperacao-apos-queda-e-eleva-beef3-a-compra-acao-salta/",
-    "published_at": "2026-06-04T03:53:38.117723Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 0.3333333333333333,
-    "relevance_score": 0.5,
-    "impact_score": 0.35,
-    "summary": "Minerva: JPMorgan aposta em recuperação após queda e eleva BEEF3 a compra; ação sobe.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "31f21c5e70b9a220bf41c855090a6a92",
-    "title": "Os Futuros do Petróleo caíram durante a sessão asiática",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_id": "investing_br",
-    "source_name": "Investing.com Brasil",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://br.investing.com/news/commodities-news/os-futuros-do-petroleo-cairam-durante-a-sessao-asiatica-1962240",
-    "published_at": "2026-06-04T03:25:06Z",
-    "language": "pt",
-    "tags": [
-      "Macroeconomia",
-      "Mercado",
-      "Petroleo e Gas"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Macroeconomia",
-      "Mercado",
-      "Petroleo e Gas"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Os Futuros do Petróleo caíram durante a sessão asiática.\n\nO foco principal passa por Macroeconomia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "aff1fd6cbefa039bdc613bdd0f681313",
-    "title": "Nvidia e Hyundai discutem centro de P&D de IA na Coreia do Sul",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_id": "investing_br",
-    "source_name": "Investing.com Brasil",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://br.investing.com/news/stock-market-news/nvidia-e-hyundai-discutem-centro-de-pd-de-ia-na-coreia-do-sul-1962239",
-    "published_at": "2026-06-04T03:18:56Z",
-    "language": "pt",
-    "tags": [
-      "Macroeconomia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Macroeconomia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Nvidia e Hyundai discutem centro de P&D de IA na Coreia do Sul.\n\nO foco principal passa por Macroeconomia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "0452af515ee7283b2500c76ed9f80177",
-    "title": "Bolsas asiáticas recuam com resfriamento do rali de chips e tensões com o Irã",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_id": "investing_br",
-    "source_name": "Investing.com Brasil",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://br.investing.com/news/stock-market-news/bolsas-asiaticas-recuam-com-resfriamento-do-rali-de-chips-e-tensoes-com-o-ira-1962235",
-    "published_at": "2026-06-04T02:59:16Z",
-    "language": "pt",
-    "tags": [
-      "Macroeconomia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Macroeconomia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Bolsas asiáticas recuam com resfriamento do rali de chips e tensões com o Irã.\n\nO foco principal passa por Macroeconomia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "4193ad3af317f997ec7bd0a6d715becc",
-    "title": "Preços do ouro sobem após cessar-fogo entre Israel e Líbano",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_id": "investing_br",
-    "source_name": "Investing.com Brasil",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://br.investing.com/news/commodities-news/precos-do-ouro-sobem-apos-cessarfogo-entre-israel-e-libano-1962229",
-    "published_at": "2026-06-04T02:34:40Z",
-    "language": "pt",
-    "tags": [
-      "Macroeconomia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Macroeconomia",
-      "Mercado"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Preços do ouro sobem após cessar-fogo entre Israel e Líbano.\n\nO foco principal passa por Macroeconomia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "be59b3e029805bc57cc5b0a4cbd5a8a7",
-    "title": "Exportação da agropecuária sobe no ano, puxada por soja e carnes",
-    "subtitle": null,
-    "content_preview": "A safra recorde de grãos deste ano e o bom desempenho da pecuária vêm garantindo uma evolução de 7% nas receitas da balança comercial do setor agropecuário nos cinco primeiros meses deste ano. No mês passado, com a continuidade das exportações de soja e de carnes, as vendas externas foram 10% superiores às de igual período do ano anterior, segundo dados da Secex (Secretaria de Comércio Exterior). Leia mais (06/03/2026 - 23h00)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/colunas/vaivem/2026/06/exportacao-da-agropecuaria-sobe-no-ano-puxada-por-soja-e-carnes.shtml",
-    "published_at": "2026-06-03T23:00:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Alimentos",
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Alimentos",
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "A safra recorde de grãos deste ano e o bom desempenho da pecuária vêm garantindo uma evolução de 7% nas receitas da balança comercial do setor agropecuário nos cinco primeiros meses deste ano.\n\nNo mês passado, com a continuidade das exportações de soja e de carnes, as vendas externas foram 10% superiores às de igual período do ano anterior, segundo dados da Secex (Secretaria de Comércio Exterior). O foco principal passa por Alimentos, Economia.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "5782e3a96cf89c252237bc541267b625",
-    "title": "Master teve empréstimos consignados sem validação da identidade, e reparação a aposentados do INSS emperra",
-    "subtitle": null,
-    "content_preview": "O INSS (Instituto Nacional do Seguro Social) afirmou não ter elementos suficientes para dimensionar as fraudes do Banco Master, mesmo com a existência de uma auditoria interna sobre contratos inválidos, de uma auditoria da CGU (Controladoria-Geral da União) e de um acordo prévio para apuração dos danos e cobrança dos valores em benefício de aposentados e pensionistas. Leia mais (06/03/2026 - 23h00)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/master-teve-emprestimos-consignados-sem-validacao-da-identidade-e-reparacao-a-aposentados-do-inss-emperra.shtml",
-    "published_at": "2026-06-03T23:00:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Financeiro",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Financeiro",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "O INSS (Instituto Nacional do Seguro Social) afirmou não ter elementos suficientes para dimensionar as fraudes do Banco Master, mesmo com a existência de uma auditoria interna sobre contratos inválidos, de uma auditoria da CGU (Controladoria-Geral da União) e de um acordo prévio para apuração dos danos e cobrança dos valores em benefício de aposentados e pensionistas.\n\nLeia mais (06/03/2026 - 23h00). O foco principal passa por Economia, Financeiro.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T03:53:38.117723Z"
-  },
-  {
-    "id": "0ec19f72dffc30fcb0d7e3482b1a0455",
-    "title": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
-    "subtitle": null,
-    "content_preview": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/estrangeiros-tiram-r-149-bilhoes-da-b3-em-maio-em-maior-saida-mensal-desde-2022/",
-    "published_at": "2026-06-04T00:56:04.884075Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Estrangeiros tiram R$ 14,9 bilhões da Bolsa em maio, em maior saída mensal desde 2022.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T00:56:04.884075Z"
-  },
-  {
-    "id": "0a096907ebe7c7dbca243c5ef610291f",
-    "title": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
-    "subtitle": null,
-    "content_preview": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/smart-fit-smft3-mercado-precifica-riscos-mas-ignora-todo-potencial-do-totalpass/",
-    "published_at": "2026-06-04T00:56:04.884075Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Smart Fit: mercado precifica riscos, mas ignora todo potencial do TotalPass.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T00:56:04.884075Z"
-  },
-  {
-    "id": "df95987d38453e61cda24401ea3e143c",
-    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "subtitle": null,
-    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
-    "published_at": "2026-06-04T00:56:04.884075Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T00:56:04.884075Z"
-  },
-  {
-    "id": "4cbbcf6b27a2b953340d52b4dd735492",
-    "title": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão",
-    "subtitle": null,
-    "content_preview": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/spacex-define-acao-a-us-135-em-mega-ipo-que-avaliaria-empresa-em-us-177-trilhao/",
-    "published_at": "2026-06-04T00:56:04.884075Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "SpaceX define ação a US$ 135 em mega IPO que avaliaria empresa em US$ 1,77 trilhão.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T00:56:04.884075Z"
-  },
-  {
-    "id": "5e99b507ec4ced478a73ecb09054948e",
-    "title": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro",
-    "subtitle": null,
-    "content_preview": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ray-dalio-ve-bolha-em-ia-e-alerta-que-estouro-vira-na-hora-de-provar-lucro/",
-    "published_at": "2026-06-04T00:56:04.884075Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Ray Dalio vê bolha em IA e alerta que estouro virá na hora de provar lucro.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T00:56:04.884075Z"
-  },
-  {
-    "id": "475a8c9610c703b85de467a0cdbbbe11",
-    "title": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial",
-    "subtitle": null,
-    "content_preview": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/copasa-csmg3-acao-salta-13-nos-minutos-finais-com-noticia-de-oferta-da-equatorial-privatizacao/",
-    "published_at": "2026-06-04T00:56:04.884075Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Copasa: ação sobe 13% nos minutos finais do dia com notícia de proposta da Equatorial.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T00:56:04.884075Z"
-  },
-  {
-    "id": "30554f8dd4fd06f5eca5c97649d68739",
-    "title": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-caem-forte-apos-tensoes-no-oriente-medio-puxarem-gatilho-da-correcao/",
-    "published_at": "2026-06-04T00:56:04.884075Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Bolsas de NY caem forte após tensões no Oriente Médio puxarem gatilho da correção.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-06-04T00:56:04.884075Z"
   }
 ]

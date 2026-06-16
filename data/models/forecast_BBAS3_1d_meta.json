@@ -1,10 +1,10 @@
 {
   "ticker": "BBAS3",
   "horizon_days": 1,
-  "train_r2": 0.897168,
-  "test_r2": -0.248334,
-  "rmse": 0.022078,
-  "train_samples": 377,
+  "train_r2": 0.880041,
+  "test_r2": -0.259297,
+  "rmse": 0.021789,
+  "train_samples": 379,
   "test_samples": 95,
-  "trained_at": "2026-06-09T11:53:10.657032+00:00"
+  "trained_at": "2026-06-12T01:11:48.199139+00:00"
 }
