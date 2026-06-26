@@ -44,7 +44,7 @@ type PricesResponse = {
   positions: PriceRow[];
 };
 
-const ASSET_CLASSES = ['BR_STOCK', 'FII', 'BDR', 'CRYPTO', 'US_STOCK', 'FIXED_INCOME'] as const;
+const ASSET_CLASSES = ['BR_STOCK', 'FII', 'BDR', 'CRYPTO', 'US_STOCK'] as const;
 const HISTORY_OPTIONS = [
   { key: '1w', label: '1 semana' },
   { key: '1m', label: '1 mes' },
@@ -64,7 +64,6 @@ const CLASS_LABELS: Record<string, string> = {
   BDR: 'BDRs',
   CRYPTO: 'Criptomoedas',
   US_STOCK: 'Acoes EUA',
-  FIXED_INCOME: 'Renda Fixa',
 };
 
 type OpinionState = {

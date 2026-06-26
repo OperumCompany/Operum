@@ -1,7 +1,7 @@
 # Compendium - Operum
 
 > Base de conhecimento consolidada do projeto.
-> Ultima atualizacao: 01/06/2026
+> Ultima atualizacao: 26/06/2026
 
 ---
 
@@ -27,7 +27,7 @@ O produto hoje combina calculo financeiro classico, ingestao local de noticias e
 | Roteamento | React Router DOM |
 | Backend | Python 3.11+ + FastAPI |
 | Persistencia | JSON + Parquet via `LocalStorageService` |
-| Precos | yfinance |
+| Precos | brapi primaria + Yahoo Finance fallback |
 | Noticias | RSS + listagens oficiais/editoriais abertas |
 | ML | scikit-learn, XGBoost, LightGBM |
 | Testes | pytest |
@@ -83,8 +83,6 @@ O modulo de noticias deixou de depender apenas de feeds genericos. Hoje ele usa 
   - `cvm_informativos`
 - **B3**
   - `b3_comunicados`
-- **Tesouro**
-  - `tesouro_noticias`
 - **BCB**
   - `bcb_copom`
   - `bcb_noticias`

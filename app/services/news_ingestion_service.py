@@ -1,4 +1,4 @@
-import hashlib
+﻿import hashlib
 import logging
 import re
 from dataclasses import dataclass, field
@@ -157,20 +157,6 @@ OFFICIAL_NEWS_SOURCES: list[NewsSource] = [
         supports_backfill=True,
         max_items=30,
     ),
-    NewsSource(
-        source_id="tesouro_noticias",
-        source_name="Tesouro Nacional - Noticias",
-        source_type="official_listing",
-        language="pt",
-        base_url="https://www.gov.br/tesouronacional",
-        listing_url="https://www.gov.br/tesouronacional/pt-br/noticias/ultimas-noticias",
-        is_official=True,
-        source_category="treasury",
-        tags_default=["Tesouro Direto", "Divida Publica", "Renda Fixa"],
-        country_default=["BR"],
-        supports_backfill=True,
-        max_items=20,
-    ),
 ]
 
 EDITORIAL_NEWS_SOURCES: list[NewsSource] = [
@@ -220,7 +206,7 @@ ALL_NEWS_SOURCES: list[NewsSource] = OFFICIAL_NEWS_SOURCES + EDITORIAL_NEWS_SOUR
 TICKER_KEYWORDS: dict[str, list[str]] = {
     "PETR4": ["petrobras", "petr4"],
     "VALE3": ["vale", "vale3"],
-    "ITUB4": ["itau", "itub4", "itaú"],
+    "ITUB4": ["itau", "itub4", "itaÃº"],
     "BBDC4": ["bradesco", "bbdc4"],
     "BBAS3": ["banco do brasil", "bbas3"],
     "ABEV3": ["ambev", "abev3"],
@@ -235,22 +221,21 @@ TICKER_KEYWORDS: dict[str, list[str]] = {
 }
 
 SECTOR_KEYWORDS: dict[str, list[str]] = {
-    "Petroleo e Gas": ["petroleo", "petróleo", "gas", "gás", "petrobras", "pre-sal", "pré-sal"],
-    "Mineracao": ["mineracao", "mineração", "minerio", "minério", "ferro"],
-    "Financeiro": ["banco", "bancos", "juros", "selic", "credito", "crédito"],
-    "Tecnologia": ["tecnologia", "big tech", "ia", "inteligencia artificial", "inteligência artificial"],
+    "Petroleo e Gas": ["petroleo", "petrÃ³leo", "gas", "gÃ¡s", "petrobras", "pre-sal", "prÃ©-sal"],
+    "Mineracao": ["mineracao", "mineraÃ§Ã£o", "minerio", "minÃ©rio", "ferro"],
+    "Financeiro": ["banco", "bancos", "juros", "selic", "credito", "crÃ©dito"],
+    "Tecnologia": ["tecnologia", "big tech", "ia", "inteligencia artificial", "inteligÃªncia artificial"],
     "Criptomoedas": ["bitcoin", "cripto", "blockchain", "ethereum", "criptomoeda"],
-    "Energia Eletrica": ["energia", "eletrica", "elétrica", "eletrobras"],
+    "Energia Eletrica": ["energia", "eletrica", "elÃ©trica", "eletrobras"],
     "Varejo": ["varejo", "magazine luiza", "americanas"],
-    "Alimentos": ["alimentos", "jbs", "marfrig", "carne", "frigorifico", "frigorífico"],
-    "Economia": ["inflacao", "inflação", "pib", "fiscal", "economia", "dolar", "dólar"],
-    "Renda Fixa": ["renda fixa", "tesouro", "cdb", "debenture", "debênture"],
-    "Regulacao": ["resolucao", "resolução", "colegiado", "audiencia", "audiência", "comunicado", "oficio", "ofício"],
+    "Alimentos": ["alimentos", "jbs", "marfrig", "carne", "frigorifico", "frigorÃ­fico"],
+    "Economia": ["inflacao", "inflaÃ§Ã£o", "pib", "fiscal", "economia", "dolar", "dÃ³lar"],
+    "Regulacao": ["resolucao", "resoluÃ§Ã£o", "colegiado", "audiencia", "audiÃªncia", "comunicado", "oficio", "ofÃ­cio"],
 }
 
 COUNTRY_KEYWORDS: dict[str, list[str]] = {
     "BR": ["brasil", "ibovespa", "real", "b3", "bolsa brasileira", "copom", "cvm", "tesouro"],
-    "US": ["eua", "estados unidos", "fed", "s&p", "wall street", "dolar", "dólar"],
+    "US": ["eua", "estados unidos", "fed", "s&p", "wall street", "dolar", "dÃ³lar"],
 }
 
 
@@ -325,7 +310,7 @@ class NewsIngestionService:
         if isinstance(published, str) and published:
             normalized = (
                 published.replace("Z", "+00:00")
-                .replace(" às ", " ")
+                .replace(" Ã s ", " ")
                 .replace(" at ", " ")
                 .strip()
             )
@@ -670,7 +655,7 @@ class NewsIngestionService:
         return items
 
     def _fetch_bcb_listing(self, source: NewsSource) -> list[dict]:
-        # O portal atual do BCB e servido por SPA e nao expõe facilmente os links
+        # O portal atual do BCB e servido por SPA e nao expÃµe facilmente os links
         # de RSS/HTML estruturados em requests simples. Mantemos o conector oficial
         # preparado, retornando vazio quando o conteudo nao puder ser extraido de forma segura.
         if not source.listing_url:

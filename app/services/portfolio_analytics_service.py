@@ -29,8 +29,6 @@ class PortfolioAnalyticsService:
             return "IFIX", "IFIX"
         if asset_class == "CRYPTO":
             return "BTC", "Bitcoin"
-        if asset_class == "FIXED_INCOME":
-            return None, "Sem benchmark"
         if asset and asset.country == "US":
             return "SP500", "S&P 500"
         return "IBOV", "Ibovespa"

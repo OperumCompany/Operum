@@ -9,4 +9,4 @@ class Asset(BaseModel):
     currency: str
     sector: str
     sub_type: str = ""
-    source: str = "yfinance"
+    source: str = "brapi"

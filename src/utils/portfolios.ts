@@ -17,7 +17,6 @@ export function mapAssetClassToLabel(assetClass: string): string {
     FII: 'Fundos Imobiliários',
     US_STOCK: 'Ações EUA',
     CRYPTO: 'Cripto',
-    FIXED_INCOME: 'Renda Fixa',
   };
   return map[assetClass] ?? assetClass;
 }

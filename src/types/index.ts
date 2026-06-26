@@ -15,7 +15,7 @@ export type NewsCategory =
   | 'Ações'
   | 'Exterior'
   | 'Política econômica'
-  | 'Renda fixa';
+  | 'FIIs';
 
 export type Impact = 'Alto' | 'Médio' | 'Baixo';
 

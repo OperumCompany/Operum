@@ -464,3 +464,21 @@
 2026-06-11 22:06:32 | INFO     | app.main | Ingestao automatica: 10 noticias novas
 2026-06-11 22:06:32 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
 2026-06-11 22:06:32 | INFO     | app.main | Cache de precos atualizado para 12 ativos
+2026-06-18 23:56:35 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-06-18 23:56:35 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-06-18 23:56:47 | INFO     | app.services.news_ingestion_service | Ingestao: 49 noticias novas de 131 unicas
+2026-06-18 23:56:47 | INFO     | app.main | Ingestao automatica: 49 noticias novas
+2026-06-18 23:56:47 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-06-18 23:56:55 | INFO     | app.main | Cache de precos atualizado para 12 ativos
+2026-06-21 12:21:28 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-06-21 12:21:28 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-06-21 12:21:41 | INFO     | app.services.news_ingestion_service | Ingestao: 42 noticias novas de 131 unicas
+2026-06-21 12:21:41 | INFO     | app.main | Ingestao automatica: 42 noticias novas
+2026-06-21 12:21:41 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-06-21 12:21:49 | INFO     | app.main | Cache de precos atualizado para 12 ativos
+2026-06-21 15:30:01 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-06-21 15:30:01 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-06-21 15:30:16 | INFO     | app.services.news_ingestion_service | Ingestao: 20 noticias novas de 133 unicas
+2026-06-21 15:30:16 | INFO     | app.main | Ingestao automatica: 20 noticias novas
+2026-06-21 15:30:16 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-06-21 15:30:23 | INFO     | app.main | Cache de precos atualizado para 12 ativos

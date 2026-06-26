@@ -62,7 +62,6 @@ class AssetAnalysisService:
             "class_templates": {
                 "FII": "O ativo e um fundo imobiliario e depende de renda, qualidade do portfolio e sensibilidade a juros.",
                 "CRYPTO": "O ativo pertence ao bloco cripto, com potencial de assimetria e volatilidade estruturalmente elevada.",
-                "FIXED_INCOME": "O ativo pertence a renda fixa, com comportamento mais ligado a juros, duration e previsibilidade do fluxo.",
                 "US_STOCK": "O ativo esta exposto ao mercado americano e ao ciclo global de juros, dolar e crescimento.",
                 "BR_STOCK": "O ativo esta exposto ao ambiente domestico, incluindo juros, fluxo para a bolsa e atividade economica local.",
                 "BDR": "O ativo e um BDR e combina a tese da empresa estrangeira com variacao cambial e fluxo local.",
@@ -470,7 +469,7 @@ class AssetAnalysisService:
     def _infer_asset_function(self, meta: dict, weight_pct: float | None) -> str:
         asset_class = meta.get("asset_class")
         sector = self._normalize_text(meta.get("sector", ""))
-        if asset_class in {"FII", "FIXED_INCOME"}:
+        if asset_class == "FII":
             return "renda"
         if asset_class == "CRYPTO":
             return "assimetria/alto_risco"
@@ -500,8 +499,6 @@ class AssetAnalysisService:
             class_multiplier = 1.35
         elif meta.get("asset_class") == "FII":
             class_multiplier = 0.8
-        elif meta.get("asset_class") == "FIXED_INCOME":
-            class_multiplier = 0.55
         horizon_multiplier = min(1.2, max(0.65, outlook_days / 21.0))
         adjustment = signal * 0.06 * class_multiplier * horizon_multiplier
         return round(adjustment, 6), dict(category_counts)
@@ -674,8 +671,6 @@ class AssetAnalysisService:
         class_tail = ""
         if meta.get("asset_class") == "FII":
             class_tail = " Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais."
-        elif meta.get("asset_class") == "FIXED_INCOME":
-            class_tail = " Para renda fixa, a direcao de juros e a duration continuam sendo os vetores principais."
         elif meta.get("asset_class") == "CRYPTO":
             class_tail = " Para cripto, liquidez global e apetite a risco continuam pesando mais do que fundamentos tradicionais."
         function_tail = f" Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de {asset_function.replace('_', ' ')}."

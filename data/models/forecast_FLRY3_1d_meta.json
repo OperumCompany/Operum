@@ -1,0 +1,10 @@
+{
+  "ticker": "FLRY3",
+  "horizon_days": 1,
+  "train_r2": 0.864371,
+  "test_r2": -0.453271,
+  "rmse": 0.021071,
+  "train_samples": 379,
+  "test_samples": 95,
+  "trained_at": "2026-06-21T18:31:37.208877+00:00"
+}

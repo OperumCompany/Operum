@@ -1,11 +1,11 @@
-import { FormEvent, useEffect, useState } from 'react';
+﻿import { FormEvent, useEffect, useState } from 'react';
 import { Bell, SlidersHorizontal, UserRound } from 'lucide-react';
 import { Button, Card, Input } from '../components/UI';
 import { useAuth } from '../context/AuthContext';
 import { NewsCategory, UserPreferences } from '../types';
 import api from '../utils/api';
 
-const topics: NewsCategory[] = ['Inflação', 'Juros', 'Tecnologia', 'Criptomoedas', 'Ações', 'Exterior', 'Política econômica', 'Renda fixa'];
+const topics: NewsCategory[] = ['Inflação', 'Juros', 'Tecnologia', 'Criptomoedas', 'Ações', 'Exterior', 'Política econômica', 'FIIs'];
 const defaultPreferences: UserPreferences = {
   topics: ['Inflação', 'Juros', 'Ações', 'Exterior'],
   compactMode: false,
@@ -35,9 +35,9 @@ export function SettingsPage() {
     try {
       const saved = await api.put<UserPreferences>('/auth/preferences', prefs);
       setPrefs(saved);
-      setFeedback('Preferências salvas com sucesso.');
+      setFeedback('PreferÃªncias salvas com sucesso.');
     } catch (error) {
-      setFeedback(error instanceof Error ? error.message : 'Falha ao salvar preferências.');
+      setFeedback(error instanceof Error ? error.message : 'Falha ao salvar preferÃªncias.');
     }
   }
 
@@ -59,8 +59,8 @@ export function SettingsPage() {
   return (
     <div className="space-y-4">
       <section className="rounded-[30px] border border-[var(--border-soft)] bg-[linear-gradient(120deg,rgba(225,94,242,0.08)_0%,rgba(255,255,255,0.96)_60%,rgba(61,77,156,0.08)_100%)] p-6 shadow-[var(--shadow-card)]">
-        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">Configurações</p>
-        <h2 className="mt-2 text-3xl font-bold">Ajuste sua experiência no Operum</h2>
+        <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">ConfiguraÃ§Ãµes</p>
+        <h2 className="mt-2 text-3xl font-bold">Ajuste sua experiÃªncia no Operum</h2>
         <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
           Escolha os temas que quer acompanhar, configure alertas e mantenha sua conta atualizada.
         </p>
@@ -72,7 +72,7 @@ export function SettingsPage() {
           <p className="mt-2 text-sm"><strong>E-mail:</strong> {user?.email}</p>
         </Card>
 
-        <Card title="Segurança">
+        <Card title="SeguranÃ§a">
           <form onSubmit={handlePasswordUpdate} className="space-y-3">
             <Input type="password" value={currentPassword} onChange={(e) => setCurrentPassword(e.target.value)} placeholder="Senha atual" />
             <Input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Nova senha" />
@@ -85,9 +85,9 @@ export function SettingsPage() {
           </form>
         </Card>
 
-        <Card title="Temas de notícias" right={<Bell size={16} className="text-[var(--brand)]" />}>
+        <Card title="Temas de notÃ­cias" right={<Bell size={16} className="text-[var(--brand)]" />}>
           {loading ? (
-            <p className="text-sm text-[var(--text-muted)]">Carregando preferências...</p>
+            <p className="text-sm text-[var(--text-muted)]">Carregando preferÃªncias...</p>
           ) : (
             <div className="grid gap-2 sm:grid-cols-2">
               {topics.map((t) => (
@@ -109,7 +109,7 @@ export function SettingsPage() {
           )}
         </Card>
 
-        <Card title="Preferências da interface" right={<SlidersHorizontal size={16} className="text-[var(--brand)]" />}>
+        <Card title="PreferÃªncias da interface" right={<SlidersHorizontal size={16} className="text-[var(--brand)]" />}>
           <label className="block rounded-[18px] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm">
             <input
               type="checkbox"
@@ -126,7 +126,7 @@ export function SettingsPage() {
             />{' '}
             <span className="ml-1">Alertas locais</span>
           </label>
-          <Button className="mt-4" onClick={savePrefs}>Salvar preferências</Button>
+          <Button className="mt-4" onClick={savePrefs}>Salvar preferÃªncias</Button>
         </Card>
       </div>
 
@@ -134,3 +134,4 @@ export function SettingsPage() {
     </div>
   );
 }
+

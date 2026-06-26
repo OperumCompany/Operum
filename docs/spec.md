@@ -1,7 +1,7 @@
 # Specification - Operum
 
 > Especificacao funcional, contratos de API e regras de produto.
-> Ultima atualizacao: 01/06/2026
+> Ultima atualizacao: 26/06/2026
 
 ---
 
@@ -13,6 +13,9 @@ O Operum cobre quatro blocos principais:
 - modulo de carteiras com CRUD, detalhamento por classe e analise financeira
 - motor financeiro com funcoes puras
 - camada de IA interna para analise por ativo e sintese da carteira
+
+Fora de escopo por enquanto:
+- ativos de renda fixa, incluindo Tesouro Direto, CDB, LCI/LCA e poupanca
 
 ---
 
@@ -37,7 +40,6 @@ O Operum cobre quatro blocos principais:
 - Oficiais:
   - CVM
   - B3
-  - Tesouro Nacional / Tesouro Direto
   - BCB com cobertura parcial
 - Editoriais:
   - Folha Mercado
@@ -137,6 +139,11 @@ GET /assets/search?q=petr
 GET /market/price/{ticker}
 GET /market/history/{ticker}?period=6mo&interval=1d
 ```
+
+**Fontes de dados de mercado**
+- brapi e a fonte primaria para ativos de renda variavel listados no Brasil, incluindo acoes, FIIs, BDRs, ETFs e indices suportados.
+- Yahoo Finance e fallback para tickers `.SA`/B3 e fonte direta para criptoativos e indices globais quando a brapi nao cobrir.
+- A variavel `BRAPI_TOKEN` pode ser definida no ambiente para chamadas autenticadas.
 
 ### 3.4 News
 
@@ -281,7 +288,7 @@ class Asset(BaseModel):
     currency: str
     sector: str
     sub_type: str = ""
-    source: str = "yfinance"
+    source: str = "brapi"
 ```
 
 ### 4.2 Portfolio

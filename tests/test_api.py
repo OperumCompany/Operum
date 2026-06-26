@@ -192,7 +192,7 @@ async def test_news_query_and_pagination_metadata(client: AsyncClient):
 
 @pytest.mark.asyncio
 async def test_news_backfill_accepts_source_scope(client: AsyncClient):
-    resp = await client.post("/api/news/backfill?start_date=2026-05-01&source_id=tesouro_noticias")
+    resp = await client.post("/api/news/backfill?start_date=2026-05-01&source_id=b3_comunicados")
     assert resp.status_code == 200
     data = resp.json()
     assert data["status"] == "ok"

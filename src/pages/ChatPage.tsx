@@ -1,4 +1,4 @@
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+﻿import { FormEvent, useEffect, useMemo, useState } from 'react';
 import { BookOpenText } from 'lucide-react';
 import { Button, Card, Input } from '../components/UI';
 import { useAuth } from '../context/AuthContext';
@@ -8,11 +8,11 @@ import { getScopedStorageKey, readStorage, storageKeys, writeStorage } from '../
 import { getActivePortfolioSelectionLabel, getPortfolioLabel } from '../utils/portfolios';
 import api from '../utils/api';
 
-const suggestions = ['O que é renda fixa?', 'O que é inflação?', 'O que significa liquidez?', 'Como está a carteira ativa?'];
+const suggestions = ['O que e renda variavel?', 'O que e inflacao?', 'O que significa liquidez?', 'Como esta a carteira ativa?'];
 const initialGuide: ChatMessage[] = [{
   id: 'guide-1',
   role: 'assistant',
-  content: 'Este espaço funciona como um guia rápido. Você pode tirar dúvidas básicas de investimentos e pedir um resumo simples da carteira ativa.',
+  content: 'Este espaÃ§o funciona como um guia rÃ¡pido. VocÃª pode tirar dÃºvidas bÃ¡sicas de investimentos e pedir um resumo simples da carteira ativa.',
   createdAt: '09:00',
 }];
 
@@ -24,17 +24,17 @@ function getPortfolioSummary(
 ) {
   const selectedPositions = selectedPortfolios.flatMap((p) => p.positions);
   if (!selectedPositions.length) {
-    return 'A carteira ativa ainda não possui ativos suficientes para uma leitura personalizada.';
+    return 'A carteira ativa ainda nÃ£o possui ativos suficientes para uma leitura personalizada.';
   }
 
   const topPos = [...selectedPositions].sort((a, b) => b.quantity - a.quantity)[0];
   const assetName = assets.find((item) => item.ticker === topPos.ticker)?.name ?? topPos.ticker;
   if (isAllPortfoliosSelected) {
-    return `No consolidado de todas as carteiras, o maior peso hoje está em ${assetName} com ${topPos.quantity} unidades.`;
+    return `No consolidado de todas as carteiras, o maior peso hoje estÃ¡ em ${assetName} com ${topPos.quantity} unidades.`;
   }
   return activePortfolio
-    ? `Na carteira ativa ${getPortfolioLabel(activePortfolio)}, o maior peso hoje está em ${assetName} com ${topPos.quantity} unidades.`
-    : 'Nenhuma carteira foi selecionada para análise.';
+    ? `Na carteira ativa ${getPortfolioLabel(activePortfolio)}, o maior peso hoje estÃ¡ em ${assetName} com ${topPos.quantity} unidades.`
+    : 'Nenhuma carteira foi selecionada para anÃ¡lise.';
 }
 
 function answer(
@@ -45,24 +45,24 @@ function answer(
   isAllPortfoliosSelected: boolean,
 ): string {
   const normalized = text.toLowerCase();
-  if (normalized.includes('carteira ativa') || normalized.includes('como está')) {
+  if (normalized.includes('carteira ativa') || normalized.includes('como estÃ¡')) {
     return getPortfolioSummary(assets, activePortfolio, selectedPortfolios, isAllPortfoliosSelected);
   }
-  if (normalized.includes('renda fixa')) {
-    return 'Renda fixa reúne investimentos com regras de rendimento mais previsíveis, como CDB e Tesouro. O risco e a liquidez mudam conforme o emissor e o prazo.';
+  if (normalized.includes('renda variavel') || normalized.includes('renda variavel')) {
+    return 'Renda variavel reune ativos como acoes, FIIs, BDRs, ETFs e cripto. O retorno oscila com preco de mercado, resultados, juros, liquidez e expectativas.';
   }
-  if (normalized.includes('inflação')) {
-    return 'Inflação é a alta geral de preços. Quando sobe, o dinheiro compra menos coisas e isso influencia juros e investimentos.';
+  if (normalized.includes('inflaÃ§Ã£o')) {
+    return 'InflaÃ§Ã£o Ã© a alta geral de preÃ§os. Quando sobe, o dinheiro compra menos coisas e isso influencia juros e investimentos.';
   }
   if (normalized.includes('liquidez')) {
-    return 'Liquidez é a facilidade de transformar um ativo em dinheiro sem perder valor de forma relevante.';
+    return 'Liquidez Ã© a facilidade de transformar um ativo em dinheiro sem perder valor de forma relevante.';
   }
-  if (normalized.includes('cdb') || normalized.includes('tesouro')) {
-    return 'CDB é emitido por banco e pode ter cobertura do FGC dentro dos limites. Tesouro é título público e costuma ser visto como opção de risco mais baixo.';
+  if (normalized.includes('acao') || normalized.includes('acoes') || normalized.includes('fii') || normalized.includes('bdr')) {
+    return 'Para renda variavel, observe liquidez, setor, concentracao, historico de precos, noticias relevantes e como o ativo se encaixa na carteira.';
   }
   return activePortfolio || isAllPortfoliosSelected
-    ? `Posso ajudar com conceitos de mercado e também comentar ${isAllPortfoliosSelected ? 'o consolidado de todas as carteiras' : `a carteira ativa ${getPortfolioLabel(activePortfolio!)}`} com linguagem simples.`
-    : 'Posso ajudar com conceitos de mercado, risco, diversificação, inflação, juros e classes de ativos com linguagem simples.';
+    ? `Posso ajudar com conceitos de mercado e tambÃ©m comentar ${isAllPortfoliosSelected ? 'o consolidado de todas as carteiras' : `a carteira ativa ${getPortfolioLabel(activePortfolio!)}`} com linguagem simples.`
+    : 'Posso ajudar com conceitos de mercado, risco, diversificaÃ§Ã£o, inflaÃ§Ã£o, juros e classes de ativos com linguagem simples.';
 }
 
 export function ChatPage() {
@@ -117,22 +117,22 @@ export function ChatPage() {
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-soft)] px-4 py-2 text-sm font-semibold">
               <BookOpenText size={16} />
-              Guia rápido de investimentos
+              Guia rÃ¡pido de investimentos
             </div>
             <h2 className="mt-4 text-3xl font-bold">Perguntas frequentes com linguagem simples</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
-              Use este guia para revisar conceitos do mercado e pedir um resumo básico da carteira ativa.
+              Use este guia para revisar conceitos do mercado e pedir um resumo bÃ¡sico da carteira ativa.
             </p>
             <p className="mt-3 text-sm font-semibold text-[var(--brand)]">
               Contexto atual: {getActivePortfolioSelectionLabel(activePortfolio, isAllPortfoliosSelected)}
             </p>
           </div>
           <div className="rounded-[24px] bg-white p-4 text-sm text-[var(--text-muted)]">
-            <p className="font-semibold text-[var(--text-main)]">{lastCount} mensagens no histórico</p>
+            <p className="font-semibold text-[var(--text-main)]">{lastCount} mensagens no histÃ³rico</p>
             <p className="mt-1">
               {isAllPortfoliosSelected
                 ? `Leitura baseada em ${selectedPortfolios.length} carteiras.`
-                : 'Use as sugestões abaixo para começar mais rápido.'}
+                : 'Use as sugestÃµes abaixo para comeÃ§ar mais rÃ¡pido.'}
             </p>
           </div>
         </div>
@@ -164,10 +164,11 @@ export function ChatPage() {
           ))}
         </div>
         <form onSubmit={onSubmit} className="mt-4 flex gap-2">
-          <Input value={text} onChange={(e) => setText(e.target.value)} placeholder="Digite sua dúvida" />
+          <Input value={text} onChange={(e) => setText(e.target.value)} placeholder="Digite sua dÃºvida" />
           <Button type="submit">Enviar</Button>
         </form>
       </Card>
     </div>
   );
 }
+

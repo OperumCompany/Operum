@@ -153,7 +153,7 @@ class PortfolioOpinionService:
     def _asset_function(self, asset) -> str:
         if asset is None:
             return "diversificacao"
-        if asset.asset_class in {"FII", "FIXED_INCOME"}:
+        if asset.asset_class == "FII":
             return "renda"
         if asset.asset_class == "CRYPTO":
             return "assimetria"
@@ -231,7 +231,6 @@ class PortfolioOpinionService:
         )
         crypto_weight = class_weights.get("CRYPTO", 0.0)
         fii_weight = class_weights.get("FII", 0.0)
-        fixed_weight = class_weights.get("FIXED_INCOME", 0.0)
 
         benchmark = analysis.get("benchmark", {})
         benchmark_return = benchmark.get(
@@ -254,8 +253,6 @@ class PortfolioOpinionService:
         strengths = []
         if len(class_weights) >= 4:
             strengths.append("A carteira tem boa diversificacao entre classes de ativos, o que reduz a dependencia de um unico mercado.")
-        if fixed_weight > 0:
-            strengths.append("Existe um bloco mais defensivo em renda fixa ou caixa, o que ajuda a suavizar a volatilidade do conjunto.")
         if us_weight > 0.15:
             strengths.append("A exposicao internacional amplia o acesso a dolar e a motores de crescimento fora do mercado domestico.")
         if any(all_assets.get(ticker) and all_assets[ticker].asset_class == "BR_STOCK" for ticker in weights):
@@ -362,15 +359,6 @@ class PortfolioOpinionService:
                         if block_return is not None
                         else f"Peso agregado aproximado de {us_weight * 100:.1f}% em ativos ligados aos EUA."
                     ),
-                }
-            )
-
-        if fixed_weight > 0:
-            block_reviews.append(
-                {
-                    "title": "Renda fixa",
-                    "assessment": "Bloco defensivo util para equilibrio da carteira.",
-                    "highlights": f"Peso aproximado de {fixed_weight * 100:.1f}% na composicao.",
                 }
             )
 
