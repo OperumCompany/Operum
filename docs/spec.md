@@ -1,27 +1,62 @@
 # Specification - Operum
 
 > Especificacao funcional, contratos de API e regras de produto.
-> Ultima atualizacao: 26/06/2026
+> Ultima atualizacao: 01/07/2026
 
 ---
 
 ## 1. Escopo
 
-O Operum cobre quatro blocos principais:
+O Operum cobre os seguintes blocos principais do MVP:
 
-- modulo de noticias com ingestao multi-fonte, historico local e filtros
+- autenticacao e sessao
+- preferencias do usuario
 - modulo de carteiras com CRUD, detalhamento por classe e analise financeira
-- motor financeiro com funcoes puras
+- modulo de dados de mercado para preco atual e historico
+- modulo de noticias com ingestao multi-fonte, historico local e filtros
+- dashboard resumido e dashboard tecnico
+- chatbot educativo contextual
 - camada de IA interna para analise por ativo e sintese da carteira
+- observabilidade basica, logs e status do sistema
 
 Fora de escopo por enquanto:
-- ativos de renda fixa, incluindo Tesouro Direto, CDB, LCI/LCA e poupanca
+- sistema de pagamento
+- integracao com corretoras
+- execucao de ordens
+- recomendacao automatica de compra e venda
+- aplicativo mobile nativo
+- painel administrativo completo
+- social features
+- suporte robusto a renda fixa analitica, incluindo Tesouro Direto, CDB, LCI/LCA e poupanca
 
 ---
 
 ## 2. Requisitos Funcionais
 
-### 2.1 Modulo de Noticias
+### 2.1 Autenticacao e Sessao
+
+| ID | Requisito | Prioridade |
+|----|-----------|-----------|
+| A-01 | Permitir cadastro de usuario com nome, email e senha | Alta |
+| A-02 | Garantir unicidade de email | Alta |
+| A-03 | Permitir login com email e senha | Alta |
+| A-04 | Persistir sessao autenticada por token | Alta |
+| A-05 | Permitir logout explicito | Alta |
+| A-06 | Permitir alteracao de senha mediante senha atual valida | Alta |
+| A-07 | Bloquear acesso a rotas privadas sem autenticacao | Alta |
+| A-08 | Responder com erro claro para credenciais invalidas | Alta |
+
+### 2.2 Preferencias do Usuario
+
+| ID | Requisito | Prioridade |
+|----|-----------|-----------|
+| P-01 | Permitir salvar temas de noticias de interesse | Alta |
+| P-02 | Permitir salvar preferencia de modo compacto | Media |
+| P-03 | Permitir salvar preferencia de alertas locais | Media |
+| P-04 | Retornar preferencias do usuario autenticado | Alta |
+| P-05 | Aplicar fallback para preferencias padrao quando nao houver registro salvo | Alta |
+
+### 2.3 Modulo de Noticias
 
 | ID | Requisito | Prioridade |
 |----|-----------|-----------|
@@ -35,6 +70,7 @@ Fora de escopo por enquanto:
 | N-08 | Suportar busca textual server-side e filtros combinados | Alta |
 | N-09 | Suportar `reindex` e `backfill` por fonte | Alta |
 | N-10 | Relacionar noticias a ativos, setores e contexto macro | Alta |
+| N-11 | Permitir abrir detalhe da noticia com resumo e link original | Alta |
 
 **Fontes suportadas**
 - Oficiais:
@@ -61,23 +97,56 @@ Fora de escopo por enquanto:
 - `macro_only`
 - `q`
 
-### 2.2 Modulo de Carteiras
+### 2.4 Modulo de Carteiras
 
 | ID | Requisito | Prioridade |
 |----|-----------|-----------|
 | C-01 | Criar carteira com nome e moeda base | Alta |
 | C-02 | Listar carteiras do usuario com paginacao local de 10 por pagina | Alta |
 | C-03 | Limitar a 50 carteiras no total | Alta |
-| C-04 | Excluir carteira individualmente | Alta |
-| C-05 | Excluir carteiras em lote por modo de selecao | Alta |
-| C-06 | Adicionar ativo com ticker, quantidade e preco medio | Alta |
-| C-07 | Remover posicao da carteira | Alta |
-| C-08 | Exibir tabelas por classe de ativo na tela de detalhe | Alta |
-| C-09 | Exibir precos atuais, valor total e peso por posicao | Alta |
-| C-10 | Exibir analise financeira e noticias relacionadas | Alta |
-| C-11 | Exibir analise por IA por ativo e geral da carteira | Alta |
+| C-04 | Editar nome da carteira | Alta |
+| C-05 | Excluir carteira individualmente | Alta |
+| C-06 | Excluir carteiras em lote por modo de selecao | Alta |
+| C-07 | Adicionar ativo com ticker, quantidade e preco medio opcional | Alta |
+| C-08 | Remover posicao da carteira | Alta |
+| C-09 | Exibir tabelas por classe de ativo na tela de detalhe | Alta |
+| C-10 | Exibir precos atuais, valor total, P&L e peso por posicao | Alta |
+| C-11 | Exibir noticias relacionadas a carteira | Alta |
+| C-12 | Exibir analise por IA por ativo e geral da carteira | Alta |
+| C-13 | Permitir selecao de carteira ativa no frontend | Alta |
 
-### 2.3 Motor Financeiro
+### 2.5 Dados de Mercado
+
+| ID | Requisito | Prioridade |
+|----|-----------|-----------|
+| M-01 | Retornar preco atual de ativos suportados | Alta |
+| M-02 | Retornar historico de preco por periodo e intervalo | Alta |
+| M-03 | Utilizar fonte primaria e fallback quando necessario | Alta |
+| M-04 | Expor erros claros para tickers nao suportados ou sem cobertura | Alta |
+
+### 2.6 Dashboard e Visualizacoes
+
+| ID | Requisito | Prioridade |
+|----|-----------|-----------|
+| D-01 | Exibir resumo da carteira em foco | Alta |
+| D-02 | Exibir composicao da carteira por ativos ou classes | Alta |
+| D-03 | Exibir noticias relacionadas no dashboard resumido | Alta |
+| D-04 | Exibir opiniao geral da carteira | Alta |
+| D-05 | Exibir dashboard tecnico complementar para usuarios que queiram profundidade | Media |
+| D-06 | Suportar estado vazio quando nao houver carteira ou ativos | Alta |
+| D-07 | Suportar sucesso parcial quando um bloco falhar e outro carregar | Alta |
+
+### 2.7 Chatbot Educativo
+
+| ID | Requisito | Prioridade |
+|----|-----------|-----------|
+| CH-01 | Permitir envio de mensagens de texto pelo usuario | Alta |
+| CH-02 | Responder duvidas educativas basicas sobre investimentos | Alta |
+| CH-03 | Usar carteira ativa como contexto quando aplicavel | Media |
+| CH-04 | Nao emitir recomendacao direta de compra ou venda | Alta |
+| CH-05 | Manter historico local de conversa por usuario | Media |
+
+### 2.8 Motor Financeiro
 
 | ID | Funcao | Prioridade |
 |----|--------|-----------|
@@ -103,7 +172,7 @@ Fora de escopo por enquanto:
 | F-20 | compute_capm_expected_return | Media |
 | F-21 | compute_cagr | Media |
 
-### 2.4 IA Interna
+### 2.9 IA Interna
 
 | ID | Requisito | Prioridade |
 |----|-----------|-----------|
@@ -114,6 +183,7 @@ Fora de escopo por enquanto:
 | AI-05 | Gerar analise individual por ativo sem LLM externa | Alta |
 | AI-06 | Gerar sintese geral da carteira com foco em composicao | Alta |
 | AI-07 | Separar noticia de ativo, setor e macro na analise | Alta |
+| AI-08 | Explicitar baixa confianca quando faltarem dados suficientes | Alta |
 
 ---
 
@@ -126,14 +196,64 @@ GET /health
 Response: { "status": "ok", "timestamp": "..." }
 ```
 
-### 3.2 Assets
+### 3.2 Auth
+
+```http
+POST /auth/register
+Body:
+{
+  "name": "Tomaz",
+  "email": "tomaz@operum.app",
+  "password": "Operum123"
+}
+```
+
+```http
+POST /auth/login
+Body:
+{
+  "email": "tomaz@operum.app",
+  "password": "Operum123"
+}
+Response:
+{
+  "token": "...",
+  "user": User
+}
+```
+
+```http
+GET /auth/me
+POST /auth/logout
+PUT /auth/password
+Body:
+{
+  "current_password": "old",
+  "new_password": "new"
+}
+```
+
+### 3.3 Preferences
+
+```http
+GET /auth/preferences
+PUT /auth/preferences
+Body:
+{
+  "topics": ["Inflacao", "Juros", "Acoes"],
+  "compactMode": false,
+  "notifications": true
+}
+```
+
+### 3.4 Assets
 
 ```http
 GET /assets/universe
 GET /assets/search?q=petr
 ```
 
-### 3.3 Market
+### 3.5 Market
 
 ```http
 GET /market/price/{ticker}
@@ -145,7 +265,7 @@ GET /market/history/{ticker}?period=6mo&interval=1d
 - Yahoo Finance e fallback para tickers `.SA`/B3 e fonte direta para criptoativos e indices globais quando a brapi nao cobrir.
 - A variavel `BRAPI_TOKEN` pode ser definida no ambiente para chamadas autenticadas.
 
-### 3.4 News
+### 3.6 News
 
 ```http
 GET /news
@@ -186,7 +306,7 @@ Body:
 }
 ```
 
-### 3.5 Portfolios
+### 3.7 Portfolios
 
 ```http
 GET /portfolios
@@ -203,7 +323,7 @@ GET /portfolios/{id}/news
 GET /portfolios/{id}/scenarios
 ```
 
-### 3.6 Models
+### 3.8 Models
 
 ```http
 GET /models/status
@@ -277,7 +397,26 @@ GET /models/opinion/{portfolio_id}/positions/{ticker}
 
 ## 4. Formatos de Dados
 
-### 4.1 Asset
+### 4.1 User
+
+```python
+class User(BaseModel):
+    id: str
+    name: str
+    email: str
+    created_at: datetime
+```
+
+### 4.2 Preferences
+
+```python
+class UserPreferences(BaseModel):
+    topics: list[str] = []
+    compactMode: bool = False
+    notifications: bool = True
+```
+
+### 4.3 Asset
 
 ```python
 class Asset(BaseModel):
@@ -291,7 +430,7 @@ class Asset(BaseModel):
     source: str = "brapi"
 ```
 
-### 4.2 Portfolio
+### 4.4 Portfolio
 
 ```python
 class Position(BaseModel):
@@ -317,7 +456,7 @@ class Portfolio(BaseModel):
     settings: PortfolioSettings = PortfolioSettings()
 ```
 
-### 4.3 NewsItem
+### 4.5 NewsItem
 
 ```python
 class NewsItem(BaseModel):
@@ -346,28 +485,78 @@ class NewsItem(BaseModel):
     created_at: datetime
 ```
 
+### 4.6 ChatMessage
+
+```python
+class ChatMessage(BaseModel):
+    id: str
+    role: Literal["user", "assistant"]
+    content: str
+    created_at: str
+```
+
 ---
 
 ## 5. Regras de UX
 
-### 5.1 Noticias
+### 5.1 Estados de Tela
+
+Toda tela principal do MVP deve suportar, quando aplicavel:
+- estado vazio ou inicial
+- estado carregando
+- estado com sucesso
+- estado com erro
+- estado sem permissao ou indisponibilidade
+
+Telas analiticas tambem devem suportar:
+- sucesso parcial
+- dados insuficientes
+- processamento de analise
+
+### 5.2 Login e Cadastro
+
+- Formularios exibem feedback inline para erro e sucesso
+- Rotas privadas redirecionam para login quando a sessao nao for valida
+- Sessao em validacao exibe estado de carregamento
+
+### 5.3 Noticias
+
 - Lista paginada com 30 itens por pagina
 - Navegacao com setas e paginas numeradas
 - Busca e filtros sempre reiniciam a pagina para `1`
 - Modal exibe resumo em 2 paragrafos
 
-### 5.2 Carteiras
+### 5.4 Carteiras
+
 - Tela de listagem com 10 carteiras por pagina e maximo de 5 paginas
 - Exclusao em lote e ativada por icone de lixeira no topo da secao
 - Cada card continua com lixeira individual
+- Estado vazio orienta o usuario a criar a primeira carteira
 
-### 5.3 Carteira em Detalhe
+### 5.5 Carteira em Detalhe
+
 - Tabelas por classe de ativo
 - Analise geral da carteira em card dedicado
 - Botao de estrela por ativo para analise individual
 - Fontes agrupadas por origem tanto na analise por ativo quanto na analise geral
+- Quando um bloco falhar, a tela deve manter os demais blocos disponiveis
 
-### 5.4 Regras da IA
+### 5.6 Dashboard
+
+- Deve destacar a carteira em foco
+- Deve mostrar composicao, resumo e proximos passos
+- Deve reaproveitar noticias relacionadas e opiniao geral
+- Deve suportar estado vazio sem quebrar a navegacao
+
+### 5.7 Chatbot
+
+- Deve usar linguagem simples
+- Deve sugerir perguntas rapidas
+- Deve mostrar contexto da carteira ativa quando houver
+- Nao deve soar como recomendacao de compra ou venda
+
+### 5.8 Regras da IA
+
 - Nunca emitir recomendacao direta de compra ou venda
 - Explicitar baixa confianca quando faltarem dados
 - Priorizar:
@@ -387,7 +576,7 @@ class NewsItem(BaseModel):
   - `sector`
   - `macro`
 - O ranking da analise por ativo considera:
-  - match direto por ticker/alias
+  - match direto por ticker ou alias
   - compatibilidade por setor e pais
   - recencia
   - impacto e relevancia
@@ -396,19 +585,37 @@ class NewsItem(BaseModel):
 
 ---
 
-## 7. Criterios de Aceite
+## 7. Regras de Seguranca e Sessao
 
-- `GET /news` retorna `page_size=30` e `total_pages`
-- `POST /news/backfill` aceita `source_id` opcional
-- `GET /models/opinion/{portfolio_id}/positions/{ticker}` retorna `historical_window`, `source_groups` e `used_news_count`
-- noticias oficiais e editoriais coexistem no acervo sem quebrar resumo, scoring ou clustering
-- a analise do ativo usa noticias do periodo quando o historico de preco for insuficiente
-- a UI de fontes agrupadas funciona tanto na analise do ativo quanto na analise da carteira
+- Senhas nunca devem ser persistidas em texto puro
+- Tokens e chaves nao devem ficar expostos no frontend
+- Usuario so pode acessar suas proprias carteiras, preferencias e analises
+- Token invalido deve bloquear o acesso e forcar novo login
+- Logout deve invalidar a sessao local mesmo que a chamada remota falhe
 
 ---
 
-## 8. Observacoes Operacionais
+## 8. Criterios de Aceite
+
+- `POST /auth/register` cria conta com email unico
+- `POST /auth/login` retorna token e usuario quando as credenciais sao validas
+- `PUT /auth/password` exige senha atual valida
+- `GET /auth/preferences` retorna preferencias do usuario autenticado ou fallback padrao
+- `PUT /auth/preferences` persiste temas e preferencia de interface
+- `GET /news` retorna `page_size=30` e `total_pages`
+- `POST /news/backfill` aceita `source_id` opcional
+- `GET /models/opinion/{portfolio_id}/positions/{ticker}` retorna `historical_window`, `source_groups` e `used_news_count`
+- Noticias oficiais e editoriais coexistem no acervo sem quebrar resumo, scoring ou clustering
+- A analise do ativo usa noticias do periodo quando o historico de preco for insuficiente
+- A UI de fontes agrupadas funciona tanto na analise do ativo quanto na analise da carteira
+- A listagem de carteiras respeita o limite de 50 no backend e 10 por pagina no frontend
+- O chatbot responde perguntas educativas sem emitir recomendacao transacional
+
+---
+
+## 9. Observacoes Operacionais
 
 - Backend roda na porta `8001`
 - O startup faz ingestao e aquecimento em background para nao bloquear a inicializacao
 - O BCB permanece no catalogo, mas hoje pode retornar pouco ou nada por limitacao tecnica do portal publico
+- Falhas de fonte externa devem degradar apenas o bloco afetado sempre que possivel

@@ -16,6 +16,7 @@ Plataforma full-stack para acompanhamento de carteiras de investimento, leitura 
 - Python 3.11+
 - FastAPI
 - Pydantic v2
+- Supabase Postgres para persistencia transacional online
 - yfinance para precos
 - Ingestao de noticias por RSS e listagens oficiais/editoriais abertas
 - scikit-learn, XGBoost, LightGBM
@@ -32,6 +33,11 @@ Frontend (React/Vite) <-> API (FastAPI) <-> Services <-> LocalStorageService
 
 O projeto e um monorepo com frontend em `src/` e backend em `app/`.
 
+O backend agora opera em modo dual:
+
+- `Supabase Postgres` para usuarios, sessoes, preferencias, carteiras e posicoes quando `SUPABASE_DB_URL` estiver configurada
+- `LocalStorageService` para noticias, caches, modelos e fallback local
+
 ## Setup
 
 ### Backend
@@ -42,6 +48,22 @@ venv\Scripts\activate
 pip install -r requirements.txt
 uvicorn app.main:app --reload --port 8001
 ```
+
+Variaveis recomendadas para producao:
+
+- `SUPABASE_DB_URL`
+- `SUPABASE_URL`
+- `SUPABASE_SECRET_KEY`
+- `SUPABASE_DB_SCHEMA`
+- `OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP`
+- `OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP`
+- `OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP`
+
+Observacao:
+
+- em desenvolvimento, o backend carrega `.env` automaticamente
+- em producao, use variaveis do provedor do backend
+- nao envie `SUPABASE_SECRET_KEY` ou `SUPABASE_DB_URL` para o Vercel se ele hospedar apenas o frontend
 
 ### Frontend
 
@@ -83,7 +105,7 @@ Credenciais locais de desenvolvimento:
 - yfinance news
 
 ### Carteiras
-- CRUD de carteiras com persistencia local
+- CRUD de carteiras com persistencia no Supabase quando configurado
 - Limite de 50 carteiras, em ate 5 paginas de 10 itens
 - Exclusao individual e exclusao em lote por modo de selecao na interface
 - Posicoes com quantidade e preco medio
@@ -168,12 +190,16 @@ npm run preview
 # Backend
 uvicorn app.main:app --reload --port 8001
 pytest tests/ -q
+
+# Migracao local -> Supabase
+python scripts/migrate_local_to_supabase.py
 ```
 
 ## Documentacao
 
 - `docs/compendium.md` - base de conhecimento consolidada
 - `docs/spec.md` - especificacao funcional e contratos de API
+- `docs/deployment-security.md` - regras de segredos e deploy seguro
 - `skillsFront.md` - guia para alteracoes no frontend
 - `skillsBack.md` - guia para alteracoes no backend
 

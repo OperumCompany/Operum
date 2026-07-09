@@ -1,4 +1,7 @@
 from datetime import datetime, timezone
+import os
+
+os.environ["OPERUM_STORAGE_MODE"] = "local"
 
 from app.schemas.news import NewsItem
 from app.services.asset_analysis_service import AssetAnalysisService

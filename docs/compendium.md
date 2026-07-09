@@ -1,7 +1,7 @@
 # Compendium - Operum
 
 > Base de conhecimento consolidada do projeto.
-> Ultima atualizacao: 26/06/2026
+> Ultima atualizacao: 01/07/2026
 
 ---
 
@@ -15,6 +15,8 @@ O Operum e uma aplicacao full-stack para:
 
 O produto hoje combina calculo financeiro classico, ingestao local de noticias e geracao deterministica de analise sem dependencia de LLM externa.
 
+O projeto entrou em fase de preparacao para deploy online com frontend em Vercel e banco principal no Supabase.
+
 ---
 
 ## 2. Stack Tecnologica
@@ -27,6 +29,8 @@ O produto hoje combina calculo financeiro classico, ingestao local de noticias e
 | Roteamento | React Router DOM |
 | Backend | Python 3.11+ + FastAPI |
 | Persistencia | JSON + Parquet via `LocalStorageService` |
+| Banco online alvo | Supabase Postgres |
+| Deploy alvo | Vercel para frontend e camada web |
 | Precos | brapi primaria + Yahoo Finance fallback |
 | Noticias | RSS + listagens oficiais/editoriais abertas |
 | ML | scikit-learn, XGBoost, LightGBM |
@@ -36,8 +40,17 @@ O produto hoje combina calculo financeiro classico, ingestao local de noticias e
 
 ## 3. Arquitetura
 
+### Estado atual
+
 ```text
 Frontend -> API FastAPI -> Services -> LocalStorageService -> data/
+```
+
+### Arquitetura alvo para deploy online
+
+```text
+Vercel Frontend -> API FastAPI -> Services -> Supabase Postgres
+                                      -> arquivos/caches locais ou servico separado para dados pesados
 ```
 
 ### Camadas principais
@@ -56,9 +69,99 @@ Frontend -> API FastAPI -> Services -> LocalStorageService -> data/
   - modelos
   - cache
 
+### Estado da migracao
+
+- Schema inicial do Supabase criado com:
+  - `app_users`
+  - `auth_sessions`
+  - `user_preferences`
+  - `portfolios`
+  - `portfolio_positions`
+- Variaveis de ambiente de Supabase configuradas no projeto
+- Backend ainda usa `LocalStorageService` como fonte principal de dados neste momento
+- Proxima etapa prevista: migrar `AuthService`, `PortfolioService` e preferencias para Supabase
+
 ---
 
-## 4. Modulo de Noticias
+## 4. Estrategia de Persistencia para Vercel + Supabase
+
+### Vai para Supabase Postgres
+
+Dados transacionais e relacionais do produto:
+
+- usuarios da aplicacao
+- sessoes autenticadas do backend atual
+- preferencias do usuario
+- carteiras
+- posicoes da carteira
+- configuracoes leves da carteira
+- resultados persistidos importantes de analise
+  - score final
+  - resumo final
+  - data da ultima analise
+- noticias processadas e enxutas, quando fizer sentido manter historico consultavel
+  - titulo
+  - fonte
+  - url
+  - data
+  - ativos mencionados
+  - sentimento
+  - impacto
+  - resumo curto
+
+### Pode ir para Supabase Storage
+
+Apenas se houver necessidade real de armazenar arquivos:
+
+- exports
+- snapshots
+- relatorios gerados
+- pequenos artefatos de apoio ao produto
+
+### Nao deve ir para o Postgres do Supabase no MVP
+
+Dados pesados, temporarios ou recalculaveis:
+
+- modelos treinados
+- artefatos de treino
+- cache temporario de analise por ativo
+- historico bruto completo de noticias
+- texto bruto extenso de noticias
+- series historicas grandes para muitos ativos
+- logs detalhados de aplicacao
+- pipelines de ingestao ou treino batch
+
+### Racional da separacao
+
+- Vercel funciona bem para frontend e APIs leves
+- Supabase Postgres deve guardar dados relacionais do produto
+- dados pesados pressionam limite de armazenamento e CPU do plano free
+- caches e artefatos analiticos nao devem competir com dados criticos do usuario
+
+### Diretriz pratica
+
+Se o dado for:
+
+- do usuario
+- relacional
+- importante para persistencia online
+- consultado pela UI
+
+entao ele tende a ir para Supabase Postgres.
+
+Se o dado for:
+
+- pesado
+- bruto
+- temporario
+- derivado
+- recalculavel
+
+entao ele deve ficar fora do Postgres principal.
+
+---
+
+## 5. Modulo de Noticias
 
 ### Estado atual
 
@@ -125,7 +228,7 @@ Tambem limpa ruido de syndication, HTML e trechos como `The post ... appeared fi
 
 ---
 
-## 5. Analise por IA
+## 6. Analise por IA
 
 ### Filosofia atual
 
@@ -208,7 +311,7 @@ O sistema hoje identifica melhor temas como:
 
 ---
 
-## 6. Modulo de Carteiras
+## 7. Modulo de Carteiras
 
 ### Estado atual
 
@@ -229,7 +332,7 @@ O sistema hoje identifica melhor temas como:
 
 ---
 
-## 7. Modelos de Dados Relevantes
+## 8. Modelos de Dados Relevantes
 
 ### `NewsItem`
 
@@ -247,7 +350,7 @@ Esses metadados permitem:
 
 ---
 
-## 8. Endpoints que mais mudaram
+## 9. Endpoints que mais mudaram
 
 - `GET /api/news`
   - agora pagina no backend
@@ -266,25 +369,27 @@ Esses metadados permitem:
 
 ---
 
-## 9. Observacoes Operacionais
+## 10. Observacoes Operacionais
 
 - Startup do backend foi ajustado para nao bloquear por backfill longo.
 - Backfill e aquecimento de precos rodam em background.
 - O BCB foi mantido no desenho por valor institucional, mas nao deve ser tratado como fonte robusta enquanto a extracao publica continuar limitada.
 - Os testes usam storage isolado para nao deixar carteiras residuais no ambiente principal.
+- O deploy alvo usa Vercel para a camada web, entao jobs pesados e persistencia critica devem evitar dependencia de filesystem efemero.
 
 ---
 
-## 10. Estado de Validacao
+## 11. Estado de Validacao
 
 Ultimo estado conhecido apos as mudancas recentes:
 
 - `python -m pytest -q` passou com `40 passed`
 - `npm run build` passou
+- schema inicial do Supabase foi aplicado com sucesso no projeto configurado
 
 ---
 
-## 11. Direcao de Produto
+## 12. Direcao de Produto
 
 O produto hoje segue esta hierarquia para qualidade analitica:
 

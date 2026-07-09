@@ -6,7 +6,12 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import assets, auth, health, market, models, news, portfolios, status
-from app.core.config import CORS_ORIGINS
+from app.core.config import (
+    CORS_ORIGINS,
+    OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP,
+    OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP,
+    OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP,
+)
 
 logger = logging.getLogger(__name__)
 logging.getLogger("yfinance").setLevel(logging.CRITICAL)
@@ -28,6 +33,9 @@ STARTUP_PRICE_TICKERS = [
 
 
 def _run_news_backfill_async():
+    if not OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP:
+        logger.info("Backfill automatico desabilitado por configuracao")
+        return
     try:
         from app.services.news_ingestion_service import NewsIngestionService
 
@@ -40,6 +48,9 @@ def _run_news_backfill_async():
 
 
 def _warm_prices_async():
+    if not OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP:
+        logger.info("Aquecimento de precos desabilitado por configuracao")
+        return
     try:
         from app.services.market_data_service import MarketDataService
 
@@ -57,17 +68,22 @@ def _warm_prices_async():
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     logger.info("Inicializando Operum - buscando noticias e precos...")
-    try:
-        from app.services.news_ingestion_service import NewsIngestionService
+    if OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP:
+        try:
+            from app.services.news_ingestion_service import NewsIngestionService
 
-        ing = NewsIngestionService()
-        count = ing.ingest()
-        logger.info(f"Ingestao automatica: {count} noticias novas")
-    except Exception as e:
-        logger.warning(f"Falha na ingestao automatica de noticias: {e}")
+            ing = NewsIngestionService()
+            count = ing.ingest()
+            logger.info(f"Ingestao automatica: {count} noticias novas")
+        except Exception as e:
+            logger.warning(f"Falha na ingestao automatica de noticias: {e}")
+    else:
+        logger.info("Ingestao automatica de noticias desabilitada por configuracao")
 
-    threading.Thread(target=_run_news_backfill_async, daemon=True).start()
-    threading.Thread(target=_warm_prices_async, daemon=True).start()
+    if OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP:
+        threading.Thread(target=_run_news_backfill_async, daemon=True).start()
+    if OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP:
+        threading.Thread(target=_warm_prices_async, daemon=True).start()
     yield
 
 

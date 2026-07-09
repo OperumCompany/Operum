@@ -1,10 +1,10 @@
 {
   "ticker": "PETR4",
   "horizon_days": 5,
-  "train_r2": 0.905828,
-  "test_r2": -0.638239,
-  "rmse": 0.053387,
+  "train_r2": 0.910051,
+  "test_r2": -0.535846,
+  "rmse": 0.052162,
   "train_samples": 376,
   "test_samples": 94,
-  "trained_at": "2026-06-26T18:46:46.562422+00:00"
+  "trained_at": "2026-07-01T18:04:50.305851+00:00"
 }

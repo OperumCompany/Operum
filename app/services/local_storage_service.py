@@ -27,7 +27,7 @@ class LocalStorageService:
         full = os.path.join(self.base_dir, path)
         if not os.path.exists(full):
             return None
-        with open(full, "r", encoding="utf-8") as f:
+        with open(full, "r", encoding="utf-8-sig") as f:
             return json.load(f)
 
     def save_dataframe(self, path: str, df: pd.DataFrame) -> None:

@@ -4,6 +4,7 @@ import tempfile
 
 TEST_DATA_DIR = tempfile.mkdtemp(prefix="operum-test-data-")
 os.environ["OPERUM_DATA_DIR"] = TEST_DATA_DIR
+os.environ["OPERUM_STORAGE_MODE"] = "local"
 
 import pytest
 import pytest_asyncio

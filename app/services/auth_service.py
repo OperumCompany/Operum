@@ -1,8 +1,12 @@
 import hashlib
 import hmac
+import json
 import secrets
+import uuid
 from datetime import datetime, timezone
 
+from app.core.config import OPERUM_SEED_DEMO_USER, SUPABASE_DB_SCHEMA
+from app.db.postgres import PostgresClient
 from app.schemas.auth import (
     AuthResponse,
     LoginRequest,
@@ -18,6 +22,7 @@ from app.services.local_storage_service import LocalStorageService
 class AuthService:
     def __init__(self):
         self.storage = LocalStorageService()
+        self.db = PostgresClient(schema=SUPABASE_DB_SCHEMA)
         self._users_path = "auth/users.json"
         self._sessions_path = "auth/sessions.json"
         self._preferences_dir = "auth/preferences"
@@ -25,6 +30,8 @@ class AuthService:
         self._demo_password = "Operum123"
 
     def _ensure_seed_user(self, users: list[UserRecord]) -> list[UserRecord]:
+        if not OPERUM_SEED_DEMO_USER:
+            return users
         if any(user.email == self._demo_email for user in users):
             return users
 
@@ -41,17 +48,72 @@ class AuthService:
         return users
 
     def _load_users(self) -> list[UserRecord]:
+        if self.db.enabled:
+            if OPERUM_SEED_DEMO_USER:
+                self._ensure_seed_user_db()
+            rows = self.db.fetch_all(
+                """
+                select id::text as id, name, email, password_hash, created_at, updated_at
+                from public.app_users
+                order by created_at asc
+                """
+            )
+            return [UserRecord(**item) for item in rows]
         raw = self.storage.load_json(self._users_path) or []
         users = [UserRecord(**item) for item in raw]
         return self._ensure_seed_user(users)
 
     def _save_users(self, users: list[UserRecord]) -> None:
+        if self.db.enabled:
+            for user in users:
+                self.db.execute(
+                    """
+                    insert into public.app_users (id, name, email, password_hash, created_at, updated_at)
+                    values (%s::uuid, %s, %s, %s, %s, %s)
+                    on conflict (id) do update set
+                      name = excluded.name,
+                      email = excluded.email,
+                      password_hash = excluded.password_hash,
+                      updated_at = excluded.updated_at
+                    """,
+                    (user.id, user.name, user.email, user.password_hash, user.created_at, user.updated_at),
+                )
+            return
         self.storage.save_json(self._users_path, [user.model_dump(mode="json") for user in users])
 
     def _load_sessions(self) -> list[dict]:
+        if self.db.enabled:
+            return self.db.fetch_all(
+                """
+                select token, user_id::text as user_id, created_at
+                from public.auth_sessions
+                order by created_at asc
+                """
+            )
         return list(self.storage.load_json(self._sessions_path) or [])
 
     def _save_sessions(self, sessions: list[dict]) -> None:
+        if self.db.enabled:
+            existing = {item["token"] for item in self._load_sessions()}
+            next_tokens = {item["token"] for item in sessions}
+            tokens_to_delete = existing - next_tokens
+            if tokens_to_delete:
+                self.db.execute(
+                    "delete from public.auth_sessions where token = any(%s)",
+                    (list(tokens_to_delete),),
+                )
+            for session in sessions:
+                self.db.execute(
+                    """
+                    insert into public.auth_sessions (token, user_id, created_at)
+                    values (%s, %s::uuid, %s)
+                    on conflict (token) do update set
+                      user_id = excluded.user_id,
+                      created_at = excluded.created_at
+                    """,
+                    (session["token"], session["user_id"], session["created_at"]),
+                )
+            return
         self.storage.save_json(self._sessions_path, sessions)
 
     def _hash_password(self, password: str, salt: str | None = None) -> str:
@@ -77,6 +139,26 @@ class AuthService:
             updated_at=user.updated_at,
         )
 
+    def _ensure_seed_user_db(self) -> None:
+        row = self.db.fetch_one("select id from public.app_users where email = %s", (self._demo_email,))
+        if row:
+            return
+        now = datetime.now(timezone.utc)
+        self.db.execute(
+            """
+            insert into public.app_users (id, name, email, password_hash, created_at, updated_at)
+            values (%s::uuid, %s, %s, %s, %s, %s)
+            """,
+            (
+                str(uuid.uuid4()),
+                "Demo Operum",
+                self._demo_email,
+                self._hash_password(self._demo_password),
+                now,
+                now,
+            ),
+        )
+
     def register(self, data: RegisterRequest) -> AuthResponse:
         users = self._load_users()
         email = data.email.strip().lower()
@@ -85,7 +167,7 @@ class AuthService:
 
         now = datetime.now(timezone.utc)
         user = UserRecord(
-            id=secrets.token_hex(16),
+            id=str(uuid.uuid4()) if self.db.enabled else secrets.token_hex(16),
             name=data.name.strip(),
             email=email,
             password_hash=self._hash_password(data.password),
@@ -159,6 +241,26 @@ class AuthService:
         return self._to_public(record)
 
     def get_preferences(self, user_id: str) -> UserPreferences:
+        if self.db.enabled:
+            raw = self.db.fetch_one(
+                """
+                select topics, compact_mode, notifications
+                from public.user_preferences
+                where user_id = %s::uuid
+                """,
+                (user_id,),
+            )
+            if not raw:
+                return UserPreferences(
+                    topics=["InflaÃ§Ã£o", "Juros", "AÃ§Ãµes", "Exterior"],
+                    compactMode=False,
+                    notifications=True,
+                )
+            return UserPreferences(
+                topics=raw.get("topics") or [],
+                compactMode=bool(raw.get("compact_mode")),
+                notifications=bool(raw.get("notifications")),
+            )
         raw = self.storage.load_json(f"{self._preferences_dir}/{user_id}.json")
         if not raw:
             return UserPreferences(
@@ -169,5 +271,18 @@ class AuthService:
         return UserPreferences(**raw)
 
     def update_preferences(self, user_id: str, prefs: UserPreferences) -> UserPreferences:
+        if self.db.enabled:
+            self.db.execute(
+                """
+                insert into public.user_preferences (user_id, topics, compact_mode, notifications)
+                values (%s::uuid, %s::jsonb, %s, %s)
+                on conflict (user_id) do update set
+                  topics = excluded.topics,
+                  compact_mode = excluded.compact_mode,
+                  notifications = excluded.notifications
+                """,
+                (user_id, json.dumps(prefs.topics, ensure_ascii=False), prefs.compactMode, prefs.notifications),
+            )
+            return prefs
         self.storage.save_json(f"{self._preferences_dir}/{user_id}.json", prefs.model_dump(mode="json"))
         return prefs
