@@ -1,0 +1,16 @@
+2026-07-08 22:46:49 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:46:49 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:46:49 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:46:49 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:46:49 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:46:49 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:46:49 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:46:49 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+INFO:     Started server process [23960]
+INFO:     Waiting for application startup.
+2026-07-08 22:46:49 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-07-08 22:46:49 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:46:49 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:52975 - "GET /api/health HTTP/1.1" 200 OK

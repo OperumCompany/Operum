@@ -5,6 +5,10 @@ import tempfile
 TEST_DATA_DIR = tempfile.mkdtemp(prefix="operum-test-data-")
 os.environ["OPERUM_DATA_DIR"] = TEST_DATA_DIR
 os.environ["OPERUM_STORAGE_MODE"] = "local"
+os.environ["AI_ENABLED"] = "false"
+os.environ["AI_ENHANCE_ASSET_ANALYSIS"] = "false"
+os.environ["AI_ENHANCE_PORTFOLIO_ANALYSIS"] = "false"
+os.environ["AI_ENABLE_CHATBOT"] = "false"
 
 import pytest
 import pytest_asyncio
@@ -214,6 +218,8 @@ async def test_models_status(client: AsyncClient):
     assert resp.status_code == 200
     data = resp.json()
     assert "forecast_models" in data
+    assert "ai_local" in data
+    assert data["ai_local"]["enabled"] is False
 
 
 @pytest.mark.asyncio
@@ -328,3 +334,21 @@ async def test_cluster_news(client: AsyncClient):
         assert data["status"] == "ok"
     else:
         assert "Nenhuma" in data["detail"]
+
+
+@pytest.mark.asyncio
+async def test_chat_endpoint_with_fallback(client: AsyncClient):
+    headers = await auth_headers(client, "chat")
+    resp = await client.post(
+        "/api/chat",
+        headers=headers,
+        json={
+            "messages": [{"role": "user", "content": "O que e liquidez?"}],
+            "use_all_portfolios": False,
+        },
+    )
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["mode"] == "fallback"
+    assert isinstance(data["message"], str)
+    assert data["message"]

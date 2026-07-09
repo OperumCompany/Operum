@@ -4,10 +4,13 @@ from datetime import datetime, timezone
 
 import pandas as pd
 
+from app.core.config import AI_ENHANCE_PORTFOLIO_ANALYSIS
 from app.schemas.portfolio import Portfolio
 from app.services.asset_analysis_service import AssetAnalysisService
 from app.services.asset_universe_service import AssetUniverseService
 from app.services.forecast_service import ForecastService
+from app.services.llm_prompts import PORTFOLIO_ANALYSIS_REFINER_PROMPT
+from app.services.llm_service import LLMService
 from app.services.news_ingestion_service import NewsIngestionService
 from app.services.portfolio_analytics_service import PortfolioAnalyticsService
 
@@ -34,6 +37,7 @@ class PortfolioOpinionService:
         self.asset_analysis = AssetAnalysisService()
         self.assets = AssetUniverseService()
         self.forecast = ForecastService()
+        self.llm = LLMService()
 
     def generate_opinion(
         self,
@@ -79,6 +83,7 @@ class PortfolioOpinionService:
             prices_data or {},
             analysis_horizon,
         )
+        opinion = self._refine_opinion_text(opinion, analysis, analysis_horizon)
 
         return {
             "score": round(portfolio_score, 4),
@@ -105,6 +110,70 @@ class PortfolioOpinionService:
             "portfolio_id": portfolio.id,
             "generated_at": opinion["generated_at"],
         }
+
+    def _refine_opinion_text(self, opinion: dict, analysis: dict, analysis_horizon: str) -> dict:
+        if not self.llm.enabled or not AI_ENHANCE_PORTFOLIO_ANALYSIS:
+            return opinion
+
+        refined = self.llm.chat_json(
+            PORTFOLIO_ANALYSIS_REFINER_PROMPT,
+            {
+                "components": analysis.get("components"),
+                "weights": analysis.get("weights"),
+                "class_weights": analysis.get("class_weights"),
+                "benchmark": opinion.get("benchmark"),
+                "selected_analysis_horizon": analysis_horizon,
+                "headline": opinion.get("headline"),
+                "composition_summary": opinion.get("composition_summary"),
+                "strengths": opinion.get("strengths"),
+                "overlaps": opinion.get("overlaps"),
+                "block_reviews": opinion.get("block_reviews"),
+                "final_diagnosis": opinion.get("final_diagnosis"),
+                "conclusion": opinion.get("conclusion"),
+                "source_summary": [
+                    {"source_name": group.get("source_name"), "count": group.get("count")}
+                    for group in opinion.get("source_groups", [])[:6]
+                ],
+            },
+            temperature=0.15,
+            max_tokens=1200,
+        )
+        if not refined:
+            return opinion
+
+        for key in ["headline", "composition_summary", "final_diagnosis", "conclusion"]:
+            value = refined.get(key)
+            if isinstance(value, str) and value.strip():
+                opinion[key] = value.strip()
+
+        for key in ["strengths", "overlaps"]:
+            value = refined.get(key)
+            if isinstance(value, list):
+                cleaned = [item.strip() for item in value if isinstance(item, str) and item.strip()]
+                if cleaned:
+                    opinion[key] = cleaned
+
+        block_reviews = refined.get("block_reviews")
+        if isinstance(block_reviews, list):
+            cleaned_blocks = []
+            for item in block_reviews:
+                if not isinstance(item, dict):
+                    continue
+                title = item.get("title")
+                assessment = item.get("assessment")
+                highlights = item.get("highlights")
+                if all(isinstance(part, str) and part.strip() for part in [title, assessment, highlights]):
+                    cleaned_blocks.append(
+                        {
+                            "title": title.strip(),
+                            "assessment": assessment.strip(),
+                            "highlights": highlights.strip(),
+                        }
+                    )
+            if cleaned_blocks:
+                opinion["block_reviews"] = cleaned_blocks
+
+        return opinion
 
     def _compute_news_impact(self, portfolio: Portfolio) -> float:
         try:

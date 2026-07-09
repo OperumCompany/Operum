@@ -3,6 +3,10 @@ Write-Host "   Operum - Inicializacao rapida" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
+$projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$backendLog = Join-Path $projectDir "backend-start.log"
+$frontendLog = Join-Path $projectDir "frontend-start.log"
+
 # Kill any existing process on port 8001 (or port 8000 legacy)
 $oldPid = netstat -ano | Select-String ":8001 " | ForEach-Object { ($_ -split '\s+')[-1] } | Where-Object { $_ -ne '0' } | Select-Object -First 1
 if (-not $oldPid) {
@@ -16,10 +20,11 @@ if ($oldPid) {
 
 # Start backend in new window
 Write-Host "[1/2] Iniciando backend (FastAPI)..." -ForegroundColor Green
-cmd /c "start ""Operum Backend"" cmd /k python -m uvicorn app.main:app --host 0.0.0.0 --port 8001 --log-level error"
+Remove-Item $backendLog -ErrorAction SilentlyContinue
+Start-Process -FilePath "cmd.exe" -WorkingDirectory $projectDir -ArgumentList "/k", "cd /d `"$projectDir`" && python -m uvicorn app.main:app --host 0.0.0.0 --port 8001 --log-level info 1>> `"$backendLog`" 2>&1"
 
-# Retry health check until backend is ready (lifespan pode levar ~15s)
-$maxRetries = 15
+# Retry health check until backend is ready
+$maxRetries = 30
 $retryDelay = 2
 $backendOk = $false
 for ($i = 1; $i -le $maxRetries; $i++) {
@@ -39,12 +44,17 @@ for ($i = 1; $i -le $maxRetries; $i++) {
 }
 if (-not $backendOk) {
     Write-Host "  ERRO: Backend nao iniciou apos $($maxRetries * $retryDelay)s" -ForegroundColor Red
+    if (Test-Path $backendLog) {
+        Write-Host "  Ultimas linhas do backend:" -ForegroundColor Yellow
+        Get-Content $backendLog -Tail 20
+    }
     exit 1
 }
 
 # Start frontend
 Write-Host "[2/2] Iniciando frontend (Vite)..." -ForegroundColor Green
-cmd /c "start ""Operum Frontend"" cmd /k npm run dev"
+Remove-Item $frontendLog -ErrorAction SilentlyContinue
+Start-Process -FilePath "cmd.exe" -WorkingDirectory $projectDir -ArgumentList "/k", "cd /d `"$projectDir`" && npm run dev 1>> `"$frontendLog`" 2>&1"
 
 Start-Sleep -Seconds 3
 Write-Host ""

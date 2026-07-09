@@ -5,7 +5,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import assets, auth, health, market, models, news, portfolios, status
+from app.api import assets, auth, chat, health, market, models, news, portfolios, status
 from app.core.config import (
     CORS_ORIGINS,
     OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP,
@@ -30,6 +30,20 @@ STARTUP_PRICE_TICKERS = [
     "AAPL34",
     "BTC",
 ]
+
+
+def _run_news_ingest_async():
+    if not OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP:
+        logger.info("Ingestao automatica de noticias desabilitada por configuracao")
+        return
+    try:
+        from app.services.news_ingestion_service import NewsIngestionService
+
+        ing = NewsIngestionService()
+        count = ing.ingest()
+        logger.info(f"Ingestao automatica: {count} noticias novas")
+    except Exception as e:
+        logger.warning(f"Falha na ingestao automatica de noticias: {e}")
 
 
 def _run_news_backfill_async():
@@ -69,14 +83,7 @@ def _warm_prices_async():
 async def lifespan(app: FastAPI):
     logger.info("Inicializando Operum - buscando noticias e precos...")
     if OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP:
-        try:
-            from app.services.news_ingestion_service import NewsIngestionService
-
-            ing = NewsIngestionService()
-            count = ing.ingest()
-            logger.info(f"Ingestao automatica: {count} noticias novas")
-        except Exception as e:
-            logger.warning(f"Falha na ingestao automatica de noticias: {e}")
+        threading.Thread(target=_run_news_ingest_async, daemon=True).start()
     else:
         logger.info("Ingestao automatica de noticias desabilitada por configuracao")
 
@@ -109,4 +116,5 @@ app.include_router(portfolios.router, prefix="/api")
 app.include_router(news.router, prefix="/api")
 app.include_router(market.router, prefix="/api")
 app.include_router(models.router, prefix="/api")
+app.include_router(chat.router, prefix="/api")
 app.include_router(status.router, prefix="/api")

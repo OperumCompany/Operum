@@ -1,7 +1,8 @@
 {
   "ticker": "VALE3",
-  "price": 80.75,
+  "price": 72.7,
   "currency": "BRL",
-  "name": "VALE        ON      NM",
-  "updated_at": "2026-06-21T18:30:17.326828+00:00"
+  "name": "VALE3",
+  "source": "brapi",
+  "updated_at": "2026-07-09T01:17:44.060138+00:00"
 }

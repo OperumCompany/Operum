@@ -37,6 +37,15 @@ OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP = os.environ.get("OPERUM_ENABLE_NEWS_INGEST
 OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP = os.environ.get("OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP", "true").lower() == "true"
 OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP = os.environ.get("OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP", "true").lower() == "true"
 OPERUM_SEED_DEMO_USER = os.environ.get("OPERUM_SEED_DEMO_USER", "true").lower() == "true"
+AI_PROVIDER = os.environ.get("AI_PROVIDER", "ollama")
+AI_BASE_URL = os.environ.get("AI_BASE_URL", "http://localhost:11434/v1").rstrip("/")
+AI_API_KEY = os.environ.get("AI_API_KEY", "ollama")
+AI_MODEL = os.environ.get("AI_MODEL", "qwen3:4b")
+AI_TIMEOUT_SECONDS = float(os.environ.get("AI_TIMEOUT_SECONDS", "60"))
+AI_ENABLED = os.environ.get("AI_ENABLED", "true").lower() == "true"
+AI_ENHANCE_ASSET_ANALYSIS = os.environ.get("AI_ENHANCE_ASSET_ANALYSIS", "true").lower() == "true"
+AI_ENHANCE_PORTFOLIO_ANALYSIS = os.environ.get("AI_ENHANCE_PORTFOLIO_ANALYSIS", "true").lower() == "true"
+AI_ENABLE_CHATBOT = os.environ.get("AI_ENABLE_CHATBOT", "true").lower() == "true"
 
 LOG_DIR = os.path.join(DATA_DIR, "logs")
 os.makedirs(LOG_DIR, exist_ok=True)

@@ -1,7 +1,8 @@
 {
   "ticker": "ITUB4",
-  "price": 39.87,
+  "price": 41.89,
   "currency": "BRL",
-  "name": "ITAUUNIBANCOPN  EJ  N1",
-  "updated_at": "2026-06-21T18:30:17.877065+00:00"
+  "name": "ITUB4",
+  "source": "brapi",
+  "updated_at": "2026-07-09T01:17:44.560952+00:00"
 }

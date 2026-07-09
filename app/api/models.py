@@ -7,6 +7,7 @@ from app.services.forecast_service import ForecastService
 from app.services.news_clustering_service import NewsClusteringService
 from app.services.news_ingestion_service import NewsIngestionService
 from app.services.asset_analysis_service import AssetAnalysisService
+from app.services.llm_service import LLMService
 from app.services.portfolio_opinion_service import PortfolioOpinionService
 from app.services.portfolio_analytics_service import PortfolioAnalyticsService
 from app.services.market_data_service import MarketDataService
@@ -24,6 +25,7 @@ market_service = MarketDataService()
 portfolio_service = PortfolioService()
 news_service = NewsIngestionService()
 asset_analysis_service = AssetAnalysisService()
+llm_service = LLMService()
 
 
 @router.get("/status")
@@ -35,6 +37,7 @@ def get_models_status():
         "news_scoring": "fallback",
         "clustering": "available",
         "opinion": "available",
+        "ai_local": llm_service.status(),
     }
 
 

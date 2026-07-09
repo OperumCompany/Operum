@@ -1,7 +1,8 @@
 {
   "ticker": "PETR4",
-  "price": 38.8,
+  "price": 39.65,
   "currency": "BRL",
-  "name": "PETROBRAS   PN      N2",
-  "updated_at": "2026-06-21T18:30:16.772583+00:00"
+  "name": "PETR4",
+  "source": "brapi",
+  "updated_at": "2026-07-09T01:17:43.909205+00:00"
 }

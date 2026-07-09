@@ -1,7 +1,7 @@
 # Compendium - Operum
 
 > Base de conhecimento consolidada do projeto.
-> Ultima atualizacao: 01/07/2026
+> Ultima atualizacao: 08/07/2026
 
 ---
 
@@ -13,7 +13,7 @@ O Operum e uma aplicacao full-stack para:
 - consumir noticias de mercado
 - gerar analises financeiras e textuais com IA interna
 
-O produto hoje combina calculo financeiro classico, ingestao local de noticias e geracao deterministica de analise sem dependencia de LLM externa.
+O produto hoje combina calculo financeiro classico, ingestao local de noticias e geracao deterministica de analise, com camada opcional de refino textual via Ollama local.
 
 O projeto entrou em fase de preparacao para deploy online com frontend em Vercel e banco principal no Supabase.
 
@@ -28,12 +28,13 @@ O projeto entrou em fase de preparacao para deploy online com frontend em Vercel
 | Graficos | Recharts |
 | Roteamento | React Router DOM |
 | Backend | Python 3.11+ + FastAPI |
-| Persistencia | JSON + Parquet via `LocalStorageService` |
+| Persistencia | JSON + Parquet via `LocalStorageService` + Supabase Postgres para dados transacionais |
 | Banco online alvo | Supabase Postgres |
 | Deploy alvo | Vercel para frontend e camada web |
 | Precos | brapi primaria + Yahoo Finance fallback |
 | Noticias | RSS + listagens oficiais/editoriais abertas |
 | ML | scikit-learn, XGBoost, LightGBM |
+| LLM local | Ollama + `qwen3:4b` |
 | Testes | pytest |
 
 ---
@@ -78,8 +79,9 @@ Vercel Frontend -> API FastAPI -> Services -> Supabase Postgres
   - `portfolios`
   - `portfolio_positions`
 - Variaveis de ambiente de Supabase configuradas no projeto
-- Backend ainda usa `LocalStorageService` como fonte principal de dados neste momento
-- Proxima etapa prevista: migrar `AuthService`, `PortfolioService` e preferencias para Supabase
+- Backend ja usa Supabase/Postgres para usuarios, sessoes, preferencias e carteiras quando configurado
+- `LocalStorageService` permanece para noticias, caches e artefatos analiticos
+- A IA local via Ollama e opcional e sempre cai para fallback deterministico em falha
 
 ---
 
@@ -232,11 +234,12 @@ Tambem limpa ruido de syndication, HTML e trechos como `The post ... appeared fi
 
 ### Filosofia atual
 
-A camada de IA atual e interna e deterministica:
+A camada de IA atual segue dois niveis:
 
-- nao usa LLM externa
-- usa scores, classificacoes e templates
+- calculo oficial continua deterministico
+- refino textual opcional pode usar `Ollama` local
 - privilegia transparencia de fontes
+- fallback obrigatorio preserva a resposta deterministica atual
 
 ### Analise por ativo
 
@@ -248,6 +251,7 @@ Essa analise:
 - combina noticias do ativo, do setor e do contexto macro
 - usa historico de noticias do periodo quando o historico de preco e fraco
 - agrupa fontes por origem na interface
+- pode refinar apenas os textos finais com `qwen3:4b`, sem alterar numeros, series ou confianca
 
 Campos relevantes do payload:
 - `analysis_sections.current`
@@ -272,6 +276,25 @@ Campos relevantes do payload:
 - `conclusion`
 - `sources`
 - `source_groups`
+
+Os campos textuais dessa opiniao tambem podem passar por refino local de LLM, preservando `score`, `components`, `benchmark`, pesos e fontes.
+
+### Chatbot educativo
+
+O chatbot agora responde pelo backend.
+
+- usa contexto da carteira ativa ou do consolidado quando informado
+- pode usar Ollama local para respostas mais coesas
+- mantem fallback simples se a IA local falhar ou estiver desligada
+- continua sem recomendacao de compra ou venda
+
+Configuracao padrao local:
+
+- `AI_PROVIDER=ollama`
+- `AI_BASE_URL=http://localhost:11434/v1`
+- `AI_API_KEY=ollama`
+- `AI_MODEL=qwen3:4b`
+- `AI_ENABLED=true`
 
 ### Ranking de noticias para analise
 

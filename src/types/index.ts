@@ -26,6 +26,12 @@ export type ChatMessage = {
   createdAt: string;
 };
 
+export type ChatApiResponse = {
+  message: string;
+  mode: 'llm' | 'fallback';
+  used_portfolio_context: boolean;
+};
+
 export type AssetClass = 'Renda fixa' | 'Ações Brasil' | 'Ações EUA' | 'Fundos' | 'Cripto';
 
 export type DashboardMetric = {

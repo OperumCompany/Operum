@@ -1,3 +1,4 @@
+import logging
 import math
 import unicodedata
 from collections import Counter, defaultdict
@@ -5,16 +6,20 @@ from datetime import datetime, timedelta, timezone
 
 import pandas as pd
 
+from app.core.config import AI_ENHANCE_ASSET_ANALYSIS
 from app.schemas.news import NewsItem
 from app.schemas.portfolio import Portfolio, Position
 from app.services.asset_universe_service import AssetUniverseService
 from app.services.forecast_service import FORECAST_HORIZONS, ForecastService
+from app.services.llm_prompts import ASSET_ANALYSIS_REFINER_PROMPT
+from app.services.llm_service import LLMService
 from app.services.local_storage_service import LocalStorageService
 from app.services.market_data_service import MarketDataService
 from app.services.news_ingestion_service import NewsIngestionService
 
 HISTORY_WINDOW_DAYS = {"1w": 5, "1m": 21, "2m": 42, "3m": 63}
 OUTLOOK_WINDOW_DAYS = {"1w": 5, "1m": 21, "2m": 42, "3m": 63}
+logger = logging.getLogger(__name__)
 
 
 class AssetAnalysisService:
@@ -24,6 +29,7 @@ class AssetAnalysisService:
         self.news = NewsIngestionService()
         self.assets = AssetUniverseService()
         self.forecast = ForecastService()
+        self.llm = LLMService()
         self._config_path = "ai/asset_analysis_config.json"
         self._cache_dir = "ai/asset_analysis_cache"
         self._config = self._load_or_init_config()
@@ -893,5 +899,57 @@ class AssetAnalysisService:
             "sources": used_news,
             "source_groups": self._build_source_groups(used_news),
         }
+        payload = self._refine_analysis_sections(payload, history_horizon, outlook_horizon)
         self._save_cached_analysis(portfolio, ticker, payload)
+        return payload
+
+    def _refine_analysis_sections(self, payload: dict, history_horizon: str, outlook_horizon: str) -> dict:
+        if not self.llm.enabled or not AI_ENHANCE_ASSET_ANALYSIS:
+            return payload
+
+        refined = self.llm.chat_json(
+            ASSET_ANALYSIS_REFINER_PROMPT,
+            {
+                "current_snapshot": payload.get("current_snapshot"),
+                "recent_performance": payload.get("recent_performance"),
+                "outlook_3m": payload.get("outlook_3m"),
+                "confidence": payload.get("confidence"),
+                "used_news_count": payload.get("used_news_count"),
+                "source_summary": [
+                    {"source_name": group.get("source_name"), "count": group.get("count")}
+                    for group in payload.get("source_groups", [])[:6]
+                ],
+                "analysis_sections": {
+                    "current": payload["analysis_sections"].get("current"),
+                    "recent_by_horizon": payload["analysis_sections"].get("recent_by_horizon"),
+                    "outlook_by_horizon": payload["analysis_sections"].get("outlook_by_horizon"),
+                },
+            },
+            temperature=0.15,
+            max_tokens=1200,
+        )
+        if not refined:
+            return payload
+
+        sections = payload.get("analysis_sections", {})
+        if isinstance(refined.get("current"), str) and refined["current"].strip():
+            sections["current"] = refined["current"].strip()
+
+        if isinstance(refined.get("recent_by_horizon"), dict):
+            merged_recent = dict(sections.get("recent_by_horizon", {}))
+            for key, value in refined["recent_by_horizon"].items():
+                if key in merged_recent and isinstance(value, str) and value.strip():
+                    merged_recent[key] = value.strip()
+            sections["recent_by_horizon"] = merged_recent
+            sections["recent"] = merged_recent.get(history_horizon, sections.get("recent"))
+
+        if isinstance(refined.get("outlook_by_horizon"), dict):
+            merged_outlook = dict(sections.get("outlook_by_horizon", {}))
+            for key, value in refined["outlook_by_horizon"].items():
+                if key in merged_outlook and isinstance(value, str) and value.strip():
+                    merged_outlook[key] = value.strip()
+            sections["outlook_by_horizon"] = merged_outlook
+            sections["outlook"] = merged_outlook.get(outlook_horizon, sections.get("outlook"))
+
+        payload["analysis_sections"] = sections
         return payload
