@@ -53,6 +53,7 @@ Nao colocar no Vercel, se ele hospedar apenas o frontend:
 - `SUPABASE_DB_URL`
 
 Essas variaveis pertencem ao backend Python, nao ao frontend.
+O frontend deve continuar chamando apenas a API do backend para auth; ele nao cria usuario nem valida senha diretamente no Supabase.
 
 ## 4. Host do backend
 
@@ -74,6 +75,13 @@ Recomendacao para producao:
 - `OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP=false`
 - `OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP=false`
 - `OPERUM_SEED_DEMO_USER=false`
+
+Auth em producao:
+
+- a autenticacao continua propria no backend Python
+- o backend precisa de `SUPABASE_DB_URL` para persistir `app_users`, `auth_sessions` e `user_preferences`
+- manter RLS ativo em `app_users`, `auth_sessions`, `user_preferences`, `portfolios` e `portfolio_positions`
+- nao criar policies publicas permissivas nessas tabelas enquanto o frontend nao usar Supabase Auth
 
 ## 5. Rotacao de segredos
 

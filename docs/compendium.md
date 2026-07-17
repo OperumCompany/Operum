@@ -1,7 +1,7 @@
 # Compendium - Operum
 
 > Base de conhecimento consolidada do projeto.
-> Ultima atualizacao: 08/07/2026
+> Ultima atualizacao: 16/07/2026
 
 ---
 
@@ -30,7 +30,7 @@ O projeto entrou em fase de preparacao para deploy online com frontend em Vercel
 | Backend | Python 3.11+ + FastAPI |
 | Persistencia | JSON + Parquet via `LocalStorageService` + Supabase Postgres para dados transacionais |
 | Banco online alvo | Supabase Postgres |
-| Deploy alvo | Vercel para frontend e camada web |
+| Deploy alvo | Vercel para frontend; backend Python em host separado |
 | Precos | brapi primaria + Yahoo Finance fallback |
 | Noticias | RSS + listagens oficiais/editoriais abertas |
 | ML | scikit-learn, XGBoost, LightGBM |
@@ -80,6 +80,8 @@ Vercel Frontend -> API FastAPI -> Services -> Supabase Postgres
   - `portfolio_positions`
 - Variaveis de ambiente de Supabase configuradas no projeto
 - Backend ja usa Supabase/Postgres para usuarios, sessoes, preferencias e carteiras quando configurado
+- Autenticacao permanece propria no backend; Supabase e usado como Postgres transacional, nao como Supabase Auth
+- Tabelas criticas ficam com RLS ativo e sem policies publicas enquanto o backend for a unica camada autorizada
 - `LocalStorageService` permanece para noticias, caches e artefatos analiticos
 - A IA local via Ollama e opcional e sempre cai para fallback deterministico em falha
 
@@ -338,7 +340,8 @@ O sistema hoje identifica melhor temas como:
 
 ### Estado atual
 
-- CRUD local via API
+- CRUD via API do backend, persistindo no Supabase quando `SUPABASE_DB_URL` esta configurada
+- fallback local permanece apenas para desenvolvimento sem banco configurado
 - maximo de 50 carteiras
 - 10 carteiras por pagina
 - ate 5 paginas na UI
@@ -406,9 +409,10 @@ Esses metadados permitem:
 
 Ultimo estado conhecido apos as mudancas recentes:
 
-- `python -m pytest -q` passou com `40 passed`
+- `python -m pytest -q` passou com `50 passed`
 - `npm run build` passou
 - schema inicial do Supabase foi aplicado com sucesso no projeto configurado
+- `python scripts/verify_supabase_auth.py` validou cadastro, login, `/auth/me`, logout, limpeza do usuario temporario e RLS no Supabase
 
 ---
 

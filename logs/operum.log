@@ -183,3 +183,101 @@
 2026-07-08 22:46:54 | INFO     | app.main | Cache de precos atualizado para 3 ativos
 2026-07-08 22:46:57 | INFO     | app.services.news_ingestion_service | Ingestao: 11 noticias novas de 107 unicas
 2026-07-08 22:46:57 | INFO     | app.main | Ingestao automatica: 11 noticias novas
+2026-07-16 21:12:37 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:12:37 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:12:37 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:12:37 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:12:37 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:12:37 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:12:37 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:12:37 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:12:37 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-07-16 21:12:37 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:12:37 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:12:44 | INFO     | app.main | Cache de precos atualizado para 3 ativos
+2026-07-16 21:12:46 | INFO     | app.services.news_ingestion_service | Ingestao: 58 noticias novas de 113 unicas
+2026-07-16 21:12:46 | INFO     | app.main | Ingestao automatica: 58 noticias novas
+2026-07-16 21:30:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:30:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:30:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:30:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:30:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:30:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:30:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:30:48 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:31:27 | INFO     | httpx | HTTP Request: POST http://test/api/auth/register "HTTP/1.1 200 OK"
+2026-07-16 21:31:33 | INFO     | httpx | HTTP Request: GET http://test/api/auth/me "HTTP/1.1 200 OK"
+2026-07-16 21:31:35 | INFO     | httpx | HTTP Request: POST http://test/api/auth/login "HTTP/1.1 401 Unauthorized"
+2026-07-16 21:32:14 | INFO     | httpx | HTTP Request: POST http://test/api/auth/login "HTTP/1.1 200 OK"
+2026-07-16 21:32:34 | INFO     | httpx | HTTP Request: POST http://test/api/auth/logout "HTTP/1.1 200 OK"
+2026-07-16 21:33:08 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:33:08 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:33:08 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:33:08 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:33:08 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:33:08 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:33:08 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:33:08 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:33:47 | INFO     | httpx | HTTP Request: POST http://test/api/auth/register "HTTP/1.1 200 OK"
+2026-07-16 21:33:54 | INFO     | httpx | HTTP Request: GET http://test/api/auth/me "HTTP/1.1 200 OK"
+2026-07-16 21:33:56 | INFO     | httpx | HTTP Request: POST http://test/api/auth/login "HTTP/1.1 401 Unauthorized"
+2026-07-16 21:34:34 | INFO     | httpx | HTTP Request: POST http://test/api/auth/login "HTTP/1.1 200 OK"
+2026-07-16 21:34:54 | INFO     | httpx | HTTP Request: POST http://test/api/auth/logout "HTTP/1.1 200 OK"
+2026-07-16 21:39:39 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:39:39 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:39:39 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:39:39 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:39:39 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:39:39 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:39:39 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:39:39 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:39:39 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-07-16 21:39:39 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:39:39 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:39:44 | INFO     | app.main | Cache de precos atualizado para 3 ativos
+2026-07-16 21:39:47 | INFO     | app.services.news_ingestion_service | Ingestao: 11 noticias novas de 108 unicas
+2026-07-16 21:39:47 | INFO     | app.main | Ingestao automatica: 11 noticias novas
+2026-07-16 21:51:32 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:51:32 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:51:32 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:51:32 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:51:32 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:51:32 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:51:32 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:51:32 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:51:36 | INFO     | httpx | HTTP Request: POST http://test/api/auth/login "HTTP/1.1 200 OK"
+2026-07-16 21:51:38 | INFO     | httpx | HTTP Request: POST http://test/api/auth/logout "HTTP/1.1 200 OK"
+2026-07-16 21:52:22 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:52:22 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:52:22 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:52:22 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:52:22 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:52:22 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:52:22 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:52:23 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:52:25 | INFO     | httpx | HTTP Request: POST http://test/api/auth/login "HTTP/1.1 200 OK"
+2026-07-16 21:52:27 | INFO     | httpx | HTTP Request: POST http://test/api/auth/logout "HTTP/1.1 200 OK"
+2026-07-16 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:53:53 | INFO     | httpx | HTTP Request: POST http://test/api/auth/register "HTTP/1.1 200 OK"
+2026-07-16 21:53:58 | INFO     | httpx | HTTP Request: GET http://test/api/auth/me "HTTP/1.1 200 OK"
+2026-07-16 21:54:00 | INFO     | httpx | HTTP Request: POST http://test/api/auth/login "HTTP/1.1 401 Unauthorized"
+2026-07-16 21:54:03 | INFO     | httpx | HTTP Request: POST http://test/api/auth/login "HTTP/1.1 200 OK"
+2026-07-16 21:54:06 | INFO     | httpx | HTTP Request: POST http://test/api/auth/logout "HTTP/1.1 200 OK"
+2026-07-16 21:55:56 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:55:56 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:55:56 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:55:56 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:55:56 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:55:56 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:55:56 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:55:56 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:55:56 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-07-16 21:55:56 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-16 21:55:56 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)

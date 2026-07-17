@@ -22,6 +22,8 @@ O valor de `SUPABASE_SECRET_KEY` deve ficar apenas no `.env` local ou em variave
 O valor de `SUPABASE_DB_URL` deve usar a string de conexao Postgres do Supabase para que o backend Python use SQL direto.
 O backend agora carrega automaticamente o arquivo `.env` local em desenvolvimento. Em producao, prefira variaveis de ambiente do provedor de deploy.
 
+`SUPABASE_URL` e `SUPABASE_PUBLISHABLE_KEY` nao bastam para a autenticacao atual. Como o Operum ainda usa auth propria no backend, o backend precisa obrigatoriamente de `SUPABASE_DB_URL` para criar usuarios, validar senha e persistir sessoes no Postgres.
+
 ## 2. Criar o schema inicial
 
 No painel do Supabase:
@@ -54,7 +56,19 @@ Esses blocos podem entrar na segunda etapa da migracao.
 
 O projeto hoje usa autenticacao propria no backend. Entao, neste primeiro passo, o Supabase sera usado como banco PostgreSQL do projeto, e nao como substituicao imediata do Supabase Auth.
 
-## 5. Migracao dos dados locais
+As tabelas criticas devem manter `row level security` ativo e sem policies publicas para `anon`/`authenticated` enquanto a auth propria estiver no backend. O frontend nao deve acessar essas tabelas diretamente via chave publishable.
+
+## 5. Verificacao de auth no Supabase
+
+Depois de criar as tabelas e configurar `SUPABASE_DB_URL`, rode:
+
+```bash
+python scripts/verify_supabase_auth.py
+```
+
+O script cria um usuario temporario via API, valida `app_users`, `auth_sessions`, `/api/auth/me`, login correto/incorreto, logout, RLS das tabelas criticas e remove apenas o usuario de teste criado.
+
+## 6. Migracao dos dados locais
 
 Depois de criar as tabelas e configurar `SUPABASE_DB_URL`, rode:
 
@@ -70,7 +84,7 @@ Isso importa:
 - carteiras locais
 - posicoes locais
 
-## 6. Seguranca de deploy
+## 7. Seguranca de deploy
 
 Consulte tambem:
 

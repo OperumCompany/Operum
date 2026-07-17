@@ -1,0 +1,809 @@
+{
+  "portfolio_id": "b6b0a85b-8610-4a62-9316-39beccae667d",
+  "ticker": "ITUB4",
+  "asset_name": "ItaÃº Unibanco PN",
+  "asset_class": "BR_STOCK",
+  "generated_at": "2026-07-17T01:02:14.414206+00:00",
+  "recomputed_at": "2026-07-17T01:02:14.414206+00:00",
+  "confidence": "media",
+  "status": "ok",
+  "selected_history_horizon": "3m",
+  "selected_outlook_horizon": "3m",
+  "asset_function": "estabilidade",
+  "current_snapshot": {
+    "current_price": 42.55,
+    "currency": "BRL",
+    "weight_pct": 68.09,
+    "sector": "Financeiro",
+    "country": "BR",
+    "asset_function": "estabilidade"
+  },
+  "historical_window": {
+    "start_date": "2026-03-13",
+    "end_date": "2026-07-17",
+    "news_count": 12,
+    "has_price_history": true
+  },
+  "historical_series": [
+    {
+      "date": "2025-10-14",
+      "value": 36.36
+    },
+    {
+      "date": "2025-10-13",
+      "value": 36.2
+    },
+    {
+      "date": "2025-10-10",
+      "value": 36.06
+    },
+    {
+      "date": "2025-10-09",
+      "value": 36.1
+    },
+    {
+      "date": "2025-10-08",
+      "value": 36.16
+    },
+    {
+      "date": "2025-10-07",
+      "value": 36.09
+    },
+    {
+      "date": "2025-10-06",
+      "value": 36.67
+    },
+    {
+      "date": "2025-10-03",
+      "value": 37.1
+    },
+    {
+      "date": "2025-10-02",
+      "value": 36.83
+    },
+    {
+      "date": "2025-10-01",
+      "value": 37.23
+    },
+    {
+      "date": "2025-09-30",
+      "value": 37.93
+    },
+    {
+      "date": "2025-09-29",
+      "value": 37.76
+    },
+    {
+      "date": "2025-09-26",
+      "value": 37.54
+    },
+    {
+      "date": "2025-09-25",
+      "value": 37.36
+    },
+    {
+      "date": "2025-09-24",
+      "value": 37.66
+    },
+    {
+      "date": "2025-09-23",
+      "value": 37.91
+    },
+    {
+      "date": "2025-09-22",
+      "value": 37.32
+    },
+    {
+      "date": "2025-09-19",
+      "value": 37.86
+    },
+    {
+      "date": "2025-09-18",
+      "value": 37.37
+    },
+    {
+      "date": "2025-09-17",
+      "value": 37.32
+    },
+    {
+      "date": "2025-09-16",
+      "value": 36.8
+    },
+    {
+      "date": "2025-09-15",
+      "value": 36.89
+    },
+    {
+      "date": "2025-09-12",
+      "value": 36.29
+    },
+    {
+      "date": "2025-09-11",
+      "value": 36.84
+    },
+    {
+      "date": "2025-09-10",
+      "value": 36.78
+    },
+    {
+      "date": "2025-09-09",
+      "value": 36.75
+    },
+    {
+      "date": "2025-09-08",
+      "value": 37.07
+    },
+    {
+      "date": "2025-09-05",
+      "value": 37.24
+    },
+    {
+      "date": "2025-09-04",
+      "value": 36.84
+    },
+    {
+      "date": "2025-09-03",
+      "value": 36.69
+    },
+    {
+      "date": "2025-09-02",
+      "value": 37.01
+    },
+    {
+      "date": "2025-09-01",
+      "value": 37.65
+    },
+    {
+      "date": "2025-08-29",
+      "value": 37.37
+    },
+    {
+      "date": "2025-08-28",
+      "value": 37.23
+    },
+    {
+      "date": "2025-08-27",
+      "value": 36.48
+    },
+    {
+      "date": "2025-08-26",
+      "value": 35.87
+    },
+    {
+      "date": "2025-08-25",
+      "value": 36.12
+    },
+    {
+      "date": "2025-08-22",
+      "value": 36.3
+    },
+    {
+      "date": "2025-08-21",
+      "value": 35.31
+    },
+    {
+      "date": "2025-08-20",
+      "value": 35.27
+    },
+    {
+      "date": "2025-08-19",
+      "value": 35.25
+    },
+    {
+      "date": "2025-08-18",
+      "value": 36.66
+    },
+    {
+      "date": "2025-08-15",
+      "value": 36.4
+    },
+    {
+      "date": "2025-08-14",
+      "value": 36.52
+    },
+    {
+      "date": "2025-08-13",
+      "value": 36.57
+    },
+    {
+      "date": "2025-08-12",
+      "value": 36.92
+    },
+    {
+      "date": "2025-08-11",
+      "value": 36.17
+    },
+    {
+      "date": "2025-08-08",
+      "value": 35.95
+    },
+    {
+      "date": "2025-08-07",
+      "value": 35.71
+    },
+    {
+      "date": "2025-08-06",
+      "value": 35.09
+    },
+    {
+      "date": "2025-08-05",
+      "value": 34.65
+    },
+    {
+      "date": "2025-08-04",
+      "value": 34.27
+    },
+    {
+      "date": "2025-08-01",
+      "value": 33.91
+    },
+    {
+      "date": "2025-07-31",
+      "value": 34.14
+    },
+    {
+      "date": "2025-07-30",
+      "value": 34.05
+    },
+    {
+      "date": "2025-07-29",
+      "value": 33.66
+    },
+    {
+      "date": "2025-07-28",
+      "value": 33.47
+    },
+    {
+      "date": "2025-07-25",
+      "value": 34.18
+    },
+    {
+      "date": "2025-07-24",
+      "value": 34.04
+    },
+    {
+      "date": "2025-07-23",
+      "value": 34.36
+    },
+    {
+      "date": "2025-07-22",
+      "value": 33.98
+    },
+    {
+      "date": "2025-07-21",
+      "value": 34.45
+    },
+    {
+      "date": "2025-07-18",
+      "value": 34.05
+    },
+    {
+      "date": "2025-07-17",
+      "value": 34.68
+    }
+  ],
+  "forecast_series": [],
+  "forecast_anchor_points": [],
+  "recent_performance": {
+    "change_selected_pct": -4.62,
+    "change_1m_pct": -4.72,
+    "change_2m_pct": -6.0,
+    "change_3m_pct": -4.62,
+    "change_12m_pct": null,
+    "volatility_selected_pct": 19.28,
+    "drawdown_selected_pct": -11.77,
+    "beta_selected": null,
+    "correlation_selected": null,
+    "benchmark_ticker": "IBOV",
+    "forecast_return_selected_pct": null,
+    "forecast_price_selected": null,
+    "forecast_confidence_selected": null,
+    "forecast_news_adjustment_pct": -0.78
+  },
+  "outlook_3m": {
+    "scenario": "concentrado",
+    "dominant_topics": [
+      "juros",
+      "inflacao",
+      "cambio",
+      "resultados"
+    ]
+  },
+  "analysis_sections": {
+    "current": "O ativo estÃ¡ exposto ao ambiente domÃ©stico, incluindo juros, fluxo para a bolsa e atividade econÃ´mica local. Dentro da carteira, a funcao principal deste ativo hoje e estabilidade. Cotacao atual aproximada em BRL 42.55. Hoje representa cerca de 68.1% da carteira. No curto prazo, o momentum de 1 mes esta em -4.7%. O ajuste contextual das noticias adiciona -0.8% ao cenario-base projetado. As noticias recentes tem vies negativo e impacto medio de 0.63. Nesse conjunto, o peso informacional esta distribuido em fundamento (3), macro (3), setorial (0) e fluxo (0).",
+    "recent": "No recorte dos ultimos 3 meses, o ativo variou -4.6%. A volatilidade anualizada equivalente ficou perto de 19.3%. No mesmo intervalo, o drawdown observado foi de -11.8%. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+    "outlook": "A perspectiva de 3 meses precisa ser lida junto com o peso elevado na carteira, porque qualquer oscilacao tera impacto relevante no conjunto. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+    "recent_by_horizon": {
+      "1w": "No recorte dos ultima semana, o ativo variou +1.9%. A volatilidade anualizada equivalente ficou perto de 22.5%. No mesmo intervalo, o drawdown observado foi de -1.2%. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, fiscal/politica, geopolitica. Houve 6 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Ata do Fed indica possibilidade de aumento nos juros para combater inflação nos EUA; Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto; Senado aprova R$ 15 bi extras para exportadores afetados por guerra do Irã.",
+      "1m": "No recorte dos ultimo mes, o ativo variou -4.7%. A volatilidade anualizada equivalente ficou perto de 18.6%. No mesmo intervalo, o drawdown observado foi de -9.4%. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, fiscal/politica, geopolitica. Houve 7 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.57. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: Ata do Fed indica possibilidade de aumento nos juros para combater inflação nos EUA; Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto; Senado aprova R$ 15 bi extras para exportadores afetados por guerra do Irã.",
+      "2m": "No recorte dos ultimos 2 meses, o ativo variou -6.0%. A volatilidade anualizada equivalente ficou perto de 20.9%. No mesmo intervalo, o drawdown observado foi de -11.1%. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.",
+      "3m": "No recorte dos ultimos 3 meses, o ativo variou -4.6%. A volatilidade anualizada equivalente ficou perto de 19.3%. No mesmo intervalo, o drawdown observado foi de -11.8%. No noticiario do periodo, os temas mais recorrentes foram juros, inflacao, cambio, resultados. Houve 12 evento(s) relevante(s), com vies mais negativo e impacto medio de 0.58. A leitura desse intervalo foi puxada principalmente por noticias de macro, o que ajuda a entender como o ativo cumpriu sua funcao de estabilidade. Os destaques desse intervalo incluem: MERCADOS: Ações, Bolsas e Moedas | InfoMoney; Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico; Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro."
+    },
+    "outlook_by_horizon": {
+      "1w": "A perspectiva de 1 semana precisa ser lida junto com o peso elevado na carteira, porque qualquer oscilacao tera impacto relevante no conjunto. O contexto de noticias ajusta essa leitura em -1.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, fiscal/politica, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "1m": "A perspectiva de 1 mes precisa ser lida junto com o peso elevado na carteira, porque qualquer oscilacao tera impacto relevante no conjunto. O contexto de noticias ajusta essa leitura em -1.3%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, fiscal/politica, geopolitica. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "2m": "A perspectiva de 2 meses precisa ser lida junto com o peso elevado na carteira, porque qualquer oscilacao tera impacto relevante no conjunto. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada.",
+      "3m": "A perspectiva de 3 meses precisa ser lida junto com o peso elevado na carteira, porque qualquer oscilacao tera impacto relevante no conjunto. O contexto de noticias ajusta essa leitura em -1.1%, com maior peso para fatos de fundamento e macro. Os temas dominantes agora sao juros, inflacao, cambio, resultados. Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de estabilidade. A confianca dessa leitura e moderada."
+    }
+  },
+  "used_news_count": 12,
+  "sources": [
+    {
+      "id": "1f13e4f39789c6f4984e581d2390e060",
+      "title": "MERCADOS: Ações, Bolsas e Moedas | InfoMoney",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/page/2/",
+      "published_at": "2026-05-31T04:04:31.943874+00:00",
+      "summary": "Últimas notícias sobre Mercados, Ações, Bolsas de Valores e Moedas. Acompanhe cotações, agenda econômica, resultados, proventos e muito mais.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados PublicidadeMercados“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América LatinaMercadosCogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º triBancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.8013,
+      "rank_score": 0.7387,
+      "source_category": null,
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
+      "role": "outlook"
+    },
+    {
+      "id": "21f8aa5e905ce6a3988e0ecc5e182e51",
+      "title": "Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/bancos-vao-cair-mais-bbas3-bbdc4-e-itub4-acendem-alerta-no-grafico/",
+      "published_at": "2026-05-22T12:42:35+00:00",
+      "summary": "Banco do Brasil (BBAS3), Bradesco (BBDC4) e Itaú (ITUB4) seguem pressionados no gráfico. Veja análise técnica, suportes, resistências e próximos alvos.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Batalha técnica de ações Bancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.7964,
+      "rank_score": 0.7361,
+      "source_category": null,
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "7f9fc289b8eb917c98f45337ecbae744",
+      "title": "Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/lojas-renner-lren3-itau-bba-eleva-recomendacao-para-compra-com-alta-nas-projecoes-de-lucro/",
+      "published_at": "2026-06-01T16:26:53.546598+00:00",
+      "summary": "Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.\n\nO texto menciona ITUB4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.75,
+      "relevance_score": 0.5,
+      "match_score": 0.6298,
+      "rank_score": 0.615,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "fundamento",
+      "role": "outlook"
+    },
+    {
+      "id": "d4ad77c8fe0dba39b783708103c1403f",
+      "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-29052026/",
+      "published_at": "2026-05-29T20:32:36+00:00",
+      "summary": "Acompanhe o que movimenta a bolsa, ações, dólar, juros e commodities nos negócios do pregão desta sexta-feira (29).\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Tempo Real Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo Índices nos EUA fecham positivos e semana e mês de maior também têm ganhos Sextou! O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.6666666666666666,
+      "impact_score": 0.6499999999999999,
+      "relevance_score": 0.5,
+      "match_score": 0.3755,
+      "rank_score": 0.5308,
+      "source_category": null,
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "1389a5a785c51cbd5efc0d383728baba",
+      "title": "Planilhas e Calculadoras on-line e gratuitas. Baixe agora!",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/conteudos/planilhas/",
+      "published_at": "2026-05-31T04:04:31.951890+00:00",
+      "summary": "As melhores planilhas e calculadoras do mercado financeiro! Planilha de controle financeiro, simulador de renda fixa, dividendos e muito mais!.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Planilhas Cursos E-books Relatórios Planilhas Simuladores Planilha de Gastos MensaisMonitore gastos e receitas para organizar seu orçamento e controle financeiro! O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.3763,
+      "rank_score": 0.5237,
+      "source_category": null,
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
+      "role": "outlook"
+    },
+    {
+      "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
+      "title": "Global",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/business/global/",
+      "published_at": "2026-05-31T04:04:31.943874+00:00",
+      "summary": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Global AgroEnergiaGlobalInovaçãoESGNegócios do Esportecom reportagens de 1º carro elétrico da Ferrari sofre forte reação negativa na Itália e em outros países 2 dias atrás Bilionário das finanças chamava IA de “lixo”, mas mudou de ideia e ficou “deprimido” 2 dias atrás CEO da Amazon, Andy Jassy, diz o que jovens profissionais devem fazer para o sucesso 2 dias atrás Por que o bilionário Peter Thiel está se mudando para a Argentina 2 dias atrás Continua depois da publicidade Comer alimentos saudáveis?\n\nNão, eles estão comendo “à moda bíblica” 2 dias atrás Anthropic supera OpenAI e se torna a startup de IA mais valiosa do mundo 2 dias atrás Filho de imigrantes cubanos, secretário de Trump se aproxima da meta de mudar a ilha 3 dias atrás Tribunais na China barram demissões por IA e pressionam empresas a manter empregos 3 dias atrás InfoMoney Últimas Notícias Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Brasil Consumo Esportes Carreira Saúde Colunistas Aprenda Relatórios Conteúdos Planilhas e Calculadoras Cursos Ebooks Multimídia Newsletters WhatsApp Podcasts Vídeos Web Stories Veja mais Fazer login Quem somos Anuncie Política de privacidade Política de cookies Preferências de Cookies Fale conosco © 2000-2026 InfoMoney. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.3763,
+      "rank_score": 0.5237,
+      "source_category": null,
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
+      "title": "Irã avança com projeto que consolida gestão de Ormuz; assessor iraniano critica Trump",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ira-avanca-com-projeto-que-consolida-gestao-de-ormuz-assessor-iraniano-critica-trump/",
+      "published_at": "2026-05-30T12:30:00+00:00",
+      "summary": "De acordo com Salimi, a proposta deverá se tornar uma lei permanente após a tramitação legislativa.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Guerra Irã avança com projeto que consolida gestão de Ormuz; assessor iraniano critica Trump De acordo com Salimi, a proposta deverá se tornar uma lei permanente após a tramitação legislativa Estadão Conteúdo 30/05/2026 09h30 &bull; Atualizado 15 horas atrás Publicidade O Parlamento do Irã deverá aprovar em breve um projeto para formalizar a gestão e a soberania iraniana sobre o Estreito de Ormuz, declarou o integrante da Mesa Diretora da Casa, Alireza Salimi, à agência iraniana ISNA. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.3759,
+      "rank_score": 0.5235,
+      "source_category": null,
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "629cddfde78d45fdde8891b65e011167",
+      "title": "EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/eua-determinam-inspecoes-em-jatos-embraer-phenom-300-apos-problema-em-testes/",
+      "published_at": "2026-05-30T11:48:00+00:00",
+      "summary": "Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Aviação EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações Estadão Conteúdo 30/05/2026 08h48 &bull; Atualizado 12 horas atrás Publicidade A Federal Aviation Administration (FAA), agência reguladora da aviação civil dos Estados Unidos, publicará na segunda-feira, 1º, no Federal Register, o diário oficial dos EUA, uma nova diretriz de aeronavegabilidade (AD, na sigla em inglês) para determinados jatos executivos Embraer Phenom 300 (EMB-505), após identificar a possibilidade de resultados inválidos em testes do estabilizador horizontal realizados em algumas aeronaves. O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
+      "sentiment_score": -0.5,
+      "impact_score": 0.6000000000000001,
+      "relevance_score": 0.5,
+      "match_score": 0.3759,
+      "rank_score": 0.5235,
+      "source_category": null,
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "fundamento",
+      "role": "historical"
+    },
+    {
+      "id": "0048229a6179b8807618d2898aa2f022",
+      "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+      "published_at": "2026-06-04T04:03:05.260410+00:00",
+      "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.3816,
+      "rank_score": 0.5219,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+      "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+      "published_at": "2026-06-03T15:37:34.696716+00:00",
+      "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.3812,
+      "rank_score": 0.5217,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "92fb49551c8c5a8675f71d53fc1639e5",
+      "title": "Ata do Fed indica possibilidade de aumento nos juros para combater inflação nos EUA",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://aovivo.folha.uol.com.br/mercado/2026/07/01/6533-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post465083",
+      "published_at": "2026-07-08T16:01:00-03:00",
+      "summary": "Os formuladores de política monetária do Fed (Federal Reserve, o BC dos EUA) concordaram amplamente que \"algum aperto na política provavelmente seria justificado\" caso a inflação permaneça elevada nos EUA, já que as pressões de preços dominaram a primeira reunião de Kevin Warsh no comando do banco central norte-americano.\n\nLeia mais (07/08/2026 - 16h01). O foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.4071,
+      "rank_score": 0.5122,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
+      "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
+      "source_name": "Tesouro Nacional - Noticias",
+      "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
+      "published_at": "2026-04-28T00:00:00+00:00",
+      "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
+      "sentiment_score": -0.3333333333333333,
+      "impact_score": 0.35,
+      "relevance_score": 0.5,
+      "match_score": 0.3817,
+      "rank_score": 0.512,
+      "source_category": "treasury",
+      "is_official": true,
+      "context_role": "sector",
+      "source_confidence_weight": 0.95,
+      "analysis_category": "fundamento",
+      "role": "historical"
+    }
+  ],
+  "source_groups": [
+    {
+      "source_name": "InfoMoney",
+      "count": 10,
+      "items": [
+        {
+          "id": "1f13e4f39789c6f4984e581d2390e060",
+          "title": "MERCADOS: Ações, Bolsas e Moedas | InfoMoney",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/page/2/",
+          "published_at": "2026-05-31T04:04:31.943874+00:00",
+          "summary": "Últimas notícias sobre Mercados, Ações, Bolsas de Valores e Moedas. Acompanhe cotações, agenda econômica, resultados, proventos e muito mais.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados PublicidadeMercados“Ponto cego”: as oportunidades de US$ 1,3 trilhão em ações ligadas à América LatinaMercadosCogna, Yduqs, Ânima e mais: quais educacionais se destacaram na temporada do 1º triBancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
+          "sentiment_score": -0.5,
+          "impact_score": 0.6000000000000001,
+          "relevance_score": 0.5,
+          "match_score": 0.8013,
+          "rank_score": 0.7387,
+          "source_category": null,
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
+          "role": "outlook"
+        },
+        {
+          "id": "21f8aa5e905ce6a3988e0ecc5e182e51",
+          "title": "Bancos vão cair mais? BBAS3, BBDC4 e ITUB4 acendem alerta no gráfico",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/bancos-vao-cair-mais-bbas3-bbdc4-e-itub4-acendem-alerta-no-grafico/",
+          "published_at": "2026-05-22T12:42:35+00:00",
+          "summary": "Banco do Brasil (BBAS3), Bradesco (BBDC4) e Itaú (ITUB4) seguem pressionados no gráfico. Veja análise técnica, suportes, resistências e próximos alvos.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Mercados Batalha técnica de ações Bancos vão cair mais? O texto menciona ITUB4, BBDC4, BBAS3. O foco principal passa por Financeiro, Tecnologia.",
+          "sentiment_score": -0.5,
+          "impact_score": 0.6000000000000001,
+          "relevance_score": 0.5,
+          "match_score": 0.7964,
+          "rank_score": 0.7361,
+          "source_category": null,
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "7f9fc289b8eb917c98f45337ecbae744",
+          "title": "Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/lojas-renner-lren3-itau-bba-eleva-recomendacao-para-compra-com-alta-nas-projecoes-de-lucro/",
+          "published_at": "2026-06-01T16:26:53.546598+00:00",
+          "summary": "Lojas Renner: Itaú BBA eleva recomendação para compra com alta nas projeções de lucro.\n\nO texto menciona ITUB4. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.75,
+          "relevance_score": 0.5,
+          "match_score": 0.6298,
+          "rank_score": 0.615,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "fundamento",
+          "role": "outlook"
+        },
+        {
+          "id": "d4ad77c8fe0dba39b783708103c1403f",
+          "title": "Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-29052026/",
+          "published_at": "2026-05-29T20:32:36+00:00",
+          "summary": "Acompanhe o que movimenta a bolsa, ações, dólar, juros e commodities nos negócios do pregão desta sexta-feira (29).\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdo editorial apoiado por Tempo Real Ibovespa emenda 4ª queda seguida, 7ª semana no vermelho e 3º mês negativo Índices nos EUA fecham positivos e semana e mês de maior também têm ganhos Sextou! O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+          "sentiment_score": -0.6666666666666666,
+          "impact_score": 0.6499999999999999,
+          "relevance_score": 0.5,
+          "match_score": 0.3755,
+          "rank_score": 0.5308,
+          "source_category": null,
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "1389a5a785c51cbd5efc0d383728baba",
+          "title": "Planilhas e Calculadoras on-line e gratuitas. Baixe agora!",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/conteudos/planilhas/",
+          "published_at": "2026-05-31T04:04:31.951890+00:00",
+          "summary": "As melhores planilhas e calculadoras do mercado financeiro! Planilha de controle financeiro, simulador de renda fixa, dividendos e muito mais!.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Conteúdos Planilhas Cursos E-books Relatórios Planilhas Simuladores Planilha de Gastos MensaisMonitore gastos e receitas para organizar seu orçamento e controle financeiro! O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
+          "sentiment_score": -0.5,
+          "impact_score": 0.6000000000000001,
+          "relevance_score": 0.5,
+          "match_score": 0.3763,
+          "rank_score": 0.5237,
+          "source_category": null,
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
+          "role": "outlook"
+        },
+        {
+          "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
+          "title": "Global",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/business/global/",
+          "published_at": "2026-05-31T04:04:31.943874+00:00",
+          "summary": "Buscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Global AgroEnergiaGlobalInovaçãoESGNegócios do Esportecom reportagens de 1º carro elétrico da Ferrari sofre forte reação negativa na Itália e em outros países 2 dias atrás Bilionário das finanças chamava IA de “lixo”, mas mudou de ideia e ficou “deprimido” 2 dias atrás CEO da Amazon, Andy Jassy, diz o que jovens profissionais devem fazer para o sucesso 2 dias atrás Por que o bilionário Peter Thiel está se mudando para a Argentina 2 dias atrás Continua depois da publicidade Comer alimentos saudáveis?\n\nNão, eles estão comendo “à moda bíblica” 2 dias atrás Anthropic supera OpenAI e se torna a startup de IA mais valiosa do mundo 2 dias atrás Filho de imigrantes cubanos, secretário de Trump se aproxima da meta de mudar a ilha 3 dias atrás Tribunais na China barram demissões por IA e pressionam empresas a manter empregos 3 dias atrás InfoMoney Últimas Notícias Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Brasil Consumo Esportes Carreira Saúde Colunistas Aprenda Relatórios Conteúdos Planilhas e Calculadoras Cursos Ebooks Multimídia Newsletters WhatsApp Podcasts Vídeos Web Stories Veja mais Fazer login Quem somos Anuncie Política de privacidade Política de cookies Preferências de Cookies Fale conosco © 2000-2026 InfoMoney. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+          "sentiment_score": -0.5,
+          "impact_score": 0.6000000000000001,
+          "relevance_score": 0.5,
+          "match_score": 0.3763,
+          "rank_score": 0.5237,
+          "source_category": null,
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "619d9b9e86a9b3b8a3cf1bf7aa8ca610",
+          "title": "Irã avança com projeto que consolida gestão de Ormuz; assessor iraniano critica Trump",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ira-avanca-com-projeto-que-consolida-gestao-de-ormuz-assessor-iraniano-critica-trump/",
+          "published_at": "2026-05-30T12:30:00+00:00",
+          "summary": "De acordo com Salimi, a proposta deverá se tornar uma lei permanente após a tramitação legislativa.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Guerra Irã avança com projeto que consolida gestão de Ormuz; assessor iraniano critica Trump De acordo com Salimi, a proposta deverá se tornar uma lei permanente após a tramitação legislativa Estadão Conteúdo 30/05/2026 09h30 &bull; Atualizado 15 horas atrás Publicidade O Parlamento do Irã deverá aprovar em breve um projeto para formalizar a gestão e a soberania iraniana sobre o Estreito de Ormuz, declarou o integrante da Mesa Diretora da Casa, Alireza Salimi, à agência iraniana ISNA. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+          "sentiment_score": -0.5,
+          "impact_score": 0.6000000000000001,
+          "relevance_score": 0.5,
+          "match_score": 0.3759,
+          "rank_score": 0.5235,
+          "source_category": null,
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "historical"
+        },
+        {
+          "id": "629cddfde78d45fdde8891b65e011167",
+          "title": "EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/eua-determinam-inspecoes-em-jatos-embraer-phenom-300-apos-problema-em-testes/",
+          "published_at": "2026-05-30T11:48:00+00:00",
+          "summary": "Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados Aviação EUA determinam inspeções em jatos Embraer Phenom 300 após problema em testes Segundo a FAA, o problema está relacionado ao uso de procedimentos incorretos em testes de folga (backlash) do estabilizador horizontal, o que pode ter gerado resultados inválidos nessas verificações Estadão Conteúdo 30/05/2026 08h48 &bull; Atualizado 12 horas atrás Publicidade A Federal Aviation Administration (FAA), agência reguladora da aviação civil dos Estados Unidos, publicará na segunda-feira, 1º, no Federal Register, o diário oficial dos EUA, uma nova diretriz de aeronavegabilidade (AD, na sigla em inglês) para determinados jatos executivos Embraer Phenom 300 (EMB-505), após identificar a possibilidade de resultados inválidos em testes do estabilizador horizontal realizados em algumas aeronaves. O texto menciona B3SA3. O foco principal passa por Petróleo e Gás, Financeiro.",
+          "sentiment_score": -0.5,
+          "impact_score": 0.6000000000000001,
+          "relevance_score": 0.5,
+          "match_score": 0.3759,
+          "rank_score": 0.5235,
+          "source_category": null,
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "fundamento",
+          "role": "historical"
+        },
+        {
+          "id": "0048229a6179b8807618d2898aa2f022",
+          "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+          "published_at": "2026-06-04T04:03:05.260410+00:00",
+          "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.3816,
+          "rank_score": 0.5219,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "historical"
+        },
+        {
+          "id": "6e0f0ee72f0d0118edbed3a19170f9a6",
+          "title": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+          "published_at": "2026-06-03T15:37:34.696716+00:00",
+          "summary": "Nova cautela por guerra, tarifa e chance de Selic maior: o que faz Ibovespa quase 2%.\n\nO foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.3812,
+          "rank_score": 0.5217,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "historical"
+        }
+      ]
+    },
+    {
+      "source_name": "Tesouro Nacional - Noticias",
+      "count": 1,
+      "items": [
+        {
+          "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
+          "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
+          "source_name": "Tesouro Nacional - Noticias",
+          "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
+          "published_at": "2026-04-28T00:00:00+00:00",
+          "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
+          "sentiment_score": -0.3333333333333333,
+          "impact_score": 0.35,
+          "relevance_score": 0.5,
+          "match_score": 0.3817,
+          "rank_score": 0.512,
+          "source_category": "treasury",
+          "is_official": true,
+          "context_role": "sector",
+          "source_confidence_weight": 0.95,
+          "analysis_category": "fundamento",
+          "role": "historical"
+        }
+      ]
+    },
+    {
+      "source_name": "Folha.com - Mercado - Principal",
+      "count": 1,
+      "items": [
+        {
+          "id": "92fb49551c8c5a8675f71d53fc1639e5",
+          "title": "Ata do Fed indica possibilidade de aumento nos juros para combater inflação nos EUA",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://aovivo.folha.uol.com.br/mercado/2026/07/01/6533-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post465083",
+          "published_at": "2026-07-08T16:01:00-03:00",
+          "summary": "Os formuladores de política monetária do Fed (Federal Reserve, o BC dos EUA) concordaram amplamente que \"algum aperto na política provavelmente seria justificado\" caso a inflação permaneça elevada nos EUA, já que as pressões de preços dominaram a primeira reunião de Kevin Warsh no comando do banco central norte-americano.\n\nLeia mais (07/08/2026 - 16h01). O foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.4071,
+          "rank_score": 0.5122,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "historical"
+        }
+      ]
+    }
+  ],
+  "portfolio_updated_at": "2026-07-17T01:01:29.342733+00:00"
+}

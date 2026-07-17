@@ -67,6 +67,15 @@ create table if not exists public.portfolio_positions (
 create index if not exists idx_portfolio_positions_portfolio_id on public.portfolio_positions(portfolio_id);
 create index if not exists idx_portfolio_positions_ticker on public.portfolio_positions(ticker);
 
+alter table public.app_users enable row level security;
+alter table public.auth_sessions enable row level security;
+alter table public.user_preferences enable row level security;
+alter table public.portfolios enable row level security;
+alter table public.portfolio_positions enable row level security;
+
+-- Auth propria do Operum passa somente pelo backend Python usando SQL direto.
+-- Enquanto nao houver Supabase Auth, nao criar policies publicas para anon/authenticated.
+
 drop trigger if exists trg_app_users_updated_at on public.app_users;
 create trigger trg_app_users_updated_at
 before update on public.app_users

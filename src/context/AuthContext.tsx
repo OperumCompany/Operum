@@ -42,7 +42,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     loading,
     login: async (email, password) => {
       try {
-        const response = await api.post<AuthResponse>('/auth/login', { email, password });
+        const response = await api.postPublic<AuthResponse>('/auth/login', { email, password });
         persistSession(response);
         setUser(response.user);
         return { ok: true, message: 'Login realizado com sucesso.' };
@@ -53,7 +53,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     },
     register: async (userData) => {
       try {
-        const response = await api.post<AuthResponse>('/auth/register', userData);
+        const response = await api.postPublic<AuthResponse>('/auth/register', userData);
         persistSession(response);
         setUser(response.user);
         return { ok: true, message: 'Conta criada com sucesso.' };
@@ -76,13 +76,13 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     },
     logout: async () => {
+      const token = readStorage<string | null>(storageKeys.authToken, null);
+      writeStorage(storageKeys.authToken, null);
+      setUser(null);
       try {
-        await api.post('/auth/logout');
+        await api.post('/auth/logout', undefined, token ? { headers: { Authorization: `Bearer ${token}` } } : undefined);
       } catch {
         // noop
-      } finally {
-        writeStorage(storageKeys.authToken, null);
-        setUser(null);
       }
     },
   }), [loading, user]);

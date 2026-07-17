@@ -592,13 +592,18 @@ Telas analiticas tambem devem suportar:
 - Usuario so pode acessar suas proprias carteiras, preferencias e analises
 - Token invalido deve bloquear o acesso e forcar novo login
 - Logout deve invalidar a sessao local mesmo que a chamada remota falhe
+- A sessao atual nao expira automaticamente por tempo nesta fase; acesso e bloqueado por token invalido ou logout
+- Com `SUPABASE_DB_URL` configurada, usuarios, hashes de senha, sessoes e preferencias sao persistidos no Supabase Postgres
+- `app_users`, `auth_sessions`, `user_preferences`, `portfolios` e `portfolio_positions` devem manter RLS ativo e sem policies publicas enquanto a auth propria estiver no backend
 
 ---
 
 ## 8. Criterios de Aceite
 
 - `POST /auth/register` cria conta com email unico
+- `POST /auth/register` cria linha em `app_users` e sessao em `auth_sessions` quando Postgres esta habilitado
 - `POST /auth/login` retorna token e usuario quando as credenciais sao validas
+- `POST /auth/logout` remove a sessao persistida em `auth_sessions`
 - `PUT /auth/password` exige senha atual valida
 - `GET /auth/preferences` retorna preferencias do usuario autenticado ou fallback padrao
 - `PUT /auth/preferences` persiste temas e preferencia de interface
