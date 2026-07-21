@@ -296,6 +296,36 @@ async def test_position_opinion_endpoint(client: AsyncClient):
     assert "beta_selected" in data["recent_performance"]
     assert "recent_by_horizon" in data["analysis_sections"]
     assert "outlook_by_horizon" in data["analysis_sections"]
+    assert "box_history_by_horizon" in data["analysis_sections"]
+    assert "box_current" in data["analysis_sections"]
+    assert "box_outlook_by_horizon" in data["analysis_sections"]
+    assert "visual_summary" in data["analysis_sections"]
+    assert "summary" in data["analysis_sections"]
+    assert "what_happened" in data["analysis_sections"]
+    assert "company_situation" in data["analysis_sections"]
+    assert "asset_price_situation" in data["analysis_sections"]
+    assert "current_situation" in data["analysis_sections"]
+    assert "portfolio_impact" in data["analysis_sections"]
+    assert "scenarios" in data["analysis_sections"]
+    assert "what_to_watch" in data["analysis_sections"]
+    assert "conclusion" in data["analysis_sections"]
+    assert "data_quality_warnings" in data["analysis_sections"]
+    assert isinstance(data["analysis_sections"]["scenarios"], dict)
+    assert {"favorable", "base", "adverse"}.issubset(data["analysis_sections"]["scenarios"])
+    assert isinstance(data["analysis_sections"]["what_to_watch"], list)
+    assert isinstance(data["analysis_sections"]["data_quality_warnings"], list)
+    assert set(data["analysis_sections"]["box_history_by_horizon"]) == {"1w", "1m", "2m", "3m"}
+    assert set(data["analysis_sections"]["box_outlook_by_horizon"]) == {"1w", "1m", "2m", "3m"}
+    box_text = " ".join([
+        data["analysis_sections"]["box_history_by_horizon"]["1m"],
+        data["analysis_sections"]["box_current"],
+        data["analysis_sections"]["box_outlook_by_horizon"]["1w"],
+    ]).lower()
+    for blocked in ["drawdown", "momentum", "impacto medio", "impacto médio", "peso informacional", "ajuste contextual", "beta estimado", "volatilidade anualizada"]:
+        assert blocked not in box_text
+    assert "cenario concentrado" not in box_text
+    assert "dados fundamentais estruturados" in data["analysis_sections"]["company_situation"].lower()
+    assert "comprar" not in data["analysis_sections"]["conclusion"].lower() or "nao indica" in data["analysis_sections"]["conclusion"].lower()
     assert "asset_function" in data
     assert "forecast_news_adjustment_pct" in data["recent_performance"]
     if data["sources"]:

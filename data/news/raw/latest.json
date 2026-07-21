@@ -1,5 +1,2176 @@
 [
   {
+    "id": "8d6e6bc9b886bfd66d53d276b76f4ae1",
+    "title": "Setor de construção da B3 não alcança expectativas do Safra no 2T26; entenda",
+    "subtitle": null,
+    "content_preview": "Setor de construção da B3 não alcança expectativas do Safra no 2T26; entenda",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/setor-de-construcao-da-b3-nao-alcanca-expectativas-do-safra-no-2t26-entenda/",
+    "published_at": "2026-07-21T01:42:23.857418Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [
+      "B3SA3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Setor de construção da B3 não alcança expectativas do Safra no 2T26; entenda.\n\nO texto menciona B3SA3. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.857418Z"
+  },
+  {
+    "id": "3d1feb4e7eff3af4908fa966fc498f04",
+    "title": "Criptomoedas: bitcoin opera em alta com sinais de mediação no Oriente Médio",
+    "subtitle": null,
+    "content_preview": "Criptomoedas: bitcoin opera em alta com sinais de mediação no Oriente Médio",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/criptomoedas-bitcoin-opera-em-alta-com-sinais-de-mediacao-no-oriente-medio/",
+    "published_at": "2026-07-21T01:42:23.856785Z",
+    "language": "pt",
+    "tags": [
+      "Criptomoedas",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "BTC"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Criptomoedas",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.75,
+    "summary": "Criptomoedas: bitcoin opera em alta com sinais de mediação no Oriente Médio.\n\nO texto menciona BTC. O foco principal passa por Criptomoedas, Economia.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.856785Z"
+  },
+  {
+    "id": "4d9d04d9fe48d1959728c3cbd8c57b2c",
+    "title": "Dólar hoje fecha em baixa de 0,4%, a R$ 5,09, com investidores seguindo exterior",
+    "subtitle": null,
+    "content_preview": "Dólar hoje fecha em baixa de 0,4%, a R$ 5,09, com investidores seguindo exterior",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-20072026/",
+    "published_at": "2026-07-21T01:42:23.855748Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Dólar hoje fecha em baixa de 0,4%, a R$ 5,09, com investidores seguindo exterior.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.855748Z"
+  },
+  {
+    "id": "65fafe121f8214ce606582aeb5480657",
+    "title": "Juros futuros a partir de janeiro de 2028 fecham em alta em sessão de volatilidade",
+    "subtitle": null,
+    "content_preview": "Juros futuros a partir de janeiro de 2028 fecham em alta em sessão de volatilidade",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/juros-futuros-a-partir-de-janeiro-de-2028-fecham-em-alta-em-sessao-de-volatilidade/",
+    "published_at": "2026-07-21T01:42:23.855748Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "sentiment_score": 0.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.25,
+    "summary": "Juros futuros a partir de janeiro de 2028 fecham em alta em sessão de volatilidade.\n\nO foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.855748Z"
+  },
+  {
+    "id": "19badd892c2c8e8f3ec43eae3b6fe6b9",
+    "title": "Ibovespa fecha em queda de 0,2% com menor liquidez e foco do mercado no Oriente Médio",
+    "subtitle": null,
+    "content_preview": "Ibovespa fecha em queda de 0,2% com menor liquidez e foco do mercado no Oriente Médio",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/sinal-de-dialogo-eua-ira-e-incapaz-de-animar-ibovespa-com-cautela-e-focando-juros/",
+    "published_at": "2026-07-21T01:42:23.854805Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ibovespa fecha em queda de 0,2% com menor liquidez e foco do mercado no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.854805Z"
+  },
+  {
+    "id": "ed0515b9e3a61545549aec27a53aa2c8",
+    "title": "Ibovespa fecha em baixa, com exterior; dólar recua a R$ 5,09",
+    "subtitle": null,
+    "content_preview": "Ibovespa fecha em baixa, com exterior; dólar recua a R$ 5,09",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-20072026/",
+    "published_at": "2026-07-21T01:42:23.854805Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ibovespa fecha em baixa, com exterior; dólar recua a R$ 5,09.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.854805Z"
+  },
+  {
+    "id": "8852b28c5a0660549d2668babf0a40b0",
+    "title": "Ações da Micron sobem 7% após anúncio de investimento de até US$ 3 bi",
+    "subtitle": null,
+    "content_preview": "Ações da Micron sobem 7% após anúncio de investimento de até US$ 3 bi",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/acoes-da-micron-sobem-7-apos-anuncio-de-investimento-de-ate-us-3-bi-em-chips/",
+    "published_at": "2026-07-21T01:42:23.853769Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ações da Micron sobem 7% após anúncio de investimento de até US$ 3 bi.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.853769Z"
+  },
+  {
+    "id": "51ad31bd030070a9a2baae2771431ae9",
+    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "subtitle": null,
+    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
+    "published_at": "2026-07-21T01:42:23.853769Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.853769Z"
+  },
+  {
+    "id": "525c9205f6bbc12fd96e8c9d9e2caf18",
+    "title": "Bolsas de NY fecham em queda com quadro geopolítico e Dow Jones mais pressionado",
+    "subtitle": null,
+    "content_preview": "Bolsas de NY fecham em queda com quadro geopolítico e Dow Jones mais pressionado",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-fecham-em-queda-com-quadro-geopolitico-e-dow-jones-mais-pressionado/",
+    "published_at": "2026-07-21T01:42:23.853769Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Bolsas de NY fecham em queda com quadro geopolítico e Dow Jones mais pressionado.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.854805Z"
+  },
+  {
+    "id": "116e5506ad2d12b7715125f2c4aed22b",
+    "title": "Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto",
+    "subtitle": null,
+    "content_preview": "Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/opcoes-de-copom-da-b3-apontam-para-corte-de-025-na-selic-em-agosto/",
+    "published_at": "2026-07-21T01:42:23.852748Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "mentioned_assets": [
+      "B3SA3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto.\n\nO texto menciona B3SA3. O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.852748Z"
+  },
+  {
+    "id": "e4d4044400b76ac09d4ab625b976774e",
+    "title": "FMI aprova desembolso de US$ 690 milhões para a Ucrânia",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/fmi-aprova-desembolso-de-us-690-milhoes-para-a-ucrania-93CH-2007511",
+    "published_at": "2026-07-21T01:21:03Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "FMI aprova desembolso de US$ 690 milhões para a Ucrânia.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.857418Z"
+  },
+  {
+    "id": "c3c95f8b09dcc11f9377080ca8627e36",
+    "title": "Ações da Telix Pharmaceuticals disparam após resultados sólidos",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/acoes-da-telix-pharmaceuticals-disparam-apos-resultados-solidos-93CH-2007510",
+    "published_at": "2026-07-21T01:12:33Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Ações da Telix Pharmaceuticals disparam após resultados sólidos.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.858454Z"
+  },
+  {
+    "id": "2cee41f381e6190ace598d6c83df901a",
+    "title": "NVIDIA revela participação de 9,3% na empresa de neocloud Nebius",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/nvidia-revela-participacao-de-93-na-empresa-de-neocloud-nebius-2007507",
+    "published_at": "2026-07-21T01:01:31Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "NVIDIA revela participação de 9,3% na empresa de neocloud Nebius.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.858454Z"
+  },
+  {
+    "id": "f4bfd950197f193283cc68d647a9db49",
+    "title": "SEC deve avançar com proposta de relatórios semestrais apesar da oposição",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/sec-deve-avancar-com-proposta-de-relatorios-semestrais-apesar-da-oposicao-2007504",
+    "published_at": "2026-07-21T00:54:14Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "SEC deve avançar com proposta de relatórios semestrais apesar da oposição.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.858454Z"
+  },
+  {
+    "id": "fe0d759dfd0c154ead031f68d99ca1ad",
+    "title": "Por que as ações da Nebius estão subindo no after-hours hoje?",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/por-que-as-acoes-da-nebius-estao-subindo-no-afterhours-hoje-93CH-2007503",
+    "published_at": "2026-07-21T00:52:39Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Por que as ações da Nebius estão subindo no after-hours hoje?\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.859476Z"
+  },
+  {
+    "id": "449deee90e18e60e8807724e4f63a48b",
+    "title": "Petróleo mantém ganhos com tensões entre EUA e Irã e bloqueio Houthi",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/commodities-news/petroleo-mantem-ganhos-com-tensoes-entre-eua-e-ira-e-bloqueio-houthi-2007502",
+    "published_at": "2026-07-21T00:46:57Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Petróleo mantém ganhos com tensões entre EUA e Irã e bloqueio Houthi.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.859476Z"
+  },
+  {
+    "id": "d6bec12377bee32fdd58f815eeefcd83",
+    "title": "Futuros americanos estáveis com tensões com o Irã e resultados de big techs em foco",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/futuros-americanos-estaveis-com-tensoes-com-o-ira-e-resultados-de-big-techs-em-foco-2007501",
+    "published_at": "2026-07-21T00:45:24Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Futuros americanos estáveis com tensões com o Irã e resultados de big techs em foco.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.859476Z"
+  },
+  {
+    "id": "9094b78dd3924b0cd2e656064ab15efb",
+    "title": "Bolsa de valores de Londres vai lançar plataforma de negociação noturna em 2027",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/bolsa-de-valores-de-londres-vai-lancar-plataforma-de-negociacao-noturna-em-2027-2007497",
+    "published_at": "2026-07-21T00:38:01Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Bolsa de valores de Londres vai lançar plataforma de negociação noturna em 2027.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.860483Z"
+  },
+  {
+    "id": "de75d7f965c567c556522628eff819f0",
+    "title": "Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto",
+    "subtitle": null,
+    "content_preview": "Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/opcoes-de-copom-da-b3-apontam-para-corte-de-025-na-selic-em-agosto/",
+    "published_at": "2026-07-21T00:22:36.505034Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "mentioned_assets": [
+      "B3SA3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto.\n\nO texto menciona B3SA3. O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "8b805fbbabab35b180fa488a003a0bc5",
+    "title": "Ações da Micron sobem 7% após anúncio de investimento de até US$ 3 bi",
+    "subtitle": null,
+    "content_preview": "Ações da Micron sobem 7% após anúncio de investimento de até US$ 3 bi",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/acoes-da-micron-sobem-7-apos-anuncio-de-investimento-de-ate-us-3-bi-em-chips/",
+    "published_at": "2026-07-21T00:22:36.505034Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ações da Micron sobem 7% após anúncio de investimento de até US$ 3 bi.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "8c8794ad224a79cd1f93e1818c4c96be",
+    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "subtitle": null,
+    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
+    "published_at": "2026-07-21T00:22:36.505034Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "e838bf7548df62fea106499b18fbd768",
+    "title": "Bolsas de NY fecham em queda com quadro geopolítico e Dow Jones mais pressionado",
+    "subtitle": null,
+    "content_preview": "Bolsas de NY fecham em queda com quadro geopolítico e Dow Jones mais pressionado",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-fecham-em-queda-com-quadro-geopolitico-e-dow-jones-mais-pressionado/",
+    "published_at": "2026-07-21T00:22:36.505034Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Bolsas de NY fecham em queda com quadro geopolítico e Dow Jones mais pressionado.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "a1c922db095c7b7c9fb01f62b7911232",
+    "title": "Ibovespa fecha em queda de 0,2% com menor liquidez e foco do mercado no Oriente Médio",
+    "subtitle": null,
+    "content_preview": "Ibovespa fecha em queda de 0,2% com menor liquidez e foco do mercado no Oriente Médio",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/sinal-de-dialogo-eua-ira-e-incapaz-de-animar-ibovespa-com-cautela-e-focando-juros/",
+    "published_at": "2026-07-21T00:22:36.505034Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ibovespa fecha em queda de 0,2% com menor liquidez e foco do mercado no Oriente Médio.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "7e0ad107d1fcd6df682cb1c9b7354e21",
+    "title": "Ibovespa fecha em baixa, com exterior; dólar recua a R$ 5,09",
+    "subtitle": null,
+    "content_preview": "Ibovespa fecha em baixa, com exterior; dólar recua a R$ 5,09",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-20072026/",
+    "published_at": "2026-07-21T00:22:36.505034Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Ibovespa fecha em baixa, com exterior; dólar recua a R$ 5,09.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "00a8d3a0e548cfb2d659bc748bde5d9a",
+    "title": "Dólar hoje fecha em baixa de 0,4%, a R$ 5,09, com investidores seguindo exterior",
+    "subtitle": null,
+    "content_preview": "Dólar hoje fecha em baixa de 0,4%, a R$ 5,09, com investidores seguindo exterior",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/dolar-hoje-abertura-fechamento-comercial-turismo-20072026/",
+    "published_at": "2026-07-21T00:22:36.505034Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Dólar hoje fecha em baixa de 0,4%, a R$ 5,09, com investidores seguindo exterior.\n\nO foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "27a883533a13e543c67f54f0c082dc07",
+    "title": "Juros futuros a partir de janeiro de 2028 fecham em alta em sessão de volatilidade",
+    "subtitle": null,
+    "content_preview": "Juros futuros a partir de janeiro de 2028 fecham em alta em sessão de volatilidade",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/juros-futuros-a-partir-de-janeiro-de-2028-fecham-em-alta-em-sessao-de-volatilidade/",
+    "published_at": "2026-07-21T00:22:36.505034Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado"
+    ],
+    "sentiment_score": 0.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.25,
+    "summary": "Juros futuros a partir de janeiro de 2028 fecham em alta em sessão de volatilidade.\n\nO foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "23143ecf82c20e4cde224e4884ca8604",
+    "title": "Criptomoedas: bitcoin opera em alta com sinais de mediação no Oriente Médio",
+    "subtitle": null,
+    "content_preview": "Criptomoedas: bitcoin opera em alta com sinais de mediação no Oriente Médio",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/criptomoedas-bitcoin-opera-em-alta-com-sinais-de-mediacao-no-oriente-medio/",
+    "published_at": "2026-07-21T00:22:36.505034Z",
+    "language": "pt",
+    "tags": [
+      "Criptomoedas",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "BTC"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Criptomoedas",
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.75,
+    "summary": "Criptomoedas: bitcoin opera em alta com sinais de mediação no Oriente Médio.\n\nO texto menciona BTC. O foco principal passa por Criptomoedas, Economia.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "aa29a837e462e8f70289823a8f1458ea",
+    "title": "Setor de construção da B3 não alcança expectativas do Safra no 2T26; entenda",
+    "subtitle": null,
+    "content_preview": "Setor de construção da B3 não alcança expectativas do Safra no 2T26; entenda",
+    "full_text_if_available": null,
+    "source_id": "infomoney",
+    "source_name": "InfoMoney",
+    "source_type": "editorial_listing",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www.infomoney.com.br/mercados/setor-de-construcao-da-b3-nao-alcanca-expectativas-do-safra-no-2t26-entenda/",
+    "published_at": "2026-07-21T00:22:36.505034Z",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado"
+    ],
+    "mentioned_assets": [
+      "B3SA3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Setor de construção da B3 não alcança expectativas do Safra no 2T26; entenda.\n\nO texto menciona B3SA3. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "811bb3d00ec614a91eaf8e3230c383bf",
+    "title": "Icahn Enterprises vende Pep Boys para a Mavis por US$ 700 milhões",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/icahn-enterprises-vende-pep-boys-para-a-mavis-por-us-700-milhoes-93CH-2007490",
+    "published_at": "2026-07-21T00:21:51Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Icahn Enterprises vende Pep Boys para a Mavis por US$ 700 milhões.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T01:42:23.860483Z"
+  },
+  {
+    "id": "db733b04a12a8f9e07e7fc0d60ca850b",
+    "title": "EUA condenam ações da China contra a marinha das Filipinas no Mar do Sul da China",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/eua-condenam-acoes-da-china-contra-a-marinha-das-filipinas-no-mar-do-sul-da-china-93CH-2007477",
+    "published_at": "2026-07-20T23:43:06Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "EUA condenam ações da China contra a marinha das Filipinas no Mar do Sul da China.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "05fa000817ca064be8d4fc9657ae5266",
+    "title": "Airbus aumenta entregas em 15% no 1º semestre e mantém meta anual",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/airbus-aumenta-entregas-em-15-no-1o-semestre-e-mantem-meta-anual-93CH-2007474",
+    "published_at": "2026-07-20T23:36:56Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Petroleo e Gas"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Airbus aumenta entregas em 15% no 1º semestre e mantém meta anual.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "0d1e0523c5d71e7ad5cbe9da07f007e1",
+    "title": "Inflação do 2º tri na Nova Zelândia sobe mais que o esperado, a 4,1%",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/inflacao-do-2o-tri-na-nova-zelandia-sobe-mais-que-o-esperado-a-41-93CH-2007473",
+    "published_at": "2026-07-20T23:30:55Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 0.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.25,
+    "summary": "Inflação do 2º tri na Nova Zelândia sobe mais que o esperado, a 4,1%.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "2c51887ed6ac8ef7694f80deedf44e59",
+    "title": "Chanceleres da Coreia do Norte e da Rússia realizam conversações estratégicas, diz KCNA",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/world-news/chanceleres-da-coreia-do-norte-e-da-russia-realizam-conversacoes-estrategicas-diz-kcna-2007470",
+    "published_at": "2026-07-20T23:21:29Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Chanceleres da Coreia do Norte e da Rússia realizam conversações estratégicas, diz KCNA.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "2f77e70979304ce49ac105ae0fd69f53",
+    "title": "Juíza aprova acordo de US$1,5 bi da Anthropic em caso de violação de direitos autorais",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/juiza-aprova-acordo-de-us15-bi-da-anthropic-em-caso-de-violacao-de-direitos-autorais-2007469",
+    "published_at": "2026-07-20T23:21:09Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Juíza aprova acordo de US$1,5 bi da Anthropic em caso de violação de direitos autorais.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "d9bc77aa151303f9718b2c4f43fe5d88",
+    "title": "Trump diz que teve \"conversa muito boa\" com novo primeiro-ministro britânico",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/trump-diz-que-teve-conversa-muito-boa-com-novo-primeiroministro-britanico-93CH-2007468",
+    "published_at": "2026-07-20T23:19:36Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Trump diz que teve \"conversa muito boa\" com novo primeiro-ministro britânico.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "35a8c8cb02676c3ed1ed1d06c2344846",
+    "title": "TRX investe R$1,4 bi em complexo de 3 galpões logísticos em SP",
+    "subtitle": null,
+    "content_preview": "",
+    "full_text_if_available": null,
+    "source_id": "investing_br",
+    "source_name": "Investing.com Brasil",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://br.investing.com/news/stock-market-news/trx-investe-r14-bi-em-complexo-de-3-galpoes-logisticos-em-sp-2007461",
+    "published_at": "2026-07-20T23:14:07Z",
+    "language": "pt",
+    "tags": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Macroeconomia",
+      "Mercado"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "TRX investe R$1,4 bi em complexo de 3 galpões logísticos em SP.\n\nO foco principal passa por Macroeconomia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "6c15fd9b225c350c791ba0d55273d2b4",
+    "title": "EUA anunciam tarifas de 50% sobre ampla gama de produtos do Canadá",
+    "subtitle": null,
+    "content_preview": "Os Estados Unidos anunciaram nesta segunda-feira (20) que vão impor tarifas de 50% sobre uma ampla gama de produtos do Canadá, em uma medida que ameaça reacender a guerra comercial de Donald Trump. Leia mais (07/20/2026 - 19h35)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/eua-anunciam-tarifas-de-50-sobre-ampla-gama-de-produtos-do-canada.shtml",
+    "published_at": "2026-07-20T19:35:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Os Estados Unidos anunciaram nesta segunda-feira (20) que vão impor tarifas de 50% sobre uma ampla gama de produtos do Canadá, em uma medida que ameaça reacender a guerra comercial de Donald Trump.\n\nLeia mais (07/20/2026 - 19h35). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "90428c86319b98e94ae33749db8c90c7",
+    "title": "Justiça dos EUA aprova acordo de US$ 1,5 bilhão da Anthropic em processo de direitos autorais",
+    "subtitle": null,
+    "content_preview": "Uma juíza federal de San Francisco aprovou nesta segunda-feira (20) o acordo histórico de US$ 1,5 bilhão (R$ 7,6 bi) da empresa de inteligência artificial Anthropic em uma ação coletiva movida por um grupo de autores que a acusou de usar indevidamente seus livros para treinar seu chatbot de IA, o Claude. Leia mais (07/20/2026 - 19h25)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/tec/2026/07/justica-dos-eua-aprova-acordo-de-us-15-bilhao-da-anthropic-em-processo-de-direitos-autorais.shtml",
+    "published_at": "2026-07-20T19:25:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Uma juíza federal de San Francisco aprovou nesta segunda-feira (20) o acordo histórico de US$ 1,5 bilhão (R$ 7,6 bi) da empresa de inteligência artificial Anthropic em uma ação coletiva movida por um grupo de autores que a acusou de usar indevidamente seus livros para treinar seu chatbot de IA, o Claude.\n\nLeia mais (07/20/2026 - 19h25). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "91021ededc05edb69142000c04b3a0ff",
+    "title": "Nubank compra Banco Porto Real de Investimentos para obter licença bancária",
+    "subtitle": null,
+    "content_preview": "O Nubank anunciou nesta segunda-feira (20) acordo para aquisição do Banco Porto Real de Investimentos. O negócio visa incorporar a licença bancária da instituição, de modo que a fintech mantenha \"bank\" no nome -a partir de novembro, instituições que não tiverem a autorização não poderão ter a palavra no nome. Leia mais (07/20/2026 - 18h45)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/nubank-compra-banco-porto-real-de-investimentos-para-obter-licenca-bancaria.shtml",
+    "published_at": "2026-07-20T18:45:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Financeiro",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O Nubank anunciou nesta segunda-feira (20) acordo para aquisição do Banco Porto Real de Investimentos. O negócio visa incorporar a licença bancária da instituição, de modo que a fintech mantenha \"bank\" no nome -a partir de novembro, instituições que não tiverem a autorização não poderão ter a palavra no nome.\n\nLeia mais (07/20/2026 - 18h45). O foco principal passa por Economia, Financeiro.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "987331de1f88a4c9c7c2748a66514238",
+    "title": "Trump assina decreto para ajustar tarifas sobre importações de alumínio",
+    "subtitle": null,
+    "content_preview": "O presidente Donald Trump afirmou nesta segunda-feira (20) que assinou um decreto para ajustar as tarifas sobre importações de alumínio para os Estados Unidos, acrescentando que a produção nacional de alumínio primário no país é, atualmente, insuficiente. Leia mais (07/20/2026 - 18h18)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/trump-assina-decreto-para-ajustar-tarifas-sobre-importacoes-de-aluminio.shtml",
+    "published_at": "2026-07-20T18:18:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O presidente Donald Trump afirmou nesta segunda-feira (20) que assinou um decreto para ajustar as tarifas sobre importações de alumínio para os Estados Unidos, acrescentando que a produção nacional de alumínio primário no país é, atualmente, insuficiente.\n\nLeia mais (07/20/2026 - 18h18). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "7cd04d19473ddae2bbe06b29b4bc85f2",
+    "title": "Você escolhe sua renda fixa apenas pela taxa?",
+    "subtitle": null,
+    "content_preview": "Uma das perguntas que mais recebo é: \"Vale a pena comprar o título do Tesouro X?\" Curiosamente, quase sempre o título mencionado é justamente aquele que oferece a maior taxa disponível naquele momento. Raramente alguém pergunta se aquele vencimento faz sentido para seu perfil ou para seus objetivos. A taxa se torna o ponto de partida da decisão, quando, na realidade, deveria ser o ponto de chegada. Leia mais (07/20/2026 - 18h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/blogs/de-grao-em-grao/2026/07/voce-escolhe-sua-renda-fixa-apenas-pela-taxa.shtml",
+    "published_at": "2026-07-20T18:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "VALE3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "Uma das perguntas que mais recebo é: \"Vale a pena comprar o título do Tesouro X?\" Curiosamente, quase sempre o título mencionado é justamente aquele que oferece a maior taxa disponível naquele momento.\n\nRaramente alguém pergunta se aquele vencimento faz sentido para seu perfil ou para seus objetivos. O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "f4f2c56cea3bfd31669ffb529fb1c281",
+    "title": "Trump endurece regras para empresas de defesa dos EUA comprarem minerais críticos da China",
+    "subtitle": null,
+    "content_preview": "O presidente Donald Trump assinou nesta segunda-feira (20) um decreto que dificulta a obtenção de isenções por parte de empresas de defesa dos Estados Unidos para comprar minerais críticos e outros materiais da China e de outros fornecedores estrangeiros proibidos. Essa medida é mais um esforço do governo para reduzir a dependência de cadeias de suprimentos internacionais na produção de armamentos. Leia mais (07/20/2026 - 17h55)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/trump-endurece-regras-para-empresas-de-defesa-dos-eua-comprarem-minerais-criticos-da-china.shtml",
+    "published_at": "2026-07-20T17:55:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O presidente Donald Trump assinou nesta segunda-feira (20) um decreto que dificulta a obtenção de isenções por parte de empresas de defesa dos Estados Unidos para comprar minerais críticos e outros materiais da China e de outros fornecedores estrangeiros proibidos.\n\nEssa medida é mais um esforço do governo para reduzir a dependência de cadeias de suprimentos internacionais na produção de armamentos. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "bdc69d609988070decf5e6daad60bc48",
+    "title": "Sindicato de aposentados é contra nova reforma da Previdência",
+    "subtitle": null,
+    "content_preview": "O Sindnapi (Sindicato Nacional dos Aposentados, Pensionistas e Idosos da Força Sindical) é contra as propostas de nova reforma da Previdência que estão em estudo. A entidade tem como vice-presidente José Ferreira da Silva, conhecido como Frei Chico e irmão do presidente Lula (PT). Leia mais (07/20/2026 - 17h24)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/sindicato-de-irmao-de-lula-e-contra-nova-reforma-da-previdencia.shtml",
+    "published_at": "2026-07-20T17:24:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O Sindnapi (Sindicato Nacional dos Aposentados, Pensionistas e Idosos da Força Sindical) é contra as propostas de nova reforma da Previdência que estão em estudo.\n\nA entidade tem como vice-presidente José Ferreira da Silva, conhecido como Frei Chico e irmão do presidente Lula (PT). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "9aa3294ba54a5752820ceaeb49497c8e",
+    "title": "EXTRATO DE ATA DA REUNIÃO DO COLEGIADO Nº 18 DE 14.07.2026",
+    "subtitle": null,
+    "content_preview": "Tipo: Ordinária Participantes: • OTTO EDUARDO FONSECA DE ALBUQUERQUE LOBO – PRESIDENTE • MARINA PALMA COPOLA DE CARVALHO – DIRETORA (1) • IGOR MUNIZ – DIRETOR (1) Participou por videoconferência.   Decisão referente ao Proc. 19957.009862/2026-74 (Reg. nº 3573/26) publicada no site em 20.07.2026.",
+    "full_text_if_available": null,
+    "source_id": "cvm_decisoes",
+    "source_name": "CVM - Decisoes do Colegiado",
+    "source_type": "official_notice_feed",
+    "is_official": true,
+    "source_category": "regulator",
+    "source_url": "http://www.cvm.gov.br/decisoes/2026/20260714_R1.html",
+    "published_at": "2026-07-20T15:23:12-03:00",
+    "language": "pt",
+    "tags": [
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Mercado de Capitais",
+      "Regulacao",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Tipo: Ordinária Participantes: • OTTO EDUARDO FONSECA DE ALBUQUERQUE LOBO – PRESIDENTE • MARINA PALMA COPOLA DE CARVALHO – DIRETORA (1) • IGOR MUNIZ – DIRETOR (1) Participou por videoconferência.\n\nDecisão referente ao Proc. 19957.009862/2026-74 (Reg. nº 3573/26) publicada no site em 20.07.2026. O foco principal passa por Mercado de Capitais, Regulacao.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.457419Z"
+  },
+  {
+    "id": "d9417a0f2f182f4f6afcf27749605728",
+    "title": "Juiz ordena que Paramount suspenda temporariamente aquisição da Warner Bros",
+    "subtitle": null,
+    "content_preview": "Uma coalizão de estados liderada pela Califórnia conseguiu a suspensão da aquisição de US$ 110 bilhões (quase R$ 562 bilhões) da Warner Bros. Discovery WBD.O pela Paramount PSKY.O nesta segunda-feira (20), após argumentarem que permitir a conclusão da fusão prejudicaria irreparavelmente a concorrência. Leia mais (07/20/2026 - 14h39)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/juiz-ordena-que-paramount-suspenda-temporariamente-aquisicao-da-warner-bros.shtml",
+    "published_at": "2026-07-20T14:39:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Uma coalizão de estados liderada pela Califórnia conseguiu a suspensão da aquisição de US$ 110 bilhões (quase R$ 562 bilhões) da Warner Bros.\n\nDiscovery WBD.O pela Paramount PSKY.O nesta segunda-feira (20), após argumentarem que permitir a conclusão da fusão prejudicaria irreparavelmente a concorrência. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "3236dddc0f9772c85e279b28ef92720e",
+    "title": "Novos bilionários chineses evitam a imprensa e abandonam práticas de geração anterior",
+    "subtitle": null,
+    "content_preview": "No início do ano passado, quando a DeepSeek, um laboratório chinês de inteligência artificial, estava causando pânico nos rivais ocidentais, pouco se sabia sobre Liang Wenfeng, fundador da empresa. Leia mais (07/20/2026 - 14h18)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/novos-bilionarios-chineses-evitam-a-imprensa-e-abandonam-praticas-de-geracao-anterior.shtml",
+    "published_at": "2026-07-20T14:18:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "No início do ano passado, quando a DeepSeek, um laboratório chinês de inteligência artificial, estava causando pânico nos rivais ocidentais, pouco se sabia sobre Liang Wenfeng, fundador da empresa.\n\nLeia mais (07/20/2026 - 14h18). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "238b684bc24fd8fc54fe64c6175552dc",
+    "title": "Ricos também empobrecem, comentou Samuel Pessôa",
+    "subtitle": null,
+    "content_preview": "Costumo ter ótimas conversas em almoços, jantares, bares e forrós com colunistas da Folha e de outros jornais. Um deles é Samuel Pessôa. Infelizmente, ele ainda não topou ir ao forró. Porém, costumamos compartilhar bons almoços e algumas cachacinhas mineiras de vez em quando. Leia mais (07/20/2026 - 13h48)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/michael-franca/2026/07/ricos-tambem-empobrecem-comentou-samuel-pessoa.shtml",
+    "published_at": "2026-07-20T13:48:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Costumo ter ótimas conversas em almoços, jantares, bares e forrós com colunistas da Folha e de outros jornais. Um deles é Samuel Pessôa.\n\nInfelizmente, ele ainda não topou ir ao forró. Porém, costumamos compartilhar bons almoços e algumas cachacinhas mineiras de vez em quando. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "bbaadecaea87677dbfe1be5af860f28e",
+    "title": "Fazenda afrouxa regra de empréstimo a estados e destrava crédito de R$ 536 milhões ao Amapá",
+    "subtitle": null,
+    "content_preview": "O Ministério da Fazenda afrouxou uma regra de empréstimo a estados e municípios e permitiu que o Amapá tomasse um crédito de R$ 536 milhões, com garantia soberana, apenas três meses após dar um calote em dívidas que tinham a própria União como fiadora. Sem a flexibilização, o estado precisaria respeitar uma quarentena de 12 meses. Leia mais (07/20/2026 - 13h30)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/fazenda-afrouxa-regra-de-emprestimo-a-estados-e-destrava-credito-de-r-536-milhoes-ao-amapa.shtml",
+    "published_at": "2026-07-20T13:30:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 0.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.25,
+    "summary": "O Ministério da Fazenda afrouxou uma regra de empréstimo a estados e municípios e permitiu que o Amapá tomasse um crédito de R$ 536 milhões, com garantia soberana, apenas três meses após dar um calote em dívidas que tinham a própria União como fiadora.\n\nSem a flexibilização, o estado precisaria respeitar uma quarentena de 12 meses. Leia mais (07/20/2026 - 13h30). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "e32138db801bcf1ee3d3a87fa10e954f",
+    "title": "Sabesp faz feirão para renegociar dívidas com descontos de até 80%; veja como participar",
+    "subtitle": null,
+    "content_preview": "Clientes residenciais da Sabesp podem renegociar contas de água em atraso com descontos de até 80% sobre o valor da dívida em um feirão promovido pela companhia. A campanha, chamada \"Acertando Suas Contas\", vai até 31 de julho e é válida para consumidores atendidos pela empresa em todo o estado de São Paulo. Leia mais (07/20/2026 - 12h35)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/sabesp-faz-feirao-para-renegociar-dividas-com-descontos-de-ate-80-veja-como-participar.shtml",
+    "published_at": "2026-07-20T12:35:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Clientes residenciais da Sabesp podem renegociar contas de água em atraso com descontos de até 80% sobre o valor da dívida em um feirão promovido pela companhia.\n\nA campanha, chamada \"Acertando Suas Contas\", vai até 31 de julho e é válida para consumidores atendidos pela empresa em todo o estado de São Paulo. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "21dc9d1f6bd36b05bc1eb88548fc7117",
+    "title": "STF dá liminar para a Buser e autoriza operação da empresa no Paraná",
+    "subtitle": null,
+    "content_preview": "O ministro Nunes Marques, do STF (Supremo Tribunal Federal) aceitou recurso da Buser e concedeu efeito suspensivo que autoriza a retomada das operações da plataforma de fretamento Paraná. A decisão derruba o acórdão anterior, do TRF-4 ( Tribunal Regional Federal da 4ª Região) que havia proibido as viagens da empresa com partida ou chegada no estado. O STJ (Superior Tribunal de Justiça) havia mantido a medida. Leia mais (07/20/2026 - 12h25)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/07/stf-da-liminar-para-a-buser-e-autoriza-operacao-da-empresa-no-parana.shtml",
+    "published_at": "2026-07-20T12:25:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O ministro Nunes Marques, do STF (Supremo Tribunal Federal) aceitou recurso da Buser e concedeu efeito suspensivo que autoriza a retomada das operações da plataforma de fretamento Paraná.\n\nA decisão derruba o acórdão anterior, do TRF-4 ( Tribunal Regional Federal da 4ª Região) que havia proibido as viagens da empresa com partida ou chegada no estado. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "5d47c9f34058e4fb202c9e4613eaf855",
+    "title": "Maesrk e MSC protocolam no Cade compromisso de desinvestimento para participarem do Tecon 10",
+    "subtitle": null,
+    "content_preview": "Em documentos protocolados no Cade (Conselho Administrativo de Defesa Econômica), a APM Terminals, braço nacional da dinamarquesa Maersk, e a TiL (subsidiária brasileira da suíça MSC) apresentaram notificação sobre desinvestimento no BTP, o terminal em que são sócias no porto de Santos. Leia mais (07/20/2026 - 12h01)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/07/maesrk-e-msc-protocolam-no-cade-compromisso-de-desinvestimento-para-participarem-do-tecon-10.shtml",
+    "published_at": "2026-07-20T12:01:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Em documentos protocolados no Cade (Conselho Administrativo de Defesa Econômica), a APM Terminals, braço nacional da dinamarquesa Maersk, e a TiL (subsidiária brasileira da suíça MSC) apresentaram notificação sobre desinvestimento no BTP, o terminal em que são sócias no porto de Santos.\n\nLeia mais (07/20/2026 - 12h01). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "aa5c13a0bf3c6b501bae10d8430155e0",
+    "title": "Brasil é o 11º maior mercado de wellness do mundo e lidera na América Latina, mostra estudo",
+    "subtitle": null,
+    "content_preview": "O Brasil tem o 11º maior mercado de saúde e bem-estar do mundo e é líder na América Latina, movimentando US$ 111,1 bilhões por ano. O número está no estudo \"Saúde & Bem-Estar\", editado e publicado pela consultoria Hand Gestão Compartilhada em 2026. Leia mais (07/20/2026 - 12h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/07/brasil-e-o-11o-maior-mercado-de-wellness-do-mundo-e-lidera-na-america-latina-mostra-estudo.shtml",
+    "published_at": "2026-07-20T12:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O Brasil tem o 11º maior mercado de saúde e bem-estar do mundo e é líder na América Latina, movimentando US$ 111,1 bilhões por ano.\n\nO número está no estudo \"Saúde & Bem-Estar\", editado e publicado pela consultoria Hand Gestão Compartilhada em 2026. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "131bf61014b14536fbc174da2e644a79",
+    "title": "Dona da Gol negocia compra de 20 aviões E2 da Embraer, diz agência",
+    "subtitle": null,
+    "content_preview": "O Abra Group, controladora da Gol, está perto de fazer um pedido de jatos E2, da Embraer, de acordo com pessoas familiarizadas com o assunto. Leia mais (07/20/2026 - 11h22)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/dona-da-gol-negocia-compra-de-20-avioes-e2-da-embraer-diz-agencia.shtml",
+    "published_at": "2026-07-20T11:22:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O Abra Group, controladora da Gol, está perto de fazer um pedido de jatos E2, da Embraer, de acordo com pessoas familiarizadas com o assunto.\n\nLeia mais (07/20/2026 - 11h22). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "1af439c51efe921417c390b1f67ec830",
+    "title": "Irã aproveitou cessar-fogo para obter bilhões com venda de petróleo",
+    "subtitle": null,
+    "content_preview": "Com o acordo de paz de meados de junho com os EUA se desfazendo, o Irã pode ser beneficiado pelos bilhões de dólares que arrecadou ao exportar petróleo após o acordo de junho, uma concessão feita pelos Estados Unidos. Leia mais (07/20/2026 - 11h08)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/ira-aproveitou-cessar-fogo-para-obter-bilhoes-com-venda-de-petroleo.shtml",
+    "published_at": "2026-07-20T11:08:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Com o acordo de paz de meados de junho com os EUA se desfazendo, o Irã pode ser beneficiado pelos bilhões de dólares que arrecadou ao exportar petróleo após o acordo de junho, uma concessão feita pelos Estados Unidos.\n\nLeia mais (07/20/2026 - 11h08). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "11dbf5b48c6287f74b8350ece4a0dc86",
+    "title": "Interpretações e acusações de mudança de opinião marcam PL dos mercados digitais",
+    "subtitle": null,
+    "content_preview": "Empresas de tecnologia, governo e entidades de defesa do consumidor pressionam a Câmara dos Deputados quanto ao projeto de lei 4675/2025, chamado de PL dos Mercados Digitais. Leia mais (07/20/2026 - 10h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/painelsa/2026/07/interpretacoes-e-acusacoes-de-mudanca-de-opiniao-marcam-pl-dos-mercados-digitais.shtml",
+    "published_at": "2026-07-20T10:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Empresas de tecnologia, governo e entidades de defesa do consumidor pressionam a Câmara dos Deputados quanto ao projeto de lei 4675/2025, chamado de PL dos Mercados Digitais.\n\nLeia mais (07/20/2026 - 10h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "ec833714773bda2ea7b4a475a6fe6295",
+    "title": "Raízen vende usina em MS para Adecoagro por R$ 760 milhões",
+    "subtitle": null,
+    "content_preview": "A Raízen anunciou nesta segunda-feira (20) que acertou a venda da usina Caarapó, em Mato Grosso do Sul, para a Adecoagro Vale do Ivinhema por US$ 760 milhões. Leia mais (07/20/2026 - 09h57)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://aovivo.folha.uol.com.br/mercado/2026/07/01/6533-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post466638",
+    "published_at": "2026-07-20T09:57:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [
+      "VALE3"
+    ],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.48000000000000004,
+    "summary": "A Raízen anunciou nesta segunda-feira (20) que acertou a venda da usina Caarapó, em Mato Grosso do Sul, para a Adecoagro Vale do Ivinhema por US$ 760 milhões.\n\nLeia mais (07/20/2026 - 09h57). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "953a124fd1412d2c98ef020ca18f9edb",
+    "title": "Dólar e Bolsa fecham em queda com guerra no Oriente Médio no radar",
+    "subtitle": null,
+    "content_preview": "O dólar fechou em queda de 0,41% nesta segunda-feira (20), cotado a R$ 5,088, com investidores monitorando os desdobramentos do conflito no Oriente Médio. Leia mais (07/20/2026 - 09h30)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/acompanhe-a-cotacao-do-dolar-nesta-segunda-feira-20.shtml",
+    "published_at": "2026-07-20T09:30:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "O dólar fechou em queda de 0,41% nesta segunda-feira (20), cotado a R$ 5,088, com investidores monitorando os desdobramentos do conflito no Oriente Médio.\n\nLeia mais (07/20/2026 - 09h30). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "0ce2b6e5a460044cf22b5dc0109d1a9f",
+    "title": "Economistas diminuem previsão da inflação pela terceira semana seguida",
+    "subtitle": null,
+    "content_preview": "Os economistas reduziram a previsão da inflação neste ano pela terceira semana consecutiva, mas em um ritmo menor do que nos levantamentos anteriores do boletim Focus, divulgado nesta segunda-feira (20). Leia mais (07/20/2026 - 08h47)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/economistas-diminuem-previsao-da-inflacao-pela-terceira-semana-seguida.shtml",
+    "published_at": "2026-07-20T08:47:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -1.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.55,
+    "summary": "Os economistas reduziram a previsão da inflação neste ano pela terceira semana consecutiva, mas em um ritmo menor do que nos levantamentos anteriores do boletim Focus, divulgado nesta segunda-feira (20).\n\nLeia mais (07/20/2026 - 08h47). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.489198Z"
+  },
+  {
+    "id": "23cb16bdac497a0b8536585e45612a66",
+    "title": "Plano para gasolina com 35% de etanol avança; nova fase de testes está prevista para setembro",
+    "subtitle": null,
+    "content_preview": "O plano de elevar o teor de etanol anidro na gasolina para 35%, criando o E35, segue em andamento. Segundo integrantes do comitê que conduz o projeto, as próximas etapas de testes devem começar em setembro. Neste momento, estão sendo discutidos os critérios que serão adotados. Leia mais (07/20/2026 - 06h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/colunas/eduardosodre/2026/07/plano-para-gasolina-com-35-de-etanol-avanca-nova-fase-de-testes-esta-prevista-para-setembro.shtml",
+    "published_at": "2026-07-20T06:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Petroleo e Gas",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O plano de elevar o teor de etanol anidro na gasolina para 35%, criando o E35, segue em andamento. Segundo integrantes do comitê que conduz o projeto, as próximas etapas de testes devem começar em setembro.\n\nNeste momento, estão sendo discutidos os critérios que serão adotados. Leia mais (07/20/2026 - 06h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "78602bb040c97fb09b1ff7db0db576ae",
+    "title": "Podcast: os primeiros impactos e reações ao tarifaço de Trump no comércio e na diplomacia",
+    "subtitle": null,
+    "content_preview": "O governo Lula passou os últimos dias discutindo como reagir ao novo tarifaço de Donald Trump, que confirmou tarifas de 25% sobre produtos brasileiros. Falas em defesa da soberania, pacote ampliando programas de crédito a empresas afetadas e planos para ampliar mercados de exportação já foram apresentados. Possíveis caminhos para aplicar a Lei da Reciprocidade Econômica, um processo que ainda deve levar tempo para sair do papel, também estão em discussão. Leia mais (07/20/2026 - 05h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/podcasts/2026/07/podcast-os-primeiros-impactos-e-reacoes-ao-tarifaco-de-trump-no-comercio-e-na-diplomacia.shtml",
+    "published_at": "2026-07-20T05:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": 0.0,
+    "relevance_score": 0.5,
+    "impact_score": 0.25,
+    "summary": "O governo Lula passou os últimos dias discutindo como reagir ao novo tarifaço de Donald Trump, que confirmou tarifas de 25% sobre produtos brasileiros.\n\nFalas em defesa da soberania, pacote ampliando programas de crédito a empresas afetadas e planos para ampliar mercados de exportação já foram apresentados. O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "38d74ee15e93a3b48205bf52b629d18f",
+    "title": "Juízes, diretores e médicos estão entre os profissionais com maiores salários; consulte o da sua área",
+    "subtitle": null,
+    "content_preview": "Juízes, diretores gerais e médicos especialistas estão entre os profissionais mais bem pagos em média no Brasil, indica um levantamento produzido pelo economista Bruno Imaizumi, da consultoria 4intelligence, a pedido da Folha. Leia mais (07/20/2026 - 04h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/juizes-diretores-e-medicos-estao-entre-as-profissoes-com-maiores-salarios-consulte-o-da-sua-area.shtml",
+    "published_at": "2026-07-20T04:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "Juízes, diretores gerais e médicos especialistas estão entre os profissionais mais bem pagos em média no Brasil, indica um levantamento produzido pelo economista Bruno Imaizumi, da consultoria 4intelligence, a pedido da Folha.\n\nLeia mais (07/20/2026 - 04h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
+    "id": "5a685200afbb37af176888e1e6712f10",
+    "title": "Bolsa Família de julho começa a ser pago; veja calendário e quem recebe",
+    "subtitle": null,
+    "content_preview": "O Bolsa Família de julho começa a ser pago pela Caixa Econômica Federal a partir desta segunda-feira (20). Os depósitos são feitos de forma escalonada, conforme o final do NIS (Número de Identificação Social), nos últimos dez dias úteis. O calendário termina no dia 31. Leia mais (07/20/2026 - 04h00)",
+    "full_text_if_available": null,
+    "source_id": "folha_mercado",
+    "source_name": "Folha.com - Mercado - Principal",
+    "source_type": "rss",
+    "is_official": false,
+    "source_category": "press",
+    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/bolsa-familia-de-julho-comeca-a-ser-pago-veja-calendario-e-quem-recebe.shtml",
+    "published_at": "2026-07-20T04:00:00-03:00",
+    "language": "pt",
+    "tags": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "mentioned_assets": [],
+    "mentioned_countries": [
+      "BR",
+      "US"
+    ],
+    "mentioned_sectors": [
+      "Economia",
+      "Mercado",
+      "Tecnologia"
+    ],
+    "sentiment_score": -0.1,
+    "relevance_score": 0.5,
+    "impact_score": 0.28,
+    "summary": "O Bolsa Família de julho começa a ser pago pela Caixa Econômica Federal a partir desta segunda-feira (20). Os depósitos são feitos de forma escalonada, conforme o final do NIS (Número de Identificação Social), nos últimos dez dias úteis.\n\nO calendário termina no dia 31. Leia mais (07/20/2026 - 04h00). O foco principal passa por Economia, Mercado.",
+    "cluster_id": null,
+    "created_at": "2026-07-21T00:22:36.505034Z"
+  },
+  {
     "id": "fb1204d16d2bf4e6ae6bd3cd997db231",
     "title": "Copel cai 2,8% após elevar meta de alavancagem; JPMorgan tem cautela sobre dividendos",
     "subtitle": null,
@@ -4769,2141 +6940,5 @@
     "summary": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
     "cluster_id": null,
     "created_at": "2026-07-09T01:21:36.195050Z"
-  },
-  {
-    "id": "a86e9c027d3ffce442137c837e064794",
-    "title": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14",
-    "subtitle": null,
-    "content_preview": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-08072026/",
-    "published_at": "2026-07-09T01:21:36.195050Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "VALE3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.48000000000000004,
-    "summary": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:21:36.195050Z"
-  },
-  {
-    "id": "875d01d025d5e8c7b82368d388acf6ef",
-    "title": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?",
-    "subtitle": null,
-    "content_preview": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-abertura-fechamento-08072026/",
-    "published_at": "2026-07-09T01:21:36.195050Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:21:36.195050Z"
-  },
-  {
-    "id": "d159089b846b39ba6c18ff56f423e496",
-    "title": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-fecham-sem-direcao-unica-com-cessar-fogo-no-oriente-medio-em-risco/",
-    "published_at": "2026-07-09T01:21:36.195050Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:21:36.195050Z"
-  },
-  {
-    "id": "d2f46ed58cc62a4c693319256aa08629",
-    "title": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio",
-    "subtitle": null,
-    "content_preview": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/criptomoedas-bitcoin-recua-para-us-62-mil-com-aversao-ao-risco-no-oriente-medio/",
-    "published_at": "2026-07-09T01:21:36.195050Z",
-    "language": "pt",
-    "tags": [
-      "Criptomoedas",
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "BTC"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Criptomoedas",
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.75,
-    "summary": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio.\n\nO texto menciona BTC. O foco principal passa por Criptomoedas, Economia.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:21:36.195050Z"
-  },
-  {
-    "id": "610c710b7a16e52bb39503e144df0d7f",
-    "title": "A estratégia para se posicionar na América Latina com o El Niño",
-    "subtitle": null,
-    "content_preview": "A estratégia para se posicionar na América Latina com o El Niño",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/a-estrategia-para-se-posicionar-na-america-latina-com-o-el-nino-segundo-santander/",
-    "published_at": "2026-07-09T01:21:36.193544Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A estratégia para se posicionar na América Latina com o El Niño.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:21:36.193544Z"
-  },
-  {
-    "id": "aaa69fc7a161576eb01db097f92caac7",
-    "title": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze",
-    "subtitle": null,
-    "content_preview": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/jpmorgan-ve-chance-de-recuperacao-tatica-na-bolsa-e-acoes-com-risco-de-short-squeeze/",
-    "published_at": "2026-07-09T01:21:36.193544Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 0.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.25,
-    "summary": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:21:36.193544Z"
-  },
-  {
-    "id": "fe075ea304fb75e9780d642950b76edc",
-    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "subtitle": null,
-    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
-    "published_at": "2026-07-09T01:21:36.193544Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:21:36.193544Z"
-  },
-  {
-    "id": "70a3f948132c67abdc2963afb9897ce3",
-    "title": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta",
-    "subtitle": null,
-    "content_preview": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/listagem-da-sk-hynix-nos-eua-tem-demanda-7-vezes-maior-que-a-oferta/",
-    "published_at": "2026-07-09T01:21:36.193544Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:21:36.193544Z"
-  },
-  {
-    "id": "d01ca382c17055b775bdef2c8237ff17",
-    "title": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã",
-    "subtitle": null,
-    "content_preview": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/petroleo-brent-avanca-mais-de-7-no-after-market-apos-novos-ataques-dos-eua-ao-ira/",
-    "published_at": "2026-07-09T01:21:36.193544Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:21:36.195050Z"
-  },
-  {
-    "id": "8e031dece4375f924773710113c74ae7",
-    "title": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-fecham-sem-direcao-unica-com-cessar-fogo-no-oriente-medio-em-risco/",
-    "published_at": "2026-07-09T01:18:24.613511Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.613511Z"
-  },
-  {
-    "id": "7149135f0f457cd5842064c1de6d4ffa",
-    "title": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio",
-    "subtitle": null,
-    "content_preview": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/criptomoedas-bitcoin-recua-para-us-62-mil-com-aversao-ao-risco-no-oriente-medio/",
-    "published_at": "2026-07-09T01:18:24.613511Z",
-    "language": "pt",
-    "tags": [
-      "Criptomoedas",
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "BTC"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Criptomoedas",
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.75,
-    "summary": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio.\n\nO texto menciona BTC. O foco principal passa por Criptomoedas, Economia.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.613511Z"
-  },
-  {
-    "id": "799b13a70580262a2e07b7040411a358",
-    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "subtitle": null,
-    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
-    "published_at": "2026-07-09T01:18:24.612510Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.612510Z"
-  },
-  {
-    "id": "2c24777d3e59f2300c4597bfc5a45d1d",
-    "title": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta",
-    "subtitle": null,
-    "content_preview": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/listagem-da-sk-hynix-nos-eua-tem-demanda-7-vezes-maior-que-a-oferta/",
-    "published_at": "2026-07-09T01:18:24.612510Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.612510Z"
-  },
-  {
-    "id": "7a078cf5acbc07a766e15951b82c6da1",
-    "title": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã",
-    "subtitle": null,
-    "content_preview": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/petroleo-brent-avanca-mais-de-7-no-after-market-apos-novos-ataques-dos-eua-ao-ira/",
-    "published_at": "2026-07-09T01:18:24.612510Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.612510Z"
-  },
-  {
-    "id": "afbd3a18da828ddffa9f49c86b495a4d",
-    "title": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\"",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\"",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-operam-em-queda-apos-trump-dizer-que-cessar-fogo-eua-ira-acabou/",
-    "published_at": "2026-07-09T01:18:24.612510Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\".\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.612510Z"
-  },
-  {
-    "id": "fecfc1149f11132d47d88f67f3ccd74e",
-    "title": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley",
-    "subtitle": null,
-    "content_preview": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/vale-vale3-cai-mais-de-4-apos-corte-de-recomendacao-por-morgan-stanley/",
-    "published_at": "2026-07-09T01:18:24.612510Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "VALE3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.75,
-    "summary": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.612510Z"
-  },
-  {
-    "id": "3cf97df2c40a84f6c828b581ae4c553e",
-    "title": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14",
-    "subtitle": null,
-    "content_preview": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-08072026/",
-    "published_at": "2026-07-09T01:18:24.612510Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "VALE3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.48000000000000004,
-    "summary": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.612510Z"
-  },
-  {
-    "id": "a91de8e54c6f61098c958bc646065c36",
-    "title": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?",
-    "subtitle": null,
-    "content_preview": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-abertura-fechamento-08072026/",
-    "published_at": "2026-07-09T01:18:24.612510Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.612510Z"
-  },
-  {
-    "id": "be2d5a32eb89e4632de87c76d0c2e2ff",
-    "title": "A estratégia para se posicionar na América Latina com o El Niño",
-    "subtitle": null,
-    "content_preview": "A estratégia para se posicionar na América Latina com o El Niño",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/a-estrategia-para-se-posicionar-na-america-latina-com-o-el-nino-segundo-santander/",
-    "published_at": "2026-07-09T01:18:24.611578Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A estratégia para se posicionar na América Latina com o El Niño.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.611578Z"
-  },
-  {
-    "id": "89daaa3ced3debca05c50dc53b225e51",
-    "title": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze",
-    "subtitle": null,
-    "content_preview": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/jpmorgan-ve-chance-de-recuperacao-tatica-na-bolsa-e-acoes-com-risco-de-short-squeeze/",
-    "published_at": "2026-07-09T01:18:24.611578Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 0.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.25,
-    "summary": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:18:24.611578Z"
-  },
-  {
-    "id": "d4a965408c6cd50a3795a724c5d00beb",
-    "title": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-fecham-sem-direcao-unica-com-cessar-fogo-no-oriente-medio-em-risco/",
-    "published_at": "2026-07-09T01:17:48.341159Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.341159Z"
-  },
-  {
-    "id": "3403388bb6a3598c7a495a2b082bf60e",
-    "title": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio",
-    "subtitle": null,
-    "content_preview": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/criptomoedas-bitcoin-recua-para-us-62-mil-com-aversao-ao-risco-no-oriente-medio/",
-    "published_at": "2026-07-09T01:17:48.341159Z",
-    "language": "pt",
-    "tags": [
-      "Criptomoedas",
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "BTC"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Criptomoedas",
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.75,
-    "summary": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio.\n\nO texto menciona BTC. O foco principal passa por Criptomoedas, Economia.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.341159Z"
-  },
-  {
-    "id": "cc030138e03f6ddc27708af8bbe5f55b",
-    "title": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã",
-    "subtitle": null,
-    "content_preview": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/petroleo-brent-avanca-mais-de-7-no-after-market-apos-novos-ataques-dos-eua-ao-ira/",
-    "published_at": "2026-07-09T01:17:48.340159Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.340159Z"
-  },
-  {
-    "id": "ea62dde61a9d7c080dffcde873af3a43",
-    "title": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\"",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\"",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-operam-em-queda-apos-trump-dizer-que-cessar-fogo-eua-ira-acabou/",
-    "published_at": "2026-07-09T01:17:48.340159Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\".\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.340159Z"
-  },
-  {
-    "id": "3d4cc8794f269e8ea1f93659baa56b34",
-    "title": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley",
-    "subtitle": null,
-    "content_preview": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/vale-vale3-cai-mais-de-4-apos-corte-de-recomendacao-por-morgan-stanley/",
-    "published_at": "2026-07-09T01:17:48.340159Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "VALE3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.75,
-    "summary": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.340159Z"
-  },
-  {
-    "id": "6ba7b88ee7274b345f8f25a80d83d7f0",
-    "title": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14",
-    "subtitle": null,
-    "content_preview": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-08072026/",
-    "published_at": "2026-07-09T01:17:48.340159Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "VALE3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.48000000000000004,
-    "summary": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.340159Z"
-  },
-  {
-    "id": "4bca3b109af40facbe110e2cbe1bf3ac",
-    "title": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?",
-    "subtitle": null,
-    "content_preview": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-abertura-fechamento-08072026/",
-    "published_at": "2026-07-09T01:17:48.340159Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.341159Z"
-  },
-  {
-    "id": "decda9433d5fb5afbb3c27eca79e75de",
-    "title": "A estratégia para se posicionar na América Latina com o El Niño",
-    "subtitle": null,
-    "content_preview": "A estratégia para se posicionar na América Latina com o El Niño",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/a-estrategia-para-se-posicionar-na-america-latina-com-o-el-nino-segundo-santander/",
-    "published_at": "2026-07-09T01:17:48.339157Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A estratégia para se posicionar na América Latina com o El Niño.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.339157Z"
-  },
-  {
-    "id": "62198593649e05cb01477af508c1fad8",
-    "title": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze",
-    "subtitle": null,
-    "content_preview": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/jpmorgan-ve-chance-de-recuperacao-tatica-na-bolsa-e-acoes-com-risco-de-short-squeeze/",
-    "published_at": "2026-07-09T01:17:48.339157Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 0.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.25,
-    "summary": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.339157Z"
-  },
-  {
-    "id": "c14dc44dc8c986ed67dc1aae0c54f157",
-    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "subtitle": null,
-    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
-    "published_at": "2026-07-09T01:17:48.339157Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.339157Z"
-  },
-  {
-    "id": "73c8771d2d9df2b13fce7d1926efca41",
-    "title": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta",
-    "subtitle": null,
-    "content_preview": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/listagem-da-sk-hynix-nos-eua-tem-demanda-7-vezes-maior-que-a-oferta/",
-    "published_at": "2026-07-09T01:17:48.339157Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:48.340159Z"
-  },
-  {
-    "id": "640de55c5cb57d1b41d7c0ca006d5f75",
-    "title": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley",
-    "subtitle": null,
-    "content_preview": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/vale-vale3-cai-mais-de-4-apos-corte-de-recomendacao-por-morgan-stanley/",
-    "published_at": "2026-07-09T01:17:47.805586Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "VALE3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.75,
-    "summary": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.805586Z"
-  },
-  {
-    "id": "646943367a254dde72401ccf253cc34c",
-    "title": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14",
-    "subtitle": null,
-    "content_preview": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-08072026/",
-    "published_at": "2026-07-09T01:17:47.805586Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "VALE3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.48000000000000004,
-    "summary": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.805586Z"
-  },
-  {
-    "id": "675c3a4d92d94739cbf420da4814fc6a",
-    "title": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?",
-    "subtitle": null,
-    "content_preview": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-abertura-fechamento-08072026/",
-    "published_at": "2026-07-09T01:17:47.805586Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.805586Z"
-  },
-  {
-    "id": "4b6ca90ef95b1c1d3d88b89d2efbc3c4",
-    "title": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-fecham-sem-direcao-unica-com-cessar-fogo-no-oriente-medio-em-risco/",
-    "published_at": "2026-07-09T01:17:47.805586Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.805586Z"
-  },
-  {
-    "id": "2b2d9ec40b1d48af11318a86a1f51a11",
-    "title": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio",
-    "subtitle": null,
-    "content_preview": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/criptomoedas-bitcoin-recua-para-us-62-mil-com-aversao-ao-risco-no-oriente-medio/",
-    "published_at": "2026-07-09T01:17:47.805586Z",
-    "language": "pt",
-    "tags": [
-      "Criptomoedas",
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "BTC"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Criptomoedas",
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.75,
-    "summary": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio.\n\nO texto menciona BTC. O foco principal passa por Criptomoedas, Economia.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.805586Z"
-  },
-  {
-    "id": "8e910cd252a3e172bc866c4afc1baf71",
-    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "subtitle": null,
-    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
-    "published_at": "2026-07-09T01:17:47.804581Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.804581Z"
-  },
-  {
-    "id": "3432d0751a9c60d6a81af6dc6cc9fa02",
-    "title": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta",
-    "subtitle": null,
-    "content_preview": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/listagem-da-sk-hynix-nos-eua-tem-demanda-7-vezes-maior-que-a-oferta/",
-    "published_at": "2026-07-09T01:17:47.804581Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.804581Z"
-  },
-  {
-    "id": "cb996fd685d84a351b4e358ebaca2714",
-    "title": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã",
-    "subtitle": null,
-    "content_preview": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/petroleo-brent-avanca-mais-de-7-no-after-market-apos-novos-ataques-dos-eua-ao-ira/",
-    "published_at": "2026-07-09T01:17:47.804581Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.804581Z"
-  },
-  {
-    "id": "b3f861595e902c594609c86ac0740627",
-    "title": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\"",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\"",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-operam-em-queda-apos-trump-dizer-que-cessar-fogo-eua-ira-acabou/",
-    "published_at": "2026-07-09T01:17:47.804581Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\".\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.804581Z"
-  },
-  {
-    "id": "b9dd0c7e4effc5f05773cc1b6ac1b749",
-    "title": "A estratégia para se posicionar na América Latina com o El Niño",
-    "subtitle": null,
-    "content_preview": "A estratégia para se posicionar na América Latina com o El Niño",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/a-estrategia-para-se-posicionar-na-america-latina-com-o-el-nino-segundo-santander/",
-    "published_at": "2026-07-09T01:17:47.804077Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A estratégia para se posicionar na América Latina com o El Niño.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.804077Z"
-  },
-  {
-    "id": "52a2b5f8e36c8d3b57cb0933ecff7490",
-    "title": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze",
-    "subtitle": null,
-    "content_preview": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/jpmorgan-ve-chance-de-recuperacao-tatica-na-bolsa-e-acoes-com-risco-de-short-squeeze/",
-    "published_at": "2026-07-09T01:17:47.804077Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 0.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.25,
-    "summary": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:47.804581Z"
-  },
-  {
-    "id": "dd6b3e0da89a40973793592811c58353",
-    "title": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio",
-    "subtitle": null,
-    "content_preview": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/criptomoedas-bitcoin-recua-para-us-62-mil-com-aversao-ao-risco-no-oriente-medio/",
-    "published_at": "2026-07-09T01:17:43.614183Z",
-    "language": "pt",
-    "tags": [
-      "Criptomoedas",
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "BTC"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Criptomoedas",
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.75,
-    "summary": "Criptomoedas: Bitcoin recua para US$ 62 mil com aversão ao risco no Oriente Médio.\n\nO texto menciona BTC. O foco principal passa por Criptomoedas, Economia.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.614183Z"
-  },
-  {
-    "id": "33c02b5ee6b380cd9425de69a45881de",
-    "title": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã",
-    "subtitle": null,
-    "content_preview": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/petroleo-brent-avanca-mais-de-7-no-after-market-apos-novos-ataques-dos-eua-ao-ira/",
-    "published_at": "2026-07-09T01:17:43.613183Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Petróleo Brent avança mais de 7% no after market após novos ataques dos EUA ao Irã.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.613183Z"
-  },
-  {
-    "id": "a932e95b651c2022408324e128a4dd1c",
-    "title": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\"",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\"",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-operam-em-queda-apos-trump-dizer-que-cessar-fogo-eua-ira-acabou/",
-    "published_at": "2026-07-09T01:17:43.613183Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Bolsas de NY fecham em queda após Trump dizer que cessar-fogo EUA-Irã \"acabou\".\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.613183Z"
-  },
-  {
-    "id": "93d8c7d0b2b77e9e039d669fdc885815",
-    "title": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley",
-    "subtitle": null,
-    "content_preview": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/vale-vale3-cai-mais-de-4-apos-corte-de-recomendacao-por-morgan-stanley/",
-    "published_at": "2026-07-09T01:17:43.613183Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "VALE3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.75,
-    "summary": "Vale (VALE3) fecha com queda de 4,5% após corte de recomendação por Morgan Stanley.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.613183Z"
-  },
-  {
-    "id": "8266f10da8cca2cccb46b102a4f103e9",
-    "title": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14",
-    "subtitle": null,
-    "content_preview": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-08072026/",
-    "published_at": "2026-07-09T01:17:43.613183Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [
-      "VALE3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.48000000000000004,
-    "summary": "Ibovespa cai com Vale e seguindo exterior; dólar cai a R$ 5,14.\n\nO texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.613183Z"
-  },
-  {
-    "id": "57ad2021ebeda4ebce05968de66c024b",
-    "title": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?",
-    "subtitle": null,
-    "content_preview": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/ibovespa-abertura-fechamento-08072026/",
-    "published_at": "2026-07-09T01:17:43.613183Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Por que o Ibovespa recuou nesta quarta, mesmo com forte alta de petroleiras?\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.613183Z"
-  },
-  {
-    "id": "e1c57c618c1fb16a8083de7c70c4fb6a",
-    "title": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco",
-    "subtitle": null,
-    "content_preview": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-fecham-sem-direcao-unica-com-cessar-fogo-no-oriente-medio-em-risco/",
-    "published_at": "2026-07-09T01:17:43.613183Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "Bolsas de NY fecham sem direção única com cessar-fogo no Oriente Médio em risco.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.614183Z"
-  },
-  {
-    "id": "0ec7e3222e3fb02c64ede053f9587d2a",
-    "title": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze",
-    "subtitle": null,
-    "content_preview": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/jpmorgan-ve-chance-de-recuperacao-tatica-na-bolsa-e-acoes-com-risco-de-short-squeeze/",
-    "published_at": "2026-07-09T01:17:43.612189Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": 0.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.25,
-    "summary": "JPMorgan vê chance de recuperação tática na Bolsa e ações com risco de short squeeze.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.612189Z"
-  },
-  {
-    "id": "190cdd5f4d6c346fe605d58ba7168f57",
-    "title": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "subtitle": null,
-    "content_preview": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/automacao-no-trade-plano-da-trade2go-para-resultados-consistentes/",
-    "published_at": "2026-07-09T01:17:43.612189Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A gente não vende ilusão mas tem oportunidade, diz trader sobre operação automatizada.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.612189Z"
-  },
-  {
-    "id": "8231d07ec4f2b268c3bb65dabb3bea3e",
-    "title": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta",
-    "subtitle": null,
-    "content_preview": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/listagem-da-sk-hynix-nos-eua-tem-demanda-7-vezes-maior-que-a-oferta/",
-    "published_at": "2026-07-09T01:17:43.612189Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Listagem da SK Hynix nos EUA tem demanda 7 vezes maior que a oferta.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.612189Z"
-  },
-  {
-    "id": "801bc0114cac95698d2d756e3d997830",
-    "title": "A estratégia para se posicionar na América Latina com o El Niño",
-    "subtitle": null,
-    "content_preview": "A estratégia para se posicionar na América Latina com o El Niño",
-    "full_text_if_available": null,
-    "source_id": "infomoney",
-    "source_name": "InfoMoney",
-    "source_type": "editorial_listing",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www.infomoney.com.br/mercados/a-estrategia-para-se-posicionar-na-america-latina-com-o-el-nino-segundo-santander/",
-    "published_at": "2026-07-09T01:17:43.611214Z",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A estratégia para se posicionar na América Latina com o El Niño.\n\nO foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.612189Z"
-  },
-  {
-    "id": "868a9adaf9b6765386bdcd13a3b1e0a5",
-    "title": "SK Hynix dispara com ADR de US$ 28 bilhões nos EUA após forte demanda",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_id": "investing_br",
-    "source_name": "Investing.com Brasil",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://br.investing.com/news/stock-market-news/sk-hynix-dispara-com-adr-de-us-28-bilhoes-nos-eua-apos-forte-demanda-1996523",
-    "published_at": "2026-07-09T01:07:58Z",
-    "language": "pt",
-    "tags": [
-      "Macroeconomia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Macroeconomia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "SK Hynix dispara com ADR de US$ 28 bilhões nos EUA após forte demanda.\n\nO foco principal passa por Macroeconomia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:29:44.558230Z"
-  },
-  {
-    "id": "9db20ea82997e4afe9ae294060b2837c",
-    "title": "Futuros das bolsas americanas estáveis após tensões renovadas entre EUA e Irã",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_id": "investing_br",
-    "source_name": "Investing.com Brasil",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://br.investing.com/news/stock-market-news/futuros-das-bolsas-americanas-estaveis-apos-tensoes-renovadas-entre-eua-e-ira-1996521",
-    "published_at": "2026-07-09T01:01:09Z",
-    "language": "pt",
-    "tags": [
-      "Macroeconomia",
-      "Mercado",
-      "Varejo"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Macroeconomia",
-      "Mercado",
-      "Varejo"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Futuros das bolsas americanas estáveis após tensões renovadas entre EUA e Irã.\n\nO foco principal passa por Macroeconomia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:29:44.558230Z"
-  },
-  {
-    "id": "ed9783ff868c1400421853e2b2872730",
-    "title": "Oncoclínicas não consegue quórum para debater recuperação extrajudicial",
-    "subtitle": null,
-    "content_preview": "As duas assembleias convocadas pela Oncoclínicas para debater um eventual plano de recuperação extrajudicial terminaram sem sequer atingirem o quórum mínimo para instalação. Realizadas na terça-feira (6), as reuniões com debenturistas iriam discutir a reestruturação de R$ 1,5 bilhão distribuído em duas emissões de debêntures com vencimentos entre 2027 e 2029. Leia mais (07/08/2026 - 22h00)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/oncoclinicas-nao-consegue-quorum-para-debater-recuperacao-extrajudicial.shtml",
-    "published_at": "2026-07-08T22:00:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": 1.0,
-    "relevance_score": 0.5,
-    "impact_score": 0.55,
-    "summary": "As duas assembleias convocadas pela Oncoclínicas para debater um eventual plano de recuperação extrajudicial terminaram sem sequer atingirem o quórum mínimo para instalação.\n\nRealizadas na terça-feira (6), as reuniões com debenturistas iriam discutir a reestruturação de R$ 1,5 bilhão distribuído em duas emissões de debêntures com vencimentos entre 2027 e 2029. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.601945Z"
-  },
-  {
-    "id": "16f8f8ed32a3cfcdab12a122b12f9d9b",
-    "title": "FMI nomeia Silvana Tenreyro como sua próxima economista-chefe",
-    "subtitle": null,
-    "content_preview": "Silvana Tenreyro, ex-formuladora de políticas do Banco da Inglaterra, está prestes a se tornar a próxima economista-chefe do FMI (Fundo Monetário Internacional). Leia mais (07/08/2026 - 21h53)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/fmi-nomeia-silvana-tenreyro-como-sua-proxima-economista-chefe.shtml",
-    "published_at": "2026-07-08T21:53:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Financeiro",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Financeiro",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Silvana Tenreyro, ex-formuladora de políticas do Banco da Inglaterra, está prestes a se tornar a próxima economista-chefe do FMI (Fundo Monetário Internacional).\n\nLeia mais (07/08/2026 - 21h53). O foco principal passa por Economia, Financeiro.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.602945Z"
-  },
-  {
-    "id": "6915a410832cc8893943dd6d5541341d",
-    "title": "Estados dos EUA podem processar para bloquear fusão Paramount-Warner na próxima semana",
-    "subtitle": null,
-    "content_preview": "",
-    "full_text_if_available": null,
-    "source_id": "investing_br",
-    "source_name": "Investing.com Brasil",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://br.investing.com/news/stock-market-news/estados-dos-eua-podem-processar-para-bloquear-fusao-paramountwarner-na-proxima-semana-1996510",
-    "published_at": "2026-07-09T00:31:33Z",
-    "language": "pt",
-    "tags": [
-      "Macroeconomia",
-      "Mercado"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Macroeconomia",
-      "Mercado"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Estados dos EUA podem processar para bloquear fusão Paramount-Warner na próxima semana.\n\nO foco principal passa por Macroeconomia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.614183Z"
-  },
-  {
-    "id": "dc393c481ec6a8bf4009b11c48e4ce92",
-    "title": "CVM abre processo para apurar renúncia de presidente do conselho da Vale",
-    "subtitle": null,
-    "content_preview": "A CVM abriu processo para apurar possível irregularidade na renúncia do presidente do conselho de administração da Vale, Daniel Stieler, após processo de fritura pela Previ, a fundação que gere a previdência dos funcionários do Banco do Brasil. Leia mais (07/08/2026 - 21h26)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/cvm-abre-processo-para-apurar-renuncia-de-presidente-do-conselho-da-vale.shtml",
-    "published_at": "2026-07-08T21:26:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Financeiro",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [
-      "VALE3",
-      "BBAS3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Financeiro",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.48000000000000004,
-    "summary": "A CVM abriu processo para apurar possível irregularidade na renúncia do presidente do conselho de administração da Vale, Daniel Stieler, após processo de fritura pela Previ, a fundação que gere a previdência dos funcionários do Banco do Brasil.\n\nLeia mais (07/08/2026 - 21h26). O texto menciona VALE3, BBAS3. O foco principal passa por Economia, Financeiro.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.602945Z"
-  },
-  {
-    "id": "5ba670b943acd464e7ea23f35170e28f",
-    "title": "Justiça dos EUA aprova acordo de Musk com a SEC sobre compra de ações do Twitter",
-    "subtitle": null,
-    "content_preview": "A Justiça dos Estados Unidos aprovou nesta quarta-feira (8) o acordo entre a SEC (Comissão de Valores Mobiliários dos EUA) e Elon Musk sobre a compra de ações do Twitter em 2022, mas afirmou ter \"sérias ressalvas\" quanto aos \"sinais de alerta\" levantados pelo entendimento. A juíza distrital Sparkle Sooknanan disse que seu papel se limitava a verificar se o acordo atendia a requisitos mínimos de justiça e razoabilidade, embora tenha questionado se o governo de Donald Trump tratou o empresário de forma excessivamente branda. Leia mais (07/08/2026 - 20h20)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://aovivo.folha.uol.com.br/mercado/2026/07/01/6533-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post465085",
-    "published_at": "2026-07-08T20:20:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "A Justiça dos Estados Unidos aprovou nesta quarta-feira (8) o acordo entre a SEC (Comissão de Valores Mobiliários dos EUA) e Elon Musk sobre a compra de ações do Twitter em 2022, mas afirmou ter \"sérias ressalvas\" quanto aos \"sinais de alerta\" levantados pelo entendimento.\n\nA juíza distrital Sparkle Sooknanan disse que seu papel se limitava a verificar se o acordo atendia a requisitos mínimos de justiça e razoabilidade, embora tenha questionado se o governo de Donald Trump tratou o empresário de forma excessivamente branda. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.602945Z"
-  },
-  {
-    "id": "d244523c365ef69fe82f36e0ff93b2bb",
-    "title": "A batalha pelo futuro das repúblicas democráticas",
-    "subtitle": null,
-    "content_preview": "Em 4 de julho de 2026, os Estados Unidos celebraram o 250º aniversário de sua Declaração de Independência. A Declaração dizia: \"Consideramos estas verdades como evidentes por si mesmas, que todos os homens são criados iguais, que são dotados pelo seu Criador de certos Direitos inalienáveis, que entre estes estão a Vida, a Liberdade e a busca da Felicidade\". Concentremo-nos no que essas palavras podem significar no futuro, em vez do que significaram ao longo dos últimos 250 anos. Leia mais (07/08/2026 - 20h15)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/colunas/martinwolf/2026/07/a-batalha-pelo-futuro-das-republicas-democraticas.shtml",
-    "published_at": "2026-07-08T20:15:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [],
-    "mentioned_countries": [
-      "BR",
-      "US"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.28,
-    "summary": "Em 4 de julho de 2026, os Estados Unidos celebraram o 250º aniversário de sua Declaração de Independência.\n\nA Declaração dizia: \"Consideramos estas verdades como evidentes por si mesmas, que todos os homens são criados iguais, que são dotados pelo seu Criador de certos Direitos inalienáveis, que entre estes estão a Vida, a Liberdade e a busca da Felicidade\". O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.603914Z"
-  },
-  {
-    "id": "4deb937406cc385b3f7da71e3eeba7e5",
-    "title": "A fadiga de velhas propostas econômicas nas eleições",
-    "subtitle": null,
-    "content_preview": "O debate de medidas econômicas pelos presidenciáveis nas eleições deste ano já nasceu pobre antes de começar para valer. Leia mais (07/08/2026 - 20h00)",
-    "full_text_if_available": null,
-    "source_id": "folha_mercado",
-    "source_name": "Folha.com - Mercado - Principal",
-    "source_type": "rss",
-    "is_official": false,
-    "source_category": "press",
-    "source_url": "https://www1.folha.uol.com.br/colunas/adriana-fernandes/2026/07/a-fadiga-de-velhas-propostas-economicas-nas-eleicoes.shtml",
-    "published_at": "2026-07-08T20:00:00-03:00",
-    "language": "pt",
-    "tags": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "mentioned_assets": [
-      "VALE3"
-    ],
-    "mentioned_countries": [
-      "BR"
-    ],
-    "mentioned_sectors": [
-      "Economia",
-      "Mercado",
-      "Tecnologia"
-    ],
-    "sentiment_score": -0.1,
-    "relevance_score": 0.5,
-    "impact_score": 0.48000000000000004,
-    "summary": "O debate de medidas econômicas pelos presidenciáveis nas eleições deste ano já nasceu pobre antes de começar para valer.\n\nLeia mais (07/08/2026 - 20h00). O texto menciona VALE3. O foco principal passa por Economia, Mercado.",
-    "cluster_id": null,
-    "created_at": "2026-07-09T01:17:43.603914Z"
   }
 ]

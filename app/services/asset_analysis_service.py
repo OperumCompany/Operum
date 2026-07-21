@@ -1,3 +1,4 @@
+import json
 import logging
 import math
 import unicodedata
@@ -212,6 +213,45 @@ class AssetAnalysisService:
 
         return score > 0.18, round(min(score, 1.0), 4), context_role, round(source_confidence, 4), round(macro_context, 4)
 
+    def _is_incidental_asset_mention(self, news: NewsItem, meta: dict) -> bool:
+        ticker = meta["ticker"].upper()
+        mentioned_assets = {asset.upper() for asset in news.mentioned_assets}
+        if ticker in mentioned_assets:
+            return False
+
+        title = self._normalize_text(news.title)
+        text = self._normalize_text(f"{news.title} {news.summary} {news.content_preview}")
+        aliases = [self._normalize_text(alias) for alias in self._config.get("aliases", {}).get(ticker, [])]
+        aliases = [alias for alias in aliases if len(alias) >= 4]
+
+        analyst_terms = [
+            "recomenda",
+            "recomendacao",
+            "preco alvo",
+            "eleva",
+            "corta",
+            "mantem",
+            "reitera",
+            "compra",
+            "venda",
+            "neutro",
+            "outperform",
+            "underperform",
+        ]
+        has_alias = any(alias in text for alias in aliases)
+        if not has_alias or not any(term in text for term in analyst_terms):
+            return False
+
+        analyst_brands = ["bba", "corretora", "research", "analistas"]
+        if any(f"{alias} bba" in text for alias in aliases) or any(term in text for term in analyst_brands):
+            return True
+
+        if ":" in news.title:
+            before_colon = self._normalize_text(news.title.split(":", 1)[0])
+            return not any(alias in before_colon for alias in aliases)
+
+        return False
+
     def get_related_news(self, ticker: str, limit: int = 25, days_back: int | None = None) -> list[dict]:
         meta = self._asset_meta(ticker)
         now = datetime.now(timezone.utc)
@@ -219,6 +259,8 @@ class AssetAnalysisService:
         for news in self.news.get_all_raw():
             matched, match_score, context_role, source_confidence_weight, macro_context_weight = self._matches_asset(news, meta)
             if not matched:
+                continue
+            if context_role == "asset" and self._is_incidental_asset_mention(news, meta):
                 continue
             published = self._safe_dt(news.published_at)
             if days_back is not None and published < now - timedelta(days=days_back):
@@ -548,14 +590,474 @@ class AssetAnalysisService:
 
     def _history_label(self, history_horizon: str) -> str:
         return {
-            "1w": "ultima semana",
-            "1m": "ultimo mes",
-            "2m": "ultimos 2 meses",
-            "3m": "ultimos 3 meses",
-        }.get(history_horizon, "ultimos 3 meses")
+            "1w": "última semana",
+            "1m": "último mês",
+            "2m": "últimos 2 meses",
+            "3m": "últimos 3 meses",
+        }.get(history_horizon, "últimos 3 meses")
 
     def _outlook_label(self, outlook_horizon: str) -> str:
-        return {"1w": "1 semana", "1m": "1 mes", "2m": "2 meses", "3m": "3 meses"}.get(outlook_horizon, "3 meses")
+        return {"1w": "1 semana", "1m": "1 mês", "2m": "2 meses", "3m": "3 meses"}.get(outlook_horizon, "3 meses")
+
+    def _plain_pct(self, value: float | None, digits: int = 1) -> str:
+        if value is None:
+            return "indisponível"
+        sign = "+" if value > 0 else ""
+        return f"{sign}{value:.{digits}f}%".replace(".", ",")
+
+    def _plain_number(self, value: float | None, digits: int = 1) -> str:
+        if value is None:
+            return "indisponível"
+        return f"{value:.{digits}f}".replace(".", ",")
+
+    def _price_trend_label(self, perf: dict) -> str:
+        change = perf.get("change_selected_pct")
+        if change is None:
+            return "sem dados suficientes"
+        if change <= -3:
+            return "de queda"
+        if change >= 3:
+            return "de alta"
+        return "lateral ou indefinida"
+
+    def _oscillation_label(self, perf: dict) -> str:
+        volatility = perf.get("volatility_selected_pct")
+        drawdown = perf.get("drawdown_selected_pct")
+        max_drop = abs(drawdown) if drawdown is not None else None
+        if (max_drop is not None and max_drop >= 12) or (volatility is not None and volatility >= 28):
+            return "oscilações relevantes"
+        if (max_drop is not None and max_drop >= 5) or (volatility is not None and volatility >= 14):
+            return "oscilações moderadas"
+        if max_drop is not None or volatility is not None:
+            return "oscilações contidas"
+        return "oscilação ainda difícil de medir"
+
+    def _asset_status_label(self, scenario: str, perf: dict, weight_pct: float | None) -> str:
+        change = perf.get("change_selected_pct")
+        if scenario in {"pressionado", "cauteloso", "volatil"} or (change is not None and change <= -8):
+            return "atenção"
+        if weight_pct is not None and weight_pct >= 25:
+            return "atenção por concentração"
+        if scenario == "positivo":
+            return "favorável, com acompanhamento"
+        return "equilibrada"
+
+    def _fundamentals_label(self, news_list: list[dict]) -> str:
+        if not news_list:
+            return "sem notícias suficientes"
+        categories = Counter(item.get("analysis_category", "fluxo") for item in news_list)
+        avg_sent = sum(item.get("sentiment_score", 0.0) for item in news_list) / len(news_list)
+        if categories.get("fundamento", 0) and avg_sent < -0.2:
+            return "pressionados pelas notícias recentes"
+        if categories.get("fundamento", 0):
+            return "com leitura específica a acompanhar"
+        return "sem deterioração clara nas notícias avaliadas"
+
+    def _portfolio_risk_label(self, weight_pct: float | None) -> str:
+        if weight_pct is None:
+            return "não calculado"
+        if weight_pct >= 40:
+            return "muito alto"
+        if weight_pct >= 20:
+            return "alto"
+        if weight_pct >= 10:
+            return "moderado"
+        return "baixo"
+
+    def _asset_class_label(self, asset_class: str | None) -> str:
+        labels = {
+            "BR_STOCK": "Ação brasileira",
+            "US_STOCK": "Ação internacional",
+            "FII": "Fundo imobiliário",
+            "BDR": "BDR",
+            "CRYPTO": "Criptoativo",
+            "ETF": "Fundo de índice",
+            "REIT": "Fundo imobiliário internacional",
+        }
+        return labels.get(asset_class or "", "Ativo financeiro")
+
+    def _position_size_label(self, weight_pct: float | None) -> str:
+        if weight_pct is None:
+            return "dados insuficientes"
+        if weight_pct >= 50:
+            return "altamente concentrada"
+        if weight_pct >= 25:
+            return "concentrada"
+        if weight_pct >= 12:
+            return "relevante"
+        if weight_pct >= 5:
+            return "moderada"
+        return "pequena"
+
+    def _news_sentiment_label(self, news_list: list[dict]) -> str:
+        if not news_list:
+            return "dados insuficientes"
+        avg_sent = sum(item.get("sentiment_score", 0.0) for item in news_list) / len(news_list)
+        if avg_sent >= 0.35:
+            return "positivo"
+        if avg_sent >= 0.12:
+            return "levemente positivo"
+        if avg_sent <= -0.35:
+            return "negativo"
+        if avg_sent <= -0.12:
+            return "levemente negativo"
+        return "misto" if len(news_list) >= 2 else "neutro"
+
+    def _data_quality_warnings(self, perf: dict, historical_series: list[dict], used_news: list[dict]) -> list[str]:
+        warnings = []
+        current_price = perf.get("current_price")
+        if current_price is None:
+            warnings.append("Preço atual indisponível para esta análise.")
+        if not perf.get("has_selected_history"):
+            warnings.append("Histórico de preço incompleto para o período selecionado.")
+        if not historical_series:
+            warnings.append("Série histórica vazia para o período selecionado.")
+        if len(used_news) < 3:
+            warnings.append("Quantidade baixa de notícias diretamente relacionadas ao ativo.")
+        warnings.append("Dados fundamentais estruturados ainda não estão disponíveis no MVP; a leitura de fundamentos usa notícias, classe do ativo e contexto.")
+        if current_price is not None and historical_series:
+            last_value = historical_series[-1].get("value")
+            if last_value:
+                divergence = abs(float(current_price) - float(last_value)) / max(abs(float(current_price)), 0.01)
+                if divergence > 0.2:
+                    warnings.append("Preço atual e último ponto histórico apresentam diferença relevante; confira a data da cotação e a fonte do histórico.")
+        return warnings
+
+    def _confidence_with_warnings(self, confidence: str, warnings: list[str]) -> str:
+        if not warnings:
+            return confidence
+        if len(warnings) >= 3 or any("Preço atual indisponível" in item or "Série histórica vazia" in item for item in warnings):
+            return "baixa"
+        if confidence == "alta":
+            return "media"
+        return confidence
+
+    def _dominant_reason(self, weight_pct: float | None, perf: dict, news_list: list[dict]) -> str:
+        if weight_pct is not None and weight_pct >= 25:
+            return f"concentração de {self._plain_pct(weight_pct)} da carteira"
+        topics = self._dominant_topics(news_list)
+        if topics:
+            return f"notícias ligadas a {', '.join(topics[:2])}"
+        change = perf.get("change_selected_pct")
+        if change is not None:
+            return f"movimento recente de {self._plain_pct(change)} no preço"
+        return "base limitada de dados recentes"
+
+    def _watch_items(self, meta: dict, used_news: list[dict], asset_function: str) -> list[str]:
+        items = []
+        asset_class = meta.get("asset_class")
+        sector = self._normalize_text(meta.get("sector", ""))
+        if asset_class == "FII":
+            items.extend(["vacância e qualidade dos imóveis", "nível de distribuição", "sensibilidade a juros"])
+        elif asset_class == "CRYPTO":
+            items.extend(["liquidez global", "apetite a risco", "oscilação do mercado cripto"])
+        elif "financeiro" in sector or "banco" in sector:
+            items.extend(["lucro e rentabilidade", "inadimplência", "crescimento da carteira de crédito"])
+        elif any(word in sector for word in ["petroleo", "mineracao", "commodity"]):
+            items.extend(["preço das commodities", "câmbio", "resultados operacionais"])
+        else:
+            items.extend(["resultados do próximo trimestre", "margens e crescimento", "endividamento"])
+
+        topics = self._dominant_topics(used_news)
+        for topic in topics[:3]:
+            label = {
+                "juros": "trajetória dos juros",
+                "inflacao": "comportamento da inflação",
+                "cambio": "movimento do câmbio",
+                "commodities": "preços de commodities",
+                "fiscal/politica": "cenário fiscal e político",
+                "geopolitica": "eventos geopoliticos",
+                "dividendos": "pagamento de dividendos",
+                "resultados": "novos resultados divulgados",
+            }.get(topic, topic)
+            if label not in items:
+                items.append(label)
+
+        function_item = f"se o ativo segue adequado à função de {asset_function.replace('_', ' ')} na carteira"
+        if function_item not in items:
+            items.append(function_item)
+        return items[:7]
+
+    def _theme_text(self, news_list: list[dict]) -> str:
+        topics = self._dominant_topics(news_list)
+        if topics:
+            labels = {
+                "juros": "juros",
+                "inflacao": "inflação",
+                "cambio": "câmbio",
+                "commodities": "commodities",
+                "fiscal/politica": "cenário fiscal e político",
+                "geopolitica": "geopolítica",
+                "dividendos": "dividendos",
+                "resultados": "resultados",
+            }
+            return ", ".join(labels.get(topic, topic) for topic in topics[:4])
+        return "preço, setor e ambiente econômico"
+
+    def _box_history_text(
+        self,
+        ticker: str,
+        perf: dict,
+        historical_news: list[dict],
+        history_horizon: str,
+        asset_function: str,
+    ) -> str:
+        label = self._history_label(history_horizon)
+        parts = []
+        change = perf.get("change_selected_pct")
+        if perf.get("change_selected_pct") is not None:
+            if change <= -3:
+                movement = "recuou"
+                movement_pct = self._plain_pct(abs(change))
+            elif change >= 3:
+                movement = "avançou"
+                movement_pct = self._plain_pct(change)
+            else:
+                movement = "ficou praticamente estável"
+                movement_pct = self._plain_pct(change)
+            parts.append(f"Nos {label}, {ticker} {movement} {movement_pct}.")
+        else:
+            parts.append(f"Nos {label}, não há série de preço completa para medir com segurança o desempenho de {ticker}.")
+        if perf.get("drawdown_selected_pct") is not None:
+            parts.append(f"No pior momento da janela, ficou cerca de {self._plain_pct(abs(perf['drawdown_selected_pct']))} abaixo do maior preço do período.")
+        parts.append(f"O comportamento do preço mostrou {self._oscillation_label(perf)}, então a leitura deve considerar tanto a direção quanto a intensidade do movimento.")
+        if historical_news:
+            sentiment = self._news_sentiment_label(historical_news)
+            parts.append(f"As notícias diretamente relacionadas ao ativo tiveram tom {sentiment}, com temas ligados a {self._theme_text(historical_news)}.")
+        else:
+            parts.append("O volume de notícias diretamente relacionadas foi baixo, o que reduz a confiança da leitura.")
+        parts.append(f"Esse histórico não prova, sozinho, melhora ou piora do negócio; ele mostra como o preço se comportou dentro da função de {asset_function.replace('_', ' ')} definida para a carteira.")
+        return " ".join(parts)
+
+    def _box_current_text(
+        self,
+        ticker: str,
+        meta: dict,
+        perf: dict,
+        current_news: list[dict],
+        weight_pct: float | None,
+        asset_function: str,
+    ) -> str:
+        category_label = self._asset_class_label(meta.get("asset_class")).lower()
+        trend = self._price_trend_label(perf)
+        sentiment = self._news_sentiment_label(current_news)
+        parts = [
+            f"Atualmente, {ticker} deve ser analisado como {category_label}, separando três pontos: a empresa, o preço negociado em bolsa e o efeito da posição na carteira."
+        ]
+        if current_news:
+            parts.append(f"As notícias recentes têm tom {sentiment}, mas não bastam, sozinhas, para afirmar melhora ou deterioração dos fundamentos.")
+        else:
+            parts.append("No MVP, ainda não há dados fundamentalistas estruturados suficientes para avaliar lucro, margem, endividamento ou qualidade operacional com profundidade.")
+        parts.append(f"O preço apresenta tendência recente {trend}, mas isso não deve ser confundido automaticamente com mudança na qualidade da empresa.")
+        if weight_pct is not None:
+            parts.append(f"A posição representa {self._plain_pct(weight_pct)} da carteira. Por isso, uma oscilação relevante do ativo pode aparecer de forma perceptível no resultado total.")
+        else:
+            parts.append("O peso da posição na carteira não foi calculado, limitando a avaliação do impacto no conjunto.")
+        parts.append(f"O ponto de acompanhamento é verificar se os próximos dados confirmam que o ativo continua coerente com a função de {asset_function.replace('_', ' ')}.")
+        return " ".join(parts)
+
+    def _box_outlook_text(
+        self,
+        ticker: str,
+        meta: dict,
+        scenario: str,
+        news_list: list[dict],
+        confidence: str,
+        outlook_horizon: str,
+        weight_pct: float | None,
+        asset_function: str,
+    ) -> str:
+        scenario_label = scenario if scenario != "concentrado" else "cauteloso"
+        horizon_label = self._outlook_label(outlook_horizon)
+        sector = self._normalize_text(meta.get("sector", ""))
+        if "financeiro" in sector or "banco" in sector:
+            favorable = "rentabilidade saudável, controle da inadimplência e resultados dentro ou acima das expectativas"
+            adverse = "aumento do custo de crédito, piora da inadimplência ou desaceleração da carteira de crédito"
+        elif meta.get("asset_class") == "FII":
+            favorable = "ocupação saudável, distribuição consistente e juros menos pressionados"
+            adverse = "aumento da vacância, queda nas distribuições ou juros elevados por mais tempo"
+        elif meta.get("asset_class") == "CRYPTO":
+            favorable = "melhora da liquidez global e maior apetite a risco"
+            adverse = "queda do apetite a risco, estresse de liquidez ou maior oscilação do mercado cripto"
+        else:
+            favorable = "resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado"
+            adverse = "resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso"
+        parts = [
+            f"Para os próximos {horizon_label}, a leitura de {ticker} é {scenario_label}."
+        ]
+        parts.append(f"O ativo pode ser favorecido por {favorable}.")
+        parts.append(f"Por outro lado, pode seguir pressionado se houver {adverse}.")
+        topics = self._theme_text(news_list)
+        parts.append(f"Vale acompanhar principalmente {topics} e se o ativo segue adequado à função de {asset_function.replace('_', ' ')} na carteira.")
+        if weight_pct is not None and weight_pct >= 10:
+            parts.append(f"Como a posição representa {self._plain_pct(weight_pct)} da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto.")
+        parts.append(f"A confiança dessa leitura é { {'alta': 'alta', 'media': 'moderada', 'baixa': 'baixa'}.get(confidence, confidence) }, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.")
+        return " ".join(parts)
+
+    def _build_box_sections(
+        self,
+        meta: dict,
+        perf: dict,
+        current_news: list[dict],
+        all_related_news: list[dict],
+        used_news: list[dict],
+        weight_pct: float | None,
+        scenario: str,
+        confidence: str,
+        asset_function: str,
+    ) -> dict:
+        box_history_by_horizon = {}
+        for horizon_key in ["1w", "1m", "2m", "3m"]:
+            recent_perf = self._performance_snapshot(meta["ticker"], None, horizon_key)
+            recent_news = self._categorize_news(self._windowed_news(all_related_news, HISTORY_WINDOW_DAYS[horizon_key])[:12], meta)
+            box_history_by_horizon[horizon_key] = self._box_history_text(meta["ticker"], recent_perf, recent_news, horizon_key, asset_function)
+        box_outlook_by_horizon = {}
+        for horizon_key in ["1w", "1m", "2m", "3m"]:
+            horizon_news = self._categorize_news(self._windowed_news(all_related_news, OUTLOOK_WINDOW_DAYS[horizon_key])[:8], meta)
+            box_outlook_by_horizon[horizon_key] = self._box_outlook_text(
+                meta["ticker"],
+                meta,
+                scenario,
+                horizon_news or used_news,
+                confidence,
+                horizon_key,
+                weight_pct,
+                asset_function,
+            )
+        return {
+            "box_history_by_horizon": box_history_by_horizon,
+            "box_current": self._box_current_text(meta["ticker"], meta, perf, current_news or used_news, weight_pct, asset_function),
+            "box_outlook_by_horizon": box_outlook_by_horizon,
+        }
+
+    def _build_friendly_analysis_sections(
+        self,
+        meta: dict,
+        perf: dict,
+        used_news: list[dict],
+        weight_pct: float | None,
+        scenario: str,
+        confidence: str,
+        history_horizon: str,
+        outlook_horizon: str,
+        asset_function: str,
+        historical_series: list[dict],
+        data_quality_warnings: list[str],
+    ) -> dict:
+        ticker = meta.get("ticker", "ativo")
+        name = meta.get("name") or ticker
+        label = self._history_label(history_horizon)
+        outlook_label = self._outlook_label(outlook_horizon)
+        change = perf.get("change_selected_pct")
+        drawdown = perf.get("drawdown_selected_pct")
+        trend = self._price_trend_label(perf)
+        topics = self._dominant_topics(used_news)
+        topic_text = f", especialmente {', '.join(topics[:3])}" if topics else ""
+        has_price = perf.get("current_price") is not None
+        has_news = bool(used_news)
+        category_label = self._asset_class_label(meta.get("asset_class"))
+        position_size = self._position_size_label(weight_pct)
+        news_sentiment = self._news_sentiment_label(used_news)
+        adjusted_confidence = self._confidence_with_warnings(confidence, data_quality_warnings)
+
+        visual_summary = {
+            "asset_status": self._asset_status_label(scenario, perf, weight_pct),
+            "fundamentals": self._fundamentals_label(used_news),
+            "price_trend": trend,
+            "news_sentiment": news_sentiment,
+            "position_size": position_size,
+            "portfolio_risk": self._portfolio_risk_label(weight_pct),
+            "main_reason": self._dominant_reason(weight_pct, perf, used_news),
+            "confidence": {"alta": "alta", "media": "moderada", "baixa": "baixa"}.get(adjusted_confidence, adjusted_confidence),
+        }
+
+        if change is not None:
+            summary_intro = f"Nos {label}, {ticker} apresentou variação de {self._plain_pct(change)}."
+        else:
+            summary_intro = f"Não há base de preço suficiente para medir com segurança o movimento de {ticker} nos {label}."
+        if drawdown is not None:
+            summary_intro += f" Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente {self._plain_pct(abs(drawdown))}."
+
+        business_read = (
+            "As notícias avaliadas não indicam, por si só, uma deterioração clara do negócio ou da tese do ativo."
+            if has_news
+            else "Há poucas notícias específicas recentes, então esta leitura depende mais de preço, classe do ativo e contexto da carteira."
+        )
+        concentration_read = ""
+        if weight_pct is not None:
+            concentration_read = f" O ativo representa {self._plain_pct(weight_pct)} da carteira, ponto importante para entender o impacto de qualquer oscilação."
+        summary = f"{summary_intro} {business_read}{concentration_read}".strip()
+
+        what_happened = (
+            f"O desempenho recente foi {trend}. Parte desse movimento pode estar ligada ao próprio mercado e a fatores externos{topic_text}, não necessariamente apenas a mudanças internas de {name}."
+            if has_price or has_news
+            else "Não há dados suficientes de preço e notícias para explicar com confiança o que aconteceu recentemente."
+        )
+
+        company_situation = (
+            f"{name} pertence à categoria {category_label}. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. "
+            "Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias."
+        )
+        if has_news:
+            company_situation += f" As notícias avaliadas apresentam tom {news_sentiment}, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo."
+
+        asset_price_situation = (
+            f"No mercado, a tendência recente do preço é {trend} no recorte de {label}."
+            if has_price or change is not None
+            else f"Não há dados suficientes para avaliar a tendência recente do preço no recorte de {label}."
+        )
+        if drawdown is not None:
+            asset_price_situation += f" A maior queda em relação ao maior preço do período foi de aproximadamente {self._plain_pct(abs(drawdown))}."
+        if perf.get("benchmark_ticker") and perf.get("beta_selected") is not None:
+            asset_price_situation += f" A comparação com {perf['benchmark_ticker']} sugere que o ativo teve sensibilidade relevante ao movimento do índice de referência."
+
+        current_situation = f"{company_situation} {asset_price_situation}"
+        if adjusted_confidence == "baixa":
+            current_situation += " Como a confiança está baixa, a conclusão deve ser lida como indicativa, não definitiva."
+
+        if weight_pct is not None:
+            impact_10 = weight_pct * 0.10
+            impact_down_10 = -impact_10
+            portfolio_impact = (
+                f"Como {ticker} representa {self._plain_pct(weight_pct)} da carteira, a posição é classificada como {position_size}. Uma queda de 10% no ativo teria impacto aproximado de {self._plain_pct(impact_down_10)} no valor total da carteira, considerando os demais investimentos estáveis. "
+                f"Uma alta de 10% teria impacto aproximado de {self._plain_pct(impact_10)}. A concentração aumenta tanto o potencial de ganho quanto o potencial de perda, e sua adequação depende do objetivo, prazo e tolerância a oscilações do usuário."
+            )
+        else:
+            portfolio_impact = "Não foi possível calcular o peso do ativo na carteira. Sem esse dado, a leitura de risco fica incompleta, porque o impacto real depende do tamanho da posição."
+
+        scenarios = {
+            "favorable": (
+                f"Nos próximos {outlook_label}, o cenário favorável depende de melhora nas notícias relevantes, ambiente de mercado mais construtivo e sinais de que o ativo segue adequado à função de {asset_function.replace('_', ' ')}. "
+                "A confirmação viria de desempenho mais consistente do preço, notícias diretamente positivas e menor pressão dos fatores externos monitorados."
+            ),
+            "base": (
+                f"O cenário-base para {outlook_label} é {scenario}. A leitura mais equilibrada é acompanhar se o movimento recente se sustenta ou se perde força, sem tratar a projeção como certeza de preço futuro."
+            ),
+            "adverse": (
+                "O cenário adverso ocorreria com piora do ambiente macroeconômico, notícias negativas diretamente ligadas ao ativo, resultados abaixo do esperado ou aumento da aversão a risco. "
+                "Nesse caso, o impacto para a carteira seria maior quanto maior for o peso da posição."
+            ),
+        }
+
+        what_to_watch = self._watch_items(meta, used_news, asset_function)
+        conclusion = (
+            f"{ticker} exige acompanhamento porque combina movimento recente {trend} com risco de carteira {visual_summary['portfolio_risk']}. "
+            "A leitura é educativa e não deve ser usada como ordem transacional. A decisão depende de objetivo, prazo, tolerância a risco e necessidade de diversificação."
+        )
+
+        return {
+            "visual_summary": visual_summary,
+            "summary": summary,
+            "what_happened": what_happened,
+            "company_situation": company_situation,
+            "asset_price_situation": asset_price_situation,
+            "current_situation": current_situation,
+            "portfolio_impact": portfolio_impact,
+            "scenarios": scenarios,
+            "what_to_watch": what_to_watch,
+            "conclusion": conclusion,
+            "data_quality_warnings": data_quality_warnings,
+        }
 
     def _current_section(
         self,
@@ -569,32 +1071,28 @@ class AssetAnalysisService:
         category_counts: dict,
         forecast_adjustment_pct: float | None,
     ) -> str:
-        class_hint = self._config["class_templates"].get(meta.get("asset_class"), "O ativo deve ser interpretado dentro do seu contexto especifico.")
-        parts = [class_hint]
-        parts.append(f"Dentro da carteira, a funcao principal deste ativo hoje e {asset_function.replace('_', ' ')}.")
+        category_label = self._asset_class_label(meta.get("asset_class")).lower()
+        parts = [f"O ativo deve ser interpretado como {category_label}, sem misturar empresa, preço de tela e impacto na carteira."]
+        parts.append(f"Dentro da carteira, a função principal definida para este ativo é {asset_function.replace('_', ' ')}.")
         if perf.get("current_price") is not None:
-            parts.append(f"Cotacao atual aproximada em {perf['currency']} {perf['current_price']:.2f}.")
+            parts.append(f"A cotação atual aproximada é {perf['currency']} {self._plain_number(perf['current_price'], 2)}.")
         if weight_pct is not None:
-            parts.append(f"Hoje representa cerca de {weight_pct:.1f}% da carteira.")
+            parts.append(f"Hoje representa cerca de {self._plain_pct(weight_pct)} da carteira.")
         if perf.get("change_1m_pct") is not None:
-            parts.append(f"No curto prazo, o momentum de 1 mes esta em {perf['change_1m_pct']:+.1f}%.")
+            parts.append(f"No último mês, o preço teve variação de {self._plain_pct(perf['change_1m_pct'])}.")
         if forecast_prediction:
             direction = "alta" if forecast_prediction["predicted_return"] > 0.015 else "queda" if forecast_prediction["predicted_return"] < -0.015 else "estabilidade"
             parts.append(
-                f"O modelo de {self._outlook_label(outlook_horizon)} hoje aponta {direction}, com retorno estimado de {forecast_prediction['predicted_return'] * 100:+.1f}% e confianca de {forecast_prediction['confidence'] * 100:.0f}%."
+                f"O modelo de {self._outlook_label(outlook_horizon)} aponta {direction}, mas essa projeção deve ser lida como referência estatística, não como certeza."
             )
         if forecast_adjustment_pct:
-            parts.append(f"O ajuste contextual das noticias adiciona {forecast_adjustment_pct:+.1f}% ao cenario-base projetado.")
+            parts.append("As notícias recentes alteram a leitura do cenário, mas não substituem dados fundamentalistas estruturados.")
         if news_list:
-            avg_impact = sum(n["impact_score"] for n in news_list) / len(news_list)
             avg_sent = sum(n["sentiment_score"] for n in news_list) / len(news_list)
             direction = "positivo" if avg_sent > 0.15 else "negativo" if avg_sent < -0.15 else "misto"
-            parts.append(f"As noticias recentes tem vies {direction} e impacto medio de {avg_impact:.2f}.")
-            parts.append(
-                f"Nesse conjunto, o peso informacional esta distribuido em fundamento ({category_counts.get('fundamento', 0)}), macro ({category_counts.get('macro', 0)}), setorial ({category_counts.get('setorial', 0)}) e fluxo ({category_counts.get('fluxo', 0)})."
-            )
+            parts.append(f"As notícias recentes têm tom {direction}, mas não permitem concluir, isoladamente, que os fundamentos melhoraram ou pioraram.")
         else:
-            parts.append("Ha pouca noticia especifica recente, entao a leitura depende mais do comportamento de preco e da classe do ativo.")
+            parts.append("Há poucas notícias específicas recentes, então a leitura depende mais do comportamento do preço e da classe do ativo.")
         return " ".join(parts)
 
     def _recent_section(
@@ -607,40 +1105,34 @@ class AssetAnalysisService:
         label = self._history_label(history_horizon)
         snippets = []
         if perf.get("change_selected_pct") is not None:
-            snippets.append(f"No recorte dos {label}, o ativo variou {perf['change_selected_pct']:+.1f}%.")
+            snippets.append(f"No recorte dos {label}, o ativo variou {self._plain_pct(perf['change_selected_pct'])}.")
         elif perf.get("change_12m_pct") is not None:
-            snippets.append(f"Sem serie completa do periodo escolhido, o historico mais longo de 12 meses aponta {perf['change_12m_pct']:+.1f}%.")
-        if perf.get("volatility_selected_pct") is not None:
-            snippets.append(f"A volatilidade anualizada equivalente ficou perto de {perf['volatility_selected_pct']:.1f}%.")
+            snippets.append(f"Sem série completa do período escolhido, o histórico mais longo de 12 meses aponta {self._plain_pct(perf['change_12m_pct'])}.")
         if perf.get("drawdown_selected_pct") is not None:
-            snippets.append(f"No mesmo intervalo, o drawdown observado foi de {perf['drawdown_selected_pct']:.1f}%.")
+            snippets.append(f"No mesmo intervalo, a maior queda em relação ao maior preço do período foi de {self._plain_pct(abs(perf['drawdown_selected_pct']))}.")
         if perf.get("beta_selected") is not None and perf.get("benchmark_ticker"):
             snippets.append(
-                f"Contra {perf['benchmark_ticker']}, o beta estimado da janela ficou em {perf['beta_selected']:.2f}, com correlacao de {perf.get('correlation_selected', 0):.2f}."
+                f"A comparação com {perf['benchmark_ticker']} sugere que o ativo acompanhou parte do movimento do índice de referência, mas esse dado não deve ser lido isoladamente."
             )
 
         if historical_news:
             avg_sent = sum(n["sentiment_score"] for n in historical_news) / len(historical_news)
-            avg_impact = sum(n["impact_score"] for n in historical_news) / len(historical_news)
             direction = "mais positivo" if avg_sent > 0.15 else "mais negativo" if avg_sent < -0.15 else "misto"
             topics = self._dominant_topics(historical_news)
             categories = Counter(item.get("analysis_category", "fluxo") for item in historical_news)
             if topics:
-                snippets.append(f"No noticiario do periodo, os temas mais recorrentes foram {', '.join(topics)}.")
+                snippets.append(f"No noticiário do período, os temas mais recorrentes foram {self._theme_text(historical_news)}.")
             snippets.append(
-                f"Houve {len(historical_news)} evento(s) relevante(s), com vies {direction} e impacto medio de {avg_impact:.2f}."
+                f"Houve {len(historical_news)} evento(s) relevante(s), com viés {direction}."
             )
             if categories:
                 dominant_category = categories.most_common(1)[0][0]
                 snippets.append(
-                    f"A leitura desse intervalo foi puxada principalmente por noticias de {dominant_category}, o que ajuda a entender como o ativo cumpriu sua funcao de {asset_function.replace('_', ' ')}."
+                    f"A leitura desse intervalo foi puxada principalmente por notícias de {dominant_category}, o que ajuda a entender o contexto do ativo dentro da função de {asset_function.replace('_', ' ')}."
                 )
-            latest_titles = [n["title"] for n in historical_news[:3]]
-            if latest_titles:
-                snippets.append(f"Os destaques desse intervalo incluem: {'; '.join(latest_titles)}.")
 
         if not snippets:
-            return f"Sem base robusta de preco e sem noticias historicas suficientes para montar um retrospecto confiavel dos {label}."
+            return f"Sem base robusta de preço e sem notícias históricas suficientes para montar um retrospecto confiável dos {label}."
         return " ".join(snippets)
 
     def _outlook_section(
@@ -655,35 +1147,35 @@ class AssetAnalysisService:
         forecast_adjustment_pct: float | None,
     ) -> str:
         topics = self._dominant_topics(news_list)
-        topics_text = f" Os temas dominantes agora sao {', '.join(topics)}." if topics else ""
+        topics_text = f" Os temas dominantes agora são {self._theme_text(news_list)}." if topics else ""
         horizon_label = self._outlook_label(outlook_horizon)
         forecast_text = ""
         if forecast_prediction:
             forecast_text = (
-                f" O modelo para {horizon_label} projeta retorno de {forecast_prediction['predicted_return'] * 100:+.1f}% e preco estimado perto de {forecast_prediction['predicted_price']:.2f}."
+                f" O modelo para {horizon_label} aponta variação estimada de {self._plain_pct(forecast_prediction['predicted_return'] * 100)}, mas isso deve ser tratado como cenário, não como promessa de preço."
             )
         adjustment_text = ""
         if forecast_adjustment_pct:
-            adjustment_text = f" O contexto de noticias ajusta essa leitura em {forecast_adjustment_pct:+.1f}%, com maior peso para fatos de fundamento e macro."
+            adjustment_text = " O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros."
         scenario_map = {
-            "positivo": f"A perspectiva de {horizon_label} e construtiva, com espaco para continuidade se fluxo e noticiario permanecerem favoraveis.",
-            "pressionado": f"A perspectiva de {horizon_label} pede cautela, porque o ativo segue sensivel a novas revisoes negativas de cenario ou resultados.",
-            "volatil": f"A perspectiva de {horizon_label} e de oscilacao elevada, com possibilidade de movimentos rapidos em ambas as direcoes.",
-            "concentrado": f"A perspectiva de {horizon_label} precisa ser lida junto com o peso elevado na carteira, porque qualquer oscilacao tera impacto relevante no conjunto.",
-            "cauteloso": f"A perspectiva de {horizon_label} e cautelosa, com premio de risco alto e dependencia forte do humor de mercado.",
-            "neutro": f"A perspectiva de {horizon_label} e neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado.",
+            "positivo": f"A perspectiva de {horizon_label} é construtiva, com espaço para continuidade se o fluxo e o noticiário permanecerem favoráveis.",
+            "pressionado": f"A perspectiva de {horizon_label} pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados.",
+            "volatil": f"A perspectiva de {horizon_label} é de oscilação elevada, com possibilidade de movimentos rápidos em ambas as direções.",
+            "concentrado": f"A perspectiva de {horizon_label} é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo.",
+            "cauteloso": f"A perspectiva de {horizon_label} é cautelosa, com dependência relevante do humor de mercado e dos próximos dados.",
+            "neutro": f"A perspectiva de {horizon_label} é neutra a levemente construtiva, dependendo mais do ambiente macro e do fluxo do que de um gatilho isolado.",
         }
         base = scenario_map.get(scenario, scenario_map["neutro"])
         class_tail = ""
         if meta.get("asset_class") == "FII":
-            class_tail = " Para FIIs, juros, qualidade do credito e nivel de distribuicao seguem centrais."
+            class_tail = " Para FIIs, juros, qualidade do crédito e nível de distribuição seguem centrais."
         elif meta.get("asset_class") == "CRYPTO":
             class_tail = " Para cripto, liquidez global e apetite a risco continuam pesando mais do que fundamentos tradicionais."
-        function_tail = f" Dentro da carteira, a expectativa e avaliar se o ativo continua cumprindo bem a funcao de {asset_function.replace('_', ' ')}."
+        function_tail = f" Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de {asset_function.replace('_', ' ')}."
         confidence_tail = {
-            "alta": " A confianca dessa leitura e alta para o horizonte selecionado.",
-            "media": " A confianca dessa leitura e moderada.",
-            "baixa": " A confianca dessa leitura e baixa por limitacao de dados.",
+            "alta": " A confiança dessa leitura é alta para o horizonte selecionado.",
+            "media": " A confiança dessa leitura é moderada.",
+            "baixa": " A confiança dessa leitura é baixa por limitação de dados.",
         }[confidence]
         return f"{base}{forecast_text}{adjustment_text}{topics_text}{class_tail}{function_tail}{confidence_tail}"
 
@@ -799,6 +1291,9 @@ class AssetAnalysisService:
         )
         confidence = self._confidence(perf, used_news, forecast_prediction)
         now = datetime.now(timezone.utc)
+        historical_series = self._build_historical_series(ticker, history_horizon)
+        data_quality_warnings = self._data_quality_warnings(perf, historical_series, used_news)
+        response_confidence = self._confidence_with_warnings(confidence, data_quality_warnings)
 
         recent_by_horizon = {}
         for horizon_key in ["1w", "1m", "2m", "3m"]:
@@ -829,6 +1324,31 @@ class AssetAnalysisService:
                 round(horizon_adjustment_pct * 100, 2) if horizon_adjustment_pct else None,
             )
 
+        friendly_sections = self._build_friendly_analysis_sections(
+            meta,
+            perf,
+            used_news,
+            weight_pct,
+            scenario,
+            confidence,
+            history_horizon,
+            outlook_horizon,
+            asset_function,
+            historical_series,
+            data_quality_warnings,
+        )
+        box_sections = self._build_box_sections(
+            meta,
+            perf,
+            current_news or used_news,
+            all_related_news,
+            used_news,
+            weight_pct,
+            scenario,
+            response_confidence,
+            asset_function,
+        )
+
         payload = {
             "portfolio_id": portfolio.id,
             "ticker": meta["ticker"],
@@ -836,7 +1356,7 @@ class AssetAnalysisService:
             "asset_class": meta["asset_class"],
             "generated_at": now.isoformat(),
             "recomputed_at": now.isoformat(),
-            "confidence": confidence,
+            "confidence": response_confidence,
             "status": "ok" if perf.get("current_price") is not None or used_news else "insufficient_data",
             "selected_history_horizon": history_horizon,
             "selected_outlook_horizon": outlook_horizon,
@@ -855,7 +1375,7 @@ class AssetAnalysisService:
                 "news_count": len(historical_news),
                 "has_price_history": bool(perf.get("has_selected_history")),
             },
-            "historical_series": self._build_historical_series(ticker, history_horizon),
+            "historical_series": historical_series,
             "forecast_series": adjusted_forecast_bundle.get("forecast_series", []) if adjusted_forecast_bundle else [],
             "forecast_anchor_points": adjusted_forecast_bundle.get("forecast_anchor_points", []) if adjusted_forecast_bundle else [],
             "recent_performance": {
@@ -894,6 +1414,8 @@ class AssetAnalysisService:
                 "outlook": outlook_by_horizon[outlook_horizon],
                 "recent_by_horizon": recent_by_horizon,
                 "outlook_by_horizon": outlook_by_horizon,
+                **friendly_sections,
+                **box_sections,
             },
             "used_news_count": len(used_news),
             "sources": used_news,
@@ -902,6 +1424,69 @@ class AssetAnalysisService:
         payload = self._refine_analysis_sections(payload, history_horizon, outlook_horizon)
         self._save_cached_analysis(portfolio, ticker, payload)
         return payload
+
+    def _contains_transactional_recommendation(self, value) -> bool:
+        text = json.dumps(value, ensure_ascii=False).lower() if not isinstance(value, str) else value.lower()
+        blocked = [
+            "recomendo comprar",
+            "recomenda comprar",
+            "deve comprar",
+            "hora de comprar",
+            "recomendo vender",
+            "recomenda vender",
+            "deve vender",
+            "hora de vender",
+            "deve manter",
+            "recomendo manter",
+            "mantenha",
+            "manter a posicao",
+            "manter a posição",
+            "rebalancear para",
+            "aumentar posicao",
+            "aumentar posição",
+            "reduzir posicao",
+            "reduzir posição",
+        ]
+        return any(term in text for term in blocked)
+
+    def _valid_refined_box_sections(self, refined: dict) -> bool:
+        required = ["historico", "situacaoAtual", "perspectiva"]
+        if self._contains_transactional_recommendation(refined):
+            return False
+        for key in required:
+            value = refined.get(key)
+            if not isinstance(value, str) or not value.strip():
+                return False
+            lowered = value.lower()
+            if any(term in lowered for term in ["drawdown", "momentum", "impacto medio", "impacto médio", "peso informacional", "ajuste contextual", "beta estimado"]):
+                return False
+            if any(marker in value for marker in ["\n-", "##", "**"]):
+                return False
+        return True
+
+    def _valid_refined_friendly_sections(self, refined: dict) -> bool:
+        required_text = ["summary", "what_happened", "company_situation", "asset_price_situation", "current_situation", "portfolio_impact", "conclusion"]
+        required_visual = ["asset_status", "fundamentals", "price_trend", "news_sentiment", "position_size", "portfolio_risk", "main_reason", "confidence"]
+        required_scenarios = ["favorable", "base", "adverse"]
+        if self._contains_transactional_recommendation(refined):
+            return False
+        if not isinstance(refined.get("visual_summary"), dict):
+            return False
+        if any(not isinstance(refined["visual_summary"].get(key), str) or not refined["visual_summary"][key].strip() for key in required_visual):
+            return False
+        if not isinstance(refined.get("scenarios"), dict):
+            return False
+        if any(not isinstance(refined["scenarios"].get(key), str) or not refined["scenarios"][key].strip() for key in required_scenarios):
+            return False
+        if any(not isinstance(refined.get(key), str) or not refined[key].strip() for key in required_text):
+            return False
+        if not isinstance(refined.get("what_to_watch"), list):
+            return False
+        if not all(isinstance(item, str) and item.strip() for item in refined["what_to_watch"]):
+            return False
+        if not isinstance(refined.get("data_quality_warnings"), list):
+            return False
+        return all(isinstance(item, str) and item.strip() for item in refined["data_quality_warnings"])
 
     def _refine_analysis_sections(self, payload: dict, history_horizon: str, outlook_horizon: str) -> dict:
         if not self.llm.enabled or not AI_ENHANCE_ASSET_ANALYSIS:
@@ -920,18 +1505,31 @@ class AssetAnalysisService:
                     for group in payload.get("source_groups", [])[:6]
                 ],
                 "analysis_sections": {
-                    "current": payload["analysis_sections"].get("current"),
-                    "recent_by_horizon": payload["analysis_sections"].get("recent_by_horizon"),
-                    "outlook_by_horizon": payload["analysis_sections"].get("outlook_by_horizon"),
+                    "historico": payload["analysis_sections"].get("box_history_by_horizon", {}).get(history_horizon),
+                    "situacaoAtual": payload["analysis_sections"].get("box_current"),
+                    "perspectiva": payload["analysis_sections"].get("box_outlook_by_horizon", {}).get(outlook_horizon),
                 },
             },
             temperature=0.15,
-            max_tokens=1200,
+            max_tokens=900,
         )
         if not refined:
             return payload
+        if self._contains_transactional_recommendation(refined):
+            return payload
 
         sections = payload.get("analysis_sections", {})
+        if self._valid_refined_box_sections(refined):
+            merged_history = dict(sections.get("box_history_by_horizon", {}))
+            merged_outlook = dict(sections.get("box_outlook_by_horizon", {}))
+            merged_history[history_horizon] = refined["historico"].strip()
+            merged_outlook[outlook_horizon] = refined["perspectiva"].strip()
+            sections["box_history_by_horizon"] = merged_history
+            sections["box_current"] = refined["situacaoAtual"].strip()
+            sections["box_outlook_by_horizon"] = merged_outlook
+            payload["analysis_sections"] = sections
+            return payload
+
         if isinstance(refined.get("current"), str) and refined["current"].strip():
             sections["current"] = refined["current"].strip()
 
@@ -950,6 +1548,20 @@ class AssetAnalysisService:
                     merged_outlook[key] = value.strip()
             sections["outlook_by_horizon"] = merged_outlook
             sections["outlook"] = merged_outlook.get(outlook_horizon, sections.get("outlook"))
+
+        if self._valid_refined_friendly_sections(refined):
+            sections["visual_summary"] = {
+                key: refined["visual_summary"][key].strip()
+                for key in ["asset_status", "fundamentals", "price_trend", "news_sentiment", "position_size", "portfolio_risk", "main_reason", "confidence"]
+            }
+            for key in ["summary", "what_happened", "company_situation", "asset_price_situation", "current_situation", "portfolio_impact", "conclusion"]:
+                sections[key] = refined[key].strip()
+            sections["scenarios"] = {
+                key: refined["scenarios"][key].strip()
+                for key in ["favorable", "base", "adverse"]
+            }
+            sections["what_to_watch"] = [item.strip() for item in refined["what_to_watch"] if item.strip()]
+            sections["data_quality_warnings"] = [item.strip() for item in refined["data_quality_warnings"] if item.strip()]
 
         payload["analysis_sections"] = sections
         return payload

@@ -255,6 +255,33 @@ export type PositionOpinion = {
     outlook: string;
     recent_by_horizon: Record<string, string>;
     outlook_by_horizon: Record<string, string>;
+    box_history_by_horizon?: Record<string, string>;
+    box_current?: string;
+    box_outlook_by_horizon?: Record<string, string>;
+    visual_summary?: {
+      asset_status?: string;
+      fundamentals?: string;
+      price_trend?: string;
+      news_sentiment?: string;
+      position_size?: string;
+      portfolio_risk?: string;
+      main_reason?: string;
+      confidence?: string;
+    };
+    summary?: string;
+    what_happened?: string;
+    company_situation?: string;
+    asset_price_situation?: string;
+    current_situation?: string;
+    portfolio_impact?: string;
+    scenarios?: string | {
+      favorable?: string;
+      base?: string;
+      adverse?: string;
+    };
+    what_to_watch?: string[];
+    conclusion?: string;
+    data_quality_warnings?: string[];
   };
   used_news_count: number;
   sources: PortfolioOpinion['sources'];

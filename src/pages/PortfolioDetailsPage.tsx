@@ -118,10 +118,6 @@ function historyOptionLabel(horizon: HistoryHorizonKey) {
   return HISTORY_OPTIONS.find((option) => option.key === horizon)?.label ?? '3 meses';
 }
 
-function historySectionTitle(horizon: HistoryHorizonKey) {
-  return horizon === '1w' ? 'Ultima semana' : `Ultimos ${historyOptionLabel(horizon)}`;
-}
-
 function horizonButtonClass(isActive: boolean) {
   return `rounded-full px-3 py-1.5 text-xs font-semibold transition ${
     isActive
@@ -642,7 +638,9 @@ export function PortfolioDetailsPage() {
                                     <div className="mt-4 grid gap-3 lg:grid-cols-3">
                                       <section className="rounded-3xl border border-[var(--border-soft)] bg-white/90 p-4">
                                         <div className="flex flex-wrap items-center gap-3">
-                                          <p className="text-sm font-semibold text-[var(--text-main)]">{historySectionTitle(opinionState.historyHorizon)}:</p>
+                                          <p className="text-sm font-semibold text-[var(--text-main)]">
+                                            {opinionState.historyHorizon === '1w' ? 'Ultima 1 semana' : `Ultimos ${historyOptionLabel(opinionState.historyHorizon)}`}:
+                                          </p>
                                           <div className="flex flex-wrap gap-2">
                                             {HISTORY_OPTIONS.map((option) => (
                                               <button
@@ -656,13 +654,15 @@ export function PortfolioDetailsPage() {
                                             ))}
                                           </div>
                                         </div>
-                                        <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">
-                                          {opinionState.data.analysis_sections.recent_by_horizon[opinionState.historyHorizon]}
+                                        <p className="mt-3 text-sm leading-relaxed text-[var(--text-main)]">
+                                          {opinionState.data.analysis_sections.box_history_by_horizon?.[opinionState.historyHorizon] ?? opinionState.data.analysis_sections.recent_by_horizon[opinionState.historyHorizon]}
                                         </p>
                                       </section>
                                       <section className="rounded-3xl border border-[var(--border-soft)] bg-white/90 p-4">
                                         <p className="text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">Situacao atual</p>
-                                        <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{opinionState.data.analysis_sections.current}</p>
+                                        <p className="mt-3 text-sm leading-relaxed text-[var(--text-main)]">
+                                          {opinionState.data.analysis_sections.box_current ?? opinionState.data.analysis_sections.current}
+                                        </p>
                                       </section>
                                       <section className="rounded-3xl border border-[var(--border-soft)] bg-white/90 p-4">
                                         <div className="flex flex-wrap items-center gap-3">
@@ -680,8 +680,8 @@ export function PortfolioDetailsPage() {
                                             ))}
                                           </div>
                                         </div>
-                                        <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">
-                                          {opinionState.data.analysis_sections.outlook_by_horizon[opinionState.outlookHorizon]}
+                                        <p className="mt-3 text-sm leading-relaxed text-[var(--text-main)]">
+                                          {opinionState.data.analysis_sections.box_outlook_by_horizon?.[opinionState.outlookHorizon] ?? opinionState.data.analysis_sections.outlook_by_horizon[opinionState.outlookHorizon]}
                                         </p>
                                       </section>
                                     </div>
