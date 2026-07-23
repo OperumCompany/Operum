@@ -41,14 +41,14 @@ export function CompositionCharts({
 
   if (!positions.length) {
     return (
-      <Card title="Composicao">
+      <Card title="Composição">
         <p className="text-sm text-[var(--text-muted)]">Nenhum ativo na carteira.</p>
       </Card>
     );
   }
 
   return (
-    <Card title="Composicao">
+    <Card title="Composição">
       <div className="grid gap-6 sm:grid-cols-2">
         <div>
           <p className="mb-2 text-center text-sm font-semibold text-[var(--text-muted)]">Por ativo</p>

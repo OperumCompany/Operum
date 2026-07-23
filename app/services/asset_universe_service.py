@@ -12,7 +12,7 @@ class AssetUniverseService:
         if data is None:
             self._build_default_universe()
             data = self.storage.load_json(self._universe_path)
-        return [Asset(**item) for item in data]
+        return [Asset(**self._repair_asset_item(item)) for item in data]
 
     def search(self, query: str) -> list[Asset]:
         q = query.lower().strip()
@@ -28,6 +28,26 @@ class AssetUniverseService:
             if a.ticker.lower() == ticker.lower():
                 return a
         return None
+
+    def _repair_text(self, value: str) -> str:
+        repaired = value
+        for _ in range(3):
+            if not any(marker in repaired for marker in ("Ã", "Â", "â")):
+                break
+            try:
+                next_value = repaired.encode("latin1").decode("utf-8")
+            except (UnicodeEncodeError, UnicodeDecodeError):
+                break
+            if next_value == repaired:
+                break
+            repaired = next_value
+        return repaired
+
+    def _repair_asset_item(self, item: dict) -> dict:
+        return {
+            key: self._repair_text(value) if isinstance(value, str) else value
+            for key, value in item.items()
+        }
 
     def _build_default_universe(self):
         assets = [

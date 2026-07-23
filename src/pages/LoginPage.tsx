@@ -31,7 +31,7 @@ export function LoginPage() {
               Entenda seus investimentos sem precisar falar como analista.
             </h1>
             <p className="mt-4 text-base leading-7 text-white/75">
-              O Operum organiza sua carteira, explica o que esta acontecendo e mostra analises mais tecnicas so quando voce quiser.
+              O Operum organiza sua carteira, explica o que está acontecendo e mostra análises mais técnicas só quando você quiser.
             </p>
           </div>
 
@@ -82,10 +82,10 @@ export function LoginPage() {
             )}
 
             <div className="mt-6 rounded-[24px] bg-[var(--bg-surface-strong)] p-4 text-sm leading-6 text-[var(--text-muted)]">
-              Nao sabe por onde comecar? Entre e va para <strong className="text-[var(--text-main)]">Carteiras</strong> para usar um exemplo pronto.
+              Não sabe por onde começar? Entre e vá para <strong className="text-[var(--text-main)]">Carteiras</strong> para usar um exemplo pronto.
             </div>
             <p className="mt-6 text-sm text-[var(--text-muted)]">
-              Ainda nao possui conta?{' '}
+              Ainda não possui conta?{' '}
               <Link to="/registro" className="font-semibold text-[var(--brand)]">
                 Criar conta
               </Link>

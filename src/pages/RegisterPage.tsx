@@ -20,7 +20,7 @@ export function RegisterPage() {
 
     if (!accept) return setError('Voce precisa aceitar os termos para continuar.');
     if (password.length < 6) return setError('A senha deve ter ao menos 6 caracteres.');
-    if (password !== confirmPassword) return setError('As senhas nao coincidem.');
+    if (password !== confirmPassword) return setError('As senhas não coincidem.');
 
     const result = await register({ name, email, password });
     if (!result.ok) {
@@ -76,7 +76,7 @@ export function RegisterPage() {
             {error && <p className="mt-4 text-sm text-[var(--danger-text)]">{error}</p>}
 
             <p className="mt-6 text-sm text-[var(--text-muted)]">
-              Ja tem conta?{' '}
+              Já tem conta?{' '}
               <Link to="/login" className="font-semibold text-[var(--brand)]">
                 Entrar
               </Link>

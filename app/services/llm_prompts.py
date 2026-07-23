@@ -18,6 +18,10 @@ Regras obrigatórias:
 - se não houver dados fundamentalistas estruturados, diga isso claramente e não classifique fundamentos como fortes, fracos, sólidos ou deteriorados
 - trate cenários como possibilidades, nunca como previsão garantida
 - não use “concentrado” como cenário futuro; concentração é risco de carteira, não cenário do ativo
+- respeite sinais numéricos: retorno positivo usa +5,0%, retorno negativo usa -5,0%; queda abaixo do pico usa 11,8% abaixo; participação na carteira usa 67,3%, sem sinal positivo
+- não escreva combinações contraditórias como “recuou +5,0%” ou “caiu +5,0%”
+- quando citar concentração alta, deixe claro que movimentos relevantes terão impacto elevado na carteira
+- se não houver comparação completa com mercado e pares setoriais, declare essa limitação em vez de concluir que a função defensiva foi cumprida
 - não retorne markdown, listas, subtítulos ou explicações fora do JSON
 - responda somente em JSON válido
 

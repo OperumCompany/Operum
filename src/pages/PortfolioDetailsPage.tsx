@@ -1,4 +1,4 @@
-import { FormEvent, Fragment, useEffect, useMemo, useState } from 'react';
+import { FormEvent, Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { Sparkles, ChevronDown, ChevronUp, ArrowDownUp } from 'lucide-react';
 import {
@@ -58,26 +58,38 @@ const OUTLOOK_OPTIONS = [
   { key: '3m', label: '3 meses' },
 ] as const;
 
+const PREFETCH_OPINION_PAIRS: Array<[HistoryHorizonKey, OutlookHorizonKey]> = [
+  ['1w', '1w'],
+  ['1m', '1m'],
+  ['2m', '2m'],
+];
+
 const CLASS_LABELS: Record<string, string> = {
-  BR_STOCK: 'Acoes Brasileiras',
-  FII: 'Fundos Imobiliarios',
+  BR_STOCK: 'Ações brasileiras',
+  FII: 'Fundos imobiliários',
   BDR: 'BDRs',
   CRYPTO: 'Criptomoedas',
-  US_STOCK: 'Acoes EUA',
+  US_STOCK: 'Ações EUA',
 };
 
 type OpinionState = {
   data?: PositionOpinion;
+  cache?: OpinionCache;
   loading: boolean;
   error?: string;
   open: boolean;
   expandedSources?: Record<string, boolean>;
+  prefetched?: OpinionFlags;
   historyHorizon: '1w' | '1m' | '2m' | '3m';
   outlookHorizon: '1w' | '1m' | '2m' | '3m';
 };
 
 type SortKey = 'ticker' | 'quantity' | 'current_price' | 'total_value' | 'weight_pct' | 'unrealized_pnl';
 type HistoryHorizonKey = OpinionState['historyHorizon'];
+type OutlookHorizonKey = OpinionState['outlookHorizon'];
+type OpinionCacheKey = `${HistoryHorizonKey}:${OutlookHorizonKey}`;
+type OpinionCache = Partial<Record<OpinionCacheKey, PositionOpinion>>;
+type OpinionFlags = Partial<Record<OpinionCacheKey, boolean>>;
 type ChartPoint = {
   date: string;
   label: string;
@@ -98,9 +110,25 @@ function resolveDisplayClass(assetClass: string, ticker: string, assets: Asset[]
 }
 
 function confidenceLabel(confidence: string) {
-  if (confidence === 'alta') return 'Confianca alta';
-  if (confidence === 'media') return 'Confianca media';
-  return 'Confianca baixa';
+  if (confidence === 'alta') return 'Confiança alta';
+  if (confidence === 'media') return 'Confiança média';
+  return 'Confiança baixa';
+}
+
+function cleanText(value: string | null | undefined) {
+  if (!value) return '';
+  let repaired = value;
+  for (let i = 0; i < 3; i += 1) {
+    if (!/[ÃÂâ]/.test(repaired)) break;
+    try {
+      const next = decodeURIComponent(escape(repaired));
+      if (next === repaired) break;
+      repaired = next;
+    } catch {
+      break;
+    }
+  }
+  return repaired;
 }
 
 function fmtMoney(value: number | null | undefined, currency = 'BRL') {
@@ -111,11 +139,15 @@ function fmtMoney(value: number | null | undefined, currency = 'BRL') {
 
 function fmtPct(value: number | null | undefined) {
   if (value == null) return '-';
-  return `${value >= 0 ? '+' : ''}${value.toFixed(1)}%`;
+  return `${value >= 0 ? '+' : ''}${value.toLocaleString('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 })}%`;
 }
 
 function historyOptionLabel(horizon: HistoryHorizonKey) {
   return HISTORY_OPTIONS.find((option) => option.key === horizon)?.label ?? '3 meses';
+}
+
+function opinionCacheKey(historyHorizon: HistoryHorizonKey, outlookHorizon: OutlookHorizonKey): OpinionCacheKey {
+  return `${historyHorizon}:${outlookHorizon}`;
 }
 
 function horizonButtonClass(isActive: boolean) {
@@ -133,18 +165,64 @@ function formatChartDate(value: string) {
   });
 }
 
+function addBusinessDays(dateValue: string, days: number) {
+  const date = new Date(`${dateValue}T00:00:00`);
+  let added = 0;
+  while (added < days) {
+    date.setDate(date.getDate() + 1);
+    const day = date.getDay();
+    if (day !== 0 && day !== 6) {
+      added += 1;
+    }
+  }
+  return date.toISOString().slice(0, 10);
+}
+
+function outlookPointLimit(horizon: OutlookHorizonKey) {
+  return {
+    '1w': 5,
+    '1m': 21,
+    '2m': 42,
+    '3m': 63,
+  }[horizon];
+}
+
+function normalizeForecastSeries(
+  historical: HorizonSeriesPoint[],
+  forecast: HorizonSeriesPoint[],
+  currentPrice: number | null | undefined,
+  outlookHorizon: OutlookHorizonKey,
+): HorizonSeriesPoint[] {
+  if (!forecast.length) return [];
+
+  const historicalAnchor = historical.length ? historical[historical.length - 1] : null;
+  const anchorDate = historicalAnchor?.date ?? forecast[0].date;
+  const anchorValue = currentPrice ?? historicalAnchor?.value ?? forecast[0].value;
+  const futureValues = forecast.slice(1, outlookPointLimit(outlookHorizon) + 1);
+
+  return [
+    { date: anchorDate, value: anchorValue },
+    ...futureValues.map((point, index) => ({
+      date: addBusinessDays(anchorDate, index + 1),
+      value: point.value,
+    })),
+  ];
+}
+
 function mergeChartSeries(
   historical: HorizonSeriesPoint[],
   forecast: HorizonSeriesPoint[],
   currentPrice: number | null | undefined,
+  outlookHorizon: OutlookHorizonKey,
 ): ChartPoint[] {
   const historicalMap = new Map(historical.map((point) => [point.date, point.value]));
-  const forecastMap = new Map(forecast.map((point) => [point.date, point.value]));
+  const normalizedForecast = normalizeForecastSeries(historical, forecast, currentPrice, outlookHorizon);
+  const forecastMap = new Map(normalizedForecast.map((point) => [point.date, point.value]));
   const dates = Array.from(new Set([...historicalMap.keys(), ...forecastMap.keys()])).sort();
   const todayDate = historical.length
     ? historical[historical.length - 1].date
-    : forecast.length
-      ? forecast[0].date
+    : normalizedForecast.length
+      ? normalizedForecast[0].date
       : null;
 
   return dates.map((date) => ({
@@ -176,6 +254,8 @@ export function PortfolioDetailsPage() {
   const [prices, setPrices] = useState<PricesResponse | null>(null);
   const [pricesLoading, setPricesLoading] = useState(false);
   const [positionOpinions, setPositionOpinions] = useState<Record<string, OpinionState>>({});
+  const positionOpinionsRef = useRef<Record<string, OpinionState>>({});
+  const opinionRequestsRef = useRef<Record<string, Partial<Record<OpinionCacheKey, Promise<PositionOpinion>>>>>({});
   const [tableQuery, setTableQuery] = useState('');
   const [sortKey, setSortKey] = useState<SortKey>('weight_pct');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
@@ -183,6 +263,10 @@ export function PortfolioDetailsPage() {
   useEffect(() => {
     api.get<Asset[]>('/assets/universe').then(setAssets).catch(() => {});
   }, []);
+
+  useEffect(() => {
+    positionOpinionsRef.current = positionOpinions;
+  }, [positionOpinions]);
 
   const portfolio = portfolios.find((item) => item.id === id);
 
@@ -321,14 +405,94 @@ export function PortfolioDetailsPage() {
     }
   }
 
+  function requestPositionOpinion(
+    ticker: string,
+    historyHorizon: HistoryHorizonKey,
+    outlookHorizon: OutlookHorizonKey,
+  ) {
+    if (!portfolio) {
+      return Promise.reject(new Error('Carteira não encontrada'));
+    }
+    const key = opinionCacheKey(historyHorizon, outlookHorizon);
+    const tickerRequests = opinionRequestsRef.current[ticker] ?? {};
+    const existingRequest = tickerRequests[key];
+    if (existingRequest) return existingRequest;
+
+    const request = api
+      .get<PositionOpinion>(
+        `/models/opinion/${portfolio.id}/positions/${ticker}?history_horizon=${historyHorizon}&outlook_horizon=${outlookHorizon}`,
+      )
+      .finally(() => {
+        delete opinionRequestsRef.current[ticker]?.[key];
+      });
+
+    tickerRequests[key] = request;
+    opinionRequestsRef.current[ticker] = tickerRequests;
+    return request;
+  }
+
+  async function prefetchPositionOpinion(ticker: string) {
+    for (const [historyHorizon, outlookHorizon] of PREFETCH_OPINION_PAIRS) {
+      const key = opinionCacheKey(historyHorizon, outlookHorizon);
+      const current = positionOpinionsRef.current[ticker];
+      if (current?.cache?.[key] || current?.prefetched?.[key]) continue;
+
+      setPositionOpinions((prev) => ({
+        ...prev,
+        [ticker]: {
+          ...prev[ticker],
+          prefetched: {
+            ...(prev[ticker]?.prefetched ?? {}),
+            [key]: true,
+          },
+        },
+      }));
+
+      try {
+        const data = await requestPositionOpinion(ticker, historyHorizon, outlookHorizon);
+        setPositionOpinions((prev) => ({
+          ...prev,
+          [ticker]: {
+            ...prev[ticker],
+            cache: {
+              ...(prev[ticker]?.cache ?? {}),
+              [key]: data,
+            },
+          },
+        }));
+      } catch {
+        // Prefetch is only an optimization; direct user actions still surface errors.
+      }
+    }
+  }
+
   async function loadPositionOpinion(
     ticker: string,
     options?: Partial<Pick<OpinionState, 'historyHorizon' | 'outlookHorizon'>> & { keepOpen?: boolean },
   ) {
     if (!portfolio) return;
-    const existing = positionOpinions[ticker];
+    const existing = positionOpinionsRef.current[ticker];
     const historyHorizon = options?.historyHorizon ?? existing?.historyHorizon ?? '3m';
     const outlookHorizon = options?.outlookHorizon ?? existing?.outlookHorizon ?? '3m';
+    const key = opinionCacheKey(historyHorizon, outlookHorizon);
+    const cached = existing?.cache?.[key];
+
+    if (cached) {
+      setPositionOpinions((prev) => ({
+        ...prev,
+        [ticker]: {
+          ...prev[ticker],
+          loading: false,
+          open: options?.keepOpen ?? true,
+          error: undefined,
+          data: cached,
+          historyHorizon,
+          outlookHorizon,
+        },
+      }));
+      return;
+    }
+
     setPositionOpinions((prev) => ({
       ...prev,
       [ticker]: {
@@ -342,20 +506,26 @@ export function PortfolioDetailsPage() {
     }));
 
     try {
-      const data = await api.get<PositionOpinion>(
-        `/models/opinion/${portfolio.id}/positions/${ticker}?history_horizon=${historyHorizon}&outlook_horizon=${outlookHorizon}`,
-      );
+      const data = await requestPositionOpinion(ticker, historyHorizon, outlookHorizon);
       setPositionOpinions((prev) => ({
         ...prev,
         [ticker]: {
+          ...prev[ticker],
           loading: false,
           open: true,
           data,
+          cache: {
+            ...(prev[ticker]?.cache ?? {}),
+            [key]: data,
+          },
           expandedSources: prev[ticker]?.expandedSources ?? {},
           historyHorizon,
           outlookHorizon,
         },
       }));
+      if (key === opinionCacheKey('3m', '3m')) {
+        void prefetchPositionOpinion(ticker);
+      }
     } catch (e) {
       setPositionOpinions((prev) => ({
         ...prev,
@@ -363,7 +533,7 @@ export function PortfolioDetailsPage() {
           ...prev[ticker],
           loading: false,
           open: true,
-          error: e instanceof Error ? e.message : 'Erro ao gerar analise',
+          error: e instanceof Error ? e.message : 'Erro ao gerar análise',
           historyHorizon,
           outlookHorizon,
         },
@@ -410,8 +580,8 @@ export function PortfolioDetailsPage() {
 
   if (!portfolio) {
     return (
-      <Card title="Carteira nao encontrada">
-        <p className="text-sm text-[var(--text-muted)]">A carteira solicitada nao existe ou foi removida.</p>
+      <Card title="Carteira não encontrada">
+        <p className="text-sm text-[var(--text-muted)]">A carteira solicitada não existe ou foi removida.</p>
         <Button type="button" className="mt-4" onClick={() => navigate('/carteiras')}>
           Voltar para carteiras
         </Button>
@@ -440,12 +610,28 @@ export function PortfolioDetailsPage() {
               </Button>
             </form>
           ) : (
-            <h2 className="mt-2 text-3xl font-bold">{getPortfolioLabel(portfolio)}</h2>
+            <h2 className="mt-2 text-3xl font-bold">{cleanText(getPortfolioLabel(portfolio))}</h2>
           )}
-          <p className="mt-1 text-sm text-[var(--text-muted)]">
+          <p className="hidden">
             {portfolio.positions.length} ativo(s) â€¢ Moeda base: {portfolio.base_currency}
             {prices?.total_value != null && ` â€¢ Valor total: ${fmtMoney(prices.total_value)}`}
             {prices?.total_unrealized_pnl != null && ` â€¢ P&L nao realizado: ${fmtMoney(prices.total_unrealized_pnl)}`}
+          </p>
+          <p className="hidden">
+            {[
+              `${portfolio.positions.length} ativo(s)`,
+              `Moeda base: ${portfolio.base_currency}`,
+              prices?.total_value != null ? `Valor total: ${fmtMoney(prices.total_value)}` : null,
+              prices?.total_unrealized_pnl != null ? `P&L não realizado: ${fmtMoney(prices.total_unrealized_pnl)}` : null,
+            ].filter(Boolean).join(' • ')}
+          </p>
+          <p className="mt-1 text-sm text-[var(--text-muted)]">
+            {[
+              `${portfolio.positions.length} ativo(s)`,
+              `Moeda base: ${portfolio.base_currency}`,
+              prices?.total_value != null ? `Valor total: ${fmtMoney(prices.total_value)}` : null,
+              prices?.total_unrealized_pnl != null ? `P&L n\u00e3o realizado: ${fmtMoney(prices.total_unrealized_pnl)}` : null,
+            ].filter(Boolean).join(' \u2022 ')}
           </p>
         </div>
         <div className="flex flex-wrap gap-2">
@@ -469,7 +655,7 @@ export function PortfolioDetailsPage() {
         <Card title="Atualizando carteira">
           <div className="flex items-center gap-3">
             <div className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--brand)] border-t-transparent" />
-            <p className="text-sm text-[var(--text-muted)]">Carregando analise, precos e comparativos da carteira...</p>
+            <p className="text-sm text-[var(--text-muted)]">Carregando análise, preços e comparativos da carteira...</p>
           </div>
         </Card>
       )}
@@ -504,26 +690,26 @@ export function PortfolioDetailsPage() {
               <option value="">Selecionar ativo</option>
               {filteredAssets.map((asset) => (
                 <option key={asset.ticker} value={asset.ticker}>
-                  {asset.ticker} - {asset.name}
+                  {asset.ticker} - {cleanText(asset.name)}
                 </option>
               ))}
             </select>
             <Input type="number" min={0.01} step={0.01} value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} placeholder="Quantidade" />
-            <Input type="number" min={0} step={0.01} value={avgPrice} onChange={(e) => setAvgPrice(e.target.value)} placeholder="Preco medio (opcional)" />
+            <Input type="number" min={0} step={0.01} value={avgPrice} onChange={(e) => setAvgPrice(e.target.value)} placeholder="Preço médio (opcional)" />
             <Button type="submit">Adicionar</Button>
           </div>
-          <p className="text-xs text-[var(--text-muted)]">Selecione o tipo de ativo primeiro para filtrar as opcoes disponiveis.</p>
+          <p className="text-xs text-[var(--text-muted)]">Selecione o tipo de ativo primeiro para filtrar as opções disponíveis.</p>
         </form>
       </Card>
 
-      <Card title="Filtros e ordenacao" right={<ArrowDownUp size={16} className="text-[var(--brand)]" />}>
+      <Card title="Filtros e ordenação" right={<ArrowDownUp size={16} className="text-[var(--brand)]" />}>
         <div className="grid gap-3 sm:grid-cols-3">
           <Input value={tableQuery} onChange={(e) => setTableQuery(e.target.value)} placeholder="Filtrar por ticker ou nome" />
           <select value={sortKey} onChange={(e) => updateSort(e.target.value as SortKey)} className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm">
             <option value="weight_pct">% da carteira</option>
             <option value="total_value">Valor atual</option>
             <option value="unrealized_pnl">Ganho/perda</option>
-            <option value="current_price">Preco atual</option>
+            <option value="current_price">Preço atual</option>
             <option value="quantity">Quantidade</option>
             <option value="ticker">Ticker</option>
           </select>
@@ -542,10 +728,10 @@ export function PortfolioDetailsPage() {
                   <tr className="text-left text-[var(--text-muted)]">
                     <th className="py-2">Ticker</th>
                     <th>Quantidade</th>
-                    <th>Preco medio</th>
-                    <th>Preco atual</th>
+                    <th>Preço médio</th>
+                    <th>Preço atual</th>
                     <th>Valor total</th>
-                    <th>P&L nao realizado</th>
+                    <th>P&L não realizado</th>
                     <th>% Carteira</th>
                     <th>IA</th>
                     <th></th>
@@ -556,12 +742,13 @@ export function PortfolioDetailsPage() {
                     const priceInfo = getPriceInfo(pos.ticker);
                     const opinionState = positionOpinions[pos.ticker];
                     const chartData = opinionState?.data
-                      ? mergeChartSeries(
-                          opinionState.data.historical_series,
-                          opinionState.data.forecast_series,
-                          opinionState.data.current_snapshot.current_price,
-                        )
-                      : [];
+                        ? mergeChartSeries(
+                            opinionState.data.historical_series,
+                            opinionState.data.forecast_series,
+                            opinionState.data.current_snapshot.current_price,
+                            opinionState.outlookHorizon,
+                          )
+                        : [];
                     return (
                       <Fragment key={pos.ticker}>
                         <tr className="border-t border-[var(--border-soft)]">
@@ -600,7 +787,9 @@ export function PortfolioDetailsPage() {
                               {opinionState.loading && (
                                 <div className="flex items-center gap-3">
                                   <div className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--brand)] border-t-transparent" />
-                                  <p className="text-sm text-[var(--text-muted)]">Gerando analise do ativo...</p>
+                                  <p className="text-sm text-[var(--text-muted)]">
+                                    {opinionState.data ? 'Atualizando análise do ativo...' : 'Gerando análise do ativo...'}
+                                  </p>
                                 </div>
                               )}
 
@@ -608,23 +797,23 @@ export function PortfolioDetailsPage() {
                                 <p className="text-sm text-[var(--danger-text)]">{opinionState.error}</p>
                               )}
 
-                              {!opinionState.loading && opinionState.data && (
+                              {opinionState.data && (
                                 <div className="space-y-4">
                                   <div className="rounded-[28px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,rgba(61,77,156,0.06)_0%,rgba(255,255,255,0.96)_45%,rgba(199,85,155,0.08)_100%)] p-5 shadow-[var(--shadow-card)]">
                                     <div className="flex flex-wrap items-start justify-between gap-4">
                                       <div className="space-y-1">
                                         <p className="text-lg font-semibold text-[var(--text-main)]">
-                                          {opinionState.data.ticker} ({opinionState.data.asset_name})
+                                          {opinionState.data.ticker} ({cleanText(opinionState.data.asset_name)})
                                         </p>
                                         <p className="text-sm text-[var(--text-muted)]">
-                                          {confidenceLabel(opinionState.data.confidence)} | Cenario: {opinionState.data.outlook_3m.scenario}
+                                          {confidenceLabel(opinionState.data.confidence)} | Cenário: {cleanText(opinionState.data.outlook_3m.scenario)}
                                         </p>
                                         <p className="text-xs text-[var(--text-muted)]">
-                                          Janela historica: {opinionState.data.historical_window.start_date} ate {opinionState.data.historical_window.end_date} | {opinionState.data.used_news_count} noticia(s) usada(s)
+                                          Janela histórica: {opinionState.data.historical_window.start_date} até {opinionState.data.historical_window.end_date} | {opinionState.data.used_news_count} notícia(s) usada(s)
                                         </p>
                                         {opinionState.data.current_snapshot.asset_function && (
                                           <p className="text-xs text-[var(--text-muted)]">
-                                            Funcao do ativo: {opinionState.data.current_snapshot.asset_function.replace('_', ' ')}
+                                            Função do ativo: {cleanText(opinionState.data.current_snapshot.asset_function.replace('_', ' '))}
                                           </p>
                                         )}
                                       </div>
@@ -639,7 +828,7 @@ export function PortfolioDetailsPage() {
                                       <section className="rounded-3xl border border-[var(--border-soft)] bg-white/90 p-4">
                                         <div className="flex flex-wrap items-center gap-3">
                                           <p className="text-sm font-semibold text-[var(--text-main)]">
-                                            {opinionState.historyHorizon === '1w' ? 'Ultima 1 semana' : `Ultimos ${historyOptionLabel(opinionState.historyHorizon)}`}:
+                                            {opinionState.historyHorizon === '1w' ? 'Última 1 semana' : `Últimos ${historyOptionLabel(opinionState.historyHorizon)}`}:
                                           </p>
                                           <div className="flex flex-wrap gap-2">
                                             {HISTORY_OPTIONS.map((option) => (
@@ -655,13 +844,13 @@ export function PortfolioDetailsPage() {
                                           </div>
                                         </div>
                                         <p className="mt-3 text-sm leading-relaxed text-[var(--text-main)]">
-                                          {opinionState.data.analysis_sections.box_history_by_horizon?.[opinionState.historyHorizon] ?? opinionState.data.analysis_sections.recent_by_horizon[opinionState.historyHorizon]}
+                                          {cleanText(opinionState.data.analysis_sections.box_history_by_horizon?.[opinionState.historyHorizon] ?? opinionState.data.analysis_sections.recent_by_horizon[opinionState.historyHorizon])}
                                         </p>
                                       </section>
                                       <section className="rounded-3xl border border-[var(--border-soft)] bg-white/90 p-4">
-                                        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">Situacao atual</p>
+                                        <p className="text-xs font-semibold uppercase tracking-wider text-[var(--accent)]">Situação atual</p>
                                         <p className="mt-3 text-sm leading-relaxed text-[var(--text-main)]">
-                                          {opinionState.data.analysis_sections.box_current ?? opinionState.data.analysis_sections.current}
+                                          {cleanText(opinionState.data.analysis_sections.box_current ?? opinionState.data.analysis_sections.current)}
                                         </p>
                                       </section>
                                       <section className="rounded-3xl border border-[var(--border-soft)] bg-white/90 p-4">
@@ -681,7 +870,7 @@ export function PortfolioDetailsPage() {
                                           </div>
                                         </div>
                                         <p className="mt-3 text-sm leading-relaxed text-[var(--text-main)]">
-                                          {opinionState.data.analysis_sections.box_outlook_by_horizon?.[opinionState.outlookHorizon] ?? opinionState.data.analysis_sections.outlook_by_horizon[opinionState.outlookHorizon]}
+                                          {cleanText(opinionState.data.analysis_sections.box_outlook_by_horizon?.[opinionState.outlookHorizon] ?? opinionState.data.analysis_sections.outlook_by_horizon[opinionState.outlookHorizon])}
                                         </p>
                                       </section>
                                     </div>
@@ -690,7 +879,7 @@ export function PortfolioDetailsPage() {
                                   <section className="rounded-[28px] border border-[var(--border-soft)] bg-white p-5 shadow-[var(--shadow-card)]">
                                     <div className="flex flex-col gap-6 xl:flex-row xl:items-start xl:justify-between">
                                       <div className="space-y-2">
-                                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">Preco</p>
+                                        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">Preço</p>
                                         <div className="flex flex-wrap items-end gap-3">
                                           <p className="text-4xl font-bold leading-none text-[var(--text-main)]">
                                             {fmtMoney(opinionState.data.current_snapshot.current_price, opinionState.data.current_snapshot.currency)}
@@ -708,7 +897,7 @@ export function PortfolioDetailsPage() {
 
                                       <div className="grid gap-3 sm:grid-cols-2 xl:min-w-[320px]">
                                         <div className="space-y-2">
-                                          <p className="text-sm font-semibold text-[var(--text-main)]">Ultimos</p>
+                                          <p className="text-sm font-semibold text-[var(--text-main)]">Últimos</p>
                                           <div className="flex flex-wrap gap-2">
                                             {HISTORY_OPTIONS.map((option) => (
                                               <button
@@ -772,7 +961,7 @@ export function PortfolioDetailsPage() {
                                             <Legend wrapperStyle={{ paddingTop: 8 }} />
                                             <Area type="monotone" dataKey="areaHistorico" stroke="none" fill={`url(#historyFill-${pos.ticker})`} isAnimationActive={false} connectNulls legendType="none" />
                                             <Area type="monotone" dataKey="areaPerspectiva" stroke="none" fill={`url(#outlookFill-${pos.ticker})`} isAnimationActive={false} connectNulls legendType="none" />
-                                            <Line type="monotone" dataKey="historico" name="Historico" stroke="#3D4D9C" strokeWidth={3} dot={false} connectNulls isAnimationActive={false} />
+                                            <Line type="monotone" dataKey="historico" name="Histórico" stroke="#3D4D9C" strokeWidth={3} dot={false} connectNulls isAnimationActive={false} />
                                             <Line type="monotone" dataKey="perspectiva" name="Perspectiva estimada" stroke="#C7559B" strokeWidth={3} dot={false} connectNulls isAnimationActive={false} />
                                             {chartData.some((point) => point.isToday) && (
                                               <>
@@ -784,12 +973,12 @@ export function PortfolioDetailsPage() {
                                         </ResponsiveContainer>
                                       ) : (
                                         <div className="flex h-full items-center justify-center text-sm text-[var(--text-muted)]">
-                                          Sem serie suficiente para montar o grafico desse ativo.
+                                          Sem série suficiente para montar o gráfico desse ativo.
                                         </div>
                                       )}
                                     </div>
                                     <p className="mt-3 text-xs text-[var(--text-muted)]">
-                                      O grafico combina precos historicos e perspectiva estimada do Operum. A projecao nao representa garantia de preco futuro.
+                                      O gráfico combina preços históricos e perspectiva estimada do Operum. A projeção não representa garantia de preço futuro.
                                     </p>
                                   </section>
 
@@ -804,7 +993,7 @@ export function PortfolioDetailsPage() {
                                             onClick={() => toggleSourceGroup(pos.ticker, group.source_name)}
                                             className="rounded-full border border-[var(--border-soft)] bg-white px-3 py-2 text-xs font-semibold text-[var(--text-main)] transition hover:border-[var(--brand)]"
                                           >
-                                            {group.source_name} ({group.count})
+                                            {cleanText(group.source_name)} ({group.count})
                                           </button>
                                         ))}
                                       </div>
@@ -813,7 +1002,7 @@ export function PortfolioDetailsPage() {
                                           .filter((group) => opinionState.expandedSources?.[group.source_name])
                                           .map((group) => (
                                             <div key={`${group.source_name}-panel`} className="rounded-2xl border border-[var(--border-soft)] bg-white p-3">
-                                              <p className="text-sm font-semibold text-[var(--text-main)]">{group.source_name}</p>
+                                              <p className="text-sm font-semibold text-[var(--text-main)]">{cleanText(group.source_name)}</p>
                                               <div className="mt-3 space-y-2">
                                                 {group.items.map((item) => (
                                                   <a
@@ -823,11 +1012,18 @@ export function PortfolioDetailsPage() {
                                                     rel="noreferrer"
                                                     className="block rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3 transition hover:border-[var(--brand)]"
                                                   >
-                                                    <p className="text-sm font-semibold text-[var(--text-main)]">{item.title}</p>
-                                                    <p className="mt-1 text-xs text-[var(--text-muted)]">
+                                                    <p className="text-sm font-semibold text-[var(--text-main)]">{cleanText(item.title)}</p>
+                                                    <p className="hidden">
                                                       {new Date(item.published_at).toLocaleDateString('pt-BR')}
                                                       {item.role ? ` â€¢ ${item.role}` : ''}
                                                       {item.analysis_category ? ` â€¢ ${item.analysis_category}` : ''}
+                                                    </p>
+                                                    <p className="mt-1 text-xs text-[var(--text-muted)]">
+                                                      {[
+                                                        new Date(item.published_at).toLocaleDateString('pt-BR'),
+                                                        item.role ? cleanText(item.role) : null,
+                                                        item.analysis_category ? cleanText(item.analysis_category) : null,
+                                                      ].filter(Boolean).join(' • ')}
                                                     </p>
                                                   </a>
                                                 ))}
@@ -840,7 +1036,7 @@ export function PortfolioDetailsPage() {
 
                                   {!opinionState.data.source_groups.length && (
                                     <p className="text-sm text-[var(--text-muted)]">
-                                      Sem noticias suficientes para esse ativo. A leitura foi baseada mais em preco, benchmark e classe do ativo.
+                                      Sem notícias suficientes para esse ativo. A leitura foi baseada mais em preço, benchmark e classe do ativo.
                                     </p>
                                   )}
                                 </div>

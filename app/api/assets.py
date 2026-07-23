@@ -1,6 +1,7 @@
 from fastapi import APIRouter, HTTPException
-from app.services.asset_universe_service import AssetUniverseService
+
 from app.schemas.asset import Asset
+from app.services.asset_universe_service import AssetUniverseService
 
 router = APIRouter(prefix="/assets", tags=["assets"])
 service = AssetUniverseService()

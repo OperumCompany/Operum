@@ -1,16 +1,33 @@
-2026-07-20 22:42:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-07-20 22:42:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-07-20 22:42:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-07-20 22:42:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-07-20 22:42:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-07-20 22:42:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-07-20 22:42:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-07-20 22:42:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-INFO:     Started server process [12112]
+2026-07-22 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-22 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-22 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-22 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-22 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-22 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-22 21:53:46 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-22 21:53:47 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+INFO:     Started server process [19048]
 INFO:     Waiting for application startup.
-2026-07-20 22:42:13 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
-2026-07-20 22:42:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-07-20 22:42:13 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-22 21:53:47 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-07-22 21:53:47 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-22 21:53:47 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
 INFO:     Application startup complete.
 INFO:     Uvicorn running on http://0.0.0.0:8001 (Press CTRL+C to quit)
-INFO:     127.0.0.1:63709 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:53939 - "GET /api/health HTTP/1.1" 200 OK
+2026-07-22 21:53:51 | INFO     | app.main | Cache de precos atualizado para 3 ativos
+2026-07-22 21:53:58 | INFO     | app.services.news_ingestion_service | Ingestao: 14 noticias novas de 108 unicas
+2026-07-22 21:53:58 | INFO     | app.main | Ingestao automatica: 14 noticias novas
+INFO:     127.0.0.1:56174 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56183 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56185 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56177 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56180 - "GET /api/portfolios HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52493 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62269 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52495 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52494 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/analysis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63640 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55901 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/analysis HTTP/1.1" 200 OK
+2026-07-22 21:55:27 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-22 21:55:36 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:57272 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ITUB4?history_horizon=3m&outlook_horizon=3m HTTP/1.1" 200 OK

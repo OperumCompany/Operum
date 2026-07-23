@@ -3,6 +3,8 @@ import os
 
 os.environ["OPERUM_STORAGE_MODE"] = "local"
 
+import pandas as pd
+
 from app.schemas.news import NewsItem
 from app.services.asset_analysis_service import AssetAnalysisService
 from app.services.news_ingestion_service import NewsIngestionService
@@ -350,3 +352,86 @@ def test_box_sections_are_compact_and_do_not_expose_internal_terms():
     assert "cumpriu sua funcao" not in text
     assert "cenario de itub4 e concentrado" not in text
     assert "cauteloso" in sections["box_outlook_by_horizon"]["3m"].lower()
+
+
+def test_box_sections_format_absolute_percentages_without_positive_sign():
+    service = AssetAnalysisService()
+    meta = {
+        "ticker": "ITUB4",
+        "name": "Itau Unibanco PN",
+        "asset_class": "BR_STOCK",
+        "sector": "Financeiro",
+    }
+    perf = {
+        "change_selected_pct": -5.0,
+        "drawdown_selected_pct": -11.8,
+        "volatility_selected_pct": 18.0,
+        "benchmark_ticker": "IBOV",
+    }
+
+    history = service._box_history_text("ITUB4", perf, [], "3m", "estabilidade")
+    current = service._box_current_text("ITUB4", meta, perf, [], 67.3, "estabilidade")
+    outlook = service._box_outlook_text("ITUB4", meta, "cauteloso", [], "media", "3m", 67.3, "estabilidade")
+    text = f"{history} {current} {outlook}"
+
+    assert "recuou 5,0%" in history
+    assert "+5,0%" not in history
+    assert "11,8% abaixo" in history
+    assert "+11,8%" not in history
+    assert "67,3% da carteira" in current
+    assert "+67,3%" not in text
+    assert "O cenário para os próximos 3 meses é cauteloso." in outlook
+
+
+def test_box_outlook_sections_have_distinct_horizon_focus():
+    service = AssetAnalysisService()
+    meta = {
+        "ticker": "ITUB4",
+        "name": "Itau Unibanco PN",
+        "asset_class": "BR_STOCK",
+        "sector": "Financeiro",
+    }
+
+    outlook_1w = service._box_outlook_text("ITUB4", meta, "cauteloso", [], "media", "1w", 66.8, "estabilidade")
+    outlook_1m = service._box_outlook_text("ITUB4", meta, "cauteloso", [], "media", "1m", 66.8, "estabilidade")
+    outlook_2m = service._box_outlook_text("ITUB4", meta, "cauteloso", [], "media", "2m", 66.8, "estabilidade")
+    outlook_3m = service._box_outlook_text("ITUB4", meta, "cauteloso", [], "media", "3m", 66.8, "estabilidade")
+
+    assert "ruídos de mercado" in outlook_1w
+    assert "continuidade" in outlook_1m
+    assert "confirmação ou reversão" in outlook_2m
+    assert "fundamentos" in outlook_3m
+    assert "ambiente macroeconômico" in outlook_3m
+    assert "risco da posição na carteira" in outlook_3m
+    assert outlook_2m != outlook_3m
+
+
+def test_fallback_forecast_bundle_generates_visible_series():
+    service = AssetAnalysisService()
+
+    bundle = service._fallback_forecast_bundle(
+        "ITUB4",
+        {"current_price": 42.9, "change_1m_pct": -5.0},
+        [5, 21, 42, 63],
+    )
+
+    assert bundle is not None
+    assert bundle["forecast_source"] == "deterministic_fallback"
+    assert len(bundle["predictions"]) == 4
+    assert len(bundle["forecast_series"]) > 1
+    assert bundle["forecast_series"][0]["value"] == 42.9
+
+
+def test_historical_series_is_sorted_ascending():
+    service = AssetAnalysisService()
+    service._get_history_dataframe = lambda ticker: pd.DataFrame(
+        [
+            {"date": pd.Timestamp("2026-07-03"), "close": 12.0},
+            {"date": pd.Timestamp("2026-07-01"), "close": 10.0},
+            {"date": pd.Timestamp("2026-07-02"), "close": 11.0},
+        ]
+    )
+
+    series = service._build_historical_series("ITUB4", "1w")
+
+    assert [point["date"] for point in series] == ["2026-07-01", "2026-07-02", "2026-07-03"]

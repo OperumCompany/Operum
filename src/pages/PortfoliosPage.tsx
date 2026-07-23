@@ -146,7 +146,7 @@ export function PortfoliosPage() {
             </div>
             <h2 className="mt-4 text-3xl font-bold text-[var(--text-main)] sm:text-4xl">Comece de um jeito simples.</h2>
             <p className="mt-4 text-base leading-7 text-[var(--text-muted)]">
-              1. Crie uma carteira. 2. Adicione ativos. 3. Veja analises na plataforma.
+              1. Crie uma carteira. 2. Adicione ativos. 3. Veja análises na plataforma.
             </p>
           </div>
         </div>
@@ -180,7 +180,7 @@ export function PortfoliosPage() {
                       ? 'border-[var(--danger-text)] bg-[var(--danger-text)]/10 text-[var(--danger-text)]'
                       : 'border-[var(--border-soft)] bg-white text-[var(--text-main)] hover:border-[var(--danger-text)]/40'
                   }`}
-                  aria-label="Ativar selecao para remover carteiras"
+                  aria-label="Ativar seleção para remover carteiras"
                 >
                   <Trash2 size={16} />
                 </button>
@@ -273,7 +273,7 @@ export function PortfoliosPage() {
                                 setActivePortfolioId(portfolio.id);
                               }}
                             >
-                              Usar na analise
+                              Usar na análise
                             </button>
                           )}
                         </div>
@@ -358,7 +358,7 @@ export function PortfoliosPage() {
             </p>
             <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
               {isAllPortfoliosSelected
-                ? `Entenda rapidamente como as ${selectedPortfolios.length} carteiras estao divididas hoje.`
+                ? `Entenda rapidamente como as ${selectedPortfolios.length} carteiras estão divididas hoje.`
                 : 'Entenda rapidamente como essa carteira esta dividida hoje.'}
             </p>
             <div className="mt-4 h-64">
@@ -374,7 +374,7 @@ export function PortfoliosPage() {
                   </PieChart>
                 </ResponsiveContainer>
               )}
-              {!composition.length && <p className="text-sm text-[var(--text-muted)]">A selecao atual ainda nao possui ativos.</p>}
+              {!composition.length && <p className="text-sm text-[var(--text-muted)]">A seleção atual ainda não possui ativos.</p>}
             </div>
             <Button
               type="button"

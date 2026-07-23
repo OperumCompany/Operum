@@ -336,7 +336,7 @@ class AssetAnalysisService:
         if df.empty or "close" not in df.columns:
             return None
         df["date"] = pd.to_datetime(df["date"])
-        return df
+        return df.sort_values("date").reset_index(drop=True)
 
     def _benchmark_for_meta(self, meta: dict) -> str:
         if meta.get("asset_class") == "FII":
@@ -588,6 +588,60 @@ class AssetAnalysisService:
         adjusted["news_adjustment_pct"] = round(adjustment_pct * 100, 2)
         return adjusted
 
+    def _fallback_forecast_bundle(self, ticker: str, perf: dict, requested_horizons: list[int]) -> dict | None:
+        current_price = perf.get("current_price")
+        if current_price is None:
+            return None
+
+        trend_pct = (
+            perf.get("change_1m_pct")
+            if perf.get("change_1m_pct") is not None
+            else perf.get("change_selected_pct")
+        )
+        trend_pct = float(trend_pct or 0.0)
+        generated_at = datetime.now(timezone.utc)
+        predictions = []
+        for horizon_days in sorted(set(requested_horizons)):
+            scale = min(max(horizon_days / 21.0, 0.25), 3.0)
+            predicted_return = max(-0.08, min(0.08, (trend_pct / 100.0) * scale * 0.25))
+            predicted_price = round(float(current_price) * (1.0 + predicted_return), 2)
+            if predicted_return > 0.015:
+                direction = "alta"
+            elif predicted_return < -0.015:
+                direction = "queda"
+            else:
+                direction = "estabilidade"
+            predictions.append(
+                {
+                    "horizon_days": horizon_days,
+                    "horizon_label": f"{horizon_days}d",
+                    "predicted_return": round(predicted_return, 6),
+                    "predicted_price": predicted_price,
+                    "direction": direction,
+                    "confidence": 0.25,
+                    "model_source": "deterministic_fallback",
+                }
+            )
+
+        return {
+            "ticker": ticker.upper(),
+            "last_price": round(float(current_price), 2),
+            "generated_at": generated_at.isoformat(),
+            "predictions": predictions,
+            "forecast_anchor_points": [
+                {
+                    "date": item["horizon_label"],
+                    "horizon_days": item["horizon_days"],
+                    "predicted_price": item["predicted_price"],
+                    "predicted_return": item["predicted_return"],
+                    "confidence": item["confidence"],
+                }
+                for item in predictions
+            ],
+            "forecast_series": self.forecast._interpolate_series(float(current_price), generated_at, predictions),
+            "forecast_source": "deterministic_fallback",
+        }
+
     def _history_label(self, history_horizon: str) -> str:
         return {
             "1w": "última semana",
@@ -604,6 +658,11 @@ class AssetAnalysisService:
             return "indisponível"
         sign = "+" if value > 0 else ""
         return f"{sign}{value:.{digits}f}%".replace(".", ",")
+
+    def _unsigned_pct(self, value: float | None, digits: int = 1) -> str:
+        if value is None:
+            return "indisponível"
+        return f"{abs(value):.{digits}f}%".replace(".", ",")
 
     def _plain_number(self, value: float | None, digits: int = 1) -> str:
         if value is None:
@@ -734,7 +793,7 @@ class AssetAnalysisService:
 
     def _dominant_reason(self, weight_pct: float | None, perf: dict, news_list: list[dict]) -> str:
         if weight_pct is not None and weight_pct >= 25:
-            return f"concentração de {self._plain_pct(weight_pct)} da carteira"
+            return f"concentração de {self._unsigned_pct(weight_pct)} da carteira"
         topics = self._dominant_topics(news_list)
         if topics:
             return f"notícias ligadas a {', '.join(topics[:2])}"
@@ -794,6 +853,16 @@ class AssetAnalysisService:
             return ", ".join(labels.get(topic, topic) for topic in topics[:4])
         return "preço, setor e ambiente econômico"
 
+    def _watch_text_for_meta(self, meta: dict, news_list: list[dict]) -> str:
+        sector = self._normalize_text(meta.get("sector", ""))
+        if "financeiro" in sector or "banco" in sector:
+            return "lucro, rentabilidade, margem financeira, custo de crédito, inadimplência, crescimento da carteira de crédito e trajetória dos juros"
+        if meta.get("asset_class") == "FII":
+            return "vacância, qualidade dos imóveis, distribuição de rendimentos, custo da dívida e trajetória dos juros"
+        if meta.get("asset_class") == "CRYPTO":
+            return "liquidez global, apetite a risco, fluxo para criptoativos e comportamento do Bitcoin"
+        return self._theme_text(news_list)
+
     def _box_history_text(
         self,
         ticker: str,
@@ -808,10 +877,10 @@ class AssetAnalysisService:
         if perf.get("change_selected_pct") is not None:
             if change <= -3:
                 movement = "recuou"
-                movement_pct = self._plain_pct(abs(change))
+                movement_pct = self._unsigned_pct(change)
             elif change >= 3:
                 movement = "avançou"
-                movement_pct = self._plain_pct(change)
+                movement_pct = self._unsigned_pct(change)
             else:
                 movement = "ficou praticamente estável"
                 movement_pct = self._plain_pct(change)
@@ -819,14 +888,15 @@ class AssetAnalysisService:
         else:
             parts.append(f"Nos {label}, não há série de preço completa para medir com segurança o desempenho de {ticker}.")
         if perf.get("drawdown_selected_pct") is not None:
-            parts.append(f"No pior momento da janela, ficou cerca de {self._plain_pct(abs(perf['drawdown_selected_pct']))} abaixo do maior preço do período.")
+            parts.append(f"No pior momento da janela, ficou cerca de {self._unsigned_pct(perf['drawdown_selected_pct'])} abaixo do maior preço do período.")
         parts.append(f"O comportamento do preço mostrou {self._oscillation_label(perf)}, então a leitura deve considerar tanto a direção quanto a intensidade do movimento.")
         if historical_news:
             sentiment = self._news_sentiment_label(historical_news)
             parts.append(f"As notícias diretamente relacionadas ao ativo tiveram tom {sentiment}, com temas ligados a {self._theme_text(historical_news)}.")
         else:
             parts.append("O volume de notícias diretamente relacionadas foi baixo, o que reduz a confiança da leitura.")
-        parts.append(f"Esse histórico não prova, sozinho, melhora ou piora do negócio; ele mostra como o preço se comportou dentro da função de {asset_function.replace('_', ' ')} definida para a carteira.")
+        benchmark = perf.get("benchmark_ticker") or "índice de comparação"
+        parts.append(f"Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com {benchmark}, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de {asset_function.replace('_', ' ')}.")
         return " ".join(parts)
 
     def _box_current_text(
@@ -838,11 +908,10 @@ class AssetAnalysisService:
         weight_pct: float | None,
         asset_function: str,
     ) -> str:
-        category_label = self._asset_class_label(meta.get("asset_class")).lower()
         trend = self._price_trend_label(perf)
         sentiment = self._news_sentiment_label(current_news)
         parts = [
-            f"Atualmente, {ticker} deve ser analisado como {category_label}, separando três pontos: a empresa, o preço negociado em bolsa e o efeito da posição na carteira."
+            f"Atualmente, a avaliação de {ticker} exige separar a situação da empresa, o comportamento do ativo negociado em bolsa e o impacto da posição na carteira."
         ]
         if current_news:
             parts.append(f"As notícias recentes têm tom {sentiment}, mas não bastam, sozinhas, para afirmar melhora ou deterioração dos fundamentos.")
@@ -850,7 +919,13 @@ class AssetAnalysisService:
             parts.append("No MVP, ainda não há dados fundamentalistas estruturados suficientes para avaliar lucro, margem, endividamento ou qualidade operacional com profundidade.")
         parts.append(f"O preço apresenta tendência recente {trend}, mas isso não deve ser confundido automaticamente com mudança na qualidade da empresa.")
         if weight_pct is not None:
-            parts.append(f"A posição representa {self._plain_pct(weight_pct)} da carteira. Por isso, uma oscilação relevante do ativo pode aparecer de forma perceptível no resultado total.")
+            position_size = self._position_size_label(weight_pct)
+            impact_10 = weight_pct * 0.10
+            parts.append(f"A posição representa {self._unsigned_pct(weight_pct)} da carteira, caracterizando uma exposição {position_size}.")
+            if weight_pct >= 25:
+                parts.append(f"Por isso, qualquer oscilação relevante do ativo terá impacto elevado sobre o resultado total. Uma queda de 10% em {ticker} teria impacto aproximado de {self._unsigned_pct(impact_10)} sobre a carteira, considerando os demais ativos estáveis.")
+            else:
+                parts.append(f"Uma queda de 10% em {ticker} teria impacto aproximado de {self._unsigned_pct(impact_10)} sobre a carteira, considerando os demais ativos estáveis.")
         else:
             parts.append("O peso da posição na carteira não foi calculado, limitando a avaliação do impacto no conjunto.")
         parts.append(f"O ponto de acompanhamento é verificar se os próximos dados confirmam que o ativo continua coerente com a função de {asset_function.replace('_', ' ')}.")
@@ -882,15 +957,41 @@ class AssetAnalysisService:
         else:
             favorable = "resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado"
             adverse = "resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso"
+
+        if outlook_horizon == "1w":
+            focus_text = (
+                "Neste prazo curto, a leitura deve dar mais peso a ruídos de mercado, variação diária do preço, notícias recentes e volatilidade de curto prazo. "
+                "O movimento pode mudar rapidamente com fluxo, manchetes e ajustes técnicos, sem necessariamente indicar alteração nos fundamentos."
+            )
+            watch_text = "preço, volume negociado, notícias recentes, reação do mercado e volatilidade curta"
+        elif outlook_horizon == "1m":
+            focus_text = (
+                "Em 1 mês, o ponto central é observar se o movimento recente ganha continuidade ou perde força. "
+                "Próximos eventos, novas notícias e a reação do preço ajudam a indicar se o cenário está se sustentando."
+            )
+            watch_text = "continuidade do preço, próximos eventos, notícias relevantes, resultados parciais e reação do mercado"
+        elif outlook_horizon == "2m":
+            focus_text = (
+                "Em 2 meses, a análise deve procurar sinais de confirmação ou reversão do cenário atual. "
+                "Se os dados e notícias reforçarem a leitura, o cenário ganha consistência; se vierem em direção oposta, a leitura precisa ser revista."
+            )
+            watch_text = f"confirmação do cenário, sinais de reversão, evolução das notícias e {self._watch_text_for_meta(meta, news_list)}"
+        else:
+            focus_text = (
+                "Em 3 meses, o foco deixa de ser apenas o ruído de curto prazo e passa a incluir fundamentos, resultados, ambiente macroeconômico e risco da posição na carteira. "
+                "Esse horizonte é mais útil para avaliar se a tese continua coerente com a função definida para o ativo."
+            )
+            watch_text = self._watch_text_for_meta(meta, news_list)
+
         parts = [
-            f"Para os próximos {horizon_label}, a leitura de {ticker} é {scenario_label}."
+            f"O cenário para os próximos {horizon_label} é {scenario_label}."
         ]
+        parts.append(focus_text)
         parts.append(f"O ativo pode ser favorecido por {favorable}.")
         parts.append(f"Por outro lado, pode seguir pressionado se houver {adverse}.")
-        topics = self._theme_text(news_list)
-        parts.append(f"Vale acompanhar principalmente {topics} e se o ativo segue adequado à função de {asset_function.replace('_', ' ')} na carteira.")
+        parts.append(f"Os principais pontos a acompanhar são {watch_text}.")
         if weight_pct is not None and weight_pct >= 10:
-            parts.append(f"Como a posição representa {self._plain_pct(weight_pct)} da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto.")
+            parts.append(f"Como a posição representa {self._unsigned_pct(weight_pct)} da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto.")
         parts.append(f"A confiança dessa leitura é { {'alta': 'alta', 'media': 'moderada', 'baixa': 'baixa'}.get(confidence, confidence) }, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.")
         return " ".join(parts)
 
@@ -976,7 +1077,7 @@ class AssetAnalysisService:
         else:
             summary_intro = f"Não há base de preço suficiente para medir com segurança o movimento de {ticker} nos {label}."
         if drawdown is not None:
-            summary_intro += f" Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente {self._plain_pct(abs(drawdown))}."
+            summary_intro += f" Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente {self._unsigned_pct(drawdown)}."
 
         business_read = (
             "As notícias avaliadas não indicam, por si só, uma deterioração clara do negócio ou da tese do ativo."
@@ -985,7 +1086,7 @@ class AssetAnalysisService:
         )
         concentration_read = ""
         if weight_pct is not None:
-            concentration_read = f" O ativo representa {self._plain_pct(weight_pct)} da carteira, ponto importante para entender o impacto de qualquer oscilação."
+            concentration_read = f" O ativo representa {self._unsigned_pct(weight_pct)} da carteira, ponto importante para entender o impacto de qualquer oscilação."
         summary = f"{summary_intro} {business_read}{concentration_read}".strip()
 
         what_happened = (
@@ -1007,7 +1108,7 @@ class AssetAnalysisService:
             else f"Não há dados suficientes para avaliar a tendência recente do preço no recorte de {label}."
         )
         if drawdown is not None:
-            asset_price_situation += f" A maior queda em relação ao maior preço do período foi de aproximadamente {self._plain_pct(abs(drawdown))}."
+            asset_price_situation += f" A maior queda em relação ao maior preço do período foi de aproximadamente {self._unsigned_pct(drawdown)}."
         if perf.get("benchmark_ticker") and perf.get("beta_selected") is not None:
             asset_price_situation += f" A comparação com {perf['benchmark_ticker']} sugere que o ativo teve sensibilidade relevante ao movimento do índice de referência."
 
@@ -1019,7 +1120,7 @@ class AssetAnalysisService:
             impact_10 = weight_pct * 0.10
             impact_down_10 = -impact_10
             portfolio_impact = (
-                f"Como {ticker} representa {self._plain_pct(weight_pct)} da carteira, a posição é classificada como {position_size}. Uma queda de 10% no ativo teria impacto aproximado de {self._plain_pct(impact_down_10)} no valor total da carteira, considerando os demais investimentos estáveis. "
+                f"Como {ticker} representa {self._unsigned_pct(weight_pct)} da carteira, a posição é classificada como {position_size}. Uma queda de 10% no ativo teria impacto aproximado de {self._plain_pct(impact_down_10)} no valor total da carteira, considerando os demais investimentos estáveis. "
                 f"Uma alta de 10% teria impacto aproximado de {self._plain_pct(impact_10)}. A concentração aumenta tanto o potencial de ganho quanto o potencial de perda, e sua adequação depende do objetivo, prazo e tolerância a oscilações do usuário."
             )
         else:
@@ -1077,7 +1178,7 @@ class AssetAnalysisService:
         if perf.get("current_price") is not None:
             parts.append(f"A cotação atual aproximada é {perf['currency']} {self._plain_number(perf['current_price'], 2)}.")
         if weight_pct is not None:
-            parts.append(f"Hoje representa cerca de {self._plain_pct(weight_pct)} da carteira.")
+            parts.append(f"Hoje representa cerca de {self._unsigned_pct(weight_pct)} da carteira.")
         if perf.get("change_1m_pct") is not None:
             parts.append(f"No último mês, o preço teve variação de {self._plain_pct(perf['change_1m_pct'])}.")
         if forecast_prediction:
@@ -1109,7 +1210,7 @@ class AssetAnalysisService:
         elif perf.get("change_12m_pct") is not None:
             snippets.append(f"Sem série completa do período escolhido, o histórico mais longo de 12 meses aponta {self._plain_pct(perf['change_12m_pct'])}.")
         if perf.get("drawdown_selected_pct") is not None:
-            snippets.append(f"No mesmo intervalo, a maior queda em relação ao maior preço do período foi de {self._plain_pct(abs(perf['drawdown_selected_pct']))}.")
+            snippets.append(f"No mesmo intervalo, a maior queda em relação ao maior preço do período foi de {self._unsigned_pct(perf['drawdown_selected_pct'])}.")
         if perf.get("beta_selected") is not None and perf.get("benchmark_ticker"):
             snippets.append(
                 f"A comparação com {perf['benchmark_ticker']} sugere que o ativo acompanhou parte do movimento do índice de referência, mas esse dado não deve ser lido isoladamente."
@@ -1194,7 +1295,7 @@ class AssetAnalysisService:
         if df is None or df.empty:
             return []
         window_days = HISTORY_WINDOW_DAYS.get(history_horizon, 63)
-        window = df.tail(window_days + 1)
+        window = df.sort_values("date").tail(window_days + 1)
         return [
             {"date": row["date"].date().isoformat(), "value": round(float(row["close"]), 2)}
             for _, row in window.iterrows()
@@ -1274,7 +1375,10 @@ class AssetAnalysisService:
         weight_pct = self._compute_weight_pct(portfolio, ticker)
         asset_function = self._infer_asset_function(meta, weight_pct)
 
-        forecast_bundle = self.forecast.predict_multi(ticker, requested_horizons=sorted(set(OUTLOOK_WINDOW_DAYS.values())))
+        requested_forecast_horizons = sorted(set(OUTLOOK_WINDOW_DAYS.values()))
+        forecast_bundle = self.forecast.predict_multi(ticker, requested_horizons=requested_forecast_horizons)
+        if forecast_bundle is None:
+            forecast_bundle = self._fallback_forecast_bundle(ticker, perf, requested_forecast_horizons)
         news_adjustment_pct, category_counts = self._news_adjustment(outlook_news or used_news, meta, outlook_days)
         adjusted_forecast_bundle = self._apply_news_adjustment(forecast_bundle, news_adjustment_pct)
         forecast_lookup = {
@@ -1459,6 +1563,13 @@ class AssetAnalysisService:
                 return False
             lowered = value.lower()
             if any(term in lowered for term in ["drawdown", "momentum", "impacto medio", "impacto médio", "peso informacional", "ajuste contextual", "beta estimado"]):
+                return False
+            if any(term in lowered for term in ["recuou +", "caiu +", "queda de +", "abaixo do maior preço"]):
+                if "+" in lowered:
+                    return False
+            if "+%" in lowered or "+0," in lowered and "carteira" in lowered:
+                return False
+            if "+" in lowered and "% da carteira" in lowered:
                 return False
             if any(marker in value for marker in ["\n-", "##", "**"]):
                 return False

@@ -53,7 +53,7 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
       setData(result);
       setExpandedSources({});
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Erro ao gerar analise');
+      setError(e instanceof Error ? e.message : 'Erro ao gerar análise');
     } finally {
       setLoading(false);
     }
@@ -80,10 +80,10 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
       {!data && !loading && !error && (
         <div className="flex flex-col items-center gap-3 py-4">
           <p className="text-sm text-[var(--text-muted)]">
-            Gere uma analise detalhada com base nos ativos, noticias e indicadores de risco.
+            Gere uma análise detalhada com base nos ativos, notícias e indicadores de risco.
           </p>
           <Button type="button" onClick={() => loadOpinion()}>
-            Gerar analise por IA
+            Gerar análise por IA
           </Button>
         </div>
       )}
@@ -111,7 +111,7 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
       {loading && (
         <div className="flex items-center gap-3 py-4">
           <div className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--brand)] border-t-transparent" />
-          <p className="text-sm text-[var(--text-muted)]">Gerando analise...</p>
+          <p className="text-sm text-[var(--text-muted)]">Gerando análise...</p>
         </div>
       )}
 
@@ -242,7 +242,7 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
           )}
 
           <Button type="button" variant="ghost" onClick={() => loadOpinion()}>
-            Regenerar analise
+            Regenerar análise
           </Button>
         </div>
       )}
