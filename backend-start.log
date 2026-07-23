@@ -31,3 +31,16 @@ INFO:     127.0.0.1:55901 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39becca
 2026-07-22 21:55:27 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
 2026-07-22 21:55:36 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
 INFO:     127.0.0.1:57272 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ITUB4?history_horizon=3m&outlook_horizon=3m HTTP/1.1" 200 OK
+2026-07-22 21:56:19 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-22 21:56:44 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-22 21:56:44 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+INFO:     127.0.0.1:49156 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ITUB4?history_horizon=3m&outlook_horizon=2m HTTP/1.1" 200 OK
+2026-07-22 21:56:55 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out
+INFO:     127.0.0.1:64132 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ITUB4?history_horizon=3m&outlook_horizon=1m HTTP/1.1" 200 OK
+2026-07-22 21:56:56 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out
+INFO:     127.0.0.1:61434 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ITUB4?history_horizon=3m&outlook_horizon=1w HTTP/1.1" 200 OK
+2026-07-22 21:56:58 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out
+INFO:     127.0.0.1:64993 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ITUB4?history_horizon=1m&outlook_horizon=1w HTTP/1.1" 200 OK
+2026-07-22 21:56:59 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out
+INFO:     127.0.0.1:50784 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ITUB4?history_horizon=2m&outlook_horizon=1w HTTP/1.1" 200 OK
+^C

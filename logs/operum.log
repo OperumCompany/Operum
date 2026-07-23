@@ -414,3 +414,15 @@
 2026-07-22 21:53:47 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
 2026-07-22 21:53:47 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
 2026-07-22 21:53:47 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-22 21:53:51 | INFO     | app.main | Cache de precos atualizado para 3 ativos
+2026-07-22 21:53:58 | INFO     | app.services.news_ingestion_service | Ingestao: 14 noticias novas de 108 unicas
+2026-07-22 21:53:58 | INFO     | app.main | Ingestao automatica: 14 noticias novas
+2026-07-22 21:55:27 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-22 21:55:36 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-22 21:56:19 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-22 21:56:44 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-22 21:56:44 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+2026-07-22 21:56:55 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out
+2026-07-22 21:56:56 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out
+2026-07-22 21:56:58 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out
+2026-07-22 21:56:59 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out

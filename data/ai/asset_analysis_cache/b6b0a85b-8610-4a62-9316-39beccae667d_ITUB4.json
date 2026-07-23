@@ -3,12 +3,12 @@
   "ticker": "ITUB4",
   "asset_name": "Itaú Unibanco PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-07-23T00:54:46.851798+00:00",
-  "recomputed_at": "2026-07-23T00:54:46.851798+00:00",
+  "generated_at": "2026-07-23T00:55:52.740881+00:00",
+  "recomputed_at": "2026-07-23T00:55:52.740881+00:00",
   "confidence": "media",
   "status": "ok",
-  "selected_history_horizon": "3m",
-  "selected_outlook_horizon": "3m",
+  "selected_history_horizon": "2m",
+  "selected_outlook_horizon": "1w",
   "asset_function": "estabilidade",
   "current_snapshot": {
     "current_price": 42.9,
@@ -19,96 +19,12 @@
     "asset_function": "estabilidade"
   },
   "historical_window": {
-    "start_date": "2026-03-19",
+    "start_date": "2026-04-30",
     "end_date": "2026-07-23",
     "news_count": 12,
     "has_price_history": true
   },
   "historical_series": [
-    {
-      "date": "2026-04-20",
-      "value": 46.37
-    },
-    {
-      "date": "2026-04-22",
-      "value": 45.03
-    },
-    {
-      "date": "2026-04-23",
-      "value": 44.18
-    },
-    {
-      "date": "2026-04-24",
-      "value": 44.37
-    },
-    {
-      "date": "2026-04-27",
-      "value": 43.99
-    },
-    {
-      "date": "2026-04-28",
-      "value": 44.1
-    },
-    {
-      "date": "2026-04-29",
-      "value": 42.87
-    },
-    {
-      "date": "2026-04-30",
-      "value": 43.19
-    },
-    {
-      "date": "2026-05-04",
-      "value": 42.4
-    },
-    {
-      "date": "2026-05-05",
-      "value": 42.46
-    },
-    {
-      "date": "2026-05-06",
-      "value": 41.78
-    },
-    {
-      "date": "2026-05-07",
-      "value": 40.79
-    },
-    {
-      "date": "2026-05-08",
-      "value": 41.26
-    },
-    {
-      "date": "2026-05-11",
-      "value": 40.33
-    },
-    {
-      "date": "2026-05-12",
-      "value": 39.87
-    },
-    {
-      "date": "2026-05-13",
-      "value": 39.63
-    },
-    {
-      "date": "2026-05-14",
-      "value": 40.4
-    },
-    {
-      "date": "2026-05-15",
-      "value": 39.7
-    },
-    {
-      "date": "2026-05-18",
-      "value": 39.62
-    },
-    {
-      "date": "2026-05-19",
-      "value": 38.78
-    },
-    {
-      "date": "2026-05-20",
-      "value": 39.67
-    },
     {
       "date": "2026-05-21",
       "value": 40.12
@@ -289,316 +205,316 @@
     },
     {
       "date": "2026-07-24",
-      "value": 42.82
+      "value": 42.84
     },
     {
       "date": "2026-07-27",
-      "value": 42.74
-    },
-    {
-      "date": "2026-07-28",
-      "value": 42.66
-    },
-    {
-      "date": "2026-07-29",
-      "value": 42.58
-    },
-    {
-      "date": "2026-07-30",
-      "value": 42.5
-    },
-    {
-      "date": "2026-07-31",
-      "value": 42.52
-    },
-    {
-      "date": "2026-08-03",
-      "value": 42.55
-    },
-    {
-      "date": "2026-08-04",
-      "value": 42.57
-    },
-    {
-      "date": "2026-08-05",
-      "value": 42.59
-    },
-    {
-      "date": "2026-08-06",
-      "value": 42.62
-    },
-    {
-      "date": "2026-08-07",
-      "value": 42.64
-    },
-    {
-      "date": "2026-08-10",
-      "value": 42.66
-    },
-    {
-      "date": "2026-08-11",
-      "value": 42.69
-    },
-    {
-      "date": "2026-08-12",
-      "value": 42.71
-    },
-    {
-      "date": "2026-08-13",
-      "value": 42.73
-    },
-    {
-      "date": "2026-08-14",
-      "value": 42.75
-    },
-    {
-      "date": "2026-08-17",
       "value": 42.78
     },
     {
-      "date": "2026-08-18",
+      "date": "2026-07-28",
+      "value": 42.73
+    },
+    {
+      "date": "2026-07-29",
+      "value": 42.67
+    },
+    {
+      "date": "2026-07-30",
+      "value": 42.61
+    },
+    {
+      "date": "2026-07-31",
+      "value": 42.63
+    },
+    {
+      "date": "2026-08-03",
+      "value": 42.66
+    },
+    {
+      "date": "2026-08-04",
+      "value": 42.68
+    },
+    {
+      "date": "2026-08-05",
+      "value": 42.7
+    },
+    {
+      "date": "2026-08-06",
+      "value": 42.73
+    },
+    {
+      "date": "2026-08-07",
+      "value": 42.75
+    },
+    {
+      "date": "2026-08-10",
+      "value": 42.77
+    },
+    {
+      "date": "2026-08-11",
       "value": 42.8
     },
     {
-      "date": "2026-08-19",
+      "date": "2026-08-12",
       "value": 42.82
     },
     {
-      "date": "2026-08-20",
-      "value": 42.85
+      "date": "2026-08-13",
+      "value": 42.84
     },
     {
-      "date": "2026-08-21",
-      "value": 42.87
+      "date": "2026-08-14",
+      "value": 42.86
     },
     {
-      "date": "2026-08-24",
+      "date": "2026-08-17",
       "value": 42.89
     },
     {
-      "date": "2026-08-25",
-      "value": 42.92
+      "date": "2026-08-18",
+      "value": 42.91
     },
     {
-      "date": "2026-08-26",
-      "value": 42.94
+      "date": "2026-08-19",
+      "value": 42.93
     },
     {
-      "date": "2026-08-27",
+      "date": "2026-08-20",
       "value": 42.96
     },
     {
-      "date": "2026-08-28",
+      "date": "2026-08-21",
       "value": 42.98
     },
     {
-      "date": "2026-08-31",
-      "value": 43.01
+      "date": "2026-08-24",
+      "value": 43.0
     },
     {
-      "date": "2026-09-01",
+      "date": "2026-08-25",
       "value": 43.03
     },
     {
-      "date": "2026-09-02",
+      "date": "2026-08-26",
       "value": 43.05
     },
     {
-      "date": "2026-09-03",
-      "value": 43.08
+      "date": "2026-08-27",
+      "value": 43.07
     },
     {
-      "date": "2026-09-04",
-      "value": 43.1
+      "date": "2026-08-28",
+      "value": 43.09
     },
     {
-      "date": "2026-09-07",
+      "date": "2026-08-31",
       "value": 43.12
     },
     {
-      "date": "2026-09-08",
+      "date": "2026-09-01",
       "value": 43.14
     },
     {
-      "date": "2026-09-09",
-      "value": 43.17
+      "date": "2026-09-02",
+      "value": 43.16
     },
     {
-      "date": "2026-09-10",
+      "date": "2026-09-03",
       "value": 43.19
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-09-04",
       "value": 43.21
     },
     {
-      "date": "2026-09-14",
-      "value": 43.24
+      "date": "2026-09-07",
+      "value": 43.23
     },
     {
-      "date": "2026-09-15",
-      "value": 43.26
+      "date": "2026-09-08",
+      "value": 43.25
     },
     {
-      "date": "2026-09-16",
+      "date": "2026-09-09",
       "value": 43.28
     },
     {
-      "date": "2026-09-17",
+      "date": "2026-09-10",
       "value": 43.3
     },
     {
-      "date": "2026-09-18",
-      "value": 43.33
+      "date": "2026-09-11",
+      "value": 43.32
     },
     {
-      "date": "2026-09-21",
+      "date": "2026-09-14",
       "value": 43.35
     },
     {
-      "date": "2026-09-22",
+      "date": "2026-09-15",
       "value": 43.37
     },
     {
-      "date": "2026-09-23",
-      "value": 43.4
+      "date": "2026-09-16",
+      "value": 43.39
     },
     {
-      "date": "2026-09-24",
-      "value": 43.42
+      "date": "2026-09-17",
+      "value": 43.41
     },
     {
-      "date": "2026-09-25",
+      "date": "2026-09-18",
       "value": 43.44
     },
     {
-      "date": "2026-09-28",
+      "date": "2026-09-21",
       "value": 43.46
     },
     {
-      "date": "2026-09-29",
-      "value": 43.49
+      "date": "2026-09-22",
+      "value": 43.48
     },
     {
-      "date": "2026-09-30",
+      "date": "2026-09-23",
       "value": 43.51
     },
     {
-      "date": "2026-10-01",
+      "date": "2026-09-24",
       "value": 43.53
     },
     {
-      "date": "2026-10-02",
-      "value": 43.56
+      "date": "2026-09-25",
+      "value": 43.55
     },
     {
-      "date": "2026-10-05",
-      "value": 43.58
+      "date": "2026-09-28",
+      "value": 43.57
     },
     {
-      "date": "2026-10-06",
+      "date": "2026-09-29",
       "value": 43.6
     },
     {
-      "date": "2026-10-07",
+      "date": "2026-09-30",
       "value": 43.62
     },
     {
-      "date": "2026-10-08",
-      "value": 43.65
+      "date": "2026-10-01",
+      "value": 43.64
     },
     {
-      "date": "2026-10-09",
+      "date": "2026-10-02",
       "value": 43.67
     },
     {
-      "date": "2026-10-12",
+      "date": "2026-10-05",
       "value": 43.69
     },
     {
-      "date": "2026-10-13",
-      "value": 43.72
+      "date": "2026-10-06",
+      "value": 43.71
     },
     {
-      "date": "2026-10-14",
-      "value": 43.74
+      "date": "2026-10-07",
+      "value": 43.73
     },
     {
-      "date": "2026-10-15",
+      "date": "2026-10-08",
       "value": 43.76
     },
     {
-      "date": "2026-10-16",
+      "date": "2026-10-09",
       "value": 43.78
     },
     {
+      "date": "2026-10-12",
+      "value": 43.8
+    },
+    {
+      "date": "2026-10-13",
+      "value": 43.83
+    },
+    {
+      "date": "2026-10-14",
+      "value": 43.85
+    },
+    {
+      "date": "2026-10-15",
+      "value": 43.87
+    },
+    {
+      "date": "2026-10-16",
+      "value": 43.89
+    },
+    {
       "date": "2026-10-19",
-      "value": 43.81
+      "value": 43.92
     },
     {
       "date": "2026-10-20",
-      "value": 43.83
+      "value": 43.94
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "5d",
       "horizon_days": 5,
-      "predicted_price": 42.5,
-      "predicted_return": -0.009261,
+      "predicted_price": 42.61,
+      "predicted_return": -0.006686,
       "confidence": 0.25
     },
     {
       "date": "21d",
       "horizon_days": 21,
-      "predicted_price": 42.87,
-      "predicted_return": -0.000805,
+      "predicted_price": 42.98,
+      "predicted_return": 0.00177,
       "confidence": 0.25
     },
     {
       "date": "42d",
       "horizon_days": 42,
-      "predicted_price": 43.35,
-      "predicted_return": 0.01047,
+      "predicted_price": 43.46,
+      "predicted_return": 0.013045,
       "confidence": 0.25
     },
     {
       "date": "63d",
       "horizon_days": 63,
-      "predicted_price": 43.83,
-      "predicted_return": 0.021745,
+      "predicted_price": 43.94,
+      "predicted_return": 0.02432,
       "confidence": 0.25
     }
   ],
   "recent_performance": {
-    "change_selected_pct": -7.48,
+    "change_selected_pct": 6.93,
     "change_1m_pct": 4.51,
     "change_2m_pct": 6.93,
     "change_3m_pct": -7.48,
     "change_12m_pct": null,
-    "volatility_selected_pct": 23.45,
-    "drawdown_selected_pct": -16.93,
+    "volatility_selected_pct": 21.64,
+    "drawdown_selected_pct": -5.28,
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 2.17,
-    "forecast_price_selected": 43.83,
+    "forecast_return_selected_pct": -0.67,
+    "forecast_price_selected": 42.61,
     "forecast_confidence_selected": 0.25,
-    "forecast_news_adjustment_pct": -1.21
+    "forecast_news_adjustment_pct": -0.95
   },
   "outlook_3m": {
     "scenario": "concentrado",
     "dominant_topics": [
       "juros",
-      "inflacao",
       "cambio",
-      "resultados"
+      "geopolitica",
+      "inflacao"
     ]
   },
   "analysis_sections": {
-    "current": "O ativo deve ser interpretado como ação brasileira, sem misturar empresa, preço de tela e impacto na carteira. Dentro da carteira, a função principal definida para este ativo é estabilidade. A cotação atual aproximada é BRL 42,90. Hoje representa cerca de 66,8% da carteira. No último mês, o preço teve variação de +4,5%. O modelo de 3 meses aponta alta, mas essa projeção deve ser lida como referência estatística, não como certeza. As notícias recentes alteram a leitura do cenário, mas não substituem dados fundamentalistas estruturados. As notícias recentes têm tom negativo, mas não permitem concluir, isoladamente, que os fundamentos melhoraram ou pioraram.",
-    "recent": "No recorte dos últimos 3 meses, o ativo variou -7,5%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 16,9%. No noticiário do período, os temas mais recorrentes foram juros, inflação, câmbio, resultados. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
-    "outlook": "A perspectiva de 3 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 3 meses aponta variação estimada de +2,2%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, inflação, câmbio, resultados. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+    "current": "O ativo deve ser interpretado como ação brasileira, sem misturar empresa, preço de tela e impacto na carteira. Dentro da carteira, a função principal definida para este ativo é estabilidade. A cotação atual aproximada é BRL 42,90. Hoje representa cerca de 66,8% da carteira. No último mês, o preço teve variação de +4,5%. O modelo de 1 semana aponta estabilidade, mas essa projeção deve ser lida como referência estatística, não como certeza. As notícias recentes alteram a leitura do cenário, mas não substituem dados fundamentalistas estruturados. As notícias recentes têm tom negativo, mas não permitem concluir, isoladamente, que os fundamentos melhoraram ou pioraram.",
+    "recent": "No recorte dos últimos 2 meses, o ativo variou +6,9%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 5,3%. No noticiário do período, os temas mais recorrentes foram juros, inflação, câmbio, resultados. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
+    "outlook": "A perspectiva de 1 semana é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 1 semana aponta variação estimada de -0,7%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, câmbio, geopolítica, cenário fiscal e político. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
     "recent_by_horizon": {
       "1w": "No recorte dos última semana, o ativo variou -0,6%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 2,7%. No noticiário do período, os temas mais recorrentes foram juros, câmbio, geopolítica, cenário fiscal e político. Houve 7 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
       "1m": "No recorte dos último mês, o ativo variou +4,5%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 5,3%. No noticiário do período, os temas mais recorrentes foram juros, geopolítica, câmbio, cenário fiscal e político. Houve 8 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
@@ -606,30 +522,30 @@
       "3m": "No recorte dos últimos 3 meses, o ativo variou -7,5%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 16,9%. No noticiário do período, os temas mais recorrentes foram juros, inflação, câmbio, resultados. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 1 semana aponta variação estimada de -0,9%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, câmbio, geopolítica, cenário fiscal e político. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
-      "1m": "A perspectiva de 1 mês é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 1 mês aponta variação estimada de -0,1%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, geopolítica, câmbio, cenário fiscal e político. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
-      "2m": "A perspectiva de 2 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 2 meses aponta variação estimada de +1,0%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, inflação, câmbio, resultados. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
-      "3m": "A perspectiva de 3 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 3 meses aponta variação estimada de +2,2%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, inflação, câmbio, resultados. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada."
+      "1w": "A perspectiva de 1 semana é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 1 semana aponta variação estimada de -0,7%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, câmbio, geopolítica, cenário fiscal e político. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+      "1m": "A perspectiva de 1 mês é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 1 mês aponta variação estimada de +0,2%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, geopolítica, câmbio, cenário fiscal e político. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+      "2m": "A perspectiva de 2 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 2 meses aponta variação estimada de +1,3%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, inflação, câmbio, resultados. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+      "3m": "A perspectiva de 3 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 3 meses aponta variação estimada de +2,4%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, inflação, câmbio, resultados. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada."
     },
     "visual_summary": {
       "asset_status": "atenção por concentração",
       "fundamentals": "pressionados pelas notícias recentes",
-      "price_trend": "de queda",
+      "price_trend": "de alta",
       "news_sentiment": "negativo",
       "position_size": "altamente concentrada",
       "portfolio_risk": "muito alto",
       "main_reason": "concentração de 66,8% da carteira",
       "confidence": "moderada"
     },
-    "summary": "Nos últimos 3 meses, ITUB4 apresentou variação de -7,5%. Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente 16,9%. As notícias avaliadas não indicam, por si só, uma deterioração clara do negócio ou da tese do ativo. O ativo representa 66,8% da carteira, ponto importante para entender o impacto de qualquer oscilação.",
-    "what_happened": "O desempenho recente foi de queda. Parte desse movimento pode estar ligada ao próprio mercado e a fatores externos, especialmente juros, inflacao, cambio, não necessariamente apenas a mudanças internas de Itaú Unibanco PN.",
+    "summary": "Nos últimos 2 meses, ITUB4 apresentou variação de +6,9%. Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente 5,3%. As notícias avaliadas não indicam, por si só, uma deterioração clara do negócio ou da tese do ativo. O ativo representa 66,8% da carteira, ponto importante para entender o impacto de qualquer oscilação.",
+    "what_happened": "O desempenho recente foi de alta. Parte desse movimento pode estar ligada ao próprio mercado e a fatores externos, especialmente juros, cambio, inflacao, não necessariamente apenas a mudanças internas de Itaú Unibanco PN.",
     "company_situation": "Itaú Unibanco PN pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo.",
-    "asset_price_situation": "No mercado, a tendência recente do preço é de queda no recorte de últimos 3 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 16,9%.",
-    "current_situation": "Itaú Unibanco PN pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo. No mercado, a tendência recente do preço é de queda no recorte de últimos 3 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 16,9%.",
+    "asset_price_situation": "No mercado, a tendência recente do preço é de alta no recorte de últimos 2 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 5,3%.",
+    "current_situation": "Itaú Unibanco PN pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo. No mercado, a tendência recente do preço é de alta no recorte de últimos 2 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 5,3%.",
     "portfolio_impact": "Como ITUB4 representa 66,8% da carteira, a posição é classificada como altamente concentrada. Uma queda de 10% no ativo teria impacto aproximado de -6,7% no valor total da carteira, considerando os demais investimentos estáveis. Uma alta de 10% teria impacto aproximado de +6,7%. A concentração aumenta tanto o potencial de ganho quanto o potencial de perda, e sua adequação depende do objetivo, prazo e tolerância a oscilações do usuário.",
     "scenarios": {
-      "favorable": "Nos próximos 3 meses, o cenário favorável depende de melhora nas notícias relevantes, ambiente de mercado mais construtivo e sinais de que o ativo segue adequado à função de estabilidade. A confirmação viria de desempenho mais consistente do preço, notícias diretamente positivas e menor pressão dos fatores externos monitorados.",
-      "base": "O cenário-base para 3 meses é concentrado. A leitura mais equilibrada é acompanhar se o movimento recente se sustenta ou se perde força, sem tratar a projeção como certeza de preço futuro.",
+      "favorable": "Nos próximos 1 semana, o cenário favorável depende de melhora nas notícias relevantes, ambiente de mercado mais construtivo e sinais de que o ativo segue adequado à função de estabilidade. A confirmação viria de desempenho mais consistente do preço, notícias diretamente positivas e menor pressão dos fatores externos monitorados.",
+      "base": "O cenário-base para 1 semana é concentrado. A leitura mais equilibrada é acompanhar se o movimento recente se sustenta ou se perde força, sem tratar a projeção como certeza de preço futuro.",
       "adverse": "O cenário adverso ocorreria com piora do ambiente macroeconômico, notícias negativas diretamente ligadas ao ativo, resultados abaixo do esperado ou aumento da aversão a risco. Nesse caso, o impacto para a carteira seria maior quanto maior for o peso da posição."
     },
     "what_to_watch": [
@@ -637,11 +553,11 @@
       "inadimplência",
       "crescimento da carteira de crédito",
       "trajetória dos juros",
-      "comportamento da inflação",
       "movimento do câmbio",
+      "comportamento da inflação",
       "se o ativo segue adequado à função de estabilidade na carteira"
     ],
-    "conclusion": "ITUB4 exige acompanhamento porque combina movimento recente de queda com risco de carteira muito alto. A leitura é educativa e não deve ser usada como ordem transacional. A decisão depende de objetivo, prazo, tolerância a risco e necessidade de diversificação.",
+    "conclusion": "ITUB4 exige acompanhamento porque combina movimento recente de alta com risco de carteira muito alto. A leitura é educativa e não deve ser usada como ordem transacional. A decisão depende de objetivo, prazo, tolerância a risco e necessidade de diversificação.",
     "data_quality_warnings": [
       "Dados fundamentais estruturados ainda não estão disponíveis no MVP; a leitura de fundamentos usa notícias, classe do ativo e contexto."
     ],
@@ -651,7 +567,7 @@
       "2m": "Nos últimos 2 meses, ITUB4 avançou 6,9%. No pior momento da janela, ficou cerca de 5,3% abaixo do maior preço do período. O comportamento do preço mostrou oscilações moderadas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom negativo, com temas ligados a juros, inflação, câmbio, resultados. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
       "3m": "Nos últimos 3 meses, ITUB4 recuou 7,5%. No pior momento da janela, ficou cerca de 16,9% abaixo do maior preço do período. O comportamento do preço mostrou oscilações relevantes, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom negativo, com temas ligados a juros, inflação, câmbio, resultados. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade."
     },
-    "box_current": "Atualmente, a avaliação de ITUB4 exige separar a situação da empresa, o comportamento do ativo negociado em bolsa e o impacto da posição na carteira. As notícias recentes têm tom negativo, mas não bastam, sozinhas, para afirmar melhora ou deterioração dos fundamentos. O preço apresenta tendência recente de queda, mas isso não deve ser confundido automaticamente com mudança na qualidade da empresa. A posição representa 66,8% da carteira, caracterizando uma exposição altamente concentrada. Por isso, qualquer oscilação relevante do ativo terá impacto elevado sobre o resultado total. Uma queda de 10% em ITUB4 teria impacto aproximado de 6,7% sobre a carteira, considerando os demais ativos estáveis. O ponto de acompanhamento é verificar se os próximos dados confirmam que o ativo continua coerente com a função de estabilidade.",
+    "box_current": "Atualmente, a avaliação de ITUB4 exige separar a situação da empresa, o comportamento do ativo negociado em bolsa e o impacto da posição na carteira. As notícias recentes têm tom negativo, mas não bastam, sozinhas, para afirmar melhora ou deterioração dos fundamentos. O preço apresenta tendência recente de alta, mas isso não deve ser confundido automaticamente com mudança na qualidade da empresa. A posição representa 66,8% da carteira, caracterizando uma exposição altamente concentrada. Por isso, qualquer oscilação relevante do ativo terá impacto elevado sobre o resultado total. Uma queda de 10% em ITUB4 teria impacto aproximado de 6,7% sobre a carteira, considerando os demais ativos estáveis. O ponto de acompanhamento é verificar se os próximos dados confirmam que o ativo continua coerente com a função de estabilidade.",
     "box_outlook_by_horizon": {
       "1w": "O cenário para os próximos 1 semana é cauteloso. Neste prazo curto, a leitura deve dar mais peso a ruídos de mercado, variação diária do preço, notícias recentes e volatilidade de curto prazo. O movimento pode mudar rapidamente com fluxo, manchetes e ajustes técnicos, sem necessariamente indicar alteração nos fundamentos. O ativo pode ser favorecido por rentabilidade saudável, controle da inadimplência e resultados dentro ou acima das expectativas. Por outro lado, pode seguir pressionado se houver aumento do custo de crédito, piora da inadimplência ou desaceleração da carteira de crédito. Os principais pontos a acompanhar são preço, volume negociado, notícias recentes, reação do mercado e volatilidade curta. Como a posição representa 66,8% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
       "1m": "O cenário para os próximos 1 mês é cauteloso. Em 1 mês, o ponto central é observar se o movimento recente ganha continuidade ou perde força. Próximos eventos, novas notícias e a reação do preço ajudam a indicar se o cenário está se sustentando. O ativo pode ser favorecido por rentabilidade saudável, controle da inadimplência e resultados dentro ou acima das expectativas. Por outro lado, pode seguir pressionado se houver aumento do custo de crédito, piora da inadimplência ou desaceleração da carteira de crédito. Os principais pontos a acompanhar são continuidade do preço, próximos eventos, notícias relevantes, resultados parciais e reação do mercado. Como a posição representa 66,8% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
@@ -659,7 +575,7 @@
       "3m": "O cenário para os próximos 3 meses é cauteloso. Em 3 meses, o foco deixa de ser apenas o ruído de curto prazo e passa a incluir fundamentos, resultados, ambiente macroeconômico e risco da posição na carteira. Esse horizonte é mais útil para avaliar se a tese continua coerente com a função definida para o ativo. O ativo pode ser favorecido por rentabilidade saudável, controle da inadimplência e resultados dentro ou acima das expectativas. Por outro lado, pode seguir pressionado se houver aumento do custo de crédito, piora da inadimplência ou desaceleração da carteira de crédito. Os principais pontos a acompanhar são lucro, rentabilidade, margem financeira, custo de crédito, inadimplência, crescimento da carteira de crédito e trajetória dos juros. Como a posição representa 66,8% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar."
     }
   },
-  "used_news_count": 12,
+  "used_news_count": 17,
   "sources": [
     {
       "id": "1f13e4f39789c6f4984e581d2390e060",
@@ -678,7 +594,7 @@
       "context_role": "asset",
       "source_confidence_weight": 0.72,
       "analysis_category": "fundamento",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "21f8aa5e905ce6a3988e0ecc5e182e51",
@@ -697,7 +613,7 @@
       "context_role": "asset",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "7f9fc289b8eb917c98f45337ecbae744",
@@ -716,7 +632,7 @@
       "context_role": "asset",
       "source_confidence_weight": 0.75,
       "analysis_category": "fundamento",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "4cfb407aa6392d0e0aa7aa5e32a87bbd",
@@ -754,7 +670,7 @@
       "context_role": "sector",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -773,7 +689,7 @@
       "context_role": "sector",
       "source_confidence_weight": 0.72,
       "analysis_category": "fundamento",
-      "role": "outlook"
+      "role": "historical"
     },
     {
       "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -871,29 +787,124 @@
       "role": "historical"
     },
     {
-      "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
-      "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
-      "source_name": "Tesouro Nacional - Noticias",
-      "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
-      "published_at": "2026-04-28T00:00:00+00:00",
-      "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
-      "sentiment_score": -0.3333333333333333,
-      "impact_score": 0.35,
+      "id": "68fa2f4903ea31a203e21b6b4233a73e",
+      "title": "Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-sobem-com-otimismo-por-acordo-entre-eua-e-ira-indices-renovam-maximas/",
+      "published_at": "2026-05-29T20:55:27+00:00",
+      "summary": "Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados EUA Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio Estadão Conteúdo 29/05/2026 17h55 &bull; Atualizado 1 dia atrás Publicidade As bolsas de Nova York fecharam em alta nesta sexta-feira, 29, com os três principais índices renovando máximas intraday e de fechamento, enquanto investidores permanecem otimistas de que um acordo entre os EUA e o Irã será oficializado em breve. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+      "sentiment_score": 0.14285714285714285,
+      "impact_score": 0.4928571428571429,
       "relevance_score": 0.5,
-      "match_score": 0.3806,
-      "rank_score": 0.5114,
-      "source_category": "treasury",
-      "is_official": true,
+      "match_score": 0.372,
+      "rank_score": 0.5054,
+      "source_category": null,
+      "is_official": false,
       "context_role": "sector",
-      "source_confidence_weight": 0.95,
-      "analysis_category": "fundamento",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
       "role": "historical"
+    },
+    {
+      "id": "92fb49551c8c5a8675f71d53fc1639e5",
+      "title": "Ata do Fed indica possibilidade de aumento nos juros para combater inflação nos EUA",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://aovivo.folha.uol.com.br/mercado/2026/07/01/6533-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post465083",
+      "published_at": "2026-07-08T16:01:00-03:00",
+      "summary": "Os formuladores de política monetária do Fed (Federal Reserve, o BC dos EUA) concordaram amplamente que \"algum aperto na política provavelmente seria justificado\" caso a inflação permaneça elevada nos EUA, já que as pressões de preços dominaram a primeira reunião de Kevin Warsh no comando do banco central norte-americano.\n\nLeia mais (07/08/2026 - 16h01). O foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.3927,
+      "rank_score": 0.5047,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "953a124fd1412d2c98ef020ca18f9edb",
+      "title": "Dólar e Bolsa fecham em queda com guerra no Oriente Médio no radar",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/acompanhe-a-cotacao-do-dolar-nesta-segunda-feira-20.shtml",
+      "published_at": "2026-07-20T09:30:00-03:00",
+      "summary": "O dólar fechou em queda de 0,41% nesta segunda-feira (20), cotado a R$ 5,088, com investidores monitorando os desdobramentos do conflito no Oriente Médio.\n\nLeia mais (07/20/2026 - 09h30). O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.349,
+      "rank_score": 0.495,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "b2fe059c0229de4863bece977917d5b5",
+      "title": "Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/opcoes-de-copom-da-b3-apontam-para-corte-de-025-na-selic-em-agosto/",
+      "published_at": "2026-07-23T00:53:58.267107+00:00",
+      "summary": "Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto.\n\nO texto menciona B3SA3. O foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.48000000000000004,
+      "relevance_score": 0.5,
+      "match_score": 0.415,
+      "rank_score": 0.4928,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "91021ededc05edb69142000c04b3a0ff",
+      "title": "Nubank compra Banco Porto Real de Investimentos para obter licença bancária",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/nubank-compra-banco-porto-real-de-investimentos-para-obter-licenca-bancaria.shtml",
+      "published_at": "2026-07-20T18:45:00-03:00",
+      "summary": "O Nubank anunciou nesta segunda-feira (20) acordo para aquisição do Banco Porto Real de Investimentos. O negócio visa incorporar a licença bancária da instituição, de modo que a fintech mantenha \"bank\" no nome -a partir de novembro, instituições que não tiverem a autorização não poderão ter a palavra no nome.\n\nLeia mais (07/20/2026 - 18h45). O foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.28,
+      "relevance_score": 0.5,
+      "match_score": 0.4253,
+      "rank_score": 0.4812,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "sector",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "setorial",
+      "role": "outlook"
+    },
+    {
+      "id": "cd9d7d0f7a84b1346a480e1e5e32832c",
+      "title": "Senado aprova R$ 15 bi extras para exportadores afetados por guerra do Irã",
+      "source_name": "Folha.com - Mercado - Principal",
+      "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/senado-aprova-r-15-bi-extras-para-exportadores-afetados-por-guerra-do-ira.shtml",
+      "published_at": "2026-07-08T18:20:00-03:00",
+      "summary": "O Senado aprovou nesta quarta-feira (8) medida provisória (MP) que coloca mais R$ 15 bilhões na linha de financiamento do Plano Brasil Soberano, criado pelo governo no ano passado para apoiar exportadores afetados por tensões geopolíticas.\n\nLeia mais (07/08/2026 - 18h20). O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.3179,
+      "rank_score": 0.4788,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.72,
+      "analysis_category": "macro",
+      "role": "outlook"
     }
   ],
   "source_groups": [
     {
       "source_name": "InfoMoney",
-      "count": 10,
+      "count": 12,
       "items": [
         {
           "id": "1f13e4f39789c6f4984e581d2390e060",
@@ -912,7 +923,7 @@
           "context_role": "asset",
           "source_confidence_weight": 0.72,
           "analysis_category": "fundamento",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "21f8aa5e905ce6a3988e0ecc5e182e51",
@@ -931,7 +942,7 @@
           "context_role": "asset",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "7f9fc289b8eb917c98f45337ecbae744",
@@ -950,7 +961,7 @@
           "context_role": "asset",
           "source_confidence_weight": 0.75,
           "analysis_category": "fundamento",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "d4ad77c8fe0dba39b783708103c1403f",
@@ -969,7 +980,7 @@
           "context_role": "sector",
           "source_confidence_weight": 0.72,
           "analysis_category": "macro",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -988,7 +999,7 @@
           "context_role": "sector",
           "source_confidence_weight": 0.72,
           "analysis_category": "fundamento",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "55d5ed0f27d98f663f0ff5b9c67cae6f",
@@ -1084,31 +1095,126 @@
           "source_confidence_weight": 0.75,
           "analysis_category": "macro",
           "role": "historical"
+        },
+        {
+          "id": "68fa2f4903ea31a203e21b6b4233a73e",
+          "title": "Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/bolsas-de-ny-sobem-com-otimismo-por-acordo-entre-eua-e-ira-indices-renovam-maximas/",
+          "published_at": "2026-05-29T20:55:27+00:00",
+          "summary": "Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio.\n\nBuscar notícias, ativos e outros Planner Grátis Planner Grátis Fazer login Guia das milhas Planner 2026 Gratuito Gratuito: Formação em I.A Últimas Notícias Newsletters Mercados Onde Investir Política Economia Mundo Business Advisor Trader Minhas Finanças Consumo Esportes Carreira Global Brasil Saúde Cotações e indicadores Ibovespa Altas e Baixas Dólar e Moedas Criptos BDRs ETFs FIIs Nasdaq Nyse Juros Futuros Indicadores de Inflação Ferramentas Simulador de Investimentos Comparador de FIIs Comparador de Renda Fixa Comparador de Fundos Carteira de Acompanhamento Empresas B3 Aprenda Conteúdos Cursos Ebooks Planilhas Guias Podcast Perfis Vídeos Parcerias Patrocinados Simule agora Início Últimas Notícias Mercados Onde Investir Política Economia Mundo Minhas Finanças Business Brasil Trader Advisor Mercados EUA Bolsas de NY sobem com otimismo por acordo entre EUA e Irã; índices renovam máximas Dow avançou 2,78%, S&P500 avançou 5,15% e Nasdaq saltou 8,35% em maio Estadão Conteúdo 29/05/2026 17h55 &bull; Atualizado 1 dia atrás Publicidade As bolsas de Nova York fecharam em alta nesta sexta-feira, 29, com os três principais índices renovando máximas intraday e de fechamento, enquanto investidores permanecem otimistas de que um acordo entre os EUA e o Irã será oficializado em breve. O texto menciona B3SA3. O foco principal passa por Financeiro, Tecnologia.",
+          "sentiment_score": 0.14285714285714285,
+          "impact_score": 0.4928571428571429,
+          "relevance_score": 0.5,
+          "match_score": 0.372,
+          "rank_score": 0.5054,
+          "source_category": null,
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "historical"
+        },
+        {
+          "id": "b2fe059c0229de4863bece977917d5b5",
+          "title": "Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/opcoes-de-copom-da-b3-apontam-para-corte-de-025-na-selic-em-agosto/",
+          "published_at": "2026-07-23T00:53:58.267107+00:00",
+          "summary": "Opções de Copom da B3 apontam para corte de 0,25% na Selic em agosto.\n\nO texto menciona B3SA3. O foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.48000000000000004,
+          "relevance_score": 0.5,
+          "match_score": 0.415,
+          "rank_score": 0.4928,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "outlook"
         }
       ]
     },
     {
-      "source_name": "Tesouro Nacional - Noticias",
-      "count": 1,
+      "source_name": "Folha.com - Mercado - Principal",
+      "count": 4,
       "items": [
         {
-          "id": "ed9a44c50d6f92b1e5727cf3d445dc0d",
-          "title": "Francisco Segundo é selecionado para comandar a subsecretaria da Dívida Pública do Tesouro Nacional",
-          "source_name": "Tesouro Nacional - Noticias",
-          "source_url": "https://www.gov.br/tesouronacional/pt-br/noticias/francisco-segundo-e-selecionado-para-comandar-a-subsecretaria-da-divida-publica-do-tesouro-nacional",
-          "published_at": "2026-04-28T00:00:00+00:00",
-          "summary": "Resultado reflete aumento das tensões no Oriente Médio, que elevou a aversão ao risco, enquanto a alta do petróleo reforçou a manutenção de juros elevados.\n\nO foco principal passa por Divida Publica, Financeiro.",
-          "sentiment_score": -0.3333333333333333,
-          "impact_score": 0.35,
+          "id": "92fb49551c8c5a8675f71d53fc1639e5",
+          "title": "Ata do Fed indica possibilidade de aumento nos juros para combater inflação nos EUA",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://aovivo.folha.uol.com.br/mercado/2026/07/01/6533-dolar-empresas-e-bolsas-acompanhe-ao-vivo-o-mercado.shtml#post465083",
+          "published_at": "2026-07-08T16:01:00-03:00",
+          "summary": "Os formuladores de política monetária do Fed (Federal Reserve, o BC dos EUA) concordaram amplamente que \"algum aperto na política provavelmente seria justificado\" caso a inflação permaneça elevada nos EUA, já que as pressões de preços dominaram a primeira reunião de Kevin Warsh no comando do banco central norte-americano.\n\nLeia mais (07/08/2026 - 16h01). O foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3806,
-          "rank_score": 0.5114,
-          "source_category": "treasury",
-          "is_official": true,
+          "match_score": 0.3927,
+          "rank_score": 0.5047,
+          "source_category": "press",
+          "is_official": false,
           "context_role": "sector",
-          "source_confidence_weight": 0.95,
-          "analysis_category": "fundamento",
-          "role": "historical"
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "953a124fd1412d2c98ef020ca18f9edb",
+          "title": "Dólar e Bolsa fecham em queda com guerra no Oriente Médio no radar",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/acompanhe-a-cotacao-do-dolar-nesta-segunda-feira-20.shtml",
+          "published_at": "2026-07-20T09:30:00-03:00",
+          "summary": "O dólar fechou em queda de 0,41% nesta segunda-feira (20), cotado a R$ 5,088, com investidores monitorando os desdobramentos do conflito no Oriente Médio.\n\nLeia mais (07/20/2026 - 09h30). O foco principal passa por Economia, Mercado.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.349,
+          "rank_score": 0.495,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
+        {
+          "id": "91021ededc05edb69142000c04b3a0ff",
+          "title": "Nubank compra Banco Porto Real de Investimentos para obter licença bancária",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/nubank-compra-banco-porto-real-de-investimentos-para-obter-licenca-bancaria.shtml",
+          "published_at": "2026-07-20T18:45:00-03:00",
+          "summary": "O Nubank anunciou nesta segunda-feira (20) acordo para aquisição do Banco Porto Real de Investimentos. O negócio visa incorporar a licença bancária da instituição, de modo que a fintech mantenha \"bank\" no nome -a partir de novembro, instituições que não tiverem a autorização não poderão ter a palavra no nome.\n\nLeia mais (07/20/2026 - 18h45). O foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -0.1,
+          "impact_score": 0.28,
+          "relevance_score": 0.5,
+          "match_score": 0.4253,
+          "rank_score": 0.4812,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "sector",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "setorial",
+          "role": "outlook"
+        },
+        {
+          "id": "cd9d7d0f7a84b1346a480e1e5e32832c",
+          "title": "Senado aprova R$ 15 bi extras para exportadores afetados por guerra do Irã",
+          "source_name": "Folha.com - Mercado - Principal",
+          "source_url": "https://www1.folha.uol.com.br/mercado/2026/07/senado-aprova-r-15-bi-extras-para-exportadores-afetados-por-guerra-do-ira.shtml",
+          "published_at": "2026-07-08T18:20:00-03:00",
+          "summary": "O Senado aprovou nesta quarta-feira (8) medida provisória (MP) que coloca mais R$ 15 bilhões na linha de financiamento do Plano Brasil Soberano, criado pelo governo no ano passado para apoiar exportadores afetados por tensões geopolíticas.\n\nLeia mais (07/08/2026 - 18h20). O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.3179,
+          "rank_score": 0.4788,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.72,
+          "analysis_category": "macro",
+          "role": "outlook"
         }
       ]
     },
