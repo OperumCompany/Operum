@@ -3,32 +3,28 @@
   "ticker": "PETR4",
   "asset_name": "Petrobras PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-07-23T00:27:51.317117+00:00",
-  "recomputed_at": "2026-07-23T00:27:51.317117+00:00",
+  "generated_at": "2026-07-24T00:43:01.461626+00:00",
+  "recomputed_at": "2026-07-24T00:43:01.461626+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
   "asset_function": "estabilidade",
   "current_snapshot": {
-    "current_price": 42.58,
+    "current_price": 42.95,
     "currency": "BRL",
-    "weight_pct": 33.17,
-    "sector": "PetrÃ³leo e GÃ¡s",
+    "weight_pct": 33.54,
+    "sector": "Petróleo e Gás",
     "country": "BR",
     "asset_function": "estabilidade"
   },
   "historical_window": {
-    "start_date": "2026-03-19",
-    "end_date": "2026-07-23",
+    "start_date": "2026-03-20",
+    "end_date": "2026-07-24",
     "news_count": 12,
     "has_price_history": true
   },
   "historical_series": [
-    {
-      "date": "2026-04-20",
-      "value": 47.02
-    },
     {
       "date": "2026-04-22",
       "value": 47.67
@@ -280,311 +276,315 @@
     {
       "date": "2026-07-22",
       "value": 42.58
+    },
+    {
+      "date": "2026-07-23",
+      "value": 42.95
     }
   ],
   "forecast_series": [
     {
-      "date": "2026-07-23",
-      "value": 42.58
-    },
-    {
       "date": "2026-07-24",
-      "value": 42.42
+      "value": 42.95
     },
     {
       "date": "2026-07-27",
-      "value": 42.27
+      "value": 42.95
     },
     {
       "date": "2026-07-28",
-      "value": 42.11
-    },
-    {
-      "date": "2026-07-29",
-      "value": 41.96
-    },
-    {
-      "date": "2026-07-30",
-      "value": 41.8
-    },
-    {
-      "date": "2026-07-31",
-      "value": 41.84
-    },
-    {
-      "date": "2026-08-03",
-      "value": 41.88
-    },
-    {
-      "date": "2026-08-04",
-      "value": 41.92
-    },
-    {
-      "date": "2026-08-05",
-      "value": 41.96
-    },
-    {
-      "date": "2026-08-06",
-      "value": 42.01
-    },
-    {
-      "date": "2026-08-07",
-      "value": 42.05
-    },
-    {
-      "date": "2026-08-10",
-      "value": 42.09
-    },
-    {
-      "date": "2026-08-11",
-      "value": 42.13
-    },
-    {
-      "date": "2026-08-12",
-      "value": 42.17
-    },
-    {
-      "date": "2026-08-13",
-      "value": 42.21
-    },
-    {
-      "date": "2026-08-14",
-      "value": 42.25
-    },
-    {
-      "date": "2026-08-17",
-      "value": 42.3
-    },
-    {
-      "date": "2026-08-18",
-      "value": 42.34
-    },
-    {
-      "date": "2026-08-19",
-      "value": 42.38
-    },
-    {
-      "date": "2026-08-20",
-      "value": 42.42
-    },
-    {
-      "date": "2026-08-21",
-      "value": 42.46
-    },
-    {
-      "date": "2026-08-24",
-      "value": 42.5
-    },
-    {
-      "date": "2026-08-25",
-      "value": 42.54
-    },
-    {
-      "date": "2026-08-26",
-      "value": 42.59
-    },
-    {
-      "date": "2026-08-27",
-      "value": 42.63
-    },
-    {
-      "date": "2026-08-28",
-      "value": 42.67
-    },
-    {
-      "date": "2026-08-31",
-      "value": 42.71
-    },
-    {
-      "date": "2026-09-01",
-      "value": 42.75
-    },
-    {
-      "date": "2026-09-02",
-      "value": 42.8
-    },
-    {
-      "date": "2026-09-03",
-      "value": 42.84
-    },
-    {
-      "date": "2026-09-04",
-      "value": 42.88
-    },
-    {
-      "date": "2026-09-07",
-      "value": 42.92
-    },
-    {
-      "date": "2026-09-08",
       "value": 42.96
     },
     {
-      "date": "2026-09-09",
-      "value": 43.0
+      "date": "2026-07-29",
+      "value": 42.96
     },
     {
-      "date": "2026-09-10",
-      "value": 43.05
+      "date": "2026-07-30",
+      "value": 42.97
     },
     {
-      "date": "2026-09-11",
+      "date": "2026-07-31",
+      "value": 42.97
+    },
+    {
+      "date": "2026-08-03",
+      "value": 43.03
+    },
+    {
+      "date": "2026-08-04",
       "value": 43.09
     },
     {
-      "date": "2026-09-14",
-      "value": 43.13
+      "date": "2026-08-05",
+      "value": 43.15
     },
     {
-      "date": "2026-09-15",
-      "value": 43.17
+      "date": "2026-08-06",
+      "value": 43.22
     },
     {
-      "date": "2026-09-16",
-      "value": 43.21
+      "date": "2026-08-07",
+      "value": 43.28
     },
     {
-      "date": "2026-09-17",
-      "value": 43.26
-    },
-    {
-      "date": "2026-09-18",
-      "value": 43.3
-    },
-    {
-      "date": "2026-09-21",
+      "date": "2026-08-10",
       "value": 43.34
     },
     {
-      "date": "2026-09-22",
-      "value": 43.38
+      "date": "2026-08-11",
+      "value": 43.4
     },
     {
-      "date": "2026-09-23",
-      "value": 43.42
+      "date": "2026-08-12",
+      "value": 43.46
     },
     {
-      "date": "2026-09-24",
-      "value": 43.47
+      "date": "2026-08-13",
+      "value": 43.52
     },
     {
-      "date": "2026-09-25",
-      "value": 43.51
+      "date": "2026-08-14",
+      "value": 43.58
     },
     {
-      "date": "2026-09-28",
-      "value": 43.55
+      "date": "2026-08-17",
+      "value": 43.64
     },
     {
-      "date": "2026-09-29",
-      "value": 43.59
+      "date": "2026-08-18",
+      "value": 43.7
     },
     {
-      "date": "2026-09-30",
-      "value": 43.63
+      "date": "2026-08-19",
+      "value": 43.77
     },
     {
-      "date": "2026-10-01",
-      "value": 43.68
+      "date": "2026-08-20",
+      "value": 43.83
     },
     {
-      "date": "2026-10-02",
-      "value": 43.72
+      "date": "2026-08-21",
+      "value": 43.89
     },
     {
-      "date": "2026-10-05",
-      "value": 43.76
+      "date": "2026-08-24",
+      "value": 43.95
     },
     {
-      "date": "2026-10-06",
-      "value": 43.8
-    },
-    {
-      "date": "2026-10-07",
-      "value": 43.84
-    },
-    {
-      "date": "2026-10-08",
-      "value": 43.88
-    },
-    {
-      "date": "2026-10-09",
-      "value": 43.93
-    },
-    {
-      "date": "2026-10-12",
-      "value": 43.97
-    },
-    {
-      "date": "2026-10-13",
+      "date": "2026-08-25",
       "value": 44.01
     },
     {
-      "date": "2026-10-14",
-      "value": 44.05
+      "date": "2026-08-26",
+      "value": 44.07
     },
     {
-      "date": "2026-10-15",
-      "value": 44.09
-    },
-    {
-      "date": "2026-10-16",
+      "date": "2026-08-27",
       "value": 44.14
     },
     {
+      "date": "2026-08-28",
+      "value": 44.2
+    },
+    {
+      "date": "2026-08-31",
+      "value": 44.26
+    },
+    {
+      "date": "2026-09-01",
+      "value": 44.32
+    },
+    {
+      "date": "2026-09-02",
+      "value": 44.38
+    },
+    {
+      "date": "2026-09-03",
+      "value": 44.45
+    },
+    {
+      "date": "2026-09-04",
+      "value": 44.51
+    },
+    {
+      "date": "2026-09-07",
+      "value": 44.57
+    },
+    {
+      "date": "2026-09-08",
+      "value": 44.63
+    },
+    {
+      "date": "2026-09-09",
+      "value": 44.69
+    },
+    {
+      "date": "2026-09-10",
+      "value": 44.75
+    },
+    {
+      "date": "2026-09-11",
+      "value": 44.82
+    },
+    {
+      "date": "2026-09-14",
+      "value": 44.88
+    },
+    {
+      "date": "2026-09-15",
+      "value": 44.94
+    },
+    {
+      "date": "2026-09-16",
+      "value": 45.0
+    },
+    {
+      "date": "2026-09-17",
+      "value": 45.06
+    },
+    {
+      "date": "2026-09-18",
+      "value": 45.13
+    },
+    {
+      "date": "2026-09-21",
+      "value": 45.19
+    },
+    {
+      "date": "2026-09-22",
+      "value": 45.25
+    },
+    {
+      "date": "2026-09-23",
+      "value": 45.29
+    },
+    {
+      "date": "2026-09-24",
+      "value": 45.33
+    },
+    {
+      "date": "2026-09-25",
+      "value": 45.37
+    },
+    {
+      "date": "2026-09-28",
+      "value": 45.41
+    },
+    {
+      "date": "2026-09-29",
+      "value": 45.45
+    },
+    {
+      "date": "2026-09-30",
+      "value": 45.49
+    },
+    {
+      "date": "2026-10-01",
+      "value": 45.53
+    },
+    {
+      "date": "2026-10-02",
+      "value": 45.57
+    },
+    {
+      "date": "2026-10-05",
+      "value": 45.61
+    },
+    {
+      "date": "2026-10-06",
+      "value": 45.65
+    },
+    {
+      "date": "2026-10-07",
+      "value": 45.68
+    },
+    {
+      "date": "2026-10-08",
+      "value": 45.72
+    },
+    {
+      "date": "2026-10-09",
+      "value": 45.76
+    },
+    {
+      "date": "2026-10-12",
+      "value": 45.8
+    },
+    {
+      "date": "2026-10-13",
+      "value": 45.84
+    },
+    {
+      "date": "2026-10-14",
+      "value": 45.88
+    },
+    {
+      "date": "2026-10-15",
+      "value": 45.92
+    },
+    {
+      "date": "2026-10-16",
+      "value": 45.96
+    },
+    {
       "date": "2026-10-19",
-      "value": 44.18
+      "value": 46.0
     },
     {
       "date": "2026-10-20",
-      "value": 44.22
+      "value": 46.04
+    },
+    {
+      "date": "2026-10-21",
+      "value": 46.08
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "5d",
       "horizon_days": 5,
-      "predicted_price": 41.8,
-      "predicted_return": -0.018329,
+      "predicted_price": 42.97,
+      "predicted_return": 0.000417,
       "confidence": 0.25
     },
     {
       "date": "21d",
       "horizon_days": 21,
-      "predicted_price": 42.46,
-      "predicted_return": -0.002841,
+      "predicted_price": 43.95,
+      "predicted_return": 0.023236,
       "confidence": 0.25
     },
     {
       "date": "42d",
       "horizon_days": 42,
-      "predicted_price": 43.34,
-      "predicted_return": 0.017809,
+      "predicted_price": 45.25,
+      "predicted_return": 0.053661,
       "confidence": 0.25
     },
     {
       "date": "63d",
       "horizon_days": 63,
-      "predicted_price": 44.22,
-      "predicted_return": 0.038459,
+      "predicted_price": 46.08,
+      "predicted_return": 0.072811,
       "confidence": 0.25
     }
   ],
   "recent_performance": {
-    "change_selected_pct": -9.44,
-    "change_1m_pct": 8.26,
-    "change_2m_pct": -5.27,
-    "change_3m_pct": -9.44,
+    "change_selected_pct": -9.9,
+    "change_1m_pct": 12.17,
+    "change_2m_pct": -3.44,
+    "change_3m_pct": -9.9,
     "change_12m_pct": null,
-    "volatility_selected_pct": 25.24,
+    "volatility_selected_pct": 25.14,
     "drawdown_selected_pct": -23.45,
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 3.85,
-    "forecast_price_selected": 44.22,
+    "forecast_return_selected_pct": 7.28,
+    "forecast_price_selected": 46.08,
     "forecast_confidence_selected": 0.25,
-    "forecast_news_adjustment_pct": -2.35
+    "forecast_news_adjustment_pct": -0.72
   },
   "outlook_3m": {
     "scenario": "concentrado",
@@ -594,20 +594,20 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo deve ser interpretado como ação brasileira, sem misturar empresa, preço de tela e impacto na carteira. Dentro da carteira, a função principal definida para este ativo é estabilidade. A cotação atual aproximada é BRL 42,58. Hoje representa cerca de 33,2% da carteira. No último mês, o preço teve variação de +8,3%. O modelo de 3 meses aponta alta, mas essa projeção deve ser lida como referência estatística, não como certeza. As notícias recentes alteram a leitura do cenário, mas não substituem dados fundamentalistas estruturados. As notícias recentes têm tom negativo, mas não permitem concluir, isoladamente, que os fundamentos melhoraram ou pioraram.",
-    "recent": "No recorte dos últimos 3 meses, o ativo variou -9,4%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 23,4%. No noticiário do período, os temas mais recorrentes foram commodities, geopolítica, juros. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de fluxo, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
-    "outlook": "A perspectiva de 3 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 3 meses aponta variação estimada de +3,8%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, geopolítica. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+    "current": "O ativo deve ser interpretado como ação brasileira, sem misturar empresa, preço de tela e impacto na carteira. Dentro da carteira, a função principal definida para este ativo é estabilidade. A cotação atual aproximada é BRL 42,95. Hoje representa cerca de 33,5% da carteira. No último mês, o preço teve variação de +12,2%. O modelo de 3 meses aponta alta, mas essa projeção deve ser lida como referência estatística, não como certeza. As notícias recentes alteram a leitura do cenário, mas não substituem dados fundamentalistas estruturados. As notícias recentes têm tom negativo, mas não permitem concluir, isoladamente, que os fundamentos melhoraram ou pioraram.",
+    "recent": "No recorte dos últimos 3 meses, o ativo variou -9,9%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 23,4%. No noticiário do período, os temas mais recorrentes foram commodities, geopolítica, juros. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de fluxo, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
+    "outlook": "A perspectiva de 3 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 3 meses aponta variação estimada de +7,3%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, geopolítica. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
     "recent_by_horizon": {
-      "1w": "No recorte dos última semana, o ativo variou +4,9%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 1,7%. No noticiário do período, os temas mais recorrentes foram geopolítica, juros, câmbio, cenário fiscal e político. Houve 4 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
-      "1m": "No recorte dos último mês, o ativo variou +8,3%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 4,0%. No noticiário do período, os temas mais recorrentes foram geopolítica, câmbio, cenário fiscal e político, commodities. Houve 7 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
-      "2m": "No recorte dos últimos 2 meses, o ativo variou -5,3%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 16,0%. No noticiário do período, os temas mais recorrentes foram commodities, geopolítica, juros. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de fluxo, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
-      "3m": "No recorte dos últimos 3 meses, o ativo variou -9,4%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 23,4%. No noticiário do período, os temas mais recorrentes foram commodities, geopolítica, juros. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de fluxo, o que ajuda a entender o contexto do ativo dentro da função de estabilidade."
+      "1w": "No recorte dos última semana, o ativo variou +7,7%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 0,0%. No noticiário do período, os temas mais recorrentes foram commodities, juros, câmbio, geopolítica. Houve 5 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
+      "1m": "No recorte dos último mês, o ativo variou +12,2%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 1,9%. No noticiário do período, os temas mais recorrentes foram commodities, geopolítica, juros, câmbio. Houve 7 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
+      "2m": "No recorte dos últimos 2 meses, o ativo variou -3,4%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 15,1%. No noticiário do período, os temas mais recorrentes foram commodities, geopolítica, juros. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de fluxo, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
+      "3m": "No recorte dos últimos 3 meses, o ativo variou -9,9%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 23,4%. No noticiário do período, os temas mais recorrentes foram commodities, geopolítica, juros. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de fluxo, o que ajuda a entender o contexto do ativo dentro da função de estabilidade."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 1 semana aponta variação estimada de -1,8%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são geopolítica, juros, câmbio, cenário fiscal e político. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
-      "1m": "A perspectiva de 1 mês é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 1 mês aponta variação estimada de -0,3%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são geopolítica, câmbio, cenário fiscal e político, commodities. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
-      "2m": "A perspectiva de 2 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 2 meses aponta variação estimada de +1,8%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, geopolítica. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
-      "3m": "A perspectiva de 3 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 3 meses aponta variação estimada de +3,8%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, geopolítica. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada."
+      "1w": "A perspectiva de 1 semana é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 1 semana aponta variação estimada de +0,0%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, juros, câmbio, geopolítica. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+      "1m": "A perspectiva de 1 mês é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 1 mês aponta variação estimada de +2,3%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, geopolítica, juros, câmbio. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+      "2m": "A perspectiva de 2 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 2 meses aponta variação estimada de +5,4%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, geopolítica. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+      "3m": "A perspectiva de 3 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 3 meses aponta variação estimada de +7,3%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, geopolítica. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada."
     },
     "visual_summary": {
       "asset_status": "atenção",
@@ -616,24 +616,24 @@
       "news_sentiment": "levemente negativo",
       "position_size": "concentrada",
       "portfolio_risk": "alto",
-      "main_reason": "concentração de 33,2% da carteira",
+      "main_reason": "concentração de 33,5% da carteira",
       "confidence": "moderada"
     },
-    "summary": "Nos últimos 3 meses, PETR4 apresentou variação de -9,4%. Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente 23,4%. As notícias avaliadas não indicam, por si só, uma deterioração clara do negócio ou da tese do ativo. O ativo representa 33,2% da carteira, ponto importante para entender o impacto de qualquer oscilação.",
+    "summary": "Nos últimos 3 meses, PETR4 apresentou variação de -9,9%. Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente 23,4%. As notícias avaliadas não indicam, por si só, uma deterioração clara do negócio ou da tese do ativo. O ativo representa 33,5% da carteira, ponto importante para entender o impacto de qualquer oscilação.",
     "what_happened": "O desempenho recente foi de queda. Parte desse movimento pode estar ligada ao próprio mercado e a fatores externos, especialmente commodities, geopolitica, juros, não necessariamente apenas a mudanças internas de Petrobras PN.",
     "company_situation": "Petrobras PN pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom levemente negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo.",
     "asset_price_situation": "No mercado, a tendência recente do preço é de queda no recorte de últimos 3 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 23,4%.",
     "current_situation": "Petrobras PN pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom levemente negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo. No mercado, a tendência recente do preço é de queda no recorte de últimos 3 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 23,4%.",
-    "portfolio_impact": "Como PETR4 representa 33,2% da carteira, a posição é classificada como concentrada. Uma queda de 10% no ativo teria impacto aproximado de -3,3% no valor total da carteira, considerando os demais investimentos estáveis. Uma alta de 10% teria impacto aproximado de +3,3%. A concentração aumenta tanto o potencial de ganho quanto o potencial de perda, e sua adequação depende do objetivo, prazo e tolerância a oscilações do usuário.",
+    "portfolio_impact": "Como PETR4 representa 33,5% da carteira, a posição é classificada como concentrada. Uma queda de 10% no ativo teria impacto aproximado de -3,4% no valor total da carteira, considerando os demais investimentos estáveis. Uma alta de 10% teria impacto aproximado de +3,4%. A concentração aumenta tanto o potencial de ganho quanto o potencial de perda, e sua adequação depende do objetivo, prazo e tolerância a oscilações do usuário.",
     "scenarios": {
       "favorable": "Nos próximos 3 meses, o cenário favorável depende de melhora nas notícias relevantes, ambiente de mercado mais construtivo e sinais de que o ativo segue adequado à função de estabilidade. A confirmação viria de desempenho mais consistente do preço, notícias diretamente positivas e menor pressão dos fatores externos monitorados.",
       "base": "O cenário-base para 3 meses é concentrado. A leitura mais equilibrada é acompanhar se o movimento recente se sustenta ou se perde força, sem tratar a projeção como certeza de preço futuro.",
       "adverse": "O cenário adverso ocorreria com piora do ambiente macroeconômico, notícias negativas diretamente ligadas ao ativo, resultados abaixo do esperado ou aumento da aversão a risco. Nesse caso, o impacto para a carteira seria maior quanto maior for o peso da posição."
     },
     "what_to_watch": [
-      "resultados do próximo trimestre",
-      "margens e crescimento",
-      "endividamento",
+      "preço das commodities",
+      "câmbio",
+      "resultados operacionais",
       "preços de commodities",
       "eventos geopoliticos",
       "trajetória dos juros",
@@ -644,38 +644,38 @@
       "Dados fundamentais estruturados ainda não estão disponíveis no MVP; a leitura de fundamentos usa notícias, classe do ativo e contexto."
     ],
     "box_history_by_horizon": {
-      "1w": "Nos última semana, PETR4 avançou 4,9%. No pior momento da janela, ficou cerca de 1,7% abaixo do maior preço do período. O comportamento do preço mostrou oscilações moderadas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a geopolítica, juros, câmbio, cenário fiscal e político. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
-      "1m": "Nos último mês, PETR4 avançou 8,3%. No pior momento da janela, ficou cerca de 4,0% abaixo do maior preço do período. O comportamento do preço mostrou oscilações moderadas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom negativo, com temas ligados a geopolítica, câmbio, cenário fiscal e político, commodities. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
-      "2m": "Nos últimos 2 meses, PETR4 recuou 5,3%. No pior momento da janela, ficou cerca de 16,0% abaixo do maior preço do período. O comportamento do preço mostrou oscilações relevantes, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a commodities, geopolítica, juros. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
-      "3m": "Nos últimos 3 meses, PETR4 recuou 9,4%. No pior momento da janela, ficou cerca de 23,4% abaixo do maior preço do período. O comportamento do preço mostrou oscilações relevantes, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a commodities, geopolítica, juros. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade."
+      "1w": "Nos última semana, PETR4 avançou 7,7%. No pior momento da janela, ficou cerca de 0,0% abaixo do maior preço do período. O comportamento do preço mostrou oscilações contidas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom negativo, com temas ligados a commodities, juros, câmbio, geopolítica. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
+      "1m": "Nos último mês, PETR4 avançou 12,2%. No pior momento da janela, ficou cerca de 1,9% abaixo do maior preço do período. O comportamento do preço mostrou oscilações moderadas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom negativo, com temas ligados a commodities, geopolítica, juros, câmbio. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
+      "2m": "Nos últimos 2 meses, PETR4 recuou 3,4%. No pior momento da janela, ficou cerca de 15,1% abaixo do maior preço do período. O comportamento do preço mostrou oscilações relevantes, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a commodities, geopolítica, juros. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
+      "3m": "Nos últimos 3 meses, PETR4 recuou 9,9%. No pior momento da janela, ficou cerca de 23,4% abaixo do maior preço do período. O comportamento do preço mostrou oscilações relevantes, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a commodities, geopolítica, juros. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade."
     },
-    "box_current": "Atualmente, a avaliação de PETR4 exige separar a situação da empresa, o comportamento do ativo negociado em bolsa e o impacto da posição na carteira. As notícias recentes têm tom negativo, mas não bastam, sozinhas, para afirmar melhora ou deterioração dos fundamentos. O preço apresenta tendência recente de queda, mas isso não deve ser confundido automaticamente com mudança na qualidade da empresa. A posição representa 33,2% da carteira, caracterizando uma exposição concentrada. Por isso, qualquer oscilação relevante do ativo terá impacto elevado sobre o resultado total. Uma queda de 10% em PETR4 teria impacto aproximado de 3,3% sobre a carteira, considerando os demais ativos estáveis. O ponto de acompanhamento é verificar se os próximos dados confirmam que o ativo continua coerente com a função de estabilidade.",
+    "box_current": "Atualmente, a avaliação de PETR4 exige separar a situação da empresa, o comportamento do ativo negociado em bolsa e o impacto da posição na carteira. As notícias recentes têm tom negativo, mas não bastam, sozinhas, para afirmar melhora ou deterioração dos fundamentos. O preço apresenta tendência recente de queda, mas isso não deve ser confundido automaticamente com mudança na qualidade da empresa. A posição representa 33,5% da carteira, caracterizando uma exposição concentrada. Por isso, qualquer oscilação relevante do ativo terá impacto elevado sobre o resultado total. Uma queda de 10% em PETR4 teria impacto aproximado de 3,4% sobre a carteira, considerando os demais ativos estáveis. O ponto de acompanhamento é verificar se os próximos dados confirmam que o ativo continua coerente com a função de estabilidade.",
     "box_outlook_by_horizon": {
-      "1w": "O cenário para os próximos 1 semana é cauteloso. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são geopolítica, juros, câmbio, cenário fiscal e político. Como a posição representa 33,2% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
-      "1m": "O cenário para os próximos 1 mês é cauteloso. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são geopolítica, câmbio, cenário fiscal e político, commodities. Como a posição representa 33,2% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
-      "2m": "O cenário para os próximos 2 meses é cauteloso. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são commodities, geopolítica. Como a posição representa 33,2% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
-      "3m": "O cenário para os próximos 3 meses é cauteloso. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são commodities, geopolítica. Como a posição representa 33,2% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar."
+      "1w": "O cenário para os próximos 1 semana é cauteloso. Neste prazo curto, a leitura deve dar mais peso a ruídos de mercado, variação diária do preço, notícias recentes e volatilidade de curto prazo. O movimento pode mudar rapidamente com fluxo, manchetes e ajustes técnicos, sem necessariamente indicar alteração nos fundamentos. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são preço, volume negociado, notícias recentes, reação do mercado e volatilidade curta. Como a posição representa 33,5% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
+      "1m": "O cenário para os próximos 1 mês é cauteloso. Em 1 mês, o ponto central é observar se o movimento recente ganha continuidade ou perde força. Próximos eventos, novas notícias e a reação do preço ajudam a indicar se o cenário está se sustentando. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são continuidade do preço, próximos eventos, notícias relevantes, resultados parciais e reação do mercado. Como a posição representa 33,5% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
+      "2m": "O cenário para os próximos 2 meses é cauteloso. Em 2 meses, a análise deve procurar sinais de confirmação ou reversão do cenário atual. Se os dados e notícias reforçarem a leitura, o cenário ganha consistência; se vierem em direção oposta, a leitura precisa ser revista. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são confirmação do cenário, sinais de reversão, evolução das notícias e commodities, geopolítica. Como a posição representa 33,5% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
+      "3m": "O cenário para os próximos 3 meses é cauteloso. Em 3 meses, o foco deixa de ser apenas o ruído de curto prazo e passa a incluir fundamentos, resultados, ambiente macroeconômico e risco da posição na carteira. Esse horizonte é mais útil para avaliar se a tese continua coerente com a função definida para o ativo. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são commodities, geopolítica. Como a posição representa 33,5% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar."
     }
   },
   "used_news_count": 12,
   "sources": [
     {
-      "id": "cdd7cde965d0db8917bcc712e4a3459b",
-      "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
+      "id": "19e7c6b4eaa48cd03ce87180af6c5469",
+      "title": "Petrobras, PRIO e PetroRecôncavo ficam entre maiores altas do Ibovespa com petróleo",
       "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
-      "published_at": "2026-06-01T23:33:02.846612+00:00",
-      "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
-      "sentiment_score": -1.0,
+      "source_url": "https://www.infomoney.com.br/mercados/petrobras-prio-e-petroleiras-lideram-ganhos-do-ibovespa-com-alta-do-petroleo/",
+      "published_at": "2026-07-24T00:27:10.239749+00:00",
+      "summary": "Petrobras, PRIO e PetroRecôncavo ficam entre maiores altas do Ibovespa com petróleo.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": 1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.9312,
-      "rank_score": 0.8157,
+      "match_score": 1.0,
+      "rank_score": 0.8875,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.75,
-      "analysis_category": "fluxo",
+      "analysis_category": "macro",
       "role": "outlook"
     },
     {
@@ -688,13 +688,32 @@
       "sentiment_score": -1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.9337,
-      "rank_score": 0.806,
+      "match_score": 1.0,
+      "rank_score": 0.8645,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
+      "role": "outlook"
+    },
+    {
+      "id": "cdd7cde965d0db8917bcc712e4a3459b",
+      "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-hoje-bolsa-de-valores-ao-vivo-01062026/",
+      "published_at": "2026-06-01T23:33:02.846612+00:00",
+      "summary": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.75,
+      "relevance_score": 0.5,
+      "match_score": 1.0,
+      "rank_score": 0.8515,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "fluxo",
       "role": "outlook"
     },
     {
@@ -707,27 +726,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.8898,
-      "rank_score": 0.7502,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "asset",
-      "source_confidence_weight": 0.75,
-      "analysis_category": "fluxo",
-      "role": "outlook"
-    },
-    {
-      "id": "ca7b7adb490eea6994e99e293b383a53",
-      "title": "Petrobras (PETR4): 4 razões para as ações da estatal terem subido mais de 2% nesta 4ª",
-      "source_name": "InfoMoney",
-      "source_url": "https://www.infomoney.com.br/mercados/petrobras-petr4-4-razoes-para-as-acoes-da-estatal-terem-subido-mais-de-2-nesta-4a/",
-      "published_at": "2026-07-23T00:05:13.852473+00:00",
-      "summary": "Petrobras (PETR4): 4 razões para as ações da estatal terem subido mais de 2% nesta 4ª.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.48000000000000004,
-      "relevance_score": 0.5,
-      "match_score": 0.9599,
-      "rank_score": 0.7461,
+      "match_score": 0.9887,
+      "rank_score": 0.8016,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -745,8 +745,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.8182,
-      "rank_score": 0.7055,
+      "match_score": 0.9477,
+      "rank_score": 0.7968,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
@@ -764,14 +764,33 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.8181,
-      "rank_score": 0.7054,
+      "match_score": 0.9476,
+      "rank_score": 0.7968,
       "source_category": null,
       "is_official": false,
       "context_role": "asset",
       "source_confidence_weight": 0.72,
       "analysis_category": "macro",
       "role": "outlook"
+    },
+    {
+      "id": "b274848cd0eed0e39fc08cde38a19a48",
+      "title": "Petrobras (PETR4): 4 razões para as ações da estatal terem subido mais de 2% nesta 4ª",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/petrobras-petr4-4-razoes-para-as-acoes-da-estatal-terem-subido-mais-de-2-nesta-4a/",
+      "published_at": "2026-07-23T00:57:44.213646+00:00",
+      "summary": "Petrobras (PETR4): 4 razões para as ações da estatal terem subido mais de 2% nesta 4ª.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+      "sentiment_score": -0.1,
+      "impact_score": 0.48000000000000004,
+      "relevance_score": 0.5,
+      "match_score": 1.0,
+      "rank_score": 0.767,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "asset",
+      "source_confidence_weight": 0.75,
+      "analysis_category": "fluxo",
+      "role": "historical"
     },
     {
       "id": "eb217bb503f66e5eca9663c257f36b6e",
@@ -783,8 +802,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.8811,
-      "rank_score": 0.7052,
+      "match_score": 0.9804,
+      "rank_score": 0.7568,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -802,8 +821,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.876,
-      "rank_score": 0.7025,
+      "match_score": 0.9754,
+      "rank_score": 0.7542,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -821,8 +840,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.876,
-      "rank_score": 0.7025,
+      "match_score": 0.9754,
+      "rank_score": 0.7542,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -840,8 +859,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.8774,
-      "rank_score": 0.7002,
+      "match_score": 0.9767,
+      "rank_score": 0.7519,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -859,27 +878,8 @@
       "sentiment_score": -0.1,
       "impact_score": 0.48000000000000004,
       "relevance_score": 0.5,
-      "match_score": 0.8753,
-      "rank_score": 0.6992,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "asset",
-      "source_confidence_weight": 0.72,
-      "analysis_category": "fluxo",
-      "role": "historical"
-    },
-    {
-      "id": "327a88c1d7b49d4716e172c44b9fd600",
-      "title": "Petrobras reduz em 14,2% preço do querosene de aviação a partir desta segunda",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petrobras-reduz-em-142-preco-do-querosene-de-aviacao-a-partir-desta-segunda.shtml",
-      "published_at": "2026-06-01T10:02:00-03:00",
-      "summary": "A Petrobras vai reduzir em 14,2% o preço médio de venda do querosene de aviação (QAV) para distribuidoras a partir de junho, o que corresponde a uma diminuição de R$ 0,93 por litro frente ao mês anterior, informou a estatal em comunicado nesta segunda-feira (1º).\n\nLeia mais (06/01/2026 - 10h02). O texto menciona PETR4. O foco principal passa por Economia, Mercado.",
-      "sentiment_score": -0.1,
-      "impact_score": 0.48000000000000004,
-      "relevance_score": 0.5,
-      "match_score": 0.8735,
-      "rank_score": 0.6982,
+      "match_score": 0.9747,
+      "rank_score": 0.7508,
       "source_category": "press",
       "is_official": false,
       "context_role": "asset",
@@ -891,8 +891,27 @@
   "source_groups": [
     {
       "source_name": "InfoMoney",
-      "count": 6,
+      "count": 7,
       "items": [
+        {
+          "id": "19e7c6b4eaa48cd03ce87180af6c5469",
+          "title": "Petrobras, PRIO e PetroRecôncavo ficam entre maiores altas do Ibovespa com petróleo",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/petrobras-prio-e-petroleiras-lideram-ganhos-do-ibovespa-com-alta-do-petroleo/",
+          "published_at": "2026-07-24T00:27:10.239749+00:00",
+          "summary": "Petrobras, PRIO e PetroRecôncavo ficam entre maiores altas do Ibovespa com petróleo.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
+          "sentiment_score": 1.0,
+          "impact_score": 0.75,
+          "relevance_score": 0.5,
+          "match_score": 1.0,
+          "rank_score": 0.8875,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "asset",
+          "source_confidence_weight": 0.75,
+          "analysis_category": "macro",
+          "role": "outlook"
+        },
         {
           "id": "cdd7cde965d0db8917bcc712e4a3459b",
           "title": "Ibovespa abre junho em baixa e tem quinta queda seguida; Petrobras se salva",
@@ -903,8 +922,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.9312,
-          "rank_score": 0.8157,
+          "match_score": 1.0,
+          "rank_score": 0.8515,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -922,8 +941,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.8898,
-          "rank_score": 0.7502,
+          "match_score": 0.9887,
+          "rank_score": 0.8016,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -932,23 +951,23 @@
           "role": "outlook"
         },
         {
-          "id": "ca7b7adb490eea6994e99e293b383a53",
+          "id": "b274848cd0eed0e39fc08cde38a19a48",
           "title": "Petrobras (PETR4): 4 razões para as ações da estatal terem subido mais de 2% nesta 4ª",
           "source_name": "InfoMoney",
           "source_url": "https://www.infomoney.com.br/mercados/petrobras-petr4-4-razoes-para-as-acoes-da-estatal-terem-subido-mais-de-2-nesta-4a/",
-          "published_at": "2026-07-23T00:05:13.852473+00:00",
+          "published_at": "2026-07-23T00:57:44.213646+00:00",
           "summary": "Petrobras (PETR4): 4 razões para as ações da estatal terem subido mais de 2% nesta 4ª.\n\nO texto menciona PETR4. O foco principal passa por Economia, Mercado.",
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.9599,
-          "rank_score": 0.7461,
+          "match_score": 1.0,
+          "rank_score": 0.767,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
           "source_confidence_weight": 0.75,
           "analysis_category": "fluxo",
-          "role": "outlook"
+          "role": "historical"
         },
         {
           "id": "eb217bb503f66e5eca9663c257f36b6e",
@@ -960,8 +979,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.8811,
-          "rank_score": 0.7052,
+          "match_score": 0.9804,
+          "rank_score": 0.7568,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -979,8 +998,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.876,
-          "rank_score": 0.7025,
+          "match_score": 0.9754,
+          "rank_score": 0.7542,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -998,8 +1017,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.876,
-          "rank_score": 0.7025,
+          "match_score": 0.9754,
+          "rank_score": 0.7542,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -1011,7 +1030,7 @@
     },
     {
       "source_name": "Folha.com - Mercado - Principal",
-      "count": 5,
+      "count": 4,
       "items": [
         {
           "id": "0a985b610419ee206b38c4daedef55ea",
@@ -1023,8 +1042,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.9337,
-          "rank_score": 0.806,
+          "match_score": 1.0,
+          "rank_score": 0.8645,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -1042,8 +1061,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.8182,
-          "rank_score": 0.7055,
+          "match_score": 0.9477,
+          "rank_score": 0.7968,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",
@@ -1061,8 +1080,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.8774,
-          "rank_score": 0.7002,
+          "match_score": 0.9767,
+          "rank_score": 0.7519,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -1080,27 +1099,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.8753,
-          "rank_score": 0.6992,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "asset",
-          "source_confidence_weight": 0.72,
-          "analysis_category": "fluxo",
-          "role": "historical"
-        },
-        {
-          "id": "327a88c1d7b49d4716e172c44b9fd600",
-          "title": "Petrobras reduz em 14,2% preço do querosene de aviação a partir desta segunda",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/06/petrobras-reduz-em-142-preco-do-querosene-de-aviacao-a-partir-desta-segunda.shtml",
-          "published_at": "2026-06-01T10:02:00-03:00",
-          "summary": "A Petrobras vai reduzir em 14,2% o preço médio de venda do querosene de aviação (QAV) para distribuidoras a partir de junho, o que corresponde a uma diminuição de R$ 0,93 por litro frente ao mês anterior, informou a estatal em comunicado nesta segunda-feira (1º).\n\nLeia mais (06/01/2026 - 10h02). O texto menciona PETR4. O foco principal passa por Economia, Mercado.",
-          "sentiment_score": -0.1,
-          "impact_score": 0.48000000000000004,
-          "relevance_score": 0.5,
-          "match_score": 0.8735,
-          "rank_score": 0.6982,
+          "match_score": 0.9747,
+          "rank_score": 0.7508,
           "source_category": "press",
           "is_official": false,
           "context_role": "asset",
@@ -1124,8 +1124,8 @@
           "sentiment_score": -0.1,
           "impact_score": 0.48000000000000004,
           "relevance_score": 0.5,
-          "match_score": 0.8181,
-          "rank_score": 0.7054,
+          "match_score": 0.9476,
+          "rank_score": 0.7968,
           "source_category": null,
           "is_official": false,
           "context_role": "asset",

@@ -7,33 +7,32 @@ function pct(v: number): string {
   return `${(v * 100).toFixed(0)}%`;
 }
 
-function scoreLabel(score: number): { label: string; color: string } {
-  if (score >= 0.7) return { label: 'Saudavel', color: '#22c55e' };
-  if (score >= 0.4) return { label: 'Atencao', color: '#eab308' };
-  return { label: 'Critico', color: '#ef4444' };
+function pctPoint(v: number): string {
+  return `${v.toFixed(1)}%`;
 }
 
-function ComponentBar({ label, value, invert }: { label: string; value: number; invert?: boolean }) {
-  const displayValue = invert ? 1 - value : value;
-  return (
-    <div className="flex items-center gap-3">
-      <span className="w-36 text-sm text-[var(--text-muted)]">{label}</span>
-      <div className="h-2 flex-1 overflow-hidden rounded-full bg-[var(--bg-surface-strong)]">
-        <div
-          className="h-full rounded-full transition-all duration-500"
-          style={{
-            width: `${displayValue * 100}%`,
-            backgroundColor: displayValue >= 0.6 ? '#22c55e' : displayValue >= 0.3 ? '#eab308' : '#ef4444',
-          }}
-        />
-      </div>
-      <span className="w-12 text-right text-sm font-medium">{pct(displayValue)}</span>
-    </div>
-  );
+function scoreLabel(score: number): { label: string; color: string } {
+  if (score >= 0.7) return { label: 'Saudável', color: '#22c55e' };
+  if (score >= 0.4) return { label: 'Atenção', color: '#eab308' };
+  return { label: 'Crítico', color: '#ef4444' };
+}
+
+function statusStyle(status: string): string {
+  if (status === 'saudavel') return 'border-emerald-200 bg-emerald-50 text-emerald-800';
+  if (status === 'critico') return 'border-red-200 bg-red-50 text-red-800';
+  if (status === 'atencao') return 'border-amber-200 bg-amber-50 text-amber-800';
+  return 'border-slate-200 bg-slate-50 text-slate-700';
+}
+
+function statusLabel(status: string): string {
+  if (status === 'saudavel') return 'Saudável';
+  if (status === 'critico') return 'Crítico';
+  if (status === 'atencao') return 'Atenção';
+  return 'Informativo';
 }
 
 const HORIZONS = [
-  { key: '1m', label: '1 mes' },
+  { key: '1m', label: '1 mês' },
   { key: '2m', label: '2 meses' },
   { key: '3m', label: '3 meses' },
 ] as const;
@@ -74,9 +73,10 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
   }
 
   const sl = data ? scoreLabel(data.score) : null;
+  const cd = data?.composition_diagnosis;
 
   return (
-    <Card title="Analise da Carteira">
+    <Card title="Análise da Carteira">
       {!data && !loading && !error && (
         <div className="flex flex-col items-center gap-3 py-4">
           <p className="text-sm text-[var(--text-muted)]">
@@ -145,34 +145,107 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
             <p className="text-sm font-semibold text-[var(--text-main)]">{data.headline}</p>
             <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{data.composition_summary}</p>
             <div className="mt-3 rounded-2xl bg-white/80 p-3">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Nota geral da composicao</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Nota geral da composição</p>
               <p className="mt-1 text-lg font-bold text-[var(--text-main)]">{data.composition_grade}</p>
             </div>
           </div>
 
-          <div className="space-y-2">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Componentes</p>
-            <ComponentBar label="Diversificacao" value={data.components.diversification} />
-            <ComponentBar label="Risco correlacao" value={data.components.correlation_risk} invert />
-            <ComponentBar label="Impacto noticias" value={data.components.news_impact} invert />
-            <ComponentBar label="Sensibilidade macro" value={data.components.macro_sensitivity} invert />
-            <ComponentBar label="Risco forecast" value={data.components.forecast_risk} invert />
-          </div>
+          {cd && (
+            <div className="space-y-4 rounded-3xl border border-[var(--border-soft)] bg-white p-4 shadow-sm">
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)]">Diagnóstico de composição</p>
+                  <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{cd.summary}</p>
+                </div>
+                <div className={`w-fit rounded-full border px-3 py-1 text-xs font-bold ${statusStyle(cd.overall_status)}`}>
+                  {statusLabel(cd.overall_status)} · {cd.overall_score}/100
+                </div>
+              </div>
 
-          {!!data.strengths.length && (
-            <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Pontos fortes</p>
-              {data.strengths.map((item) => (
-                <p key={item} className="text-sm leading-relaxed text-[var(--text-main)]">
-                  {item}
+              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3">
+                  <p className="text-xs text-[var(--text-muted)]">Ativos</p>
+                  <p className="mt-1 text-lg font-bold">{cd.metrics.total_assets}</p>
+                  <p className="text-xs text-[var(--text-muted)]">{cd.metrics.direct_equity_count} ação(ões) direta(s)</p>
+                </div>
+                <div className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3">
+                  <p className="text-xs text-[var(--text-muted)]">Maior posição</p>
+                  <p className="mt-1 text-lg font-bold">{cd.metrics.top_position.ticker ?? '-'}</p>
+                  <p className="text-xs text-[var(--text-muted)]">{pctPoint(cd.metrics.top_position.weight_pct)} da carteira</p>
+                </div>
+                <div className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3">
+                  <p className="text-xs text-[var(--text-muted)]">Top 3 posições</p>
+                  <p className="mt-1 text-lg font-bold">{pctPoint(cd.metrics.top3_weight_pct)}</p>
+                  <p className="text-xs text-[var(--text-muted)]">peso combinado</p>
+                </div>
+                <div className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3">
+                  <p className="text-xs text-[var(--text-muted)]">Exterior</p>
+                  <p className="mt-1 text-lg font-bold">{pctPoint(cd.metrics.international_weight_pct)}</p>
+                  <p className="text-xs text-[var(--text-muted)]">{cd.metrics.class_count} classe(s), {cd.metrics.sector_count} setor(es)</p>
+                </div>
+              </div>
+
+              <div className="grid gap-3 lg:grid-cols-2">
+                <div className="space-y-2">
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Verificações principais</p>
+                  {cd.checks.slice(0, 5).map((check) => (
+                    <div key={check.id} className={`rounded-2xl border p-3 ${statusStyle(check.status)}`}>
+                      <div className="flex flex-wrap items-center justify-between gap-2">
+                        <p className="text-sm font-semibold">{check.label}</p>
+                        <p className="text-xs font-bold">{statusLabel(check.status)}</p>
+                      </div>
+                      <p className="mt-1 text-xs font-medium">{check.value}</p>
+                      <p className="mt-1 text-xs leading-relaxed opacity-90">{check.message}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="space-y-3">
+                  {!!cd.strengths.length && (
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Pontos fortes</p>
+                      <div className="mt-2 space-y-2">
+                        {cd.strengths.slice(0, 4).map((item) => (
+                          <p key={item} className="rounded-2xl bg-emerald-50 p-3 text-sm leading-relaxed text-emerald-900">{item}</p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                  {!!cd.weaknesses.length && (
+                    <div>
+                      <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Pontos fracos</p>
+                      <div className="mt-2 space-y-2">
+                        {cd.weaknesses.slice(0, 4).map((item) => (
+                          <p key={item} className="rounded-2xl bg-amber-50 p-3 text-sm leading-relaxed text-amber-900">{item}</p>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </div>
+
+              {!!cd.watch_points.length && (
+                <div>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">O que acompanhar</p>
+                  <div className="mt-2 grid gap-2 md:grid-cols-2">
+                    {cd.watch_points.slice(0, 5).map((item) => (
+                      <p key={item} className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3 text-sm leading-relaxed">{item}</p>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {!!cd.data_quality_warnings.length && (
+                <p className="rounded-2xl border border-slate-200 bg-slate-50 p-3 text-xs leading-relaxed text-slate-700">
+                  {cd.data_quality_warnings.join(' ')}
                 </p>
-              ))}
+              )}
             </div>
           )}
 
           {!!data.overlaps.length && (
             <div className="space-y-2">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Sobreposicoes e riscos</p>
+              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Sobreposições e riscos</p>
               {data.overlaps.map((item) => (
                 <p key={item} className="text-sm leading-relaxed text-[var(--text-main)]">
                   {item}
@@ -181,21 +254,8 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
             </div>
           )}
 
-          {!!data.block_reviews.length && (
-            <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Avaliacao por blocos</p>
-              {data.block_reviews.map((review) => (
-                <div key={review.title} className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4">
-                  <p className="text-sm font-semibold text-[var(--text-main)]">{review.title}</p>
-                  <p className="mt-1 text-sm leading-relaxed text-[var(--text-main)]">{review.assessment}</p>
-                  <p className="mt-2 text-xs leading-relaxed text-[var(--text-muted)]">{review.highlights}</p>
-                </div>
-              ))}
-            </div>
-          )}
-
           <div className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4">
-            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Diagnostico final</p>
+            <p className="text-xs font-semibold uppercase tracking-wider text-[var(--text-muted)]">Diagnóstico final</p>
             <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{data.final_diagnosis}</p>
             <p className="mt-2 text-sm leading-relaxed text-[var(--text-main)]">{data.conclusion}</p>
           </div>

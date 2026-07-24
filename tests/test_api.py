@@ -262,6 +262,10 @@ async def test_portfolio_opinion_structure(client: AsyncClient):
     assert "block_reviews" in data
     assert "sources" in data
     assert "source_groups" in data
+    assert "composition_diagnosis" in data
+    assert "overall_status" in data["composition_diagnosis"]
+    assert "metrics" in data["composition_diagnosis"]
+    assert "checks" in data["composition_diagnosis"]
     assert "benchmark" in data
     assert data["selected_analysis_horizon"] == "2m"
 

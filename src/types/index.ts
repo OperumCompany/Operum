@@ -161,6 +161,43 @@ export type PortfolioOpinion = {
   }>;
   final_diagnosis: string;
   conclusion: string;
+  composition_diagnosis?: {
+    overall_status: 'saudavel' | 'atencao' | 'critico';
+    overall_score: number;
+    summary: string;
+    metrics: {
+      total_assets: number;
+      direct_equity_count: number;
+      class_count: number;
+      sector_count: number;
+      top_position: {
+        ticker: string | null;
+        weight_pct: number;
+      };
+      top3_weight_pct: number;
+      top_class: {
+        name: string;
+        weight_pct: number;
+      };
+      top_sector: {
+        name: string;
+        weight_pct: number;
+      };
+      international_weight_pct: number;
+    };
+    checks: Array<{
+      id: string;
+      label: string;
+      status: 'saudavel' | 'atencao' | 'critico' | 'info';
+      value: string;
+      target: string;
+      message: string;
+    }>;
+    strengths: string[];
+    weaknesses: string[];
+    watch_points: string[];
+    data_quality_warnings: string[];
+  };
   sources: Array<{
     id: string;
     title: string;

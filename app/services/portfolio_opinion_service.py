@@ -13,6 +13,7 @@ from app.services.llm_prompts import PORTFOLIO_ANALYSIS_REFINER_PROMPT
 from app.services.llm_service import LLMService
 from app.services.news_ingestion_service import NewsIngestionService
 from app.services.portfolio_analytics_service import PortfolioAnalyticsService
+from app.services.portfolio_composition_diagnosis_service import PortfolioCompositionDiagnosisService
 
 logger = logging.getLogger(__name__)
 
@@ -38,6 +39,7 @@ class PortfolioOpinionService:
         self.assets = AssetUniverseService()
         self.forecast = ForecastService()
         self.llm = LLMService()
+        self.composition_diagnosis = PortfolioCompositionDiagnosisService()
 
     def generate_opinion(
         self,
@@ -63,14 +65,17 @@ class PortfolioOpinionService:
         news_impact = self._compute_news_impact(portfolio)
         macro_sensitivity = self._compute_macro_sensitivity(analysis)
         forecast_risk = self._compute_forecast_risk(portfolio, analysis)
+        composition_diagnosis = self.composition_diagnosis.diagnose(portfolio, analysis, prices_data or {})
+        composition_score = float(composition_diagnosis.get("overall_score", 0)) / 100.0
 
-        portfolio_score = (
+        base_score = (
             0.28 * diversification_score
             + 0.22 * (1.0 - correlation_risk)
             + 0.2 * (1.0 - news_impact)
             + 0.15 * (1.0 - macro_sensitivity)
             + 0.15 * (1.0 - forecast_risk)
         )
+        portfolio_score = 0.75 * base_score + 0.25 * composition_score
         portfolio_score = max(0.0, min(1.0, portfolio_score))
 
         opinion = self._generate_text(
@@ -83,6 +88,7 @@ class PortfolioOpinionService:
             prices_data or {},
             analysis_horizon,
         )
+        opinion["composition_diagnosis"] = composition_diagnosis
         opinion = self._refine_opinion_text(opinion, analysis, analysis_horizon)
 
         return {
@@ -105,6 +111,7 @@ class PortfolioOpinionService:
             "conclusion": opinion["conclusion"],
             "sources": opinion["sources"],
             "source_groups": opinion["source_groups"],
+            "composition_diagnosis": opinion["composition_diagnosis"],
             "benchmark": opinion["benchmark"],
             "selected_analysis_horizon": analysis_horizon,
             "portfolio_id": portfolio.id,
@@ -130,6 +137,7 @@ class PortfolioOpinionService:
                 "block_reviews": opinion.get("block_reviews"),
                 "final_diagnosis": opinion.get("final_diagnosis"),
                 "conclusion": opinion.get("conclusion"),
+                "composition_diagnosis": opinion.get("composition_diagnosis"),
                 "source_summary": [
                     {"source_name": group.get("source_name"), "count": group.get("count")}
                     for group in opinion.get("source_groups", [])[:6]
