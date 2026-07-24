@@ -3,12 +3,12 @@
   "ticker": "ITUB4",
   "asset_name": "Itaú Unibanco PN",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-07-24T00:42:16.866189+00:00",
-  "recomputed_at": "2026-07-24T00:42:16.866189+00:00",
+  "generated_at": "2026-07-24T00:47:13.112487+00:00",
+  "recomputed_at": "2026-07-24T00:47:13.112487+00:00",
   "confidence": "media",
   "status": "ok",
-  "selected_history_horizon": "3m",
-  "selected_outlook_horizon": "3m",
+  "selected_history_horizon": "2m",
+  "selected_outlook_horizon": "2m",
   "asset_function": "estabilidade",
   "current_snapshot": {
     "current_price": 42.56,
@@ -19,96 +19,12 @@
     "asset_function": "estabilidade"
   },
   "historical_window": {
-    "start_date": "2026-03-20",
+    "start_date": "2026-05-01",
     "end_date": "2026-07-24",
     "news_count": 12,
     "has_price_history": true
   },
   "historical_series": [
-    {
-      "date": "2026-04-22",
-      "value": 45.03
-    },
-    {
-      "date": "2026-04-23",
-      "value": 44.18
-    },
-    {
-      "date": "2026-04-24",
-      "value": 44.37
-    },
-    {
-      "date": "2026-04-27",
-      "value": 43.99
-    },
-    {
-      "date": "2026-04-28",
-      "value": 44.1
-    },
-    {
-      "date": "2026-04-29",
-      "value": 42.87
-    },
-    {
-      "date": "2026-04-30",
-      "value": 43.19
-    },
-    {
-      "date": "2026-05-04",
-      "value": 42.4
-    },
-    {
-      "date": "2026-05-05",
-      "value": 42.46
-    },
-    {
-      "date": "2026-05-06",
-      "value": 41.78
-    },
-    {
-      "date": "2026-05-07",
-      "value": 40.79
-    },
-    {
-      "date": "2026-05-08",
-      "value": 41.26
-    },
-    {
-      "date": "2026-05-11",
-      "value": 40.33
-    },
-    {
-      "date": "2026-05-12",
-      "value": 39.87
-    },
-    {
-      "date": "2026-05-13",
-      "value": 39.63
-    },
-    {
-      "date": "2026-05-14",
-      "value": 40.4
-    },
-    {
-      "date": "2026-05-15",
-      "value": 39.7
-    },
-    {
-      "date": "2026-05-18",
-      "value": 39.62
-    },
-    {
-      "date": "2026-05-19",
-      "value": 38.78
-    },
-    {
-      "date": "2026-05-20",
-      "value": 39.67
-    },
-    {
-      "date": "2026-05-21",
-      "value": 40.12
-    },
     {
       "date": "2026-05-22",
       "value": 39.43
@@ -571,18 +487,18 @@
     }
   ],
   "recent_performance": {
-    "change_selected_pct": -5.49,
+    "change_selected_pct": 7.94,
     "change_1m_pct": 3.88,
     "change_2m_pct": 7.94,
     "change_3m_pct": -5.49,
     "change_12m_pct": null,
-    "volatility_selected_pct": 22.81,
-    "drawdown_selected_pct": -14.46,
+    "volatility_selected_pct": 21.26,
+    "drawdown_selected_pct": -5.28,
     "beta_selected": null,
     "correlation_selected": null,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": 2.85,
-    "forecast_price_selected": 43.77,
+    "forecast_return_selected_pct": 1.88,
+    "forecast_price_selected": 43.36,
     "forecast_confidence_selected": 0.25,
     "forecast_news_adjustment_pct": -0.06
   },
@@ -596,9 +512,9 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo deve ser interpretado como ação brasileira, sem misturar empresa, preço de tela e impacto na carteira. Dentro da carteira, a função principal definida para este ativo é estabilidade. A cotação atual aproximada é BRL 42,56. Hoje representa cerca de 66,5% da carteira. No último mês, o preço teve variação de +3,9%. O modelo de 3 meses aponta alta, mas essa projeção deve ser lida como referência estatística, não como certeza. As notícias recentes alteram a leitura do cenário, mas não substituem dados fundamentalistas estruturados. As notícias recentes têm tom misto, mas não permitem concluir, isoladamente, que os fundamentos melhoraram ou pioraram.",
-    "recent": "No recorte dos últimos 3 meses, o ativo variou -5,5%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 14,5%. No noticiário do período, os temas mais recorrentes foram juros, inflação, câmbio, resultados. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
-    "outlook": "A perspectiva de 3 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 3 meses aponta variação estimada de +2,9%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, inflação, câmbio, resultados. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+    "current": "O ativo deve ser interpretado como ação brasileira, sem misturar empresa, preço de tela e impacto na carteira. Dentro da carteira, a função principal definida para este ativo é estabilidade. A cotação atual aproximada é BRL 42,56. Hoje representa cerca de 66,5% da carteira. No último mês, o preço teve variação de +3,9%. O modelo de 2 meses aponta alta, mas essa projeção deve ser lida como referência estatística, não como certeza. As notícias recentes alteram a leitura do cenário, mas não substituem dados fundamentalistas estruturados. As notícias recentes têm tom misto, mas não permitem concluir, isoladamente, que os fundamentos melhoraram ou pioraram.",
+    "recent": "No recorte dos últimos 2 meses, o ativo variou +7,9%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 5,3%. No noticiário do período, os temas mais recorrentes foram juros, inflação, câmbio, resultados. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
+    "outlook": "A perspectiva de 2 meses é cautelosa; o peso elevado deve ser tratado como risco de carteira, não como cenário do ativo. O modelo para 2 meses aponta variação estimada de +1,9%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são juros, inflação, câmbio, resultados. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
     "recent_by_horizon": {
       "1w": "No recorte dos última semana, o ativo variou +0,0%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 1,4%. No noticiário do período, os temas mais recorrentes foram juros, câmbio, geopolítica, cenário fiscal e político. Houve 8 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
       "1m": "No recorte dos último mês, o ativo variou +3,9%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 5,3%. No noticiário do período, os temas mais recorrentes foram juros, câmbio, geopolítica, cenário fiscal e político. Houve 8 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
@@ -614,22 +530,22 @@
     "visual_summary": {
       "asset_status": "atenção por concentração",
       "fundamentals": "pressionados pelas notícias recentes",
-      "price_trend": "de queda",
+      "price_trend": "de alta",
       "news_sentiment": "negativo",
       "position_size": "altamente concentrada",
       "portfolio_risk": "muito alto",
       "main_reason": "concentração de 66,5% da carteira",
       "confidence": "moderada"
     },
-    "summary": "Nos últimos 3 meses, ITUB4 apresentou variação de -5,5%. Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente 14,5%. As notícias avaliadas não indicam, por si só, uma deterioração clara do negócio ou da tese do ativo. O ativo representa 66,5% da carteira, ponto importante para entender o impacto de qualquer oscilação.",
-    "what_happened": "O desempenho recente foi de queda. Parte desse movimento pode estar ligada ao próprio mercado e a fatores externos, especialmente juros, inflacao, cambio, não necessariamente apenas a mudanças internas de Itaú Unibanco PN.",
+    "summary": "Nos últimos 2 meses, ITUB4 apresentou variação de +7,9%. Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente 5,3%. As notícias avaliadas não indicam, por si só, uma deterioração clara do negócio ou da tese do ativo. O ativo representa 66,5% da carteira, ponto importante para entender o impacto de qualquer oscilação.",
+    "what_happened": "O desempenho recente foi de alta. Parte desse movimento pode estar ligada ao próprio mercado e a fatores externos, especialmente juros, inflacao, cambio, não necessariamente apenas a mudanças internas de Itaú Unibanco PN.",
     "company_situation": "Itaú Unibanco PN pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo.",
-    "asset_price_situation": "No mercado, a tendência recente do preço é de queda no recorte de últimos 3 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 14,5%.",
-    "current_situation": "Itaú Unibanco PN pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo. No mercado, a tendência recente do preço é de queda no recorte de últimos 3 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 14,5%.",
+    "asset_price_situation": "No mercado, a tendência recente do preço é de alta no recorte de últimos 2 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 5,3%.",
+    "current_situation": "Itaú Unibanco PN pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo. No mercado, a tendência recente do preço é de alta no recorte de últimos 2 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 5,3%.",
     "portfolio_impact": "Como ITUB4 representa 66,5% da carteira, a posição é classificada como altamente concentrada. Uma queda de 10% no ativo teria impacto aproximado de -6,6% no valor total da carteira, considerando os demais investimentos estáveis. Uma alta de 10% teria impacto aproximado de +6,6%. A concentração aumenta tanto o potencial de ganho quanto o potencial de perda, e sua adequação depende do objetivo, prazo e tolerância a oscilações do usuário.",
     "scenarios": {
-      "favorable": "Nos próximos 3 meses, o cenário favorável depende de melhora nas notícias relevantes, ambiente de mercado mais construtivo e sinais de que o ativo segue adequado à função de estabilidade. A confirmação viria de desempenho mais consistente do preço, notícias diretamente positivas e menor pressão dos fatores externos monitorados.",
-      "base": "O cenário-base para 3 meses é concentrado. A leitura mais equilibrada é acompanhar se o movimento recente se sustenta ou se perde força, sem tratar a projeção como certeza de preço futuro.",
+      "favorable": "Nos próximos 2 meses, o cenário favorável depende de melhora nas notícias relevantes, ambiente de mercado mais construtivo e sinais de que o ativo segue adequado à função de estabilidade. A confirmação viria de desempenho mais consistente do preço, notícias diretamente positivas e menor pressão dos fatores externos monitorados.",
+      "base": "O cenário-base para 2 meses é concentrado. A leitura mais equilibrada é acompanhar se o movimento recente se sustenta ou se perde força, sem tratar a projeção como certeza de preço futuro.",
       "adverse": "O cenário adverso ocorreria com piora do ambiente macroeconômico, notícias negativas diretamente ligadas ao ativo, resultados abaixo do esperado ou aumento da aversão a risco. Nesse caso, o impacto para a carteira seria maior quanto maior for o peso da posição."
     },
     "what_to_watch": [
@@ -641,7 +557,7 @@
       "movimento do câmbio",
       "se o ativo segue adequado à função de estabilidade na carteira"
     ],
-    "conclusion": "ITUB4 exige acompanhamento porque combina movimento recente de queda com risco de carteira muito alto. A leitura é educativa e não deve ser usada como ordem transacional. A decisão depende de objetivo, prazo, tolerância a risco e necessidade de diversificação.",
+    "conclusion": "ITUB4 exige acompanhamento porque combina movimento recente de alta com risco de carteira muito alto. A leitura é educativa e não deve ser usada como ordem transacional. A decisão depende de objetivo, prazo, tolerância a risco e necessidade de diversificação.",
     "data_quality_warnings": [
       "Dados fundamentais estruturados ainda não estão disponíveis no MVP; a leitura de fundamentos usa notícias, classe do ativo e contexto."
     ],
@@ -651,7 +567,7 @@
       "2m": "Nos últimos 2 meses, ITUB4 avançou 7,9%. No pior momento da janela, ficou cerca de 5,3% abaixo do maior preço do período. O comportamento do preço mostrou oscilações moderadas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom negativo, com temas ligados a juros, inflação, câmbio, resultados. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
       "3m": "Nos últimos 3 meses, ITUB4 recuou 5,5%. No pior momento da janela, ficou cerca de 14,5% abaixo do maior preço do período. O comportamento do preço mostrou oscilações relevantes, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom negativo, com temas ligados a juros, inflação, câmbio, resultados. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade."
     },
-    "box_current": "Atualmente, a avaliação de ITUB4 exige separar a situação da empresa, o comportamento do ativo negociado em bolsa e o impacto da posição na carteira. As notícias recentes têm tom misto, mas não bastam, sozinhas, para afirmar melhora ou deterioração dos fundamentos. O preço apresenta tendência recente de queda, mas isso não deve ser confundido automaticamente com mudança na qualidade da empresa. A posição representa 66,5% da carteira, caracterizando uma exposição altamente concentrada. Por isso, qualquer oscilação relevante do ativo terá impacto elevado sobre o resultado total. Uma queda de 10% em ITUB4 teria impacto aproximado de 6,6% sobre a carteira, considerando os demais ativos estáveis. O ponto de acompanhamento é verificar se os próximos dados confirmam que o ativo continua coerente com a função de estabilidade.",
+    "box_current": "Atualmente, a avaliação de ITUB4 exige separar a situação da empresa, o comportamento do ativo negociado em bolsa e o impacto da posição na carteira. As notícias recentes têm tom misto, mas não bastam, sozinhas, para afirmar melhora ou deterioração dos fundamentos. O preço apresenta tendência recente de alta, mas isso não deve ser confundido automaticamente com mudança na qualidade da empresa. A posição representa 66,5% da carteira, caracterizando uma exposição altamente concentrada. Por isso, qualquer oscilação relevante do ativo terá impacto elevado sobre o resultado total. Uma queda de 10% em ITUB4 teria impacto aproximado de 6,6% sobre a carteira, considerando os demais ativos estáveis. O ponto de acompanhamento é verificar se os próximos dados confirmam que o ativo continua coerente com a função de estabilidade.",
     "box_outlook_by_horizon": {
       "1w": "O cenário para os próximos 1 semana é cauteloso. Neste prazo curto, a leitura deve dar mais peso a ruídos de mercado, variação diária do preço, notícias recentes e volatilidade de curto prazo. O movimento pode mudar rapidamente com fluxo, manchetes e ajustes técnicos, sem necessariamente indicar alteração nos fundamentos. O ativo pode ser favorecido por rentabilidade saudável, controle da inadimplência e resultados dentro ou acima das expectativas. Por outro lado, pode seguir pressionado se houver aumento do custo de crédito, piora da inadimplência ou desaceleração da carteira de crédito. Os principais pontos a acompanhar são preço, volume negociado, notícias recentes, reação do mercado e volatilidade curta. Como a posição representa 66,5% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
       "1m": "O cenário para os próximos 1 mês é cauteloso. Em 1 mês, o ponto central é observar se o movimento recente ganha continuidade ou perde força. Próximos eventos, novas notícias e a reação do preço ajudam a indicar se o cenário está se sustentando. O ativo pode ser favorecido por rentabilidade saudável, controle da inadimplência e resultados dentro ou acima das expectativas. Por outro lado, pode seguir pressionado se houver aumento do custo de crédito, piora da inadimplência ou desaceleração da carteira de crédito. Os principais pontos a acompanhar são continuidade do preço, próximos eventos, notícias relevantes, resultados parciais e reação do mercado. Como a posição representa 66,5% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
@@ -861,8 +777,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3769,
-      "rank_score": 0.5195,
+      "match_score": 0.3768,
+      "rank_score": 0.5194,
       "source_category": "press",
       "is_official": false,
       "context_role": "sector",
@@ -1076,8 +992,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3769,
-          "rank_score": 0.5195,
+          "match_score": 0.3768,
+          "rank_score": 0.5194,
           "source_category": "press",
           "is_official": false,
           "context_role": "sector",

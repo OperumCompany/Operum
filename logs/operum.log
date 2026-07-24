@@ -468,3 +468,20 @@
 2026-07-23 21:27:09 | INFO     | app.main | Cache de precos atualizado para 3 ativos
 2026-07-23 21:27:10 | INFO     | app.services.news_ingestion_service | Ingestao: 41 noticias novas de 108 unicas
 2026-07-23 21:27:10 | INFO     | app.main | Ingestao automatica: 41 noticias novas
+2026-07-23 21:30:09 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:30:19 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:30:59 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:30:59 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+2026-07-23 21:31:47 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:32:14 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out
+2026-07-23 21:33:02 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:33:48 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:33:57 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:42:52 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:43:00 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:43:33 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:43:41 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:43:41 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+2026-07-23 21:44:16 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:44:24 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-07-23 21:44:24 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado

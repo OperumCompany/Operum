@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState } from 'react';
 import { Button, Card } from './UI';
 import api from '../utils/api';
 import type { PortfolioOpinion } from '../types';
@@ -37,20 +37,73 @@ const HORIZONS = [
   { key: '3m', label: '3 meses' },
 ] as const;
 
+type AnalysisHorizon = (typeof HORIZONS)[number]['key'];
+type OpinionCache = Partial<Record<AnalysisHorizon, PortfolioOpinion>>;
+type OpinionRequests = Partial<Record<AnalysisHorizon, Promise<PortfolioOpinion>>>;
+
+const PREFETCH_HORIZONS: AnalysisHorizon[] = ['2m', '1m'];
+
 export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
   const [data, setData] = useState<PortfolioOpinion | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [expandedSources, setExpandedSources] = useState<Record<string, boolean>>({});
-  const [analysisHorizon, setAnalysisHorizon] = useState<'1m' | '2m' | '3m'>('3m');
+  const [analysisHorizon, setAnalysisHorizon] = useState<AnalysisHorizon>('3m');
+  const cacheRef = useRef<OpinionCache>({});
+  const inFlightRef = useRef<OpinionRequests>({});
 
-  async function loadOpinion(nextHorizon = analysisHorizon) {
+  async function fetchOpinion(nextHorizon: AnalysisHorizon) {
+    const cached = cacheRef.current[nextHorizon];
+    if (cached) return cached;
+
+    const inFlight = inFlightRef.current[nextHorizon];
+    if (inFlight) return inFlight;
+
+    const request = api
+      .get<PortfolioOpinion>(`/models/opinion/${portfolioId}?analysis_horizon=${nextHorizon}`)
+      .then((result) => {
+        cacheRef.current[nextHorizon] = result;
+        return result;
+      })
+      .finally(() => {
+        delete inFlightRef.current[nextHorizon];
+      });
+
+    inFlightRef.current[nextHorizon] = request;
+    return request;
+  }
+
+  async function prefetchOpinions(baseHorizon: AnalysisHorizon) {
+    for (const horizon of PREFETCH_HORIZONS) {
+      if (horizon === baseHorizon || cacheRef.current[horizon]) {
+        continue;
+      }
+      try {
+        await fetchOpinion(horizon);
+      } catch {
+        // Background prefetch must not affect the visible analysis.
+      }
+    }
+  }
+
+  async function loadOpinion(nextHorizon = analysisHorizon, options: { prefetch?: boolean } = { prefetch: true }) {
+    const cached = cacheRef.current[nextHorizon];
+    if (cached) {
+      setData(cached);
+      setExpandedSources({});
+      setError(null);
+      return;
+    }
+
     setLoading(true);
     setError(null);
     try {
-      const result = await api.get<PortfolioOpinion>(`/models/opinion/${portfolioId}?analysis_horizon=${nextHorizon}`);
+      const result = await fetchOpinion(nextHorizon);
       setData(result);
       setExpandedSources({});
+      if (options.prefetch) {
+        void prefetchOpinions(nextHorizon);
+      }
     } catch (e) {
       setError(e instanceof Error ? e.message : 'Erro ao gerar análise');
     } finally {
@@ -58,10 +111,10 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
     }
   }
 
-  async function changeHorizon(nextHorizon: '1m' | '2m' | '3m') {
+  async function changeHorizon(nextHorizon: AnalysisHorizon) {
     setAnalysisHorizon(nextHorizon);
     if (data || loading) {
-      await loadOpinion(nextHorizon);
+      await loadOpinion(nextHorizon, { prefetch: false });
     }
   }
 
