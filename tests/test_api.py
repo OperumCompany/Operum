@@ -193,6 +193,8 @@ async def test_news_query_and_pagination_metadata(client: AsyncClient):
     assert data["page"] == 1
     assert data["page_size"] == 30
     assert "total_pages" in data
+    assert data["search_mode_used"] in {"hybrid", "keyword"}
+    assert "semantic_available" in data
 
 
 @pytest.mark.asyncio
@@ -383,6 +385,64 @@ async def test_chat_endpoint_with_fallback(client: AsyncClient):
     )
     assert resp.status_code == 200
     data = resp.json()
-    assert data["mode"] == "fallback"
+    assert data["mode"] == "knowledge_direct"
     assert isinstance(data["message"], str)
     assert data["message"]
+    assert data["retrieval"]["news_count"] == 0
+    assert all(source["type"] == "knowledge" for source in data["sources"])
+    assert "Resposta curta" not in data["message"]
+    assert "Explicação" not in data["message"]
+
+
+@pytest.mark.asyncio
+async def test_chat_conversation_crud_and_history(client: AsyncClient):
+    headers = await auth_headers(client, "chat-history")
+    created = await client.post(
+        "/api/chat/conversations", headers=headers, json={"title": "Meu estudo"}
+    )
+    assert created.status_code == 201
+    conversation_id = created.json()["id"]
+
+    sent = await client.post(
+        f"/api/chat/conversations/{conversation_id}/messages",
+        headers=headers,
+        json={"content": "O que é renda variável?"},
+    )
+    assert sent.status_code == 200
+    assert sent.json()["assistant_message"]["mode"] == "knowledge_direct"
+
+    history = await client.get(
+        f"/api/chat/conversations/{conversation_id}/messages", headers=headers
+    )
+    assert history.status_code == 200
+    assert [item["role"] for item in history.json()] == ["user", "assistant"]
+
+    renamed = await client.patch(
+        f"/api/chat/conversations/{conversation_id}",
+        headers=headers,
+        json={"title": "Conceitos fundamentais"},
+    )
+    assert renamed.status_code == 200
+    assert renamed.json()["title"] == "Conceitos fundamentais"
+
+    deleted = await client.delete(
+        f"/api/chat/conversations/{conversation_id}", headers=headers
+    )
+    assert deleted.status_code == 200
+    missing = await client.get(
+        f"/api/chat/conversations/{conversation_id}/messages", headers=headers
+    )
+    assert missing.status_code == 404
+
+
+@pytest.mark.asyncio
+async def test_chat_conversations_are_isolated_by_owner(client: AsyncClient):
+    first_headers = await auth_headers(client, "chat-owner-one")
+    second_headers = await auth_headers(client, "chat-owner-two")
+    created = await client.post("/api/chat/conversations", headers=first_headers, json={})
+    conversation_id = created.json()["id"]
+
+    forbidden = await client.get(
+        f"/api/chat/conversations/{conversation_id}/messages", headers=second_headers
+    )
+    assert forbidden.status_code == 404

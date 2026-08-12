@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from app.schemas.news import NewsItem
 from app.services.news_ingestion_service import NewsIngestionService
 from app.services.news_scoring_service import NewsScoringService
+from app.services.news_semantic_service import NewsSemanticService
 from app.services.news_summary_service import NewsSummaryService
 
 logger = logging.getLogger(__name__)
@@ -15,6 +16,7 @@ router = APIRouter(prefix="/news", tags=["news"])
 ingestion_service = NewsIngestionService()
 scoring_service = NewsScoringService()
 summary_service = NewsSummaryService()
+semantic_service = NewsSemanticService()
 ADMIN_REFRESH_TOKEN = os.environ.get("OPERUM_REFRESH_TOKEN", "")
 
 
@@ -38,6 +40,7 @@ def list_news(
     date_to: str | None = Query(None, description="Data final ISO"),
     portfolio_id: str | None = Query(None, description="Filtrar por carteira"),
     macro_only: bool = Query(False, description="Apenas macroeconomia"),
+    search_mode: str = Query("hybrid", pattern="^(hybrid|keyword|semantic)$"),
     page: int = Query(1, ge=1),
     page_size: int = Query(30, ge=1, le=100),
 ):
@@ -76,29 +79,40 @@ def list_news(
             return dt.replace(tzinfo=timezone.utc)
         return dt
 
+    parsed_date_from = None
+    parsed_date_to = None
     if date_from:
         try:
-            dt_from = to_utc(datetime.fromisoformat(date_from))
-            filtered = [n for n in filtered if to_utc(n.published_at) >= dt_from]
+            parsed_date_from = to_utc(datetime.fromisoformat(date_from))
+            filtered = [n for n in filtered if to_utc(n.published_at) >= parsed_date_from]
         except ValueError:
             pass
 
     if date_to:
         try:
-            dt_to = to_utc(datetime.fromisoformat(date_to))
-            filtered = [n for n in filtered if to_utc(n.published_at) <= dt_to]
+            parsed_date_to = to_utc(datetime.fromisoformat(date_to))
+            filtered = [n for n in filtered if to_utc(n.published_at) <= parsed_date_to]
         except ValueError:
             pass
 
     if macro_only:
         filtered = [n for n in filtered if "Economia" in n.mentioned_sectors]
 
+    search_mode_used = "chronological"
+    semantic_available = semantic_service.available
     if q:
-        query = q.lower().strip()
-        filtered = [
-            n for n in filtered
-            if query in f"{n.title} {n.content_preview} {n.summary} {n.full_text_if_available or ''}".lower()
-        ]
+        filtered, search_mode_used, semantic_available = semantic_service.hybrid_search(
+            filtered,
+            q,
+            search_mode=search_mode,
+            semantic_filters={
+                "date_from": parsed_date_from,
+                "date_to": parsed_date_to,
+                "tickers": [ticker] if ticker else None,
+                "sectors": [sector] if sector else None,
+                "countries": [country] if country else None,
+            },
+        )
 
     # Sort by published_at descending (make all offset-aware for comparison)
     def safe_dt(n):
@@ -106,7 +120,8 @@ def list_news(
         if dt.tzinfo is None:
             return dt.replace(tzinfo=timezone.utc)
         return dt
-    filtered.sort(key=safe_dt, reverse=True)
+    if not q:
+        filtered.sort(key=safe_dt, reverse=True)
 
     total = len(filtered)
     start = (page - 1) * page_size
@@ -119,6 +134,8 @@ def list_news(
         "page": page,
         "page_size": page_size,
         "total_pages": (total + page_size - 1) // page_size if page_size else 0,
+        "search_mode_used": search_mode_used,
+        "semantic_available": semantic_available,
     }
 
 

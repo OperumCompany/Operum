@@ -12,6 +12,7 @@ from app.services.forecast_service import ForecastService
 from app.services.llm_prompts import PORTFOLIO_ANALYSIS_REFINER_PROMPT
 from app.services.llm_service import LLMService
 from app.services.news_ingestion_service import NewsIngestionService
+from app.services.news_semantic_service import NewsSemanticService
 from app.services.portfolio_analytics_service import PortfolioAnalyticsService
 from app.services.portfolio_composition_diagnosis_service import PortfolioCompositionDiagnosisService
 
@@ -35,6 +36,7 @@ class PortfolioOpinionService:
     def __init__(self):
         self.analytics = PortfolioAnalyticsService()
         self.news_service = NewsIngestionService()
+        self.semantic_news = NewsSemanticService()
         self.asset_analysis = AssetAnalysisService()
         self.assets = AssetUniverseService()
         self.forecast = ForecastService()
@@ -190,8 +192,27 @@ class PortfolioOpinionService:
             return 0.5
 
         portfolio_tickers = {p.ticker.upper() for p in portfolio.positions}
+        asset_lookup = {asset.ticker.upper(): asset for asset in self.assets.get_all()}
+        semantic_query = " ".join(
+            [
+                *sorted(portfolio_tickers),
+                *[
+                    asset_lookup[ticker].name
+                    for ticker in portfolio_tickers
+                    if ticker in asset_lookup
+                ],
+                "riscos resultados setores juros inflacao carteira",
+            ]
+        )
+        semantic_scores = self.semantic_news.semantic_scores(
+            semantic_query,
+            limit=max(50, len(portfolio_tickers) * 12),
+        )
         relevant = [
-            n for n in all_news if any(a.upper() in portfolio_tickers for a in n.mentioned_assets)
+            n
+            for n in all_news
+            if any(a.upper() in portfolio_tickers for a in n.mentioned_assets)
+            or (n.id in semantic_scores and self.semantic_news.is_searchable(n))
         ]
         if not relevant:
             return 0.3

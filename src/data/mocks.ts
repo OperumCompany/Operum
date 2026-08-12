@@ -211,7 +211,7 @@ export const initialChat: ChatMessage[] = [
     id: 'c1',
     role: 'assistant',
     content: 'OlÃ¡. Sou o Operum e posso explicar seus investimentos com uma linguagem simples e direta.',
-    createdAt: '09:00',
+    created_at: '2026-01-01T09:00:00-03:00',
   },
 ];
 

@@ -243,14 +243,17 @@ Funcionalidade: Notícias de mercado
 Descrição: listar, filtrar e resumir notícias relevantes para o contexto financeiro  
 Problema que resolve: reduz dispersão de informação e melhora o contexto da análise  
 Usuário: usuário comum  
-Entrada esperada: filtros por ativo, sentimento, impacto, intervalo e busca textual  
+Entrada esperada: filtros por ativo, sentimento, impacto, intervalo e busca textual ou semântica
 Saída esperada: lista paginada de notícias com resumo e metadados  
 Regras de negócio:
 - paginação padrão de 30 itens
 - filtros e busca acontecem no backend
 - notícias podem ser oficiais ou editoriais
+- quando houver consulta, a busca combina palavras exatas, significado, recência e qualidade da fonte
+- indisponibilidade da busca semântica deve ativar fallback textual
 Critérios de aceitação:
 - usuário consegue buscar notícias
+- usuário encontra notícias semanticamente relacionadas mesmo sem correspondência literal
 - usuário consegue filtrar por contexto
 - usuário consegue abrir resumo e link original
 
@@ -548,9 +551,12 @@ Ativos
 Notícias
 - O sistema deve coletar e persistir notícias de fontes oficiais e editoriais.
 - O sistema deve permitir busca textual em notícias.
+- O sistema deve permitir busca híbrida usando texto e embeddings semânticos.
 - O sistema deve permitir filtros por ativo, sentimento, impacto, período e contexto.
 - O sistema deve listar notícias de forma paginada.
 - O sistema deve mostrar resumo e link original da notícia.
+- O sistema deve manter o bruto localmente no desenvolvimento e em storage privado no ambiente online.
+- A busca semântica deve operar sobre o acervo coletado e não substituir os conectores de busca na web.
 
 Análise
 - O sistema deve gerar análise geral da carteira.
@@ -1119,6 +1125,19 @@ Resposta:
 ---
 
 ## 28. Checklist final antes de partir para a SPEC
+
+### Evolução do agente financeiro
+
+- O agente responde em português brasileiro com profundidade adaptada à pergunta.
+- Perguntas conceituais usam uma base editorial financeira, sem notícias incidentais.
+- Perguntas temporais podem combinar conhecimento estável, notícias recentes e contexto da carteira.
+- A base inicial contém 60 FAQs com fontes institucionais, exemplos e pontos de atenção.
+- Notícias e fontes são deduplicadas e mantidas como rastreabilidade interna, sem blocos visuais na conversa.
+- O usuário pode criar, reabrir, renomear e excluir conversas vinculadas à própria conta.
+- O agente permanece educativo e não recomenda compra, venda, manutenção ou alocação específica.
+- O agente pode citar instrumentos como exemplos educacionais, explicando riscos e sem prescrever uma escolha ao usuário.
+- A resposta começa diretamente pelo conteúdo útil e não segue obrigatoriamente um modelo fixo de definição, explicação e exemplo.
+- Quando nenhuma FAQ for suficientemente relevante, o agente pode usar conhecimento financeiro geral para conceitos estáveis.
 
 Resposta:
 

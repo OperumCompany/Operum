@@ -21,15 +21,55 @@ export type Impact = 'Alto' | 'Médio' | 'Baixo';
 
 export type ChatMessage = {
   id: string;
+  conversation_id?: string;
   role: 'user' | 'assistant';
   content: string;
-  createdAt: string;
+  created_at: string;
+  mode?: 'knowledge_direct' | 'llm' | 'fallback' | null;
+  sources?: ChatSource[];
+};
+
+export type ChatSource = {
+  id: string;
+  type: 'knowledge' | 'news';
+  title: string;
+  source_name: string;
+  source_url: string;
+  published_at?: string | null;
+  similarity?: number | null;
 };
 
 export type ChatApiResponse = {
   message: string;
-  mode: 'llm' | 'fallback';
+  mode: 'knowledge_direct' | 'llm' | 'fallback';
   used_portfolio_context: boolean;
+  sources?: ChatSource[];
+  retrieval?: ChatRetrieval;
+};
+
+export type ChatRetrieval = {
+  intent?: string;
+  knowledge_count?: number;
+  news_count?: number;
+  used_portfolio_context?: boolean;
+};
+
+export type ChatConversation = {
+  id: string;
+  owner_id: string;
+  title: string;
+  summary: string;
+  portfolio_id?: string | null;
+  use_all_portfolios: boolean;
+  created_at: string;
+  updated_at: string;
+  message_count: number;
+};
+
+export type ConversationMessageResponse = {
+  conversation: ChatConversation;
+  user_message: ChatMessage;
+  assistant_message: ChatMessage;
 };
 
 export type AssetClass = 'Renda fixa' | 'Ações Brasil' | 'Ações EUA' | 'Fundos' | 'Cripto';

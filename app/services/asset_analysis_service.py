@@ -17,6 +17,7 @@ from app.services.llm_service import LLMService
 from app.services.local_storage_service import LocalStorageService
 from app.services.market_data_service import MarketDataService
 from app.services.news_ingestion_service import NewsIngestionService
+from app.services.news_semantic_service import NewsSemanticService
 
 HISTORY_WINDOW_DAYS = {"1w": 5, "1m": 21, "2m": 42, "3m": 63}
 OUTLOOK_WINDOW_DAYS = {"1w": 5, "1m": 21, "2m": 42, "3m": 63}
@@ -28,6 +29,7 @@ class AssetAnalysisService:
         self.storage = LocalStorageService()
         self.market = MarketDataService()
         self.news = NewsIngestionService()
+        self.semantic_news = NewsSemanticService()
         self.assets = AssetUniverseService()
         self.forecast = ForecastService()
         self.llm = LLMService()
@@ -255,18 +257,50 @@ class AssetAnalysisService:
     def get_related_news(self, ticker: str, limit: int = 25, days_back: int | None = None) -> list[dict]:
         meta = self._asset_meta(ticker)
         now = datetime.now(timezone.utc)
+        semantic_query = " ".join(
+            str(value)
+            for value in [
+                meta.get("ticker"),
+                meta.get("name"),
+                meta.get("sector"),
+                meta.get("asset_class"),
+                "resultados riscos juros contexto macroeconomico",
+            ]
+            if value
+        )
+        semantic_scores = self.semantic_news.semantic_scores(
+            semantic_query,
+            limit=max(limit * 4, 50),
+            date_from=(now - timedelta(days=days_back)) if days_back is not None else None,
+        )
         matches: list[dict] = []
         for news in self.news.get_all_raw():
             matched, match_score, context_role, source_confidence_weight, macro_context_weight = self._matches_asset(news, meta)
-            if not matched:
+            semantic_similarity = semantic_scores.get(news.id, 0.0)
+            if semantic_similarity > 0 and not self.semantic_news.is_searchable(news):
+                semantic_similarity = 0.0
+            if not matched and semantic_similarity <= 0:
                 continue
+            if not matched:
+                mentioned_assets = {asset.upper() for asset in news.mentioned_assets}
+                if ticker.upper() in mentioned_assets:
+                    context_role = "asset"
+                elif any(
+                    self._normalize_text(str(meta.get("sector") or "")) in self._normalize_text(sector)
+                    for sector in news.mentioned_sectors
+                    if meta.get("sector")
+                ):
+                    context_role = "sector"
+                else:
+                    context_role = "macro"
+                match_score = semantic_similarity * 0.75
             if context_role == "asset" and self._is_incidental_asset_mention(news, meta):
                 continue
             published = self._safe_dt(news.published_at)
             if days_back is not None and published < now - timedelta(days=days_back):
                 continue
             context_priority = {"asset": 1.0, "sector": 0.72, "macro": 0.58}.get(context_role, 0.5)
-            rank_score = (
+            deterministic_rank = (
                 match_score * 0.52
                 + news.impact_score * 0.15
                 + news.relevance_score * 0.1
@@ -274,6 +308,7 @@ class AssetAnalysisService:
                 + macro_context_weight * 0.08
                 + context_priority * 0.05
             )
+            rank_score = deterministic_rank * 0.75 + semantic_similarity * 0.25
             matches.append(
                 {
                     "match_score": match_score,
@@ -281,6 +316,7 @@ class AssetAnalysisService:
                     "context_role": context_role,
                     "source_confidence_weight": source_confidence_weight,
                     "macro_context_weight": macro_context_weight,
+                    "semantic_similarity": round(semantic_similarity, 4),
                     "news": news,
                     "published": published,
                 }
@@ -322,6 +358,7 @@ class AssetAnalysisService:
                     "is_official": bool(getattr(news, "is_official", False)),
                     "context_role": item["context_role"],
                     "source_confidence_weight": item["source_confidence_weight"],
+                    "semantic_similarity": item["semantic_similarity"],
                 }
             )
             if len(results) >= limit:

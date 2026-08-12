@@ -46,6 +46,21 @@ AI_ENABLED = os.environ.get("AI_ENABLED", "true").lower() == "true"
 AI_ENHANCE_ASSET_ANALYSIS = os.environ.get("AI_ENHANCE_ASSET_ANALYSIS", "true").lower() == "true"
 AI_ENHANCE_PORTFOLIO_ANALYSIS = os.environ.get("AI_ENHANCE_PORTFOLIO_ANALYSIS", "true").lower() == "true"
 AI_ENABLE_CHATBOT = os.environ.get("AI_ENABLE_CHATBOT", "true").lower() == "true"
+NEWS_RAW_STORAGE = os.environ.get("NEWS_RAW_STORAGE", "local").strip().lower()
+NEWS_RAW_BUCKET = os.environ.get("NEWS_RAW_BUCKET", "news-raw").strip()
+NEWS_EMBEDDINGS_ENABLED = os.environ.get("NEWS_EMBEDDINGS_ENABLED", "false").lower() == "true"
+NEWS_EMBEDDING_MODEL = os.environ.get("NEWS_EMBEDDING_MODEL", "intfloat/multilingual-e5-small").strip()
+NEWS_EMBEDDING_DIMENSIONS = int(os.environ.get("NEWS_EMBEDDING_DIMENSIONS", "384"))
+NEWS_EMBEDDING_BATCH_SIZE = int(os.environ.get("NEWS_EMBEDDING_BATCH_SIZE", "32"))
+NEWS_EMBEDDINGS_INDEX_ON_INGEST = os.environ.get("NEWS_EMBEDDINGS_INDEX_ON_INGEST", "true").lower() == "true"
+NEWS_SEMANTIC_TOP_K = int(os.environ.get("NEWS_SEMANTIC_TOP_K", "25"))
+NEWS_SEMANTIC_CANDIDATES = int(os.environ.get("NEWS_SEMANTIC_CANDIDATES", "300"))
+NEWS_SEMANTIC_MIN_SIMILARITY = float(os.environ.get("NEWS_SEMANTIC_MIN_SIMILARITY", "0.55"))
+KNOWLEDGE_BASE_ENABLED = os.environ.get("KNOWLEDGE_BASE_ENABLED", "true").lower() == "true"
+KNOWLEDGE_BASE_DIR = os.environ.get("KNOWLEDGE_BASE_DIR", "").strip()
+KNOWLEDGE_SEMANTIC_TOP_K = int(os.environ.get("KNOWLEDGE_SEMANTIC_TOP_K", "4"))
+KNOWLEDGE_MIN_SIMILARITY = float(os.environ.get("KNOWLEDGE_MIN_SIMILARITY", "0.70"))
+KNOWLEDGE_STRONG_SEMANTIC_SIMILARITY = float(os.environ.get("KNOWLEDGE_STRONG_SEMANTIC_SIMILARITY", "0.86"))
 
 LOG_DIR = os.path.join(DATA_DIR, "logs")
 os.makedirs(LOG_DIR, exist_ok=True)

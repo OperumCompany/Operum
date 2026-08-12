@@ -4,6 +4,11 @@ node_modules/
 # build output
 dist/
 coverage/
+__pycache__/
+*.py[cod]
+data/news/raw/items/
+*-start.err.log
+ollama-start.log
 
 # env files
 .env

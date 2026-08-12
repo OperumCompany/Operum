@@ -34,6 +34,8 @@ type NewsResponse = {
   page: number;
   page_size: number;
   total_pages: number;
+  search_mode_used: 'chronological' | 'hybrid' | 'keyword' | 'semantic';
+  semantic_available: boolean;
 };
 
 const PAGE_SIZE = 30;
@@ -51,6 +53,8 @@ export function NewsPage() {
   const [total, setTotal] = useState(0);
   const [page, setPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [searchModeUsed, setSearchModeUsed] = useState<NewsResponse['search_mode_used']>('chronological');
+  const [semanticAvailable, setSemanticAvailable] = useState(false);
 
   useEffect(() => {
     const timeout = window.setTimeout(() => {
@@ -70,7 +74,10 @@ export function NewsPage() {
     const params = new URLSearchParams();
     params.set('page_size', String(PAGE_SIZE));
     params.set('page', String(targetPage));
-    if (debouncedQuery) params.set('q', debouncedQuery);
+    if (debouncedQuery) {
+      params.set('q', debouncedQuery);
+      params.set('search_mode', 'hybrid');
+    }
     if (selectedAsset) params.set('ticker', selectedAsset);
     if (selectedSentiment) params.set('sentiment', selectedSentiment);
     if (selectedImpact) params.set('impact', selectedImpact);
@@ -81,6 +88,8 @@ export function NewsPage() {
         setTotal(data.total);
         setPage(data.page);
         setTotalPages(Math.max(1, data.total_pages || 1));
+        setSearchModeUsed(data.search_mode_used || 'chronological');
+        setSemanticAvailable(Boolean(data.semantic_available));
       })
       .catch((e) => {
         setError(e instanceof Error ? e.message : 'Erro ao carregar noticias');
@@ -148,11 +157,18 @@ export function NewsPage() {
       <Card title="Filtrar noticias">
         <div className="flex flex-col gap-3 md:flex-row md:items-center">
           <Input
-            placeholder="Buscar palavra-chave"
+            placeholder="Busque por assunto, contexto ou palavra-chave"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             className="md:max-w-xs"
           />
+          {debouncedQuery && (
+            <span className="rounded-full bg-[var(--accent-soft)] px-3 py-2 text-xs font-semibold text-[var(--text-main)]">
+              {searchModeUsed === 'hybrid' && semanticAvailable
+                ? 'Busca inteligente'
+                : 'Busca por palavras'}
+            </span>
+          )}
           <select
             value={selectedAsset ?? ''}
             onChange={(e) => setSelectedAsset(e.target.value || null)}

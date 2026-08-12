@@ -71,6 +71,10 @@ Fora de escopo por enquanto:
 | N-09 | Suportar `reindex` e `backfill` por fonte | Alta |
 | N-10 | Relacionar noticias a ativos, setores e contexto macro | Alta |
 | N-11 | Permitir abrir detalhe da noticia com resumo e link original | Alta |
+| N-12 | Persistir noticias processadas e embeddings de 384 dimensoes no Supabase Postgres | Alta |
+| N-13 | Armazenar texto bruto localmente ou em bucket privado do Supabase Storage | Alta |
+| N-14 | Suportar busca `hybrid`, `keyword` e `semantic` sem quebrar filtros e paginacao | Alta |
+| N-15 | Usar fallback textual quando embeddings ou Supabase estiverem indisponiveis | Alta |
 
 **Fontes suportadas**
 - Oficiais:
@@ -184,6 +188,8 @@ Fora de escopo por enquanto:
 | AI-06 | Gerar sintese geral da carteira com foco em composicao | Alta |
 | AI-07 | Separar noticia de ativo, setor e macro na analise | Alta |
 | AI-08 | Explicitar baixa confianca quando faltarem dados suficientes | Alta |
+| AI-09 | Recuperar noticias semanticamente com multilingual E5 + pgvector | Alta |
+| AI-10 | Combinar similaridade semantica, texto, recencia, impacto e confianca da fonte | Alta |
 
 ---
 
@@ -281,6 +287,7 @@ Query:
   - portfolio_id
   - macro_only
   - q
+  - search_mode (`hybrid`, `keyword` ou `semantic`; default `hybrid`)
   - page (default 1)
   - page_size (default 30)
 
@@ -290,7 +297,9 @@ Response:
   "total": int,
   "page": int,
   "page_size": int,
-  "total_pages": int
+  "total_pages": int,
+  "search_mode_used": string,
+  "semantic_available": boolean
 }
 ```
 
@@ -619,6 +628,26 @@ Telas analiticas tambem devem suportar:
 ---
 
 ## 9. Observacoes Operacionais
+
+### Base de conhecimento e conversas persistentes
+
+- `knowledge_documents` armazena metadados, resposta editorial, fontes, versão e revisão das FAQs.
+- `knowledge_chunks` armazena conteúdo pesquisável e embedding E5 de 384 dimensões com HNSW.
+- `chat_conversations` e `chat_messages` persistem histórico isolado por `owner_id`.
+- RLS permanece ativa e sem policies públicas; somente o backend acessa as tabelas.
+- `GET/POST /chat/conversations` lista e cria conversas.
+- `PATCH/DELETE /chat/conversations/{id}` renomeia e exclui uma conversa.
+- `GET/POST /chat/conversations/{id}/messages` recupera o histórico e envia mensagens.
+- `POST /chat` permanece como contrato stateless de compatibilidade.
+- Correspondência editorial direta evita chamada ao LLM; sínteses usam até 4 FAQs, 3 notícias e 8 mensagens.
+- O fallback usa o conteúdo editorial recuperado e não retorna respostas genéricas de uma frase.
+- Correspondência editorial direta exige igualdade normalizada com título ou alias; similaridade semântica isolada não aciona resposta direta.
+- Trechos semânticos abaixo de `KNOWLEDGE_MIN_SIMILARITY` são descartados e resultados lexicais exigem termos discriminativos.
+- Resultados sem apoio lexical precisam atingir `KNOWLEDGE_STRONG_SEMANTIC_SIMILARITY=0.86` para entrar no contexto.
+- Perguntas financeiras sem FAQ relevante podem usar o Qwen para conhecimento geral estável; dados atuais continuam dependentes do contexto recuperado.
+- O Qwen retorna JSON estrito com o campo `answer`, cujo Markdown tem estrutura adaptativa e não contém rótulos editoriais obrigatórios.
+- Pedidos educacionais sobre segurança usam resposta editorial imediata com exemplos de baixo risco relativo, sem aguardar o LLM nem prescrever investimento.
+- O frontend não renderiza fontes do chat, mas `sources` e `retrieval` permanecem na API e no histórico para auditoria.
 
 - Backend roda na porta `8001`
 - O startup faz ingestao e aquecimento em background para nao bloquear a inicializacao

@@ -112,6 +112,9 @@ Dados transacionais e relacionais do produto:
   - sentimento
   - impacto
   - resumo curto
+  - eventos identificados
+  - embedding semantico de 384 dimensoes
+  - hash e modelo usados na vetorizacao
 
 ### Pode ir para Supabase Storage
 
@@ -121,6 +124,7 @@ Apenas se houver necessidade real de armazenar arquivos:
 - snapshots
 - relatorios gerados
 - pequenos artefatos de apoio ao produto
+- noticias brutas em bucket privado `news-raw`
 
 ### Nao deve ir para o Postgres do Supabase no MVP
 
@@ -208,11 +212,17 @@ O modulo de noticias deixou de depender apenas de feeds genericos. Hoje ele usa 
 ### Persistencia
 
 - `data/news/raw/archive.json`
-  - acervo principal
+  - acervo principal e fallback local
 - `data/news/raw/latest.json`
   - janela curta para consumo rapido
 - `data/news/raw/meta.json`
   - metadados de ingestao e backfill por fonte
+- Supabase Storage `news-raw`
+  - persistencia online privada dos brutos por `items/{ano}/{mes}/{id}.json`
+- Supabase Postgres `processed_news`
+  - titulo, resumo, metadados, eventos, scores e embedding
+  - indice HNSW para similaridade por cosseno
+  - RLS ativo e sem policy publica
 
 ### Resumo
 
@@ -228,7 +238,22 @@ Tambem limpa ruido de syndication, HTML e trechos como `The post ... appeared fi
 - `GET /api/news`
 - `page_size` padrao = `30`
 - resposta com `items`, `total`, `page`, `page_size`, `total_pages`
-- busca textual `q` e filtros executados no backend antes da paginacao
+- `q` usa busca hibrida por padrao
+- `search_mode=hybrid|keyword|semantic`
+- busca hibrida combina significado, texto, recencia, metadados e qualidade da fonte
+- filtros continuam executados no backend antes da paginacao
+- indisponibilidade do modelo ou banco ativa fallback textual
+
+### Vetorizacao semantica
+
+- Python + `sentence-transformers`
+- modelo `intfloat/multilingual-e5-small`
+- vetores normalizados de 384 dimensoes
+- documentos usam prefixo `passage:` e consultas usam `query:`
+- indexacao idempotente por hash em lotes de 32
+- ingestao agenda indexacao em background
+- `scripts/index_news_embeddings.py` executa backfill e reindexacao manual
+- a vetorizacao pesquisa apenas o acervo coletado; os conectores continuam responsaveis por buscar noticias na web
 
 ---
 
@@ -310,6 +335,7 @@ O `AssetAnalysisService` hoje considera:
 - relevancia
 - peso de confianca por tipo de fonte
 - peso de contexto macro
+- similaridade semantica com o ativo, setor, evento e horizonte
 
 Papéis de contexto:
 - `asset`
@@ -409,14 +435,36 @@ Esses metadados permitem:
 
 Ultimo estado conhecido apos as mudancas recentes:
 
-- `python -m pytest -q` passou com `50 passed`
+- `python -m pytest -q` passou com `67 passed`
 - `npm run build` passou
 - schema inicial do Supabase foi aplicado com sucesso no projeto configurado
 - `python scripts/verify_supabase_auth.py` validou cadastro, login, `/auth/me`, logout, limpeza do usuario temporario e RLS no Supabase
+- extensao `pgvector 0.8.2`, tabela `processed_news`, RLS e indice HNSW validados
+- `1.327` noticias processadas foram vetorizadas com `multilingual-e5-small`
+- `1.327` noticias brutas foram copiadas para o bucket privado `news-raw`
+- a segunda indexacao terminou com `0` itens reprocessados
 
 ---
 
 ## 12. Direcao de Produto
+
+### Agente financeiro com RAG editorial
+
+Estado implementado em 2026-08-06:
+
+- 60 FAQs em `docs/knowledge`, com metadados JSON, conteúdo Markdown e fontes institucionais.
+- Busca lexical local e busca semântica no Supabase com `multilingual-e5-small`.
+- Tabelas `knowledge_documents`, `knowledge_chunks`, `chat_conversations` e `chat_messages` com RLS.
+- Indexação idempotente por `scripts/index_knowledge_base.py`; segunda execução validada com zero reprocessamentos.
+- Perguntas conceituais não carregam notícias; consultas temporais usam até três notícias deduplicadas.
+- Respostas diretas usam conteúdo editorial sem consumir geração do Qwen.
+- Conversas persistentes permitem criar, reabrir, renomear e excluir histórico por usuário.
+- Frontend renderiza Markdown seguro sem expor blocos de fontes; os metadados permanecem persistidos para auditoria.
+- Classificação de intenção ocorre antes da recuperação, incluindo `orientacao` para pedidos de exemplos e comparação.
+- A busca rejeita FAQs de baixa similaridade e usa resposta direta somente para título ou alias exato.
+- O Qwen pode complementar conceitos estáveis com conhecimento geral, sem usar esse recurso para fatos atuais, tributação ou regulamentação não fornecidos.
+- Respostas usam Markdown natural sem seções fixas; exemplos aparecem somente quando agregam clareza.
+- Validação atual: `77 passed` no backend e build do frontend concluído.
 
 O produto hoje segue esta hierarquia para qualidade analitica:
 

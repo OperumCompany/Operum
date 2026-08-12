@@ -15,3 +15,6 @@ httpx==0.28.0
 pytest==8.3.4
 requests==2.32.3
 psycopg[binary]==3.2.9
+pgvector==0.5.0
+torch==2.5.1
+sentence-transformers==5.6.1

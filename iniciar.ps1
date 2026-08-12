@@ -1,3 +1,5 @@
+$ErrorActionPreference = "Stop"
+
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "   Operum - Inicializacao rapida" -ForegroundColor Cyan
 Write-Host "========================================" -ForegroundColor Cyan
@@ -5,63 +7,128 @@ Write-Host ""
 
 $projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $backendLog = Join-Path $projectDir "backend-start.log"
+$backendErrorLog = Join-Path $projectDir "backend-start.err.log"
 $frontendLog = Join-Path $projectDir "frontend-start.log"
+$frontendErrorLog = Join-Path $projectDir "frontend-start.err.log"
+$ollamaLog = Join-Path $projectDir "ollama-start.log"
+$ollamaErrorLog = Join-Path $projectDir "ollama-start.err.log"
 
-# Kill any existing process on port 8001 (or port 8000 legacy)
-$oldPid = netstat -ano | Select-String ":8001 " | ForEach-Object { ($_ -split '\s+')[-1] } | Where-Object { $_ -ne '0' } | Select-Object -First 1
-if (-not $oldPid) {
-    $oldPid = netstat -ano | Select-String ":8000 " | ForEach-Object { ($_ -split '\s+')[-1] } | Where-Object { $_ -ne '0' } | Select-Object -First 1
-}
-if ($oldPid) {
-    taskkill /F /PID $oldPid 2>$null
-    Write-Host "Porta liberada" -ForegroundColor Yellow
-    Start-Sleep -Seconds 3
+function Stop-PortProcess {
+    param([int]$Port)
+
+    $processIds = Get-NetTCPConnection -LocalPort $Port -State Listen -ErrorAction SilentlyContinue |
+        Select-Object -ExpandProperty OwningProcess -Unique
+
+    foreach ($processId in $processIds) {
+        if ($processId -and $processId -ne $PID) {
+            Stop-Process -Id $processId -Force -ErrorAction SilentlyContinue
+            Write-Host "  Porta $Port liberada (PID $processId)" -ForegroundColor Yellow
+        }
+    }
 }
 
-# Start backend in new window
+function Wait-HttpReady {
+    param(
+        [string]$Url,
+        [int]$MaxRetries = 30,
+        [int]$RetryDelaySeconds = 2
+    )
+
+    for ($attempt = 1; $attempt -le $MaxRetries; $attempt++) {
+        try {
+            $response = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 3
+            if ($response.StatusCode -eq 200) {
+                return $true
+            }
+        } catch {
+            if ($attempt -lt $MaxRetries) {
+                Write-Host "  Aguardando servico ($attempt/$MaxRetries)..." -ForegroundColor DarkYellow
+            }
+        }
+        Start-Sleep -Seconds $RetryDelaySeconds
+    }
+
+    return $false
+}
+
+Set-Location $projectDir
+Stop-PortProcess -Port 8001
+Stop-PortProcess -Port 8000
+Stop-PortProcess -Port 5173
+Start-Sleep -Seconds 1
+
+if (-not (Get-NetTCPConnection -LocalPort 11434 -State Listen -ErrorAction SilentlyContinue)) {
+    $ollamaCommand = Get-Command "ollama.exe" -ErrorAction SilentlyContinue
+    if ($ollamaCommand) {
+        Write-Host "[0/2] Iniciando Ollama local..." -ForegroundColor Green
+        Remove-Item $ollamaLog, $ollamaErrorLog -ErrorAction SilentlyContinue
+        Start-Process `
+            -FilePath $ollamaCommand.Source `
+            -ArgumentList "serve" `
+            -WorkingDirectory $projectDir `
+            -RedirectStandardOutput $ollamaLog `
+            -RedirectStandardError $ollamaErrorLog `
+            -WindowStyle Hidden | Out-Null
+        if (Wait-HttpReady -Url "http://127.0.0.1:11434/api/tags" -MaxRetries 10 -RetryDelaySeconds 1) {
+            Write-Host "  Ollama OK (porta 11434)" -ForegroundColor Green
+        } else {
+            Write-Host "  AVISO: Ollama indisponivel; o agente usara a base editorial." -ForegroundColor Yellow
+        }
+    } else {
+        Write-Host "[0/2] Ollama nao encontrado; o agente usara a base editorial." -ForegroundColor Yellow
+    }
+}
+
 Write-Host "[1/2] Iniciando backend (FastAPI)..." -ForegroundColor Green
-Remove-Item $backendLog -ErrorAction SilentlyContinue
-Start-Process -FilePath "cmd.exe" -WorkingDirectory $projectDir -ArgumentList "/k", "cd /d `"$projectDir`" && python -m uvicorn app.main:app --host 0.0.0.0 --port 8001 --log-level info 1>> `"$backendLog`" 2>&1"
+Remove-Item $backendLog, $backendErrorLog -ErrorAction SilentlyContinue
+$env:PYTHONUNBUFFERED = "1"
+$backendProcess = Start-Process `
+    -FilePath "python" `
+    -ArgumentList "-m", "uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8001", "--log-level", "info" `
+    -WorkingDirectory $projectDir `
+    -RedirectStandardOutput $backendLog `
+    -RedirectStandardError $backendErrorLog `
+    -WindowStyle Hidden `
+    -PassThru
 
-# Retry health check until backend is ready
-$maxRetries = 30
-$retryDelay = 2
-$backendOk = $false
-for ($i = 1; $i -le $maxRetries; $i++) {
-    Start-Sleep -Seconds $retryDelay
-    try {
-        $test = Invoke-WebRequest -Uri "http://localhost:8001/api/health" -UseBasicParsing -TimeoutSec 3
-        if ($test.StatusCode -eq 200) {
-            Write-Host "  Backend OK (porta 8001, tentativa $i)" -ForegroundColor Green
-            $backendOk = $true
-            break
-        }
-    } catch {
-        if ($i -lt $maxRetries) {
-            Write-Host "  Aguardando backend ($i/$maxRetries)..." -ForegroundColor DarkYellow
-        }
-    }
-}
-if (-not $backendOk) {
-    Write-Host "  ERRO: Backend nao iniciou apos $($maxRetries * $retryDelay)s" -ForegroundColor Red
-    if (Test-Path $backendLog) {
-        Write-Host "  Ultimas linhas do backend:" -ForegroundColor Yellow
-        Get-Content $backendLog -Tail 20
-    }
+if (-not (Wait-HttpReady -Url "http://127.0.0.1:8001/api/health")) {
+    Write-Host "  ERRO: Backend nao iniciou. Consulte os logs abaixo." -ForegroundColor Red
+    if (Test-Path $backendLog) { Get-Content $backendLog -Tail 30 }
+    if (Test-Path $backendErrorLog) { Get-Content $backendErrorLog -Tail 30 }
     exit 1
 }
+Write-Host "  Backend OK (porta 8001, PID $($backendProcess.Id))" -ForegroundColor Green
 
-# Start frontend
 Write-Host "[2/2] Iniciando frontend (Vite)..." -ForegroundColor Green
-Remove-Item $frontendLog -ErrorAction SilentlyContinue
-Start-Process -FilePath "cmd.exe" -WorkingDirectory $projectDir -ArgumentList "/k", "cd /d `"$projectDir`" && npm run dev 1>> `"$frontendLog`" 2>&1"
+Remove-Item $frontendLog, $frontendErrorLog -ErrorAction SilentlyContinue
+$frontendProcess = Start-Process `
+    -FilePath "npm.cmd" `
+    -ArgumentList "run", "dev", "--", "--host", "127.0.0.1" `
+    -WorkingDirectory $projectDir `
+    -RedirectStandardOutput $frontendLog `
+    -RedirectStandardError $frontendErrorLog `
+    -WindowStyle Hidden `
+    -PassThru
 
-Start-Sleep -Seconds 3
+if (-not (Wait-HttpReady -Url "http://127.0.0.1:5173/api/health" -MaxRetries 20 -RetryDelaySeconds 1)) {
+    Write-Host "  ERRO: Frontend nao iniciou ou nao alcancou o backend." -ForegroundColor Red
+    if (Test-Path $frontendLog) { Get-Content $frontendLog -Tail 30 }
+    if (Test-Path $frontendErrorLog) { Get-Content $frontendErrorLog -Tail 30 }
+    Stop-Process -Id $backendProcess.Id -Force -ErrorAction SilentlyContinue
+    exit 1
+}
+Write-Host "  Frontend OK (porta 5173, PID $($frontendProcess.Id))" -ForegroundColor Green
+
 Write-Host ""
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host "   Frontend: http://localhost:5173" -ForegroundColor White
 Write-Host "   Backend:  http://localhost:8001" -ForegroundColor White
 Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
-Write-Host "Para parar, feche as janelas ou use:" -ForegroundColor Gray
-Write-Host "  taskkill /F /PID (PID do python)" -ForegroundColor Gray
+Write-Host "Logs:" -ForegroundColor Gray
+Write-Host "  $backendLog" -ForegroundColor Gray
+Write-Host "  $backendErrorLog" -ForegroundColor Gray
+Write-Host "  $frontendLog" -ForegroundColor Gray
+Write-Host "  $frontendErrorLog" -ForegroundColor Gray
+Write-Host "  $ollamaLog" -ForegroundColor Gray
+Write-Host "  $ollamaErrorLog" -ForegroundColor Gray

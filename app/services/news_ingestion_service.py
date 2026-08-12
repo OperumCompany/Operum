@@ -13,8 +13,9 @@ import requests
 import yfinance as yf
 
 from app.schemas.news import NewsItem
-from app.services.local_storage_service import LocalStorageService
+from app.services.news_raw_storage_service import NewsRawStorageService
 from app.services.news_scoring_service import NewsScoringService
+from app.services.news_semantic_service import schedule_news_indexing
 from app.services.news_summary_service import NewsSummaryService
 
 logger = logging.getLogger(__name__)
@@ -241,7 +242,7 @@ COUNTRY_KEYWORDS: dict[str, list[str]] = {
 
 class NewsIngestionService:
     def __init__(self):
-        self.storage = LocalStorageService()
+        self.storage = NewsRawStorageService()
         self.scoring = NewsScoringService()
         self.summarizer = NewsSummaryService()
         self._raw_dir = "news/raw"
@@ -433,14 +434,19 @@ class NewsIngestionService:
         existing = [NewsItem(**item) for item in self._load_archive()]
         existing_ids = {item.id for item in existing}
         new_count = 0
+        new_items: list[NewsItem] = []
         for news in normalized:
             if news.id in existing_ids:
                 continue
             existing_ids.add(news.id)
             existing.append(news)
+            new_items.append(news)
             new_count += 1
         existing = self._deduplicate(existing)
+        for news in new_items:
+            self.storage.save_item(news)
         self._save_news_collection(existing)
+        schedule_news_indexing(existing)
         return new_count
 
     def _request_text(self, url: str) -> str:

@@ -73,13 +73,63 @@ class LLMService:
                 response = client.post(f"{self.base_url}/chat/completions", headers=headers, json=payload)
                 response.raise_for_status()
                 data = response.json()
-                return (
-                    data.get("choices", [{}])[0]
-                    .get("message", {})
-                    .get("content")
-                )
+                return data.get("choices", [{}])[0].get("message", {}).get("content")
         except Exception as exc:
             logger.warning("Falha na chamada ao provedor de IA local: %s", exc)
+            return None
+
+    def chat_answer(
+        self,
+        system_prompt: str,
+        user_prompt: str,
+        temperature: float = 0.1,
+        max_tokens: int = 700,
+    ) -> str | None:
+        """Return a user-facing answer without exposing Qwen's reasoning stream."""
+        if not self.enabled:
+            return None
+        if self.provider != "ollama":
+            return self.chat_completion(system_prompt, user_prompt, temperature, max_tokens)
+        schema = {
+            "type": "object",
+            "properties": {
+                "answer": {
+                    "type": "string",
+                    "description": "Resposta final em Markdown natural, direta e adaptada à pergunta.",
+                },
+            },
+            "required": ["answer"],
+            "additionalProperties": False,
+        }
+        payload = {
+            "model": self.model,
+            "messages": [
+                {
+                    "role": "system",
+                    "content": (
+                        f"{system_prompt.rstrip()}\n"
+                        "Preencha answer com a resposta final em português brasileiro. Comece respondendo diretamente "
+                        "à pergunta e use Markdown somente quando melhorar a leitura. Não imponha seções fixas, não copie "
+                        "a pergunta e não exponha raciocínio ou descrições do schema."
+                    ),
+                },
+                {"role": "user", "content": user_prompt},
+            ],
+            "format": schema,
+            "stream": False,
+            "think": False,
+            "options": {"temperature": temperature, "num_predict": max_tokens},
+        }
+        try:
+            with httpx.Client(timeout=self.timeout_seconds) as client:
+                response = client.post(f"{self.base_url.removesuffix('/v1')}/api/chat", json=payload)
+                response.raise_for_status()
+                content = response.json().get("message", {}).get("content", "")
+                parsed = json.loads(content)
+                answer = str(parsed.get("answer", "")).strip()
+                return answer if answer and self._is_user_facing_answer(answer) else None
+        except Exception as exc:
+            logger.warning("Falha na resposta estruturada do Ollama: %s", exc)
             return None
 
     def _ollama_chat_completion(
@@ -343,7 +393,5 @@ class LLMService:
         )
         lowered = candidate.lower()
         if lowered.startswith(blocked_prefixes):
-            return False
-        if candidate.count("\n") >= 2:
             return False
         return True
