@@ -1,5 +1,5 @@
 import { FormEvent, useEffect, useRef, useState } from 'react';
-import { BookOpenText, MessageSquarePlus, Pencil, Send, Trash2 } from 'lucide-react';
+import { BookOpenText, History, MessageSquarePlus, Pencil, Send, Trash2, X } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 import { Button, Input } from '../components/UI';
 import { useAuth } from '../context/AuthContext';
@@ -30,6 +30,7 @@ export function ChatPage() {
   const [loading, setLoading] = useState(true);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
+  const [mobileHistoryOpen, setMobileHistoryOpen] = useState(false);
   const messageEndRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -148,7 +149,10 @@ export function ChatPage() {
 
   return (
     <div className="grid min-h-[calc(100vh-9rem)] gap-4 lg:grid-cols-[280px_minmax(0,1fr)]">
-      <aside className="flex max-h-[calc(100vh-9rem)] flex-col rounded-[28px] border border-[var(--border-soft)] bg-[var(--bg-surface)] p-3 shadow-[var(--shadow-card)]">
+      <button type="button" className="flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--border-soft)] bg-[var(--bg-surface)] text-sm font-semibold lg:hidden" onClick={() => setMobileHistoryOpen((current) => !current)}>
+        {mobileHistoryOpen ? <X size={17} /> : <History size={17} />}{mobileHistoryOpen ? 'Fechar histórico' : 'Ver conversas'}
+      </button>
+      <aside className={`${mobileHistoryOpen ? 'flex' : 'hidden'} max-h-[55vh] flex-col rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)] p-3 shadow-[var(--shadow-card)] lg:flex lg:max-h-[calc(100vh-9rem)]`}>
         <Button onClick={() => void createConversation()} className="w-full">
           <MessageSquarePlus size={17} /> Novo chat
         </Button>
@@ -158,7 +162,7 @@ export function ChatPage() {
           {!loading && conversations.length === 0 && <p className="px-2 py-4 text-sm leading-5 text-[var(--text-muted)]">Nenhuma conversa ainda. Comece uma pergunta para criar seu primeiro chat.</p>}
           {conversations.map((conversation) => (
             <div key={conversation.id} className={`group rounded-2xl border p-2 transition ${activeId === conversation.id ? 'border-[var(--brand)] bg-[var(--accent-soft)]' : 'border-transparent hover:bg-[var(--bg-surface-strong)]'}`}>
-              <button onClick={() => setActiveId(conversation.id)} className="w-full px-1 text-left">
+              <button onClick={() => { setActiveId(conversation.id); setMobileHistoryOpen(false); }} className="w-full px-1 text-left">
                 <p className="truncate text-sm font-semibold text-[var(--text-main)]">{conversation.title}</p>
                 <p className="mt-1 text-[10px] text-[var(--text-muted)]">{conversation.message_count} mensagens</p>
               </button>
@@ -171,7 +175,7 @@ export function ChatPage() {
         </div>
       </aside>
 
-      <section className="flex min-h-[70vh] flex-col overflow-hidden rounded-[30px] border border-[var(--border-soft)] bg-[linear-gradient(145deg,rgba(255,255,255,0.98),rgba(239,246,255,0.82))] shadow-[var(--shadow-card)]">
+      <section className="flex min-h-[70vh] flex-col overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)] shadow-[var(--shadow-card)]">
         <header className="border-b border-[var(--border-soft)] px-5 py-4 sm:px-7">
           <div className="flex items-center gap-3">
             <span className="rounded-2xl bg-[var(--accent-soft)] p-2.5"><BookOpenText size={20} /></span>

@@ -10,7 +10,7 @@ import {
 import { areaSeries, lineSeries, pieSeries, radarSeries } from '../data/mocks';
 import { getActivePortfolioSelectionLabel, mapAssetClassToLabel } from '../utils/portfolios';
 
-const colors = ['#3D4D9C', '#C7559B', '#E15EF2', '#717171', '#A5A5A5'];
+const colors = ['#684CF2', '#DF50F2', '#941289', '#A896FF', '#B133A3'];
 
 function chartInfo(text: string) {
   return (
@@ -122,7 +122,7 @@ export function DashboardTechnicalPage() {
                 <XAxis dataKey="month" />
                 <YAxis />
                 <Tooltip />
-                <Line type="monotone" dataKey="value" stroke="#3D4D9C" strokeWidth={3} />
+                <Line type="monotone" dataKey="value" stroke="#684CF2" strokeWidth={3} />
               </LineChart>
             </ResponsiveContainer>
           </div>
@@ -136,7 +136,7 @@ export function DashboardTechnicalPage() {
                 <XAxis dataKey="name" />
                 <YAxis />
                 <Tooltip />
-                <Bar dataKey="value" fill="#C7559B" radius={[6, 6, 0, 0]} />
+                <Bar dataKey="value" fill="#DF50F2" radius={[6, 6, 0, 0]} />
               </BarChart>
             </ResponsiveContainer>
           </div>
@@ -166,7 +166,7 @@ export function DashboardTechnicalPage() {
                 <XAxis dataKey="week" />
                 <YAxis />
                 <Tooltip />
-                <Area type="monotone" dataKey="gain" stroke="#E15EF2" fill="#E15EF2" fillOpacity={0.25} />
+                <Area type="monotone" dataKey="gain" stroke="#DF50F2" fill="#DF50F2" fillOpacity={0.25} />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -179,8 +179,8 @@ export function DashboardTechnicalPage() {
             <RadarChart data={radarData}>
               <PolarGrid />
               <PolarAngleAxis dataKey="axis" />
-              <Radar dataKey="carteira" fill="#3D4D9C" fillOpacity={0.4} stroke="#3D4D9C" />
-              <Radar dataKey="benchmark" fill="#C7559B" fillOpacity={0.22} stroke="#C7559B" />
+              <Radar dataKey="carteira" fill="#684CF2" fillOpacity={0.4} stroke="#684CF2" />
+              <Radar dataKey="benchmark" fill="#DF50F2" fillOpacity={0.22} stroke="#DF50F2" />
               <Legend />
             </RadarChart>
           </ResponsiveContainer>

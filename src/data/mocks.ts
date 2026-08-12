@@ -8,11 +8,11 @@ export const defaultUser: User = {
 };
 
 export const assetsCatalog: Asset[] = [
-  { ticker: 'PETR4', name: 'Petrobras PN', asset_class: 'BR_STOCK', country: 'BR', currency: 'BRL', sector: 'PetrÃ³leo e GÃ¡s', sub_type: 'PN', source: 'mock' },
-  { ticker: 'VALE3', name: 'Vale ON', asset_class: 'BR_STOCK', country: 'BR', currency: 'BRL', sector: 'MineraÃ§Ã£o', sub_type: 'ON', source: 'mock' },
+  { ticker: 'PETR4', name: 'Petrobras PN', asset_class: 'BR_STOCK', country: 'BR', currency: 'BRL', sector: 'Petróleo e Gás', sub_type: 'PN', source: 'mock' },
+  { ticker: 'VALE3', name: 'Vale ON', asset_class: 'BR_STOCK', country: 'BR', currency: 'BRL', sector: 'Mineração', sub_type: 'ON', source: 'mock' },
   { ticker: 'AAPL34', name: 'Apple BDR', asset_class: 'US_STOCK', country: 'US', currency: 'USD', sector: 'Tecnologia', sub_type: 'BDR', source: 'mock' },
-  { ticker: 'IVVB11', name: 'ETF S&P 500', asset_class: 'US_STOCK', country: 'US', currency: 'USD', sector: 'Ãndice', sub_type: 'ETF BDR', source: 'mock' },
-  { ticker: 'HGLG11', name: 'FII LogÃ­stico', asset_class: 'FII', country: 'BR', currency: 'BRL', sector: 'LogÃ­stica', sub_type: 'FII', source: 'mock' },
+  { ticker: 'IVVB11', name: 'ETF S&P 500', asset_class: 'US_STOCK', country: 'US', currency: 'USD', sector: 'Índice', sub_type: 'ETF BDR', source: 'mock' },
+  { ticker: 'HGLG11', name: 'FII Logístico', asset_class: 'FII', country: 'BR', currency: 'BRL', sector: 'Logística', sub_type: 'FII', source: 'mock' },
   { ticker: 'BTC', name: 'Bitcoin', asset_class: 'CRYPTO', country: 'global', currency: 'USD', sector: 'Criptomoedas', sub_type: 'Criptomoeda', source: 'mock' },
 ];
 
@@ -28,7 +28,7 @@ export const initialPortfolios: Portfolio[] = [
     positions: [
       { asset_id: 'PETR4', ticker: 'PETR4', asset_class: 'BR_STOCK', quantity: 15, avg_price: 31.20, currency: 'BRL', manual_notes: '' },
       { asset_id: 'IVVB11', ticker: 'IVVB11', asset_class: 'US_STOCK', quantity: 20, avg_price: 180.50, currency: 'BRL', manual_notes: '' },
-      { asset_id: 'HGLG11', ticker: 'HGLG11', asset_class: 'FII', quantity: 20, avg_price: 165.00, currency: 'BRL', manual_notes: 'FII de logÃ­stica' },
+      { asset_id: 'HGLG11', ticker: 'HGLG11', asset_class: 'FII', quantity: 20, avg_price: 165.00, currency: 'BRL', manual_notes: 'FII de logística' },
       { asset_id: 'BTC', ticker: 'BTC', asset_class: 'CRYPTO', quantity: 0.5, avg_price: 250000, currency: 'USD', manual_notes: '' },
     ],
     settings: { risk_profile: 'moderado', forecast_horizon_days: 5 },
@@ -39,42 +39,42 @@ export const newsData: NewsItem[] = [
   {
     id: 'n1',
     title: 'IPCA desacelera no fechamento do trimestre',
-    subtitle: 'Leitura de inflaÃ§Ã£o veio ligeiramente abaixo do consenso',
-    content_preview: 'Leitura de inflaÃ§Ã£o veio ligeiramente abaixo do consenso e alivia pressÃ£o de curto prazo.',
+    subtitle: 'Leitura de inflação veio ligeiramente abaixo do consenso',
+    content_preview: 'Leitura de inflação veio ligeiramente abaixo do consenso e alivia pressão de curto prazo.',
     full_text_if_available: null,
     source_name: 'Boletim Macro BR',
     source_url: 'https://exemplo.com/ipca',
     published_at: '2026-04-05T10:00:00Z',
     language: 'pt',
-    tags: ['inflaÃ§Ã£o', 'ipca', 'economia'],
+    tags: ['inflação', 'ipca', 'economia'],
     mentioned_assets: [],
     mentioned_countries: ['BR'],
     mentioned_sectors: ['Economia'],
     sentiment_score: 0.3,
     relevance_score: 0.85,
     impact_score: 0.6,
-    summary: 'IPCA desacelera e alivia pressÃ£o de curto prazo sobre juros.',
+    summary: 'IPCA desacelera e alivia pressão de curto prazo sobre juros.',
     cluster_id: null,
     created_at: now,
   },
   {
     id: 'n2',
-    title: 'Banco Central reforÃ§a comunicaÃ§Ã£o sobre juros estÃ¡veis',
+    title: 'Banco Central reforça comunicação sobre juros estáveis',
     subtitle: 'Ata sinaliza cautela',
-    content_preview: 'Ata sinaliza cautela e foco na convergÃªncia inflacionÃ¡ria.',
+    content_preview: 'Ata sinaliza cautela e foco na convergência inflacionária.',
     full_text_if_available: null,
-    source_name: 'Painel MonetÃ¡rio',
+    source_name: 'Painel Monetário',
     source_url: 'https://exemplo.com/bc',
     published_at: '2026-04-05T08:00:00Z',
     language: 'pt',
-    tags: ['juros', 'bc', 'polÃ­tica monetÃ¡ria'],
+    tags: ['juros', 'bc', 'política monetária'],
     mentioned_assets: [],
     mentioned_countries: ['BR'],
     mentioned_sectors: ['Economia'],
     sentiment_score: -0.1,
     relevance_score: 0.9,
     impact_score: 0.8,
-    summary: 'BC reforÃ§a cautela com juros estÃ¡veis.',
+    summary: 'BC reforça cautela com juros estáveis.',
     cluster_id: null,
     created_at: now,
   },
@@ -124,7 +124,7 @@ export const newsData: NewsItem[] = [
     id: 'n5',
     title: 'Ibovespa fecha em alta puxado por commodities',
     subtitle: null,
-    content_preview: 'AÃ§Ãµes de mineraÃ§Ã£o e energia sustentam ganho da sessÃ£o.',
+    content_preview: 'Ações de mineração e energia sustentam ganho da sessão.',
     full_text_if_available: null,
     source_name: 'Mercado Agora',
     source_url: 'https://exemplo.com/ibovespa',
@@ -133,7 +133,7 @@ export const newsData: NewsItem[] = [
     tags: ['ibovespa', 'commodities', 'bolsa'],
     mentioned_assets: ['VALE3', 'PETR4'],
     mentioned_countries: ['BR'],
-    mentioned_sectors: ['MineraÃ§Ã£o', 'PetrÃ³leo e GÃ¡s'],
+    mentioned_sectors: ['Mineração', 'Petróleo e Gás'],
     sentiment_score: 0.5,
     relevance_score: 0.8,
     impact_score: 0.6,
@@ -145,7 +145,7 @@ export const newsData: NewsItem[] = [
     id: 'n6',
     title: 'Bolsas globais monitoram dados de emprego nos EUA',
     subtitle: null,
-    content_preview: 'Indicadores de trabalho influenciam expectativa de polÃ­tica monetÃ¡ria.',
+    content_preview: 'Indicadores de trabalho influenciam expectativa de política monetária.',
     full_text_if_available: null,
     source_name: 'Global Desk',
     source_url: 'https://exemplo.com/empregos',
@@ -164,7 +164,7 @@ export const newsData: NewsItem[] = [
   },
   {
     id: 'n7',
-    title: 'DiscussÃ£o fiscal volta ao radar do mercado',
+    title: 'Discussão fiscal volta ao radar do mercado',
     subtitle: null,
     content_preview: 'Propostas de ajuste fiscal geram leituras mistas.',
     full_text_if_available: null,
@@ -179,7 +179,7 @@ export const newsData: NewsItem[] = [
     sentiment_score: -0.2,
     relevance_score: 0.8,
     impact_score: 0.7,
-    summary: 'DiscussÃ£o fiscal volta ao radar.',
+    summary: 'Discussão fiscal volta ao radar.',
     cluster_id: null,
     created_at: now,
   },
@@ -210,17 +210,17 @@ export const initialChat: ChatMessage[] = [
   {
     id: 'c1',
     role: 'assistant',
-    content: 'OlÃ¡. Sou o Operum e posso explicar seus investimentos com uma linguagem simples e direta.',
+    content: 'Olá. Sou o Operum e posso explicar seus investimentos com uma linguagem simples e direta.',
     created_at: '2026-01-01T09:00:00-03:00',
   },
 ];
 
 export const metrics: DashboardMetric[] = [
-  { label: 'Carteiras criadas', value: '4', variation: '+1 mÃªs' },
+  { label: 'Carteiras criadas', value: '4', variation: '+1 mês' },
   { label: 'Ativos monitorados', value: '28', variation: '+6%' },
-  { label: 'NotÃ­cias relevantes', value: '12', variation: 'Hoje' },
-  { label: 'SimulaÃ§Ãµes', value: '47', variation: '+12%' },
-  { label: 'VariaÃ§Ã£o simulada', value: '+3,4%', variation: '30 dias' },
+  { label: 'Notícias relevantes', value: '12', variation: 'Hoje' },
+  { label: 'Simulações', value: '47', variation: '+12%' },
+  { label: 'Variação simulada', value: '+3,4%', variation: '30 dias' },
   { label: 'Tema em alta', value: 'Juros', variation: 'Sentimento neutro' },
 ];
 
@@ -241,8 +241,8 @@ export const lineSeries = [
 
 export const barSeries = [
   { name: 'FIIs', value: 32 },
-  { name: 'AÃ§Ãµes BR', value: 22 },
-  { name: 'AÃ§Ãµes EUA', value: 18 },
+  { name: 'Ações BR', value: 22 },
+  { name: 'Ações EUA', value: 18 },
   { name: 'Fundos', value: 15 },
   { name: 'Cripto', value: 13 },
 ];
@@ -250,7 +250,7 @@ export const barSeries = [
 export const pieSeries = [
   { name: 'FIIs', value: 25 },
   { name: 'ETFs', value: 25 },
-  { name: 'AÃ§Ãµes', value: 20 },
+  { name: 'Ações', value: 20 },
   { name: 'Fundos', value: 15 },
   { name: 'Cripto', value: 15 },
 ];
@@ -266,16 +266,16 @@ export const areaSeries = [
 export const radarSeries = [
   { axis: 'Risco', carteira: 65, benchmark: 55 },
   { axis: 'Liquidez', carteira: 72, benchmark: 68 },
-  { axis: 'DiversificaÃ§Ã£o', carteira: 80, benchmark: 60 },
+  { axis: 'Diversificação', carteira: 80, benchmark: 60 },
   { axis: 'Volatilidade', carteira: 58, benchmark: 70 },
-  { axis: 'ExposiÃ§Ã£o', carteira: 74, benchmark: 66 },
+  { axis: 'Exposição', carteira: 74, benchmark: 66 },
 ];
 
 export const scenarioReturns = {
   conservador: 1.2,
   moderado: 2.8,
   agressivo: 4.9,
-  'inflaÃ§Ã£o alta': -0.7,
+  'inflação alta': -0.7,
   'juros em queda': 3.4,
 };
 

@@ -582,7 +582,7 @@ export function PortfolioDetailsPage() {
     return (
       <Card title="Carteira não encontrada">
         <p className="text-sm text-[var(--text-muted)]">A carteira solicitada não existe ou foi removida.</p>
-        <Button type="button" className="mt-4" onClick={() => navigate('/carteiras')}>
+        <Button type="button" className="mt-4" onClick={() => navigate('/app/carteiras')}>
           Voltar para carteiras
         </Button>
       </Card>
@@ -613,9 +613,9 @@ export function PortfolioDetailsPage() {
             <h2 className="mt-2 text-3xl font-bold">{cleanText(getPortfolioLabel(portfolio))}</h2>
           )}
           <p className="hidden">
-            {portfolio.positions.length} ativo(s) â€¢ Moeda base: {portfolio.base_currency}
-            {prices?.total_value != null && ` â€¢ Valor total: ${fmtMoney(prices.total_value)}`}
-            {prices?.total_unrealized_pnl != null && ` â€¢ P&L nao realizado: ${fmtMoney(prices.total_unrealized_pnl)}`}
+            {portfolio.positions.length} ativo(s) • Moeda base: {portfolio.base_currency}
+            {prices?.total_value != null && ` • Valor total: ${fmtMoney(prices.total_value)}`}
+            {prices?.total_unrealized_pnl != null && ` • P&L não realizado: ${fmtMoney(prices.total_unrealized_pnl)}`}
           </p>
           <p className="hidden">
             {[
@@ -645,7 +645,7 @@ export function PortfolioDetailsPage() {
               Definir como ativa
             </Button>
           )}
-          <Link to="/carteiras" className="rounded-2xl border border-[var(--border-soft)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--text-main)]">
+          <Link to="/app/carteiras" className="rounded-2xl border border-[var(--border-soft)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--text-main)]">
             Voltar
           </Link>
         </div>
@@ -936,12 +936,12 @@ export function PortfolioDetailsPage() {
                                           <ComposedChart data={chartData} margin={{ top: 18, right: 16, left: 8, bottom: 12 }}>
                                             <defs>
                                               <linearGradient id={`historyFill-${pos.ticker}`} x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="0%" stopColor="#3D4D9C" stopOpacity={0.22} />
-                                                <stop offset="100%" stopColor="#3D4D9C" stopOpacity={0.02} />
+                                                <stop offset="0%" stopColor="#684CF2" stopOpacity={0.22} />
+                                                <stop offset="100%" stopColor="#684CF2" stopOpacity={0.02} />
                                               </linearGradient>
                                               <linearGradient id={`outlookFill-${pos.ticker}`} x1="0" y1="0" x2="0" y2="1">
-                                                <stop offset="0%" stopColor="#C7559B" stopOpacity={0.22} />
-                                                <stop offset="100%" stopColor="#C7559B" stopOpacity={0.02} />
+                                                <stop offset="0%" stopColor="#DF50F2" stopOpacity={0.22} />
+                                                <stop offset="100%" stopColor="#DF50F2" stopOpacity={0.02} />
                                               </linearGradient>
                                             </defs>
                                             <CartesianGrid vertical={false} stroke="rgba(113,113,113,0.16)" />
@@ -961,12 +961,12 @@ export function PortfolioDetailsPage() {
                                             <Legend wrapperStyle={{ paddingTop: 8 }} />
                                             <Area type="monotone" dataKey="areaHistorico" stroke="none" fill={`url(#historyFill-${pos.ticker})`} isAnimationActive={false} connectNulls legendType="none" />
                                             <Area type="monotone" dataKey="areaPerspectiva" stroke="none" fill={`url(#outlookFill-${pos.ticker})`} isAnimationActive={false} connectNulls legendType="none" />
-                                            <Line type="monotone" dataKey="historico" name="Histórico" stroke="#3D4D9C" strokeWidth={3} dot={false} connectNulls isAnimationActive={false} />
-                                            <Line type="monotone" dataKey="perspectiva" name="Perspectiva estimada" stroke="#C7559B" strokeWidth={3} dot={false} connectNulls isAnimationActive={false} />
+                                            <Line type="monotone" dataKey="historico" name="Histórico" stroke="#684CF2" strokeWidth={3} dot={false} connectNulls isAnimationActive={false} />
+                                            <Line type="monotone" dataKey="perspectiva" name="Perspectiva estimada" stroke="#DF50F2" strokeWidth={3} dot={false} connectNulls isAnimationActive={false} />
                                             {chartData.some((point) => point.isToday) && (
                                               <>
                                                 <ReferenceLine x={chartData.find((point) => point.isToday)?.label} stroke="rgba(199,85,155,0.55)" strokeDasharray="4 6" />
-                                                <ReferenceDot x={chartData.find((point) => point.isToday)?.label} y={chartData.find((point) => point.isToday)?.precoAtual ?? undefined} r={6} fill="#C7559B" stroke="#ffffff" strokeWidth={3} />
+                                                <ReferenceDot x={chartData.find((point) => point.isToday)?.label} y={chartData.find((point) => point.isToday)?.precoAtual ?? undefined} r={6} fill="#DF50F2" stroke="#ffffff" strokeWidth={3} />
                                               </>
                                             )}
                                           </ComposedChart>
@@ -1015,8 +1015,8 @@ export function PortfolioDetailsPage() {
                                                     <p className="text-sm font-semibold text-[var(--text-main)]">{cleanText(item.title)}</p>
                                                     <p className="hidden">
                                                       {new Date(item.published_at).toLocaleDateString('pt-BR')}
-                                                      {item.role ? ` â€¢ ${item.role}` : ''}
-                                                      {item.analysis_category ? ` â€¢ ${item.analysis_category}` : ''}
+                                                      {item.role ? ` • ${item.role}` : ''}
+                                                      {item.analysis_category ? ` • ${item.analysis_category}` : ''}
                                                     </p>
                                                     <p className="mt-1 text-xs text-[var(--text-muted)]">
                                                       {[

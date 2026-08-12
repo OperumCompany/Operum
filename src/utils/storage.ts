@@ -4,6 +4,7 @@ export const storageKeys = {
   activePortfolio: 'operum_active_portfolio',
   chat: 'operum_chat',
   preferences: 'operum_preferences',
+  theme: 'operum_theme',
 };
 
 export function readStorage<T>(key: string, fallback: T): T {

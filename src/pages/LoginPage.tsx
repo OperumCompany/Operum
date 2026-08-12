@@ -2,6 +2,8 @@ import { FormEvent, useState } from 'react';
 import { Compass, ShieldCheck } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Input } from '../components/UI';
+import { Brand } from '../components/Brand';
+import { ThemeToggle } from '../components/ThemeToggle';
 import { useAuth } from '../context/AuthContext';
 
 export function LoginPage() {
@@ -15,13 +17,15 @@ export function LoginPage() {
     e.preventDefault();
     const res = await login(email, password);
     setMessage({ ok: res.ok, text: res.message });
-    if (res.ok) navigate('/');
+    if (res.ok) navigate('/app');
   }
 
   return (
-    <div className="min-h-screen bg-[var(--bg-app)] px-4 py-8">
+    <div className="relative min-h-screen bg-[var(--bg-app)] px-5 py-5 sm:px-8 sm:py-8">
+      <div className="mx-auto mb-5 flex max-w-6xl items-center justify-between"><Brand /><ThemeToggle /></div>
       <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-6xl gap-6 lg:grid-cols-[1.05fr_0.95fr]">
-        <section className="rounded-[36px] bg-[#252525] p-8 text-white shadow-[var(--shadow-card)] sm:p-10">
+        <section className="relative overflow-hidden rounded-3xl bg-[#0d0d0d] p-7 text-white shadow-[var(--shadow-card)] sm:p-10">
+          <div className="pointer-events-none absolute -right-24 -top-24 h-80 w-80 rounded-full bg-[var(--ai-gradient)] opacity-30 blur-3xl" />
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-semibold">
               <Compass size={16} />
@@ -52,7 +56,7 @@ export function LoginPage() {
         </section>
 
         <section className="flex items-center">
-          <form onSubmit={handleSubmit} className="w-full rounded-[36px] border border-[var(--border-soft)] bg-[var(--bg-surface)] p-8 shadow-[var(--shadow-card)] sm:p-10">
+          <form onSubmit={handleSubmit} className="surface-card w-full rounded-3xl p-7 sm:p-10">
             <div className="inline-flex items-center gap-2 rounded-full bg-[var(--accent-soft)] px-4 py-2 text-sm font-semibold text-[var(--text-main)]">
               <ShieldCheck size={16} />
               Acesso seguro
@@ -90,6 +94,7 @@ export function LoginPage() {
                 Criar conta
               </Link>
             </p>
+            <Link to="/" className="mt-4 inline-block text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--text-main)]">Voltar para o início</Link>
           </form>
         </section>
       </div>

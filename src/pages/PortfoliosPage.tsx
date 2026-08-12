@@ -6,7 +6,7 @@ import { Button, Card, Input } from '../components/UI';
 import { usePortfolios } from '../context/PortfoliosContext';
 import { getActivePortfolioSelectionLabel, getPortfolioLabel } from '../utils/portfolios';
 
-const chartColors = ['#3D4D9C', '#C7559B', '#E15EF2', '#717171', '#A5A5A5'];
+const chartColors = ['#684CF2', '#DF50F2', '#941289', '#A896FF', '#B133A3'];
 const PAGE_SIZE = 10;
 const MAX_PAGES = 5;
 const MAX_PORTFOLIOS = PAGE_SIZE * MAX_PAGES;
@@ -287,7 +287,7 @@ export function PortfoliosPage() {
                             type="button"
                             onClick={(e) => {
                               e.stopPropagation();
-                              navigate(`/carteiras/${portfolio.id}`);
+                              navigate(`/app/carteiras/${portfolio.id}`);
                             }}
                           >
                             Abrir carteira
@@ -379,7 +379,7 @@ export function PortfoliosPage() {
             <Button
               type="button"
               className="mt-3 w-full"
-              onClick={() => navigate(activePortfolio && !isAllPortfoliosSelected ? `/carteiras/${activePortfolio.id}` : '/carteiras')}
+              onClick={() => navigate(activePortfolio && !isAllPortfoliosSelected ? `/app/carteiras/${activePortfolio.id}` : '/app/carteiras')}
             >
               {isAllPortfoliosSelected ? 'Abrir lista de carteiras' : 'Adicionar ativos nessa carteira'}
             </Button>

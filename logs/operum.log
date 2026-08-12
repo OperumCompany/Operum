@@ -1973,3 +1973,15 @@
 2026-08-07 19:25:45 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
 2026-08-07 19:25:55 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
 2026-08-07 19:25:55 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-12 19:14:27 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-12 19:14:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)

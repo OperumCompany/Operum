@@ -10,7 +10,7 @@ import { NewsItem } from '../types';
 import api from '../utils/api';
 import { getActivePortfolioSelectionLabel, getPortfolioLabel, mapAssetClassToLabel } from '../utils/portfolios';
 
-const colors = ['#3D4D9C', '#C7559B', '#E15EF2', '#717171', '#A5A5A5'];
+const colors = ['#684CF2', '#DF50F2', '#941289', '#A896FF', '#B133A3'];
 
 export function DashboardPage() {
   const { activePortfolio, selectedPortfolios, isAllPortfoliosSelected } = usePortfolios();
@@ -47,19 +47,19 @@ export function DashboardPage() {
       title: 'Crie ou importe uma carteira',
       description: 'Comece com uma carteira manual para explorar a plataforma.',
       action: 'Abrir carteiras',
-      to: '/carteiras',
+      to: '/app/carteiras',
     },
     {
       title: 'Adicione seus ativos principais',
       description: 'Inclua os investimentos que mais pesam para receber explicações úteis.',
       action: 'Editar carteira',
-      to: activePortfolio && !isAllPortfoliosSelected ? `/carteiras/${activePortfolio.id}` : '/carteiras',
+      to: activePortfolio && !isAllPortfoliosSelected ? `/app/carteiras/${activePortfolio.id}` : '/app/carteiras',
     },
     {
       title: 'Aprofunde quando quiser',
       description: 'Acesse o painel técnico com gráficos completos.',
       action: 'Ver painel técnico',
-      to: '/dashboard-tecnico',
+      to: '/app/dashboard-tecnico',
     },
   ];
 
@@ -107,10 +107,10 @@ export function DashboardPage() {
               Veja primeiro um resumo claro da carteira ativa.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <Link to="/carteiras">
+              <Link to="/app/carteiras">
                 <Button>Organizar minha carteira</Button>
               </Link>
-              <Link to="/dashboard-tecnico" className="inline-flex items-center gap-2 rounded-2xl border border-[var(--border-soft)] bg-white/75 px-4 py-2.5 text-sm font-semibold text-[var(--text-main)]">
+              <Link to="/app/dashboard-tecnico" className="inline-flex items-center gap-2 rounded-2xl border border-[var(--border-soft)] bg-white/75 px-4 py-2.5 text-sm font-semibold text-[var(--text-main)]">
                 Abrir painel técnico
                 <ArrowRight size={16} />
               </Link>
@@ -171,7 +171,7 @@ export function DashboardPage() {
           </div>
         </Card>
 
-        <Card title="Composição da carteira" right={<Link to="/carteiras" className="text-sm font-semibold text-[var(--brand)]">Editar</Link>}>
+        <Card title="Composição da carteira" right={<Link to="/app/carteiras" className="text-sm font-semibold text-[var(--brand)]">Editar</Link>}>
           <p className="text-sm leading-6 text-[var(--text-muted)]">
             {isAllPortfoliosSelected
               ? 'Distribuição no consolidado de todas as carteiras.'
@@ -228,7 +228,7 @@ export function DashboardPage() {
             )) : (
               <p className="text-sm text-[var(--text-muted)]">Sem notícias relevantes suficientes para a seleção atual.</p>
             )}
-            <Link to="/noticias" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand)]">
+            <Link to="/app/noticias" className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand)]">
               Ver mais notícias
               <ArrowRight size={16} />
             </Link>

@@ -3,7 +3,7 @@ import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { Card } from './UI';
 import { Position, PortfolioAnalysis } from '../types';
 
-const chartColors = ['#3D4D9C', '#C7559B', '#E15EF2', '#717171', '#A5A5A5', '#5BA3E6', '#F2C94C', '#27AE60'];
+const chartColors = ['#684CF2', '#DF50F2', '#941289', '#A896FF', '#B133A3', '#7C65E8', '#F28CFF', '#5B3DE5'];
 
 function pickColor(index: number): string {
   return chartColors[index % chartColors.length];
