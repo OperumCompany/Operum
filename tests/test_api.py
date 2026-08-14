@@ -1,6 +1,7 @@
 import os
 import shutil
 import tempfile
+from datetime import date
 
 TEST_DATA_DIR = tempfile.mkdtemp(prefix="operum-test-data-")
 os.environ["OPERUM_DATA_DIR"] = TEST_DATA_DIR
@@ -168,6 +169,42 @@ async def test_portfolio_prices_include_unrealized_pnl(client: AsyncClient):
     assert "total_unrealized_pnl" in data
     assert "unrealized_pnl" in data["positions"][0]
     assert "sparkline_20d" in data["positions"][0]
+
+
+@pytest.mark.asyncio
+async def test_portfolio_history_contract_and_owner_isolation(client: AsyncClient):
+    headers = await auth_headers(client, "history-owner")
+    other_headers = await auth_headers(client, "history-other")
+    created = await client.post("/api/portfolios", headers=headers, json={"name": "Histórico", "base_currency": "BRL"})
+    portfolio_id = created.json()["id"]
+    await client.post(
+        f"/api/portfolios/{portfolio_id}/positions",
+        headers=headers,
+        json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 10, "avg_price": 30, "occurred_at": "2026-08-01"},
+    )
+
+    from app.api import portfolios as portfolios_api
+    original_get_history = portfolios_api.service.transactions.market.get_history
+    portfolios_api.service.transactions.market.get_history = lambda ticker, period="6mo", interval="1d": {
+        "prices": [
+            {"date": "2026-08-01", "close": 30},
+            {"date": date.today().isoformat(), "close": 35},
+        ]
+    }
+    try:
+        response = await client.get(f"/api/portfolios/{portfolio_id}/history?period=1m&ticker=PETR4", headers=headers)
+        forbidden = await client.get(f"/api/portfolios/{portfolio_id}/history?period=1m", headers=other_headers)
+    finally:
+        portfolios_api.service.transactions.market.get_history = original_get_history
+        await client.delete(f"/api/portfolios/{portfolio_id}", headers=headers)
+
+    assert response.status_code == 200
+    payload = response.json()
+    assert payload["period"] == "1m"
+    assert payload["ticker"] == "PETR4"
+    assert payload["available_tickers"] == ["PETR4"]
+    assert {"market_value", "invested_value", "quantity", "contribution_value"}.issubset(payload["points"][-1])
+    assert forbidden.status_code == 404
 
 
 @pytest.mark.asyncio

@@ -55,6 +55,7 @@ Variaveis recomendadas para producao:
 - `SUPABASE_URL`
 - `SUPABASE_SECRET_KEY`
 - `SUPABASE_DB_SCHEMA`
+- `BRAPI_TOKEN` para cotacoes detalhadas e historico autenticado da brapi
 - `OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP`
 - `OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP`
 - `OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP`
@@ -62,6 +63,7 @@ Variaveis recomendadas para producao:
 Observacao:
 
 - em desenvolvimento, o backend carrega `.env` automaticamente
+- sem `BRAPI_TOKEN`, cotacoes B3 usam a listagem publica da brapi e o historico publico do Yahoo como fallback
 - em producao, use variaveis do provedor do backend
 - nao envie `SUPABASE_SECRET_KEY` ou `SUPABASE_DB_URL` para o Vercel se ele hospedar apenas o frontend
 
@@ -109,6 +111,7 @@ Credenciais locais de desenvolvimento:
 - Limite de 50 carteiras, em ate 5 paginas de 10 itens
 - Exclusao individual e exclusao em lote por modo de selecao na interface
 - Posicoes com quantidade e preco medio
+- Ledger de aportes com data, preço médio ponderado e evolução histórica por carteira ou ativo
 - Tabelas por classe de ativo na tela de detalhe
 - Precos reais com cache
 - Analise financeira: pesos, concentracao, correlacao, VaR, CVaR, beta e volatilidade

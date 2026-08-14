@@ -69,6 +69,23 @@ create table if not exists public.portfolio_positions (
 create index if not exists idx_portfolio_positions_portfolio_id on public.portfolio_positions(portfolio_id);
 create index if not exists idx_portfolio_positions_ticker on public.portfolio_positions(ticker);
 
+create table if not exists public.portfolio_transactions (
+  id uuid primary key default gen_random_uuid(),
+  portfolio_id uuid not null references public.portfolios(id) on delete cascade,
+  ticker text not null,
+  asset_class text not null,
+  kind text not null check (kind in ('opening', 'buy', 'close')),
+  quantity_delta numeric(20, 8) not null check (quantity_delta <> 0),
+  unit_price numeric(20, 8),
+  currency text not null default 'BRL',
+  occurred_at date not null,
+  origin_key text unique,
+  created_at timestamptz not null default timezone('utc', now())
+);
+
+create index if not exists idx_portfolio_transactions_portfolio_date on public.portfolio_transactions(portfolio_id, occurred_at);
+create index if not exists idx_portfolio_transactions_ticker on public.portfolio_transactions(portfolio_id, ticker);
+
 create table if not exists public.processed_news (
   id text primary key,
   title text not null,
@@ -206,6 +223,7 @@ alter table public.auth_sessions enable row level security;
 alter table public.user_preferences enable row level security;
 alter table public.portfolios enable row level security;
 alter table public.portfolio_positions enable row level security;
+alter table public.portfolio_transactions enable row level security;
 alter table public.processed_news enable row level security;
 alter table public.knowledge_documents enable row level security;
 alter table public.knowledge_chunks enable row level security;

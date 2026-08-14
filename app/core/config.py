@@ -37,6 +37,7 @@ OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP = os.environ.get("OPERUM_ENABLE_NEWS_INGEST
 OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP = os.environ.get("OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP", "true").lower() == "true"
 OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP = os.environ.get("OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP", "true").lower() == "true"
 OPERUM_SEED_DEMO_USER = os.environ.get("OPERUM_SEED_DEMO_USER", "false").lower() == "true"
+BRAPI_TOKEN = os.environ.get("BRAPI_TOKEN", "").strip()
 AI_PROVIDER = os.environ.get("AI_PROVIDER", "ollama")
 AI_BASE_URL = os.environ.get("AI_BASE_URL", "http://localhost:11434/v1").rstrip("/")
 AI_API_KEY = os.environ.get("AI_API_KEY", "ollama")

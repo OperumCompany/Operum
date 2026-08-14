@@ -1,8 +1,8 @@
 {
   "ticker": "ITUB4",
-  "price": 38.43,
+  "price": 38.31,
   "currency": "BRL",
-  "name": "ITUB4",
-  "source": "brapi",
-  "updated_at": "2026-08-12T22:14:28.179091+00:00"
+  "name": "ITAU UNIBANCO HOLDING S.A.",
+  "source": "brapi-list",
+  "updated_at": "2026-08-14T01:24:43.201064+00:00"
 }

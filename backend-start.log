@@ -1,57 +1,178 @@
-2026-08-12 19:30:54 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-08-12 19:30:55 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-08-12 19:30:55 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-08-12 19:30:55 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-08-12 19:30:55 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-08-12 19:30:55 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-08-12 19:30:55 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-08-12 19:30:55 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-08-12 19:30:55 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-08-12 19:30:55 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
-2026-08-12 19:30:55 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-2026-08-12 19:30:55 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
-INFO:     127.0.0.1:54863 - "GET /api/health HTTP/1.1" 200 OK
-INFO:     127.0.0.1:54894 - "GET /api/health HTTP/1.1" 200 OK
-2026-08-12 19:31:00 | INFO     | app.main | Cache de precos atualizado para 3 ativos
-2026-08-12 19:31:07 | INFO     | app.services.news_ingestion_service | Ingestao: 14 noticias novas de 107 unicas
-2026-08-12 19:31:07 | INFO     | app.main | Ingestao automatica: 14 noticias novas
-INFO:     127.0.0.1:64458 - "GET /api/auth/me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59426 - "GET /api/news?page=1&page_size=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59428 - "GET /api/news?page=1&page_size=3 HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59420 - "GET /api/auth/me HTTP/1.1" 200 OK
-INFO:     127.0.0.1:59423 - "GET /api/portfolios HTTP/1.1" 200 OK
-2026-08-12 19:31:26 | WARNING  | app.services.news_semantic_service | Falha na indexacao semantica de noticias: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:31:26 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:31:26 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:31:26 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-INFO:     127.0.0.1:62149 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/news HTTP/1.1" 200 OK
-2026-08-12 19:31:27 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:31:32 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:31:32 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-INFO:     127.0.0.1:50962 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/news HTTP/1.1" 200 OK
-2026-08-12 19:31:38 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:31:38 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-INFO:     127.0.0.1:50810 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/news HTTP/1.1" 200 OK
-2026-08-12 19:31:48 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:31:48 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:31:49 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:31:49 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:32:00 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
-2026-08-12 19:32:24 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
-2026-08-12 19:32:24 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
-2026-08-12 19:32:24 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:32:49 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
-2026-08-12 19:32:54 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
-2026-08-12 19:32:54 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
-2026-08-12 19:32:54 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:33:18 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
-2026-08-12 19:33:18 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
-2026-08-12 19:33:23 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
-2026-08-12 19:33:23 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
-2026-08-12 19:33:47 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
-2026-08-12 19:34:20 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
-2026-08-12 19:34:20 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
-2026-08-12 19:34:31 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out
-2026-08-12 19:34:36 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
-2026-08-12 19:35:09 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
-2026-08-12 19:35:09 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+2026-08-13 17:47:25 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-13 17:47:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-13 17:47:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-13 17:47:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-13 17:47:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-13 17:47:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-13 17:47:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-13 17:47:27 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-13 17:47:28 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-13 17:47:28 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-08-13 17:47:28 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-08-13 17:47:28 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+INFO:     127.0.0.1:53095 - "GET /api/health HTTP/1.1" 200 OK
+2026-08-13 17:47:34 | INFO     | app.main | Cache de precos atualizado para 3 ativos
+2026-08-13 17:47:41 | INFO     | app.services.news_ingestion_service | Ingestao: 41 noticias novas de 108 unicas
+2026-08-13 17:47:41 | INFO     | app.main | Ingestao automatica: 41 noticias novas
+INFO:     127.0.0.1:50882 - "GET /api/health HTTP/1.1" 200 OK
+2026-08-13 17:48:49 | WARNING  | app.services.news_semantic_service | Falha na indexacao semantica de noticias: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+INFO:     127.0.0.1:62048 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62051 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62059 - "GET /api/news?page=1&page_size=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62061 - "GET /api/news?page=1&page_size=3 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62054 - "GET /api/portfolios HTTP/1.1" 200 OK
+2026-08-13 17:49:43 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:49:43 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+INFO:     127.0.0.1:53997 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/news HTTP/1.1" 200 OK
+2026-08-13 17:49:46 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:49:47 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:50:25 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:50:25 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+2026-08-13 17:50:25 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:51:10 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:51:10 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+2026-08-13 17:51:46 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:51:54 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:51:54 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+INFO:     127.0.0.1:61788 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54728 - "GET /api/news?page_size=30&page=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59699 - "GET /api/news?page_size=30&page=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58964 - "GET /api/chat/conversations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52799 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59147 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61041 - "GET /api/chat/conversations HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59146 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62297 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/analysis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64191 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63709 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/analysis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56030 - "GET /api/news?page_size=30&page=1 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55985 - "GET /api/news?page_size=30&page=1 HTTP/1.1" 200 OK
+2026-08-13 17:53:43 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:53:43 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+INFO:     127.0.0.1:63458 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/news HTTP/1.1" 200 OK
+2026-08-13 17:53:45 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:53:46 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+INFO:     127.0.0.1:51023 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60823 - "GET /api/assets/universe HTTP/1.1" 200 OK
+2026-08-13 17:53:48 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:53:49 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+INFO:     127.0.0.1:51093 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/news HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51026 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55154 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51024 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/analysis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52703 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/analysis HTTP/1.1" 200 OK
+2026-08-13 17:54:16 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:54:17 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:54:29 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:54:36 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:54:36 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:55:01 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:55:24 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:55:29 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:55:29 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 17:55:33 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:56:09 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:56:09 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+INFO:     127.0.0.1:56373 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d HTTP/1.1" 200 OK
+2026-08-13 17:56:35 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:56:42 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:56:42 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+2026-08-13 17:57:17 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 17:57:17 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+INFO:     127.0.0.1:64908 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55609 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55841 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62116 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51436 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:62565 - "GET /api/portfolios HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55810 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55808 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/analysis HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56512 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63352 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54525 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56515 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63353 - "GET /api/portfolios HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49744 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64257 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50616 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49747 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58753 - "GET /api/portfolios HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63116 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=6m HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:52241 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=6m HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:63117 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:55621 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50780 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50781 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56414 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54218 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54222 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54214 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54219 - "GET /api/portfolios HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60902 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=6m HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57604 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57258 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=6m HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:59891 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:57605 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61681 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=1m HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:57633 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51614 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=1m HTTP/1.1" 404 Not Found
+2026-08-13 18:40:42 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 18:40:43 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 18:40:44 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+INFO:     127.0.0.1:51568 - "POST /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/positions HTTP/1.1" 200 OK
+INFO:     127.0.0.1:65411 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=1m HTTP/1.1" 404 Not Found
+2026-08-13 18:41:29 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:65412 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+2026-08-13 18:41:50 | WARNING  | app.services.llm_service | Falha na chamada ao Ollama local: timed out
+2026-08-13 18:41:50 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 18:41:55 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 18:41:55 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+INFO:     127.0.0.1:49459 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ITUB4?history_horizon=3m&outlook_horizon=3m HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64140 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=1m HTTP/1.1" 404 Not Found
+2026-08-13 18:42:00 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 18:42:26 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 18:42:53 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 18:42:53 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+INFO:     127.0.0.1:58256 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ITUB4?history_horizon=1w&outlook_horizon=1w HTTP/1.1" 200 OK
+INFO:     127.0.0.1:52590 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=1m HTTP/1.1" 404 Not Found
+2026-08-13 18:42:59 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 18:42:59 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+2026-08-13 18:42:59 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 18:43:39 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 18:44:07 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 18:44:13 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 18:44:13 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+INFO:     127.0.0.1:58131 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d?analysis_horizon=3m HTTP/1.1" 200 OK
+2026-08-13 18:44:17 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:63395 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ITUB4?history_horizon=1m&outlook_horizon=1m HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49557 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=1m HTTP/1.1" 404 Not Found
+2026-08-13 18:44:23 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 18:44:23 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 18:44:25 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 18:44:58 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:59454 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56493 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56497 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56489 - "GET /api/auth/me HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56494 - "GET /api/portfolios HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54029 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=6m HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54030 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:56074 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=6m HTTP/1.1" 404 Not Found
+INFO:     127.0.0.1:54469 - "GET /api/assets/universe HTTP/1.1" 200 OK
+INFO:     127.0.0.1:54031 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+2026-08-13 18:45:23 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 18:45:23 | WARNING  | app.services.llm_service | Retorno JSON invalido da IA local: JSON nao encontrado
+2026-08-13 18:45:23 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+INFO:     127.0.0.1:54484 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/prices HTTP/1.1" 200 OK
+2026-08-13 18:45:28 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:51202 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=6m HTTP/1.1" 404 Not Found
+2026-08-13 18:45:41 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 18:45:58 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 18:46:28 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:55948 - "GET /openapi.json HTTP/1.1" 200 OK
+2026-08-13 18:46:34 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+2026-08-13 18:46:34 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)
+2026-08-13 18:46:39 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:51200 - "GET /api/models/opinion/b6b0a85b-8610-4a62-9316-39beccae667d/positions/ABEV3?history_horizon=3m&outlook_horizon=3m HTTP/1.1" 200 OK
+INFO:     127.0.0.1:61286 - "GET /api/portfolios/b6b0a85b-8610-4a62-9316-39beccae667d/history?period=6m HTTP/1.1" 404 Not Found
+2026-08-13 18:46:45 | WARNING  | app.services.news_semantic_service | Busca semantica indisponivel; usando fallback textual: cannot import name 'CPUOffloadPolicy' from 'torch.distributed.fsdp' (C:\Users\tomaz\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.12_qbz5n2kfra8p0\LocalCache\local-packages\Python312\site-packages\torch\distributed\fsdp\__init__.py)

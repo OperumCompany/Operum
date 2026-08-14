@@ -33,6 +33,14 @@ No painel do Supabase:
 3. Cole o conteudo de `docs/supabase-schema.sql`
 4. Execute
 
+Ao atualizar uma instalação existente com posições já cadastradas, execute também:
+
+```bash
+python scripts/migrate_portfolio_transactions.py
+```
+
+O script é idempotente e cria um saldo inicial na data da migração sem duplicar movimentações existentes.
+
 ## 3. Escopo do schema inicial
 
 Este schema cobre o MVP descrito no PRD:

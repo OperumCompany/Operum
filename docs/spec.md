@@ -268,8 +268,9 @@ GET /market/history/{ticker}?period=6mo&interval=1d
 
 **Fontes de dados de mercado**
 - brapi e a fonte primaria para ativos de renda variavel listados no Brasil, incluindo acoes, FIIs, BDRs, ETFs e indices suportados.
-- Yahoo Finance e fallback para tickers `.SA`/B3 e fonte direta para criptoativos e indices globais quando a brapi nao cobrir.
-- A variavel `BRAPI_TOKEN` pode ser definida no ambiente para chamadas autenticadas.
+- Sem token, a listagem publica da brapi fornece a ultima cotacao disponivel para ativos B3 e o endpoint publico de graficos do Yahoo fornece o historico.
+- Yahoo Finance via biblioteca permanece como ultimo fallback para tickers `.SA`/B3, criptoativos e indices globais.
+- A variavel `BRAPI_TOKEN` habilita as chamadas autenticadas e detalhadas da brapi e deve permanecer apenas no backend.
 
 ### 3.6 News
 
@@ -328,9 +329,19 @@ POST /portfolios/{id}/positions
 DELETE /portfolios/{id}/positions/{ticker}
 GET /portfolios/{id}/analysis
 GET /portfolios/{id}/prices
+GET /portfolios/{id}/history?period=1m|6m|1y|max&ticker=PETR4
 GET /portfolios/{id}/news
 GET /portfolios/{id}/scenarios
 ```
+
+`POST /portfolios/{id}/positions` aceita `occurred_at` opcional no formato `YYYY-MM-DD`. Quando omitido, usa a data atual. Cada adição registra uma movimentação e atualiza o preço médio ponderado da posição.
+
+O histórico da carteira retorna:
+- `points` com `market_value`, `invested_value`, `quantity`, `contribution_value` e `contribution_quantity` por data
+- `available_tickers` para alternar entre consolidado e ativo
+- `warnings` quando preço ou custo histórico estiver indisponível
+
+Remover uma posição zera o saldo atual, mas preserva as movimentações anteriores para consulta histórica.
 
 ### 3.8 Models
 

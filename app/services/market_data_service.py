@@ -1,11 +1,11 @@
 import logging
-import os
 from datetime import datetime, timezone, timedelta
 
 import pandas as pd
 import requests
 import yfinance as yf
 
+from app.core.config import BRAPI_TOKEN
 from app.services.local_storage_service import LocalStorageService
 
 logger = logging.getLogger(__name__)
@@ -16,7 +16,7 @@ class MarketDataService:
         self.storage = LocalStorageService()
         self._cache_dir = "market/prices"
         self._brapi_base_url = "https://brapi.dev/api/v2"
-        self._brapi_token = os.environ.get("BRAPI_TOKEN", "").strip()
+        self._brapi_token = BRAPI_TOKEN
 
     def _brapi_headers(self) -> dict[str, str]:
         headers = {"User-Agent": "Operum/1.0"}
@@ -96,7 +96,7 @@ class MarketDataService:
         return ticker_upper
 
     def _fetch_brapi_current_price(self, ticker: str) -> dict | None:
-        if not self._is_brapi_candidate(ticker):
+        if not self._brapi_token or not self._is_brapi_candidate(ticker):
             return None
 
         symbol = self._brapi_symbol(ticker)
@@ -132,6 +132,52 @@ class MarketDataService:
             logger.debug(f"Erro ao buscar preco na brapi para {ticker}: {exc}")
             return None
 
+    def _fetch_brapi_list_price(self, ticker: str) -> dict | None:
+        """Use the public Brapi listing as a limited quote fallback."""
+        if not self._is_brapi_candidate(ticker):
+            return None
+
+        symbol = self._brapi_symbol(ticker)
+        try:
+            response = requests.get(
+                "https://brapi.dev/api/quote/list",
+                params={"search": symbol},
+                headers={"User-Agent": "Operum/1.0"},
+                timeout=8,
+            )
+            response.raise_for_status()
+            payload = response.json()
+            candidates = [
+                *payload.get("stocks", []),
+                *payload.get("indexes", []),
+            ]
+            item = next(
+                (
+                    candidate
+                    for candidate in candidates
+                    if str(candidate.get("stock") or candidate.get("index") or "").upper() == symbol
+                ),
+                None,
+            )
+            if not item:
+                return None
+
+            price = self._extract_brapi_price(item)
+            if price is None:
+                return None
+
+            return {
+                "ticker": ticker,
+                "price": price,
+                "currency": "BRL",
+                "name": item.get("name") or ticker,
+                "source": "brapi-list",
+                "updated_at": datetime.now(timezone.utc).isoformat(),
+            }
+        except Exception as exc:
+            logger.debug(f"Erro ao buscar preco na listagem publica da brapi para {ticker}: {exc}")
+            return None
+
     def _fetch_yfinance_current_price(self, ticker: str) -> dict | None:
         try:
             tk = yf.Ticker(self._yfinance_ticker(ticker))
@@ -160,7 +206,11 @@ class MarketDataService:
             if datetime.now(timezone.utc) - cached_dt < timedelta(hours=1):
                 return cached
 
-        result = self._fetch_brapi_current_price(ticker) or self._fetch_yfinance_current_price(ticker)
+        result = (
+            self._fetch_brapi_current_price(ticker)
+            or self._fetch_brapi_list_price(ticker)
+            or self._fetch_yfinance_current_price(ticker)
+        )
         if result:
             self.storage.save_json(cache_key, result)
             return result
@@ -174,7 +224,7 @@ class MarketDataService:
         return []
 
     def _fetch_brapi_history(self, ticker: str, period: str, interval: str) -> dict | None:
-        if not self._is_brapi_candidate(ticker):
+        if not self._brapi_token or not self._is_brapi_candidate(ticker):
             return None
 
         symbol = self._brapi_symbol(ticker)
@@ -268,6 +318,63 @@ class MarketDataService:
             logger.debug(f"Erro ao buscar historico no Yahoo Finance para {ticker}: {exc}")
             return None
 
+    def _fetch_yahoo_chart_history(self, ticker: str, period: str, interval: str) -> dict | None:
+        try:
+            response = requests.get(
+                f"https://query1.finance.yahoo.com/v8/finance/chart/{self._yfinance_ticker(ticker)}",
+                params={"range": period, "interval": interval, "events": "history"},
+                headers={"User-Agent": "Mozilla/5.0"},
+                timeout=10,
+            )
+            response.raise_for_status()
+            chart = response.json().get("chart", {})
+            results = chart.get("result") or []
+            if not results:
+                return None
+
+            result = results[0]
+            timestamps = result.get("timestamp") or []
+            quote_sets = result.get("indicators", {}).get("quote") or []
+            if not timestamps or not quote_sets:
+                return None
+
+            quote = quote_sets[0]
+            prices = []
+            for index, timestamp in enumerate(timestamps):
+                closes = quote.get("close") or []
+                close = closes[index] if index < len(closes) else None
+                if close is None:
+                    continue
+
+                def value(key: str, default: float) -> float:
+                    values = quote.get(key) or []
+                    candidate = values[index] if index < len(values) else None
+                    return float(candidate) if candidate is not None else default
+
+                close_value = float(close)
+                prices.append({
+                    "date": datetime.fromtimestamp(timestamp, timezone.utc).date().isoformat(),
+                    "open": value("open", close_value),
+                    "high": value("high", close_value),
+                    "low": value("low", close_value),
+                    "close": close_value,
+                    "volume": value("volume", 0.0),
+                })
+
+            if not prices:
+                return None
+            return {
+                "ticker": ticker,
+                "period": period,
+                "interval": interval,
+                "prices": prices,
+                "source": "yahoo-chart",
+                "cached_at": datetime.now(timezone.utc).isoformat(),
+            }
+        except Exception as exc:
+            logger.debug(f"Erro ao buscar historico no grafico publico do Yahoo para {ticker}: {exc}")
+            return None
+
     def get_history(self, ticker: str, period: str = "6mo", interval: str = "1d") -> dict | None:
         cache_key = f"{self._cache_dir}/history_{ticker}_{period}_{interval}.json"
         cached = self.storage.load_json(cache_key)
@@ -276,7 +383,11 @@ class MarketDataService:
             if datetime.now(timezone.utc) - cached_dt < timedelta(hours=4):
                 return cached
 
-        result = self._fetch_brapi_history(ticker, period, interval) or self._fetch_yfinance_history(ticker, period, interval)
+        result = (
+            self._fetch_brapi_history(ticker, period, interval)
+            or self._fetch_yahoo_chart_history(ticker, period, interval)
+            or self._fetch_yfinance_history(ticker, period, interval)
+        )
         if result:
             self.storage.save_json(cache_key, result)
             return result

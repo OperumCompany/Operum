@@ -86,10 +86,11 @@ Nao assumir que toda noticia tera todos os campos preenchidos; manter tolerancia
 ### Estrutura atual
 
 - header
-- analise geral da carteira
+- resumo de valor atual, custo, P&L e alocacao por classe
+- evolucao historica da carteira ou ativo com filtros de periodo
 - tabelas por classe de ativo
-- formulario de adicao
-- composicao/graficos
+- formulario de aporte com data, quantidade e preco
+- analise geral da carteira no fim da pagina, acionada pelo botao do topo
 
 ### Analise por ativo
 

@@ -1,6 +1,6 @@
 import { FormEvent, Fragment, useEffect, useMemo, useRef, useState } from 'react';
-import { Link, useNavigate, useParams } from 'react-router-dom';
-import { Sparkles, ChevronDown, ChevronUp, ArrowDownUp } from 'lucide-react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { Sparkles, ChevronDown, ChevronUp, ArrowDownUp, Download, Pencil } from 'lucide-react';
 import {
   Area,
   CartesianGrid,
@@ -15,12 +15,12 @@ import {
   YAxis,
 } from 'recharts';
 import { Button, Card, Input } from '../components/UI';
-import { CompositionCharts } from '../components/CompositionCharts';
-import { PortfolioAnalysisAI } from '../components/PortfolioAnalysisAI';
+import { PortfolioAnalysisAI, type PortfolioAnalysisAIHandle } from '../components/PortfolioAnalysisAI';
+import { PortfolioEvolutionChart } from '../components/PortfolioEvolutionChart';
 import { usePortfolios } from '../context/PortfoliosContext';
 import { getPortfolioLabel } from '../utils/portfolios';
 import api from '../utils/api';
-import type { Asset, HorizonSeriesPoint, PortfolioAnalysis, PositionOpinion } from '../types';
+import type { Asset, HorizonSeriesPoint, PositionOpinion } from '../types';
 
 type PriceRow = {
   ticker: string;
@@ -245,17 +245,19 @@ export function PortfolioDetailsPage() {
   const [assetTicker, setAssetTicker] = useState('');
   const [quantity, setQuantity] = useState(10);
   const [avgPrice, setAvgPrice] = useState('');
+  const [purchaseDate, setPurchaseDate] = useState(() => new Date().toISOString().slice(0, 10));
+  const [historyRefreshKey, setHistoryRefreshKey] = useState(0);
   const [nameDraft, setNameDraft] = useState('');
   const [editingName, setEditingName] = useState(false);
   const [assets, setAssets] = useState<Asset[]>([]);
-  const [analysis, setAnalysis] = useState<PortfolioAnalysis | null>(null);
-  const [analysisLoading, setAnalysisLoading] = useState(false);
-  const [analysisError, setAnalysisError] = useState<string | null>(null);
+  const [dataError, setDataError] = useState<string | null>(null);
   const [prices, setPrices] = useState<PricesResponse | null>(null);
   const [pricesLoading, setPricesLoading] = useState(false);
   const [positionOpinions, setPositionOpinions] = useState<Record<string, OpinionState>>({});
   const positionOpinionsRef = useRef<Record<string, OpinionState>>({});
   const opinionRequestsRef = useRef<Record<string, Partial<Record<OpinionCacheKey, Promise<PositionOpinion>>>>>({});
+  const portfolioAnalysisRef = useRef<PortfolioAnalysisAIHandle>(null);
+  const portfolioAnalysisSectionRef = useRef<HTMLDivElement>(null);
   const [tableQuery, setTableQuery] = useState('');
   const [sortKey, setSortKey] = useState<SortKey>('weight_pct');
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc');
@@ -272,25 +274,16 @@ export function PortfolioDetailsPage() {
 
   useEffect(() => {
     if (!portfolio) return;
-    setAnalysisLoading(true);
     setPricesLoading(true);
-    setAnalysisError(null);
-    Promise.all([
-      api.get<PortfolioAnalysis>(`/portfolios/${portfolio.id}/analysis`),
-      api.get<PricesResponse>(`/portfolios/${portfolio.id}/prices`),
-    ])
-      .then(([analysisData, pricesData]) => {
-        setAnalysis(analysisData);
-        setPrices(pricesData);
-      })
+    setDataError(null);
+    api.get<PricesResponse>(`/portfolios/${portfolio.id}/prices`)
+      .then(setPrices)
       .catch((e) => {
         const msg = e instanceof Error ? e.message : 'Erro ao carregar dados da carteira';
-        setAnalysisError(msg);
-        setAnalysis(null);
+        setDataError(msg);
         setPrices(null);
       })
       .finally(() => {
-        setAnalysisLoading(false);
         setPricesLoading(false);
       });
   }, [portfolio]);
@@ -367,11 +360,13 @@ export function PortfolioDetailsPage() {
         asset_class: asset?.asset_class ?? 'BR_STOCK',
         quantity: Math.max(0.01, quantity),
         avg_price: avgPrice ? parseFloat(avgPrice) : undefined,
+        occurred_at: purchaseDate,
       });
       setQuantity(10);
       setAvgPrice('');
       setAssetTicker('');
       setPositionOpinions({});
+      setHistoryRefreshKey((current) => current + 1);
     } catch {
       // handled by context
     }
@@ -425,6 +420,7 @@ export function PortfolioDetailsPage() {
       .finally(() => {
         delete opinionRequestsRef.current[ticker]?.[key];
       });
+      setHistoryRefreshKey((current) => current + 1);
 
     tickerRequests[key] = request;
     opinionRequestsRef.current[ticker] = tickerRequests;
@@ -590,12 +586,29 @@ export function PortfolioDetailsPage() {
   }
 
   const isActive = activePortfolioId === portfolio.id;
+  const hasUnknownCost = (prices?.positions ?? []).some((position) => position.avg_price == null || position.total_value == null);
+  const investedCost = prices && !hasUnknownCost
+    ? prices.positions.reduce((sum, position) => sum + ((position.avg_price ?? 0) * position.quantity), 0)
+    : null;
+  const portfolioPnlPct = prices?.total_value != null && investedCost != null && investedCost > 0
+    ? ((prices.total_value / investedCost) - 1) * 100
+    : null;
+  const allocationByClass = Object.entries(
+    (prices?.positions ?? []).reduce<Record<string, number>>((acc, position) => {
+      if (position.total_value != null) acc[position.asset_class] = (acc[position.asset_class] ?? 0) + position.total_value;
+      return acc;
+    }, {}),
+  ).sort((a, b) => b[1] - a[1]);
+
+  async function generatePortfolioAnalysis() {
+    portfolioAnalysisSectionRef.current?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    await portfolioAnalysisRef.current?.generate();
+  }
 
   return (
-    <div className="space-y-4">
-      <section className="flex flex-wrap items-center justify-between gap-4 rounded-[30px] border border-[var(--border-soft)] bg-[linear-gradient(120deg,rgba(225,94,242,0.08)_0%,rgba(255,255,255,0.96)_55%,rgba(61,77,156,0.08)_100%)] p-6 shadow-[var(--shadow-card)]">
-        <div className="max-w-2xl">
-          <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">Carteira em detalhe</p>
+    <div className="portfolio-detail-page space-y-5">
+      <section className="no-print flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <div className="min-w-0">
           {editingName ? (
             <form onSubmit={handleSaveName} className="mt-2 flex items-center gap-2">
               <Input
@@ -610,67 +623,73 @@ export function PortfolioDetailsPage() {
               </Button>
             </form>
           ) : (
-            <h2 className="mt-2 text-3xl font-bold">{cleanText(getPortfolioLabel(portfolio))}</h2>
+            <div className="flex items-center gap-2">
+              <h1 className="truncate text-3xl font-bold sm:text-4xl">{cleanText(getPortfolioLabel(portfolio))}</h1>
+              <button type="button" className="rounded-lg p-2 text-[var(--text-muted)] hover:bg-[var(--bg-surface-muted)]" onClick={() => { setEditingName(true); setNameDraft(portfolio.name); }} aria-label="Editar nome"><Pencil size={16} /></button>
+            </div>
           )}
-          <p className="hidden">
-            {portfolio.positions.length} ativo(s) • Moeda base: {portfolio.base_currency}
-            {prices?.total_value != null && ` • Valor total: ${fmtMoney(prices.total_value)}`}
-            {prices?.total_unrealized_pnl != null && ` • P&L não realizado: ${fmtMoney(prices.total_unrealized_pnl)}`}
-          </p>
-          <p className="hidden">
-            {[
-              `${portfolio.positions.length} ativo(s)`,
-              `Moeda base: ${portfolio.base_currency}`,
-              prices?.total_value != null ? `Valor total: ${fmtMoney(prices.total_value)}` : null,
-              prices?.total_unrealized_pnl != null ? `P&L não realizado: ${fmtMoney(prices.total_unrealized_pnl)}` : null,
-            ].filter(Boolean).join(' • ')}
-          </p>
-          <p className="mt-1 text-sm text-[var(--text-muted)]">
-            {[
-              `${portfolio.positions.length} ativo(s)`,
-              `Moeda base: ${portfolio.base_currency}`,
-              prices?.total_value != null ? `Valor total: ${fmtMoney(prices.total_value)}` : null,
-              prices?.total_unrealized_pnl != null ? `P&L n\u00e3o realizado: ${fmtMoney(prices.total_unrealized_pnl)}` : null,
-            ].filter(Boolean).join(' \u2022 ')}
-          </p>
+          <p className="mt-2 text-sm text-[var(--text-muted)]">Visão completa dos seus ativos, aportes e análises.</p>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {!editingName && (
-            <Button type="button" variant="ghost" onClick={() => { setEditingName(true); setNameDraft(portfolio.name); }}>
-              Editar nome
-            </Button>
-          )}
+        <div className="flex flex-wrap gap-2 sm:justify-end">
           {!isActive && (
-            <Button type="button" onClick={() => setActivePortfolioId(portfolio.id)}>
+            <Button type="button" variant="ghost" onClick={() => setActivePortfolioId(portfolio.id)}>
               Definir como ativa
             </Button>
           )}
-          <Link to="/app/carteiras" className="rounded-2xl border border-[var(--border-soft)] bg-white px-4 py-2.5 text-sm font-semibold text-[var(--text-main)]">
-            Voltar
-          </Link>
+          <Button type="button" variant="ghost" onClick={() => window.print()} disabled={pricesLoading}><Download size={16} />Exportar relatório</Button>
+          <Button type="button" variant="ai" onClick={() => { void generatePortfolioAnalysis(); }}><Sparkles size={16} />Gerar análise por IA</Button>
         </div>
       </section>
 
-      {(analysisLoading || pricesLoading) && (
+      <section className="portfolio-report-heading hidden print:block">
+        <p className="eyebrow">Relatório da carteira</p>
+        <h1 className="mt-2 text-3xl font-bold">{cleanText(getPortfolioLabel(portfolio))}</h1>
+        <p className="mt-1 text-sm">Gerado em {new Date().toLocaleString('pt-BR')}</p>
+      </section>
+
+      <div className="grid gap-5 xl:grid-cols-[minmax(0,1.45fr)_minmax(280px,.55fr)]">
+        <Card className="print-keep overflow-hidden !border-[rgba(223,80,242,.2)] !bg-[linear-gradient(135deg,var(--bg-surface)_20%,rgba(223,80,242,.10)_100%)]">
+          <p className="eyebrow">Valor atual da carteira</p>
+          <div className="mt-4 flex flex-wrap items-end gap-3">
+            <p className="font-data text-4xl font-semibold tracking-[-0.04em] sm:text-5xl">{fmtMoney(prices?.total_value, portfolio.base_currency)}</p>
+            {portfolioPnlPct != null && <span className={`mb-1 text-sm font-semibold ${portfolioPnlPct >= 0 ? 'text-emerald-600' : 'text-[var(--danger-text)]'}`}>{fmtPct(portfolioPnlPct)}</span>}
+          </div>
+          <div className="mt-7 grid gap-4 border-t border-[var(--border-soft)] pt-5 sm:grid-cols-3">
+            <div><p className="text-xs text-[var(--text-muted)]">Total investido</p><p className="mt-1 font-data font-semibold">{investedCost != null && investedCost > 0 ? fmtMoney(investedCost, portfolio.base_currency) : '-'}</p></div>
+            <div><p className="text-xs text-[var(--text-muted)]">P&L não realizado</p><p className={`mt-1 font-data font-semibold ${(prices?.total_unrealized_pnl ?? 0) >= 0 ? 'text-emerald-600' : 'text-[var(--danger-text)]'}`}>{hasUnknownCost ? '-' : fmtMoney(prices?.total_unrealized_pnl, portfolio.base_currency)}</p></div>
+            <div><p className="text-xs text-[var(--text-muted)]">Ativos</p><p className="mt-1 font-data font-semibold">{portfolio.positions.length}</p></div>
+          </div>
+        </Card>
+
+        <Card className="print-keep" title="Alocação">
+          {allocationByClass.length ? <div className="space-y-4">{allocationByClass.map(([assetClass, value], index) => {
+            const percentage = prices?.total_value ? (value / prices.total_value) * 100 : 0;
+            const colors = ['#684CF2', '#DF50F2', '#941289', '#A896FF', '#B133A3'];
+            return <div key={assetClass}><div className="flex items-center justify-between gap-3 text-sm"><span className="flex items-center gap-2"><span className="h-2.5 w-2.5 rounded-full" style={{ background: colors[index % colors.length] }} />{CLASS_LABELS[assetClass] ?? assetClass}</span><span className="font-data font-semibold">{percentage.toFixed(1)}%</span></div><div className="mt-2 h-1.5 overflow-hidden rounded-full bg-[var(--bg-surface-high)]"><span className="block h-full rounded-full" style={{ width: `${percentage}%`, background: colors[index % colors.length] }} /></div></div>;
+          })}</div> : <p className="text-sm text-[var(--text-muted)]">Sem valores disponíveis para calcular a alocação.</p>}
+        </Card>
+      </div>
+
+      {pricesLoading && (
         <Card title="Atualizando carteira">
           <div className="flex items-center gap-3">
             <div className="h-5 w-5 animate-spin rounded-full border-2 border-[var(--brand)] border-t-transparent" />
-            <p className="text-sm text-[var(--text-muted)]">Carregando análise, preços e comparativos da carteira...</p>
+            <p className="text-sm text-[var(--text-muted)]">Carregando preços e resumo da carteira...</p>
           </div>
         </Card>
       )}
 
-      {analysisError && (
+      {dataError && (
         <Card title="Falha ao carregar dados">
-          <p className="text-sm text-[var(--danger-text)]">{analysisError}</p>
+          <p className="text-sm text-[var(--danger-text)]">{dataError}</p>
         </Card>
       )}
 
-      <PortfolioAnalysisAI portfolioId={portfolio.id} />
+      <PortfolioEvolutionChart portfolioId={portfolio.id} currency={portfolio.base_currency} refreshKey={historyRefreshKey} />
 
-      <Card title="Adicionar ativos">
+      <Card className="no-print" title="Adicionar ativo ou aporte">
         <form onSubmit={addAsset} className="space-y-3">
-          <div className="grid gap-2 sm:grid-cols-5">
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-6">
             <select
               value={selectedClass}
               onChange={(e) => { setSelectedClass(e.target.value); setAssetTicker(''); }}
@@ -694,15 +713,16 @@ export function PortfolioDetailsPage() {
                 </option>
               ))}
             </select>
-            <Input type="number" min={0.01} step={0.01} value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} placeholder="Quantidade" />
-            <Input type="number" min={0} step={0.01} value={avgPrice} onChange={(e) => setAvgPrice(e.target.value)} placeholder="Preço médio (opcional)" />
+            <Input type="number" min={0.01} step={0.01} value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} placeholder="Quantidade" required />
+            <Input type="number" min={0} step={0.01} value={avgPrice} onChange={(e) => setAvgPrice(e.target.value)} placeholder="Preço de aquisição" required />
+            <Input type="date" max={new Date().toISOString().slice(0, 10)} value={purchaseDate} onChange={(e) => setPurchaseDate(e.target.value)} aria-label="Data do aporte" required />
             <Button type="submit">Adicionar</Button>
           </div>
           <p className="text-xs text-[var(--text-muted)]">Selecione o tipo de ativo primeiro para filtrar as opções disponíveis.</p>
         </form>
       </Card>
 
-      <Card title="Filtros e ordenação" right={<ArrowDownUp size={16} className="text-[var(--brand)]" />}>
+      <Card className="no-print" title="Filtrar ativos" right={<ArrowDownUp size={16} className="text-[var(--brand)]" />}>
         <div className="grid gap-3 sm:grid-cols-3">
           <Input value={tableQuery} onChange={(e) => setTableQuery(e.target.value)} placeholder="Filtrar por ticker ou nome" />
           <select value={sortKey} onChange={(e) => updateSort(e.target.value as SortKey)} className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm">
@@ -721,9 +741,9 @@ export function PortfolioDetailsPage() {
 
       {assetClassesWithPositions.length > 0 ? (
         assetClassesWithPositions.map((cls) => (
-          <Card key={cls} title={CLASS_LABELS[cls] || cls}>
+          <Card key={cls} className="print-keep" title={CLASS_LABELS[cls] || cls}>
             <div className="overflow-x-auto">
-              <table className="w-full text-sm">
+              <table className="portfolio-holdings w-full text-sm">
                 <thead>
                   <tr className="text-left text-[var(--text-muted)]">
                     <th className="py-2">Ticker</th>
@@ -751,21 +771,21 @@ export function PortfolioDetailsPage() {
                         : [];
                     return (
                       <Fragment key={pos.ticker}>
-                        <tr className="border-t border-[var(--border-soft)]">
-                          <td className="py-3 font-semibold">{pos.ticker}</td>
-                          <td>{pos.quantity}</td>
-                          <td>{pos.avg_price ? `R$ ${pos.avg_price.toFixed(2)}` : '-'}</td>
-                          <td>{priceInfo?.current_price != null ? `${priceInfo.currency === 'BRL' ? 'R$' : priceInfo.currency} ${priceInfo.current_price.toFixed(2)}` : '-'}</td>
-                          <td>{fmtMoney(priceInfo?.total_value)}</td>
-                          <td>
+                        <tr className="portfolio-position-row border-t border-[var(--border-soft)]">
+                          <td data-label="Ativo" className="py-3 font-semibold">{pos.ticker}</td>
+                          <td data-label="Quantidade">{pos.quantity}</td>
+                          <td data-label="Preço médio">{pos.avg_price ? `R$ ${pos.avg_price.toFixed(2)}` : '-'}</td>
+                          <td data-label="Preço atual">{priceInfo?.current_price != null ? `${priceInfo.currency === 'BRL' ? 'R$' : priceInfo.currency} ${priceInfo.current_price.toFixed(2)}` : '-'}</td>
+                          <td data-label="Valor total">{fmtMoney(priceInfo?.total_value)}</td>
+                          <td data-label="P&L">
                             {priceInfo?.unrealized_pnl != null ? (
                               <span className={priceInfo.unrealized_pnl >= 0 ? 'text-green-600' : 'text-[var(--danger-text)]'}>
                                 {fmtMoney(priceInfo.unrealized_pnl)} {priceInfo.unrealized_pnl_pct != null ? `(${priceInfo.unrealized_pnl_pct.toFixed(1)}%)` : ''}
                               </span>
                             ) : '-'}
                           </td>
-                          <td>{priceInfo?.weight_pct != null ? `${priceInfo.weight_pct.toFixed(1)}%` : '-'}</td>
-                          <td>
+                          <td data-label="% Carteira">{priceInfo?.weight_pct != null ? `${priceInfo.weight_pct.toFixed(1)}%` : '-'}</td>
+                          <td data-label="Análise">
                             <button
                               type="button"
                               className="inline-flex items-center gap-2 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-3 py-2 text-sm font-semibold text-[var(--text-main)] transition hover:border-[var(--brand)]"
@@ -775,14 +795,14 @@ export function PortfolioDetailsPage() {
                               {opinionState?.open ? <ChevronUp size={14} /> : <ChevronDown size={14} />}
                             </button>
                           </td>
-                          <td className="text-right">
+                          <td data-label="Ação" className="text-right">
                             <button type="button" className="text-sm font-semibold text-[var(--danger-text)]" onClick={() => handleRemovePosition(pos.ticker)}>
                               Remover
                             </button>
                           </td>
                         </tr>
                         {opinionState?.open && (
-                          <tr className="border-t border-[var(--border-soft)] bg-[var(--bg-surface-strong)]/60">
+                          <tr className="portfolio-analysis-row border-t border-[var(--border-soft)] bg-[var(--bg-surface-strong)]/60">
                             <td colSpan={9} className="p-4">
                               {opinionState.loading && (
                                 <div className="flex items-center gap-3">
@@ -1058,7 +1078,13 @@ export function PortfolioDetailsPage() {
         </Card>
       )}
 
-      <CompositionCharts positions={portfolio.positions} analysis={analysis} />
+      <div ref={portfolioAnalysisSectionRef} className="no-print scroll-mt-24">
+        <PortfolioAnalysisAI ref={portfolioAnalysisRef} portfolioId={portfolio.id} />
+      </div>
+
+      <p className="portfolio-report-disclaimer hidden border-t border-[var(--border-soft)] pt-4 text-xs leading-5 print:block">
+        Este relatório apresenta um retrato informativo da carteira e não constitui recomendação de compra ou venda de ativos. Valores dependem da disponibilidade das cotações.
+      </p>
     </div>
   );
 }

@@ -1,8 +1,8 @@
 {
   "ticker": "PETR4",
-  "price": 41.45,
+  "price": 41.9,
   "currency": "BRL",
-  "name": "PETR4",
-  "source": "brapi",
-  "updated_at": "2026-08-12T22:14:27.822489+00:00"
+  "name": "PETROLEO BRASILEIRO S.A. PETROBRAS",
+  "source": "brapi-list",
+  "updated_at": "2026-08-14T01:24:43.506993+00:00"
 }

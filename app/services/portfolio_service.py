@@ -1,10 +1,11 @@
 import uuid
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 
 from app.core.config import SUPABASE_DB_SCHEMA
 from app.db.postgres import PostgresClient
 from app.schemas.portfolio import Portfolio, PortfolioCreate, Position, PositionAdd
 from app.services.local_storage_service import LocalStorageService
+from app.services.portfolio_transaction_service import PortfolioTransactionService
 
 
 class PortfolioService:
@@ -14,6 +15,8 @@ class PortfolioService:
         self.storage = LocalStorageService()
         self.db = PostgresClient(schema=SUPABASE_DB_SCHEMA)
         self._dir = "portfolios"
+        self.transactions = PortfolioTransactionService(db=self.db, storage=self.storage)
+        self.transactions.ensure_schema()
 
     def _row_to_portfolio(self, row: dict, positions: list[Position]) -> Portfolio:
         return Portfolio(
@@ -201,7 +204,10 @@ class PortfolioService:
                 (portfolio_id, user_id),
             )
             return True
-        return self.storage.delete_file(f"{self._dir}/{portfolio_id}.json")
+        deleted = self.storage.delete_file(f"{self._dir}/{portfolio_id}.json")
+        if deleted:
+            self.transactions.delete_for_portfolio(portfolio_id)
+        return deleted
 
     def delete_many(self, portfolio_ids: list[str], user_id: str | None = None) -> dict:
         unique_ids = list(dict.fromkeys(portfolio_ids))
@@ -224,6 +230,8 @@ class PortfolioService:
         portfolio = self.get_by_id(portfolio_id, user_id)
         if portfolio is None:
             return None
+        self.transactions.ensure_opening_transactions(portfolio)
+        occurred_at = position_data.occurred_at or date.today()
 
         if self.db.enabled:
             existing = self.db.fetch_one(
@@ -237,7 +245,15 @@ class PortfolioService:
             now = datetime.now(timezone.utc)
             if existing:
                 next_quantity = float(existing["quantity"]) + position_data.quantity
-                next_avg_price = position_data.avg_price if position_data.avg_price is not None else existing["avg_price"]
+                existing_avg = float(existing["avg_price"]) if existing["avg_price"] is not None else None
+                if existing_avg is not None and position_data.avg_price is not None:
+                    next_avg_price = (
+                        (float(existing["quantity"]) * existing_avg) + (position_data.quantity * position_data.avg_price)
+                    ) / next_quantity
+                elif existing_avg is None and float(existing["quantity"]) > 0:
+                    next_avg_price = None
+                else:
+                    next_avg_price = position_data.avg_price
                 next_notes = position_data.manual_notes or existing["manual_notes"] or ""
                 self.db.execute(
                     """
@@ -278,13 +294,25 @@ class PortfolioService:
                 "update public.portfolios set updated_at = %s where id = %s::uuid and owner_id = %s::uuid",
                 (now, portfolio_id, user_id),
             )
+            self.transactions.append(
+                portfolio_id, position_data.ticker, position_data.asset_class, "buy", position_data.quantity,
+                position_data.avg_price, position_data.currency, occurred_at,
+            )
             return self.get_by_id(portfolio_id, user_id)
 
         existing = [p for p in portfolio.positions if p.ticker.upper() == position_data.ticker.upper()]
         if existing:
             pos = existing[0]
+            previous_quantity = pos.quantity
+            previous_avg = pos.avg_price
             pos.quantity += position_data.quantity
-            if position_data.avg_price is not None:
+            if previous_avg is not None and position_data.avg_price is not None:
+                pos.avg_price = (
+                    (previous_quantity * previous_avg) + (position_data.quantity * position_data.avg_price)
+                ) / pos.quantity
+            elif previous_avg is None and previous_quantity > 0:
+                pos.avg_price = None
+            else:
                 pos.avg_price = position_data.avg_price
             if position_data.manual_notes:
                 pos.manual_notes = position_data.manual_notes
@@ -303,12 +331,23 @@ class PortfolioService:
 
         portfolio.updated_at = datetime.now(timezone.utc)
         self.storage.save_json(f"{self._dir}/{portfolio_id}.json", portfolio.model_dump(mode="json"))
+        self.transactions.append(
+            portfolio_id, position_data.ticker, position_data.asset_class, "buy", position_data.quantity,
+            position_data.avg_price, position_data.currency, occurred_at,
+        )
         return portfolio
 
     def remove_position(self, portfolio_id: str, ticker: str, user_id: str | None = None) -> Portfolio | None:
         portfolio = self.get_by_id(portfolio_id, user_id)
         if portfolio is None:
             return None
+        self.transactions.ensure_opening_transactions(portfolio)
+        current_position = next((item for item in portfolio.positions if item.ticker.upper() == ticker.upper()), None)
+        if current_position is not None:
+            self.transactions.append(
+                portfolio_id, current_position.ticker, current_position.asset_class, "close", -current_position.quantity,
+                current_position.avg_price, current_position.currency, date.today(),
+            )
 
         if self.db.enabled:
             self.db.execute(

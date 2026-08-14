@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
 import { Button, Card } from './UI';
 import api from '../utils/api';
 import type { PortfolioOpinion } from '../types';
@@ -43,7 +43,11 @@ type OpinionRequests = Partial<Record<AnalysisHorizon, Promise<PortfolioOpinion>
 
 const PREFETCH_HORIZONS: AnalysisHorizon[] = ['2m', '1m'];
 
-export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
+export type PortfolioAnalysisAIHandle = {
+  generate: () => Promise<void>;
+};
+
+export const PortfolioAnalysisAI = forwardRef<PortfolioAnalysisAIHandle, { portfolioId: string }>(function PortfolioAnalysisAI({ portfolioId }, ref) {
   const [data, setData] = useState<PortfolioOpinion | null>(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -117,6 +121,10 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
       await loadOpinion(nextHorizon, { prefetch: false });
     }
   }
+
+  useImperativeHandle(ref, () => ({
+    generate: () => loadOpinion(analysisHorizon),
+  }));
 
   function toggleSourceGroup(sourceName: string) {
     setExpandedSources((prev) => ({
@@ -361,4 +369,4 @@ export function PortfolioAnalysisAI({ portfolioId }: { portfolioId: string }) {
       )}
     </Card>
   );
-}
+});

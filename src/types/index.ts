@@ -129,6 +129,38 @@ export type Portfolio = {
   settings: PortfolioSettings;
 };
 
+export type PortfolioTransaction = {
+  id: string;
+  portfolio_id: string;
+  ticker: string;
+  asset_class: string;
+  kind: 'opening' | 'buy' | 'close';
+  quantity_delta: number;
+  unit_price: number | null;
+  currency: string;
+  occurred_at: string;
+  created_at: string;
+};
+
+export type PortfolioHistoryPoint = {
+  date: string;
+  market_value: number | null;
+  invested_value: number | null;
+  quantity: number | null;
+  contribution_value: number | null;
+  contribution_quantity: number;
+};
+
+export type PortfolioHistoryResponse = {
+  portfolio_id: string;
+  period: '1m' | '6m' | '1y' | 'max';
+  ticker: string | null;
+  currency: string;
+  points: PortfolioHistoryPoint[];
+  available_tickers: string[];
+  warnings: string[];
+};
+
 export type PortfolioAnalysis = {
   weights: Record<string, number>;
   class_weights: Record<string, number>;

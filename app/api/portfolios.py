@@ -4,7 +4,7 @@ from app.services.asset_analysis_service import AssetAnalysisService
 from app.services.portfolio_service import PortfolioService
 from app.services.portfolio_analytics_service import PortfolioAnalyticsService
 from app.services.market_data_service import MarketDataService
-from app.schemas.portfolio import Portfolio, PortfolioBulkDelete, PortfolioCreate, PositionAdd
+from app.schemas.portfolio import Portfolio, PortfolioBulkDelete, PortfolioCreate, PortfolioHistoryResponse, PositionAdd
 
 router = APIRouter(prefix="/portfolios", tags=["portfolios"])
 service = PortfolioService()
@@ -161,6 +161,25 @@ def get_portfolio_prices(portfolio_id: str, current=Depends(require_current_user
         "total_unrealized_pnl": round(total_unrealized, 2) if results else None,
         "positions": results,
     }
+
+
+@router.get("/{portfolio_id}/history", response_model=PortfolioHistoryResponse)
+def get_portfolio_history(
+    portfolio_id: str,
+    period: str = "6m",
+    ticker: str | None = None,
+    current=Depends(require_current_user),
+):
+    if period not in {"1m", "6m", "1y", "max"}:
+        raise HTTPException(status_code=400, detail="Período inválido. Use 1m, 6m, 1y ou max.")
+    portfolio = service.get_by_id(portfolio_id, current["user"].id)
+    if portfolio is None:
+        raise HTTPException(status_code=404, detail="Carteira não encontrada")
+    service.transactions.ensure_opening_transactions(portfolio)
+    available = {item.ticker.upper() for item in service.transactions.list_for_portfolio(portfolio.id)}
+    if ticker and ticker.upper() not in available:
+        raise HTTPException(status_code=404, detail="Ativo não encontrado no histórico da carteira")
+    return service.transactions.build_history(portfolio, period, ticker)
 
 
 @router.get("/{portfolio_id}/news")

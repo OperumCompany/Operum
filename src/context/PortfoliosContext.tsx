@@ -18,7 +18,7 @@ type PortfoliosContextType = {
   updatePortfolio: (id: string, updates: Partial<Portfolio>) => Promise<void>;
   deletePortfolio: (id: string) => Promise<void>;
   deletePortfolios: (ids: string[]) => Promise<void>;
-  addPosition: (portfolioId: string, data: { ticker: string; asset_class: string; quantity: number; avg_price?: number }) => Promise<void>;
+  addPosition: (portfolioId: string, data: { ticker: string; asset_class: string; quantity: number; avg_price?: number; occurred_at?: string }) => Promise<void>;
   removePosition: (portfolioId: string, ticker: string) => Promise<void>;
   refreshPortfolios: () => Promise<void>;
 };
@@ -124,7 +124,7 @@ export function PortfoliosProvider({ children }: { children: ReactNode }) {
     });
   }
 
-  async function addPosition(portfolioId: string, data: { ticker: string; asset_class: string; quantity: number; avg_price?: number }) {
+  async function addPosition(portfolioId: string, data: { ticker: string; asset_class: string; quantity: number; avg_price?: number; occurred_at?: string }) {
     const updated = await api.post<Portfolio>(`/portfolios/${portfolioId}/positions`, data);
     setPortfolios((prev) => prev.map((p) => (p.id === portfolioId ? updated : p)));
   }
