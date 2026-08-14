@@ -1,7 +1,17 @@
-import { FormEvent, useEffect, useRef, useState } from 'react';
-import { BookOpenText, History, MessageSquarePlus, Pencil, Send, Trash2, X } from 'lucide-react';
+import { FormEvent, KeyboardEvent, useEffect, useMemo, useRef, useState } from 'react';
+import {
+  Bot,
+  ExternalLink,
+  History,
+  LoaderCircle,
+  MessageSquarePlus,
+  Pencil,
+  Send,
+  Sparkles,
+  Trash2,
+  X,
+} from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
-import { Button, Input } from '../components/UI';
 import { useAuth } from '../context/AuthContext';
 import { usePortfolios } from '../context/PortfoliosContext';
 import { ChatConversation, ChatMessage, ConversationMessageResponse } from '../types';
@@ -16,8 +26,38 @@ const suggestions = [
   'Como está a composição da minha carteira ativa?',
 ];
 
+type ConversationGroup = {
+  label: string;
+  conversations: ChatConversation[];
+};
+
 function formatTime(value: string) {
   return new Date(value).toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+}
+
+function groupConversations(conversations: ChatConversation[]): ConversationGroup[] {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const groups: Record<'today' | 'week' | 'older', ChatConversation[]> = {
+    today: [],
+    week: [],
+    older: [],
+  };
+
+  conversations.forEach((conversation) => {
+    const updated = new Date(conversation.updated_at);
+    updated.setHours(0, 0, 0, 0);
+    const elapsedDays = Math.floor((today.getTime() - updated.getTime()) / 86_400_000);
+    if (elapsedDays <= 0) groups.today.push(conversation);
+    else if (elapsedDays <= 7) groups.week.push(conversation);
+    else groups.older.push(conversation);
+  });
+
+  return [
+    { label: 'Hoje', conversations: groups.today },
+    { label: 'Últimos 7 dias', conversations: groups.week },
+    { label: 'Anteriores', conversations: groups.older },
+  ].filter((group) => group.conversations.length > 0);
 }
 
 export function ChatPage() {
@@ -27,16 +67,22 @@ export function ChatPage() {
   const [activeId, setActiveId] = useState<string | null>(null);
   const [messages, setMessages] = useState<ChatMessage[]>([]);
   const [text, setText] = useState('');
-  const [loading, setLoading] = useState(true);
+  const [conversationsLoading, setConversationsLoading] = useState(true);
+  const [messagesLoading, setMessagesLoading] = useState(false);
   const [sending, setSending] = useState(false);
   const [error, setError] = useState('');
   const [mobileHistoryOpen, setMobileHistoryOpen] = useState(false);
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editingTitle, setEditingTitle] = useState('');
   const messageEndRef = useRef<HTMLDivElement>(null);
+  const composerRef = useRef<HTMLTextAreaElement>(null);
+  const skipMessageLoadForIdRef = useRef<string | null>(null);
 
   useEffect(() => {
     let cancelled = false;
     async function loadConversations() {
-      setLoading(true);
+      setConversationsLoading(true);
+      setError('');
       try {
         const data = await api.get<ChatConversation[]>('/chat/conversations');
         if (cancelled) return;
@@ -46,7 +92,7 @@ export function ChatPage() {
       } catch {
         if (!cancelled) setError('Não foi possível carregar suas conversas.');
       } finally {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) setConversationsLoading(false);
       }
     }
     void loadConversations();
@@ -58,16 +104,24 @@ export function ChatPage() {
     async function loadMessages() {
       if (!activeId) {
         setMessages([]);
+        setMessagesLoading(false);
         return;
       }
-      setLoading(true);
+      if (skipMessageLoadForIdRef.current === activeId) {
+        skipMessageLoadForIdRef.current = null;
+        setMessagesLoading(false);
+        return;
+      }
+      setMessages([]);
+      setMessagesLoading(true);
+      setError('');
       try {
         const data = await api.get<ChatMessage[]>(`/chat/conversations/${activeId}/messages`);
         if (!cancelled) setMessages(data);
       } catch {
         if (!cancelled) setError('A conversa não está disponível.');
       } finally {
-        if (!cancelled) setLoading(false);
+        if (!cancelled) setMessagesLoading(false);
       }
     }
     void loadMessages();
@@ -75,36 +129,81 @@ export function ChatPage() {
   }, [activeId]);
 
   useEffect(() => {
-    messageEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    messageEndRef.current?.scrollIntoView({ behavior: reduceMotion ? 'auto' : 'smooth' });
   }, [messages, sending]);
 
-  async function createConversation() {
+  useEffect(() => {
+    const composer = composerRef.current;
+    if (!composer) return;
+    composer.style.height = 'auto';
+    composer.style.height = `${Math.min(composer.scrollHeight, 144)}px`;
+  }, [text]);
+
+  useEffect(() => {
+    if (!mobileHistoryOpen) return;
+    function closeOnEscape(event: globalThis.KeyboardEvent) {
+      if (event.key === 'Escape') setMobileHistoryOpen(false);
+    }
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [mobileHistoryOpen]);
+
+  async function createConversation(skipInitialMessageLoad = false) {
     const conversation = await api.post<ChatConversation>('/chat/conversations', {
       portfolio_id: isAllPortfoliosSelected ? null : activePortfolio?.id ?? null,
       use_all_portfolios: isAllPortfoliosSelected,
     });
-    setConversations((current) => [conversation, ...current]);
+    setConversations((current) => [conversation, ...current.filter((item) => item.id !== conversation.id)]);
+    if (skipInitialMessageLoad) skipMessageLoadForIdRef.current = conversation.id;
     setActiveId(conversation.id);
     setMessages([]);
     setError('');
+    setMobileHistoryOpen(false);
     return conversation;
   }
 
-  async function renameConversation(conversation: ChatConversation) {
-    const nextTitle = window.prompt('Novo título da conversa:', conversation.title)?.trim();
-    if (!nextTitle || nextTitle === conversation.title) return;
-    const updated = await api.patch<ChatConversation>(`/chat/conversations/${conversation.id}`, { title: nextTitle });
-    setConversations((current) => current.map((item) => item.id === updated.id ? updated : item));
+  async function startNewConversation() {
+    try {
+      await createConversation();
+      window.setTimeout(() => composerRef.current?.focus(), 0);
+    } catch {
+      setError('Não foi possível criar uma nova conversa.');
+    }
+  }
+
+  function beginRename(conversation: ChatConversation) {
+    setEditingId(conversation.id);
+    setEditingTitle(conversation.title);
+  }
+
+  async function saveRename(conversation: ChatConversation) {
+    const nextTitle = editingTitle.trim();
+    if (!nextTitle || nextTitle === conversation.title) {
+      setEditingId(null);
+      return;
+    }
+    try {
+      const updated = await api.patch<ChatConversation>(`/chat/conversations/${conversation.id}`, { title: nextTitle });
+      setConversations((current) => current.map((item) => item.id === updated.id ? updated : item));
+      setEditingId(null);
+    } catch {
+      setError('Não foi possível renomear a conversa.');
+    }
   }
 
   async function deleteConversation(conversation: ChatConversation) {
     if (!window.confirm(`Excluir a conversa “${conversation.title}”?`)) return;
-    await api.del<{ status: string }>(`/chat/conversations/${conversation.id}`);
-    const remaining = conversations.filter((item) => item.id !== conversation.id);
-    setConversations(remaining);
-    if (activeId === conversation.id) {
-      setActiveId(remaining[0]?.id ?? null);
-      setMessages([]);
+    try {
+      await api.del<{ status: string }>(`/chat/conversations/${conversation.id}`);
+      const remaining = conversations.filter((item) => item.id !== conversation.id);
+      setConversations(remaining);
+      if (activeId === conversation.id) {
+        setActiveId(remaining[0]?.id ?? null);
+        setMessages([]);
+      }
+    } catch {
+      setError('Não foi possível excluir a conversa.');
     }
   }
 
@@ -116,8 +215,8 @@ export function ChatPage() {
     setText('');
     try {
       const conversation = activeId
-        ? conversations.find((item) => item.id === activeId) ?? await createConversation()
-        : await createConversation();
+        ? conversations.find((item) => item.id === activeId) ?? await createConversation(true)
+        : await createConversation(true);
       const optimistic: ChatMessage = {
         id: crypto.randomUUID(), role: 'user', content: clean, created_at: new Date().toISOString(),
       };
@@ -134,7 +233,8 @@ export function ChatPage() {
       ]);
       setActiveId(response.conversation.id);
     } catch {
-      setError('Não consegui gerar a resposta agora. Sua pergunta pode ser enviada novamente.');
+      setText(clean);
+      setError('Não consegui gerar a resposta agora. Sua pergunta foi restaurada para você tentar novamente.');
     } finally {
       setSending(false);
     }
@@ -145,76 +245,195 @@ export function ChatPage() {
     void send(text);
   }
 
+  function onComposerKeyDown(event: KeyboardEvent<HTMLTextAreaElement>) {
+    if (event.key === 'Enter' && !event.shiftKey && !event.nativeEvent.isComposing) {
+      event.preventDefault();
+      void send(text);
+    }
+  }
+
   const activeConversation = conversations.find((item) => item.id === activeId);
+  const conversationGroups = useMemo(() => groupConversations(conversations), [conversations]);
+  const portfolioContext = getActivePortfolioSelectionLabel(activePortfolio, isAllPortfoliosSelected);
+  const userInitial = user?.name?.trim().charAt(0).toUpperCase() || 'V';
+
+  const historyPanel = (
+    <aside className="chat-history-panel" aria-label="Histórico de conversas">
+      <div className="chat-history-mobile-heading">
+        <p>Suas conversas</p>
+        <button type="button" onClick={() => setMobileHistoryOpen(false)} aria-label="Fechar histórico"><X size={19} /></button>
+      </div>
+      <button type="button" className="chat-new-button" onClick={() => void startNewConversation()}>
+        <MessageSquarePlus size={18} />
+        Novo chat
+      </button>
+
+      <div className="chat-history-scroll">
+        {conversationsLoading && conversations.length === 0 && (
+          <div className="chat-history-status"><LoaderCircle className="animate-spin" size={17} /> Carregando histórico...</div>
+        )}
+        {!conversationsLoading && conversations.length === 0 && (
+          <p className="chat-history-empty">Nenhuma conversa ainda. Crie um chat para começar.</p>
+        )}
+        {conversationGroups.map((group) => (
+          <section key={group.label} className="chat-history-group">
+            <h2>{group.label}</h2>
+            <div>
+              {group.conversations.map((conversation) => {
+                const isActive = activeId === conversation.id;
+                const isEditing = editingId === conversation.id;
+                return (
+                  <div key={conversation.id} className={`chat-history-item ${isActive ? 'is-active' : ''}`}>
+                    {isEditing ? (
+                      <input
+                        autoFocus
+                        value={editingTitle}
+                        onChange={(event) => setEditingTitle(event.target.value)}
+                        onBlur={() => void saveRename(conversation)}
+                        onKeyDown={(event) => {
+                          if (event.key === 'Enter') void saveRename(conversation);
+                          if (event.key === 'Escape') setEditingId(null);
+                        }}
+                        aria-label="Título da conversa"
+                        maxLength={120}
+                      />
+                    ) : (
+                      <button
+                        type="button"
+                        className="chat-history-select"
+                        onClick={() => { setActiveId(conversation.id); setMobileHistoryOpen(false); }}
+                        aria-current={isActive ? 'true' : undefined}
+                      >
+                        <span>{conversation.title}</span>
+                        <small>{conversation.message_count} mensagens</small>
+                      </button>
+                    )}
+                    {!isEditing && (
+                      <div className="chat-history-actions">
+                        <button type="button" onClick={() => beginRename(conversation)} aria-label={`Renomear ${conversation.title}`}><Pencil size={13} /></button>
+                        <button type="button" className="is-danger" onClick={() => void deleteConversation(conversation)} aria-label={`Excluir ${conversation.title}`}><Trash2 size={13} /></button>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </section>
+        ))}
+      </div>
+    </aside>
+  );
 
   return (
-    <div className="grid min-h-[calc(100vh-9rem)] gap-4 lg:grid-cols-[280px_minmax(0,1fr)]">
-      <button type="button" className="flex min-h-11 items-center justify-center gap-2 rounded-lg border border-[var(--border-soft)] bg-[var(--bg-surface)] text-sm font-semibold lg:hidden" onClick={() => setMobileHistoryOpen((current) => !current)}>
-        {mobileHistoryOpen ? <X size={17} /> : <History size={17} />}{mobileHistoryOpen ? 'Fechar histórico' : 'Ver conversas'}
-      </button>
-      <aside className={`${mobileHistoryOpen ? 'flex' : 'hidden'} max-h-[55vh] flex-col rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)] p-3 shadow-[var(--shadow-card)] lg:flex lg:max-h-[calc(100vh-9rem)]`}>
-        <Button onClick={() => void createConversation()} className="w-full">
-          <MessageSquarePlus size={17} /> Novo chat
-        </Button>
-        <p className="mb-2 mt-5 px-2 text-[10px] font-bold uppercase tracking-[0.18em] text-[var(--text-muted)]">Conversas</p>
-        <div className="space-y-1 overflow-y-auto">
-          {loading && conversations.length === 0 && <p className="px-2 py-4 text-sm text-[var(--text-muted)]">Carregando histórico...</p>}
-          {!loading && conversations.length === 0 && <p className="px-2 py-4 text-sm leading-5 text-[var(--text-muted)]">Nenhuma conversa ainda. Comece uma pergunta para criar seu primeiro chat.</p>}
-          {conversations.map((conversation) => (
-            <div key={conversation.id} className={`group rounded-2xl border p-2 transition ${activeId === conversation.id ? 'border-[var(--brand)] bg-[var(--accent-soft)]' : 'border-transparent hover:bg-[var(--bg-surface-strong)]'}`}>
-              <button onClick={() => { setActiveId(conversation.id); setMobileHistoryOpen(false); }} className="w-full px-1 text-left">
-                <p className="truncate text-sm font-semibold text-[var(--text-main)]">{conversation.title}</p>
-                <p className="mt-1 text-[10px] text-[var(--text-muted)]">{conversation.message_count} mensagens</p>
-              </button>
-              <div className="mt-2 flex gap-1 opacity-70 transition group-hover:opacity-100">
-                <button aria-label="Renomear conversa" onClick={() => void renameConversation(conversation)} className="rounded-lg p-1.5 hover:bg-white"><Pencil size={13} /></button>
-                <button aria-label="Excluir conversa" onClick={() => void deleteConversation(conversation)} className="rounded-lg p-1.5 text-red-600 hover:bg-white"><Trash2 size={13} /></button>
-              </div>
-            </div>
-          ))}
-        </div>
-      </aside>
+    <div className="chat-workspace">
+      <div className="chat-history-desktop">{historyPanel}</div>
 
-      <section className="flex min-h-[70vh] flex-col overflow-hidden rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface)] shadow-[var(--shadow-card)]">
-        <header className="border-b border-[var(--border-soft)] px-5 py-4 sm:px-7">
-          <div className="flex items-center gap-3">
-            <span className="rounded-2xl bg-[var(--accent-soft)] p-2.5"><BookOpenText size={20} /></span>
-            <div>
-              <h2 className="font-bold text-[var(--text-main)]">{activeConversation?.title ?? 'Agente financeiro Operum'}</h2>
-              <p className="text-xs text-[var(--text-muted)]">Base financeira + {getActivePortfolioSelectionLabel(activePortfolio, isAllPortfoliosSelected)}</p>
-            </div>
+      {mobileHistoryOpen && (
+        <div className="chat-history-overlay" role="presentation">
+          <button type="button" className="chat-history-backdrop" onClick={() => setMobileHistoryOpen(false)} aria-label="Fechar histórico" />
+          <div className="chat-history-drawer" role="dialog" aria-modal="true" aria-label="Histórico de conversas">{historyPanel}</div>
+        </div>
+      )}
+
+      <section className="chat-conversation-panel">
+        <header className="chat-conversation-header">
+          <button type="button" className="chat-mobile-history-button" onClick={() => setMobileHistoryOpen(true)} aria-label="Abrir histórico de conversas">
+            <History size={19} />
+          </button>
+          <span className="chat-agent-icon"><Sparkles size={18} /></span>
+          <div className="chat-conversation-heading">
+            <h1>{activeConversation?.title ?? 'Agente financeiro Operum'}</h1>
+            <p><span aria-hidden="true" />Contexto: {portfolioContext}</p>
           </div>
         </header>
 
-        <div className="flex-1 space-y-4 overflow-y-auto px-4 py-5 sm:px-7">
-          {!loading && messages.length === 0 && (
-            <div className="mx-auto max-w-2xl py-10 text-center">
-              <p className="text-2xl font-bold text-[var(--text-main)]">O que você quer entender?</p>
-              <p className="mx-auto mt-3 max-w-lg text-sm leading-6 text-[var(--text-muted)]">Consulte conceitos, notícias e o contexto da sua carteira em uma conversa educativa e direta.</p>
-              <div className="mt-7 grid gap-2 sm:grid-cols-2">
-                {suggestions.map((suggestion) => <button key={suggestion} onClick={() => void send(suggestion)} className="rounded-2xl border border-[var(--border-soft)] bg-white p-4 text-left text-sm font-semibold transition hover:-translate-y-0.5 hover:border-[var(--brand)]">{suggestion}</button>)}
+        <div className="chat-messages" aria-live="polite" aria-busy={messagesLoading || sending}>
+          <div className="chat-message-column">
+            {messagesLoading && (
+              <div className="chat-loading-state"><LoaderCircle className="animate-spin" size={20} /> Carregando conversa...</div>
+            )}
+
+            {!messagesLoading && messages.length === 0 && (
+              <div className="chat-empty-state">
+                <span className="chat-empty-icon"><Bot size={24} /></span>
+                <p className="eyebrow">Operum IA</p>
+                <h2>O que você quer entender?</h2>
+                <p>Consulte conceitos, notícias e o contexto da sua carteira em uma conversa educativa e direta.</p>
+                <div className="chat-suggestions">
+                  {suggestions.map((suggestion) => (
+                    <button type="button" key={suggestion} onClick={() => void send(suggestion)} disabled={sending}>{suggestion}</button>
+                  ))}
+                </div>
               </div>
-            </div>
-          )}
-          {messages.map((message) => (
-              <article key={message.id} className={`max-w-[92%] rounded-[22px] px-4 py-3 text-sm leading-6 sm:max-w-[82%] sm:px-5 ${message.role === 'user' ? 'ml-auto bg-[var(--brand)] text-white' : 'border border-[var(--border-soft)] bg-white text-[var(--text-main)]'}`}>
-                {message.role === 'assistant' ? (
-                  <div className="prose prose-sm max-w-none prose-headings:mb-2 prose-headings:mt-4 prose-headings:text-[var(--text-main)] prose-p:my-2 prose-li:my-0.5"><ReactMarkdown>{message.content}</ReactMarkdown></div>
-                ) : <p>{message.content}</p>}
-                <p className="mt-2 text-[10px] opacity-60">{formatTime(message.created_at)}</p>
-              </article>
-          ))}
-          {sending && <div className="inline-flex rounded-[22px] border border-[var(--border-soft)] bg-white px-5 py-3 text-sm text-[var(--text-muted)]">Consultando a base financeira...</div>}
-          <div ref={messageEndRef} />
+            )}
+
+            {!messagesLoading && messages.map((message) => {
+              const isAssistant = message.role === 'assistant';
+              return (
+                <article key={message.id} className={`chat-message ${isAssistant ? 'is-assistant' : 'is-user'}`}>
+                  <div className={`chat-message-avatar ${isAssistant ? 'is-agent' : ''}`} aria-hidden="true">
+                    {isAssistant ? <Bot size={17} /> : userInitial}
+                  </div>
+                  <div className="chat-message-body">
+                    <div className="chat-message-meta">
+                      <strong>{isAssistant ? 'Operum IA' : user?.name || 'Você'}</strong>
+                      <time dateTime={message.created_at}>{formatTime(message.created_at)}</time>
+                    </div>
+                    {isAssistant ? (
+                      <div className="chat-markdown"><ReactMarkdown>{message.content}</ReactMarkdown></div>
+                    ) : (
+                      <p className="chat-user-copy">{message.content}</p>
+                    )}
+                    {isAssistant && !!message.sources?.length && (
+                      <div className="chat-sources">
+                        <p>Fontes consultadas</p>
+                        <div>
+                          {message.sources.map((source) => (
+                            <a key={`${message.id}-${source.id}`} href={source.source_url} target="_blank" rel="noreferrer">
+                              <span>{source.title || source.source_name}</span><ExternalLink size={12} />
+                            </a>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                </article>
+              );
+            })}
+
+            {sending && (
+              <div className="chat-message is-assistant chat-thinking">
+                <div className="chat-message-avatar is-agent"><Bot size={17} /></div>
+                <div className="chat-message-body">
+                  <div className="chat-message-meta"><strong>Operum IA</strong><span>analisando</span></div>
+                  <p><i /><i /><i /></p>
+                </div>
+              </div>
+            )}
+            <div ref={messageEndRef} />
+          </div>
         </div>
 
-        <footer className="border-t border-[var(--border-soft)] bg-white/80 p-4 backdrop-blur sm:p-5">
-          {error && <p className="mb-2 text-xs font-semibold text-red-600">{error}</p>}
-          <form onSubmit={onSubmit} className="flex gap-2">
-            <Input value={text} onChange={(event) => setText(event.target.value)} placeholder="Pergunte sobre investimentos, mercado ou sua carteira" disabled={sending} />
-            <Button type="submit" disabled={sending || !text.trim()} aria-label="Enviar mensagem"><Send size={17} /></Button>
-          </form>
-          <p className="mt-2 text-center text-[10px] text-[var(--text-muted)]">Conteúdo educativo. O agente não recomenda compra ou venda.</p>
+        <footer className="chat-composer-area">
+          <div className="chat-composer-column">
+            {error && <p className="chat-error" role="alert">{error}</p>}
+            <form onSubmit={onSubmit} className="chat-command-bar">
+              <textarea
+                ref={composerRef}
+                value={text}
+                onChange={(event) => setText(event.target.value)}
+                onKeyDown={onComposerKeyDown}
+                placeholder="Pergunte à Operum IA..."
+                disabled={sending}
+                rows={1}
+                aria-label="Mensagem para a Operum IA"
+              />
+              <button type="submit" disabled={sending || !text.trim()} aria-label="Enviar mensagem">
+                {sending ? <LoaderCircle className="animate-spin" size={19} /> : <Send size={19} />}
+              </button>
+            </form>
+            <p className="chat-disclaimer">A Operum IA pode cometer erros. Verifique informações financeiras importantes.</p>
+          </div>
         </footer>
       </section>
     </div>
