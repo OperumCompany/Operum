@@ -3,36 +3,28 @@
   "ticker": "ABEV3",
   "asset_name": "Ambev ON",
   "asset_class": "BR_STOCK",
-  "generated_at": "2026-08-14T01:47:37.818065+00:00",
-  "recomputed_at": "2026-08-14T01:47:37.818065+00:00",
+  "generated_at": "2026-08-17T14:39:44.847719+00:00",
+  "recomputed_at": "2026-08-17T14:39:44.847719+00:00",
   "confidence": "media",
   "status": "ok",
   "selected_history_horizon": "3m",
   "selected_outlook_horizon": "3m",
   "asset_function": "estabilidade",
   "current_snapshot": {
-    "current_price": 14.92,
+    "current_price": 14.7,
     "currency": "BRL",
-    "weight_pct": 16.76,
+    "weight_pct": 16.42,
     "sector": "Bebidas",
     "country": "BR",
     "asset_function": "estabilidade"
   },
   "historical_window": {
-    "start_date": "2026-04-10",
-    "end_date": "2026-08-14",
+    "start_date": "2026-04-13",
+    "end_date": "2026-08-17",
     "news_count": 12,
     "has_price_history": true
   },
   "historical_series": [
-    {
-      "date": "2026-05-15",
-      "value": 15.69
-    },
-    {
-      "date": "2026-05-18",
-      "value": 15.81
-    },
     {
       "date": "2026-05-19",
       "value": 15.81
@@ -280,309 +272,317 @@
     {
       "date": "2026-08-13",
       "value": 14.92
+    },
+    {
+      "date": "2026-08-14",
+      "value": 14.75
+    },
+    {
+      "date": "2026-08-17",
+      "value": 14.71
     }
   ],
   "forecast_series": [
     {
-      "date": "2026-08-14",
-      "value": 14.92
-    },
-    {
       "date": "2026-08-17",
-      "value": 14.88
+      "value": 14.7
     },
     {
       "date": "2026-08-18",
-      "value": 14.84
-    },
-    {
-      "date": "2026-08-19",
-      "value": 14.79
-    },
-    {
-      "date": "2026-08-20",
-      "value": 14.75
-    },
-    {
-      "date": "2026-08-21",
-      "value": 14.71
-    },
-    {
-      "date": "2026-08-24",
-      "value": 14.7
-    },
-    {
-      "date": "2026-08-25",
-      "value": 14.7
-    },
-    {
-      "date": "2026-08-26",
-      "value": 14.69
-    },
-    {
-      "date": "2026-08-27",
-      "value": 14.68
-    },
-    {
-      "date": "2026-08-28",
-      "value": 14.67
-    },
-    {
-      "date": "2026-08-31",
-      "value": 14.67
-    },
-    {
-      "date": "2026-09-01",
-      "value": 14.66
-    },
-    {
-      "date": "2026-09-02",
       "value": 14.65
     },
     {
-      "date": "2026-09-03",
-      "value": 14.64
-    },
-    {
-      "date": "2026-09-04",
-      "value": 14.63
-    },
-    {
-      "date": "2026-09-07",
-      "value": 14.63
-    },
-    {
-      "date": "2026-09-08",
-      "value": 14.62
-    },
-    {
-      "date": "2026-09-09",
+      "date": "2026-08-19",
       "value": 14.61
     },
     {
-      "date": "2026-09-10",
-      "value": 14.61
-    },
-    {
-      "date": "2026-09-11",
-      "value": 14.6
-    },
-    {
-      "date": "2026-09-14",
-      "value": 14.59
-    },
-    {
-      "date": "2026-09-15",
-      "value": 14.58
-    },
-    {
-      "date": "2026-09-16",
-      "value": 14.57
-    },
-    {
-      "date": "2026-09-17",
-      "value": 14.57
-    },
-    {
-      "date": "2026-09-18",
+      "date": "2026-08-20",
       "value": 14.56
     },
     {
-      "date": "2026-09-21",
-      "value": 14.55
-    },
-    {
-      "date": "2026-09-22",
-      "value": 14.54
-    },
-    {
-      "date": "2026-09-23",
-      "value": 14.54
-    },
-    {
-      "date": "2026-09-24",
-      "value": 14.53
-    },
-    {
-      "date": "2026-09-25",
+      "date": "2026-08-21",
       "value": 14.52
     },
     {
-      "date": "2026-09-28",
-      "value": 14.51
-    },
-    {
-      "date": "2026-09-29",
-      "value": 14.51
-    },
-    {
-      "date": "2026-09-30",
-      "value": 14.5
-    },
-    {
-      "date": "2026-10-01",
-      "value": 14.49
-    },
-    {
-      "date": "2026-10-02",
-      "value": 14.48
-    },
-    {
-      "date": "2026-10-05",
-      "value": 14.48
-    },
-    {
-      "date": "2026-10-06",
+      "date": "2026-08-24",
       "value": 14.47
     },
     {
-      "date": "2026-10-07",
+      "date": "2026-08-25",
       "value": 14.46
     },
     {
-      "date": "2026-10-08",
+      "date": "2026-08-26",
       "value": 14.45
     },
     {
-      "date": "2026-10-09",
-      "value": 14.45
-    },
-    {
-      "date": "2026-10-12",
+      "date": "2026-08-27",
       "value": 14.44
     },
     {
-      "date": "2026-10-13",
+      "date": "2026-08-28",
       "value": 14.43
     },
     {
-      "date": "2026-10-14",
+      "date": "2026-08-31",
       "value": 14.42
     },
     {
-      "date": "2026-10-15",
-      "value": 14.42
-    },
-    {
-      "date": "2026-10-16",
+      "date": "2026-09-01",
       "value": 14.41
     },
     {
-      "date": "2026-10-19",
+      "date": "2026-09-02",
       "value": 14.4
     },
     {
-      "date": "2026-10-20",
+      "date": "2026-09-03",
       "value": 14.39
     },
     {
-      "date": "2026-10-21",
-      "value": 14.39
-    },
-    {
-      "date": "2026-10-22",
+      "date": "2026-09-04",
       "value": 14.38
     },
     {
-      "date": "2026-10-23",
+      "date": "2026-09-07",
       "value": 14.37
     },
     {
-      "date": "2026-10-26",
-      "value": 14.37
-    },
-    {
-      "date": "2026-10-27",
+      "date": "2026-09-08",
       "value": 14.36
     },
     {
-      "date": "2026-10-28",
+      "date": "2026-09-09",
       "value": 14.35
     },
     {
-      "date": "2026-10-29",
+      "date": "2026-09-10",
       "value": 14.34
     },
     {
-      "date": "2026-10-30",
-      "value": 14.34
-    },
-    {
-      "date": "2026-11-02",
+      "date": "2026-09-11",
       "value": 14.33
     },
     {
-      "date": "2026-11-03",
+      "date": "2026-09-14",
       "value": 14.32
     },
     {
-      "date": "2026-11-04",
-      "value": 14.32
-    },
-    {
-      "date": "2026-11-05",
+      "date": "2026-09-15",
       "value": 14.31
     },
     {
-      "date": "2026-11-06",
+      "date": "2026-09-16",
       "value": 14.3
     },
     {
-      "date": "2026-11-09",
+      "date": "2026-09-17",
       "value": 14.29
+    },
+    {
+      "date": "2026-09-18",
+      "value": 14.28
+    },
+    {
+      "date": "2026-09-21",
+      "value": 14.27
+    },
+    {
+      "date": "2026-09-22",
+      "value": 14.26
+    },
+    {
+      "date": "2026-09-23",
+      "value": 14.25
+    },
+    {
+      "date": "2026-09-24",
+      "value": 14.24
+    },
+    {
+      "date": "2026-09-25",
+      "value": 14.23
+    },
+    {
+      "date": "2026-09-28",
+      "value": 14.22
+    },
+    {
+      "date": "2026-09-29",
+      "value": 14.21
+    },
+    {
+      "date": "2026-09-30",
+      "value": 14.19
+    },
+    {
+      "date": "2026-10-01",
+      "value": 14.18
+    },
+    {
+      "date": "2026-10-02",
+      "value": 14.17
+    },
+    {
+      "date": "2026-10-05",
+      "value": 14.16
+    },
+    {
+      "date": "2026-10-06",
+      "value": 14.15
+    },
+    {
+      "date": "2026-10-07",
+      "value": 14.14
+    },
+    {
+      "date": "2026-10-08",
+      "value": 14.13
+    },
+    {
+      "date": "2026-10-09",
+      "value": 14.12
+    },
+    {
+      "date": "2026-10-12",
+      "value": 14.11
+    },
+    {
+      "date": "2026-10-13",
+      "value": 14.1
+    },
+    {
+      "date": "2026-10-14",
+      "value": 14.09
+    },
+    {
+      "date": "2026-10-15",
+      "value": 14.08
+    },
+    {
+      "date": "2026-10-16",
+      "value": 14.07
+    },
+    {
+      "date": "2026-10-19",
+      "value": 14.06
+    },
+    {
+      "date": "2026-10-20",
+      "value": 14.05
+    },
+    {
+      "date": "2026-10-21",
+      "value": 14.04
+    },
+    {
+      "date": "2026-10-22",
+      "value": 14.03
+    },
+    {
+      "date": "2026-10-23",
+      "value": 14.02
+    },
+    {
+      "date": "2026-10-26",
+      "value": 14.01
+    },
+    {
+      "date": "2026-10-27",
+      "value": 14.0
+    },
+    {
+      "date": "2026-10-28",
+      "value": 13.99
+    },
+    {
+      "date": "2026-10-29",
+      "value": 13.98
+    },
+    {
+      "date": "2026-10-30",
+      "value": 13.97
+    },
+    {
+      "date": "2026-11-02",
+      "value": 13.96
+    },
+    {
+      "date": "2026-11-03",
+      "value": 13.95
+    },
+    {
+      "date": "2026-11-04",
+      "value": 13.94
+    },
+    {
+      "date": "2026-11-05",
+      "value": 13.93
+    },
+    {
+      "date": "2026-11-06",
+      "value": 13.92
+    },
+    {
+      "date": "2026-11-09",
+      "value": 13.91
     },
     {
       "date": "2026-11-10",
-      "value": 14.29
+      "value": 13.9
     },
     {
       "date": "2026-11-11",
-      "value": 14.28
+      "value": 13.89
+    },
+    {
+      "date": "2026-11-12",
+      "value": 13.88
     }
   ],
   "forecast_anchor_points": [
     {
       "date": "5d",
       "horizon_days": 5,
-      "predicted_price": 14.71,
-      "predicted_return": -0.014406,
+      "predicted_price": 14.47,
+      "predicted_return": -0.015481,
       "confidence": 0.25
     },
     {
       "date": "21d",
       "horizon_days": 21,
-      "predicted_price": 14.59,
-      "predicted_return": -0.022225,
+      "predicted_price": 14.31,
+      "predicted_return": -0.026525,
       "confidence": 0.25
     },
     {
       "date": "42d",
       "horizon_days": 42,
-      "predicted_price": 14.43,
-      "predicted_return": -0.03265,
+      "predicted_price": 14.09,
+      "predicted_return": -0.04125,
       "confidence": 0.25
     },
     {
       "date": "63d",
       "horizon_days": 63,
-      "predicted_price": 14.28,
-      "predicted_return": -0.043075,
+      "predicted_price": 13.88,
+      "predicted_return": -0.055975,
       "confidence": 0.25
     }
   ],
   "recent_performance": {
-    "change_selected_pct": -4.91,
-    "change_1m_pct": -4.17,
-    "change_2m_pct": -9.25,
-    "change_3m_pct": -4.91,
+    "change_selected_pct": -6.96,
+    "change_1m_pct": -5.89,
+    "change_2m_pct": -9.31,
+    "change_3m_pct": -6.96,
     "change_12m_pct": null,
-    "volatility_selected_pct": 18.83,
-    "drawdown_selected_pct": -11.24,
-    "beta_selected": 0.73,
-    "correlation_selected": 0.63,
+    "volatility_selected_pct": 18.87,
+    "drawdown_selected_pct": -12.07,
+    "beta_selected": 0.75,
+    "correlation_selected": 0.65,
     "benchmark_ticker": "IBOV",
-    "forecast_return_selected_pct": -4.31,
-    "forecast_price_selected": 14.28,
+    "forecast_return_selected_pct": -5.6,
+    "forecast_price_selected": 13.88,
     "forecast_confidence_selected": 0.25,
     "forecast_news_adjustment_pct": -1.18
   },
@@ -596,20 +596,20 @@
     ]
   },
   "analysis_sections": {
-    "current": "O ativo deve ser interpretado como ação brasileira, sem misturar empresa, preço de tela e impacto na carteira. Dentro da carteira, a função principal definida para este ativo é estabilidade. A cotação atual aproximada é BRL 14,92. Hoje representa cerca de 16,8% da carteira. No último mês, o preço teve variação de -4,2%. O modelo de 3 meses aponta queda, mas essa projeção deve ser lida como referência estatística, não como certeza. As notícias recentes alteram a leitura do cenário, mas não substituem dados fundamentalistas estruturados. As notícias recentes têm tom negativo, mas não permitem concluir, isoladamente, que os fundamentos melhoraram ou pioraram.",
-    "recent": "No recorte dos últimos 3 meses, o ativo variou -4,9%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 11,2%. A comparação com IBOV sugere que o ativo acompanhou parte do movimento do índice de referência, mas esse dado não deve ser lido isoladamente. No noticiário do período, os temas mais recorrentes foram juros, câmbio, inflação, commodities. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
-    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados. O modelo para 3 meses aponta variação estimada de -4,3%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, juros, inflação, câmbio. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+    "current": "O ativo deve ser interpretado como ação brasileira, sem misturar empresa, preço de tela e impacto na carteira. Dentro da carteira, a função principal definida para este ativo é estabilidade. A cotação atual aproximada é BRL 14,70. Hoje representa cerca de 16,4% da carteira. No último mês, o preço teve variação de -5,9%. O modelo de 3 meses aponta queda, mas essa projeção deve ser lida como referência estatística, não como certeza. As notícias recentes alteram a leitura do cenário, mas não substituem dados fundamentalistas estruturados. As notícias recentes têm tom negativo, mas não permitem concluir, isoladamente, que os fundamentos melhoraram ou pioraram.",
+    "recent": "No recorte dos últimos 3 meses, o ativo variou -7,0%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 12,1%. A comparação com IBOV sugere que o ativo acompanhou parte do movimento do índice de referência, mas esse dado não deve ser lido isoladamente. No noticiário do período, os temas mais recorrentes foram juros, câmbio, inflação, commodities. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
+    "outlook": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados. O modelo para 3 meses aponta variação estimada de -5,6%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, inflação, juros, câmbio. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
     "recent_by_horizon": {
-      "1w": "No recorte dos última semana, o ativo variou -4,7%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 5,2%. No noticiário do período, os temas mais recorrentes foram commodities, geopolítica, inflação, juros. Houve 9 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
-      "1m": "No recorte dos último mês, o ativo variou -4,2%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 7,9%. A comparação com IBOV sugere que o ativo acompanhou parte do movimento do índice de referência, mas esse dado não deve ser lido isoladamente. No noticiário do período, os temas mais recorrentes foram geopolítica, commodities, cenário fiscal e político, inflação. Houve 10 evento(s) relevante(s), com viés misto. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
-      "2m": "No recorte dos últimos 2 meses, o ativo variou -9,2%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 11,2%. A comparação com IBOV sugere que o ativo acompanhou parte do movimento do índice de referência, mas esse dado não deve ser lido isoladamente. No noticiário do período, os temas mais recorrentes foram juros, câmbio, inflação, commodities. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
-      "3m": "No recorte dos últimos 3 meses, o ativo variou -4,9%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 11,2%. A comparação com IBOV sugere que o ativo acompanhou parte do movimento do índice de referência, mas esse dado não deve ser lido isoladamente. No noticiário do período, os temas mais recorrentes foram juros, câmbio, inflação, commodities. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade."
+      "1w": "No recorte dos última semana, o ativo variou -3,7%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 3,7%. No noticiário do período, os temas mais recorrentes foram geopolítica, commodities, inflação, juros. Houve 8 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
+      "1m": "No recorte dos último mês, o ativo variou -5,9%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 8,8%. A comparação com IBOV sugere que o ativo acompanhou parte do movimento do índice de referência, mas esse dado não deve ser lido isoladamente. No noticiário do período, os temas mais recorrentes foram geopolítica, cenário fiscal e político, commodities, inflação. Houve 9 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
+      "2m": "No recorte dos últimos 2 meses, o ativo variou -9,3%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 12,1%. A comparação com IBOV sugere que o ativo acompanhou parte do movimento do índice de referência, mas esse dado não deve ser lido isoladamente. No noticiário do período, os temas mais recorrentes foram juros, câmbio, inflação, commodities. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade.",
+      "3m": "No recorte dos últimos 3 meses, o ativo variou -7,0%. No mesmo intervalo, a maior queda em relação ao maior preço do período foi de 12,1%. A comparação com IBOV sugere que o ativo acompanhou parte do movimento do índice de referência, mas esse dado não deve ser lido isoladamente. No noticiário do período, os temas mais recorrentes foram juros, câmbio, inflação, commodities. Houve 12 evento(s) relevante(s), com viés mais negativo. A leitura desse intervalo foi puxada principalmente por notícias de macro, o que ajuda a entender o contexto do ativo dentro da função de estabilidade."
     },
     "outlook_by_horizon": {
-      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados. O modelo para 1 semana aponta variação estimada de -1,4%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são geopolítica, commodities, inflação, juros. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
-      "1m": "A perspectiva de 1 mês pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados. O modelo para 1 mês aponta variação estimada de -2,2%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são geopolítica, cenário fiscal e político, commodities, juros. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
-      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados. O modelo para 2 meses aponta variação estimada de -3,3%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, juros, inflação, câmbio. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
-      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados. O modelo para 3 meses aponta variação estimada de -4,3%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, juros, inflação, câmbio. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada."
+      "1w": "A perspectiva de 1 semana pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados. O modelo para 1 semana aponta variação estimada de -1,5%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são geopolítica, commodities, inflação, juros. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+      "1m": "A perspectiva de 1 mês pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados. O modelo para 1 mês aponta variação estimada de -2,7%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são geopolítica, cenário fiscal e político, commodities, juros. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+      "2m": "A perspectiva de 2 meses pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados. O modelo para 2 meses aponta variação estimada de -4,1%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, inflação, juros, câmbio. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada.",
+      "3m": "A perspectiva de 3 meses pede cautela, porque o ativo segue sensível a novas revisões negativas de cenário ou resultados. O modelo para 3 meses aponta variação estimada de -5,6%, mas isso deve ser tratado como cenário, não como promessa de preço. O contexto de notícias altera a leitura, mas ainda depende de confirmação por dados e eventos futuros. Os temas dominantes agora são commodities, inflação, juros, câmbio. Dentro da carteira, o acompanhamento deve verificar se o ativo segue adequado à função de estabilidade. A confiança dessa leitura é moderada."
     },
     "visual_summary": {
       "asset_status": "atenção",
@@ -621,12 +621,12 @@
       "main_reason": "notícias ligadas a juros, cambio",
       "confidence": "moderada"
     },
-    "summary": "Nos últimos 3 meses, ABEV3 apresentou variação de -4,9%. Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente 11,2%. As notícias avaliadas não indicam, por si só, uma deterioração clara do negócio ou da tese do ativo. O ativo representa 16,8% da carteira, ponto importante para entender o impacto de qualquer oscilação.",
+    "summary": "Nos últimos 3 meses, ABEV3 apresentou variação de -7,0%. Nesse período, a maior queda em relação ao maior preço observado foi de aproximadamente 12,1%. As notícias avaliadas não indicam, por si só, uma deterioração clara do negócio ou da tese do ativo. O ativo representa 16,4% da carteira, ponto importante para entender o impacto de qualquer oscilação.",
     "what_happened": "O desempenho recente foi de queda. Parte desse movimento pode estar ligada ao próprio mercado e a fatores externos, especialmente juros, cambio, inflacao, não necessariamente apenas a mudanças internas de Ambev ON.",
     "company_situation": "Ambev ON pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom levemente negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo.",
-    "asset_price_situation": "No mercado, a tendência recente do preço é de queda no recorte de últimos 3 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 11,2%. A comparação com IBOV sugere que o ativo teve sensibilidade relevante ao movimento do índice de referência.",
-    "current_situation": "Ambev ON pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom levemente negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo. No mercado, a tendência recente do preço é de queda no recorte de últimos 3 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 11,2%. A comparação com IBOV sugere que o ativo teve sensibilidade relevante ao movimento do índice de referência.",
-    "portfolio_impact": "Como ABEV3 representa 16,8% da carteira, a posição é classificada como relevante. Uma queda de 10% no ativo teria impacto aproximado de -1,7% no valor total da carteira, considerando os demais investimentos estáveis. Uma alta de 10% teria impacto aproximado de +1,7%. A concentração aumenta tanto o potencial de ganho quanto o potencial de perda, e sua adequação depende do objetivo, prazo e tolerância a oscilações do usuário.",
+    "asset_price_situation": "No mercado, a tendência recente do preço é de queda no recorte de últimos 3 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 12,1%. A comparação com IBOV sugere que o ativo teve sensibilidade relevante ao movimento do índice de referência.",
+    "current_situation": "Ambev ON pertence à categoria Ação brasileira. Dados fundamentais estruturados, como lucro, margens, endividamento ou indicadores operacionais, ainda não estão disponíveis de forma completa nesta análise. Por isso, o Operum não conclui que os fundamentos melhoraram ou pioraram apenas com base no movimento do preço ou no tom das notícias. As notícias avaliadas apresentam tom levemente negativo, mas isso deve ser lido como contexto, não como prova isolada de mudança na qualidade do ativo. No mercado, a tendência recente do preço é de queda no recorte de últimos 3 meses. A maior queda em relação ao maior preço do período foi de aproximadamente 12,1%. A comparação com IBOV sugere que o ativo teve sensibilidade relevante ao movimento do índice de referência.",
+    "portfolio_impact": "Como ABEV3 representa 16,4% da carteira, a posição é classificada como relevante. Uma queda de 10% no ativo teria impacto aproximado de -1,6% no valor total da carteira, considerando os demais investimentos estáveis. Uma alta de 10% teria impacto aproximado de +1,6%. A concentração aumenta tanto o potencial de ganho quanto o potencial de perda, e sua adequação depende do objetivo, prazo e tolerância a oscilações do usuário.",
     "scenarios": {
       "favorable": "Nos próximos 3 meses, o cenário favorável depende de melhora nas notícias relevantes, ambiente de mercado mais construtivo e sinais de que o ativo segue adequado à função de estabilidade. A confirmação viria de desempenho mais consistente do preço, notícias diretamente positivas e menor pressão dos fatores externos monitorados.",
       "base": "O cenário-base para 3 meses é pressionado. A leitura mais equilibrada é acompanhar se o movimento recente se sustenta ou se perde força, sem tratar a projeção como certeza de preço futuro.",
@@ -646,17 +646,17 @@
       "Dados fundamentais estruturados ainda não estão disponíveis no MVP; a leitura de fundamentos usa notícias, classe do ativo e contexto."
     ],
     "box_history_by_horizon": {
-      "1w": "Nos última semana, ABEV3 recuou 4,7%. No pior momento da janela, ficou cerca de 5,2% abaixo do maior preço do período. O comportamento do preço mostrou oscilações moderadas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a commodities, geopolítica, inflação, juros. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
-      "1m": "Nos último mês, ABEV3 recuou 4,2%. No pior momento da janela, ficou cerca de 7,9% abaixo do maior preço do período. O comportamento do preço mostrou oscilações moderadas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a geopolítica, commodities, cenário fiscal e político, inflação. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
-      "2m": "Nos últimos 2 meses, ABEV3 recuou 9,2%. No pior momento da janela, ficou cerca de 11,2% abaixo do maior preço do período. O comportamento do preço mostrou oscilações moderadas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a juros, câmbio, inflação, commodities. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
-      "3m": "Nos últimos 3 meses, ABEV3 recuou 4,9%. No pior momento da janela, ficou cerca de 11,2% abaixo do maior preço do período. O comportamento do preço mostrou oscilações moderadas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a juros, câmbio, inflação, commodities. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade."
+      "1w": "Nos última semana, ABEV3 recuou 3,7%. No pior momento da janela, ficou cerca de 3,7% abaixo do maior preço do período. O comportamento do preço mostrou oscilações contidas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom negativo, com temas ligados a geopolítica, commodities, inflação, juros. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
+      "1m": "Nos último mês, ABEV3 recuou 5,9%. No pior momento da janela, ficou cerca de 8,8% abaixo do maior preço do período. O comportamento do preço mostrou oscilações moderadas, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a geopolítica, cenário fiscal e político, commodities, inflação. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
+      "2m": "Nos últimos 2 meses, ABEV3 recuou 9,3%. No pior momento da janela, ficou cerca de 12,1% abaixo do maior preço do período. O comportamento do preço mostrou oscilações relevantes, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a juros, câmbio, inflação, commodities. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade.",
+      "3m": "Nos últimos 3 meses, ABEV3 recuou 7,0%. No pior momento da janela, ficou cerca de 12,1% abaixo do maior preço do período. O comportamento do preço mostrou oscilações relevantes, então a leitura deve considerar tanto a direção quanto a intensidade do movimento. As notícias diretamente relacionadas ao ativo tiveram tom levemente negativo, com temas ligados a juros, câmbio, inflação, commodities. Esse histórico não prova, sozinho, melhora ou piora do negócio. Sem comparação completa com IBOV, com pares do setor e com o restante da carteira, não é possível concluir se o ativo cumpriu sua função de estabilidade."
     },
-    "box_current": "Atualmente, a avaliação de ABEV3 exige separar a situação da empresa, o comportamento do ativo negociado em bolsa e o impacto da posição na carteira. As notícias recentes têm tom levemente negativo, mas não bastam, sozinhas, para afirmar melhora ou deterioração dos fundamentos. O preço apresenta tendência recente de queda, mas isso não deve ser confundido automaticamente com mudança na qualidade da empresa. A posição representa 16,8% da carteira, caracterizando uma exposição relevante. Uma queda de 10% em ABEV3 teria impacto aproximado de 1,7% sobre a carteira, considerando os demais ativos estáveis. O ponto de acompanhamento é verificar se os próximos dados confirmam que o ativo continua coerente com a função de estabilidade.",
+    "box_current": "Atualmente, a avaliação de ABEV3 exige separar a situação da empresa, o comportamento do ativo negociado em bolsa e o impacto da posição na carteira. As notícias recentes têm tom levemente negativo, mas não bastam, sozinhas, para afirmar melhora ou deterioração dos fundamentos. O preço apresenta tendência recente de queda, mas isso não deve ser confundido automaticamente com mudança na qualidade da empresa. A posição representa 16,4% da carteira, caracterizando uma exposição relevante. Uma queda de 10% em ABEV3 teria impacto aproximado de 1,6% sobre a carteira, considerando os demais ativos estáveis. O ponto de acompanhamento é verificar se os próximos dados confirmam que o ativo continua coerente com a função de estabilidade.",
     "box_outlook_by_horizon": {
-      "1w": "O cenário para os próximos 1 semana é pressionado. Neste prazo curto, a leitura deve dar mais peso a ruídos de mercado, variação diária do preço, notícias recentes e volatilidade de curto prazo. O movimento pode mudar rapidamente com fluxo, manchetes e ajustes técnicos, sem necessariamente indicar alteração nos fundamentos. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são preço, volume negociado, notícias recentes, reação do mercado e volatilidade curta. Como a posição representa 16,8% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
-      "1m": "O cenário para os próximos 1 mês é pressionado. Em 1 mês, o ponto central é observar se o movimento recente ganha continuidade ou perde força. Próximos eventos, novas notícias e a reação do preço ajudam a indicar se o cenário está se sustentando. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são continuidade do preço, próximos eventos, notícias relevantes, resultados parciais e reação do mercado. Como a posição representa 16,8% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
-      "2m": "O cenário para os próximos 2 meses é pressionado. Em 2 meses, a análise deve procurar sinais de confirmação ou reversão do cenário atual. Se os dados e notícias reforçarem a leitura, o cenário ganha consistência; se vierem em direção oposta, a leitura precisa ser revista. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são confirmação do cenário, sinais de reversão, evolução das notícias e commodities, juros, inflação, câmbio. Como a posição representa 16,8% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
-      "3m": "O cenário para os próximos 3 meses é pressionado. Em 3 meses, o foco deixa de ser apenas o ruído de curto prazo e passa a incluir fundamentos, resultados, ambiente macroeconômico e risco da posição na carteira. Esse horizonte é mais útil para avaliar se a tese continua coerente com a função definida para o ativo. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são commodities, juros, inflação, câmbio. Como a posição representa 16,8% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar."
+      "1w": "O cenário para os próximos 1 semana é pressionado. Neste prazo curto, a leitura deve dar mais peso a ruídos de mercado, variação diária do preço, notícias recentes e volatilidade de curto prazo. O movimento pode mudar rapidamente com fluxo, manchetes e ajustes técnicos, sem necessariamente indicar alteração nos fundamentos. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são preço, volume negociado, notícias recentes, reação do mercado e volatilidade curta. Como a posição representa 16,4% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
+      "1m": "O cenário para os próximos 1 mês é pressionado. Em 1 mês, o ponto central é observar se o movimento recente ganha continuidade ou perde força. Próximos eventos, novas notícias e a reação do preço ajudam a indicar se o cenário está se sustentando. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são continuidade do preço, próximos eventos, notícias relevantes, resultados parciais e reação do mercado. Como a posição representa 16,4% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
+      "2m": "O cenário para os próximos 2 meses é pressionado. Em 2 meses, a análise deve procurar sinais de confirmação ou reversão do cenário atual. Se os dados e notícias reforçarem a leitura, o cenário ganha consistência; se vierem em direção oposta, a leitura precisa ser revista. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são confirmação do cenário, sinais de reversão, evolução das notícias e commodities, inflação, juros, câmbio. Como a posição representa 16,4% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar.",
+      "3m": "O cenário para os próximos 3 meses é pressionado. Em 3 meses, o foco deixa de ser apenas o ruído de curto prazo e passa a incluir fundamentos, resultados, ambiente macroeconômico e risco da posição na carteira. Esse horizonte é mais útil para avaliar se a tese continua coerente com a função definida para o ativo. O ativo pode ser favorecido por resultados consistentes, notícias mais favoráveis e melhora do ambiente de mercado. Por outro lado, pode seguir pressionado se houver resultados abaixo do esperado, piora setorial ou ambiente econômico mais adverso. Os principais pontos a acompanhar são commodities, inflação, juros, câmbio. Como a posição representa 16,4% da carteira, movimentos fortes do ativo podem pesar no resultado do conjunto. A confiança dessa leitura é moderada, pois o comportamento futuro ainda depende de dados e eventos que podem mudar."
     }
   },
   "used_news_count": 12,
@@ -671,8 +671,8 @@
       "sentiment_score": 1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.3071,
-      "rank_score": 0.3796,
+      "match_score": 0.3015,
+      "rank_score": 0.3775,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -691,8 +691,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.3378,
-      "rank_score": 0.3669,
+      "match_score": 0.3283,
+      "rank_score": 0.3632,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -711,8 +711,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.75,
       "relevance_score": 0.5,
-      "match_score": 0.2733,
-      "rank_score": 0.3545,
+      "match_score": 0.2683,
+      "rank_score": 0.3525,
       "source_category": "exchange",
       "is_official": true,
       "context_role": "macro",
@@ -731,8 +731,8 @@
       "sentiment_score": -1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.2992,
-      "rank_score": 0.3518,
+      "match_score": 0.2943,
+      "rank_score": 0.3499,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -751,8 +751,8 @@
       "sentiment_score": -0.6666666666666666,
       "impact_score": 0.6499999999999999,
       "relevance_score": 0.5,
-      "match_score": 0.2642,
-      "rank_score": 0.3494,
+      "match_score": 0.2634,
+      "rank_score": 0.3491,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -771,8 +771,8 @@
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.2851,
-      "rank_score": 0.3463,
+      "match_score": 0.2818,
+      "rank_score": 0.345,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -780,26 +780,6 @@
       "semantic_similarity": 0.0,
       "analysis_category": "macro",
       "role": "outlook"
-    },
-    {
-      "id": "452ac421ef9819fb6017e26a561e3a4e",
-      "title": "Atividade mais fraca pode abrir espaço para Selic cair a 13,25%, diz Bradesco",
-      "source_name": "Folha.com - Mercado - Principal",
-      "source_url": "https://www1.folha.uol.com.br/mercado/2026/08/atividade-mais-fraca-pode-abrir-espaco-para-selic-cair-a-1325-diz-bradesco.shtml",
-      "published_at": "2026-08-07T13:51:00-03:00",
-      "summary": "Os sinais cada vez mais fortes de desaceleração da economia, inclusive no mercado de trabalho, podem abrir a porta para o Banco Central levar a taxa básica de juros (Selic), hoje em 14% ao ano, para 13,25% no final de 2026, avalia o Bradesco.\n\nLeia mais (08/07/2026 - 13h51). O texto menciona BBDC4. O foco principal passa por Economia, Financeiro.",
-      "sentiment_score": -1.0,
-      "impact_score": 0.75,
-      "relevance_score": 0.5,
-      "match_score": 0.2922,
-      "rank_score": 0.3446,
-      "source_category": "press",
-      "is_official": false,
-      "context_role": "macro",
-      "source_confidence_weight": 0.72,
-      "semantic_similarity": 0.0,
-      "analysis_category": "macro",
-      "role": "historical"
     },
     {
       "id": "1389a5a785c51cbd5efc0d383728baba",
@@ -811,8 +791,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2645,
-      "rank_score": 0.3439,
+      "match_score": 0.2637,
+      "rank_score": 0.3436,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -831,8 +811,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2645,
-      "rank_score": 0.3439,
+      "match_score": 0.2637,
+      "rank_score": 0.3436,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -851,8 +831,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2643,
-      "rank_score": 0.3438,
+      "match_score": 0.2635,
+      "rank_score": 0.3435,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -871,8 +851,8 @@
       "sentiment_score": -0.5,
       "impact_score": 0.6000000000000001,
       "relevance_score": 0.5,
-      "match_score": 0.2643,
-      "rank_score": 0.3438,
+      "match_score": 0.2635,
+      "rank_score": 0.3435,
       "source_category": null,
       "is_official": false,
       "context_role": "macro",
@@ -891,8 +871,28 @@
       "sentiment_score": 1.0,
       "impact_score": 0.55,
       "relevance_score": 0.5,
-      "match_score": 0.2695,
-      "rank_score": 0.3425,
+      "match_score": 0.2683,
+      "rank_score": 0.342,
+      "source_category": "press",
+      "is_official": false,
+      "context_role": "macro",
+      "source_confidence_weight": 0.75,
+      "semantic_similarity": 0.0,
+      "analysis_category": "macro",
+      "role": "historical"
+    },
+    {
+      "id": "0048229a6179b8807618d2898aa2f022",
+      "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
+      "source_name": "InfoMoney",
+      "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+      "published_at": "2026-06-04T04:03:05.260410+00:00",
+      "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
+      "sentiment_score": -1.0,
+      "impact_score": 0.55,
+      "relevance_score": 0.5,
+      "match_score": 0.267,
+      "rank_score": 0.3415,
       "source_category": "press",
       "is_official": false,
       "context_role": "macro",
@@ -905,7 +905,7 @@
   "source_groups": [
     {
       "source_name": "InfoMoney",
-      "count": 7,
+      "count": 8,
       "items": [
         {
           "id": "19e7c6b4eaa48cd03ce87180af6c5469",
@@ -917,8 +917,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.3071,
-          "rank_score": 0.3796,
+          "match_score": 0.3015,
+          "rank_score": 0.3775,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -937,8 +937,8 @@
           "sentiment_score": -0.6666666666666666,
           "impact_score": 0.6499999999999999,
           "relevance_score": 0.5,
-          "match_score": 0.2642,
-          "rank_score": 0.3494,
+          "match_score": 0.2634,
+          "rank_score": 0.3491,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -957,8 +957,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2645,
-          "rank_score": 0.3439,
+          "match_score": 0.2637,
+          "rank_score": 0.3436,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -977,8 +977,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2645,
-          "rank_score": 0.3439,
+          "match_score": 0.2637,
+          "rank_score": 0.3436,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -997,8 +997,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2643,
-          "rank_score": 0.3438,
+          "match_score": 0.2635,
+          "rank_score": 0.3435,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -1017,8 +1017,8 @@
           "sentiment_score": -0.5,
           "impact_score": 0.6000000000000001,
           "relevance_score": 0.5,
-          "match_score": 0.2643,
-          "rank_score": 0.3438,
+          "match_score": 0.2635,
+          "rank_score": 0.3435,
           "source_category": null,
           "is_official": false,
           "context_role": "macro",
@@ -1037,8 +1037,28 @@
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.2695,
-          "rank_score": 0.3425,
+          "match_score": 0.2683,
+          "rank_score": 0.342,
+          "source_category": "press",
+          "is_official": false,
+          "context_role": "macro",
+          "source_confidence_weight": 0.75,
+          "semantic_similarity": 0.0,
+          "analysis_category": "macro",
+          "role": "historical"
+        },
+        {
+          "id": "0048229a6179b8807618d2898aa2f022",
+          "title": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%",
+          "source_name": "InfoMoney",
+          "source_url": "https://www.infomoney.com.br/mercados/ibovespa-cai-2-porcento-nova-cautela-por-guerra-tarifa-e-chance-de-selic-maior-fatores-queda-indice/",
+          "published_at": "2026-06-04T04:03:05.260410+00:00",
+          "summary": "Cautela por guerra, tarifa e chance de Selic maior: o que fez Ibovespa cair 2,22%.\n\nO foco principal passa por Economia, Financeiro.",
+          "sentiment_score": -1.0,
+          "impact_score": 0.55,
+          "relevance_score": 0.5,
+          "match_score": 0.267,
+          "rank_score": 0.3415,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -1051,7 +1071,7 @@
     },
     {
       "source_name": "Folha.com - Mercado - Principal",
-      "count": 4,
+      "count": 3,
       "items": [
         {
           "id": "1fc3ff674ded90e23b7b9ec21a24852b",
@@ -1063,8 +1083,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.3378,
-          "rank_score": 0.3669,
+          "match_score": 0.3283,
+          "rank_score": 0.3632,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -1083,8 +1103,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.2992,
-          "rank_score": 0.3518,
+          "match_score": 0.2943,
+          "rank_score": 0.3499,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -1103,8 +1123,8 @@
           "sentiment_score": 1.0,
           "impact_score": 0.55,
           "relevance_score": 0.5,
-          "match_score": 0.2851,
-          "rank_score": 0.3463,
+          "match_score": 0.2818,
+          "rank_score": 0.345,
           "source_category": "press",
           "is_official": false,
           "context_role": "macro",
@@ -1112,26 +1132,6 @@
           "semantic_similarity": 0.0,
           "analysis_category": "macro",
           "role": "outlook"
-        },
-        {
-          "id": "452ac421ef9819fb6017e26a561e3a4e",
-          "title": "Atividade mais fraca pode abrir espaço para Selic cair a 13,25%, diz Bradesco",
-          "source_name": "Folha.com - Mercado - Principal",
-          "source_url": "https://www1.folha.uol.com.br/mercado/2026/08/atividade-mais-fraca-pode-abrir-espaco-para-selic-cair-a-1325-diz-bradesco.shtml",
-          "published_at": "2026-08-07T13:51:00-03:00",
-          "summary": "Os sinais cada vez mais fortes de desaceleração da economia, inclusive no mercado de trabalho, podem abrir a porta para o Banco Central levar a taxa básica de juros (Selic), hoje em 14% ao ano, para 13,25% no final de 2026, avalia o Bradesco.\n\nLeia mais (08/07/2026 - 13h51). O texto menciona BBDC4. O foco principal passa por Economia, Financeiro.",
-          "sentiment_score": -1.0,
-          "impact_score": 0.75,
-          "relevance_score": 0.5,
-          "match_score": 0.2922,
-          "rank_score": 0.3446,
-          "source_category": "press",
-          "is_official": false,
-          "context_role": "macro",
-          "source_confidence_weight": 0.72,
-          "semantic_similarity": 0.0,
-          "analysis_category": "macro",
-          "role": "historical"
         }
       ]
     },
@@ -1149,8 +1149,8 @@
           "sentiment_score": -1.0,
           "impact_score": 0.75,
           "relevance_score": 0.5,
-          "match_score": 0.2733,
-          "rank_score": 0.3545,
+          "match_score": 0.2683,
+          "rank_score": 0.3525,
           "source_category": "exchange",
           "is_official": true,
           "context_role": "macro",

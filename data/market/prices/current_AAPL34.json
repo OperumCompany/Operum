@@ -1,7 +1,8 @@
 {
   "ticker": "AAPL34",
-  "price": 77.6,
+  "price": 79.87,
   "currency": "BRL",
-  "name": "APPLE       DRN",
-  "updated_at": "2026-06-21T18:30:22.649259+00:00"
+  "name": "AAPL34",
+  "source": "brapi-list",
+  "updated_at": "2026-08-17T13:32:21.543433+00:00"
 }

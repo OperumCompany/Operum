@@ -1,7 +1,8 @@
 {
   "ticker": "HGLG11",
-  "price": 150.5,
+  "price": 146.31,
   "currency": "BRL",
-  "name": "FII HGLG PAXCI",
-  "updated_at": "2026-06-21T18:30:21.531098+00:00"
+  "name": "HGLG11",
+  "source": "brapi-list",
+  "updated_at": "2026-08-17T13:32:21.002976+00:00"
 }

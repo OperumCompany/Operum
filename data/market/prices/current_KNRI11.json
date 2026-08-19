@@ -1,7 +1,8 @@
 {
   "ticker": "KNRI11",
-  "price": 149.4,
+  "price": 151.13,
   "currency": "BRL",
-  "name": "FII KINEA   CI",
-  "updated_at": "2026-06-21T18:30:22.092993+00:00"
+  "name": "KNRI11",
+  "source": "brapi-list",
+  "updated_at": "2026-08-17T13:32:21.250101+00:00"
 }
