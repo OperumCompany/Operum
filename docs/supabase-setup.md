@@ -41,6 +41,14 @@ python scripts/migrate_portfolio_transactions.py
 
 O script é idempotente e cria um saldo inicial na data da migração sem duplicar movimentações existentes.
 
+Para corrigir ou verificar RLS em uma base existente, rode tambem:
+
+```bash
+python scripts/secure_supabase_rls.py
+```
+
+Ele habilita RLS e remove os privilegios diretos de `anon` e `authenticated` das tabelas internas do Operum. O backend continua acessando-as pela conexao Postgres privada.
+
 ## 3. Escopo do schema inicial
 
 Este schema cobre o MVP descrito no PRD:

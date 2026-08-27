@@ -230,6 +230,8 @@ alter table public.knowledge_chunks enable row level security;
 alter table public.chat_conversations enable row level security;
 alter table public.chat_messages enable row level security;
 
+revoke all privileges on all tables in schema public from anon, authenticated;
+
 -- Auth propria do Operum passa somente pelo backend Python usando SQL direto.
 -- Enquanto nao houver Supabase Auth, nao criar policies publicas para anon/authenticated.
 

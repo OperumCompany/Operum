@@ -40,6 +40,16 @@ O backend agora opera em modo dual:
 
 ## Setup
 
+### Inicio rapido (Windows)
+
+Depois de instalar as dependencias do frontend uma vez com `npm install`, execute:
+
+```powershell
+.\iniciar.ps1
+```
+
+O script usa `.venv` do projeto, recria ou repara suas dependencias Python quando necessario e inicia backend e frontend em `http://localhost:5173`.
+
 ### Backend
 
 ```bash

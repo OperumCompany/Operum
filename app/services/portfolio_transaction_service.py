@@ -54,6 +54,8 @@ class PortfolioTransactionService:
         self.db.execute(
             "create index if not exists idx_portfolio_transactions_ticker on public.portfolio_transactions(portfolio_id, ticker)"
         )
+        self.db.execute("alter table public.portfolio_transactions enable row level security")
+        self.db.execute("revoke all privileges on table public.portfolio_transactions from anon, authenticated")
 
     def list_for_portfolio(self, portfolio_id: str) -> list[PortfolioTransaction]:
         if self.db.enabled:

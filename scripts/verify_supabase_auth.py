@@ -14,6 +14,18 @@ from app.main import app
 
 
 TEST_PASSWORD = "Operum123"
+SECURITY_TABLES = [
+    "app_users",
+    "auth_sessions",
+    "user_preferences",
+    "portfolios",
+    "portfolio_positions",
+    "portfolio_transactions",
+    "model_versions",
+    "asset_analysis_snapshots",
+    "analysis_jobs",
+    "prediction_outcomes",
+]
 
 
 async def main() -> int:
@@ -93,7 +105,7 @@ async def main() -> int:
             )
             assert removed_session is None, "Logout nao removeu sessao"
 
-            for table in ["app_users", "auth_sessions", "user_preferences", "portfolios", "portfolio_positions"]:
+            for table in SECURITY_TABLES:
                 rls = db.fetch_one(
                     """
                     select c.relrowsecurity, coalesce(count(p.polname), 0) as policy_count
@@ -106,6 +118,26 @@ async def main() -> int:
                     (table,),
                 )
                 assert rls and rls["relrowsecurity"] is True, f"RLS nao esta ativo em {table}"
+
+            for table in [
+                "portfolio_transactions",
+                "model_versions",
+                "asset_analysis_snapshots",
+                "analysis_jobs",
+                "prediction_outcomes",
+            ]:
+                grants = db.fetch_one(
+                    """
+                    select has_table_privilege('anon', c.oid, 'select,insert,update,delete') as anon_has_access,
+                           has_table_privilege('authenticated', c.oid, 'select,insert,update,delete') as authenticated_has_access
+                    from pg_class c
+                    join pg_namespace n on n.oid = c.relnamespace
+                    where n.nspname = 'public' and c.relname = %s
+                    """,
+                    (table,),
+                )
+                assert grants and not grants["anon_has_access"], f"anon ainda acessa {table}"
+                assert grants and not grants["authenticated_has_access"], f"authenticated ainda acessa {table}"
 
             print("OK: cadastro, login, sessao, logout e RLS validados no Supabase.")
             return 0

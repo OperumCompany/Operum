@@ -6,6 +6,7 @@ Write-Host "========================================" -ForegroundColor Cyan
 Write-Host ""
 
 $projectDir = Split-Path -Parent $MyInvocation.MyCommand.Path
+$projectPython = Join-Path $projectDir ".venv\Scripts\python.exe"
 $backendLog = Join-Path $projectDir "backend-start.log"
 $backendErrorLog = Join-Path $projectDir "backend-start.err.log"
 $frontendLog = Join-Path $projectDir "frontend-start.log"
@@ -31,10 +32,14 @@ function Wait-HttpReady {
     param(
         [string]$Url,
         [int]$MaxRetries = 30,
-        [int]$RetryDelaySeconds = 2
+        [int]$RetryDelaySeconds = 2,
+        [System.Diagnostics.Process]$Process = $null
     )
 
     for ($attempt = 1; $attempt -le $MaxRetries; $attempt++) {
+        if ($Process -and $Process.HasExited) {
+            return $false
+        }
         try {
             $response = Invoke-WebRequest -Uri $Url -UseBasicParsing -TimeoutSec 3
             if ($response.StatusCode -eq 200) {
@@ -51,7 +56,42 @@ function Wait-HttpReady {
     return $false
 }
 
+function Repair-ProjectVenv {
+    if (-not (Test-Path $projectPython)) {
+        $venvDir = Join-Path $projectDir ".venv"
+        $venvArgs = if (Test-Path $venvDir) { @("-3", "-m", "venv", "--clear", $venvDir) } else { @("-3", "-m", "venv", $venvDir) }
+        Write-Host "  Ambiente Python ausente ou incompleto; criando .venv..." -ForegroundColor Yellow
+        $pyLauncher = Get-Command "py.exe" -ErrorAction SilentlyContinue
+        if ($pyLauncher) {
+            & $pyLauncher.Source @venvArgs
+        } else {
+            $pythonBootstrap = Get-Command "python.exe" -ErrorAction SilentlyContinue
+            if (-not $pythonBootstrap) {
+                throw "Python 3 nao foi encontrado. Instale-o e execute o script novamente."
+            }
+            $venvArgs = $venvArgs | Where-Object { $_ -ne "-3" }
+            & $pythonBootstrap.Source @venvArgs
+        }
+    }
+
+    $checkCommand = "import click, fastapi, pandas, requests, uvicorn; assert hasattr(click, 'Choice')"
+    & $projectPython -c $checkCommand 2>$null
+    if ($LASTEXITCODE -eq 0) {
+        return
+    }
+
+    Write-Host "  Dependencias Python invalidas; reparando .venv automaticamente..." -ForegroundColor Yellow
+    & $projectPython -m ensurepip --upgrade
+    & $projectPython -m pip install --upgrade pip
+    & $projectPython -m pip install --force-reinstall --no-cache-dir -r (Join-Path $projectDir "requirements.txt")
+    & $projectPython -c $checkCommand
+    if ($LASTEXITCODE -ne 0) {
+        throw "Nao foi possivel reparar as dependencias Python. Consulte a saida acima."
+    }
+}
+
 Set-Location $projectDir
+Repair-ProjectVenv
 Stop-PortProcess -Port 8001
 Stop-PortProcess -Port 8000
 Stop-PortProcess -Port 5173
@@ -83,7 +123,7 @@ Write-Host "[1/2] Iniciando backend (FastAPI)..." -ForegroundColor Green
 Remove-Item $backendLog, $backendErrorLog -ErrorAction SilentlyContinue
 $env:PYTHONUNBUFFERED = "1"
 $backendProcess = Start-Process `
-    -FilePath "python" `
+    -FilePath $projectPython `
     -ArgumentList "-m", "uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8001", "--log-level", "info" `
     -WorkingDirectory $projectDir `
     -RedirectStandardOutput $backendLog `
@@ -91,7 +131,7 @@ $backendProcess = Start-Process `
     -WindowStyle Hidden `
     -PassThru
 
-if (-not (Wait-HttpReady -Url "http://127.0.0.1:8001/api/health")) {
+if (-not (Wait-HttpReady -Url "http://127.0.0.1:8001/api/health" -Process $backendProcess)) {
     Write-Host "  ERRO: Backend nao iniciou. Consulte os logs abaixo." -ForegroundColor Red
     if (Test-Path $backendLog) { Get-Content $backendLog -Tail 30 }
     if (Test-Path $backendErrorLog) { Get-Content $backendErrorLog -Tail 30 }
@@ -103,14 +143,14 @@ Write-Host "[2/2] Iniciando frontend (Vite)..." -ForegroundColor Green
 Remove-Item $frontendLog, $frontendErrorLog -ErrorAction SilentlyContinue
 $frontendProcess = Start-Process `
     -FilePath "npm.cmd" `
-    -ArgumentList "run", "dev", "--", "--host", "127.0.0.1" `
+    -ArgumentList "run", "dev", "--", "--host", "127.0.0.1", "--strictPort" `
     -WorkingDirectory $projectDir `
     -RedirectStandardOutput $frontendLog `
     -RedirectStandardError $frontendErrorLog `
     -WindowStyle Hidden `
     -PassThru
 
-if (-not (Wait-HttpReady -Url "http://127.0.0.1:5173/api/health" -MaxRetries 20 -RetryDelaySeconds 1)) {
+if (-not (Wait-HttpReady -Url "http://127.0.0.1:5173/" -MaxRetries 90 -RetryDelaySeconds 1 -Process $frontendProcess)) {
     Write-Host "  ERRO: Frontend nao iniciou ou nao alcancou o backend." -ForegroundColor Red
     if (Test-Path $frontendLog) { Get-Content $frontendLog -Tail 30 }
     if (Test-Path $frontendErrorLog) { Get-Content $frontendErrorLog -Tail 30 }
