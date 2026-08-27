@@ -1,0 +1,222 @@
+{
+  "dataset_hash": "e4e67d0063d9cdd58b7252fc89c57eb806958b74211681794e5d21a84cc539f6",
+  "models": [
+    {
+      "id": "d1a83b6e-3ce8-4d84-b813-c39df9e87b92",
+      "asset_class": "BR_STOCK",
+      "horizon_days": 21,
+      "metrics": {
+        "folds": 48,
+        "candidate": {
+          "mae": 0.0783527369717994,
+          "rmse": 0.10384899099593904,
+          "directional_accuracy": 0.5249669312169313
+        },
+        "baseline": {
+          "mae": 0.07701291362174582,
+          "rmse": 0.10325565182753582,
+          "directional_accuracy": 0.20895337301587302
+        },
+        "holdout": {
+          "mae": 0.08187754151796953,
+          "rmse": 0.1064588799582698,
+          "directional_accuracy": 0.5633267195767195
+        },
+        "holdout_baseline": {
+          "mae": 0.0827591290116154,
+          "rmse": 0.10772666441352287,
+          "directional_accuracy": 0.0006613756613756613
+        },
+        "interval_radius": 0.121491726794,
+        "interval_coverage": 0.8000165343915344,
+        "holdout_interval_coverage": 0.763558201058201,
+        "promotion_reasons": [
+          "mae",
+          "fold_stability",
+          "holdout_mae"
+        ]
+      }
+    },
+    {
+      "id": "36fffedb-8317-4a09-b2e6-c1241e7f0a6b",
+      "asset_class": "BR_STOCK",
+      "horizon_days": 42,
+      "metrics": {
+        "folds": 47,
+        "candidate": {
+          "mae": 0.11095633425706014,
+          "rmse": 0.14425569657143936,
+          "directional_accuracy": 0.5478864122481143
+        },
+        "baseline": {
+          "mae": 0.10859091528146922,
+          "rmse": 0.1435428632341235,
+          "directional_accuracy": 0.15885680513340086
+        },
+        "holdout": {
+          "mae": 0.10843160845252856,
+          "rmse": 0.14043094923705396,
+          "directional_accuracy": 0.5882936507936508
+        },
+        "holdout_baseline": {
+          "mae": 0.11096081192739754,
+          "rmse": 0.14378469230425908,
+          "directional_accuracy": 0.000496031746031746
+        },
+        "interval_radius": 0.17287403731,
+        "interval_coverage": 0.800011257458066,
+        "holdout_interval_coverage": 0.7951388888888888,
+        "promotion_reasons": [
+          "mae",
+          "fold_stability"
+        ]
+      }
+    },
+    {
+      "id": "4afee7e5-81f1-410e-8bf1-2fd198d24b37",
+      "asset_class": "BR_STOCK",
+      "horizon_days": 63,
+      "metrics": {
+        "folds": 46,
+        "candidate": {
+          "mae": 0.13410479491029986,
+          "rmse": 0.17070989237886144,
+          "directional_accuracy": 0.5626581550494594
+        },
+        "baseline": {
+          "mae": 0.13294005103570308,
+          "rmse": 0.17122700899732712,
+          "directional_accuracy": 0.10610766045548653
+        },
+        "holdout": {
+          "mae": 0.14310674899971776,
+          "rmse": 0.1808639657034338,
+          "directional_accuracy": 0.5661375661375662
+        },
+        "holdout_baseline": {
+          "mae": 0.14528988986239083,
+          "rmse": 0.186289273730739,
+          "directional_accuracy": 0.0008267195767195767
+        },
+        "interval_radius": 0.21025182679,
+        "interval_coverage": 0.8000201288244766,
+        "holdout_interval_coverage": 0.7837301587301587,
+        "promotion_reasons": [
+          "mae",
+          "fold_stability",
+          "holdout_mae"
+        ]
+      }
+    },
+    {
+      "id": "edf25b2b-5a00-4903-869a-da1a5cdfc2bb",
+      "asset_class": "FII",
+      "horizon_days": 21,
+      "metrics": {
+        "folds": 48,
+        "candidate": {
+          "mae": 0.021197828556895042,
+          "rmse": 0.028054238355483496,
+          "directional_accuracy": 0.6026234567901234
+        },
+        "baseline": {
+          "mae": 0.021323827380381816,
+          "rmse": 0.02861888312387373,
+          "directional_accuracy": 0.3020833333333333
+        },
+        "holdout": {
+          "mae": 0.013902759345235847,
+          "rmse": 0.018211357864871124,
+          "directional_accuracy": 0.7321428571428571
+        },
+        "holdout_baseline": {
+          "mae": 0.015509825147766635,
+          "rmse": 0.019935501024470347,
+          "directional_accuracy": 0.4794973544973545
+        },
+        "interval_radius": 0.033262273177,
+        "interval_coverage": 0.8000440917107584,
+        "holdout_interval_coverage": 0.9252645502645502,
+        "promotion_reasons": [
+          "mae",
+          "fold_stability",
+          "holdout_interval_coverage"
+        ]
+      }
+    },
+    {
+      "id": "c4670657-61a1-4283-a2db-845f843c2e99",
+      "asset_class": "FII",
+      "horizon_days": 42,
+      "metrics": {
+        "folds": 47,
+        "candidate": {
+          "mae": 0.03151185576954745,
+          "rmse": 0.03997101942261181,
+          "directional_accuracy": 0.6314871102105145
+        },
+        "baseline": {
+          "mae": 0.03160625658391277,
+          "rmse": 0.040924551156490456,
+          "directional_accuracy": 0.3037262186198356
+        },
+        "holdout": {
+          "mae": 0.020399135351942196,
+          "rmse": 0.025675518430252613,
+          "directional_accuracy": 0.8253968253968254
+        },
+        "holdout_baseline": {
+          "mae": 0.024529940526450467,
+          "rmse": 0.031052387722267122,
+          "directional_accuracy": 0.7652116402116402
+        },
+        "interval_radius": 0.04936734504,
+        "interval_coverage": 0.800011257458066,
+        "holdout_interval_coverage": 0.9470899470899471,
+        "promotion_reasons": [
+          "mae",
+          "fold_stability",
+          "holdout_interval_coverage"
+        ]
+      }
+    },
+    {
+      "id": "337b7e9c-0123-46f9-bd71-b245b1bc5383",
+      "asset_class": "FII",
+      "horizon_days": 63,
+      "metrics": {
+        "folds": 46,
+        "candidate": {
+          "mae": 0.04036784861454293,
+          "rmse": 0.049925122182257746,
+          "directional_accuracy": 0.6193926846100759
+        },
+        "baseline": {
+          "mae": 0.040691738666025115,
+          "rmse": 0.05134917318699025,
+          "directional_accuracy": 0.3089487002530481
+        },
+        "holdout": {
+          "mae": 0.02787816527042521,
+          "rmse": 0.0334140954962421,
+          "directional_accuracy": 0.8683862433862434
+        },
+        "holdout_baseline": {
+          "mae": 0.034587798896476105,
+          "rmse": 0.04358189238433897,
+          "directional_accuracy": 0.792989417989418
+        },
+        "interval_radius": 0.063270171642,
+        "interval_coverage": 0.8000345065562456,
+        "holdout_interval_coverage": 0.9609788359788359,
+        "promotion_reasons": [
+          "mae",
+          "fold_stability",
+          "holdout_interval_coverage"
+        ]
+      }
+    }
+  ],
+  "all_gates_passed": false,
+  "generated_at": "2026-08-24T20:18:15.331235+00:00"
+}

@@ -1,0 +1,126 @@
+{
+  "artifact_path": "fii_21d.joblib",
+  "asset_class": "FII",
+  "dataset_hash": "b033ea10b2241ee428dc940057b6949134584b09acefe9de762d67b1a0ee8721",
+  "feature_columns": [
+    "return_1",
+    "return_5",
+    "return_21",
+    "return_63",
+    "volatility_5",
+    "price_to_sma_5",
+    "volatility_21",
+    "price_to_sma_21",
+    "volatility_63",
+    "price_to_sma_63",
+    "rsi_14",
+    "macd_normalized",
+    "atr_14_normalized",
+    "drawdown_63",
+    "volume_zscore_21",
+    "liquidity_21",
+    "benchmark_return_1",
+    "benchmark_return_21",
+    "benchmark_return_63",
+    "usdbrl_return_1",
+    "usdbrl_return_21",
+    "usdbrl_return_63",
+    "brent_return_1",
+    "brent_return_21",
+    "brent_return_63",
+    "beta_63",
+    "correlation_63",
+    "relative_return_21"
+  ],
+  "feature_medians": {
+    "atr_14_normalized": 0.009516211607380226,
+    "benchmark_return_1": 0.0004575721359056928,
+    "benchmark_return_21": 0.002606258438295761,
+    "benchmark_return_63": 0.009964142876844662,
+    "beta_63": 0.04498159178477645,
+    "brent_return_1": 0.0,
+    "brent_return_21": 0.006297602707429517,
+    "brent_return_63": 0.008237870919640233,
+    "correlation_63": 0.08819881853814379,
+    "drawdown_63": -0.01728164097418622,
+    "liquidity_21": 4275641.845762253,
+    "macd_normalized": 0.0019294671422632414,
+    "price_to_sma_21": 0.0028595422297916784,
+    "price_to_sma_5": 0.0006049746608259854,
+    "price_to_sma_63": 0.008165920484705547,
+    "relative_return_21": 0.002513611746373823,
+    "return_1": 0.00019537571532424192,
+    "return_21": 0.00601691815296157,
+    "return_5": 0.0014464942142390358,
+    "return_63": 0.01605984836389407,
+    "rsi_14": 53.52842977561097,
+    "usdbrl_return_1": 0.0,
+    "usdbrl_return_21": 0.0011673571098371749,
+    "usdbrl_return_63": 0.0031003635715538547,
+    "volatility_21": 0.0056695705012697935,
+    "volatility_5": 0.004883823133041457,
+    "volatility_63": 0.006098287710308626,
+    "volume_zscore_21": -0.19368457285279939
+  },
+  "horizon_days": 21,
+  "interval": {
+    "coverage": 0.8,
+    "radius": 0.033228030182
+  },
+  "metrics": {
+    "baseline": {
+      "directional_accuracy": 0.3020833333333333,
+      "mae": 0.02132383267123457,
+      "rmse": 0.028618890333495923
+    },
+    "candidate": {
+      "directional_accuracy": 0.6009700176366843,
+      "mae": 0.021172372908007286,
+      "rmse": 0.028030848415160552
+    },
+    "folds": 48,
+    "holdout": {
+      "directional_accuracy": 0.7321428571428571,
+      "mae": 0.013905781904809369,
+      "rmse": 0.0182245302938649
+    },
+    "holdout_baseline": {
+      "directional_accuracy": 0.4794973544973545,
+      "mae": 0.015513884876587959,
+      "rmse": 0.01994680545330475
+    },
+    "holdout_interval_coverage": 0.9252645502645502,
+    "interval_coverage": 0.8000440917107584,
+    "interval_radius": 0.033228030182,
+    "promotion_reasons": [
+      "mae",
+      "fold_stability",
+      "holdout_interval_coverage"
+    ]
+  },
+  "model_version": "7b85b599-b703-4451-b6db-4987dbf33061",
+  "promotion_eligible": false,
+  "selected_params": {
+    "colsample_bytree": 0.8,
+    "early_stopping_rounds": 30,
+    "learning_rate": 0.05,
+    "max_depth": 3,
+    "min_child_weight": 8,
+    "n_estimators": 800,
+    "n_jobs": 6,
+    "objective": "reg:squarederror",
+    "random_state": 42,
+    "reg_alpha": 1.0,
+    "reg_lambda": 5.0,
+    "subsample": 0.7
+  },
+  "status": "shadow",
+  "trained_at": "2026-08-24T20:03:15.496375+00:00",
+  "training_config": {
+    "embargo_days": 63,
+    "holdout_days": 252,
+    "min_train_days": 504,
+    "step_days": 21,
+    "validation_days": 63
+  }
+}
