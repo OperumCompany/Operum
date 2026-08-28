@@ -42,6 +42,11 @@ class PasswordUpdateRequest(BaseModel):
     new_password: str = Field(min_length=6)
 
 
+class AccountDeletionRequest(BaseModel):
+    current_password: str = Field(min_length=1)
+    confirmation: str = Field(min_length=1)
+
+
 class AuthResponse(BaseModel):
     token: str
     user: UserPublic

@@ -8,6 +8,7 @@ from datetime import datetime, timezone
 from app.core.config import OPERUM_SEED_DEMO_USER, SUPABASE_DB_SCHEMA
 from app.db.postgres import PostgresClient
 from app.schemas.auth import (
+    AccountDeletionRequest,
     AuthResponse,
     LoginRequest,
     PasswordUpdateRequest,
@@ -444,6 +445,43 @@ class AuthService:
             updated_users.append(user)
         self._save_users(updated_users)
         return self._to_public(record)
+
+    def delete_account(self, token: str, data: AccountDeletionRequest) -> None:
+        if data.confirmation != "Excluir":
+            raise ValueError('Digite "Excluir" para confirmar a exclusao da conta.')
+
+        record = self.get_user_record_by_token(token)
+        if record is None:
+            raise ValueError("Sessao invalida.")
+        if not self._verify_password(data.current_password, record.password_hash):
+            raise ValueError("Senha atual incorreta.")
+
+        if self.db.enabled:
+            self._run_db(
+                lambda: self.db.execute("delete from public.app_users where id = %s::uuid", (record.id,))
+            )
+            return
+
+        users = [user for user in self._load_users() if user.id != record.id]
+        sessions = [session for session in self._load_sessions() if session.get("user_id") != record.id]
+        self._save_users(users)
+        self._save_sessions(sessions)
+        self.storage.delete_file(f"{self._preferences_dir}/{record.id}.json")
+        self.storage.delete_file(f"chat/{record.id}.json")
+
+        for filename in self.storage.list_files("portfolios", ".json"):
+            portfolio_path = f"portfolios/{filename}"
+            portfolio = self.storage.load_json(portfolio_path) or {}
+            if portfolio.get("owner_id") != record.id:
+                continue
+            portfolio_id = portfolio.get("id")
+            self.storage.delete_file(portfolio_path)
+            if not portfolio_id:
+                continue
+            self.storage.delete_file(f"portfolio_transactions/{portfolio_id}.json")
+            for cache_file in self.storage.list_files("ai/asset_analysis_cache", ".json"):
+                if cache_file.startswith(f"{portfolio_id}_"):
+                    self.storage.delete_file(f"ai/asset_analysis_cache/{cache_file}")
 
     def get_preferences(self, user_id: str) -> UserPreferences:
         if self.db.enabled:

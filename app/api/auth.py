@@ -1,6 +1,7 @@
 from fastapi import APIRouter, Header, HTTPException
 
 from app.schemas.auth import (
+    AccountDeletionRequest,
     LoginRequest,
     PasswordUpdateRequest,
     RegisterRequest,
@@ -82,6 +83,18 @@ def update_password(data: PasswordUpdateRequest, session=Header(default=None, al
         raise HTTPException(status_code=503, detail=str(exc))
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
+
+
+@router.delete("/account")
+def delete_account(data: AccountDeletionRequest, session=Header(default=None, alias="Authorization")):
+    token = _extract_token(session)
+    try:
+        service.delete_account(token, data)
+    except ServiceUnavailableError as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc))
+    return {"status": "ok"}
 
 
 @router.get("/preferences")

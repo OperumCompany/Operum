@@ -9,6 +9,7 @@ type AuthContextType = {
   login: (email: string, password: string) => Promise<{ ok: boolean; message: string }>;
   register: (userData: { name: string; email: string; password: string }) => Promise<{ ok: boolean; message: string }>;
   updatePassword: (currentPassword: string, nextPassword: string) => Promise<{ ok: boolean; message: string }>;
+  deleteAccount: (currentPassword: string, confirmation: string) => Promise<{ ok: boolean; message: string }>;
   logout: () => Promise<void>;
 };
 
@@ -72,6 +73,20 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         return { ok: true, message: 'Senha alterada com sucesso.' };
       } catch (error) {
         const message = error instanceof Error ? error.message : 'Falha ao alterar senha.';
+        return { ok: false, message };
+      }
+    },
+    deleteAccount: async (currentPassword, confirmation) => {
+      try {
+        await api.del<{ status: string }>('/auth/account', {
+          current_password: currentPassword,
+          confirmation,
+        });
+        writeStorage(storageKeys.authToken, null);
+        setUser(null);
+        return { ok: true, message: 'Conta excluida com sucesso.' };
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Falha ao excluir a conta.';
         return { ok: false, message };
       }
     },

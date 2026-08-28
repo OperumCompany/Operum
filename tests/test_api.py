@@ -63,6 +63,53 @@ async def test_auth_register_login_and_me(client: AsyncClient):
 
 
 @pytest.mark.asyncio
+async def test_account_deletion_requires_reauthentication_and_removes_session(client: AsyncClient):
+    register = await client.post("/api/auth/register", json={
+        "name": "Conta para excluir",
+        "email": "delete-account@operum.app",
+        "password": "Operum123",
+    })
+    token = register.json()["token"]
+    headers = {"Authorization": f"Bearer {token}"}
+
+    invalid_confirmation = await client.request(
+        "DELETE",
+        "/api/auth/account",
+        headers=headers,
+        json={"current_password": "Operum123", "confirmation": "excluir"},
+    )
+    assert invalid_confirmation.status_code == 400
+    assert (await client.get("/api/auth/me", headers=headers)).status_code == 200
+
+    invalid_password = await client.request(
+        "DELETE",
+        "/api/auth/account",
+        headers=headers,
+        json={"current_password": "senha-incorreta", "confirmation": "Excluir"},
+    )
+    assert invalid_password.status_code == 400
+
+    deleted = await client.request(
+        "DELETE",
+        "/api/auth/account",
+        headers=headers,
+        json={"current_password": "Operum123", "confirmation": "Excluir"},
+    )
+    assert deleted.status_code == 200
+    assert deleted.json() == {"status": "ok"}
+    assert (await client.get("/api/auth/me", headers=headers)).status_code == 401
+
+    login = await client.post("/api/auth/login", json={"email": "delete-account@operum.app", "password": "Operum123"})
+    assert login.status_code == 401
+
+
+@pytest.mark.asyncio
+async def test_account_deletion_requires_authentication(client: AsyncClient):
+    response = await client.request("DELETE", "/api/auth/account", json={"current_password": "Operum123", "confirmation": "Excluir"})
+    assert response.status_code == 401
+
+
+@pytest.mark.asyncio
 async def test_assets_universe(client: AsyncClient):
     resp = await client.get("/api/assets/universe")
     assert resp.status_code == 200
