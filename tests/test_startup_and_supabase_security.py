@@ -13,6 +13,8 @@ def test_startup_script_uses_project_venv_and_waits_for_vite_root():
     assert 'http://127.0.0.1:5173/' in script
     assert "-MaxRetries 90" in script
     assert '"--clear"' in script
+    assert '"--reload"' in script
+    assert '"--reload-dir", (Join-Path $projectDir "app")' in script
 
 
 def test_supabase_security_migration_protects_all_alerted_tables():

@@ -33,6 +33,25 @@ class PostgresClient:
         finally:
             conn.close()
 
+    @contextmanager
+    def transaction(self):
+        if not self.enabled:
+            raise RuntimeError("Postgres client is disabled")
+        try:
+            from psycopg import connect
+            from psycopg.rows import dict_row
+        except ModuleNotFoundError as exc:
+            raise RuntimeError("psycopg is not installed") from exc
+        conn = connect(self.db_url, autocommit=False, row_factory=dict_row)
+        try:
+            yield conn
+            conn.commit()
+        except Exception:
+            conn.rollback()
+            raise
+        finally:
+            conn.close()
+
     def fetch_one(self, query: str, params: tuple[Any, ...] = ()) -> dict[str, Any] | None:
         with self.connection() as conn:
             with conn.cursor() as cur:

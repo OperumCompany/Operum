@@ -1,3 +1,4 @@
+import asyncio
 import os
 import shutil
 import tempfile
@@ -139,6 +140,208 @@ async def test_create_and_get_portfolio(client: AsyncClient):
     resp2 = await client.get(f"/api/portfolios/{pid}", headers=headers)
     assert resp2.status_code == 200
     assert resp2.json()["id"] == pid
+
+
+@pytest.mark.asyncio
+async def test_portfolio_update_cannot_change_server_managed_example_fields(client: AsyncClient):
+    headers = await auth_headers(client, "immutable-kind")
+    created = await client.post("/api/portfolios", headers=headers, json={"name": "Normal", "base_currency": "BRL"})
+    portfolio_id = created.json()["id"]
+
+    updated = await client.put(f"/api/portfolios/{portfolio_id}", headers=headers, json={
+        "name": "Nome permitido",
+        "kind": "example",
+        "example_version": 99,
+        "owner_id": "outro-usuario",
+        "positions": [],
+    })
+    assert updated.status_code == 200
+    assert updated.json()["name"] == "Nome permitido"
+    assert updated.json()["kind"] == "standard"
+    assert updated.json()["example_version"] is None
+    assert updated.json()["positions"] == []
+
+
+@pytest.mark.asyncio
+async def test_portfolio_partial_settings_update_preserves_unsent_fields(client: AsyncClient):
+    headers = await auth_headers(client, "partial-settings")
+    created = await client.post("/api/portfolios", headers=headers, json={
+        "name": "Configuração",
+        "settings": {"risk_profile": "moderado", "forecast_horizon_days": 30},
+    })
+    portfolio_id = created.json()["id"]
+
+    updated = await client.put(f"/api/portfolios/{portfolio_id}", headers=headers, json={
+        "settings": {"risk_profile": "agressivo"},
+    })
+    assert updated.status_code == 200
+    assert updated.json()["settings"] == {"risk_profile": "agressivo", "forecast_horizon_days": 30}
+
+
+@pytest.mark.asyncio
+async def test_registration_creates_one_persistent_example_portfolio(client: AsyncClient):
+    register = await client.post("/api/auth/register", json={
+        "name": "Nova pessoa",
+        "email": "example-onboarding@operum.app",
+        "password": "Operum123",
+    })
+    assert register.status_code == 200
+    headers = {"Authorization": f"Bearer {register.json()['token']}"}
+
+    listed = await client.get("/api/portfolios", headers=headers)
+    assert listed.status_code == 200
+    examples = [item for item in listed.json() if item["kind"] == "example"]
+    assert len(examples) == 1
+    assert examples[0]["name"] == "Carteira Exemplo"
+    assert examples[0]["example_version"] == 1
+    assert len(examples[0]["positions"]) == 36
+    assert sum(item["asset_class"] == "BR_STOCK" for item in examples[0]["positions"]) == 12
+    assert sum(item["asset_class"] == "FII" for item in examples[0]["positions"]) == 8
+    assert sum(item["asset_class"] == "US_STOCK" for item in examples[0]["positions"]) == 13
+    assert sum(item["asset_class"] == "CRYPTO" for item in examples[0]["positions"]) == 3
+
+
+@pytest.mark.asyncio
+async def test_example_endpoint_is_idempotent_and_recreates_a_clean_portfolio(client: AsyncClient):
+    headers = await auth_headers(client, "example-idempotent")
+
+    first = await client.post("/api/portfolios/example", headers=headers)
+    second = await client.post("/api/portfolios/example", headers=headers)
+    assert first.status_code == 200
+    assert second.status_code == 200
+    assert first.json()["created"] is False
+    assert second.json()["portfolio"]["id"] == first.json()["portfolio"]["id"]
+
+    example_id = first.json()["portfolio"]["id"]
+    removed = await client.delete(f"/api/portfolios/{example_id}", headers=headers)
+    assert removed.status_code == 200
+
+    recreated = await client.post("/api/portfolios/example", headers=headers)
+    assert recreated.status_code == 200
+    assert recreated.json()["created"] is True
+    assert recreated.json()["portfolio"]["id"] != example_id
+    assert len(recreated.json()["portfolio"]["positions"]) == 36
+
+
+@pytest.mark.asyncio
+async def test_example_creation_is_safe_under_concurrent_requests(client: AsyncClient):
+    headers = await auth_headers(client, "example-concurrent")
+    initial = (await client.post("/api/portfolios/example", headers=headers)).json()["portfolio"]
+    await client.delete(f"/api/portfolios/{initial['id']}", headers=headers)
+
+    responses = await asyncio.gather(*[
+        client.post("/api/portfolios/example", headers=headers)
+        for _ in range(6)
+    ])
+    assert all(response.status_code == 200 for response in responses)
+    ids = {response.json()["portfolio"]["id"] for response in responses}
+    assert len(ids) == 1
+
+    listed = (await client.get("/api/portfolios", headers=headers)).json()
+    assert sum(item["kind"] == "example" for item in listed) == 1
+
+
+@pytest.mark.asyncio
+async def test_example_portfolios_are_isolated_per_user(client: AsyncClient):
+    owner_headers = await auth_headers(client, "example-owner")
+    other_headers = await auth_headers(client, "example-other")
+    owner_example = (await client.post("/api/portfolios/example", headers=owner_headers)).json()["portfolio"]
+    other_example = (await client.post("/api/portfolios/example", headers=other_headers)).json()["portfolio"]
+
+    changed = await client.delete(
+        f"/api/portfolios/{owner_example['id']}/positions/PETR4",
+        headers=owner_headers,
+    )
+    assert changed.status_code == 200
+    assert len(changed.json()["positions"]) == 35
+
+    other = await client.get(f"/api/portfolios/{other_example['id']}", headers=other_headers)
+    assert other.status_code == 200
+    assert len(other.json()["positions"]) == 36
+    assert any(item["ticker"] == "PETR4" for item in other.json()["positions"])
+
+
+@pytest.mark.asyncio
+async def test_example_data_endpoints_never_call_external_market_news_or_ai(client: AsyncClient, monkeypatch):
+    headers = await auth_headers(client, "example-offline")
+    example = (await client.post("/api/portfolios/example", headers=headers)).json()["portfolio"]
+    portfolio_id = example["id"]
+
+    from app.api import models as models_api
+    from app.api import portfolios as portfolios_api
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("external service must not be called for an example portfolio")
+
+    monkeypatch.setattr(portfolios_api.market_service, "get_current_price", forbidden)
+    monkeypatch.setattr(portfolios_api.market_service, "get_history", forbidden)
+    monkeypatch.setattr(portfolios_api.asset_analysis_service, "get_related_news", forbidden)
+    monkeypatch.setattr(models_api.market_service, "get_history", forbidden)
+    monkeypatch.setattr(models_api.opinion_service, "generate_opinion", forbidden)
+    monkeypatch.setattr(models_api.asset_analysis_service, "generate_asset_analysis", forbidden)
+
+    prices = await client.get(f"/api/portfolios/{portfolio_id}/prices", headers=headers)
+    history = await client.get(f"/api/portfolios/{portfolio_id}/history?period=1y", headers=headers)
+    analysis = await client.get(f"/api/portfolios/{portfolio_id}/analysis", headers=headers)
+    news = await client.get(f"/api/portfolios/{portfolio_id}/news", headers=headers)
+    opinion = await client.get(f"/api/models/opinion/{portfolio_id}?analysis_horizon=3m", headers=headers)
+    position_opinion = await client.get(
+        f"/api/models/opinion/{portfolio_id}/positions/PETR4?history_horizon=1m&outlook_horizon=1m",
+        headers=headers,
+    )
+
+    for response in (prices, history, analysis, news, opinion, position_opinion):
+        assert response.status_code == 200, response.text
+    assert prices.json()["is_demo"] is True
+    assert len(prices.json()["positions"]) == 36
+    assert len(history.json()["points"]) == 13
+    assert history.json()["warnings"]
+    assert analysis.json()["is_demo"] is True
+    assert news.json() == {"items": [], "total": 0, "is_demo": True}
+    assert opinion.json()["is_demo"] is True
+    assert opinion.json()["sources"] == []
+    assert position_opinion.json()["is_demo"] is True
+    assert position_opinion.json()["sources"] == []
+
+
+@pytest.mark.asyncio
+async def test_chat_linked_only_to_example_is_deterministic_and_offline(client: AsyncClient, monkeypatch):
+    headers = await auth_headers(client, "example-chat-offline")
+    example = (await client.post("/api/portfolios/example", headers=headers)).json()["portfolio"]
+    from app.api import chat as chat_api
+
+    def forbidden(*args, **kwargs):
+        raise AssertionError("external service must not be called from example chat context")
+
+    monkeypatch.setattr(chat_api.chat_service.llm, "chat_answer", forbidden)
+    monkeypatch.setattr(chat_api.chat_service, "_news_context", forbidden)
+    response = await client.post("/api/chat", headers=headers, json={
+        "messages": [{"role": "user", "content": "Analise esta carteira"}],
+        "portfolio_id": example["id"],
+        "use_all_portfolios": False,
+    })
+    assert response.status_code == 200
+    assert response.json()["mode"] == "fallback"
+    assert response.json()["used_portfolio_context"] is True
+    assert response.json()["sources"] == []
+    assert "demonstr" in response.json()["message"].lower()
+
+
+@pytest.mark.asyncio
+async def test_chat_all_portfolios_ignores_example_and_keeps_standard_context(client: AsyncClient):
+    headers = await auth_headers(client, "chat-all-with-example")
+    created = await client.post("/api/portfolios", headers=headers, json={"name": "Carteira real"})
+    await client.post(
+        f"/api/portfolios/{created.json()['id']}/positions",
+        headers=headers,
+        json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 10, "avg_price": 30},
+    )
+    response = await client.post("/api/chat", headers=headers, json={
+        "messages": [{"role": "user", "content": "Como estão minhas carteiras?"}],
+        "use_all_portfolios": True,
+    })
+    assert response.status_code == 200
+    assert response.json()["used_portfolio_context"] is True
 
 
 @pytest.mark.asyncio

@@ -1,5 +1,5 @@
 import { ReactNode, createContext, useContext, useEffect, useMemo, useState, useCallback } from 'react';
-import { Portfolio } from '../types';
+import type { ExamplePortfolioCreateResponse, Portfolio } from '../types';
 import { getScopedStorageKey, readStorage, storageKeys, writeStorage } from '../utils/storage';
 import { ALL_PORTFOLIOS_ID } from '../utils/portfolios';
 import { useAuth } from './AuthContext';
@@ -15,6 +15,7 @@ type PortfoliosContextType = {
   error: string | null;
   setActivePortfolioId: (id: string) => void;
   createPortfolio: (input: { name: string; base_currency?: string }) => Promise<Portfolio>;
+  createExamplePortfolio: () => Promise<ExamplePortfolioCreateResponse>;
   updatePortfolio: (id: string, updates: Partial<Portfolio>) => Promise<void>;
   deletePortfolio: (id: string) => Promise<void>;
   deletePortfolios: (ids: string[]) => Promise<void>;
@@ -93,6 +94,16 @@ export function PortfoliosProvider({ children }: { children: ReactNode }) {
     return created;
   }
 
+  async function createExamplePortfolio() {
+    const result = await api.post<ExamplePortfolioCreateResponse>('/portfolios/example', {});
+    setPortfolios((prev) => {
+      const withoutCurrent = prev.filter((item) => item.id !== result.portfolio.id);
+      return [result.portfolio, ...withoutCurrent];
+    });
+    setActivePortfolioId(result.portfolio.id);
+    return result;
+  }
+
   async function updatePortfolio(id: string, updates: Partial<Portfolio>) {
     const updated = await api.put<Portfolio>(`/portfolios/${id}`, updates);
     setPortfolios((prev) => prev.map((p) => (p.id === id ? updated : p)));
@@ -151,6 +162,7 @@ export function PortfoliosProvider({ children }: { children: ReactNode }) {
       error,
       setActivePortfolioId,
       createPortfolio,
+      createExamplePortfolio,
       updatePortfolio,
       deletePortfolio,
       deletePortfolios,

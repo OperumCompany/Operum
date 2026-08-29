@@ -124,7 +124,7 @@ Remove-Item $backendLog, $backendErrorLog -ErrorAction SilentlyContinue
 $env:PYTHONUNBUFFERED = "1"
 $backendProcess = Start-Process `
     -FilePath $projectPython `
-    -ArgumentList "-m", "uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8001", "--log-level", "info" `
+    -ArgumentList "-m", "uvicorn", "app.main:app", "--host", "127.0.0.1", "--port", "8001", "--log-level", "info", "--reload", "--reload-dir", (Join-Path $projectDir "app") `
     -WorkingDirectory $projectDir `
     -RedirectStandardOutput $backendLog `
     -RedirectStandardError $backendErrorLog `

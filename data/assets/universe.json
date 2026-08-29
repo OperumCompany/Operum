@@ -1,4 +1,13 @@
 ﻿[
+    { "ticker": "AAPL", "name": "Apple", "asset_class": "US_STOCK", "country": "US", "currency": "USD", "sector": "Tecnologia", "sub_type": "Ação EUA", "source": "example" },
+    { "ticker": "MSFT", "name": "Microsoft", "asset_class": "US_STOCK", "country": "US", "currency": "USD", "sector": "Tecnologia", "sub_type": "Ação EUA", "source": "example" },
+    { "ticker": "NVDA", "name": "NVIDIA", "asset_class": "US_STOCK", "country": "US", "currency": "USD", "sector": "Tecnologia", "sub_type": "Ação EUA", "source": "example" },
+    { "ticker": "GOOGL", "name": "Alphabet", "asset_class": "US_STOCK", "country": "US", "currency": "USD", "sector": "Tecnologia", "sub_type": "Ação EUA", "source": "example" },
+    { "ticker": "AMZN", "name": "Amazon", "asset_class": "US_STOCK", "country": "US", "currency": "USD", "sector": "Consumo", "sub_type": "Ação EUA", "source": "example" },
+    { "ticker": "META", "name": "Meta Platforms", "asset_class": "US_STOCK", "country": "US", "currency": "USD", "sector": "Tecnologia", "sub_type": "Ação EUA", "source": "example" },
+    { "ticker": "TSLA", "name": "Tesla", "asset_class": "US_STOCK", "country": "US", "currency": "USD", "sector": "Automotivo", "sub_type": "Ação EUA", "source": "example" },
+    { "ticker": "JPM", "name": "JPMorgan Chase", "asset_class": "US_STOCK", "country": "US", "currency": "USD", "sector": "Financeiro", "sub_type": "Ação EUA", "source": "example" },
+    { "ticker": "GGBR4", "name": "Gerdau PN", "asset_class": "BR_STOCK", "country": "BR", "currency": "BRL", "sector": "Siderurgia", "sub_type": "PN", "source": "brapi" },
     {
         "ticker":  "PETR4",
         "name":  "Petrobras PN",

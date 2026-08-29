@@ -25,6 +25,8 @@ class Portfolio(BaseModel):
     base_currency: str = "BRL"
     created_at: datetime
     updated_at: datetime
+    kind: Literal["standard", "example"] = "standard"
+    example_version: int | None = None
     positions: list[Position] = []
     settings: PortfolioSettings = PortfolioSettings()
 
@@ -33,6 +35,22 @@ class PortfolioCreate(BaseModel):
     name: str
     base_currency: str = "BRL"
     settings: PortfolioSettings = PortfolioSettings()
+
+
+class PortfolioSettingsUpdate(BaseModel):
+    risk_profile: str | None = None
+    forecast_horizon_days: int | None = None
+
+
+class PortfolioUpdate(BaseModel):
+    name: str | None = None
+    base_currency: str | None = None
+    settings: PortfolioSettingsUpdate | None = None
+
+
+class ExamplePortfolioCreateResponse(BaseModel):
+    portfolio: Portfolio
+    created: bool
 
 
 class PortfolioBulkDelete(BaseModel):

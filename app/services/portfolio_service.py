@@ -1,22 +1,34 @@
+import threading
 import uuid
 from datetime import date, datetime, timezone
 
 from app.core.config import SUPABASE_DB_SCHEMA
 from app.db.postgres import PostgresClient
 from app.schemas.portfolio import Portfolio, PortfolioCreate, Position, PositionAdd
+from app.services.example_portfolio_service import EXAMPLE_VERSION, ExamplePortfolioService
 from app.services.local_storage_service import LocalStorageService
 from app.services.portfolio_transaction_service import PortfolioTransactionService
 
 
 class PortfolioService:
     MAX_PORTFOLIOS = 50
+    _example_lock = threading.Lock()
 
     def __init__(self):
         self.storage = LocalStorageService()
         self.db = PostgresClient(schema=SUPABASE_DB_SCHEMA)
         self._dir = "portfolios"
+        self.examples = ExamplePortfolioService()
         self.transactions = PortfolioTransactionService(db=self.db, storage=self.storage)
+        self._ensure_schema()
         self.transactions.ensure_schema()
+
+    def _ensure_schema(self) -> None:
+        if not self.db.enabled:
+            return
+        self.db.execute("alter table public.portfolios add column if not exists kind text not null default 'standard'")
+        self.db.execute("alter table public.portfolios add column if not exists example_version integer")
+        self.db.execute("create unique index if not exists idx_portfolios_one_example_per_owner on public.portfolios(owner_id) where kind = 'example'")
 
     def _row_to_portfolio(self, row: dict, positions: list[Position]) -> Portfolio:
         return Portfolio(
@@ -26,6 +38,8 @@ class PortfolioService:
             base_currency=row.get("base_currency", "BRL"),
             created_at=row["created_at"],
             updated_at=row["updated_at"],
+            kind=row.get("kind", "standard"),
+            example_version=row.get("example_version"),
             positions=positions,
             settings={
                 "risk_profile": row.get("risk_profile", "moderado"),
@@ -51,7 +65,7 @@ class PortfolioService:
                 rows = self.db.fetch_all(
                     """
                     select id::text as id, owner_id::text as owner_id, name, base_currency,
-                           risk_profile, forecast_horizon_days, created_at, updated_at
+                           risk_profile, forecast_horizon_days, created_at, updated_at, kind, example_version
                     from public.portfolios
                     where owner_id = %s::uuid
                     order by created_at desc
@@ -62,7 +76,7 @@ class PortfolioService:
                 rows = self.db.fetch_all(
                     """
                     select id::text as id, owner_id::text as owner_id, name, base_currency,
-                           risk_profile, forecast_horizon_days, created_at, updated_at
+                           risk_profile, forecast_horizon_days, created_at, updated_at, kind, example_version
                     from public.portfolios
                     order by created_at desc
                     """
@@ -86,7 +100,7 @@ class PortfolioService:
                 row = self.db.fetch_one(
                     """
                     select id::text as id, owner_id::text as owner_id, name, base_currency,
-                           risk_profile, forecast_horizon_days, created_at, updated_at
+                           risk_profile, forecast_horizon_days, created_at, updated_at, kind, example_version
                     from public.portfolios
                     where id = %s::uuid and owner_id = %s::uuid
                     """,
@@ -96,7 +110,7 @@ class PortfolioService:
                 row = self.db.fetch_one(
                     """
                     select id::text as id, owner_id::text as owner_id, name, base_currency,
-                           risk_profile, forecast_horizon_days, created_at, updated_at
+                           risk_profile, forecast_horizon_days, created_at, updated_at, kind, example_version
                     from public.portfolios
                     where id = %s::uuid
                     """,
@@ -153,6 +167,82 @@ class PortfolioService:
         self.storage.save_json(f"{self._dir}/{portfolio.id}.json", portfolio.model_dump(mode="json"))
         return portfolio
 
+    def create_example(self, user_id: str) -> tuple[Portfolio, bool]:
+        with self._example_lock:
+            return self._create_example_unlocked(user_id)
+
+    def _create_example_unlocked(self, user_id: str) -> tuple[Portfolio, bool]:
+        existing = next((item for item in self.list_all(user_id) if item.kind == "example"), None)
+        if existing is not None:
+            return existing, False
+        if len(self.list_all(user_id)) >= self.MAX_PORTFOLIOS:
+            raise ValueError(f"Limite maximo de {self.MAX_PORTFOLIOS} carteiras atingido")
+
+        now = datetime.now(timezone.utc)
+        portfolio = Portfolio(
+            id=str(uuid.uuid4()), owner_id=user_id, name="Carteira Exemplo", base_currency="BRL",
+            created_at=now, updated_at=now, kind="example", example_version=EXAMPLE_VERSION,
+            positions=self.examples.template_positions(),
+        )
+        if self.db.enabled:
+            created = False
+            with self.db.transaction() as conn:
+                with conn.cursor() as cursor:
+                    cursor.execute(
+                        """
+                        insert into public.portfolios (
+                            id, owner_id, name, base_currency, risk_profile, forecast_horizon_days,
+                            created_at, updated_at, kind, example_version
+                        ) values (%s::uuid, %s::uuid, %s, %s, %s, %s, %s, %s, %s, %s)
+                        on conflict (owner_id) where kind = 'example' do nothing
+                        returning id::text as id
+                        """,
+                        (portfolio.id, user_id, portfolio.name, portfolio.base_currency,
+                         portfolio.settings.risk_profile, portfolio.settings.forecast_horizon_days,
+                         now, now, portfolio.kind, portfolio.example_version),
+                    )
+                    inserted = cursor.fetchone()
+                    created = inserted is not None
+                    if created:
+                        for position in portfolio.positions:
+                            cursor.execute(
+                                """
+                                insert into public.portfolio_positions (
+                                    id, portfolio_id, asset_id, ticker, asset_class, quantity, avg_price,
+                                    currency, manual_notes, created_at, updated_at
+                                ) values (%s::uuid, %s::uuid, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                                """,
+                                (str(uuid.uuid4()), portfolio.id, position.asset_id, position.ticker,
+                                 position.asset_class, position.quantity, position.avg_price, position.currency,
+                                 position.manual_notes, now, now),
+                            )
+                            cursor.execute(
+                                """
+                                insert into public.portfolio_transactions (
+                                    id, portfolio_id, ticker, asset_class, kind, quantity_delta,
+                                    unit_price, currency, occurred_at, created_at, origin_key
+                                ) values (%s::uuid, %s::uuid, %s, %s, 'opening', %s, %s, %s, %s, %s, %s)
+                                on conflict (origin_key) do nothing
+                                """,
+                                (str(uuid.uuid4()), portfolio.id, position.ticker, position.asset_class,
+                                 position.quantity, position.avg_price, position.currency, date.today(), now,
+                                 f"example-v{EXAMPLE_VERSION}:{portfolio.id}:{position.ticker}"),
+                            )
+            if not created:
+                existing = next((item for item in self.list_all(user_id) if item.kind == "example"), None)
+                if existing is None:
+                    raise RuntimeError("Nao foi possivel localizar a Carteira Exemplo existente")
+                return existing, False
+            return portfolio, True
+        self.storage.save_json(f"{self._dir}/{portfolio.id}.json", portfolio.model_dump(mode="json"))
+        try:
+            self.transactions.ensure_opening_transactions(portfolio, migration_date=date.today())
+        except Exception:
+            self.storage.delete_file(f"{self._dir}/{portfolio.id}.json")
+            self.transactions.delete_for_portfolio(portfolio.id)
+            raise
+        return portfolio, True
+
     def update(self, portfolio_id: str, updates: dict, user_id: str | None = None) -> Portfolio | None:
         portfolio = self.get_by_id(portfolio_id, user_id)
         if portfolio is None:
@@ -188,7 +278,9 @@ class PortfolioService:
 
         portfolio_dict = portfolio.model_dump(mode="json")
         for key, value in updates.items():
-            if value is not None and key in portfolio_dict:
+            if key == "settings" and isinstance(value, dict):
+                portfolio_dict["settings"] = {**portfolio_dict["settings"], **value}
+            elif value is not None and key in portfolio_dict:
                 portfolio_dict[key] = value
         portfolio_dict["updated_at"] = datetime.now(timezone.utc).isoformat()
         self.storage.save_json(f"{self._dir}/{portfolio_id}.json", portfolio_dict)

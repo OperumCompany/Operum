@@ -289,12 +289,13 @@ export function PortfolioDetailsPage() {
   }, [portfolio]);
 
   const filteredAssets = useMemo(() => {
-    if (!selectedClass) return assets;
+    const availableAssets = portfolio?.kind === 'example' ? assets : assets.filter((asset) => asset.source !== 'example');
+    if (!selectedClass) return availableAssets;
     if (selectedClass === 'BDR') {
-      return assets.filter((a) => a.asset_class === 'US_STOCK' && a.sub_type === 'BDR');
+      return availableAssets.filter((a) => a.asset_class === 'US_STOCK' && a.sub_type === 'BDR');
     }
-    return assets.filter((a) => a.asset_class === selectedClass);
-  }, [assets, selectedClass]);
+    return availableAssets.filter((a) => a.asset_class === selectedClass);
+  }, [assets, portfolio?.kind, selectedClass]);
 
   const positionsByClass = useMemo(() => {
     if (!portfolio) return {};
@@ -641,6 +642,15 @@ export function PortfolioDetailsPage() {
         </div>
       </section>
 
+      {portfolio.kind === 'example' && (
+        <section className="no-print rounded-[24px] border border-[var(--brand)]/20 bg-[var(--brand)]/5 p-4">
+          <div className="flex items-start gap-3">
+            <Sparkles size={18} className="mt-0.5 shrink-0 text-[var(--brand)]" />
+            <div><p className="font-semibold text-[var(--text-main)]">Ambiente demonstrativo</p><p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">Preços, evolução e análises desta carteira são simulados. Suas alterações ficam salvas somente nesta demonstração e não consomem serviços externos.</p></div>
+          </div>
+        </section>
+      )}
+
       <section className="portfolio-report-heading hidden print:block">
         <p className="eyebrow">Relatório da carteira</p>
         <h1 className="mt-2 text-3xl font-bold">{cleanText(getPortfolioLabel(portfolio))}</h1>
@@ -685,7 +695,7 @@ export function PortfolioDetailsPage() {
         </Card>
       )}
 
-      <PortfolioEvolutionChart portfolioId={portfolio.id} currency={portfolio.base_currency} refreshKey={historyRefreshKey} />
+      <PortfolioEvolutionChart portfolioId={portfolio.id} currency={portfolio.base_currency} refreshKey={historyRefreshKey} defaultPeriod={portfolio.kind === 'example' ? '1y' : '6m'} />
 
       <Card className="no-print" title="Adicionar ativo ou aporte">
         <form onSubmit={addAsset} className="space-y-3">

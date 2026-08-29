@@ -25,6 +25,8 @@ export const initialPortfolios: Portfolio[] = [
     base_currency: 'BRL',
     created_at: '2026-02-12T00:00:00Z',
     updated_at: now,
+    kind: 'standard',
+    example_version: null,
     positions: [
       { asset_id: 'PETR4', ticker: 'PETR4', asset_class: 'BR_STOCK', quantity: 15, avg_price: 31.20, currency: 'BRL', manual_notes: '' },
       { asset_id: 'IVVB11', ticker: 'IVVB11', asset_class: 'US_STOCK', quantity: 20, avg_price: 180.50, currency: 'BRL', manual_notes: '' },

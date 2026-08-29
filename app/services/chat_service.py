@@ -63,8 +63,21 @@ class ChatService:
         active_portfolio: Portfolio | None = None,
         consolidated_portfolios: list[Portfolio] | None = None,
         conversation_summary: str = "",
+        demo_mode: bool = False,
     ) -> dict:
         question = next((msg.content for msg in reversed(messages) if msg.role == "user"), "").strip()
+        if demo_mode:
+            return {
+                "message": (
+                    "Esta conversa está vinculada à Carteira Exemplo. Os dados desse ambiente são demonstrativos, "
+                    "por isso a Operum não consulta notícias, mercado ou modelos externos aqui. Explore o mapa de "
+                    "alocação, a evolução de um ano e as análises prontas dentro da carteira."
+                ),
+                "mode": "fallback",
+                "used_portfolio_context": True,
+                "sources": [],
+                "retrieval": {"intent": "carteira", "knowledge_count": 0, "news_count": 0, "used_portfolio_context": True},
+            }
         portfolio_context = self._build_portfolio_context(active_portfolio, consolidated_portfolios or [])
         intent = self._classify_intent(question, messages, portfolio_context)
         if self._is_safe_orientation(question, intent):

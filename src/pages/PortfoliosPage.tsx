@@ -1,12 +1,11 @@
 import { FormEvent, useMemo, useState } from 'react';
-import { FolderPlus, Sparkles, Trash2 } from 'lucide-react';
+import { FlaskConical, FolderPlus, Sparkles, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { Button, Card, Input } from '../components/UI';
+import { PortfolioAllocationMap } from '../components/PortfolioAllocationMap';
 import { usePortfolios } from '../context/PortfoliosContext';
 import { getActivePortfolioSelectionLabel, getPortfolioLabel } from '../utils/portfolios';
 
-const chartColors = ['#684CF2', '#DF50F2', '#941289', '#A896FF', '#B133A3'];
 const PAGE_SIZE = 10;
 const MAX_PAGES = 5;
 const MAX_PORTFOLIOS = PAGE_SIZE * MAX_PAGES;
@@ -18,11 +17,12 @@ export function PortfoliosPage() {
     activePortfolio,
     activePortfolioId,
     setActivePortfolioId,
+    selectedPortfolios,
     createPortfolio,
+    createExamplePortfolio,
     updatePortfolio,
     deletePortfolio,
     deletePortfolios,
-    selectedPortfolios,
     isAllPortfoliosSelected,
     loading,
     error,
@@ -33,10 +33,12 @@ export function PortfoliosPage() {
   const [selectedIds, setSelectedIds] = useState<string[]>([]);
   const [selectionMode, setSelectionMode] = useState(false);
   const [page, setPage] = useState(1);
-
-  const composition = useMemo(
-    () => activePortfolio?.positions.map((p) => ({ name: p.ticker, value: p.quantity })) ?? [],
-    [activePortfolio],
+  const [creatingExample, setCreatingExample] = useState(false);
+  const [exampleError, setExampleError] = useState('');
+  const examplePortfolio = portfolios.find((portfolio) => portfolio.kind === 'example');
+  const allocationPortfolios = useMemo(
+    () => isAllPortfoliosSelected ? selectedPortfolios : activePortfolio ? [activePortfolio] : [],
+    [activePortfolio, isAllPortfoliosSelected, selectedPortfolios],
   );
 
   const totalPages = Math.max(1, Math.min(MAX_PAGES, Math.ceil(portfolios.length / PAGE_SIZE)));
@@ -53,6 +55,21 @@ export function PortfoliosPage() {
       setPage(1);
     } catch {
       // handled by context
+    }
+  }
+
+  async function handleCreateExample() {
+    if (examplePortfolio || portfolios.length >= MAX_PORTFOLIOS) return;
+    setCreatingExample(true);
+    setExampleError('');
+    try {
+      const result = await createExamplePortfolio();
+      setPage(1);
+      navigate(`/app/carteiras/${result.portfolio.id}`);
+    } catch (reason) {
+      setExampleError(reason instanceof Error ? reason.message : 'Não foi possível criar a Carteira Exemplo.');
+    } finally {
+      setCreatingExample(false);
     }
   }
 
@@ -165,6 +182,21 @@ export function PortfoliosPage() {
                 {portfolios.length}/{MAX_PORTFOLIOS} carteiras usadas. Limite de 5 paginas com 10 carteiras cada.
               </p>
             </form>
+            {!examplePortfolio && (
+              <div className="mt-5 rounded-[24px] border border-[var(--brand)]/20 bg-[var(--accent-soft)]/50 p-4">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[var(--brand)] text-white"><FlaskConical size={18} /></span>
+                  <div>
+                    <p className="font-semibold text-[var(--text-main)]">Conheça o Operum com dados simulados</p>
+                    <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">Crie uma demonstração com 36 ativos, um ano de evolução e análises prontas.</p>
+                  </div>
+                </div>
+                <Button type="button" variant="ghost" className="mt-4 w-full" disabled={creatingExample || portfolios.length >= MAX_PORTFOLIOS} onClick={handleCreateExample}>
+                  <Sparkles size={16} />{creatingExample ? 'Criando demonstração...' : 'Criar Carteira Exemplo'}
+                </Button>
+                {exampleError && <p className="mt-2 text-xs text-[var(--danger-text)]">{exampleError}</p>}
+              </div>
+            )}
           </Card>
 
           <Card
@@ -257,6 +289,11 @@ export function PortfoliosPage() {
                                   Ativa
                                 </span>
                               )}
+                              {portfolio.kind === 'example' && (
+                                <span className="rounded-full border border-[var(--brand)]/20 bg-[var(--brand)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand)]">
+                                  Carteira Exemplo
+                                </span>
+                              )}
                               {selectionMode && isSelected && (
                                 <span className="rounded-full bg-[var(--danger-text)]/10 px-3 py-1 text-xs font-semibold text-[var(--danger-text)]">
                                   Selecionada
@@ -281,6 +318,8 @@ export function PortfoliosPage() {
                         <p className="mt-2 text-xs uppercase tracking-[0.14em] text-[var(--text-muted)]">
                           {portfolio.positions.length} ativo(s) • {totalQuantity.toFixed(0)} unidades
                         </p>
+
+                        {portfolio.kind === 'example' && <p className="mt-2 text-xs leading-5 text-[var(--text-muted)]">Ambiente demonstrativo: preços, evolução e análises são simulados e ficam salvos somente na sua conta.</p>}
 
                         <div className="mt-4 flex flex-wrap gap-2">
                           <Button
@@ -352,30 +391,15 @@ export function PortfoliosPage() {
         </div>
 
         <div className="space-y-4">
-          <Card title="Resumo da carteira ativa">
+          <Card title="Mapa de alocação">
             <p className="text-sm leading-6 text-[var(--text-muted)]">
               {getActivePortfolioSelectionLabel(activePortfolio, isAllPortfoliosSelected)}
             </p>
             <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
-              {isAllPortfoliosSelected
-                ? `Entenda rapidamente como as ${selectedPortfolios.length} carteiras estão divididas hoje.`
-                : 'Entenda rapidamente como essa carteira esta dividida hoje.'}
+              Cada bloco representa o valor financeiro de uma posição, facilitando a leitura de concentração.
             </p>
-            <div className="mt-4 h-64">
-              {!!composition.length && (
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie data={composition} dataKey="value" nameKey="name" outerRadius={82}>
-                      {composition.map((_, index) => (
-                        <Cell key={index} fill={chartColors[index % chartColors.length]} />
-                      ))}
-                    </Pie>
-                    <Tooltip />
-                  </PieChart>
-                </ResponsiveContainer>
-              )}
-              {!composition.length && <p className="text-sm text-[var(--text-muted)]">A seleção atual ainda não possui ativos.</p>}
-            </div>
+            {activePortfolio?.kind === 'example' && !isAllPortfoliosSelected && <p className="mt-3 rounded-2xl border border-[var(--brand)]/15 bg-[var(--brand)]/5 p-3 text-xs leading-5 text-[var(--text-muted)]">Visualização demonstrativa com valores simulados pela Operum.</p>}
+            <div className="mt-4"><PortfolioAllocationMap portfolios={allocationPortfolios} /></div>
             <Button
               type="button"
               className="mt-3 w-full"

@@ -21,16 +21,23 @@ export function PortfolioEvolutionChart({
   portfolioId,
   currency,
   refreshKey = 0,
+  defaultPeriod = '6m',
 }: {
   portfolioId: string;
   currency: string;
   refreshKey?: number;
+  defaultPeriod?: '6m' | '1y';
 }) {
-  const [period, setPeriod] = useState<PortfolioHistoryResponse['period']>('6m');
+  const [period, setPeriod] = useState<PortfolioHistoryResponse['period']>(defaultPeriod);
   const [ticker, setTicker] = useState('');
   const [data, setData] = useState<PortfolioHistoryResponse | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+
+  useEffect(() => {
+    setPeriod(defaultPeriod);
+    setTicker('');
+  }, [defaultPeriod, portfolioId]);
 
   useEffect(() => {
     let cancelled = false;

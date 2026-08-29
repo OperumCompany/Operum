@@ -148,6 +148,16 @@ class AssetUniverseService:
             Asset(ticker="FIIB11", name="FIIB", asset_class="FII", country="BR", currency="BRL", sector="Lajes Corporativas", sub_type="FII"),
             Asset(ticker="ALZR11", name="Alianza Renda", asset_class="FII", country="BR", currency="BRL", sector="Lajes Corporativas", sub_type="FII"),
 
+            # --- Ações negociadas nos EUA ---
+            Asset(ticker="AAPL", name="Apple", asset_class="US_STOCK", country="US", currency="USD", sector="Tecnologia", sub_type="Ação EUA", source="example"),
+            Asset(ticker="MSFT", name="Microsoft", asset_class="US_STOCK", country="US", currency="USD", sector="Tecnologia", sub_type="Ação EUA", source="example"),
+            Asset(ticker="NVDA", name="NVIDIA", asset_class="US_STOCK", country="US", currency="USD", sector="Tecnologia", sub_type="Ação EUA", source="example"),
+            Asset(ticker="GOOGL", name="Alphabet", asset_class="US_STOCK", country="US", currency="USD", sector="Tecnologia", sub_type="Ação EUA", source="example"),
+            Asset(ticker="AMZN", name="Amazon", asset_class="US_STOCK", country="US", currency="USD", sector="Consumo", sub_type="Ação EUA", source="example"),
+            Asset(ticker="META", name="Meta Platforms", asset_class="US_STOCK", country="US", currency="USD", sector="Tecnologia", sub_type="Ação EUA", source="example"),
+            Asset(ticker="TSLA", name="Tesla", asset_class="US_STOCK", country="US", currency="USD", sector="Automotivo", sub_type="Ação EUA", source="example"),
+            Asset(ticker="JPM", name="JPMorgan Chase", asset_class="US_STOCK", country="US", currency="USD", sector="Financeiro", sub_type="Ação EUA", source="example"),
+
             # --- Ativos EUA (BDRs) ---
             Asset(ticker="AAPL34", name="Apple BDR", asset_class="US_STOCK", country="US", currency="USD", sector="Tecnologia", sub_type="BDR"),
             Asset(ticker="MSFT34", name="Microsoft BDR", asset_class="US_STOCK", country="US", currency="USD", sector="Tecnologia", sub_type="BDR"),

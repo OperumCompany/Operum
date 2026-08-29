@@ -45,11 +45,17 @@ create table if not exists public.portfolios (
   base_currency text not null default 'BRL',
   risk_profile text not null default 'moderado',
   forecast_horizon_days integer not null default 5,
+  kind text not null default 'standard' check (kind in ('standard', 'example')),
+  example_version integer,
   created_at timestamptz not null default timezone('utc', now()),
   updated_at timestamptz not null default timezone('utc', now())
 );
 
 create index if not exists idx_portfolios_owner_id on public.portfolios(owner_id);
+alter table public.portfolios add column if not exists kind text not null default 'standard';
+alter table public.portfolios add column if not exists example_version integer;
+create unique index if not exists idx_portfolios_one_example_per_owner
+on public.portfolios(owner_id) where kind = 'example';
 
 create table if not exists public.portfolio_positions (
   id uuid primary key default gen_random_uuid(),

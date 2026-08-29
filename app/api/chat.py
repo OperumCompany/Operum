@@ -28,13 +28,19 @@ portfolio_service = PortfolioService()
 def _portfolio_context(owner_id: str, portfolio_id: str | None, use_all: bool):
     active = None
     consolidated = []
+    demo_mode = False
     if portfolio_id:
         active = portfolio_service.get_by_id(portfolio_id, owner_id)
         if active is None:
             raise HTTPException(status_code=404, detail="Carteira não encontrada")
+        if active.kind == "example":
+            demo_mode = True
+            active = None
     if use_all:
-        consolidated = portfolio_service.list_by_owner(owner_id)
-    return active, consolidated
+        all_portfolios = portfolio_service.list_all(owner_id)
+        consolidated = [portfolio for portfolio in all_portfolios if portfolio.kind == "standard"]
+        demo_mode = bool(all_portfolios) and not consolidated
+    return active, consolidated, demo_mode
 
 
 @router.get("/conversations", response_model=list[ChatConversation])
@@ -87,7 +93,7 @@ def send_message(conversation_id: str, data: ConversationMessageCreate, current=
 
     portfolio_id = data.portfolio_id if data.portfolio_id is not None else conversation.portfolio_id
     use_all = data.use_all_portfolios if data.use_all_portfolios is not None else conversation.use_all_portfolios
-    active, consolidated = _portfolio_context(owner_id, portfolio_id, use_all)
+    active, consolidated, demo_mode = _portfolio_context(owner_id, portfolio_id, use_all)
     input_messages = [ChatInputMessage(role=item.role, content=item.content) for item in stored]
     input_messages.append(ChatInputMessage(role="user", content=data.content))
 
@@ -96,11 +102,12 @@ def send_message(conversation_id: str, data: ConversationMessageCreate, current=
         active_portfolio=active,
         consolidated_portfolios=consolidated,
         conversation_summary=conversation.summary,
+        demo_mode=demo_mode,
     )
     user_message, assistant_message, conversation = chat_repository.add_exchange(
         conversation, data.content, result["message"], result["mode"], result["sources"], result["retrieval"],
     )
-    if conversation.message_count >= 12 and conversation.message_count % 12 == 0:
+    if not demo_mode and conversation.message_count >= 12 and conversation.message_count % 12 == 0:
         def update_summary():
             all_messages = chat_repository.list_messages(conversation_id, owner_id)
             summary = chat_service.summarize_conversation(
@@ -121,10 +128,11 @@ def send_message(conversation_id: str, data: ConversationMessageCreate, current=
 @router.post("", response_model=ChatResponse)
 def chat(data: ChatRequest, current=Depends(require_current_user)):
     owner_id = current["user"].id
-    active, consolidated = _portfolio_context(owner_id, data.portfolio_id, data.use_all_portfolios)
+    active, consolidated, demo_mode = _portfolio_context(owner_id, data.portfolio_id, data.use_all_portfolios)
     result = chat_service.answer(
         data.messages,
         active_portfolio=active,
         consolidated_portfolios=consolidated,
+        demo_mode=demo_mode,
     )
     return ChatResponse(**result)

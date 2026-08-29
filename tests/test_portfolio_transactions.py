@@ -37,6 +37,23 @@ def make_portfolio(quantity: float = 10, avg_price: float | None = 100) -> Portf
     )
 
 
+def test_example_creation_rolls_back_when_ledger_initialization_fails(tmp_path, monkeypatch):
+    storage = LocalStorageService(str(tmp_path))
+    service = PortfolioService()
+    service.storage = storage
+    service.db = DisabledDb()
+    service.transactions = PortfolioTransactionService(db=DisabledDb(), storage=storage, market=FakeMarket())
+
+    def fail_opening(*args, **kwargs):
+        raise RuntimeError("ledger unavailable")
+
+    monkeypatch.setattr(service.transactions, "ensure_opening_transactions", fail_opening)
+    with pytest.raises(RuntimeError, match="ledger unavailable"):
+        service.create_example("rollback-user")
+
+    assert [portfolio for portfolio in service.list_all("rollback-user") if portfolio.kind == "example"] == []
+
+
 def test_opening_migration_is_idempotent_and_history_uses_real_movements(tmp_path):
     storage = LocalStorageService(str(tmp_path))
     transactions = PortfolioTransactionService(db=DisabledDb(), storage=storage, market=FakeMarket())

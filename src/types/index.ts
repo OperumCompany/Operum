@@ -121,12 +121,44 @@ export type PortfolioSettings = {
 
 export type Portfolio = {
   id: string;
+  owner_id?: string | null;
   name: string;
   base_currency: string;
   created_at: string;
   updated_at: string;
+  kind: 'standard' | 'example';
+  example_version: number | null;
   positions: Position[];
   settings: PortfolioSettings;
+};
+
+export type ExamplePortfolioCreateResponse = {
+  portfolio: Portfolio;
+  created: boolean;
+};
+
+export type PortfolioPricePosition = {
+  ticker: string;
+  asset_class: string;
+  quantity: number;
+  avg_price: number | null;
+  current_price: number | null;
+  currency: string;
+  total_value: number | null;
+  name: string;
+  weight_pct: number | null;
+  unrealized_pnl: number | null;
+  unrealized_pnl_pct: number | null;
+  sparkline_20d?: number[];
+};
+
+export type PortfolioPricesResponse = {
+  portfolio_id: string;
+  portfolio_name: string;
+  total_value: number | null;
+  total_unrealized_pnl: number | null;
+  positions: PortfolioPricePosition[];
+  is_demo?: boolean;
 };
 
 export type PortfolioTransaction = {

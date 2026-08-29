@@ -339,6 +339,12 @@ class AuthService:
                 updated_at=now,
             )
             self._insert_user_db(user)
+            try:
+                from app.services.portfolio_service import PortfolioService
+                PortfolioService().create_example(user.id)
+            except Exception:
+                self._run_db(lambda: self.db.execute("delete from public.app_users where id = %s::uuid", (user.id,)))
+                raise
             return self._create_session_db(user)
 
         users = self._load_users()
@@ -355,6 +361,12 @@ class AuthService:
         )
         users.append(user)
         self._save_users(users)
+        try:
+            from app.services.portfolio_service import PortfolioService
+            PortfolioService().create_example(user.id)
+        except Exception:
+            self._save_users([item for item in users if item.id != user.id])
+            raise
         return self._create_session(user)
 
     def login(self, data: LoginRequest) -> AuthResponse:

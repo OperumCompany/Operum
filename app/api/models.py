@@ -87,6 +87,9 @@ def get_portfolio_opinion(
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
 
+    if portfolio.kind == "example":
+        return portfolio_service.examples.portfolio_opinion(portfolio, analysis_horizon)
+
     prices_data = {}
     for pos in portfolio.positions:
         hist = market_service.get_history(pos.ticker, period="1y", interval="1d")
@@ -116,6 +119,14 @@ def get_position_opinion(
     portfolio = portfolio_service.get_by_id(portfolio_id, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira nÃ£o encontrada")
+
+    if portfolio.kind == "example":
+        result = portfolio_service.examples.position_opinion(
+            portfolio, ticker.upper(), history_horizon, outlook_horizon,
+        )
+        if result.get("status") == "not_found":
+            raise HTTPException(status_code=404, detail="Ativo não encontrado na carteira")
+        return result
 
     result = asset_analysis_service.generate_asset_analysis(
         portfolio,
