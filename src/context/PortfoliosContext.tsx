@@ -1,8 +1,9 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { Portfolio } from '../types';
+import { ReactNode, createContext, useContext, useEffect, useMemo, useState, useCallback } from 'react';
+import type { ExamplePortfolioCreateResponse, Portfolio } from '../types';
 import { getScopedStorageKey, readStorage, storageKeys, writeStorage } from '../utils/storage';
-import { ALL_PORTFOLIOS_ID, getInitialPortfolios, normalizePortfolio, normalizePortfolios } from '../utils/portfolios';
+import { ALL_PORTFOLIOS_ID } from '../utils/portfolios';
 import { useAuth } from './AuthContext';
+import api from '../utils/api';
 
 type PortfoliosContextType = {
   portfolios: Portfolio[];
@@ -10,63 +11,71 @@ type PortfoliosContextType = {
   activePortfolio: Portfolio | null;
   selectedPortfolios: Portfolio[];
   isAllPortfoliosSelected: boolean;
+  loading: boolean;
+  error: string | null;
   setActivePortfolioId: (id: string) => void;
-  createPortfolio: (input: { name: string; description: string }) => Portfolio;
-  importPortfolio: (source: Portfolio['source']) => Portfolio;
-  updatePortfolio: (id: string, updater: (current: Portfolio) => Portfolio) => void;
-  deletePortfolio: (id: string) => void;
+  createPortfolio: (input: { name: string; base_currency?: string }) => Promise<Portfolio>;
+  createExamplePortfolio: () => Promise<ExamplePortfolioCreateResponse>;
+  updatePortfolio: (id: string, updates: Partial<Portfolio>) => Promise<void>;
+  deletePortfolio: (id: string) => Promise<void>;
+  deletePortfolios: (ids: string[]) => Promise<void>;
+  addPosition: (portfolioId: string, data: { ticker: string; asset_class: string; quantity: number; avg_price?: number; occurred_at?: string }) => Promise<void>;
+  removePosition: (portfolioId: string, ticker: string) => Promise<void>;
+  refreshPortfolios: () => Promise<void>;
 };
 
 const PortfoliosContext = createContext<PortfoliosContextType | undefined>(undefined);
 
-export function PortfoliosProvider({ children }: { children: React.ReactNode }) {
+export function PortfoliosProvider({ children }: { children: ReactNode }) {
   const { user } = useAuth();
   const userId = user?.id ?? null;
-  const portfoliosStorageKey = getScopedStorageKey(storageKeys.portfolios, userId);
   const activePortfolioStorageKey = getScopedStorageKey(storageKeys.activePortfolio, userId);
-  const [portfolios, setPortfolios] = useState<Portfolio[]>(() => getInitialPortfolios());
-  const [activePortfolioId, setActivePortfolioIdState] = useState<string>(() => getInitialPortfolios()[0]?.id ?? '');
+  const [portfolios, setPortfolios] = useState<Portfolio[]>([]);
+  const [activePortfolioId, setActivePortfolioIdState] = useState<string>('');
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  const refreshPortfolios = useCallback(async () => {
+    try {
+      setLoading(true);
+      setError(null);
+      const data = await api.get<Portfolio[]>('/portfolios');
+      setPortfolios(data);
+    } catch (e: unknown) {
+      const msg = e instanceof Error ? e.message : 'Erro ao carregar carteiras';
+      setError(msg);
+    } finally {
+      setLoading(false);
+    }
+  }, []);
 
   useEffect(() => {
     if (!userId) {
-      setPortfolios(getInitialPortfolios());
-      setActivePortfolioIdState(getInitialPortfolios()[0]?.id ?? '');
-      return;
-    }
-
-    const nextPortfolios = normalizePortfolios(readStorage<Portfolio[]>(portfoliosStorageKey, getInitialPortfolios()));
-    const nextActivePortfolioId = readStorage(activePortfolioStorageKey, nextPortfolios[0]?.id ?? '');
-
-    setPortfolios(nextPortfolios);
-    setActivePortfolioIdState(nextActivePortfolioId);
-  }, [activePortfolioStorageKey, portfoliosStorageKey, userId]);
-
-  useEffect(() => {
-    if (!userId) return;
-
-    if (!portfolios.length) {
+      setPortfolios([]);
       setActivePortfolioIdState('');
-      writeStorage(activePortfolioStorageKey, '');
+      setLoading(false);
       return;
     }
+    refreshPortfolios();
+  }, [userId, refreshPortfolios]);
 
-    if (activePortfolioId === ALL_PORTFOLIOS_ID) {
-      writeStorage(activePortfolioStorageKey, ALL_PORTFOLIOS_ID);
-      return;
+  useEffect(() => {
+    if (!userId || !portfolios.length) return;
+    const stored = readStorage(activePortfolioStorageKey, '');
+    const exists = stored && (stored === ALL_PORTFOLIOS_ID || portfolios.some((p) => p.id === stored));
+    if (exists) {
+      setActivePortfolioIdState(stored);
+    } else {
+      setActivePortfolioIdState(portfolios[0].id);
     }
-
-    const exists = portfolios.some((portfolio) => portfolio.id === activePortfolioId);
-    if (!exists) {
-      const fallbackId = portfolios[0].id;
-      setActivePortfolioIdState(fallbackId);
-      writeStorage(activePortfolioStorageKey, fallbackId);
-    }
-  }, [activePortfolioId, activePortfolioStorageKey, portfolios, userId]);
+  }, [portfolios, activePortfolioStorageKey, userId]);
 
   useEffect(() => {
     if (!userId) return;
-    writeStorage(portfoliosStorageKey, portfolios);
-  }, [portfolios, portfoliosStorageKey, userId]);
+    if (activePortfolioId) {
+      writeStorage(activePortfolioStorageKey, activePortfolioId);
+    }
+  }, [activePortfolioId, activePortfolioStorageKey, userId]);
 
   function setActivePortfolioId(id: string) {
     setActivePortfolioIdState(id);
@@ -75,50 +84,73 @@ export function PortfoliosProvider({ children }: { children: React.ReactNode }) 
     }
   }
 
-  function createPortfolio(input: { name: string; description: string }) {
-    const next = normalizePortfolio({
-      id: crypto.randomUUID(),
+  async function createPortfolio(input: { name: string; base_currency?: string }) {
+    const created = await api.post<Portfolio>('/portfolios', {
       name: input.name.trim(),
-      description: input.description.trim(),
-      assets: [],
-      createdAt: new Date().toISOString().slice(0, 10),
-      source: 'manual',
+      base_currency: input.base_currency || 'BRL',
     });
-
-    setPortfolios((prev) => [next, ...prev]);
-    setActivePortfolioId(next.id);
-    return next;
+    setPortfolios((prev) => [created, ...prev]);
+    setActivePortfolioId(created.id);
+    return created;
   }
 
-  function importPortfolio(source: Portfolio['source']) {
-    const base = getInitialPortfolios()[0];
-    const next = normalizePortfolio({
-      ...base,
-      id: crypto.randomUUID(),
-      name: base.name,
-      description: `Carteira criada a partir de um modelo ${source.toUpperCase()} para você começar mais rápido.`,
-      source,
-      createdAt: new Date().toISOString().slice(0, 10),
-      assets: base.assets.map((asset) => ({ ...asset, id: crypto.randomUUID() })),
+  async function createExamplePortfolio() {
+    const result = await api.post<ExamplePortfolioCreateResponse>('/portfolios/example', {});
+    setPortfolios((prev) => {
+      const withoutCurrent = prev.filter((item) => item.id !== result.portfolio.id);
+      return [result.portfolio, ...withoutCurrent];
     });
-
-    setPortfolios((prev) => [next, ...prev]);
-    setActivePortfolioId(next.id);
-    return next;
+    setActivePortfolioId(result.portfolio.id);
+    return result;
   }
 
-  function updatePortfolio(id: string, updater: (current: Portfolio) => Portfolio) {
-    setPortfolios((prev) => prev.map((portfolio) => (portfolio.id === id ? normalizePortfolio(updater(portfolio)) : portfolio)));
+  async function updatePortfolio(id: string, updates: Partial<Portfolio>) {
+    const updated = await api.put<Portfolio>(`/portfolios/${id}`, updates);
+    setPortfolios((prev) => prev.map((p) => (p.id === id ? updated : p)));
   }
 
-  function deletePortfolio(id: string) {
-    setPortfolios((prev) => prev.filter((portfolio) => portfolio.id !== id));
+  async function deletePortfolio(id: string) {
+    await api.del(`/portfolios/${id}`);
+    setPortfolios((prev) => {
+      const nextPortfolios = prev.filter((p) => p.id !== id);
+      if (activePortfolioId === id) {
+        const next = nextPortfolios[0];
+        setActivePortfolioId(next?.id ?? '');
+      }
+      return nextPortfolios;
+    });
+  }
+
+  async function deletePortfolios(ids: string[]) {
+    if (!ids.length) return;
+    await api.post('/portfolios/bulk-delete', { portfolio_ids: ids });
+    const selected = new Set(ids);
+    setPortfolios((prev) => {
+      const nextPortfolios = prev.filter((p) => !selected.has(p.id));
+      if (selected.has(activePortfolioId)) {
+        const next = nextPortfolios[0];
+        setActivePortfolioId(next?.id ?? '');
+      }
+      return nextPortfolios;
+    });
+  }
+
+  async function addPosition(portfolioId: string, data: { ticker: string; asset_class: string; quantity: number; avg_price?: number; occurred_at?: string }) {
+    const updated = await api.post<Portfolio>(`/portfolios/${portfolioId}/positions`, data);
+    setPortfolios((prev) => prev.map((p) => (p.id === portfolioId ? updated : p)));
+  }
+
+  async function removePosition(portfolioId: string, ticker: string) {
+    const updated = await api.del<Portfolio>(`/portfolios/${portfolioId}/positions/${ticker}`);
+    setPortfolios((prev) => prev.map((p) => (p.id === portfolioId ? updated : p)));
   }
 
   const value = useMemo<PortfoliosContextType>(() => {
     const isAllPortfoliosSelected = activePortfolioId === ALL_PORTFOLIOS_ID;
-    const selectedPortfolios = isAllPortfoliosSelected ? portfolios : portfolios.filter((portfolio) => portfolio.id === activePortfolioId);
-    const activePortfolio = portfolios.find((portfolio) => portfolio.id === activePortfolioId) ?? portfolios[0] ?? null;
+    const selectedPortfolios = isAllPortfoliosSelected
+      ? portfolios
+      : portfolios.filter((p) => p.id === activePortfolioId);
+    const activePortfolio = portfolios.find((p) => p.id === activePortfolioId) ?? portfolios[0] ?? null;
 
     return {
       portfolios,
@@ -126,13 +158,19 @@ export function PortfoliosProvider({ children }: { children: React.ReactNode }) 
       activePortfolio,
       selectedPortfolios,
       isAllPortfoliosSelected,
+      loading,
+      error,
       setActivePortfolioId,
       createPortfolio,
-      importPortfolio,
+      createExamplePortfolio,
       updatePortfolio,
       deletePortfolio,
+      deletePortfolios,
+      addPosition,
+      removePosition,
+      refreshPortfolios,
     };
-  }, [activePortfolioId, portfolios]);
+  }, [activePortfolioId, portfolios, loading, error]);
 
   return <PortfoliosContext.Provider value={value}>{children}</PortfoliosContext.Provider>;
 }

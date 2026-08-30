@@ -1,72 +1,156 @@
 import { FormEvent, useMemo, useState } from 'react';
-import { ArrowRight, FolderPlus, Sparkles, Trash2, Upload } from 'lucide-react';
+import { FlaskConical, FolderPlus, Sparkles, Trash2 } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
-import { Cell, Pie, PieChart, ResponsiveContainer, Tooltip } from 'recharts';
 import { Button, Card, Input } from '../components/UI';
+import { PortfolioAllocationMap } from '../components/PortfolioAllocationMap';
 import { usePortfolios } from '../context/PortfoliosContext';
-import { Portfolio } from '../types';
 import { getActivePortfolioSelectionLabel, getPortfolioLabel } from '../utils/portfolios';
 
-const importModes: Array<{ key: Portfolio['source']; label: string; helper: string }> = [
-  { key: 'csv', label: 'Importar CSV', helper: 'Envie uma base pronta para acelerar o preenchimento.' },
-  { key: 'sheet', label: 'Importar planilha', helper: 'Ideal para quem já organiza a carteira fora da plataforma.' },
-  { key: 'example', label: 'Usar exemplo', helper: 'Perfeito para explorar o produto antes de cadastrar dados reais.' },
-];
-
-const chartColors = ['#3D4D9C', '#C7559B', '#E15EF2', '#717171', '#A5A5A5'];
+const PAGE_SIZE = 10;
+const MAX_PAGES = 5;
+const MAX_PORTFOLIOS = PAGE_SIZE * MAX_PAGES;
 
 export function PortfoliosPage() {
   const navigate = useNavigate();
-  const { portfolios, activePortfolio, activePortfolioId, setActivePortfolioId, createPortfolio, importPortfolio, updatePortfolio, deletePortfolio, selectedPortfolios, isAllPortfoliosSelected } = usePortfolios();
+  const {
+    portfolios,
+    activePortfolio,
+    activePortfolioId,
+    setActivePortfolioId,
+    selectedPortfolios,
+    createPortfolio,
+    createExamplePortfolio,
+    updatePortfolio,
+    deletePortfolio,
+    deletePortfolios,
+    isAllPortfoliosSelected,
+    loading,
+    error,
+  } = usePortfolios();
   const [name, setName] = useState('');
-  const [description, setDescription] = useState('');
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editName, setEditName] = useState('');
-  const [editDescription, setEditDescription] = useState('');
+  const [selectedIds, setSelectedIds] = useState<string[]>([]);
+  const [selectionMode, setSelectionMode] = useState(false);
+  const [page, setPage] = useState(1);
+  const [creatingExample, setCreatingExample] = useState(false);
+  const [exampleError, setExampleError] = useState('');
+  const examplePortfolio = portfolios.find((portfolio) => portfolio.kind === 'example');
+  const allocationPortfolios = useMemo(
+    () => isAllPortfoliosSelected ? selectedPortfolios : activePortfolio ? [activePortfolio] : [],
+    [activePortfolio, isAllPortfoliosSelected, selectedPortfolios],
+  );
 
-  function handleCreatePortfolio(e: FormEvent) {
+  const totalPages = Math.max(1, Math.min(MAX_PAGES, Math.ceil(portfolios.length / PAGE_SIZE)));
+  const safePage = Math.min(page, totalPages);
+  const start = (safePage - 1) * PAGE_SIZE;
+  const pagedPortfolios = portfolios.slice(start, start + PAGE_SIZE);
+
+  async function handleCreatePortfolio(e: FormEvent) {
     e.preventDefault();
-    if (!name.trim() || !description.trim()) return;
-    createPortfolio({ name, description });
-    setName('');
-    setDescription('');
+    if (!name.trim() || portfolios.length >= MAX_PORTFOLIOS) return;
+    try {
+      await createPortfolio({ name: name.trim() });
+      setName('');
+      setPage(1);
+    } catch {
+      // handled by context
+    }
   }
 
-  function handleImportPortfolio(source: Portfolio['source']) {
-    importPortfolio(source);
+  async function handleCreateExample() {
+    if (examplePortfolio || portfolios.length >= MAX_PORTFOLIOS) return;
+    setCreatingExample(true);
+    setExampleError('');
+    try {
+      const result = await createExamplePortfolio();
+      setPage(1);
+      navigate(`/app/carteiras/${result.portfolio.id}`);
+    } catch (reason) {
+      setExampleError(reason instanceof Error ? reason.message : 'Não foi possível criar a Carteira Exemplo.');
+    } finally {
+      setCreatingExample(false);
+    }
   }
 
-  function startEdit(portfolio: Portfolio) {
+  function startEdit(portfolio: { id: string; name: string }) {
     setEditingId(portfolio.id);
     setEditName(portfolio.name);
-    setEditDescription(portfolio.description);
   }
 
-  function saveEdit(e: FormEvent) {
+  async function saveEdit(e: FormEvent) {
     e.preventDefault();
-    if (!editingId || !editName.trim() || !editDescription.trim()) return;
-
-    updatePortfolio(editingId, (portfolio) => ({
-      ...portfolio,
-      name: editName.trim(),
-      description: editDescription.trim(),
-    }));
-
-    setEditingId(null);
-    setEditName('');
-    setEditDescription('');
+    if (!editingId || !editName.trim()) return;
+    try {
+      await updatePortfolio(editingId, { name: editName.trim() });
+      setEditingId(null);
+      setEditName('');
+    } catch {
+      // handled by context
+    }
   }
 
-  function handleDeletePortfolio(portfolio: Portfolio) {
-    const confirmed = window.confirm(`Tem certeza que deseja remover a carteira ${getPortfolioLabel(portfolio)}?`);
+  async function handleDeletePortfolio(id: string, portfolioName: string) {
+    const confirmed = window.confirm(`Tem certeza que deseja remover a carteira "${portfolioName}"?`);
     if (!confirmed) return;
-    deletePortfolio(portfolio.id);
+    try {
+      await deletePortfolio(id);
+      setSelectedIds((prev) => prev.filter((item) => item !== id));
+    } catch {
+      // handled by context
+    }
   }
 
-  const composition = useMemo(
-    () => activePortfolio?.assets.map((asset) => ({ name: asset.ticker, value: asset.allocation })) ?? [],
-    [activePortfolio],
-  );
+  async function handleBulkDelete() {
+    if (!selectedIds.length) return;
+    const confirmed = window.confirm(`Remover ${selectedIds.length} carteira(s) selecionada(s)?`);
+    if (!confirmed) return;
+    try {
+      await deletePortfolios(selectedIds);
+      setSelectedIds([]);
+      setSelectionMode(false);
+      const nextTotal = Math.max(0, portfolios.length - selectedIds.length);
+      const nextPages = Math.max(1, Math.min(MAX_PAGES, Math.ceil(nextTotal / PAGE_SIZE)));
+      setPage((prev) => Math.min(prev, nextPages));
+    } catch {
+      // handled by context
+    }
+  }
+
+  function togglePortfolioSelection(id: string) {
+    setSelectedIds((prev) => (
+      prev.includes(id)
+        ? prev.filter((item) => item !== id)
+        : [...prev, id]
+    ));
+  }
+
+  function toggleSelectionMode() {
+    setSelectionMode((prev) => {
+      const next = !prev;
+      if (!next) {
+        setSelectedIds([]);
+      }
+      return next;
+    });
+  }
+
+  if (loading) {
+    return (
+      <div className="flex items-center justify-center py-20">
+        <p className="text-[var(--text-muted)]">Carregando carteiras...</p>
+      </div>
+    );
+  }
+
+  if (error) {
+    return (
+      <div className="flex flex-col items-center justify-center gap-4 py-20">
+        <p className="text-[var(--danger-text)]">Erro ao carregar carteiras</p>
+        <p className="text-sm text-[var(--text-muted)]">{error}</p>
+      </div>
+    );
+  }
 
   return (
     <div className="space-y-5">
@@ -79,73 +163,117 @@ export function PortfoliosPage() {
             </div>
             <h2 className="mt-4 text-3xl font-bold text-[var(--text-main)] sm:text-4xl">Comece de um jeito simples.</h2>
             <p className="mt-4 text-base leading-7 text-[var(--text-muted)]">
-              1. Crie ou importe uma carteira. 2. Adicione ativos. 3. Veja recomendações e análises na plataforma.
+              1. Crie uma carteira. 2. Adicione ativos. 3. Veja análises na plataforma.
             </p>
-          </div>
-          <div className="rounded-[28px] bg-white/80 p-5 xl:max-w-sm">
-            <p className="text-sm font-semibold text-[var(--text-main)]">Não sabe por onde começar?</p>
-            <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
-              Use a carteira exemplo para entender o fluxo antes de cadastrar seus próprios dados.
-            </p>
-            <button
-              type="button"
-              className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--brand)]"
-              onClick={() => handleImportPortfolio('example')}
-            >
-              Ver um exemplo pronto
-              <ArrowRight size={16} />
-            </button>
           </div>
         </div>
       </section>
 
       <div className="grid gap-4 xl:grid-cols-[1.35fr_0.95fr]">
         <div className="space-y-4">
-          <Card title="1. Criar carteira" right={<span className="text-sm text-[var(--text-muted)]">Ação principal da página</span>}>
+          <Card title="Criar carteira">
             <form onSubmit={handleCreatePortfolio} className="space-y-3">
               <Input value={name} onChange={(e) => setName(e.target.value)} placeholder="Ex.: Minha reserva e longo prazo" />
-              <Input value={description} onChange={(e) => setDescription(e.target.value)} placeholder="Descreva o objetivo dessa carteira" />
-              <Button type="submit" className="gap-2">
+              <Button type="submit" className="gap-2" disabled={portfolios.length >= MAX_PORTFOLIOS}>
                 <FolderPlus size={16} />
                 Salvar carteira
               </Button>
+              <p className="text-xs text-[var(--text-muted)]">
+                {portfolios.length}/{MAX_PORTFOLIOS} carteiras usadas. Limite de 5 paginas com 10 carteiras cada.
+              </p>
             </form>
-          </Card>
-
-          <Card title="2. Importar para ganhar tempo">
-            <div className="grid gap-3 md:grid-cols-3">
-              {importModes.map((mode) => (
-                <button
-                  key={mode.key}
-                  type="button"
-                  className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4 text-left transition hover:-translate-y-0.5 hover:shadow-[0_12px_24px_rgba(37,37,37,0.08)]"
-                  onClick={() => handleImportPortfolio(mode.key)}
-                >
-                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[var(--accent-soft)] text-[var(--accent)]">
-                    <Upload size={16} />
+            {!examplePortfolio && (
+              <div className="mt-5 rounded-[24px] border border-[var(--brand)]/20 bg-[var(--accent-soft)]/50 p-4">
+                <div className="flex items-start gap-3">
+                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-2xl bg-[var(--brand)] text-white"><FlaskConical size={18} /></span>
+                  <div>
+                    <p className="font-semibold text-[var(--text-main)]">Conheça o Operum com dados simulados</p>
+                    <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">Crie uma demonstração com 36 ativos, um ano de evolução e análises prontas.</p>
                   </div>
-                  <p className="mt-4 font-semibold text-[var(--text-main)]">{mode.label}</p>
-                  <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">{mode.helper}</p>
-                </button>
-              ))}
-            </div>
+                </div>
+                <Button type="button" variant="ghost" className="mt-4 w-full" disabled={creatingExample || portfolios.length >= MAX_PORTFOLIOS} onClick={handleCreateExample}>
+                  <Sparkles size={16} />{creatingExample ? 'Criando demonstração...' : 'Criar Carteira Exemplo'}
+                </Button>
+                {exampleError && <p className="mt-2 text-xs text-[var(--danger-text)]">{exampleError}</p>}
+              </div>
+            )}
           </Card>
 
-          <Card title="3. Carteiras salvas" right={<span className="text-sm text-[var(--text-muted)]">{portfolios.length} carteira(s)</span>}>
+          <Card
+            title="Carteiras salvas"
+            right={(
+              <div className="flex items-center gap-3">
+                <span className="text-sm text-[var(--text-muted)]">{portfolios.length} carteira(s)</span>
+                <button
+                  type="button"
+                  onClick={toggleSelectionMode}
+                  className={`inline-flex h-10 w-10 items-center justify-center rounded-2xl border transition ${
+                    selectionMode
+                      ? 'border-[var(--danger-text)] bg-[var(--danger-text)]/10 text-[var(--danger-text)]'
+                      : 'border-[var(--border-soft)] bg-white text-[var(--text-main)] hover:border-[var(--danger-text)]/40'
+                  }`}
+                  aria-label="Ativar seleção para remover carteiras"
+                >
+                  <Trash2 size={16} />
+                </button>
+              </div>
+            )}
+          >
+            {portfolios.length === 0 && (
+              <p className="py-4 text-sm text-[var(--text-muted)]">Nenhuma carteira ainda. Crie a primeira acima.</p>
+            )}
+
+            {portfolios.length > 0 && selectionMode && (
+              <div className="mb-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-3">
+                <p className="text-sm text-[var(--text-main)]">
+                  Clique nos blocos das carteiras para selecionar as que deseja excluir.
+                </p>
+                <div className="flex flex-wrap items-center gap-2">
+                  <span className="text-xs text-[var(--text-muted)]">{selectedIds.length} selecionada(s)</span>
+                  <Button type="button" variant="ghost" disabled={!selectedIds.length} onClick={handleBulkDelete}>
+                    <Trash2 size={15} />
+                    Remover selecionadas
+                  </Button>
+                  <Button type="button" variant="ghost" onClick={toggleSelectionMode}>
+                    Cancelar
+                  </Button>
+                </div>
+              </div>
+            )}
+
             <div className="space-y-3">
-              {portfolios.map((portfolio) => {
+              {pagedPortfolios.map((portfolio) => {
                 const isEditing = editingId === portfolio.id;
                 const isActive = activePortfolioId === portfolio.id;
+                const totalQuantity = portfolio.positions.reduce((sum, position) => sum + position.quantity, 0);
+                const isSelected = selectedIds.includes(portfolio.id);
 
                 return (
-                  <article key={portfolio.id} className="rounded-[24px] border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-4">
+                  <article
+                    key={portfolio.id}
+                    className={`rounded-[24px] border bg-[var(--bg-surface-strong)] p-4 ${
+                      selectionMode ? 'cursor-pointer transition' : ''
+                    } ${
+                      isSelected
+                        ? 'border-[var(--danger-text)] ring-2 ring-[var(--danger-text)]/20'
+                        : 'border-[var(--border-soft)]'
+                    }`}
+                    onClick={() => {
+                      if (selectionMode && !isEditing) {
+                        togglePortfolioSelection(portfolio.id);
+                      }
+                    }}
+                  >
                     {isEditing ? (
-                      <form onSubmit={saveEdit} className="space-y-3">
+                      <form onSubmit={saveEdit} className="space-y-3" onClick={(e) => e.stopPropagation()}>
                         <Input value={editName} onChange={(e) => setEditName(e.target.value)} placeholder="Nome da carteira" />
-                        <Input value={editDescription} onChange={(e) => setEditDescription(e.target.value)} placeholder="Descrição" />
                         <div className="flex flex-wrap gap-2">
                           <Button type="submit">Salvar</Button>
-                          <Button type="button" className="bg-[#717171] shadow-none hover:bg-[#3E3E3E]" onClick={() => setEditingId(null)}>
+                          <Button
+                            type="button"
+                            className="bg-[#717171] shadow-none hover:bg-[#3E3E3E]"
+                            onClick={() => setEditingId(null)}
+                          >
                             Cancelar
                           </Button>
                         </div>
@@ -156,34 +284,70 @@ export function PortfoliosPage() {
                           <div>
                             <div className="flex flex-wrap items-center gap-2">
                               <p className="text-lg font-semibold text-[var(--text-main)]">{getPortfolioLabel(portfolio)}</p>
-                              {isActive && <span className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-xs font-semibold text-[var(--accent)]">Ativa</span>}
+                              {isActive && (
+                                <span className="rounded-full bg-[var(--accent-soft)] px-3 py-1 text-xs font-semibold text-[var(--accent)]">
+                                  Ativa
+                                </span>
+                              )}
+                              {portfolio.kind === 'example' && (
+                                <span className="rounded-full border border-[var(--brand)]/20 bg-[var(--brand)]/10 px-3 py-1 text-xs font-semibold text-[var(--brand)]">
+                                  Carteira Exemplo
+                                </span>
+                              )}
+                              {selectionMode && isSelected && (
+                                <span className="rounded-full bg-[var(--danger-text)]/10 px-3 py-1 text-xs font-semibold text-[var(--danger-text)]">
+                                  Selecionada
+                                </span>
+                              )}
                             </div>
-                            <p className="mt-1 text-sm leading-6 text-[var(--text-muted)]">{portfolio.description}</p>
                           </div>
                           {!isActive && (
                             <button
                               type="button"
                               className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-[var(--text-main)]"
-                              onClick={() => setActivePortfolioId(portfolio.id)}
+                              onClick={(e) => {
+                                e.stopPropagation();
+                                setActivePortfolioId(portfolio.id);
+                              }}
                             >
                               Usar na análise
                             </button>
                           )}
                         </div>
+
                         <p className="mt-2 text-xs uppercase tracking-[0.14em] text-[var(--text-muted)]">
-                          {portfolio.assets.length} ativos • {portfolio.createdAt} • origem {portfolio.source}
+                          {portfolio.positions.length} ativo(s) • {totalQuantity.toFixed(0)} unidades
                         </p>
+
+                        {portfolio.kind === 'example' && <p className="mt-2 text-xs leading-5 text-[var(--text-muted)]">Ambiente demonstrativo: preços, evolução e análises são simulados e ficam salvos somente na sua conta.</p>}
+
                         <div className="mt-4 flex flex-wrap gap-2">
-                          <Button type="button" onClick={() => navigate(`/carteiras/${portfolio.id}`)}>
+                          <Button
+                            type="button"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              navigate(`/app/carteiras/${portfolio.id}`);
+                            }}
+                          >
                             Abrir carteira
                           </Button>
-                          <button type="button" className="rounded-2xl border border-[var(--border-soft)] px-4 py-2.5 text-sm font-semibold" onClick={() => startEdit(portfolio)}>
+                          <button
+                            type="button"
+                            className="rounded-2xl border border-[var(--border-soft)] px-4 py-2.5 text-sm font-semibold"
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              startEdit(portfolio);
+                            }}
+                          >
                             Editar
                           </button>
                           <button
                             type="button"
                             className="inline-flex items-center gap-2 rounded-2xl border border-[var(--danger-text)]/25 px-4 py-2.5 text-sm font-semibold text-[var(--danger-text)]"
-                            onClick={() => handleDeletePortfolio(portfolio)}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              handleDeletePortfolio(portfolio.id, portfolio.name);
+                            }}
                           >
                             <Trash2 size={15} />
                             Remover
@@ -195,38 +359,51 @@ export function PortfoliosPage() {
                 );
               })}
             </div>
+
+            {portfolios.length > PAGE_SIZE && (
+              <div className="mt-4 flex flex-wrap items-center justify-between gap-3">
+                <p className="text-sm text-[var(--text-muted)]">Pagina {safePage} de {totalPages}</p>
+                <div className="flex items-center gap-2">
+                  <Button type="button" variant="ghost" disabled={safePage === 1} onClick={() => setPage((prev) => Math.max(1, prev - 1))}>
+                    ←
+                  </Button>
+                  {Array.from({ length: totalPages }, (_, index) => index + 1).map((pageNumber) => (
+                    <button
+                      key={pageNumber}
+                      type="button"
+                      onClick={() => setPage(pageNumber)}
+                      className={`rounded-2xl px-3 py-2 text-sm font-semibold transition ${
+                        pageNumber === safePage
+                          ? 'bg-[var(--brand)] text-white'
+                          : 'border border-[var(--border-soft)] bg-white text-[var(--text-main)]'
+                      }`}
+                    >
+                      {pageNumber}
+                    </button>
+                  ))}
+                  <Button type="button" variant="ghost" disabled={safePage === totalPages} onClick={() => setPage((prev) => Math.min(totalPages, prev + 1))}>
+                    →
+                  </Button>
+                </div>
+              </div>
+            )}
           </Card>
         </div>
 
         <div className="space-y-4">
-          <Card title="Resumo da carteira ativa">
+          <Card title="Mapa de alocação">
             <p className="text-sm leading-6 text-[var(--text-muted)]">
               {getActivePortfolioSelectionLabel(activePortfolio, isAllPortfoliosSelected)}
             </p>
             <p className="mt-2 text-sm leading-6 text-[var(--text-muted)]">
-              {isAllPortfoliosSelected
-                ? `Entenda rapidamente como as ${selectedPortfolios.length} carteiras estão divididas hoje.`
-                : 'Entenda rapidamente como essa carteira está dividida hoje.'}
+              Cada bloco representa o valor financeiro de uma posição, facilitando a leitura de concentração.
             </p>
-            <div className="mt-4 h-64">
-              {!!composition.length && (
-                <ResponsiveContainer width="100%" height="100%">
-                  <PieChart>
-                    <Pie data={composition} dataKey="value" nameKey="name" outerRadius={82}>
-                      {composition.map((_, index) => (
-                        <Cell key={index} fill={chartColors[index % chartColors.length]} />
-                      ))}
-                    </Pie>
-                    <Tooltip />
-                  </PieChart>
-                </ResponsiveContainer>
-              )}
-              {!composition.length && <p className="text-sm text-[var(--text-muted)]">A seleção atual ainda não possui ativos.</p>}
-            </div>
+            {activePortfolio?.kind === 'example' && !isAllPortfoliosSelected && <p className="mt-3 rounded-2xl border border-[var(--brand)]/15 bg-[var(--brand)]/5 p-3 text-xs leading-5 text-[var(--text-muted)]">Visualização demonstrativa com valores simulados pela Operum.</p>}
+            <div className="mt-4"><PortfolioAllocationMap portfolios={allocationPortfolios} /></div>
             <Button
               type="button"
               className="mt-3 w-full"
-              onClick={() => navigate(activePortfolio && !isAllPortfoliosSelected ? `/carteiras/${activePortfolio.id}` : '/carteiras')}
+              onClick={() => navigate(activePortfolio && !isAllPortfoliosSelected ? `/app/carteiras/${activePortfolio.id}` : '/app/carteiras')}
             >
               {isAllPortfoliosSelected ? 'Abrir lista de carteiras' : 'Adicionar ativos nessa carteira'}
             </Button>

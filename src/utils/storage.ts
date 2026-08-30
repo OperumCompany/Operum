@@ -1,11 +1,10 @@
 export const storageKeys = {
-  user: 'operum_user',
-  users: 'operum_users',
-  session: 'operum_session',
+  authToken: 'operum_auth_token',
   portfolios: 'operum_portfolios',
   activePortfolio: 'operum_active_portfolio',
   chat: 'operum_chat',
   preferences: 'operum_preferences',
+  theme: 'operum_theme',
 };
 
 export function readStorage<T>(key: string, fallback: T): T {

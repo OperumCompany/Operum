@@ -16,6 +16,11 @@ export default {
           purple: '#E15EF2',
         },
       },
+      fontFamily: {
+        display: ['Hanken Grotesk Variable', 'Hanken Grotesk', 'sans-serif'],
+        body: ['Manrope Variable', 'Manrope', 'sans-serif'],
+        data: ['Geist Variable', 'Geist', 'sans-serif'],
+      },
     },
   },
   plugins: [],

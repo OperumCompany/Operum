@@ -1,258 +1,198 @@
 ---
 name: skillsFront
-description: Guia de execução para IA contribuir no frontend do OPERUM com React, TypeScript, Vite, Tailwind e gráficos, preservando a experiência simples para leigos e a leitura técnica para usuários avançados.
+description: Guia de execucao para IA contribuir no frontend do Operum com React, TypeScript, Vite e Tailwind, preservando a experiencia de produto e os contratos atuais da API.
+updated_at: 2026-06-01
 ---
 
-# Skills Front - OPERUM
+# Skills Front - Operum
 
-> Propósito: definir regras práticas para qualquer IA atuar no frontend do OPERUM com consistência técnica, visual e de produto, sem descaracterizar a experiência da aplicação.
+## 1. Stack e regras base
 
-## 1. Escopo e Stack Real do Projeto
-
-Antes de propor qualquer solução, assuma o stack real:
-
-- Frontend: `React 18` + `TypeScript`
-- Build/tooling: `Vite`
-- Estilo: `Tailwind CSS` + `src/styles.css`
-- Roteamento: `react-router-dom`
-- Gráficos: `recharts`
-- Ícones: `lucide-react`
-- Persistência atual: `localStorage`
-
-Regra crítica:
-
-- Não inventar backend ou integrações externas sem pedido explícito.
-- Não trocar a stack atual.
-
-## 2. Antes de Codar
-
-Checklist obrigatório:
-
-1. Ler `README.md`, `package.json`, `src/App.tsx` e `src/main.tsx`.
-2. Verificar `src/layout/AppShell.tsx` para entender navegação e header.
-3. Verificar `src/context/PortfoliosContext.tsx` antes de alterar qualquer fluxo relacionado a carteiras.
-4. Verificar `src/data/mocks.ts` e `src/utils/storage.ts` antes de mexer em dados.
-5. Respeitar a arquitetura existente e fazer a menor mudança necessária.
-
-## 3. Princípios do Produto
-
-O OPERUM tem duas camadas de leitura:
-
-- `Visão geral`: simples, guiada, menos técnica.
-- `Painel técnico`: mais analítico, com gráficos e comparativos.
-
-Toda mudança deve respeitar isso.
+- React 18 + TypeScript
+- Vite
+- Tailwind CSS
+- React Router DOM
+- Recharts
+- Lucide React
+- API via `src/utils/api.ts`
+- Backend em `localhost:8001`
 
 Regras:
+- nao fazer fetch direto fora de `api.ts`
+- nao trocar a stack
+- nao empurrar logica de negocio complexa para componentes
 
-- Não deixar a visão geral com cara de terminal técnico.
-- Não empobrecer o painel técnico a ponto de ele perder valor analítico.
-- Quando houver dúvida, a visão geral deve priorizar clareza e a técnica deve priorizar densidade útil.
+## 2. Checklist antes de mexer
 
-## 4. Arquitetura Atual
+1. Ler `README.md`
+2. Ler `docs/spec.md`
+3. Conferir `src/types/index.ts`
+4. Conferir `src/utils/api.ts`
+5. Conferir `src/context/PortfoliosContext.tsx` se a mudanca tocar carteiras
 
-Estrutura relevante:
+## 3. Principios do produto
 
-```text
-src/
-  components/
-  context/
-  data/
-  layout/
-  pages/
-  types/
-  utils/
+- clareza para usuario leigo
+- densidade util na camada tecnica
+- estados de loading, erro e vazio sempre cobertos
+- texto sempre em portugues claro
+
+## 4. Noticias: estado atual da UI
+
+### Tela de noticias
+
+- paginacao de 30 itens por pagina
+- navegacao com setas e paginas numeradas
+- filtros e busca sao server-side
+- alterar busca/filtro reseta para pagina `1`
+- modal da noticia mostra resumo em 2 paragrafos
+
+### Contrato esperado
+
+`GET /api/news` retorna:
+- `items`
+- `total`
+- `page`
+- `page_size`
+- `total_pages`
+
+`NewsItem` no frontend hoje pode conter:
+- `source_id`
+- `source_type`
+- `is_official`
+- `source_category`
+
+Nao assumir que toda noticia tera todos os campos preenchidos; manter tolerancia em render.
+
+## 5. Carteiras: estado atual da UI
+
+### Lista de carteiras
+
+- maximo de 50 carteiras
+- 10 por pagina
+- ate 5 paginas
+- lixeira individual em cada card
+- lixeira no topo para entrar em modo de selecao em lote
+- no modo de selecao, o clique no bloco seleciona/desseleciona a carteira
+
+### Cuidados
+
+- nao reintroduzir selecao de pagina inteira para exclusao
+- manter feedback visual claro entre modo normal e modo selecao
+- se o backend bloquear acima de 50 carteiras, refletir a mensagem de forma amigavel
+
+## 6. Carteira em detalhe
+
+### Estrutura atual
+
+- header
+- resumo de valor atual, custo, P&L e alocacao por classe
+- evolucao historica da carteira ou ativo com filtros de periodo
+- tabelas por classe de ativo
+- formulario de aporte com data, quantidade e preco
+- analise geral da carteira no fim da pagina, acionada pelo botao do topo
+
+### Analise por ativo
+
+Cada ativo tem botao de estrela.
+
+Comportamento esperado:
+- clicar com card fechado -> buscar analise fresca
+- clicar com card aberto -> fechar
+- fonte nao deve parecer reaproveitamento de resposta antiga
+
+Render atual relevante:
+- `analysis_sections.current`
+- `analysis_sections.recent`
+- `analysis_sections.outlook`
+- `historical_window`
+- `used_news_count`
+- `source_groups`
+
+### Fontes agrupadas
+
+Tanto na analise por ativo quanto na analise geral:
+- mostrar chips por origem
+- cada chip exibe nome da fonte e contador
+- clique expande noticias daquela origem
+
+Nao voltar para grade de links soltos como UI principal.
+
+## 7. Tipos importantes
+
+Atualizar `src/types/index.ts` sempre que o backend mudar:
+
+- `NewsItem`
+- `PortfolioOpinion`
+- `AssetOpinion` ou tipo equivalente da analise por ativo
+- grupos de fonte (`source_groups`)
+
+Se o backend adicionar campo opcional, refletir como opcional no frontend quando isso melhorar compatibilidade.
+
+## 8. Padrões React
+
+- estado local com `useState`
+- contexto apenas quando transversal
+- evitar `useEffect` desnecessario
+- nao usar `any`
+- preferir componentes pequenos e claros
+
+## 9. Integracao com API
+
+Padrão:
+
+```typescript
+const [loading, setLoading] = useState(true);
+const [error, setError] = useState<string | null>(null);
+
+useEffect(() => {
+  api.get('/rota')
+    .then(...)
+    .catch((e) => setError(e.message))
+    .finally(() => setLoading(false));
+}, []);
 ```
 
-Responsabilidades:
+Para a analise por ativo, lembrar:
+- o clique deve disparar nova chamada
+- nao confiar apenas em cache de componente se a regra de produto exigir recomputacao
 
-- `components/`: base compartilhada de UI e proteção de rota
-- `context/`: estado global de autenticação e carteiras
-- `data/`: mocks e séries para simulação
-- `layout/`: sidebar, header e shell principal
-- `pages/`: páginas e fluxos do produto
-- `utils/`: helpers de storage e carteira
+## 10. Validacao
 
-## 5. Regra Mais Importante: Carteira Ativa
-
-O estado de seleção global de carteira é central.
-
-Hoje a aplicação suporta:
-
-- uma carteira específica
-- `Todas as carteiras`
-
-Esse estado afeta:
-
-- dashboard simples
-- painel técnico
-- chat
-- resumo no módulo de carteiras
-
-Regras:
-
-- Não criar seleção paralela de carteira em páginas isoladas.
-- Toda nova feature que analisa dados de carteira deve consumir `PortfoliosContext`.
-- Se a tela depende de carteira, precisa lidar com os dois modos: individual e consolidado.
-
-## 6. Persistência e Dados
-
-O projeto usa `localStorage`, com chaves em `src/utils/storage.ts`.
-
-Persistências atuais:
-
-- usuário
-- sessão
-- carteiras
-- carteira ativa
-- chat
-- preferências
-
-Regras:
-
-- Não espalhar `localStorage` direto por páginas se já existe contexto/utilitário.
-- Se o estado é transversal, preferir `context`.
-- Se for preciso criar nova chave de storage, centralizar em `storageKeys`.
-
-## 7. Padrões React + TypeScript
-
-### 7.1 Componentes
-
-- Componentes devem ter responsabilidade clara.
-- Evitar lógica de negócio duplicada entre páginas.
-- Extrair utilitários quando a mesma regra aparecer em mais de uma tela.
-
-### 7.2 Estado
-
-- Estado global: usar `context` quando realmente transversal.
-- Estado local: `useState`.
-- Estado derivado: calcular direto ou usar `useMemo` quando fizer sentido.
-- Não usar `useEffect` para computação que cabe no render.
-
-### 7.3 Tipagem
-
-- Manter `strict`.
-- Evitar `any`.
-- Tipar contratos de contexto explicitamente.
-- Quando o estado aceitar um modo especial, como `Todas as carteiras`, modelar isso de forma explícita.
-
-## 8. UI e Identidade Visual
-
-O frontend deve manter a paleta atual do projeto:
-
-- Fundo principal: `#F2F2F2`
-- Texto principal: `#252525`
-- Cinza escuro: `#3E3E3E`
-- Cinza médio escuro: `#717171`
-- Cinza médio claro: `#A5A5A5`
-- Azul principal: `#3D4D9C`
-- Rosa secundário: `#C7559B`
-- Roxo complementar: `#E15EF2`
-
-Regras:
-
-- Não introduzir paletas paralelas sem pedido explícito.
-- Não usar verde, bege ou cores fora da identidade como base do layout.
-- Manter a experiência limpa, legível e com bom contraste.
-
-## 9. Linguagem e Microcopy
-
-O texto do produto precisa ser claro.
-
-Regras:
-
-- Evitar jargão desnecessário na visão geral.
-- Preferir frases diretas.
-- Em dashboard simples, explicar antes de impressionar.
-- Em painel técnico, manter precisão sem excesso de floreio.
-
-Se alterar textos:
-
-- revisar acentuação
-- evitar encoding quebrado
-- manter consistência entre telas
-
-## 10. Gráficos e Análises
-
-Gráficos usam `recharts`.
-
-Regras:
-
-- A visão geral não deve depender de muitos gráficos ao mesmo tempo.
-- O painel técnico pode ter mais densidade visual.
-- Se o dado muda com a carteira ativa, o gráfico também deve mudar.
-- Se estiver em `Todas as carteiras`, o comportamento deve ser consolidado e explícito no texto da tela.
-
-## 11. Módulo de Carteiras
-
-Esse módulo hoje suporta:
-
-- criar carteira
-- importar carteira mockada
-- editar carteira
-- remover carteira com confirmação
-- definir carteira para análise global
-
-Regras:
-
-- Qualquer operação de CRUD deve passar por `PortfoliosContext`.
-- Exclusão deve sempre pedir confirmação.
-- Se a carteira removida for a ativa, o contexto deve decidir o fallback.
-
-## 12. Chat
-
-O chat é explicativo e orientado a linguagem simples.
-
-Regras:
-
-- O texto do chat deve respeitar a carteira ou seleção ativa.
-- Se estiver em `Todas as carteiras`, as respostas devem deixar isso claro.
-- Não transformar o chat em motor de regras complexo sem necessidade.
-
-## 13. Qualidade e Validação
-
-Toda mudança relevante deve ser validada com:
+Minimo antes de fechar:
 
 ```bash
 npm run build
 ```
 
-Também vale testar manualmente:
+Quando tocar contrato com backend:
 
-1. troca de carteira ativa
-2. modo `Todas as carteiras`
-3. dashboard simples
-4. painel técnico
-5. chat
-6. módulo de carteiras
+```bash
+uvicorn app.main:app --reload --port 8001
+npm run dev
+```
 
-## 14. O que Não Fazer
+Checar manualmente:
+- noticias paginadas
+- filtros com reset de pagina
+- analise por ativo
+- fontes agrupadas
+- analise geral da carteira
+- exclusao em lote de carteiras
 
-- Não quebrar a lógica global de carteira ativa.
-- Não introduzir seleção local de carteira em cada página.
-- Não espalhar leitura/escrita de storage sem necessidade.
-- Não trocar a paleta atual.
-- Não adicionar dependências pesadas sem motivo real.
-- Não fazer refatoração estrutural grande junto com mudança pequena de interface.
+## 11. O que nao fazer
 
-## 15. Checklist Final
+- nao quebrar `PortfoliosContext`
+- nao fazer fetch fora de `api.ts`
+- nao esconder erro de contrato de API sem tratamento
+- nao reintroduzir mocks em fluxo principal quando o endpoint existe
+- nao simplificar a analise visual de fontes para algo menos transparente
 
-1. A mudança respeita a stack atual?
-2. A seleção global de carteira continua funcionando?
-3. O modo `Todas as carteiras` está coberto?
-4. A UI continua coerente com a identidade do OPERUM?
-5. Os textos continuam claros e sem encoding quebrado?
-6. `npm run build` passou?
+## 12. Documento vivo
 
-## 16. Documento Vivo
-
-Sempre que houver mudança importante em:
-
-- arquitetura
-- contexto global
-- persistência
-- identidade visual
-- navegação
-- regras de análise por carteira
-
-a IA deve atualizar este `skillsFront.md` para refletir o estado real do projeto.
+Atualizar este arquivo quando mudarem:
+- rotas de frontend
+- contrato de noticias
+- contrato de analise por ativo
+- contrato de analise da carteira
+- UX de paginacao ou de gestao de carteiras

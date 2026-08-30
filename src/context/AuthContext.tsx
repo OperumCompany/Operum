@@ -1,109 +1,106 @@
-import { createContext, useContext, useMemo, useState } from 'react';
-import { defaultUser } from '../data/mocks';
-import { User } from '../types';
+import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
+import api from '../utils/api';
+import { AuthResponse, User } from '../types';
 import { readStorage, storageKeys, writeStorage } from '../utils/storage';
 
 type AuthContextType = {
   user: User | null;
-  users: User[];
-  login: (email: string, password: string) => { ok: boolean; message: string };
-  register: (userData: User) => { ok: boolean; message: string };
-  updatePassword: (nextPassword: string) => { ok: boolean; message: string };
-  logout: () => void;
+  loading: boolean;
+  login: (email: string, password: string) => Promise<{ ok: boolean; message: string }>;
+  register: (userData: { name: string; email: string; password: string }) => Promise<{ ok: boolean; message: string }>;
+  updatePassword: (currentPassword: string, nextPassword: string) => Promise<{ ok: boolean; message: string }>;
+  deleteAccount: (currentPassword: string, confirmation: string) => Promise<{ ok: boolean; message: string }>;
+  logout: () => Promise<void>;
 };
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-function normalizeUsers(users: User[]) {
-  const byEmail = new Map<string, User>();
-
-  [...users, defaultUser].forEach((candidate) => {
-    byEmail.set(candidate.email.trim().toLowerCase(), {
-      ...candidate,
-      name: candidate.name.trim(),
-      email: candidate.email.trim().toLowerCase(),
-    });
-  });
-
-  return Array.from(byEmail.values());
+function persistSession(response: AuthResponse) {
+  writeStorage(storageKeys.authToken, response.token);
 }
 
-function getInitialUsers() {
-  const storedUsers = readStorage<User[]>(storageKeys.users, []);
-  const legacyUser = readStorage<User | null>(storageKeys.user, null);
-  return normalizeUsers(legacyUser ? [...storedUsers, legacyUser] : storedUsers);
-}
+export function AuthProvider({ children }: { children: ReactNode }) {
+  const [user, setUser] = useState<User | null>(null);
+  const [loading, setLoading] = useState(true);
 
-function getInitialSession(users: User[]) {
-  const storedSession = readStorage<User | null>(storageKeys.session, null);
-  if (!storedSession) return null;
-
-  return users.find((candidate) => candidate.email === storedSession.email.trim().toLowerCase()) ?? null;
-}
-
-export function AuthProvider({ children }: { children: React.ReactNode }) {
-  const [users, setUsers] = useState<User[]>(() => getInitialUsers());
-  const [session, setSession] = useState<User | null>(() => getInitialSession(getInitialUsers()));
+  useEffect(() => {
+    const token = readStorage<string | null>(storageKeys.authToken, null);
+    if (!token) {
+      setLoading(false);
+      return;
+    }
+    api.get<User>('/auth/me')
+      .then(setUser)
+      .catch(() => {
+        writeStorage(storageKeys.authToken, null);
+        setUser(null);
+      })
+      .finally(() => setLoading(false));
+  }, []);
 
   const value = useMemo<AuthContextType>(() => ({
-    user: session,
-    users,
-    login: (email, password) => {
-      const normalizedEmail = email.trim().toLowerCase();
-      const matchedUser = users.find((candidate) => candidate.email === normalizedEmail);
-
-      if (matchedUser && password === matchedUser.password) {
-        setSession(matchedUser);
-        writeStorage(storageKeys.session, matchedUser);
+    user,
+    loading,
+    login: async (email, password) => {
+      try {
+        const response = await api.postPublic<AuthResponse>('/auth/login', { email, password });
+        persistSession(response);
+        setUser(response.user);
         return { ok: true, message: 'Login realizado com sucesso.' };
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Falha no login.';
+        return { ok: false, message };
       }
-
-      return { ok: false, message: 'Credenciais inválidas. Você também pode usar a conta de exemplo da Camila.' };
     },
-    register: (userData) => {
-      const normalizedUser = {
-        ...userData,
-        name: userData.name.trim(),
-        email: userData.email.trim().toLowerCase(),
-      };
-
-      if (users.some((candidate) => candidate.email === normalizedUser.email)) {
-        return { ok: false, message: 'Já existe uma conta cadastrada com este e-mail.' };
+    register: async (userData) => {
+      try {
+        const response = await api.postPublic<AuthResponse>('/auth/register', userData);
+        persistSession(response);
+        setUser(response.user);
+        return { ok: true, message: 'Conta criada com sucesso.' };
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Falha no cadastro.';
+        return { ok: false, message };
       }
-
-      const nextUsers = normalizeUsers([...users, normalizedUser]);
-      setUsers(nextUsers);
-      writeStorage(storageKeys.users, nextUsers);
-      setSession(normalizedUser);
-      writeStorage(storageKeys.session, normalizedUser);
-      return { ok: true, message: 'Conta criada com sucesso.' };
     },
-    updatePassword: (nextPassword) => {
-      if (!session) {
-        return { ok: false, message: 'Nenhuma sessão ativa.' };
+    updatePassword: async (currentPassword, nextPassword) => {
+      try {
+        const updatedUser = await api.put<User>('/auth/password', {
+          current_password: currentPassword,
+          new_password: nextPassword,
+        });
+        setUser(updatedUser);
+        return { ok: true, message: 'Senha alterada com sucesso.' };
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Falha ao alterar senha.';
+        return { ok: false, message };
       }
-
-      if (session.email === defaultUser.email) {
-        return { ok: false, message: 'A conta da Camila é fixa para demonstração e não pode ter a senha alterada.' };
+    },
+    deleteAccount: async (currentPassword, confirmation) => {
+      try {
+        await api.del<{ status: string }>('/auth/account', {
+          current_password: currentPassword,
+          confirmation,
+        });
+        writeStorage(storageKeys.authToken, null);
+        setUser(null);
+        return { ok: true, message: 'Conta excluida com sucesso.' };
+      } catch (error) {
+        const message = error instanceof Error ? error.message : 'Falha ao excluir a conta.';
+        return { ok: false, message };
       }
-
-      const normalizedPassword = nextPassword.trim();
-      const nextUsers = users.map((candidate) =>
-        candidate.id === session.id ? { ...candidate, password: normalizedPassword } : candidate,
-      );
-      const nextSession = nextUsers.find((candidate) => candidate.id === session.id) ?? session;
-
-      setUsers(nextUsers);
-      writeStorage(storageKeys.users, nextUsers);
-      setSession(nextSession);
-      writeStorage(storageKeys.session, nextSession);
-      return { ok: true, message: 'Senha alterada com sucesso.' };
     },
-    logout: () => {
-      setSession(null);
-      writeStorage(storageKeys.session, null);
+    logout: async () => {
+      const token = readStorage<string | null>(storageKeys.authToken, null);
+      writeStorage(storageKeys.authToken, null);
+      setUser(null);
+      try {
+        await api.post('/auth/logout', undefined, token ? { headers: { Authorization: `Bearer ${token}` } } : undefined);
+      } catch {
+        // noop
+      }
     },
-  }), [session, users]);
+  }), [loading, user]);
 
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 }

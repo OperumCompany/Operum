@@ -1,0 +1,17 @@
+2026-07-08 22:31:38 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:31:38 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:31:38 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:31:38 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:31:38 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:31:38 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:31:38 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:31:38 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:31:38 | INFO     | app.main | Inicializando Operum - buscando noticias e precos...
+2026-07-08 22:31:38 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:31:38 | INFO     | app.services.news_scoring_service | Modelo de relevância inicializado (fallback)
+2026-07-08 22:31:44 | INFO     | app.main | Cache de precos atualizado para 3 ativos
+2026-07-08 22:31:45 | INFO     | app.services.news_ingestion_service | Ingestao: 11 noticias novas de 107 unicas
+2026-07-08 22:31:45 | INFO     | app.main | Ingestao automatica: 11 noticias novas
+INFO:     127.0.0.1:50382 - "POST /api/auth/login HTTP/1.1" 200 OK
+2026-07-08 22:33:02 | INFO     | httpx | HTTP Request: POST http://localhost:11434/api/chat "HTTP/1.1 200 OK"
+INFO:     127.0.0.1:50382 - "POST /api/chat HTTP/1.1" 200 OK

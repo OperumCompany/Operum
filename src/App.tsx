@@ -1,11 +1,11 @@
 import { Suspense, lazy } from 'react';
-import { Navigate, Route, Routes } from 'react-router-dom';
+import { Navigate, Route, Routes, useParams } from 'react-router-dom';
 import { ProtectedRoute } from './components/ProtectedRoute';
 import { AppShell } from './layout/AppShell';
+import { LandingPage } from './pages/LandingPage';
 
 const ChatPage = lazy(() => import('./pages/ChatPage').then((module) => ({ default: module.ChatPage })));
 const DashboardPage = lazy(() => import('./pages/DashboardPage').then((module) => ({ default: module.DashboardPage })));
-const DashboardTechnicalPage = lazy(() => import('./pages/DashboardTechnicalPage').then((module) => ({ default: module.DashboardTechnicalPage })));
 const LoginPage = lazy(() => import('./pages/LoginPage').then((module) => ({ default: module.LoginPage })));
 const NewsPage = lazy(() => import('./pages/NewsPage').then((module) => ({ default: module.NewsPage })));
 const PortfolioDetailsPage = lazy(() => import('./pages/PortfolioDetailsPage').then((module) => ({ default: module.PortfolioDetailsPage })));
@@ -21,14 +21,24 @@ function PageLoader() {
   );
 }
 
+function LegacyPortfolioRedirect() {
+  const { id } = useParams();
+  return <Navigate to={`/app/carteiras/${id ?? ''}`} replace />;
+}
+
+function ProtectedRedirect({ to }: { to: string }) {
+  return <ProtectedRoute><Navigate to={to} replace /></ProtectedRoute>;
+}
+
 export default function App() {
   return (
     <Suspense fallback={<PageLoader />}>
       <Routes>
+        <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/registro" element={<RegisterPage />} />
         <Route
-          path="/"
+          path="/app"
           element={(
             <ProtectedRoute>
               <AppShell />
@@ -36,13 +46,19 @@ export default function App() {
           )}
         >
           <Route index element={<DashboardPage />} />
-          <Route path="dashboard-tecnico" element={<DashboardTechnicalPage />} />
+          <Route path="dashboard-tecnico" element={<Navigate to="/app" replace />} />
           <Route path="noticias" element={<NewsPage />} />
           <Route path="chat" element={<ChatPage />} />
           <Route path="carteiras" element={<PortfoliosPage />} />
           <Route path="carteiras/:id" element={<PortfolioDetailsPage />} />
           <Route path="configuracoes" element={<SettingsPage />} />
         </Route>
+        <Route path="/dashboard-tecnico" element={<ProtectedRedirect to="/app" />} />
+        <Route path="/noticias" element={<ProtectedRedirect to="/app/noticias" />} />
+        <Route path="/chat" element={<ProtectedRedirect to="/app/chat" />} />
+        <Route path="/carteiras" element={<ProtectedRedirect to="/app/carteiras" />} />
+        <Route path="/carteiras/:id" element={<ProtectedRoute><LegacyPortfolioRedirect /></ProtectedRoute>} />
+        <Route path="/configuracoes" element={<ProtectedRedirect to="/app/configuracoes" />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </Suspense>

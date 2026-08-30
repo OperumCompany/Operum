@@ -2,6 +2,8 @@ import { FormEvent, useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Input } from '../components/UI';
+import { Brand } from '../components/Brand';
+import { ThemeToggle } from '../components/ThemeToggle';
 import { useAuth } from '../context/AuthContext';
 
 export function RegisterPage() {
@@ -14,27 +16,28 @@ export function RegisterPage() {
   const [accept, setAccept] = useState(false);
   const [error, setError] = useState('');
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setError('');
 
     if (!accept) return setError('Voce precisa aceitar os termos para continuar.');
     if (password.length < 6) return setError('A senha deve ter ao menos 6 caracteres.');
-    if (password !== confirmPassword) return setError('As senhas nao coincidem.');
+    if (password !== confirmPassword) return setError('As senhas não coincidem.');
 
-    const result = register({ id: crypto.randomUUID(), name, email, password });
+    const result = await register({ name, email, password });
     if (!result.ok) {
       setError(result.message);
       return;
     }
 
-    navigate('/');
+    navigate('/app');
   }
 
   return (
-    <div className="min-h-screen bg-[var(--bg-app)] px-4 py-8">
+    <div className="min-h-screen bg-[var(--bg-app)] px-5 py-5 sm:px-8 sm:py-8">
+      <div className="mx-auto mb-5 flex max-w-5xl items-center justify-between"><Brand /><ThemeToggle /></div>
       <div className="mx-auto grid min-h-[calc(100vh-4rem)] max-w-5xl gap-6 lg:grid-cols-[0.9fr_1.1fr]">
-        <section className="rounded-[36px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,rgba(225,94,242,0.08)_0%,rgba(255,255,255,0.96)_60%,rgba(61,77,156,0.1)_100%)] p-8 shadow-[var(--shadow-card)] sm:p-10">
+        <section className="ai-surface rounded-3xl p-7 shadow-[var(--shadow-card)] sm:p-10">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-[var(--brand)]">Criar conta</p>
           <h1 className="mt-4 text-4xl font-bold leading-tight text-[var(--text-main)]">
             Monte sua base para acompanhar investimentos com mais clareza.
@@ -54,7 +57,7 @@ export function RegisterPage() {
         </section>
 
         <section className="flex items-center">
-          <form onSubmit={handleSubmit} className="w-full rounded-[36px] border border-[var(--border-soft)] bg-[var(--bg-surface)] p-8 shadow-[var(--shadow-card)] sm:p-10">
+          <form onSubmit={handleSubmit} className="surface-card w-full rounded-3xl p-7 sm:p-10">
             <h2 className="text-3xl font-bold text-[var(--text-main)]">Criar conta no Operum</h2>
             <p className="mt-3 text-sm leading-6 text-[var(--text-muted)]">
               Preencha seus dados para comecar pela visao amigavel da plataforma.
@@ -76,11 +79,12 @@ export function RegisterPage() {
             {error && <p className="mt-4 text-sm text-[var(--danger-text)]">{error}</p>}
 
             <p className="mt-6 text-sm text-[var(--text-muted)]">
-              Ja tem conta?{' '}
+              Já tem conta?{' '}
               <Link to="/login" className="font-semibold text-[var(--brand)]">
                 Entrar
               </Link>
             </p>
+            <Link to="/" className="mt-4 inline-block text-sm font-semibold text-[var(--text-muted)] hover:text-[var(--text-main)]">Voltar para o início</Link>
           </form>
         </section>
       </div>

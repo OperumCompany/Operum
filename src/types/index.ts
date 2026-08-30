@@ -2,7 +2,9 @@ export type User = {
   id: string;
   name: string;
   email: string;
-  password: string;
+  password?: string;
+  created_at?: string;
+  updated_at?: string;
 };
 
 export type NewsCategory =
@@ -13,51 +15,64 @@ export type NewsCategory =
   | 'Ações'
   | 'Exterior'
   | 'Política econômica'
-  | 'Renda fixa';
+  | 'FIIs';
 
 export type Impact = 'Alto' | 'Médio' | 'Baixo';
 
-export type NewsItem = {
-  id: string;
-  title: string;
-  summary: string;
-  category: NewsCategory;
-  date: string;
-  source: string;
-  impact: Impact;
-  featured?: boolean;
-};
-
 export type ChatMessage = {
   id: string;
+  conversation_id?: string;
   role: 'user' | 'assistant';
   content: string;
-  createdAt: string;
+  created_at: string;
+  mode?: 'knowledge_direct' | 'llm' | 'fallback' | null;
+  sources?: ChatSource[];
+};
+
+export type ChatSource = {
+  id: string;
+  type: 'knowledge' | 'news';
+  title: string;
+  source_name: string;
+  source_url: string;
+  published_at?: string | null;
+  similarity?: number | null;
+};
+
+export type ChatApiResponse = {
+  message: string;
+  mode: 'knowledge_direct' | 'llm' | 'fallback';
+  used_portfolio_context: boolean;
+  sources?: ChatSource[];
+  retrieval?: ChatRetrieval;
+};
+
+export type ChatRetrieval = {
+  intent?: string;
+  knowledge_count?: number;
+  news_count?: number;
+  used_portfolio_context?: boolean;
+};
+
+export type ChatConversation = {
+  id: string;
+  owner_id: string;
+  title: string;
+  summary: string;
+  portfolio_id?: string | null;
+  use_all_portfolios: boolean;
+  created_at: string;
+  updated_at: string;
+  message_count: number;
+};
+
+export type ConversationMessageResponse = {
+  conversation: ChatConversation;
+  user_message: ChatMessage;
+  assistant_message: ChatMessage;
 };
 
 export type AssetClass = 'Renda fixa' | 'Ações Brasil' | 'Ações EUA' | 'Fundos' | 'Cripto';
-
-export type Asset = {
-  ticker: string;
-  name: string;
-  class: AssetClass;
-  risk: number;
-};
-
-export type PortfolioAsset = {
-  id: string;
-  ticker: string;
-  allocation: number;
-};
-
-export type Portfolio = {
-  id: string;
-  name: string;
-  description: string;
-  assets: PortfolioAsset[];
-  createdAt: string;
-  source: 'manual' | 'csv' | 'sheet' | 'example';
-};
 
 export type DashboardMetric = {
   label: string;
@@ -69,4 +84,351 @@ export type UserPreferences = {
   topics: NewsCategory[];
   compactMode: boolean;
   notifications: boolean;
+};
+
+export type AuthResponse = {
+  token: string;
+  user: User;
+};
+
+// --- Backend-aligned types ---
+
+export type Asset = {
+  ticker: string;
+  name: string;
+  asset_class: string;
+  country: string;
+  currency: string;
+  sector: string;
+  sub_type: string;
+  source: string;
+};
+
+export type Position = {
+  asset_id: string;
+  ticker: string;
+  asset_class: string;
+  quantity: number;
+  avg_price: number | null;
+  currency: string;
+  manual_notes: string;
+};
+
+export type PortfolioSettings = {
+  risk_profile: string;
+  forecast_horizon_days: number;
+};
+
+export type Portfolio = {
+  id: string;
+  owner_id?: string | null;
+  name: string;
+  base_currency: string;
+  created_at: string;
+  updated_at: string;
+  kind: 'standard' | 'example';
+  example_version: number | null;
+  positions: Position[];
+  settings: PortfolioSettings;
+};
+
+export type ExamplePortfolioCreateResponse = {
+  portfolio: Portfolio;
+  created: boolean;
+};
+
+export type PortfolioPricePosition = {
+  ticker: string;
+  asset_class: string;
+  quantity: number;
+  avg_price: number | null;
+  current_price: number | null;
+  currency: string;
+  total_value: number | null;
+  name: string;
+  weight_pct: number | null;
+  unrealized_pnl: number | null;
+  unrealized_pnl_pct: number | null;
+  sparkline_20d?: number[];
+};
+
+export type PortfolioPricesResponse = {
+  portfolio_id: string;
+  portfolio_name: string;
+  total_value: number | null;
+  total_unrealized_pnl: number | null;
+  positions: PortfolioPricePosition[];
+  is_demo?: boolean;
+};
+
+export type PortfolioTransaction = {
+  id: string;
+  portfolio_id: string;
+  ticker: string;
+  asset_class: string;
+  kind: 'opening' | 'buy' | 'close';
+  quantity_delta: number;
+  unit_price: number | null;
+  currency: string;
+  occurred_at: string;
+  created_at: string;
+};
+
+export type PortfolioHistoryPoint = {
+  date: string;
+  market_value: number | null;
+  invested_value: number | null;
+  quantity: number | null;
+  contribution_value: number | null;
+  contribution_quantity: number;
+};
+
+export type PortfolioHistoryResponse = {
+  portfolio_id: string;
+  period: '1m' | '6m' | '1y' | 'max';
+  ticker: string | null;
+  currency: string;
+  points: PortfolioHistoryPoint[];
+  available_tickers: string[];
+  warnings: string[];
+};
+
+export type PortfolioAnalysis = {
+  weights: Record<string, number>;
+  class_weights: Record<string, number>;
+  concentration: number;
+  concentration_label: string;
+  correlation_matrix: number[][] | null;
+  volatility: number | null;
+  volatility_window_days: number;
+  portfolio_return: number | null;
+  var_95: number | null;
+  cvar_95: number | null;
+  beta: number | null;
+  benchmark: {
+    ticker: string | null;
+    label: string;
+    return_21d_pct: number | null;
+    return_42d_pct: number | null;
+    return_63d_pct: number | null;
+    return_252d_pct: number | null;
+  };
+  num_assets: number;
+  num_classes: number;
+};
+
+export type NewsItem = {
+  id: string;
+  title: string;
+  subtitle: string | null;
+  content_preview: string;
+  full_text_if_available: string | null;
+  source_id?: string;
+  source_name: string;
+  source_type?: string;
+  is_official?: boolean;
+  source_category?: string | null;
+  source_url: string;
+  published_at: string;
+  language: string;
+  tags: string[];
+  mentioned_assets: string[];
+  mentioned_countries: string[];
+  mentioned_sectors: string[];
+  sentiment_score: number;
+  relevance_score: number;
+  impact_score: number;
+  summary: string;
+  cluster_id: number | null;
+  created_at: string;
+};
+
+export type PortfolioOpinion = {
+  score: number;
+  components: {
+    diversification: number;
+    correlation_risk: number;
+    news_impact: number;
+    macro_sensitivity: number;
+    forecast_risk: number;
+  };
+  opinion: string;
+  headline: string;
+  composition_grade: string;
+  composition_summary: string;
+  strengths: string[];
+  overlaps: string[];
+  block_reviews: Array<{
+    title: string;
+    assessment: string;
+    highlights: string;
+  }>;
+  final_diagnosis: string;
+  conclusion: string;
+  composition_diagnosis?: {
+    overall_status: 'saudavel' | 'atencao' | 'critico';
+    overall_score: number;
+    summary: string;
+    metrics: {
+      total_assets: number;
+      direct_equity_count: number;
+      class_count: number;
+      sector_count: number;
+      top_position: {
+        ticker: string | null;
+        weight_pct: number;
+      };
+      top3_weight_pct: number;
+      top_class: {
+        name: string;
+        weight_pct: number;
+      };
+      top_sector: {
+        name: string;
+        weight_pct: number;
+      };
+      international_weight_pct: number;
+    };
+    checks: Array<{
+      id: string;
+      label: string;
+      status: 'saudavel' | 'atencao' | 'critico' | 'info';
+      value: string;
+      target: string;
+      message: string;
+    }>;
+    strengths: string[];
+    weaknesses: string[];
+    watch_points: string[];
+    data_quality_warnings: string[];
+  };
+  sources: Array<{
+    id: string;
+    title: string;
+    source_name: string;
+    source_url: string;
+    published_at: string;
+    summary: string;
+    sentiment_score: number;
+    impact_score: number;
+    relevance_score: number;
+    match_score: number;
+    rank_score?: number;
+    source_category?: string | null;
+    is_official?: boolean;
+    context_role?: string;
+    source_confidence_weight?: number;
+    analysis_category?: string;
+  }>;
+  source_groups: Array<{
+    source_name: string;
+    count: number;
+    items: Array<PortfolioOpinion['sources'][number] & { role?: string }>;
+  }>;
+  selected_analysis_horizon?: '1m' | '2m' | '3m';
+  portfolio_id: string;
+  generated_at: string;
+};
+
+export type HorizonSeriesPoint = {
+  date: string;
+  value: number;
+};
+
+export type PositionOpinion = {
+  portfolio_id: string;
+  ticker: string;
+  asset_name: string;
+  asset_class: string;
+  asset_function?: string;
+  generated_at: string;
+  recomputed_at: string;
+  confidence: string;
+  status: string;
+  selected_history_horizon: '1w' | '1m' | '2m' | '3m';
+  selected_outlook_horizon: '1w' | '1m' | '2m' | '3m';
+  current_snapshot: {
+    current_price: number | null;
+    currency: string;
+    weight_pct: number | null;
+    sector: string;
+    country: string;
+    asset_function?: string;
+  };
+  historical_window: {
+    start_date: string;
+    end_date: string;
+    news_count: number;
+    has_price_history: boolean;
+  };
+  historical_series: HorizonSeriesPoint[];
+  forecast_series: HorizonSeriesPoint[];
+  forecast_anchor_points: Array<{
+    date: string;
+    horizon_days: number;
+    predicted_price: number;
+    predicted_return: number;
+    confidence: number;
+  }>;
+  recent_performance: {
+    change_selected_pct: number | null;
+    change_1m_pct: number | null;
+    change_2m_pct: number | null;
+    change_3m_pct: number | null;
+    change_12m_pct: number | null;
+    volatility_selected_pct: number | null;
+    drawdown_selected_pct?: number | null;
+    beta_selected?: number | null;
+    correlation_selected?: number | null;
+    benchmark_ticker?: string | null;
+    forecast_return_selected_pct?: number | null;
+    forecast_price_selected?: number | null;
+    forecast_confidence_selected?: number | null;
+    forecast_news_adjustment_pct?: number | null;
+  };
+  outlook_3m: {
+    scenario: string;
+    dominant_topics: string[];
+  };
+  analysis_sections: {
+    current: string;
+    recent: string;
+    outlook: string;
+    recent_by_horizon: Record<string, string>;
+    outlook_by_horizon: Record<string, string>;
+    box_history_by_horizon?: Record<string, string>;
+    box_current?: string;
+    box_outlook_by_horizon?: Record<string, string>;
+    visual_summary?: {
+      asset_status?: string;
+      fundamentals?: string;
+      price_trend?: string;
+      news_sentiment?: string;
+      position_size?: string;
+      portfolio_risk?: string;
+      main_reason?: string;
+      confidence?: string;
+    };
+    summary?: string;
+    what_happened?: string;
+    company_situation?: string;
+    asset_price_situation?: string;
+    current_situation?: string;
+    portfolio_impact?: string;
+    scenarios?: string | {
+      favorable?: string;
+      base?: string;
+      adverse?: string;
+    };
+    what_to_watch?: string[];
+    conclusion?: string;
+    data_quality_warnings?: string[];
+  };
+  used_news_count: number;
+  sources: PortfolioOpinion['sources'];
+  source_groups: Array<{
+    source_name: string;
+    count: number;
+    items: Array<PortfolioOpinion['sources'][number] & { role?: string; analysis_category?: string }>;
+  }>;
 };
