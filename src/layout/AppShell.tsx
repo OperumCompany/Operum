@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, ChartNoAxesCombined, ChevronRight, LayoutDashboard, LogOut, Menu, MessageCircle, Newspaper, PanelLeftClose, PanelLeftOpen, Settings, X } from 'lucide-react';
+import { BriefcaseBusiness, ChevronRight, LayoutDashboard, LogOut, Menu, MessageCircle, Newspaper, PanelLeftClose, PanelLeftOpen, Settings, X } from 'lucide-react';
 import { useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Brand } from '../components/Brand';
@@ -10,7 +10,6 @@ import { ALL_PORTFOLIOS_ID, getPortfolioLabel } from '../utils/portfolios';
 
 const nav = [
   { to: '/app', label: 'Visão geral', icon: LayoutDashboard, end: true },
-  { to: '/app/dashboard-tecnico', label: 'Painel técnico', icon: ChartNoAxesCombined },
   { to: '/app/noticias', label: 'Notícias', icon: Newspaper },
   { to: '/app/chat', label: 'Chat', icon: MessageCircle },
   { to: '/app/carteiras', label: 'Carteiras', icon: BriefcaseBusiness },

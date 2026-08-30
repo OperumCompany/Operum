@@ -422,6 +422,49 @@ async def test_portfolio_prices_include_unrealized_pnl(client: AsyncClient):
 
 
 @pytest.mark.asyncio
+async def test_portfolio_prices_can_skip_sparklines(client: AsyncClient, monkeypatch):
+    headers = await auth_headers(client, "prices-without-sparklines")
+    resp = await client.post("/api/portfolios", headers=headers, json={"name": "Precos rapidos", "base_currency": "BRL"})
+    pid = resp.json()["id"]
+    await client.post(
+        f"/api/portfolios/{pid}/positions",
+        headers=headers,
+        json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 10, "avg_price": 30},
+    )
+    from app.api import portfolios as portfolios_api
+
+    monkeypatch.setattr(portfolios_api.market_service, "get_current_price", lambda ticker: {
+        "price": 35.0,
+        "currency": "BRL",
+        "name": ticker,
+    })
+
+    def forbidden_history(*args, **kwargs):
+        raise AssertionError("history must not be fetched when sparklines are disabled")
+
+    monkeypatch.setattr(portfolios_api.market_service, "get_history", forbidden_history)
+    resp = await client.get(f"/api/portfolios/{pid}/prices?include_sparkline=false", headers=headers)
+
+    assert resp.status_code == 200
+    assert resp.json()["positions"][0]["sparkline_20d"] == []
+
+
+@pytest.mark.asyncio
+async def test_example_portfolio_prices_can_skip_sparklines(client: AsyncClient):
+    headers = await auth_headers(client, "example-prices-without-sparklines")
+    example = (await client.post("/api/portfolios/example", headers=headers)).json()["portfolio"]
+
+    resp = await client.get(
+        f"/api/portfolios/{example['id']}/prices?include_sparkline=false",
+        headers=headers,
+    )
+
+    assert resp.status_code == 200
+    assert len(resp.json()["positions"]) == 36
+    assert all(position["sparkline_20d"] == [] for position in resp.json()["positions"])
+
+
+@pytest.mark.asyncio
 async def test_portfolio_history_contract_and_owner_isolation(client: AsyncClient):
     headers = await auth_headers(client, "history-owner")
     other_headers = await auth_headers(client, "history-other")

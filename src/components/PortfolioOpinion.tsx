@@ -17,9 +17,9 @@ type OpinionData = {
 };
 
 function scoreLabel(score: number): { label: string; color: string } {
-  if (score >= 0.7) return { label: 'Saudável', color: 'text-green-600 bg-green-50' };
-  if (score >= 0.4) return { label: 'Atenção', color: 'text-amber-600 bg-amber-50' };
-  return { label: 'Crítico', color: 'text-red-600 bg-red-50' };
+  if (score >= 0.7) return { label: 'Saudável', color: 'text-[var(--success-text)] bg-[var(--success-soft)]' };
+  if (score >= 0.4) return { label: 'Atenção', color: 'text-[var(--accent-strong)] bg-[var(--accent-soft)]' };
+  return { label: 'Crítico', color: 'text-[var(--danger-text)] bg-[var(--danger-soft)]' };
 }
 
 export function PortfolioOpinion({ portfolioId }: { portfolioId: string | undefined }) {
@@ -28,16 +28,25 @@ export function PortfolioOpinion({ portfolioId }: { portfolioId: string | undefi
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!portfolioId) return;
+    let cancelled = false;
+    if (!portfolioId) {
+      setData(null);
+      setError(null);
+      setLoading(false);
+      return;
+    }
     setLoading(true);
     setError(null);
+    setData(null);
     api.get<OpinionData>(`/models/opinion/${portfolioId}`)
-      .then(setData)
+      .then((result) => { if (!cancelled) setData(result); })
       .catch((e) => {
+        if (cancelled) return;
         setError(e instanceof Error ? e.message : 'Erro ao carregar opinião');
         setData(null);
       })
-      .finally(() => setLoading(false));
+      .finally(() => { if (!cancelled) setLoading(false); });
+    return () => { cancelled = true; };
   }, [portfolioId]);
 
   if (!portfolioId) return null;
@@ -86,7 +95,7 @@ function ComponentBar({ label, value }: { label: string; value: number }) {
         <span className="text-[var(--text-muted)]">{label}</span>
         <span className="font-semibold">{pctValue.toFixed(0)}%</span>
       </div>
-      <div className="mt-1 h-2 w-full rounded-full bg-gray-200">
+      <div className="mt-1 h-2 w-full rounded-full bg-[var(--bg-surface-high)]">
         <div
           className="h-full rounded-full bg-[var(--brand)] transition-all"
           style={{ width: `${pctValue}%` }}

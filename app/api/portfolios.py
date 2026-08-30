@@ -105,23 +105,28 @@ def get_portfolio_analysis(portfolio_id: str, current=Depends(require_current_us
 
 
 @router.get("/{portfolio_id}/prices")
-def get_portfolio_prices(portfolio_id: str, current=Depends(require_current_user)):
+def get_portfolio_prices(
+    portfolio_id: str,
+    include_sparkline: bool = True,
+    current=Depends(require_current_user),
+):
     portfolio = service.get_by_id(portfolio_id, current["user"].id)
     if portfolio is None:
         raise HTTPException(status_code=404, detail="Carteira não encontrada")
 
     if portfolio.kind == "example":
-        return service.examples.prices(portfolio)
+        return service.examples.prices(portfolio, include_sparkline=include_sparkline)
 
     results = []
     total_value = 0.0
     total_unrealized = 0.0
     for pos in portfolio.positions:
         price_data = market_service.get_current_price(pos.ticker)
-        history = market_service.get_history(pos.ticker, period="1mo", interval="1d")
         sparkline = []
-        if history and history.get("prices"):
-            sparkline = [round(float(item.get("close", 0.0)), 2) for item in history["prices"][-20:]]
+        if include_sparkline:
+            history = market_service.get_history(pos.ticker, period="1mo", interval="1d")
+            if history and history.get("prices"):
+                sparkline = [round(float(item.get("close", 0.0)), 2) for item in history["prices"][-20:]]
         if price_data and price_data.get("price"):
             price = float(price_data["price"])
             value = price * pos.quantity

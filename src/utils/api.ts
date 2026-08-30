@@ -6,17 +6,24 @@ type ApiRequestOptions = RequestInit & {
 };
 
 class ApiClient {
+  private readonly inFlightGets = new Map<string, Promise<unknown>>();
+
+  private getAuthToken(): string | null {
+    try {
+      return JSON.parse(localStorage.getItem(AUTH_TOKEN_KEY) ?? 'null');
+    } catch {
+      return null;
+    }
+  }
+
+  private invalidateInFlightGets(): void {
+    this.inFlightGets.clear();
+  }
+
   private async request<T>(path: string, options?: ApiRequestOptions): Promise<T> {
     const url = `${API_BASE}${path}`;
     const { auth = true, headers, ...fetchOptions } = options ?? {};
-    let token: string | null = null;
-    if (auth) {
-      try {
-        token = JSON.parse(localStorage.getItem(AUTH_TOKEN_KEY) ?? 'null');
-      } catch {
-        token = null;
-      }
-    }
+    const token = auth ? this.getAuthToken() : null;
     const res = await fetch(url, {
       headers: {
         'Content-Type': 'application/json',
@@ -33,10 +40,21 @@ class ApiClient {
   }
 
   get<T>(path: string): Promise<T> {
-    return this.request<T>(path);
+    const key = `${this.getAuthToken() ?? 'anonymous'}:${path}`;
+    const existing = this.inFlightGets.get(key) as Promise<T> | undefined;
+    if (existing) return existing;
+
+    const request = this.request<T>(path);
+    this.inFlightGets.set(key, request);
+    const clear = () => {
+      if (this.inFlightGets.get(key) === request) this.inFlightGets.delete(key);
+    };
+    request.then(clear, clear);
+    return request;
   }
 
   post<T>(path: string, body?: unknown, options?: ApiRequestOptions): Promise<T> {
+    this.invalidateInFlightGets();
     return this.request<T>(path, {
       ...options,
       method: 'POST',
@@ -45,6 +63,7 @@ class ApiClient {
   }
 
   postPublic<T>(path: string, body?: unknown): Promise<T> {
+    this.invalidateInFlightGets();
     return this.request<T>(path, {
       method: 'POST',
       auth: false,
@@ -53,6 +72,7 @@ class ApiClient {
   }
 
   put<T>(path: string, body?: unknown): Promise<T> {
+    this.invalidateInFlightGets();
     return this.request<T>(path, {
       method: 'PUT',
       body: body ? JSON.stringify(body) : undefined,
@@ -60,6 +80,7 @@ class ApiClient {
   }
 
   patch<T>(path: string, body?: unknown): Promise<T> {
+    this.invalidateInFlightGets();
     return this.request<T>(path, {
       method: 'PATCH',
       body: body ? JSON.stringify(body) : undefined,
@@ -67,6 +88,7 @@ class ApiClient {
   }
 
   del<T>(path: string, body?: unknown): Promise<T> {
+    this.invalidateInFlightGets();
     return this.request<T>(path, {
       method: 'DELETE',
       body: body ? JSON.stringify(body) : undefined,

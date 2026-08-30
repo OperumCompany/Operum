@@ -58,7 +58,7 @@ class ExamplePortfolioService:
         basis = float(position.avg_price or max(10.0, len(position.ticker) * 9.0))
         return round(basis * self._factor(position.ticker), 2)
 
-    def prices(self, portfolio: Portfolio) -> dict:
+    def prices(self, portfolio: Portfolio, include_sparkline: bool = True) -> dict:
         rows = []
         total_value = 0.0
         total_unrealized = 0.0
@@ -70,7 +70,10 @@ class ExamplePortfolioService:
             total_value += value
             if pnl is not None:
                 total_unrealized += pnl
-            sparkline = [round(current * (0.96 + index * 0.004 + math.sin(index / 3) * 0.008), 2) for index in range(20)]
+            sparkline = (
+                [round(current * (0.96 + index * 0.004 + math.sin(index / 3) * 0.008), 2) for index in range(20)]
+                if include_sparkline else []
+            )
             rows.append({
                 "ticker": position.ticker, "asset_class": position.asset_class,
                 "quantity": position.quantity, "avg_price": position.avg_price,

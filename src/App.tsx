@@ -6,7 +6,6 @@ import { LandingPage } from './pages/LandingPage';
 
 const ChatPage = lazy(() => import('./pages/ChatPage').then((module) => ({ default: module.ChatPage })));
 const DashboardPage = lazy(() => import('./pages/DashboardPage').then((module) => ({ default: module.DashboardPage })));
-const DashboardTechnicalPage = lazy(() => import('./pages/DashboardTechnicalPage').then((module) => ({ default: module.DashboardTechnicalPage })));
 const LoginPage = lazy(() => import('./pages/LoginPage').then((module) => ({ default: module.LoginPage })));
 const NewsPage = lazy(() => import('./pages/NewsPage').then((module) => ({ default: module.NewsPage })));
 const PortfolioDetailsPage = lazy(() => import('./pages/PortfolioDetailsPage').then((module) => ({ default: module.PortfolioDetailsPage })));
@@ -47,14 +46,14 @@ export default function App() {
           )}
         >
           <Route index element={<DashboardPage />} />
-          <Route path="dashboard-tecnico" element={<DashboardTechnicalPage />} />
+          <Route path="dashboard-tecnico" element={<Navigate to="/app" replace />} />
           <Route path="noticias" element={<NewsPage />} />
           <Route path="chat" element={<ChatPage />} />
           <Route path="carteiras" element={<PortfoliosPage />} />
           <Route path="carteiras/:id" element={<PortfolioDetailsPage />} />
           <Route path="configuracoes" element={<SettingsPage />} />
         </Route>
-        <Route path="/dashboard-tecnico" element={<ProtectedRedirect to="/app/dashboard-tecnico" />} />
+        <Route path="/dashboard-tecnico" element={<ProtectedRedirect to="/app" />} />
         <Route path="/noticias" element={<ProtectedRedirect to="/app/noticias" />} />
         <Route path="/chat" element={<ProtectedRedirect to="/app/chat" />} />
         <Route path="/carteiras" element={<ProtectedRedirect to="/app/carteiras" />} />
