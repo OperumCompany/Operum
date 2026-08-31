@@ -1,9 +1,18 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 
 import api, { resolveApiBaseUrl } from '../src/utils/api.ts';
 import { isDismissKey, responsiveBreakpoints } from '../src/utils/responsive.ts';
 import { demoSlides, shouldPlayDemo } from '../src/presentation/demoSlides.ts';
+
+test('pins Vercel to the Vite frontend instead of auto-detecting the Python backend', async () => {
+  const vercel = JSON.parse(await readFile(new URL('../vercel.json', import.meta.url), 'utf8'));
+  assert.equal(vercel.framework, 'vite');
+  assert.equal(vercel.installCommand, 'npm ci');
+  assert.equal(vercel.buildCommand, 'npm run build');
+  assert.equal(vercel.outputDirectory, 'dist');
+});
 
 test('defines the five recorded demonstrations in their commercial order', () => {
   assert.deepEqual(demoSlides.map((slide) => slide.id), [
