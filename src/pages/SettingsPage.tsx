@@ -105,7 +105,7 @@ export function SettingsPage() {
       <section className="rounded-2xl border border-[var(--danger-text)]/30 bg-[var(--danger-soft)] p-5 sm:p-6">
         <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
           <div><h2 className="text-lg font-semibold text-[var(--danger-text)]">Zona de perigo</h2><p className="mt-1 max-w-2xl text-sm leading-6 text-[var(--text-main)]">A exclusão remove permanentemente sua conta, sessões, carteiras, movimentações e conversas. Esta ação não pode ser desfeita.</p></div>
-          <Button type="button" variant="danger" className="shrink-0" onClick={() => setIsDeleteOpen(true)}><Trash2 size={16} /> Excluir conta</Button>
+          <Button type="button" variant="danger" className="settings-delete-button shrink-0" onClick={() => setIsDeleteOpen(true)}><Trash2 size={16} /> Excluir conta</Button>
         </div>
       </section>
 

@@ -2,6 +2,19 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 
 import api, { resolveApiBaseUrl } from '../src/utils/api.ts';
+import { isDismissKey, responsiveBreakpoints } from '../src/utils/responsive.ts';
+
+test('defines the responsive contract for mobile, tablet and desktop', () => {
+  assert.deepEqual(responsiveBreakpoints, {
+    mobile: 640,
+    desktop: 1024,
+  });
+});
+
+test('uses Escape as the shared dismissal key for responsive overlays', () => {
+  assert.equal(isDismissKey('Escape'), true);
+  assert.equal(isDismissKey('Enter'), false);
+});
 
 test('uses the local API path when no public API URL is configured', () => {
   assert.equal(resolveApiBaseUrl(), '/api');

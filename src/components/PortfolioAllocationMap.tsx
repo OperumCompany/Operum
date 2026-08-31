@@ -132,7 +132,7 @@ function PortfolioAllocationMapGroup({ portfolios }: { portfolios: Portfolio[] }
   if (!allocation.length) return <div className="flex min-h-48 flex-col items-center justify-center gap-3 text-center"><Blocks className="text-[var(--brand)]" /><p className="text-sm text-[var(--text-muted)]">Ainda não há posições com cotação para montar o mapa.</p></div>;
 
   return (
-    <div>
+    <div className="portfolio-allocation-map">
       <div className="h-[300px] min-h-[260px] w-full sm:h-[340px]">
         <ResponsiveContainer width="100%" height="100%">
           <Treemap data={allocation} dataKey="size" nameKey="name" stroke="transparent" content={<AllocationTile />} isAnimationActive={false}>
