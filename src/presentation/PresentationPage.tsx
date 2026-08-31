@@ -4,7 +4,8 @@ import {
   ChevronRight, CircleHelp, Command, Database, Gauge, Layers3, LineChart,
   MessageCircle, Newspaper, Pause, Play, ShieldCheck, Sparkles, Target,
 } from 'lucide-react';
-import { useCallback, useEffect, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { DemoSlide, demoSlides, shouldPlayDemo } from './demoSlides';
 import './presentation.css';
 
 const logoUrl = new URL('../img/logo.png', import.meta.url).href;
@@ -33,12 +34,13 @@ const slides: SlideDefinition[] = [
     id: 'preditividade', kicker: '04 · O diferencial', targetSeconds: 40,
     note: 'Aqui está o principal diferencial do Operum: a camada de preditividade. Ao selecionar um ativo, o usuário visualiza análises para 1, 2 e 3 meses. O Operum combina histórico de preços, volatilidade, liquidez, indicadores financeiros, contexto econômico e notícias relevantes. A partir disso, apresenta possíveis cenários futuros, nível de confiança, riscos e fatores que influenciam o resultado. O mais importante é que a plataforma não mostra apenas um número. Ela explica por que aquele cenário faz sentido e como ele pode impactar a carteira.',
   },
+  ...demoSlides,
   {
-    id: 'ecossistema', kicker: '05 · Ecossistema', targetSeconds: 25,
+    id: 'ecossistema', kicker: '10 · Ecossistema', targetSeconds: 25,
     note: 'O Operum não termina na previsão. Ele cria um ecossistema para acompanhar a jornada do investidor. O usuário pode organizar carteiras, simular estratégias, acompanhar notícias relacionadas aos seus ativos e conversar com um chat inteligente para aprender e interpretar informações. Isso atende tanto investidores iniciantes, que precisam de apoio e educação, quanto investidores experientes, que querem organizar melhor suas análises. O objetivo é reduzir a distância entre informação e decisão.',
   },
   {
-    id: 'fechamento', kicker: '06 · Próximos futuros', targetSeconds: 25,
+    id: 'fechamento', kicker: '11 · Próximos futuros', targetSeconds: 25,
     note: 'O mercado nunca será totalmente previsível, e o Operum não promete isso. A proposta é transformar incerteza em cenários compreensíveis. No B2C, o produto pode crescer por assinatura recorrente. No B2B, a inteligência analítica pode ser licenciada para fintechs, plataformas financeiras e empresas. O Operum começou como uma ideia, evoluiu para uma planilha, virou um projeto premiado e hoje se torna uma plataforma para ajudar pessoas a investir com mais informação, contexto e confiança. O Operum não tenta adivinhar o futuro. Ele prepara o investidor para os possíveis futuros.',
   },
 ];
@@ -183,7 +185,44 @@ function SlideSix() {
   return <div className="pitch-slide close-slide"><div className="close-glow" /><div className="pitch-slide-inner close-layout"><div className="close-mosaic"><Reveal delay={.08}><ClosingSignalCard type="data" /></Reveal><Reveal delay={.18}><ClosingSignalCard type="scenarios" /></Reveal><Reveal delay={.28}><ClosingSignalCard type="context" /></Reveal></div><div className="close-copy"><Reveal><OperumMark inverse /></Reveal><Reveal delay={.1}><h1>O futuro é incerto.<br /><span>Sua decisão não precisa ser.</span></h1></Reveal><Reveal delay={.22}><p className="close-flow"><b>Dados</b><ChevronRight /><b>Cenários</b><ChevronRight /><b>Contexto</b><ChevronRight /><b>Decisão</b></p></Reveal><Reveal delay={.35}><div className="business-model"><span><small>B2C</small> Assinatura da plataforma</span><span><small>B2B</small> Licenciamento da inteligência analítica</span></div></Reveal><Reveal delay={.48}><p className="close-final">O Operum não tenta adivinhar o futuro. Ele prepara o investidor para os possíveis futuros.</p></Reveal></div></div></div>;
 }
 
-const slideComponents = [SlideOne, SlideTwo, SlideThree, SlideFour, SlideFive, SlideSix];
+function DemoProductSlide({ demo, slideIndex, activeIndex, reduceMotion }: { demo: DemoSlide; slideIndex: number; activeIndex: number; reduceMotion: boolean }) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const shouldPlay = shouldPlayDemo(slideIndex, activeIndex, reduceMotion);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (shouldPlay) {
+      video.currentTime = 0;
+      void video.play().catch(() => undefined);
+      return;
+    }
+    video.pause();
+    video.currentTime = 0;
+  }, [shouldPlay]);
+
+  return (
+    <div className="pitch-slide product-demo-slide">
+      <div className="demo-slide-glow" />
+      <div className="pitch-slide-inner product-demo-layout">
+        <div className="product-demo-copy">
+          <Reveal><p className="pitch-kicker is-light">{demo.kicker}</p></Reveal>
+          <Reveal delay={.1}><h1>{demo.title}</h1></Reveal>
+          <Reveal delay={.2}><p>{demo.description}</p></Reveal>
+          <Reveal delay={.3}><span className="demo-live-tag"><Sparkles size={14} /> Experiência real do Operum</span></Reveal>
+        </div>
+        <Reveal delay={.16} className="product-demo-frame">
+          {reduceMotion
+            ? <img src={demo.poster} alt={`Prévia da tela ${demo.kicker}`} />
+            : <video ref={videoRef} muted loop playsInline preload={shouldPlay ? 'auto' : 'metadata'} poster={demo.poster} aria-label={`Demonstração da tela ${demo.kicker}`}><source src={demo.video} type="video/webm" /></video>}
+          <div className="product-demo-sheen" aria-hidden="true" />
+        </Reveal>
+      </div>
+    </div>
+  );
+}
+
+const slideComponents = [SlideOne, SlideTwo, SlideThree, SlideFour, null, null, null, null, null, SlideFive, SlideSix];
 
 export function PresentationPage() {
   const [current, setCurrent] = useState(0);
@@ -226,12 +265,28 @@ export function PresentationPage() {
     return () => window.clearInterval(timer);
   }, [isRunning]);
 
+  useEffect(() => {
+    if (reduceMotion) return;
+    const nextSlide = slides[current + 1];
+    const nextDemo = demoSlides.find((demo) => demo.id === nextSlide?.id);
+    if (!nextDemo) return;
+    const preload = document.createElement('link');
+    preload.rel = 'preload';
+    preload.as = 'video';
+    preload.type = 'video/webm';
+    preload.href = nextDemo.video;
+    document.head.appendChild(preload);
+    return () => preload.remove();
+  }, [current, reduceMotion]);
+
   const transition = reduceMotion ? { duration: 0 } : { duration: .48, ease: [0.22, 1, 0.36, 1] as const };
   return <main className="presentation-page" aria-label="Pitch Operum">
     <div className="presentation-stage">
       <AnimatePresence initial={false} mode="wait" custom={direction}>
         <motion.div key={slides[current].id} className="presentation-slide-host" custom={direction} initial={{ opacity: 0, x: reduceMotion ? 0 : direction * 46 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: reduceMotion ? 0 : direction * -46 }} transition={transition}>
-          <ActiveSlide />
+          {ActiveSlide
+            ? <ActiveSlide />
+            : <DemoProductSlide demo={demoSlides[current - 4]} slideIndex={current} activeIndex={current} reduceMotion={Boolean(reduceMotion)} />}
         </motion.div>
       </AnimatePresence>
     </div>

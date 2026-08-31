@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "capture:pitch": "node scripts/capture-presentation-demos.mjs"
   },
   "dependencies": {
     "@fontsource-variable/geist": "^5.3.0",
@@ -21,10 +22,12 @@
     "recharts": "^2.15.4"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.1",
     "@types/react": "^18.3.23",
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react": "^6.0.5",
     "autoprefixer": "^10.4.21",
+    "ffmpeg-static": "^5.3.0",
     "postcss": "^8.5.26",
     "tailwindcss": "^3.4.17",
     "typescript": "~5.9.2",

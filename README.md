@@ -103,6 +103,16 @@ O arquivo `vercel.json` ja inclui o rewrite da SPA. Assim, links diretos como `/
 
 Quando o backend HTTPS estiver publicado, crie no Vercel a variavel publica `VITE_API_BASE_URL` com a URL da API incluindo o prefixo `/api`, por exemplo `https://api.seu-dominio.com/api`. A variavel deve ser aplicada aos ambientes Production e Preview e requer novo deploy. No backend, inclua os dominios Vercel em `CORS_ORIGINS`, separados por virgula. Nunca cadastre no Vercel do frontend `SUPABASE_SECRET_KEY`, `SUPABASE_DB_URL`, tokens de mercado ou qualquer outro segredo do backend.
 
+### Atualizar os videos do pitch
+
+Com o frontend e o backend locais em execucao por `./iniciar.ps1`, gere novamente os videos demonstrativos do pitch com:
+
+```powershell
+npm run capture:pitch
+```
+
+O processo cria uma conta local temporaria, usa a Carteira Exemplo, grava os cinco fluxos em `public/presentation/demos/` e remove a conta ao finalizar. Os videos sao estaticos e podem ser publicados pelo Vercel sem expor credenciais ou depender da API durante a apresentacao.
+
 ## Modulos
 
 ### Noticias

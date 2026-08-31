@@ -3,6 +3,24 @@ import assert from 'node:assert/strict';
 
 import api, { resolveApiBaseUrl } from '../src/utils/api.ts';
 import { isDismissKey, responsiveBreakpoints } from '../src/utils/responsive.ts';
+import { demoSlides, shouldPlayDemo } from '../src/presentation/demoSlides.ts';
+
+test('defines the five recorded demonstrations in their commercial order', () => {
+  assert.deepEqual(demoSlides.map((slide) => slide.id), [
+    'demo-visao-geral',
+    'demo-carteiras',
+    'demo-analise',
+    'demo-noticias',
+    'demo-chat',
+  ]);
+  assert.ok(demoSlides.every((slide) => slide.video.endsWith('.webm')));
+});
+
+test('plays only the active product demonstration unless motion is reduced', () => {
+  assert.equal(shouldPlayDemo(4, 4, false), true);
+  assert.equal(shouldPlayDemo(3, 4, false), false);
+  assert.equal(shouldPlayDemo(4, 4, true), false);
+});
 
 test('defines the responsive contract for mobile, tablet and desktop', () => {
   assert.deepEqual(responsiveBreakpoints, {
