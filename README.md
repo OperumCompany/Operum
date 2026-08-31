@@ -90,6 +90,19 @@ Credenciais locais de desenvolvimento:
 - `demo@operum.app`
 - `Operum123`
 
+### Deploy do frontend no Vercel
+
+O frontend, incluindo o pitch em `/slides`, pode ser publicado no Vercel sem backend. O pitch funciona integralmente; as telas que consultam a API ficam indisponiveis ate que o backend seja publicado.
+
+1. Envie o repositorio para o GitHub.
+2. No Vercel, selecione **Add New > Project** e importe o repositorio.
+3. Mantenha o preset **Vite**, o Build Command `npm run build` e o Output Directory `dist`.
+4. Faça o deploy. A apresentacao fica em `https://seu-projeto.vercel.app/slides`.
+
+O arquivo `vercel.json` ja inclui o rewrite da SPA. Assim, links diretos como `/slides`, `/app`, `/login` e `/app/carteiras` nao retornam 404.
+
+Quando o backend HTTPS estiver publicado, crie no Vercel a variavel publica `VITE_API_BASE_URL` com a URL da API incluindo o prefixo `/api`, por exemplo `https://api.seu-dominio.com/api`. A variavel deve ser aplicada aos ambientes Production e Preview e requer novo deploy. No backend, inclua os dominios Vercel em `CORS_ORIGINS`, separados por virgula. Nunca cadastre no Vercel do frontend `SUPABASE_SECRET_KEY`, `SUPABASE_DB_URL`, tokens de mercado ou qualquer outro segredo do backend.
+
 ## Modulos
 
 ### Noticias

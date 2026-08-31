@@ -1,7 +1,15 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 
-import api from '../src/utils/api.ts';
+import api, { resolveApiBaseUrl } from '../src/utils/api.ts';
+
+test('uses the local API path when no public API URL is configured', () => {
+  assert.equal(resolveApiBaseUrl(), '/api');
+});
+
+test('uses a configured public API URL without a trailing slash', () => {
+  assert.equal(resolveApiBaseUrl('https://api.operum.app/'), 'https://api.operum.app');
+});
 
 test('deduplicates only identical GET requests that are still in flight', async () => {
   const originalFetch = globalThis.fetch;

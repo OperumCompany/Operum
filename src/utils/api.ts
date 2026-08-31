@@ -1,4 +1,10 @@
-const API_BASE = '/api';
+export function resolveApiBaseUrl(configuredUrl?: string): string {
+  const normalized = configuredUrl?.trim().replace(/\/+$/, '');
+  return normalized || '/api';
+}
+
+const viteEnv = (import.meta as ImportMeta & { env?: { VITE_API_BASE_URL?: string } }).env;
+const API_BASE = resolveApiBaseUrl(viteEnv?.VITE_API_BASE_URL);
 const AUTH_TOKEN_KEY = 'operum_auth_token';
 
 type ApiRequestOptions = RequestInit & {
