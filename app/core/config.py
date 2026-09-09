@@ -57,6 +57,11 @@ NEWS_EMBEDDINGS_INDEX_ON_INGEST = os.environ.get("NEWS_EMBEDDINGS_INDEX_ON_INGES
 NEWS_SEMANTIC_TOP_K = int(os.environ.get("NEWS_SEMANTIC_TOP_K", "25"))
 NEWS_SEMANTIC_CANDIDATES = int(os.environ.get("NEWS_SEMANTIC_CANDIDATES", "300"))
 NEWS_SEMANTIC_MIN_SIMILARITY = float(os.environ.get("NEWS_SEMANTIC_MIN_SIMILARITY", "0.55"))
+FINANCIAL_NLP_ENABLED = os.environ.get("FINANCIAL_NLP_ENABLED", "true").lower() == "true"
+FINANCIAL_NLP_MODEL = os.environ.get(
+    "FINANCIAL_NLP_MODEL",
+    "lucasalmda/pt-br-financial-sentiment-analysis",
+).strip()
 KNOWLEDGE_BASE_ENABLED = os.environ.get("KNOWLEDGE_BASE_ENABLED", "true").lower() == "true"
 KNOWLEDGE_BASE_DIR = os.environ.get("KNOWLEDGE_BASE_DIR", "").strip()
 KNOWLEDGE_SEMANTIC_TOP_K = int(os.environ.get("KNOWLEDGE_SEMANTIC_TOP_K", "4"))

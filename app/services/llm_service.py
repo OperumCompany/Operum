@@ -13,7 +13,7 @@ logger = logging.getLogger(__name__)
 class LLMService:
     def __init__(self):
         self.enabled = AI_ENABLED
-        self.provider = AI_PROVIDER
+        self.provider = AI_PROVIDER.lower().strip()
         self.base_url = AI_BASE_URL
         self.api_key = AI_API_KEY
         self.model = AI_MODEL
@@ -32,7 +32,13 @@ class LLMService:
             return False
         try:
             with httpx.Client(timeout=min(self.timeout_seconds, 5.0)) as client:
-                response = client.get(f"{self.base_url.removesuffix('/v1')}/api/tags")
+                if self.provider == "ollama":
+                    response = client.get(f"{self.base_url.removesuffix('/v1')}/api/tags")
+                else:
+                    response = client.get(
+                        f"{self.base_url}/models",
+                        headers={"Authorization": f"Bearer {self.api_key}"},
+                    )
                 return response.status_code == 200
         except Exception:
             return False

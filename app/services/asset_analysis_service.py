@@ -60,6 +60,7 @@ class AssetAnalysisService:
                 "CMIG4": ["cemig"],
                 "CEEB3": ["coelba"],
                 "PETR4": ["petrobras", "petroleo brasileiro"],
+                "ITUB4": ["itau", "itau unibanco", "itaú", "itaú unibanco"],
             },
             "source_confidence": {
                 "official_notice_feed": 1.0,
@@ -217,14 +218,11 @@ class AssetAnalysisService:
 
     def _is_incidental_asset_mention(self, news: NewsItem, meta: dict) -> bool:
         ticker = meta["ticker"].upper()
-        mentioned_assets = {asset.upper() for asset in news.mentioned_assets}
-        if ticker in mentioned_assets:
-            return False
-
         title = self._normalize_text(news.title)
         text = self._normalize_text(f"{news.title} {news.summary} {news.content_preview}")
         aliases = [self._normalize_text(alias) for alias in self._config.get("aliases", {}).get(ticker, [])]
         aliases = [alias for alias in aliases if len(alias) >= 4]
+        mentioned_assets = {asset.upper() for asset in news.mentioned_assets}
 
         analyst_terms = [
             "recomenda",
@@ -242,11 +240,16 @@ class AssetAnalysisService:
         ]
         has_alias = any(alias in text for alias in aliases)
         if not has_alias or not any(term in text for term in analyst_terms):
+            if ticker in mentioned_assets:
+                return False
             return False
 
         analyst_brands = ["bba", "corretora", "research", "analistas"]
         if any(f"{alias} bba" in text for alias in aliases) or any(term in text for term in analyst_brands):
             return True
+
+        if ticker in mentioned_assets:
+            return False
 
         if ":" in news.title:
             before_colon = self._normalize_text(news.title.split(":", 1)[0])

@@ -1,4 +1,5 @@
 import logging
+import re
 from datetime import datetime, timezone, timedelta
 
 import pandas as pd
@@ -75,6 +76,8 @@ class MarketDataService:
             "IBOV": "^BVSP",
             "SP500": "^GSPC",
             "IFIX": "IFIX.SA",
+            "USDBRL": "BRL=X",
+            "BRENT": "BZ=F",
         }
         if ticker in mapping:
             return mapping[ticker]
@@ -91,6 +94,9 @@ class MarketDataService:
             "RADL3", "PRIO3", "EQTL3", "B3SA3", "BPAC11", "CMIG4", "CPLE6", "SANB11",
             "TAEE11",
         ]:
+            return f"{ticker_upper}.SA"
+
+        if re.fullmatch(r"[A-Z]{4}\d{1,2}", ticker_upper):
             return f"{ticker_upper}.SA"
 
         return ticker_upper
@@ -215,6 +221,24 @@ class MarketDataService:
             self.storage.save_json(cache_key, result)
             return result
         return None
+
+    def get_cached_current_price(self, ticker: str) -> dict | None:
+        return self.storage.load_json(f"{self._cache_dir}/current_{ticker}.json")
+
+    def get_external_context(self, period: str = "1y") -> pd.DataFrame | None:
+        columns = {"IBOV": "ibov_close", "USDBRL": "usdbrl_close", "BRENT": "brent_close"}
+        merged = None
+        for ticker, column in columns.items():
+            history = self.get_history(ticker, period=period, interval="1d")
+            if not history or not history.get("prices"):
+                return None
+            part = pd.DataFrame(history["prices"])[["date", "close"]].rename(columns={"close": column})
+            part["date"] = pd.to_datetime(part["date"], utc=True).dt.tz_localize(None)
+            merged = part if merged is None else merged.merge(part, on="date", how="outer")
+        merged = merged.sort_values("date").ffill().dropna().reset_index(drop=True)
+        merged["reference_date"] = merged["date"]
+        merged["available_at"] = merged["date"]
+        return merged.drop(columns=["date"])
 
     def _extract_brapi_history_points(self, item: dict) -> list[dict]:
         for key in ("historicalDataPrice", "prices", "historical", "data"):
@@ -392,3 +416,6 @@ class MarketDataService:
             self.storage.save_json(cache_key, result)
             return result
         return None
+
+    def get_cached_history(self, ticker: str, period: str = "6mo", interval: str = "1d") -> dict | None:
+        return self.storage.load_json(f"{self._cache_dir}/history_{ticker}_{period}_{interval}.json")
