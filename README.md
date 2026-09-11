@@ -7,7 +7,7 @@ Plataforma full-stack para acompanhamento de carteiras de investimento, leitura 
 **Frontend**
 - React 18 + TypeScript
 - Vite
-- React Router DOM
+- React Router DOM 7
 - Tailwind CSS
 - Recharts
 - Lucide React
@@ -17,6 +17,7 @@ Plataforma full-stack para acompanhamento de carteiras de investimento, leitura 
 - FastAPI
 - Pydantic v2
 - Supabase Postgres para persistencia transacional online
+- Redis/Upstash para rate limit em producao
 - yfinance para precos
 - Ingestao de noticias por RSS e listagens oficiais/editoriais abertas
 - scikit-learn, XGBoost, LightGBM
@@ -33,10 +34,13 @@ Frontend (React/Vite) <-> API (FastAPI) <-> Services <-> LocalStorageService
 
 O projeto e um monorepo com frontend em `src/` e backend em `app/`.
 
-O backend agora opera em modo dual:
+O backend agora opera em modo dual e com hardening de producao:
 
 - `Supabase Postgres` para usuarios, sessoes, preferencias, carteiras e posicoes quando `SUPABASE_DB_URL` estiver configurada
 - `LocalStorageService` para noticias, caches, modelos e fallback local
+- sessao web em cookie `operum_session` `HttpOnly`, `SameSite=Lax` e `Secure` em producao
+- rate limit para login, cadastro, chat/IA e endpoints administrativos
+- security headers, CORS restrito e validacao de origem em metodos mutaveis
 
 ## Setup
 
@@ -61,21 +65,30 @@ uvicorn app.main:app --reload --port 8001
 
 Variaveis recomendadas para producao:
 
+- `OPERUM_ENV=production`
 - `SUPABASE_DB_URL`
 - `SUPABASE_URL`
 - `SUPABASE_SECRET_KEY`
 - `SUPABASE_DB_SCHEMA`
+- `CORS_ORIGINS` com os dominios reais do frontend
+- `REDIS_URL` para rate limit distribuido
+- `OPERUM_RATE_LIMIT_ENABLED=true`
+- `OPERUM_COOKIE_SECURE=true`
+- `OPERUM_REFRESH_TOKEN` para endpoints administrativos de noticias
 - `BRAPI_TOKEN` para cotacoes detalhadas e historico autenticado da brapi
 - `OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP`
 - `OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP`
 - `OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP`
+- `OPERUM_SEED_DEMO_USER=false`
 
 Observacao:
 
 - em desenvolvimento, o backend carrega `.env` automaticamente
 - sem `BRAPI_TOKEN`, cotacoes B3 usam a listagem publica da brapi e o historico publico do Yahoo como fallback
 - em producao, use variaveis do provedor do backend
+- em producao, `REDIS_URL` e obrigatoria quando `OPERUM_RATE_LIMIT_ENABLED=true`
 - nao envie `SUPABASE_SECRET_KEY` ou `SUPABASE_DB_URL` para o Vercel se ele hospedar apenas o frontend
+- o frontend deve receber apenas variaveis publicas `VITE_*`, como `VITE_API_BASE_URL`
 
 ### Frontend
 
@@ -101,7 +114,7 @@ O frontend, incluindo o pitch em `/slides`, pode ser publicado no Vercel sem bac
 
 O arquivo `vercel.json` ja inclui o rewrite da SPA. Assim, links diretos como `/slides`, `/app`, `/login` e `/app/carteiras` nao retornam 404.
 
-Quando o backend HTTPS estiver publicado, crie no Vercel a variavel publica `VITE_API_BASE_URL` com a URL da API incluindo o prefixo `/api`, por exemplo `https://api.seu-dominio.com/api`. A variavel deve ser aplicada aos ambientes Production e Preview e requer novo deploy. No backend, inclua os dominios Vercel em `CORS_ORIGINS`, separados por virgula. Nunca cadastre no Vercel do frontend `SUPABASE_SECRET_KEY`, `SUPABASE_DB_URL`, tokens de mercado ou qualquer outro segredo do backend.
+Quando o backend HTTPS estiver publicado, crie no Vercel a variavel publica `VITE_API_BASE_URL` com a URL da API incluindo o prefixo `/api`, por exemplo `https://api.seu-dominio.com/api`. A variavel deve ser aplicada aos ambientes Production e Preview e requer novo deploy. No backend, inclua os dominios Vercel em `CORS_ORIGINS`, separados por virgula. Nunca cadastre no Vercel do frontend `SUPABASE_SECRET_KEY`, `SUPABASE_DB_URL`, tokens de mercado, `OPERUM_REFRESH_TOKEN`, `REDIS_URL` ou qualquer outro segredo do backend.
 
 ### Atualizar os videos do pitch
 
@@ -226,9 +239,13 @@ npm run preview
 # Backend
 uvicorn app.main:app --reload --port 8001
 pytest tests/ -q
+python -m pip_audit -r requirements.txt
 
 # Migracao local -> Supabase
 python scripts/migrate_local_to_supabase.py
+
+# Hardening Supabase/RLS
+python scripts/secure_supabase_rls.py
 ```
 
 ## Documentacao
@@ -253,5 +270,7 @@ python scripts/migrate_local_to_supabase.py
 
 ```bash
 npm run build
-pytest tests/ -q
+npm audit --audit-level=low
+python -m pytest
+python -m pip_audit -r requirements.txt
 ```

@@ -87,7 +87,6 @@ export type UserPreferences = {
 };
 
 export type AuthResponse = {
-  token: string;
   user: User;
 };
 

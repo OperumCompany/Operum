@@ -266,6 +266,29 @@ def get_position_opinion(
     if position is None:
         raise HTTPException(status_code=404, detail="Ativo não encontrado na carteira")
 
+    try:
+        result = asset_analysis_service.generate_asset_analysis(
+            portfolio,
+            ticker.upper(),
+            history_horizon=history_horizon,
+            outlook_horizon=outlook_horizon,
+        )
+    except HTTPException:
+        raise
+    except Exception as exc:
+        logger.warning(
+            "Falha na analise detalhada de %s; tentando fallback preditivo",
+            ticker.upper(),
+            exc_info=exc,
+        )
+    else:
+        if result.get("status") == "not_found":
+            raise HTTPException(status_code=404, detail="Ativo nao encontrado na carteira")
+        return result
+
+    if position.asset_class not in {"BR_STOCK", "FII"}:
+        raise HTTPException(status_code=503, detail="Analise do ativo temporariamente indisponivel")
+
     if position.asset_class in {"BR_STOCK", "FII"}:
         payload = predictive_analysis_service.get_or_bootstrap(
             ticker.upper(),
@@ -281,12 +304,3 @@ def get_position_opinion(
             outlook_horizon=outlook_horizon,
         )
 
-    result = asset_analysis_service.generate_asset_analysis(
-        portfolio,
-        ticker.upper(),
-        history_horizon=history_horizon,
-        outlook_horizon=outlook_horizon,
-    )
-    if result.get("status") == "not_found":
-        raise HTTPException(status_code=404, detail="Ativo nÃ£o encontrado na carteira")
-    return result

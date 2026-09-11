@@ -159,14 +159,28 @@ function horizonButtonClass(isActive: boolean) {
 }
 
 function formatChartDate(value: string) {
-  return new Date(`${value}T00:00:00`).toLocaleDateString('pt-BR', {
+  const date = parseChartDate(value);
+  if (!date) return value;
+  return date.toLocaleDateString('pt-BR', {
     day: '2-digit',
     month: '2-digit',
   });
 }
 
-function addBusinessDays(dateValue: string, days: number) {
-  const date = new Date(`${dateValue}T00:00:00`);
+function parseChartDate(value: string | null | undefined): Date | null {
+  if (!value) return null;
+  const normalized = value.includes('T') ? value : `${value}T00:00:00`;
+  const date = new Date(normalized);
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function isValidSeriesPoint(point: HorizonSeriesPoint | null | undefined): point is HorizonSeriesPoint {
+  return Boolean(point && parseChartDate(point.date) && Number.isFinite(point.value));
+}
+
+function addBusinessDays(dateValue: string, days: number): string | null {
+  const date = parseChartDate(dateValue);
+  if (!date) return null;
   let added = 0;
   while (added < days) {
     date.setDate(date.getDate() + 1);
@@ -193,19 +207,23 @@ function normalizeForecastSeries(
   currentPrice: number | null | undefined,
   outlookHorizon: OutlookHorizonKey,
 ): HorizonSeriesPoint[] {
-  if (!forecast.length) return [];
+  const cleanHistorical = historical.filter(isValidSeriesPoint);
+  const cleanForecast = forecast.filter(isValidSeriesPoint);
+  if (!cleanForecast.length) return [];
 
-  const historicalAnchor = historical.length ? historical[historical.length - 1] : null;
-  const anchorDate = historicalAnchor?.date ?? forecast[0].date;
-  const anchorValue = currentPrice ?? historicalAnchor?.value ?? forecast[0].value;
-  const futureValues = forecast.slice(1, outlookPointLimit(outlookHorizon) + 1);
+  const historicalAnchor = cleanHistorical.length ? cleanHistorical[cleanHistorical.length - 1] : null;
+  const forecastAnchor = cleanForecast[0];
+  const anchorDate = historicalAnchor?.date ?? forecastAnchor.date;
+  const anchorValue = currentPrice ?? historicalAnchor?.value ?? forecastAnchor.value;
+  if (!parseChartDate(anchorDate) || !Number.isFinite(anchorValue)) return [];
+  const futureValues = cleanForecast.slice(1, outlookPointLimit(outlookHorizon) + 1);
 
   return [
     { date: anchorDate, value: anchorValue },
-    ...futureValues.map((point, index) => ({
-      date: addBusinessDays(anchorDate, index + 1),
-      value: point.value,
-    })),
+    ...futureValues.flatMap((point, index) => {
+      const date = addBusinessDays(anchorDate, index + 1);
+      return date ? [{ date, value: point.value }] : [];
+    }),
   ];
 }
 
@@ -215,12 +233,15 @@ function mergeChartSeries(
   currentPrice: number | null | undefined,
   outlookHorizon: OutlookHorizonKey,
 ): ChartPoint[] {
-  const historicalMap = new Map(historical.map((point) => [point.date, point.value]));
-  const normalizedForecast = normalizeForecastSeries(historical, forecast, currentPrice, outlookHorizon);
+  const cleanHistorical = historical.filter(isValidSeriesPoint);
+  const historicalMap = new Map(cleanHistorical.map((point) => [point.date, point.value]));
+  const normalizedForecast = normalizeForecastSeries(cleanHistorical, forecast, currentPrice, outlookHorizon);
   const forecastMap = new Map(normalizedForecast.map((point) => [point.date, point.value]));
-  const dates = Array.from(new Set([...historicalMap.keys(), ...forecastMap.keys()])).sort();
-  const todayDate = historical.length
-    ? historical[historical.length - 1].date
+  const dates = Array.from(new Set([...historicalMap.keys(), ...forecastMap.keys()]))
+    .filter((date) => parseChartDate(date))
+    .sort();
+  const todayDate = cleanHistorical.length
+    ? cleanHistorical[cleanHistorical.length - 1].date
     : normalizedForecast.length
       ? normalizedForecast[0].date
       : null;

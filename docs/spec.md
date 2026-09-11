@@ -1,7 +1,7 @@
 # Specification - Operum
 
 > Especificacao funcional, contratos de API e regras de produto.
-> Ultima atualizacao: 01/07/2026
+> Ultima atualizacao: 11/09/2026
 
 ---
 
@@ -40,11 +40,13 @@ Fora de escopo por enquanto:
 | A-01 | Permitir cadastro de usuario com nome, email e senha | Alta |
 | A-02 | Garantir unicidade de email | Alta |
 | A-03 | Permitir login com email e senha | Alta |
-| A-04 | Persistir sessao autenticada por token | Alta |
+| A-04 | Persistir sessao autenticada em cookie server-side `HttpOnly` | Alta |
 | A-05 | Permitir logout explicito | Alta |
 | A-06 | Permitir alteracao de senha mediante senha atual valida | Alta |
 | A-07 | Bloquear acesso a rotas privadas sem autenticacao | Alta |
 | A-08 | Responder com erro claro para credenciais invalidas | Alta |
+| A-09 | Aplicar rate limit em login e cadastro | Alta |
+| A-10 | Nao expor token de sessao no frontend | Alta |
 
 ### 2.2 Preferencias do Usuario
 
@@ -223,9 +225,10 @@ Body:
 }
 Response:
 {
-  "token": "...",
   "user": User
 }
+Set-Cookie:
+operum_session=...; HttpOnly; SameSite=Lax; Path=/; Secure em producao
 ```
 
 ```http
@@ -609,10 +612,16 @@ Telas analiticas tambem devem suportar:
 
 - Senhas nunca devem ser persistidas em texto puro
 - Tokens e chaves nao devem ficar expostos no frontend
+- O frontend nao deve persistir token de sessao em `localStorage`
+- A sessao web usa cookie `operum_session` com `HttpOnly`, `SameSite=Lax`, `Path=/` e `Secure` em producao
 - Usuario so pode acessar suas proprias carteiras, preferencias e analises
-- Token invalido deve bloquear o acesso e forcar novo login
+- Cookie ausente ou sessao invalida deve bloquear o acesso e forcar novo login
 - Logout deve invalidar a sessao local mesmo que a chamada remota falhe
-- A sessao atual nao expira automaticamente por tempo nesta fase; acesso e bloqueado por token invalido ou logout
+- A sessao atual nao expira automaticamente por tempo nesta fase; acesso e bloqueado por sessao invalida ou logout
+- Login, cadastro, chat/IA e endpoints administrativos devem ter rate limit
+- Em producao, rate limit distribuido depende de `REDIS_URL`; fallback em memoria so e aceitavel fora de producao
+- A API deve enviar security headers e validar `Origin` em metodos mutaveis
+- CORS deve aceitar apenas origens configuradas em `CORS_ORIGINS`
 - Com `SUPABASE_DB_URL` configurada, usuarios, hashes de senha, sessoes e preferencias sao persistidos no Supabase Postgres
 - `app_users`, `auth_sessions`, `user_preferences`, `portfolios` e `portfolio_positions` devem manter RLS ativo e sem policies publicas enquanto a auth propria estiver no backend
 
@@ -622,13 +631,18 @@ Telas analiticas tambem devem suportar:
 
 - `POST /auth/register` cria conta com email unico
 - `POST /auth/register` cria linha em `app_users` e sessao em `auth_sessions` quando Postgres esta habilitado
-- `POST /auth/login` retorna token e usuario quando as credenciais sao validas
+- `POST /auth/register` e `POST /auth/login` retornam usuario e setam cookie `operum_session`
+- `POST /auth/login` autentica quando as credenciais sao validas
 - `POST /auth/logout` remove a sessao persistida em `auth_sessions`
+- `POST /auth/logout` limpa o cookie de sessao
 - `PUT /auth/password` exige senha atual valida
 - `GET /auth/preferences` retorna preferencias do usuario autenticado ou fallback padrao
 - `PUT /auth/preferences` persiste temas e preferencia de interface
+- payloads com campos desconhecidos em requests sensiveis retornam `422`
+- repeticao excessiva de login ou chat retorna `429` com `Retry-After`
 - `GET /news` retorna `page_size=30` e `total_pages`
-- `POST /news/backfill` aceita `source_id` opcional
+- `POST /news/backfill` aceita `source_id` opcional e exige `OPERUM_REFRESH_TOKEN`
+- `POST /news/reindex` e `POST /news/backfill` falham quando token administrativo nao estiver configurado
 - `GET /models/opinion/{portfolio_id}/positions/{ticker}` retorna `historical_window`, `source_groups` e `used_news_count`
 - Noticias oficiais e editoriais coexistem no acervo sem quebrar resumo, scoring ou clustering
 - A analise do ativo usa noticias do periodo quando o historico de preco for insuficiente

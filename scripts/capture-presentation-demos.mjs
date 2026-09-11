@@ -12,7 +12,7 @@ const outputDir = path.resolve('public/presentation/demos');
 const videoDir = path.join(tmpdir(), 'operum-presentation-recordings');
 const password = `Operum-${randomUUID()}!`;
 const email = `pitch-${Date.now()}@operum.demo`;
-let token = '';
+let sessionCookie = '';
 let examplePortfolioId = '';
 
 const pause = (milliseconds) => new Promise((resolve) => setTimeout(resolve, milliseconds));
@@ -37,26 +37,25 @@ async function trimRecording(source, destination, startSeconds, durationSeconds)
 async function request(pathname, options = {}) {
   const response = await fetch(`${apiUrl}${pathname}`, {
     ...options,
-    headers: { 'Content-Type': 'application/json', ...(options.headers ?? {}) },
+    headers: { 'Content-Type': 'application/json', ...(sessionCookie ? { Cookie: sessionCookie } : {}), ...(options.headers ?? {}) },
   });
   if (!response.ok) throw new Error(`${pathname}: HTTP ${response.status} ${await response.text()}`);
+  const setCookie = response.headers.get('set-cookie');
+  if (setCookie?.includes('operum_session=')) {
+    sessionCookie = setCookie.split(';', 1)[0];
+  }
   return response.json();
 }
 
 async function createTemporaryAccount() {
-  const session = await request('/auth/register', {
+  await request('/auth/register', {
     method: 'POST',
     body: JSON.stringify({ name: 'Operum Pitch', email, password }),
   });
-  token = session.token;
-}
-
-function authHeaders() {
-  return { Authorization: `Bearer ${token}` };
 }
 
 async function loadExamplePortfolio() {
-  const portfolios = await request('/portfolios', { headers: authHeaders() });
+  const portfolios = await request('/portfolios');
   const examplePortfolio = portfolios.find((portfolio) => portfolio.kind === 'example');
   if (!examplePortfolio) throw new Error('A conta temporária não recebeu a Carteira Exemplo.');
   examplePortfolioId = examplePortfolio.id;
@@ -65,12 +64,10 @@ async function loadExamplePortfolio() {
 async function prepareChatConversation() {
   const conversation = await request('/chat/conversations', {
     method: 'POST',
-    headers: authHeaders(),
     body: JSON.stringify({ portfolio_id: examplePortfolioId, use_all_portfolios: false }),
   });
   await request(`/chat/conversations/${conversation.id}/messages`, {
     method: 'POST',
-    headers: authHeaders(),
     body: JSON.stringify({
       content: 'Como está a composição da minha carteira ativa?',
       portfolio_id: examplePortfolioId,
@@ -80,10 +77,9 @@ async function prepareChatConversation() {
 }
 
 async function removeTemporaryAccount() {
-  if (!token) return;
+  if (!sessionCookie) return;
   await request('/auth/account', {
     method: 'DELETE',
-    headers: { Authorization: `Bearer ${token}` },
     body: JSON.stringify({ current_password: password, confirmation: 'Excluir' }),
   }).catch(() => undefined);
 }
@@ -101,9 +97,21 @@ async function record(browser, { file, route, title, action, settleMs = 8_500, c
     colorScheme: 'light',
     recordVideo: { dir: videoDir, size: { width: 1280, height: 720 } },
   });
+  const cookieUrl = new URL(apiUrl.replace(/\/api\/?$/, ''));
+  const [, cookieValue = ''] = sessionCookie.split('=');
+  if (cookieValue) {
+    await context.addCookies([{
+      name: 'operum_session',
+      value: cookieValue,
+      domain: cookieUrl.hostname,
+      path: '/',
+      httpOnly: true,
+      secure: cookieUrl.protocol === 'https:',
+      sameSite: 'Lax',
+    }]);
+  }
   const page = await context.newPage();
   page.setDefaultTimeout(5_000);
-  await page.addInitScript((sessionToken) => localStorage.setItem('operum_auth_token', JSON.stringify(sessionToken)), token);
   await page.goto(`${frontendUrl}${route}`, { waitUntil: 'domcontentloaded' });
   await waitForApplication(page);
   try {

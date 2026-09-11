@@ -5,7 +5,6 @@ export function resolveApiBaseUrl(configuredUrl?: string): string {
 
 const viteEnv = (import.meta as ImportMeta & { env?: { VITE_API_BASE_URL?: string } }).env;
 const API_BASE = resolveApiBaseUrl(viteEnv?.VITE_API_BASE_URL);
-const AUTH_TOKEN_KEY = 'operum_auth_token';
 
 type ApiRequestOptions = RequestInit & {
   auth?: boolean;
@@ -14,26 +13,17 @@ type ApiRequestOptions = RequestInit & {
 class ApiClient {
   private readonly inFlightGets = new Map<string, Promise<unknown>>();
 
-  private getAuthToken(): string | null {
-    try {
-      return JSON.parse(localStorage.getItem(AUTH_TOKEN_KEY) ?? 'null');
-    } catch {
-      return null;
-    }
-  }
-
   private invalidateInFlightGets(): void {
     this.inFlightGets.clear();
   }
 
   private async request<T>(path: string, options?: ApiRequestOptions): Promise<T> {
     const url = `${API_BASE}${path}`;
-    const { auth = true, headers, ...fetchOptions } = options ?? {};
-    const token = auth ? this.getAuthToken() : null;
+    const { auth: _auth = true, headers, ...fetchOptions } = options ?? {};
     const res = await fetch(url, {
+      credentials: 'include',
       headers: {
         'Content-Type': 'application/json',
-        ...(token ? { Authorization: `Bearer ${token}` } : {}),
         ...headers,
       },
       ...fetchOptions,
@@ -46,7 +36,7 @@ class ApiClient {
   }
 
   get<T>(path: string): Promise<T> {
-    const key = `${this.getAuthToken() ?? 'anonymous'}:${path}`;
+    const key = path;
     const existing = this.inFlightGets.get(key) as Promise<T> | undefined;
     if (existing) return existing;
 

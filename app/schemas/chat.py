@@ -1,21 +1,23 @@
 from datetime import datetime
 from typing import Any
 
-from pydantic import BaseModel, Field
+from pydantic import Field
+
+from app.schemas.base import StrictBaseModel
 
 
-class ChatInputMessage(BaseModel):
+class ChatInputMessage(StrictBaseModel):
     role: str = Field(pattern="^(user|assistant)$")
     content: str = Field(min_length=1, max_length=8000)
 
 
-class ChatRequest(BaseModel):
-    messages: list[ChatInputMessage]
+class ChatRequest(StrictBaseModel):
+    messages: list[ChatInputMessage] = Field(min_length=1, max_length=20)
     portfolio_id: str | None = None
     use_all_portfolios: bool = False
 
 
-class ChatSource(BaseModel):
+class ChatSource(StrictBaseModel):
     id: str
     type: str = Field(default="news", pattern="^(knowledge|news)$")
     title: str
@@ -25,7 +27,7 @@ class ChatSource(BaseModel):
     similarity: float | None = None
 
 
-class ChatResponse(BaseModel):
+class ChatResponse(StrictBaseModel):
     message: str
     mode: str
     used_portfolio_context: bool
@@ -33,23 +35,23 @@ class ChatResponse(BaseModel):
     retrieval: dict[str, Any] = Field(default_factory=dict)
 
 
-class ConversationCreate(BaseModel):
-    title: str | None = Field(default=None, max_length=100)
+class ConversationCreate(StrictBaseModel):
+    title: str | None = Field(default=None, min_length=1, max_length=100)
     portfolio_id: str | None = None
     use_all_portfolios: bool = False
 
 
-class ConversationUpdate(BaseModel):
+class ConversationUpdate(StrictBaseModel):
     title: str = Field(min_length=1, max_length=100)
 
 
-class ConversationMessageCreate(BaseModel):
+class ConversationMessageCreate(StrictBaseModel):
     content: str = Field(min_length=1, max_length=8000)
     portfolio_id: str | None = None
     use_all_portfolios: bool | None = None
 
 
-class ChatConversation(BaseModel):
+class ChatConversation(StrictBaseModel):
     id: str
     owner_id: str
     title: str
@@ -61,7 +63,7 @@ class ChatConversation(BaseModel):
     message_count: int = 0
 
 
-class StoredChatMessage(BaseModel):
+class StoredChatMessage(StrictBaseModel):
     id: str
     conversation_id: str
     role: str
@@ -72,7 +74,7 @@ class StoredChatMessage(BaseModel):
     created_at: datetime
 
 
-class ConversationMessageResponse(BaseModel):
+class ConversationMessageResponse(StrictBaseModel):
     conversation: ChatConversation
     user_message: StoredChatMessage
     assistant_message: StoredChatMessage

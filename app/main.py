@@ -12,6 +12,7 @@ from app.core.config import (
     OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP,
     OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP,
 )
+from app.core.security import SecurityMiddleware
 
 logger = logging.getLogger(__name__)
 logging.getLogger("yfinance").setLevel(logging.CRITICAL)
@@ -105,9 +106,10 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],
 )
+app.add_middleware(SecurityMiddleware)
 
 app.include_router(health.router, prefix="/api")
 app.include_router(auth.router, prefix="/api")

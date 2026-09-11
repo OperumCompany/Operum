@@ -53,14 +53,12 @@ test('uses a configured public API URL without a trailing slash', () => {
 
 test('deduplicates only identical GET requests that are still in flight', async () => {
   const originalFetch = globalThis.fetch;
-  const originalLocalStorage = globalThis.localStorage;
   let fetchCount = 0;
   let releaseFirstRequest;
+  let firstOptions;
 
-  globalThis.localStorage = {
-    getItem: () => null,
-  };
-  globalThis.fetch = async () => {
+  globalThis.fetch = async (_url, options = {}) => {
+    firstOptions ??= options;
     fetchCount += 1;
     if (fetchCount === 1) {
       await new Promise((resolve) => { releaseFirstRequest = resolve; });
@@ -77,6 +75,7 @@ test('deduplicates only identical GET requests that are still in flight', async 
     await Promise.resolve();
 
     assert.equal(fetchCount, 1);
+    assert.equal(firstOptions.credentials, 'include');
     releaseFirstRequest();
     assert.deepEqual(await Promise.all([first, duplicate]), [{ request: 1 }, { request: 1 }]);
 
@@ -84,20 +83,18 @@ test('deduplicates only identical GET requests that are still in flight', async 
     assert.equal(fetchCount, 2);
   } finally {
     globalThis.fetch = originalFetch;
-    if (originalLocalStorage === undefined) delete globalThis.localStorage;
-    else globalThis.localStorage = originalLocalStorage;
   }
 });
 
 test('does not reuse an in-flight GET after a mutation starts', async () => {
   const originalFetch = globalThis.fetch;
-  const originalLocalStorage = globalThis.localStorage;
   let getCount = 0;
   let releaseStaleRequest;
+  let postOptions;
 
-  globalThis.localStorage = { getItem: () => null };
   globalThis.fetch = async (_url, options = {}) => {
     if ((options.method ?? 'GET') === 'POST') {
+      postOptions = options;
       return new Response(JSON.stringify({ saved: true }), { status: 200 });
     }
     getCount += 1;
@@ -112,6 +109,7 @@ test('does not reuse an in-flight GET after a mutation starts', async () => {
     const stale = api.get('/portfolio');
     await Promise.resolve();
     await api.post('/portfolio', { name: 'Atualizada' });
+    assert.equal(postOptions.credentials, 'include');
     const fresh = api.get('/portfolio');
     await Promise.resolve();
 
@@ -121,7 +119,5 @@ test('does not reuse an in-flight GET after a mutation starts', async () => {
     assert.deepEqual(await stale, { request: 1 });
   } finally {
     globalThis.fetch = originalFetch;
-    if (originalLocalStorage === undefined) delete globalThis.localStorage;
-    else globalThis.localStorage = originalLocalStorage;
   }
 });

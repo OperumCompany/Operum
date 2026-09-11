@@ -13,7 +13,7 @@ Responsáveis:
 - Infraestrutura -> Aksel
 
 Data de criação: 15/06/2026  
-Última atualização: 01/07/2026
+Última atualização: 11/09/2026
 
 ---
 
@@ -197,11 +197,12 @@ Descrição: o usuário cria conta, faz login, mantém sessão e altera senha
 Problema que resolve: garante acesso individual aos dados e continuidade de uso  
 Usuário: usuário comum  
 Entrada esperada: nome, e-mail e senha  
-Saída esperada: conta criada, sessão iniciada e acesso ao sistema  
+Saída esperada: conta criada, sessão iniciada por cookie seguro e acesso ao sistema  
 Regras de negócio:
 - e-mail deve ser único
 - senha deve ter tamanho mínimo
 - rotas privadas exigem autenticação
+- login e cadastro devem ter proteção contra abuso por rate limit
 Critérios de aceitação:
 - usuário consegue criar conta
 - usuário consegue fazer login
@@ -607,6 +608,10 @@ Manutenibilidade:
 
 Segurança operacional:
 - tokens e segredos não devem ficar expostos no frontend
+- sessões web devem usar cookie seguro HttpOnly, sem token persistido no navegador
+- endpoints de login, cadastro, chat/IA e operações administrativas devem ter rate limit
+- a API deve aplicar cabeçalhos de segurança, CORS restrito e validação de origem em operações mutáveis
+- payloads de entrada devem rejeitar campos desconhecidos em rotas sensíveis
 - falhas de autenticação e serviços críticos devem ser registradas
 
 ---
@@ -728,6 +733,7 @@ Sessão:
 - usuário
 - data de criação
 - data de expiração
+- cookie HttpOnly usado pelo navegador para referenciar a sessão
 
 Preferências:
 - tópicos de notícias
@@ -784,6 +790,7 @@ Dados sensíveis:
 - e-mail
 - token de sessão
 - eventuais chaves de integração
+- chaves de API e conexão devem permanecer apenas no backend
 
 Necessidade de histórico:
 - o usuário deve conseguir visualizar análises e notícias persistidas em contexto recente
@@ -801,7 +808,7 @@ Resposta:
 
 Autenticação:
 - acesso por e-mail e senha
-- sessão persistida por token
+- sessão persistida no backend e vinculada ao navegador por cookie HttpOnly
 - logout explícito disponível ao usuário
 
 Autorização:
@@ -811,12 +818,19 @@ Autorização:
 Proteção de dados sensíveis:
 - senhas nunca devem ser salvas em texto puro
 - tokens e chaves não podem ficar expostos no frontend
+- token de sessão não deve ser salvo em localStorage
 - dados do usuário devem ser isolados por identidade
 
 Regras de sessão:
-- token inválido deve bloquear acesso
+- sessão inválida deve bloquear acesso
 - sessão expirada deve redirecionar para login
 - usuário pode encerrar a sessão manualmente
+
+Proteções adicionais:
+- login, cadastro e chat devem ter limite de tentativas
+- endpoints administrativos devem exigir token administrativo configurado
+- CORS deve aceitar apenas origens conhecidas
+- respostas da API não devem expor detalhes internos desnecessários
 
 Riscos de segurança relevantes:
 - acesso indevido a dados de outro usuário
@@ -824,6 +838,7 @@ Riscos de segurança relevantes:
 - abuso de endpoints de análise
 - injeção em campos de texto
 - vazamento de chaves de integração
+- abuso automatizado sem WAF ou bot protection na borda
 
 ---
 
@@ -950,6 +965,11 @@ Testes de segurança básicos:
 - usuário não acessa dados de outro usuário
 - senha não aparece em respostas
 - rotas privadas exigem autenticação
+- login repetido recebe bloqueio por rate limit
+- chamadas autenticadas funcionam por cookie seguro
+- endpoints administrativos de notícias falham sem token configurado
+- payloads com campos desconhecidos em rotas sensíveis são rejeitados
+- headers de segurança estão presentes nas respostas da API
 
 ---
 
@@ -965,6 +985,8 @@ Ambientes necessários:
 Deploy:
 - o sistema deve permitir deploy controlado do frontend e backend separadamente
 - mudanças aprovadas devem poder ser publicadas sem depender de ajuste manual complexo
+- produção deve usar HTTPS, cookie seguro, Redis/Upstash para rate limit e variáveis de ambiente separadas por camada
+- o frontend deve receber somente variáveis públicas `VITE_*`
 
 Logs:
 - erros de autenticação, notícias, dados de mercado e análise devem ser registrados
@@ -974,6 +996,7 @@ Monitoramento:
 - erro em integração externa
 - falha de autenticação
 - lentidão nos endpoints de análise
+- ocorrência de rate limit em login e IA
 
 Backup:
 - dados persistidos localmente devem ter política simples de backup em ambientes relevantes

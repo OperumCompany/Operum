@@ -27,6 +27,14 @@ _load_local_env()
 DATA_DIR = os.environ.get("OPERUM_DATA_DIR", os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data"))
 CORS_ORIGINS = os.environ.get("CORS_ORIGINS", "http://localhost:5173,http://localhost:3000").split(",")
 API_PREFIX = "/api"
+OPERUM_ENV = os.environ.get("OPERUM_ENV", "development").strip().lower()
+OPERUM_SESSION_COOKIE = os.environ.get("OPERUM_SESSION_COOKIE", "operum_session").strip()
+OPERUM_COOKIE_SECURE = os.environ.get("OPERUM_COOKIE_SECURE", "true" if OPERUM_ENV == "production" else "false").lower() == "true"
+OPERUM_RATE_LIMIT_ENABLED = os.environ.get(
+    "OPERUM_RATE_LIMIT_ENABLED",
+    "true" if OPERUM_ENV == "production" else "false",
+).lower() == "true"
+REDIS_URL = os.environ.get("REDIS_URL", "").strip()
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_PUBLISHABLE_KEY = os.environ.get("SUPABASE_PUBLISHABLE_KEY", "")
 SUPABASE_SECRET_KEY = os.environ.get("SUPABASE_SECRET_KEY", "")
