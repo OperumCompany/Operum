@@ -6,7 +6,7 @@ from datetime import date, datetime, timezone
 from email.utils import parsedate_to_datetime
 from html import unescape
 from typing import Optional
-from urllib.parse import quote, urljoin
+from urllib.parse import urljoin
 
 import feedparser
 import requests

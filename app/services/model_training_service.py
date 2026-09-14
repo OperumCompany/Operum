@@ -1,15 +1,8 @@
 import logging
 import os
 import joblib
-import numpy as np
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-
-try:
-    import lightgbm as lgb
-    _HAS_LGB = True
-except ImportError:
-    _HAS_LGB = False
 
 from app.services.news_ingestion_service import NewsIngestionService
 from app.services.forecast_service import ForecastService
@@ -18,12 +11,6 @@ logger = logging.getLogger(__name__)
 
 MODEL_DIR = os.path.join(
     os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data", "models"
-)
-DATASET_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(__file__))),
-    "data",
-    "datasets",
-    "train",
 )
 
 

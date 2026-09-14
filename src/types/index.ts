@@ -74,12 +74,6 @@ export type ConversationMessageResponse = {
 
 export type AssetClass = 'Renda fixa' | 'Ações Brasil' | 'Ações EUA' | 'Fundos' | 'Cripto';
 
-export type DashboardMetric = {
-  label: string;
-  value: string;
-  variation: string;
-};
-
 export type UserPreferences = {
   topics: NewsCategory[];
   compactMode: boolean;

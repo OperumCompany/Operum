@@ -11,7 +11,7 @@ from app.core.config import AI_ENHANCE_ASSET_ANALYSIS
 from app.schemas.news import NewsItem
 from app.schemas.portfolio import Portfolio, Position
 from app.services.asset_universe_service import AssetUniverseService
-from app.services.forecast_service import FORECAST_HORIZONS, ForecastService
+from app.services.forecast_service import ForecastService
 from app.services.llm_prompts import ASSET_ANALYSIS_REFINER_PROMPT
 from app.services.llm_service import LLMService
 from app.services.local_storage_service import LocalStorageService

@@ -1,9 +1,6 @@
 export const storageKeys = {
-  authToken: 'operum_auth_token',
-  portfolios: 'operum_portfolios',
   activePortfolio: 'operum_active_portfolio',
   chat: 'operum_chat',
-  preferences: 'operum_preferences',
   theme: 'operum_theme',
 };
 

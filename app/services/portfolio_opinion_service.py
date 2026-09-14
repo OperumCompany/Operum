@@ -2,8 +2,6 @@ import logging
 from collections import Counter
 from datetime import datetime, timezone
 
-import pandas as pd
-
 from app.core.config import AI_ENHANCE_PORTFOLIO_ANALYSIS
 from app.schemas.portfolio import Portfolio
 from app.services.asset_analysis_service import AssetAnalysisService

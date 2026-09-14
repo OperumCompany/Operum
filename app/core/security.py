@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import json
-from urllib.parse import urlparse
 
 from fastapi import HTTPException, Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware
