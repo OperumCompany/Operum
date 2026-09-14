@@ -274,3 +274,9 @@ npm audit --audit-level=low
 python -m pytest
 python -m pip_audit -r requirements.txt
 ```
+
+### Performance das an?lises
+
+A an?lise reutiliza dados dentro de cada requisi??o e consulta hist?ricos independentes em paralelo. Modelos ausentes s?o preparados pelo worker, sem treinamento durante o clique; a interface identifica previs?es provis?rias. `./iniciar.ps1` inicia o worker e `./iniciar.ps1 -Stop` encerra os servi?os locais.
+
+Consulte [configura??o, contrato e valida??o de performance](docs/analysis-performance.md).

@@ -1,0 +1,364 @@
+{
+  "baseline_ref": "1e4ac3a703bcd81a0ed62f1278ef3c4bbb08283f",
+  "repeats": 5,
+  "horizon_equivalence_checks": 19,
+  "scope": "Offline fixtures; simulated I/O and LLM latency, no real training or inference timing",
+  "query_median_ms_by_workers": {
+    "1": 208.11,
+    "4": 62.8
+  },
+  "query_reduction_pct": 69.82,
+  "scenarios": [
+    {
+      "mode": "warm_data",
+      "operation": "asset",
+      "assets": 1,
+      "equivalent": true,
+      "before": {
+        "median_ms": 91.71,
+        "p95_ms": 93.53,
+        "llm_median_ms": 3.24,
+        "operations": {
+          "news_load": 1,
+          "current_price": 10,
+          "history": 19,
+          "forecast": 1,
+          "llm": 1
+        }
+      },
+      "after": {
+        "median_ms": 50.23,
+        "p95_ms": 52.09,
+        "llm_median_ms": 3.21,
+        "operations": {
+          "news_load": 1,
+          "history": 2,
+          "current_price": 1,
+          "forecast": 1,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "warm_data",
+      "operation": "portfolio",
+      "assets": 5,
+      "equivalent": true,
+      "before": {
+        "median_ms": 501.18,
+        "p95_ms": 536.8,
+        "llm_median_ms": 20.39,
+        "operations": {
+          "history": 102,
+          "news_load": 6,
+          "forecast": 10,
+          "current_price": 70,
+          "llm": 6
+        }
+      },
+      "after": {
+        "median_ms": 46.18,
+        "p95_ms": 46.97,
+        "llm_median_ms": 3.11,
+        "operations": {
+          "history": 6,
+          "news_load": 1,
+          "forecast": 5,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "warm_data",
+      "operation": "portfolio",
+      "assets": 10,
+      "equivalent": true,
+      "before": {
+        "median_ms": 515.87,
+        "p95_ms": 524.61,
+        "llm_median_ms": 19.77,
+        "operations": {
+          "history": 107,
+          "news_load": 6,
+          "forecast": 13,
+          "current_price": 95,
+          "llm": 6
+        }
+      },
+      "after": {
+        "median_ms": 62.27,
+        "p95_ms": 64.79,
+        "llm_median_ms": 3.48,
+        "operations": {
+          "history": 11,
+          "news_load": 1,
+          "forecast": 8,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "warm_data",
+      "operation": "portfolio",
+      "assets": 20,
+      "equivalent": true,
+      "before": {
+        "median_ms": 539.06,
+        "p95_ms": 552.46,
+        "llm_median_ms": 19.79,
+        "operations": {
+          "history": 111,
+          "news_load": 6,
+          "forecast": 13,
+          "current_price": 145,
+          "llm": 6
+        }
+      },
+      "after": {
+        "median_ms": 96.96,
+        "p95_ms": 127.61,
+        "llm_median_ms": 3.36,
+        "operations": {
+          "history": 23,
+          "news_load": 1,
+          "forecast": 8,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "cold_data",
+      "operation": "asset",
+      "assets": 1,
+      "equivalent": true,
+      "before": {
+        "median_ms": 145.86,
+        "p95_ms": 155.46,
+        "llm_median_ms": 3.26,
+        "operations": {
+          "news_load": 1,
+          "current_price": 10,
+          "history": 19,
+          "forecast": 1,
+          "llm": 1
+        }
+      },
+      "after": {
+        "median_ms": 56.84,
+        "p95_ms": 59.05,
+        "llm_median_ms": 3.29,
+        "operations": {
+          "news_load": 1,
+          "history": 2,
+          "current_price": 1,
+          "forecast": 1,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "cold_data",
+      "operation": "portfolio",
+      "assets": 5,
+      "equivalent": true,
+      "before": {
+        "median_ms": 829.75,
+        "p95_ms": 864.81,
+        "llm_median_ms": 20.36,
+        "operations": {
+          "history": 102,
+          "news_load": 6,
+          "forecast": 10,
+          "current_price": 70,
+          "llm": 6
+        }
+      },
+      "after": {
+        "median_ms": 57.27,
+        "p95_ms": 58.93,
+        "llm_median_ms": 3.6,
+        "operations": {
+          "history": 6,
+          "news_load": 1,
+          "forecast": 5,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "cold_data",
+      "operation": "portfolio",
+      "assets": 10,
+      "equivalent": true,
+      "before": {
+        "median_ms": 865.64,
+        "p95_ms": 899.1,
+        "llm_median_ms": 19.3,
+        "operations": {
+          "history": 107,
+          "news_load": 6,
+          "forecast": 13,
+          "current_price": 95,
+          "llm": 6
+        }
+      },
+      "after": {
+        "median_ms": 76.49,
+        "p95_ms": 77.66,
+        "llm_median_ms": 3.27,
+        "operations": {
+          "history": 11,
+          "news_load": 1,
+          "forecast": 8,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "cold_data",
+      "operation": "portfolio",
+      "assets": 20,
+      "equivalent": true,
+      "before": {
+        "median_ms": 922.25,
+        "p95_ms": 927.99,
+        "llm_median_ms": 20.29,
+        "operations": {
+          "history": 111,
+          "news_load": 6,
+          "forecast": 13,
+          "current_price": 145,
+          "llm": 6
+        }
+      },
+      "after": {
+        "median_ms": 125.54,
+        "p95_ms": 151.3,
+        "llm_median_ms": 3.43,
+        "operations": {
+          "history": 23,
+          "news_load": 1,
+          "forecast": 8,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "models_absent",
+      "operation": "asset",
+      "assets": 1,
+      "equivalent": true,
+      "before": {
+        "median_ms": 92.09,
+        "p95_ms": 97.08,
+        "llm_median_ms": 3.21,
+        "operations": {
+          "news_load": 1,
+          "current_price": 10,
+          "history": 19,
+          "forecast": 1,
+          "llm": 1
+        }
+      },
+      "after": {
+        "median_ms": 48.34,
+        "p95_ms": 50.52,
+        "llm_median_ms": 3.41,
+        "operations": {
+          "news_load": 1,
+          "history": 2,
+          "current_price": 1,
+          "forecast": 1,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "models_absent",
+      "operation": "portfolio",
+      "assets": 5,
+      "equivalent": true,
+      "before": {
+        "median_ms": 486.54,
+        "p95_ms": 495.16,
+        "llm_median_ms": 20.09,
+        "operations": {
+          "history": 102,
+          "news_load": 6,
+          "forecast": 10,
+          "current_price": 70,
+          "llm": 6
+        }
+      },
+      "after": {
+        "median_ms": 44.43,
+        "p95_ms": 45.02,
+        "llm_median_ms": 3.28,
+        "operations": {
+          "history": 6,
+          "news_load": 1,
+          "forecast": 5,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "models_absent",
+      "operation": "portfolio",
+      "assets": 10,
+      "equivalent": true,
+      "before": {
+        "median_ms": 508.25,
+        "p95_ms": 512.0,
+        "llm_median_ms": 19.92,
+        "operations": {
+          "history": 107,
+          "news_load": 6,
+          "forecast": 13,
+          "current_price": 95,
+          "llm": 6
+        }
+      },
+      "after": {
+        "median_ms": 57.7,
+        "p95_ms": 88.34,
+        "llm_median_ms": 3.43,
+        "operations": {
+          "history": 11,
+          "news_load": 1,
+          "forecast": 8,
+          "llm": 1
+        }
+      }
+    },
+    {
+      "mode": "models_absent",
+      "operation": "portfolio",
+      "assets": 20,
+      "equivalent": true,
+      "before": {
+        "median_ms": 534.33,
+        "p95_ms": 536.68,
+        "llm_median_ms": 19.9,
+        "operations": {
+          "history": 111,
+          "news_load": 6,
+          "forecast": 13,
+          "current_price": 145,
+          "llm": 6
+        }
+      },
+      "after": {
+        "median_ms": 90.99,
+        "p95_ms": 94.14,
+        "llm_median_ms": 3.54,
+        "operations": {
+          "history": 23,
+          "news_load": 1,
+          "forecast": 8,
+          "llm": 1
+        }
+      }
+    }
+  ]
+}

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import uuid
+from functools import wraps
+from app.services.file_lock import file_lock
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -10,6 +12,16 @@ import pandas as pd
 
 from app.db.postgres import PostgresClient
 from app.services.local_storage_service import LocalStorageService
+
+
+def local_jobs_transaction(function):
+    @wraps(function)
+    def wrapped(self, *args, **kwargs):
+        if self.enabled:
+            return function(self, *args, **kwargs)
+        with file_lock(str(Path(self.storage.base_dir) / (self._jobs_path + ".lock"))):
+            return function(self, *args, **kwargs)
+    return wrapped
 
 
 class PredictionRepository:
@@ -649,6 +661,7 @@ class PredictionRepository:
         rows = [item for item in (self.storage.load_json(self._snapshots_path) or []) if item["ticker"] == ticker]
         return sorted(rows, key=lambda item: item["created_at"], reverse=True)[:limit]
 
+    @local_jobs_transaction
     def enqueue_job(
         self,
         ticker: str,
@@ -695,6 +708,7 @@ class PredictionRepository:
         self.storage.save_json(self._jobs_path, jobs)
         return job
 
+    @local_jobs_transaction
     def claim_next_job(self) -> dict | None:
         now = datetime.now(timezone.utc)
         if self.enabled:
@@ -735,9 +749,11 @@ class PredictionRepository:
         self.storage.save_json(self._jobs_path, jobs)
         return dict(job)
 
+    @local_jobs_transaction
     def complete_job(self, job_id: str) -> None:
         self._update_job(job_id, status="completed", error=None)
 
+    @local_jobs_transaction
     def fail_job(self, job_id: str, error: str, *, max_attempts: int = 3) -> None:
         if self.enabled:
             row = self.db.fetch_one("select attempts from public.analysis_jobs where id=%s", (job_id,))
@@ -751,6 +767,23 @@ class PredictionRepository:
         job["status"] = "failed" if int(job["attempts"]) >= max_attempts else "pending"
         job["error"] = error
         job["updated_at"] = datetime.now(timezone.utc).isoformat()
+        self.storage.save_json(self._jobs_path, jobs)
+
+    @local_jobs_transaction
+    def recover_running_jobs(self) -> None:
+        """Called only after acquiring the single-worker process lock."""
+        if self.enabled:
+            self.db.execute("""update public.analysis_jobs
+                set status=case when attempts >= 3 then 'failed' else 'pending' end,
+                    error='Worker interrupted', updated_at=timezone('utc', now())
+                where status='running'""")
+            return
+        jobs = self.storage.load_json(self._jobs_path) or []
+        for job in jobs:
+            if job["status"] == "running":
+                job["status"] = "failed" if job["attempts"] >= 3 else "pending"
+                job["error"] = "Worker interrupted"
+                job["updated_at"] = datetime.now(timezone.utc).isoformat()
         self.storage.save_json(self._jobs_path, jobs)
 
     def _update_job(self, job_id: str, *, status: str, error: str | None) -> None:

@@ -1,5 +1,7 @@
 import json
 import os
+import tempfile
+import time
 import pandas as pd
 
 
@@ -19,8 +21,22 @@ class LocalStorageService:
 
     def save_json(self, path: str, data: dict | list) -> None:
         full = self._ensure_dir(path)
-        with open(full, "w", encoding="utf-8") as f:
-            json.dump(data, f, ensure_ascii=False, indent=2, default=str)
+        fd, temporary = tempfile.mkstemp(dir=os.path.dirname(full), suffix=".tmp")
+        try:
+            with os.fdopen(fd, "w", encoding="utf-8") as f:
+                json.dump(data, f, ensure_ascii=False, indent=2, default=str)
+            for attempt in range(20):
+                try:
+                    os.replace(temporary, full)
+                    break
+                except PermissionError:
+                    # Windows may briefly deny replacement while another reader holds the file.
+                    if attempt == 19:
+                        raise
+                    time.sleep(0.01)
+        finally:
+            if os.path.exists(temporary):
+                os.unlink(temporary)
 
     def load_json(self, path: str) -> dict | list | None:
         full = os.path.join(self.base_dir, path)

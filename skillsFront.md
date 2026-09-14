@@ -196,3 +196,10 @@ Atualizar este arquivo quando mudarem:
 - contrato de analise por ativo
 - contrato de analise da carteira
 - UX de paginacao ou de gestao de carteiras
+
+## Performance das an?lises
+
+- Solicitar apenas o horizonte escolhido; n?o antecipar an?lises completas de outros horizontes.
+- Gerar novamente deve consultar o backend, inclusive ap?s uma resposta provis?ria.
+- Deduplicar apenas requisi??es id?nticas em andamento e ignorar respostas de sele??es ou carteiras anteriores.
+- Exibir `forecast_availability` quando presente, distinguindo previs?o provis?ria de confian?a geral. Sem polling nesta etapa.

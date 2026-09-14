@@ -1,3 +1,5 @@
+from app.services.analysis_execution import analysis_request, parallel_queries
+
 import logging
 from copy import deepcopy
 from datetime import timedelta
@@ -209,6 +211,7 @@ def cluster_news():
 
 
 @router.get("/opinion/{portfolio_id}")
+@analysis_request
 def get_portfolio_opinion(
     portfolio_id: str,
     analysis_horizon: str = Query("3m", pattern="^(1m|2m|3m)$"),
@@ -222,12 +225,16 @@ def get_portfolio_opinion(
         return portfolio_service.examples.portfolio_opinion(portfolio, analysis_horizon)
 
     prices_data = {}
-    for pos in portfolio.positions:
-        hist = market_service.get_history(pos.ticker, period="1y", interval="1d")
+    tickers = list(dict.fromkeys(pos.ticker for pos in portfolio.positions))
+    histories = parallel_queries([
+        lambda ticker=ticker: market_service.get_history(ticker, period="1y", interval="1d")
+        for ticker in tickers
+    ])
+    for ticker, hist in zip(tickers, histories):
         if hist and hist.get("prices"):
             import pandas as pd
             df = pd.DataFrame(hist["prices"])
-            prices_data[pos.ticker] = df
+            prices_data[ticker] = df
 
     analysis = analytics_service.analyze(portfolio, prices_data if prices_data else None)
     opinion = opinion_service.generate_opinion(
@@ -240,6 +247,7 @@ def get_portfolio_opinion(
 
 
 @router.get("/opinion/{portfolio_id}/positions/{ticker}")
+@analysis_request
 def get_position_opinion(
     portfolio_id: str,
     ticker: str,

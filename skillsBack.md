@@ -255,3 +255,12 @@ Sempre atualizar este arquivo quando houver mudancas em:
 - analise por ativo
 - opiniao da carteira
 - persistencia de portfolios ou noticias
+
+## Performance e treinamento
+
+- Previs?o n?o deve chamar treinamento: tentar modelos em mem?ria/disco e enfileirar os ausentes para `forecast_training`.
+- Coletar fontes da carteira pela sele??o compartilhada de not?cias, sem executar an?lises completas de ativos.
+- Reutilizar entradas somente no contexto da requisi??o; manter dados Yahoo do forecast separados dos hist?ricos de mercado.
+- N?o submeter tarefas que aguardem outras tarefas ao mesmo executor de consultas.
+- Preservar bloqueios da fila local, publica??o at?mica dos modelos e recupera??o do worker ?nico.
+- Opera??o, disponibilidade e m?tricas: `docs/analysis-performance.md`.

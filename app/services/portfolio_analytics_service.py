@@ -1,3 +1,5 @@
+from app.services.analysis_execution import timed
+
 import numpy as np
 import pandas as pd
 
@@ -44,6 +46,7 @@ class PortfolioAnalyticsService:
         returns.index = pd.RangeIndex(len(returns))
         return returns
 
+    @timed("calculations")
     def analyze(self, portfolio: Portfolio, prices_data: dict[str, pd.DataFrame] | None = None) -> dict:
         if not portfolio.positions:
             return self._empty_analysis()

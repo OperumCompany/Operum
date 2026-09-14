@@ -1,4 +1,5 @@
-import { forwardRef, useImperativeHandle, useRef, useState } from 'react';
+import { ForecastAvailabilityNotice } from "./ForecastAvailabilityNotice";
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
 import { Button, Card } from './UI';
 import api from '../utils/api';
 import type { PortfolioOpinion } from '../types';
@@ -38,10 +39,7 @@ const HORIZONS = [
 ] as const;
 
 type AnalysisHorizon = (typeof HORIZONS)[number]['key'];
-type OpinionCache = Partial<Record<AnalysisHorizon, PortfolioOpinion>>;
-type OpinionRequests = Partial<Record<AnalysisHorizon, Promise<PortfolioOpinion>>>;
-
-const PREFETCH_HORIZONS: AnalysisHorizon[] = ['2m', '1m'];
+type OpinionRequests = Partial<Record<string, Promise<PortfolioOpinion>>>;
 
 export type PortfolioAnalysisAIHandle = {
   generate: () => Promise<void>;
@@ -53,72 +51,52 @@ export const PortfolioAnalysisAI = forwardRef<PortfolioAnalysisAIHandle, { portf
   const [error, setError] = useState<string | null>(null);
   const [expandedSources, setExpandedSources] = useState<Record<string, boolean>>({});
   const [analysisHorizon, setAnalysisHorizon] = useState<AnalysisHorizon>('3m');
-  const cacheRef = useRef<OpinionCache>({});
   const inFlightRef = useRef<OpinionRequests>({});
 
+  const requestVersion = useRef(0);
+  const activePortfolio = useRef(portfolioId);
+  activePortfolio.current = portfolioId;
+
+  useEffect(() => {
+    setData(null);
+    setLoading(false);
+    setError(null);
+    return () => { requestVersion.current += 1; };
+  }, [portfolioId]);
+
   async function fetchOpinion(nextHorizon: AnalysisHorizon) {
-    const cached = cacheRef.current[nextHorizon];
-    if (cached) return cached;
-
-    const inFlight = inFlightRef.current[nextHorizon];
+    const key = `${portfolioId}:${nextHorizon}`;
+    const inFlight = inFlightRef.current[key];
     if (inFlight) return inFlight;
-
     const request = api
       .get<PortfolioOpinion>(`/models/opinion/${portfolioId}?analysis_horizon=${nextHorizon}`)
-      .then((result) => {
-        cacheRef.current[nextHorizon] = result;
-        return result;
-      })
-      .finally(() => {
-        delete inFlightRef.current[nextHorizon];
-      });
-
-    inFlightRef.current[nextHorizon] = request;
+      .finally(() => { delete inFlightRef.current[key]; });
+    inFlightRef.current[key] = request;
     return request;
   }
 
-  async function prefetchOpinions(baseHorizon: AnalysisHorizon) {
-    for (const horizon of PREFETCH_HORIZONS) {
-      if (horizon === baseHorizon || cacheRef.current[horizon]) {
-        continue;
-      }
-      try {
-        await fetchOpinion(horizon);
-      } catch {
-        // Background prefetch must not affect the visible analysis.
-      }
-    }
-  }
-
-  async function loadOpinion(nextHorizon = analysisHorizon, options: { prefetch?: boolean } = { prefetch: true }) {
-    const cached = cacheRef.current[nextHorizon];
-    if (cached) {
-      setData(cached);
-      setExpandedSources({});
-      setError(null);
-      return;
-    }
-
+  async function loadOpinion(nextHorizon = analysisHorizon) {
+    const version = ++requestVersion.current;
+    const isCurrent = () => version === requestVersion.current && activePortfolio.current === portfolioId;
     setLoading(true);
     setError(null);
+    setData(null);
     try {
       const result = await fetchOpinion(nextHorizon);
+      if (!isCurrent()) return;
       setData(result);
       setExpandedSources({});
-      if (options.prefetch) {
-        void prefetchOpinions(nextHorizon);
-      }
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'Erro ao gerar análise');
+      if (isCurrent()) setError(e instanceof Error ? e.message : 'Erro ao gerar an?lise');
     } finally {
-      setLoading(false);
+      if (isCurrent()) setLoading(false);
     }
   }
 
   async function changeHorizon(nextHorizon: AnalysisHorizon) {
     setAnalysisHorizon(nextHorizon);
     if (data || loading) {
-      await loadOpinion(nextHorizon, { prefetch: false });
+      await loadOpinion(nextHorizon);
     }
   }
 
@@ -187,6 +165,7 @@ export const PortfolioAnalysisAI = forwardRef<PortfolioAnalysisAIHandle, { portf
 
       {data && sl && (
         <div className="space-y-4">
+          <ForecastAvailabilityNotice availability={data.forecast_availability} portfolio />
           <div className="flex items-center gap-4">
             <div
               className="flex h-16 w-16 items-center justify-center rounded-full text-lg font-bold text-white"

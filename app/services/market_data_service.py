@@ -1,3 +1,6 @@
+from app.services.analysis_execution import request_input, timed, count
+from app.services.file_lock import file_lock
+
 import logging
 import re
 from datetime import datetime, timezone, timedelta
@@ -205,6 +208,16 @@ class MarketDataService:
             return None
 
     def get_current_price(self, ticker: str) -> dict | None:
+        return request_input(("current_price", str(self.storage.base_dir), ticker), lambda: self._locked_current_price(ticker))
+
+    def _locked_current_price(self, ticker: str) -> dict | None:
+        import hashlib
+        import os
+        key = hashlib.sha256(ticker.encode()).hexdigest()
+        with file_lock(os.path.join(self.storage.base_dir, "market", "locks", "current-" + key + ".lock"), timeout=120):
+            return self._get_current_price(ticker)
+
+    def _get_current_price(self, ticker: str) -> dict | None:
         cache_key = f"{self._cache_dir}/current_{ticker}.json"
         cached = self.storage.load_json(cache_key)
         if cached:
@@ -400,6 +413,18 @@ class MarketDataService:
             return None
 
     def get_history(self, ticker: str, period: str = "6mo", interval: str = "1d") -> dict | None:
+        key = ("market_history", str(self.storage.base_dir), ticker, period, interval)
+        return request_input(key, lambda: self._locked_history(ticker, period, interval))
+
+    @timed("market_history")
+    def _locked_history(self, ticker: str, period: str, interval: str) -> dict | None:
+        import hashlib
+        import os
+        key = hashlib.sha256(repr((ticker, period, interval)).encode()).hexdigest()
+        with file_lock(os.path.join(self.storage.base_dir, "market", "locks", key + ".lock"), timeout=120):
+            return self._get_history(ticker, period, interval)
+
+    def _get_history(self, ticker: str, period: str, interval: str) -> dict | None:
         cache_key = f"{self._cache_dir}/history_{ticker}_{period}_{interval}.json"
         cached = self.storage.load_json(cache_key)
         if cached:
@@ -407,6 +432,7 @@ class MarketDataService:
             if datetime.now(timezone.utc) - cached_dt < timedelta(hours=4):
                 return cached
 
+        count("market_history_fetch")
         result = (
             self._fetch_brapi_history(ticker, period, interval)
             or self._fetch_yahoo_chart_history(ticker, period, interval)

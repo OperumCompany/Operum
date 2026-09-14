@@ -1,3 +1,4 @@
+import { ForecastAvailabilityNotice } from "../components/ForecastAvailabilityNotice";
 import { FormEvent, Fragment, useEffect, useMemo, useRef, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Sparkles, ChevronDown, ChevronUp, ArrowDownUp, Download, Pencil } from 'lucide-react';
@@ -58,11 +59,6 @@ const OUTLOOK_OPTIONS = [
   { key: '3m', label: '3 meses' },
 ] as const;
 
-const PREFETCH_OPINION_PAIRS: Array<[HistoryHorizonKey, OutlookHorizonKey]> = [
-  ['1w', '1w'],
-  ['1m', '1m'],
-  ['2m', '2m'],
-];
 
 const CLASS_LABELS: Record<string, string> = {
   BR_STOCK: 'Ações brasileiras',
@@ -74,12 +70,10 @@ const CLASS_LABELS: Record<string, string> = {
 
 type OpinionState = {
   data?: PositionOpinion;
-  cache?: OpinionCache;
   loading: boolean;
   error?: string;
   open: boolean;
   expandedSources?: Record<string, boolean>;
-  prefetched?: OpinionFlags;
   historyHorizon: '1w' | '1m' | '2m' | '3m';
   outlookHorizon: '1w' | '1m' | '2m' | '3m';
 };
@@ -88,8 +82,6 @@ type SortKey = 'ticker' | 'quantity' | 'current_price' | 'total_value' | 'weight
 type HistoryHorizonKey = OpinionState['historyHorizon'];
 type OutlookHorizonKey = OpinionState['outlookHorizon'];
 type OpinionCacheKey = `${HistoryHorizonKey}:${OutlookHorizonKey}`;
-type OpinionCache = Partial<Record<OpinionCacheKey, PositionOpinion>>;
-type OpinionFlags = Partial<Record<OpinionCacheKey, boolean>>;
 type ChartPoint = {
   date: string;
   label: string;
@@ -277,6 +269,15 @@ export function PortfolioDetailsPage() {
   const [positionOpinions, setPositionOpinions] = useState<Record<string, OpinionState>>({});
   const positionOpinionsRef = useRef<Record<string, OpinionState>>({});
   const opinionRequestsRef = useRef<Record<string, Partial<Record<OpinionCacheKey, Promise<PositionOpinion>>>>>({});
+  const opinionSequence = useRef(0);
+  const opinionVersions = useRef<Record<string, number>>({});
+  const opinionPortfolioId = useRef(id);
+  opinionPortfolioId.current = id;
+  useEffect(() => {
+    setPositionOpinions({});
+    opinionRequestsRef.current = {};
+    return () => { opinionVersions.current = {}; };
+  }, [id]);
   const portfolioAnalysisRef = useRef<PortfolioAnalysisAIHandle>(null);
   const portfolioAnalysisSectionRef = useRef<HTMLDivElement>(null);
   const [tableQuery, setTableQuery] = useState('');
@@ -387,6 +388,8 @@ export function PortfolioDetailsPage() {
       setQuantity(10);
       setAvgPrice('');
       setAssetTicker('');
+      opinionVersions.current = {};
+      opinionRequestsRef.current = {};
       setPositionOpinions({});
       setHistoryRefreshKey((current) => current + 1);
     } catch {
@@ -400,6 +403,8 @@ export function PortfolioDetailsPage() {
     if (!confirmed) return;
     try {
       await removePosition(portfolio.id, ticker);
+      delete opinionVersions.current[ticker];
+      delete opinionRequestsRef.current[ticker];
       setPositionOpinions((prev) => {
         const next = { ...prev };
         delete next[ticker];
@@ -440,48 +445,13 @@ export function PortfolioDetailsPage() {
         `/models/opinion/${portfolio.id}/positions/${ticker}?history_horizon=${historyHorizon}&outlook_horizon=${outlookHorizon}`,
       )
       .finally(() => {
-        delete opinionRequestsRef.current[ticker]?.[key];
+        delete tickerRequests[key];
       });
       setHistoryRefreshKey((current) => current + 1);
 
     tickerRequests[key] = request;
     opinionRequestsRef.current[ticker] = tickerRequests;
     return request;
-  }
-
-  async function prefetchPositionOpinion(ticker: string) {
-    for (const [historyHorizon, outlookHorizon] of PREFETCH_OPINION_PAIRS) {
-      const key = opinionCacheKey(historyHorizon, outlookHorizon);
-      const current = positionOpinionsRef.current[ticker];
-      if (current?.cache?.[key] || current?.prefetched?.[key]) continue;
-
-      setPositionOpinions((prev) => ({
-        ...prev,
-        [ticker]: {
-          ...prev[ticker],
-          prefetched: {
-            ...(prev[ticker]?.prefetched ?? {}),
-            [key]: true,
-          },
-        },
-      }));
-
-      try {
-        const data = await requestPositionOpinion(ticker, historyHorizon, outlookHorizon);
-        setPositionOpinions((prev) => ({
-          ...prev,
-          [ticker]: {
-            ...prev[ticker],
-            cache: {
-              ...(prev[ticker]?.cache ?? {}),
-              [key]: data,
-            },
-          },
-        }));
-      } catch {
-        // Prefetch is only an optimization; direct user actions still surface errors.
-      }
-    }
   }
 
   async function loadPositionOpinion(
@@ -492,25 +462,10 @@ export function PortfolioDetailsPage() {
     const existing = positionOpinionsRef.current[ticker];
     const historyHorizon = options?.historyHorizon ?? existing?.historyHorizon ?? '3m';
     const outlookHorizon = options?.outlookHorizon ?? existing?.outlookHorizon ?? '3m';
-    const key = opinionCacheKey(historyHorizon, outlookHorizon);
-    const cached = existing?.cache?.[key];
-
-    if (cached) {
-      setPositionOpinions((prev) => ({
-        ...prev,
-        [ticker]: {
-          ...prev[ticker],
-          loading: false,
-          open: options?.keepOpen ?? true,
-          error: undefined,
-          data: cached,
-          historyHorizon,
-          outlookHorizon,
-        },
-      }));
-      return;
-    }
-
+    const requestId = ++opinionSequence.current;
+    opinionVersions.current[ticker] = requestId;
+    const currentPortfolioId = portfolio.id;
+    const isCurrent = () => opinionVersions.current[ticker] === requestId && opinionPortfolioId.current === currentPortfolioId;
     setPositionOpinions((prev) => ({
       ...prev,
       [ticker]: {
@@ -525,6 +480,7 @@ export function PortfolioDetailsPage() {
 
     try {
       const data = await requestPositionOpinion(ticker, historyHorizon, outlookHorizon);
+      if (!isCurrent()) return;
       setPositionOpinions((prev) => ({
         ...prev,
         [ticker]: {
@@ -532,19 +488,13 @@ export function PortfolioDetailsPage() {
           loading: false,
           open: true,
           data,
-          cache: {
-            ...(prev[ticker]?.cache ?? {}),
-            [key]: data,
-          },
           expandedSources: prev[ticker]?.expandedSources ?? {},
           historyHorizon,
           outlookHorizon,
         },
       }));
-      if (key === opinionCacheKey('3m', '3m')) {
-        void prefetchPositionOpinion(ticker);
-      }
     } catch (e) {
+      if (!isCurrent()) return;
       setPositionOpinions((prev) => ({
         ...prev,
         [ticker]: {
@@ -562,6 +512,7 @@ export function PortfolioDetailsPage() {
   async function togglePositionOpinion(ticker: string) {
     const existing = positionOpinions[ticker];
     if (existing?.open) {
+      delete opinionVersions.current[ticker];
       setPositionOpinions((prev) => ({
         ...prev,
         [ticker]: { ...existing, open: false },
@@ -850,6 +801,7 @@ export function PortfolioDetailsPage() {
 
                               {opinionState.data && (
                                 <div className="space-y-4">
+                                  <ForecastAvailabilityNotice availability={opinionState.data.forecast_availability} />
                                   <div className="rounded-[28px] border border-[var(--border-soft)] bg-[linear-gradient(135deg,rgba(61,77,156,0.06)_0%,rgba(255,255,255,0.96)_45%,rgba(199,85,155,0.08)_100%)] p-5 shadow-[var(--shadow-card)]">
                                     <div className="flex flex-wrap items-start justify-between gap-4">
                                       <div className="space-y-1">

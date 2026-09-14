@@ -1,3 +1,5 @@
+from app.services.analysis_execution import analysis_request, timed, forecast_availability
+
 import logging
 from collections import Counter
 from datetime import datetime, timezone
@@ -41,6 +43,7 @@ class PortfolioOpinionService:
         self.llm = LLMService()
         self.composition_diagnosis = PortfolioCompositionDiagnosisService()
 
+    @analysis_request
     def generate_opinion(
         self,
         portfolio: Portfolio,
@@ -92,6 +95,7 @@ class PortfolioOpinionService:
         opinion = self._refine_opinion_text(opinion, analysis, analysis_horizon)
 
         return {
+            "forecast_availability": forecast_availability(),
             "score": round(portfolio_score, 4),
             "components": {
                 "diversification": round(diversification_score, 4),
@@ -118,6 +122,7 @@ class PortfolioOpinionService:
             "generated_at": opinion["generated_at"],
         }
 
+    @timed("llm_refinement")
     def _refine_opinion_text(self, opinion: dict, analysis: dict, analysis_horizon: str) -> dict:
         if not self.llm.enabled or not AI_ENHANCE_PORTFOLIO_ANALYSIS:
             return opinion
@@ -515,13 +520,10 @@ class PortfolioOpinionService:
         sources = []
         seen_ids = set()
         for pos in positions[: min(6, len(positions))]:
-            asset_result = self.asset_analysis.generate_asset_analysis(
-                portfolio,
-                pos.ticker,
-                history_horizon=analysis_horizon,
-                outlook_horizon=analysis_horizon,
+            selected = self.asset_analysis.select_analysis_news(
+                pos.ticker, history_horizon=analysis_horizon, outlook_horizon=analysis_horizon,
             )
-            for source in asset_result.get("sources", [])[:3]:
+            for source in selected["used_news"][:3]:
                 if source["id"] in seen_ids:
                     continue
                 seen_ids.add(source["id"])

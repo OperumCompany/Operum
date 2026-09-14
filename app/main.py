@@ -1,3 +1,5 @@
+from app.services.analysis_execution import start_analysis_executor, stop_analysis_executor
+
 import logging
 import threading
 from contextlib import asynccontextmanager
@@ -92,7 +94,11 @@ async def lifespan(app: FastAPI):
         threading.Thread(target=_run_news_backfill_async, daemon=True).start()
     if OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP:
         threading.Thread(target=_warm_prices_async, daemon=True).start()
-    yield
+    start_analysis_executor()
+    try:
+        yield
+    finally:
+        stop_analysis_executor()
 
 
 app = FastAPI(

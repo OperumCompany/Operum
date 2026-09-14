@@ -1,3 +1,5 @@
+from app.services.analysis_execution import (analysis_request, analysis_now, request_input, timed, parallel_queries, forecast_availability)
+
 import json
 import logging
 import math
@@ -128,6 +130,9 @@ class AssetAnalysisService:
         return asset.model_dump()
 
     def _normalize_text(self, text: str) -> str:
+        return request_input(("normalized_text", text), lambda: self._normalize_uncached(text))
+
+    def _normalize_uncached(self, text: str) -> str:
         base = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode("ascii")
         return base.lower()
 
@@ -259,7 +264,7 @@ class AssetAnalysisService:
 
     def get_related_news(self, ticker: str, limit: int = 25, days_back: int | None = None) -> list[dict]:
         meta = self._asset_meta(ticker)
-        now = datetime.now(timezone.utc)
+        now = analysis_now()
         semantic_query = " ".join(
             str(value)
             for value in [
@@ -369,6 +374,9 @@ class AssetAnalysisService:
         return results
 
     def _get_history_dataframe(self, ticker: str) -> pd.DataFrame | None:
+        return request_input(("asset_dataframe", id(self.market), ticker), lambda: self._history_dataframe(ticker))
+
+    def _history_dataframe(self, ticker: str) -> pd.DataFrame | None:
         history = self.market.get_history(ticker, period="1y", interval="1d")
         if not history or not history.get("prices"):
             return None
@@ -388,6 +396,11 @@ class AssetAnalysisService:
         return "IBOV"
 
     def _performance_snapshot(self, ticker: str, avg_price: float | None, history_window: str) -> dict:
+        return request_input(("performance", id(self.market), ticker, avg_price, history_window),
+                             lambda: self._calculate_performance_snapshot(ticker, avg_price, history_window))
+
+    @timed("calculations")
+    def _calculate_performance_snapshot(self, ticker: str, avg_price: float | None, history_window: str) -> dict:
         current = self.market.get_current_price(ticker)
         df = self._get_history_dataframe(ticker)
         meta = self._asset_meta(ticker)
@@ -1342,7 +1355,7 @@ class AssetAnalysisService:
         ]
 
     def _windowed_news(self, news_items: list[dict], days_back: int) -> list[dict]:
-        cutoff = datetime.now(timezone.utc) - timedelta(days=max(days_back * 2, 30))
+        cutoff = analysis_now() - timedelta(days=max(days_back * 2, 30))
         filtered = []
         seen_keys = set()
         for item in news_items:
@@ -1356,28 +1369,8 @@ class AssetAnalysisService:
             filtered.append(item)
         return filtered
 
-    def generate_asset_analysis(
-        self,
-        portfolio: Portfolio,
-        ticker: str,
-        history_horizon: str = "3m",
-        outlook_horizon: str = "3m",
-    ) -> dict:
-        position = self._resolve_position(portfolio, ticker)
-        if position is None:
-            return {
-                "portfolio_id": portfolio.id,
-                "ticker": ticker.upper(),
-                "status": "not_found",
-                "analysis_sections": {},
-                "sources": [],
-                "source_groups": [],
-                "generated_at": datetime.now(timezone.utc).isoformat(),
-            }
-
-        history_horizon = history_horizon if history_horizon in HISTORY_WINDOW_DAYS else "3m"
-        outlook_horizon = outlook_horizon if outlook_horizon in OUTLOOK_WINDOW_DAYS else "3m"
-
+    @timed("source_selection")
+    def select_analysis_news(self, ticker: str, history_horizon: str = "3m", outlook_horizon: str = "3m") -> dict:
         meta = self._asset_meta(ticker)
         history_days = HISTORY_WINDOW_DAYS[history_horizon]
         outlook_days = OUTLOOK_WINDOW_DAYS[outlook_horizon]
@@ -1411,7 +1404,46 @@ class AssetAnalysisService:
             reverse=True,
         )
 
+        return {"all_related_news": all_related_news, "current_news": current_news,
+                "historical_news": historical_news, "outlook_news": outlook_news, "used_news": used_news}
+
+    @analysis_request
+    def generate_asset_analysis(
+        self,
+        portfolio: Portfolio,
+        ticker: str,
+        history_horizon: str = "3m",
+        outlook_horizon: str = "3m",
+    ) -> dict:
+        position = self._resolve_position(portfolio, ticker)
+        if position is None:
+            return {
+                "portfolio_id": portfolio.id,
+                "ticker": ticker.upper(),
+                "status": "not_found",
+                "analysis_sections": {},
+                "sources": [],
+                "source_groups": [],
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+            }
+
+        history_horizon = history_horizon if history_horizon in HISTORY_WINDOW_DAYS else "3m"
+        outlook_horizon = outlook_horizon if outlook_horizon in OUTLOOK_WINDOW_DAYS else "3m"
+
+        meta = self._asset_meta(ticker)
+        selected, _ = parallel_queries([
+            lambda: self.select_analysis_news(ticker, history_horizon, outlook_horizon),
+            lambda: self._get_history_dataframe(ticker),
+        ])
         perf = self._performance_snapshot(ticker, position.avg_price, history_horizon)
+        all_related_news = selected["all_related_news"]
+        current_news = selected["current_news"]
+        historical_news = selected["historical_news"]
+        outlook_news = selected["outlook_news"]
+        used_news = selected["used_news"]
+        history_days = HISTORY_WINDOW_DAYS[history_horizon]
+        outlook_days = OUTLOOK_WINDOW_DAYS[outlook_horizon]
+
         weight_pct = self._compute_weight_pct(portfolio, ticker)
         asset_function = self._infer_asset_function(meta, weight_pct)
 
@@ -1419,6 +1451,25 @@ class AssetAnalysisService:
         forecast_bundle = self.forecast.predict_multi(ticker, requested_horizons=requested_forecast_horizons)
         if forecast_bundle is None:
             forecast_bundle = self._fallback_forecast_bundle(ticker, perf, requested_forecast_horizons)
+        else:
+            covered = {item["horizon_days"] for item in forecast_bundle["predictions"]}
+            missing = [h for h in requested_forecast_horizons if h not in covered]
+            if missing:
+                fallback = self._fallback_forecast_bundle(ticker, perf, missing)
+                if fallback:
+                    forecast_bundle["predictions"] = sorted(
+                        forecast_bundle["predictions"] + fallback["predictions"], key=lambda item: item["horizon_days"],
+                    )
+                    forecast_bundle["forecast_source"] = "mixed"
+                    forecast_bundle["forecast_anchor_points"] = [
+                        {"date": item["horizon_label"], "horizon_days": item["horizon_days"],
+                         "predicted_price": item["predicted_price"], "predicted_return": item["predicted_return"]}
+                        for item in forecast_bundle["predictions"]
+                    ]
+                    forecast_bundle["forecast_series"] = self.forecast._interpolate_series(
+                        forecast_bundle["last_price"], datetime.fromisoformat(forecast_bundle["generated_at"]),
+                        forecast_bundle["predictions"],
+                    )
         news_adjustment_pct, category_counts = self._news_adjustment(outlook_news or used_news, meta, outlook_days)
         adjusted_forecast_bundle = self._apply_news_adjustment(forecast_bundle, news_adjustment_pct)
         forecast_lookup = {
@@ -1434,7 +1485,7 @@ class AssetAnalysisService:
             forecast_prediction.get("predicted_return") if forecast_prediction else None,
         )
         confidence = self._confidence(perf, used_news, forecast_prediction)
-        now = datetime.now(timezone.utc)
+        now = analysis_now()
         historical_series = self._build_historical_series(ticker, history_horizon)
         data_quality_warnings = self._data_quality_warnings(perf, historical_series, used_news)
         response_confidence = self._confidence_with_warnings(confidence, data_quality_warnings)
@@ -1565,6 +1616,7 @@ class AssetAnalysisService:
             "sources": used_news,
             "source_groups": self._build_source_groups(used_news),
         }
+        payload["forecast_availability"] = forecast_availability()
         payload = self._refine_analysis_sections(payload, history_horizon, outlook_horizon)
         self._save_cached_analysis(portfolio, ticker, payload)
         return payload
@@ -1639,6 +1691,7 @@ class AssetAnalysisService:
             return False
         return all(isinstance(item, str) and item.strip() for item in refined["data_quality_warnings"])
 
+    @timed("llm_refinement")
     def _refine_analysis_sections(self, payload: dict, history_horizon: str, outlook_horizon: str) -> dict:
         if not self.llm.enabled or not AI_ENHANCE_ASSET_ANALYSIS:
             return payload

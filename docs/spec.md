@@ -678,3 +678,7 @@ Telas analiticas tambem devem suportar:
 - O startup faz ingestao e aquecimento em background para nao bloquear a inicializacao
 - O BCB permanece no catalogo, mas hoje pode retornar pouco ou nada por limitacao tecnica do portal publico
 - Falhas de fonte externa devem degradar apenas o bloco afetado sempre que possivel
+
+## Disponibilidade de modelos nas an?lises
+
+As respostas de an?lise podem incluir `forecast_availability`, com `status` (`ready`, `partial`, `unavailable`) e `items` por ticker: `missing_horizons` e `preparation` (`pending`, `running`, `failed`, `not_scheduled`). O campo descreve disponibilidade de modelos, separadamente da confian?a. Modelos ausentes s?o preparados em segundo plano; a an?lise individual usa estimativa determin?stica provis?ria nos horizontes sem modelo quando h? dados suficientes. Contrato e opera??o detalhados em [analysis-performance.md](analysis-performance.md).

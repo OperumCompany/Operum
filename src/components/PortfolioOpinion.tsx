@@ -1,9 +1,12 @@
+import { ForecastAvailabilityNotice } from "./ForecastAvailabilityNotice";
+import type { ForecastAvailability } from "../types";
 import { useState, useEffect } from 'react';
 import { Lightbulb } from 'lucide-react';
 import { Card } from './UI';
 import api from '../utils/api';
 
 type OpinionData = {
+  forecast_availability?: ForecastAvailability;
   score: number;
   components: {
     diversification: number;
@@ -57,6 +60,7 @@ export function PortfolioOpinion({ portfolioId }: { portfolioId: string | undefi
       {error && <p className="text-sm text-[var(--danger-text)]">{error}</p>}
       {data && (
         <div className="space-y-4">
+          <ForecastAvailabilityNotice availability={data.forecast_availability} portfolio />
           <div className="flex items-center gap-3">
             <span className={`rounded-full px-3 py-1 text-xs font-bold ${scoreLabel(data.score).color}`}>
               {scoreLabel(data.score).label}

@@ -1,3 +1,5 @@
+from app.services.analysis_execution import count
+
 import json
 import logging
 import re
@@ -76,6 +78,7 @@ class LLMService:
         }
         try:
             with httpx.Client(timeout=self.timeout_seconds) as client:
+                count("llm_calls")
                 response = client.post(f"{self.base_url}/chat/completions", headers=headers, json=payload)
                 response.raise_for_status()
                 data = response.json()
@@ -128,6 +131,7 @@ class LLMService:
         }
         try:
             with httpx.Client(timeout=self.timeout_seconds) as client:
+                count("llm_calls")
                 response = client.post(f"{self.base_url.removesuffix('/v1')}/api/chat", json=payload)
                 response.raise_for_status()
                 content = response.json().get("message", {}).get("content", "")
@@ -161,6 +165,7 @@ class LLMService:
         }
         try:
             with httpx.Client(timeout=self.timeout_seconds) as client:
+                count("llm_calls")
                 response = client.post(f"{self.base_url.removesuffix('/v1')}/api/chat", json=payload)
                 response.raise_for_status()
                 data = response.json()
@@ -358,6 +363,7 @@ class LLMService:
         }
         try:
             with httpx.Client(timeout=self.timeout_seconds) as client:
+                count("llm_calls")
                 response = client.post(f"{self.base_url.removesuffix('/v1')}/api/chat", json=payload)
                 response.raise_for_status()
                 data = response.json()
