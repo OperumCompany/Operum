@@ -681,4 +681,8 @@ Telas analiticas tambem devem suportar:
 
 ## Disponibilidade de modelos nas an?lises
 
+O refinamento individual e da carteira usa schemas internos que permitem somente campos textuais. Uma resposta inválida ou falha do provedor preserva integralmente o diagnóstico determinístico, sem segunda chamada de correção. As validações de conteúdo das três caixas do ativo continuam em vigor; o contrato público permanece igual.
+
+As previsões da carteira continuam considerando as primeiras oito posições e sua contribuição original. Apenas os downloads dos históricos elegíveis executam em paralelo, no executor compartilhado por processo. Históricos indisponíveis não são baixados novamente dentro do lote. Não há treinamento na requisição nem cache novo entre requisições.
+
 As respostas de an?lise podem incluir `forecast_availability`, com `status` (`ready`, `partial`, `unavailable`) e `items` por ticker: `missing_horizons` e `preparation` (`pending`, `running`, `failed`, `not_scheduled`). O campo descreve disponibilidade de modelos, separadamente da confian?a. Modelos ausentes s?o preparados em segundo plano; a an?lise individual usa estimativa determin?stica provis?ria nos horizontes sem modelo quando h? dados suficientes. Contrato e opera??o detalhados em [analysis-performance.md](analysis-performance.md).

@@ -1,4 +1,5 @@
-from app.services.analysis_execution import analysis_request, timed, forecast_availability
+from app.schemas.analysis_refinement import PortfolioRefinement
+from app.services.analysis_execution import analysis_request, timed, forecast_availability, count
 
 import logging
 from collections import Counter
@@ -150,9 +151,12 @@ class PortfolioOpinionService:
             },
             temperature=0.15,
             max_tokens=1200,
+            response_model=PortfolioRefinement,
         )
         if not refined:
+            count("llm_deterministic_fallback")
             return opinion
+        count("llm_refinement_accepted")
 
         for key in ["headline", "composition_summary", "final_diagnosis", "conclusion"]:
             value = refined.get(key)
@@ -240,8 +244,8 @@ class PortfolioOpinionService:
         structural_risk = min(1.0, volatility * 1.8 + var_95 * 2.4 + max(0.0, beta - 1.0) * 0.12)
 
         confidences = []
-        for position in portfolio.positions[:8]:
-            forecast = self.forecast.predict(position.ticker)
+        forecasts = self.forecast.predict_many([position.ticker for position in portfolio.positions[:8]])
+        for forecast in forecasts:
             if forecast and forecast.get("confidence") is not None:
                 confidences.append(float(forecast["confidence"]))
 

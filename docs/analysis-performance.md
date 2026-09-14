@@ -1,5 +1,51 @@
 # Performance das análises
 
+## Refinamento estruturado e downloads das previsões — 14/09/2026
+
+Esta etapa compara com a revisão `dc6fbe4b0f32a2345b880b289a709f8183d933ee`, posterior às otimizações originais descritas abaixo. Não altera modelo, timeout, limites de geração, fórmulas, fontes ou contrato público.
+
+Ativo e carteira usam schemas Pydantic internos e uma única chamada de refinamento. O Ollama recebe `format`, `think=false` e `stream=false`; provedores compatíveis mantêm o protocolo anterior e têm o retorno validado localmente. Em erro ou conteúdo inválido, a resposta determinística é preservada integralmente. O caminho antigo continua disponível para chatbot e análise preditiva. Foram removidos somente o validador privado e os ramos de formatos antigos do ativo, que ficaram inacessíveis com o contrato das três caixas; suas referências foram verificadas no projeto.
+
+`predict_many` verifica modelos, baixa históricos uma vez por ticker elegível e calcula depois, fora do executor. A carteira preserva as primeiras oito posições e suas contribuições, inclusive posições repetidas. Downloads usam instâncias de `Ticker.history`, com os mesmos parâmetros efetivos do `yf.download` anterior, evitando a reinicialização concorrente das estruturas globais desse último. Falhas são transportadas como resultados indisponíveis, sem novo download no lote.
+
+### Resultados controlados
+
+Oito downloads simulados de 40 ms, cinco amostras por configuração: mediana de **324,62 ms com um worker para 81,66 ms com quatro**, redução de **74,84%**. P95: 345,58 ms e 83,14 ms. Isso mede o lote de I/O, não a análise inteira. Dados completos: [forecast-batch-performance.json](forecast-batch-performance.json).
+
+A suíte de backend passou em **363 testes**. Os testes novos cobrem schema, timeout, provedor indisponível, validação de conteúdo, fallback integral, preservação de campos e horizontes, equivalência dos adaptadores Yahoo com a mesma resposta de origem, ordem, duplicação, modelos ausentes, falha parcial, requisições simultâneas e limite global do executor. A comparação offline também preservou respostas determinísticas nos 12 cenários e 19 combinações adicionais de horizontes.
+
+### Chamadas reais ao Ollama
+
+Modelo local `qwen3:4b`, duas chamadas sequenciais por versão/cenário, usando dados **sintéticos e idênticos** de mercado, notícias e carteira. Os tempos medem somente refinamento real, sem simular a geração. O arquivo [refinement-live-performance.json](refinement-live-performance.json) contém amostras, textos e avaliação. Não representa latência de endpoints completos nem uma estimativa robusta de P95 de produção.
+
+| Cenário | Mediana antes | Mediana depois | P95 antes | P95 depois | Textos aceitos antes/depois |
+|---|---:|---:|---:|---:|---:|
+| Ativo | 35,98 s | 15,31 s | 39,20 s | 15,79 s | 0/2 → 0/2 |
+| Carteira de 5 posições | 38,15 s | 17,40 s | 42,18 s | 17,99 s | 0/2 → 2/2 |
+| Carteira de 10 posições | 38,49 s | 17,89 s | 42,48 s | 18,23 s | 0/2 → 2/2 |
+| Carteira de 20 posições | 40,06 s | 27,44 s | 43,08 s | 27,96 s | 0/2 → 2/2 |
+
+Na carteira, a redução observada foi de 31% a 54%, acompanhada de maior aceitação, não de mais fallbacks. A leitura das respostas sintéticas confirmou cobertura de composição, sobreposições e blocos, com métricas e incertezas do contexto; não constitui avaliação ampla de qualidade factual. No ativo, o JSON novo foi válido, mas a validação de conteúdo existente rejeitou os três exemplos medidos, inclusive o simultâneo. O diagnóstico inicial foi preservado. Portanto, a espera caiu, mas **não foi demonstrado ganho na entrega de texto refinado do ativo**; não foram afrouxadas validações para melhorar esse indicador.
+
+Com ativo e carteira de 10 posições simultâneos, a versão anterior levou 67,96 s e 62,39 s; a carteira sofreu timeout. A versão nova levou 37,38 s e 21,16 s, com uma chamada por análise, sem timeout e com o texto da carteira aceito. É apenas um par por versão. Houve reinício do Ollama antes desse teste; o custo de carregamento inicial afeta a comparação e impede atribuir todo o ganho à alteração. Não foi forçado descarregamento do modelo para criar um teste frio independente. A instrumentação de timeout da versão anterior foi coletada somente no par simultâneo.
+
+**Limitação da medição Yahoo:** o provedor retornou `YFRateLimitError` já nas consultas sequenciais anteriores. A tentativa foi interrompida; não há resultado válido de ganho real de downloads ou de latência completa dos endpoints. Não foi alterado o limite do provedor nem acrescentado retry. A equivalência numérica foi validada com respostas de origem controladas, e a medição real deve ser repetida quando o acesso estiver disponível.
+
+### Métricas e reprodução
+
+`llm_refinement_metrics` informa resultado, tempo HTTP em ms e métricas do Ollama quando fornecidas: durações em nanossegundos e contagens de tokens. Valores ausentes ficam indisponíveis. O tempo residual não é interpretado como fila. Não são registrados prompts, respostas nem dados pessoais nos logs de execução; somente o benchmark salva textos gerados a partir de fixtures sintéticas.
+
+Contadores: `llm_calls`, `llm_validated`, `llm_invalid_response`, `llm_http_error`, `llm_timeout`, `llm_deterministic_fallback` e `llm_refinement_accepted`. Validação de schema e aceitação final pelo serviço são estados diferentes. Para previsões, `forecast_history_batch` mede tempo decorrido do lote, `forecast_history` soma durações dos downloads e `forecast_calculations` mede cálculos. `forecast_history_failed` conta falhas, inclusive históricos vazios.
+
+```powershell
+.\.venv\Scripts\python.exe scripts/benchmark_forecast_batch.py --baseline-ref dc6fbe4b0f32a2345b880b289a709f8183d933ee
+# Acrescentar --live somente quando o Yahoo estiver disponível.
+.\.venv\Scripts\python.exe scripts/benchmark_refinement.py --baseline-ref dc6fbe4b0f32a2345b880b289a709f8183d933ee --repeats 2
+# --resume reaproveita amostras já gravadas da mesma revisão/modelo.
+```
+
+O executor mantém quatro workers por processo por padrão; `OPERUM_ANALYSIS_IO_WORKERS=1` permite comparação sequencial. Não há nova dependência, migração, mudança de interface ou cache entre requisições. Em uso real, acompanhar aceitação e falhas junto com mediana/P95, sem interpretar respostas inválidas mais rápidas como melhora de qualidade.
+
 ## Funcionamento
 
 As análises continuam retornando uma única resposta. Cada requisição reutiliza seus próprios históricos, catálogo de ativos, acervo de notícias, textos normalizados e consultas semânticas idênticas. Não há cache de respostas finais entre requisições. A carteira coleta fontes sem executar análises completas de ativos.

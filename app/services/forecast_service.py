@@ -1,6 +1,7 @@
-from app.services.analysis_execution import analysis_request, request_input, timed, record_forecast, count
+from app.services.analysis_execution import analysis_request, request_input, timed, record_forecast, count, parallel_queries
 from app.services.file_lock import file_lock
 from app.services.local_storage_service import LocalStorageService
+from copy import deepcopy
 import tempfile
 import threading
 
@@ -204,8 +205,13 @@ class ForecastService:
             yf_ticker = ticker + ".SA" if not ticker.endswith(".SA") and not any(
                 c in ticker for c in ["-", "USD"]
             ) else ticker
-            df = yf.download(yf_ticker, period=period, progress=False, threads=False, timeout=10)
+            df = yf.Ticker(yf_ticker).history(
+                period=period, interval="1d", actions=False, auto_adjust=True,
+                back_adjust=False, repair=False, keepna=False, prepost=False,
+                rounding=False, timeout=10, raise_errors=True,
+            )
             if df.empty:
+                count("forecast_history_failed")
                 return None
             if isinstance(df.columns, pd.MultiIndex):
                 df.columns = [col[0] if isinstance(col, tuple) else col for col in df.columns]
@@ -214,9 +220,13 @@ class ForecastService:
                 df[numeric_cols] = df[numeric_cols].apply(pd.to_numeric, errors="coerce")
                 df = df.dropna(subset=["Close"])
             if df.empty:
+                count("forecast_history_failed")
                 return None
-            return df
+            if isinstance(df.index, pd.DatetimeIndex):
+                df.index = df.index.tz_localize(None)
+            return df.sort_index()
         except Exception as e:
+            count("forecast_history_failed")
             logger.debug(f"Erro ao baixar dados de {ticker}: {e}")
             return None
 
@@ -425,8 +435,13 @@ class ForecastService:
 
     def predict(self, ticker: str) -> dict | None:
         result = self.predict_multi(ticker, requested_horizons=[1])
+        return self._one_day_result(result, ticker)
+
+    @staticmethod
+    def _one_day_result(result, ticker=None):
         if result is None:
             return None
+        ticker = ticker if ticker is not None else result["ticker"]
         horizon = result["predictions"][0]
         return {
             "ticker": ticker,
@@ -444,13 +459,36 @@ class ForecastService:
     def predict_multi(self, ticker: str, requested_horizons: list[int] | None = None) -> dict | None:
         ticker = ticker.upper()
         requested_horizons = requested_horizons or [5, 21, 42, 63]
-        missing = self.missing_horizons(ticker, requested_horizons)
-        preparation = request_input(("training_job", ticker), lambda: self._schedule_training(ticker)) if missing else "not_scheduled"
-        record_forecast(ticker, requested_horizons, missing, preparation)
-        available = [h for h in sorted(set(requested_horizons)) if h not in missing]
+        available = self._available_horizons(ticker, requested_horizons)
         if not available:
             return None
         df = self._download_data(ticker, period="9mo")
+        return self._predict_from_history(ticker, available, df)
+
+    def _available_horizons(self, ticker, requested_horizons):
+        missing = self.missing_horizons(ticker, requested_horizons)
+        preparation = request_input(("training_job", ticker), lambda: self._schedule_training(ticker)) if missing else "not_scheduled"
+        record_forecast(ticker, requested_horizons, missing, preparation)
+        return [h for h in sorted(set(requested_horizons)) if h not in missing]
+
+    @analysis_request
+    def predict_many(self, tickers: list[str]) -> list[dict | None]:
+        unique = list(dict.fromkeys(ticker.upper() for ticker in tickers))
+        available = {ticker: self._available_horizons(ticker, [1]) for ticker in unique}
+        eligible = [ticker for ticker in unique if available[ticker]]
+        frames = self._download_batch(eligible)
+        results = {
+            ticker: self._one_day_result(self._predict_from_history(ticker, available[ticker], frame))
+            for ticker, frame in zip(eligible, frames)
+        }
+        return [deepcopy(results.get(ticker.upper())) for ticker in tickers]
+
+    @timed("forecast_history_batch")
+    def _download_batch(self, tickers):
+        return parallel_queries([lambda ticker=ticker: self._download_data(ticker, period="9mo") for ticker in tickers])
+
+    @timed("forecast_calculations")
+    def _predict_from_history(self, ticker, available, df):
         if df is None or len(df) < 40:
             return None
         features = self._prepare_features(df).replace([np.inf, -np.inf], np.nan).fillna(0.0)

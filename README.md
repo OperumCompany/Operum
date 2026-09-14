@@ -280,3 +280,5 @@ python -m pip_audit -r requirements.txt
 A an?lise reutiliza dados dentro de cada requisi??o e consulta hist?ricos independentes em paralelo. Modelos ausentes s?o preparados pelo worker, sem treinamento durante o clique; a interface identifica previs?es provis?rias. `./iniciar.ps1` inicia o worker e `./iniciar.ps1 -Stop` encerra os servi?os locais.
 
 Consulte [configura??o, contrato e valida??o de performance](docs/analysis-performance.md).
+
+O refinamento das análises de ativo e carteira usa uma única chamada estruturada à IA. Respostas inválidas preservam o diagnóstico inicial. Os históricos das previsões da carteira usam o executor limitado já existente; métricas e resultados estão no relatório de performance acima.

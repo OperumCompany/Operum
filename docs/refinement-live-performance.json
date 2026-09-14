@@ -1,0 +1,706 @@
+{
+  "baseline_ref": "dc6fbe4b0f32a2345b880b289a709f8183d933ee",
+  "model": "qwen3:4b",
+  "provider": "ollama",
+  "scope": "Real LLM; synthetic market/news/portfolio inputs. Not full endpoint latency.",
+  "cold_start": "Not forced; initial residency unknown to avoid unloading the user's model.",
+  "samples": [
+    {
+      "version": "before",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "initial",
+      "elapsed_ms": 39554.49,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 2
+      },
+      "text": null
+    },
+    {
+      "version": "after",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "initial",
+      "elapsed_ms": 15847.46,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 1,
+        "llm_validated": 1
+      },
+      "text": {
+        "historico": "Nos últimos 7 dias, PETR4 apresentou estabilidade com variação de +0,4%, mantendo-se próximo ao pico do período. O preço oscilou dentro de um intervalo amplo, com queda máxima de 0,5% abaixo do valor máximo registrado. O histórico não revela tendências claras de melhoria ou deterioração, mas indica movimentos moderados com influência de notícias de resultados. Sem comparação com o IBOV, pares setoriais ou carteira, não é possível avaliar se o ativo cumpriu sua função de estabilidade. A análise deve considerar que variações curtas podem não refletir mudanças sustentadas na qualidade da empresa.",
+        "situacaoAtual": "PETR4 atualmente está em posição de 100,0% na carteira, o que significa uma exposição altamente concentrada. O preço apresenta movimento lateral recente, sem direção clara, e as notícias têm tom misto, sem indicar melhora ou piora nos fundamentos. A oscilação do ativo pode impactar significativamente a carteira, já que uma queda de 10% teria efeito equivalente a 10,0% na carteira. É essencial monitorar resultados, volatilidade e notícias para verificar se o ativo permanece coerente com a função de estabilidade.",
+        "perspectiva": "No horizonte de 1 semana, o cenário é cauteloso. Fatores como variações diárias, notícias recentes e volatilidade curta podem influenciar o preço, mas não garantem mudanças nos fundamentos. O ativo pode ser favorecido por resultados consistentes ou melhorias setoriais, mas também pode ser pressionado por resultados abaixo do esperado ou piora econômica. Como a posição é 100,0% da carteira, oscilações significativas terão impacto elevado. A confiança na perspectiva é moderada, já que eventos imprevisíveis podem alterar rapidamente o cenário."
+      }
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 5,
+      "phase": "initial",
+      "elapsed_ms": 42630.04,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 2
+      },
+      "text": null
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 5,
+      "phase": "initial",
+      "elapsed_ms": 18052.97,
+      "schema_and_content_valid": true,
+      "legacy_text_accepted": true,
+      "counts": {
+        "llm_calls": 1,
+        "llm_validated": 1
+      },
+      "text": {
+        "headline": "A avaliação final da carteira em 3 meses é: fragil na construção atual, com concentração e correlação elevadas.",
+        "composition_summary": "Não é uma carteira ruim. Ela combina 1 classe de ativos e hoje tem seus maiores pesos em BBAS3 (33,3%), BBDC4 (26,7%), ITUB4 (20,0%) e VALE3 (13,3%). No recorte de 3 meses, o retorno agregado estimado da carteira ficou em +1,3%. No mesmo período, o benchmark de referência (Ibovespa) variou +1,3%. O principal ponto de atenção está na sobreposição entre ativos com funções similares e no risco escondido em alguns blocos, especialmente quando vários ativos parecem diversificar, mas respondem ao mesmo motor.",
+        "final_diagnosis": "No diagnóstico final, muitos ativos tendem a se mover juntos.",
+        "conclusion": "O maior ajuste conceitual para o recorte de 3 meses é reduzir redundâncias, explicitar a função de cada bloco e limitar os riscos que hoje parecem diversificação, mas ainda representam exposição repetida. A pergunta central passa a ser se cada ativo continua cumprindo bem a função que deveria cumprir dentro da carteira.",
+        "strengths": [
+          "A parte brasileira traz ativos geradores de caixa e setores conhecidos pelo investidor local.",
+          "As maiores posições cumprem funções relativamente claras dentro da carteira, com destaque para estabilidade e crescimento."
+        ],
+        "overlaps": [
+          "A correlação média entre ativos está elevada, o que reduz o ganho efetivo de diversificação.",
+          "Há repetição setorial relevante em Financeiro.",
+          "Existe repetição de função econômica em estabilidade, o que diminui a diversificação efetiva."
+        ],
+        "block_reviews": [
+          {
+            "title": "Ações brasileiras",
+            "assessment": "Bloco com perfil de renda e estabilidade, mas ainda sensível ao ambiente doméstico e à concentração setorial.",
+            "highlights": "Maior concentração setorial em Financeiro. O bloco funciona hoje como base doméstica de renda/estabilidade. Retorno em 3 meses: +1,3%."
+          }
+        ]
+      }
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "initial",
+      "elapsed_ms": 42927.38,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 2
+      },
+      "text": null
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "initial",
+      "elapsed_ms": 18263.37,
+      "schema_and_content_valid": true,
+      "legacy_text_accepted": true,
+      "counts": {
+        "llm_calls": 1,
+        "llm_validated": 1
+      },
+      "text": {
+        "headline": "A avaliação final da carteira em 1 mês é: fragil na construção atual, com concentração e correlação elevadas.",
+        "composition_summary": "Não é uma carteira ruim. Ela combina 1 classe de ativos e hoje tem seus maiores pesos em SUZB3, RENT3, B3SA3 e WEGE3. No recorte de 1 mês, o retorno agregado estimado da carteira ficou em +1,1%. No mesmo período, o benchmark de referência (Ibovespa) variou +1,1%. O principal ponto de atenção está na sobreposição entre ativos com função parecida e no risco escondido em alguns blocos, especialmente quando vários ativos parecem diversificar, mas respondem ao mesmo motor.",
+        "final_diagnosis": "No diagnóstico final, muitos ativos tendem a se mover juntos.",
+        "conclusion": "O maior ajuste conceitual para o recorte de 1 mês é reduzir redundâncias, explicitar a função de cada bloco e limitar os riscos que hoje parecem diversificação, mas ainda representam exposição repetida. A pergunta central passa a ser se cada ativo continua cumprindo bem a função que deveria cumprir dentro da carteira.",
+        "strengths": [
+          "A parte brasileira traz ativos geradores de caixa e setores conhecidos pelo investidor local.",
+          "No recorte de 1 mês, a carteira acompanha ou supera o benchmark principal.",
+          "As maiores posições cumprem funções relativamente claras dentro da carteira, com destaque para crescimento e estabilidade."
+        ],
+        "overlaps": [
+          "A correlação média entre ativos está elevada, o que reduz o ganho efetivo de diversificação.",
+          "Há repetição setorial relevante em Financeiro.",
+          "Existe repetição de função econômica em crescimento e estabilidade, o que diminui a diversificação efetiva."
+        ],
+        "block_reviews": [
+          {
+            "title": "Ações brasileiras",
+            "assessment": "Bloco razoavelmente distribuído entre setores locais, ainda dependente de macro Brasil.",
+            "highlights": "Maior concentração setorial em Financeiro. O bloco funciona hoje como base doméstica de renda/estabilidade. Retorno em 1 mês: +1,1%."
+          }
+        ]
+      }
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 20,
+      "phase": "initial",
+      "elapsed_ms": 36701.19,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 1
+      },
+      "text": null
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 20,
+      "phase": "initial",
+      "elapsed_ms": 28017.49,
+      "schema_and_content_valid": true,
+      "legacy_text_accepted": true,
+      "counts": {
+        "llm_calls": 1,
+        "llm_validated": 1
+      },
+      "text": {
+        "headline": "A avaliação final da carteira em 3 meses é: razoável, com bons ativos, porém com sobreposições e riscos que merecem ajuste, mas com risco concentrado em FIIs e cripto.",
+        "composition_summary": "Não é uma carteira ruim. Ela combina 4 classes de ativos e hoje tem seus maiores pesos em BTC, IVVB11, GOOG34 e MSFT34. No recorte de 3 meses, o retorno agregado estimado da carteira ficou em +1,3%. No mesmo período, o benchmark de referência S&P 500 variou +1,3%. O principal ponto de atenção está na sobreposição entre ativos com função parecida e no risco escondido em alguns blocos, especialmente quando vários ativos parecem diversificação, mas respondem ao mesmo motor.",
+        "final_diagnosis": "No diagnóstico final, muitos ativos tendem a se mover juntos.",
+        "conclusion": "O maior ajuste conceitual para o recorte de 3 meses é reduzir redundâncias, explicitar a função de cada bloco e limitar os riscos que hoje parecem diversificação, mas ainda representam exposição repetida. A pergunta central passa a ser se cada ativo continua cumprindo bem a função que deveria cumprir dentro da carteira.",
+        "strengths": [
+          "A carteira tem boa diversificação entre classes de ativos, o que reduz a dependência de um único mercado.",
+          "A exposição internacional amplia o acesso a dolar e a motores de crescimento fora do mercado doméstico.",
+          "A parte brasileira traz ativos geradores de caixa e setores conhecidos pelo investidor local.",
+          "As maiores posições cumprem funções relativamente claras dentro da carteira, com destaque para crescimento global, renda e assimetria."
+        ],
+        "overlaps": [
+          "A correlação média entre ativos está elevada, o que reduz o ganho efetivo de diversificação.",
+          "O bloco de FIIs já exige cuidado para não mascarar risco de crédito ou sensibilidade a juros.",
+          "Há repetição setorial relevante em Tecnologia e Financeiro.",
+          "Existe repetição de função econômica em crescimento global, renda e crescimento, o que diminui a diversificação efetiva."
+        ],
+        "block_reviews": [
+          {
+            "title": "Ações brasileiras",
+            "assessment": "Bloco razoavelmente distribuido entre setores locais, ainda dependente de macro Brasil.",
+            "highlights": "Maior concentração setorial em Financeiro. O bloco funciona hoje como base doméstica de renda/estabilidade. Retorno em 3 meses: +1,3%."
+          },
+          {
+            "title": "FIIs",
+            "assessment": "Bloco de FIIs mais equilibrado entre renda e tijolo.",
+            "highlights": "0 fundo(s) tem perfil mais proximo de credito ou hibrido. O risco escondido aqui está mais em crédito/indexadores do que em simples oscilação de tela. Retorno em 3 meses: +1,3%."
+          },
+          {
+            "title": "Exterior",
+            "assessment": "Bloco importante para diversificação geográfica, mas sensível ao ciclo de juros e ao peso excessivo em índices parecidos.",
+            "highlights": "Peso agregado aproximado de 33,3% em ativos ligados aos EUA. O bloco cumpre função de crescimento global, mas pode estar redundante em índices muito parecidos. Retorno em 3 meses: +1,3%."
+          },
+          {
+            "title": "Cripto",
+            "assessment": "Bloco com potencial de assimetria, mas com volatilidade estruturalmente alta.",
+            "highlights": "Peso aproximado de 9,5% em criptoativos."
+          }
+        ]
+      }
+    },
+    {
+      "version": "after",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "warm",
+      "elapsed_ms": 14771.78,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 1,
+        "llm_validated": 1
+      },
+      "text": {
+        "historico": "Nos últimos 7 dias, PETR4 apresentou estabilidade com variação de +0,4%, mantendo-se próximo ao pico do período. O preço oscilou com amplitude limitada, atingindo um mínimo de 0,5% abaixo do máximo registrado. O histórico não revela tendências claras de melhoria ou deterioração, mas indica que o ativo está em um movimento lateral. As notícias recentes têm tom misto, com foco em resultados, mas não são suficientes para concluir sobre a saúde fundamental da empresa. Sem comparação com o IBOV, pares setoriais ou a carteira, não é possível avaliar se o ativo cumpre sua função de estabilidade.",
+        "situacaoAtual": "Atualmente, PETR4 está em posição de 100,0% na carteira, o que significa uma exposição altamente concentrada. O preço apresenta movimento lateral recente, sem direção clara, e as notícias têm tom misto, mas não indicam alteração significativa nos fundamentos da empresa. Qualquer oscilação relevante do ativo terá impacto elevado na carteira, já que a exposição é total. Por exemplo, uma queda de 10% em PETR4 afetaria diretamente 10,0% do patrimônio total. É essencial monitorar resultados, notícias e volatilidade para evitar riscos de concentração.",
+        "perspectiva": "No horizonte de 1 semana, o cenário é cauteloso. O ativo pode ser influenciado por ruídos de mercado, variações diárias, notícias recentes e volatilidade curta. Resultados consistentes ou notícias favoráveis podem impulsionar o preço, enquanto resultados abaixo do esperado ou piora setorial podem pressionar. Como a posição é total na carteira, movimentos fortes do ativo terão impacto elevado no resultado final. A confiança na perspectiva é moderada, já que a função de estabilidade depende de eventos imprevisíveis e não de fundamentos consolidados."
+      }
+    },
+    {
+      "version": "before",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "warm",
+      "elapsed_ms": 32406.33,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 2
+      },
+      "text": null
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 5,
+      "phase": "warm",
+      "elapsed_ms": 16741.59,
+      "schema_and_content_valid": true,
+      "legacy_text_accepted": true,
+      "counts": {
+        "llm_calls": 1,
+        "llm_validated": 1
+      },
+      "text": {
+        "headline": "A avaliação final da carteira em 3 meses é: fragil na construção atual, com concentração e correlação elevadas.",
+        "composition_summary": "Não é uma carteira ruim. Ela combina 1 classe de ativos e hoje tem seus maiores pesos em BBAS3 (33,3%), BBDC4 (26,7%), ITUB4 (20,0%) e VALE3 (13,3%). No recorte de 3 meses, o retorno agregado estimado da carteira ficou em +1,3%. No mesmo período, o benchmark de referência (Ibovespa) variou +1,3%. O principal ponto de atenção está na sobreposição entre ativos com funções similares e no risco escondido em alguns blocos, especialmente quando vários ativos parecem diversificar, mas respondem ao mesmo motor.",
+        "final_diagnosis": "No diagnóstico final, muitos ativos tendem a se mover juntos.",
+        "conclusion": "O maior ajuste conceitual para o recorte de 3 meses é reduzir redundâncias, explicitar a função de cada bloco e limitar os riscos que hoje parecem diversificação, mas ainda representam exposição repetida. A pergunta central passa a ser se cada ativo continua cumprindo bem a função que deveria cumprir dentro da carteira.",
+        "strengths": [
+          "A parte brasileira traz ativos geradores de caixa e setores conhecidos pelo investidor local.",
+          "As maiores posições cumprem funções relativamente claras dentro da carteira, com destaque para estabilidade e crescimento."
+        ],
+        "overlaps": [
+          "A correlação média entre ativos está elevada, o que reduz o ganho efetivo de diversificação.",
+          "Há repetição setorial relevante em Financeiro.",
+          "Existe repetição de função econômica em estabilidade, o que diminui a diversificação efetiva."
+        ],
+        "block_reviews": [
+          {
+            "title": "Ações brasileiras",
+            "assessment": "Bloco com perfil de renda e estabilidade, mas ainda sensível ao ambiente doméstico e à concentração setorial.",
+            "highlights": "Maior concentração setorial em Financeiro. O bloco funciona hoje como base doméstica de renda/estabilidade. Retorno em 3 meses: +1,3%."
+          }
+        ]
+      }
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 5,
+      "phase": "warm",
+      "elapsed_ms": 33669.16,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 1
+      },
+      "text": null
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "warm",
+      "elapsed_ms": 17518.79,
+      "schema_and_content_valid": true,
+      "legacy_text_accepted": true,
+      "counts": {
+        "llm_calls": 1,
+        "llm_validated": 1
+      },
+      "text": {
+        "headline": "A avaliação final da carteira em 1 mês é: fragil na construção atual, com concentração e correlação elevadas.",
+        "composition_summary": "Não é uma carteira ruim. Ela combina 1 classe de ativos e hoje tem seus maiores pesos em SUZB3 (18,2%), RENT3 (16,4%), B3SA3 (14,5%) e WEGE3 (12,7%). No recorte de 1 mês, o retorno agregado estimado da carteira ficou em +1,1%. No mesmo período, o benchmark de referência (Ibovespa) variou +1,1%. O principal ponto de atenção está na sobreposição entre ativos com funções similares e no risco escondido em alguns blocos, especialmente quando vários ativos parecem diversificar, mas respondem ao mesmo motor.",
+        "final_diagnosis": "No diagnóstico final, muitos ativos tendem a se mover juntos.",
+        "conclusion": "O maior ajuste conceitual para o recorte de 1 mês é reduzir redundâncias, explicitar a função de cada bloco e limitar os riscos que hoje parecem diversificação, mas ainda representam exposição repetida. A pergunta central passa a ser se cada ativo continua cumprindo bem a função que deveria cumprir dentro da carteira.",
+        "strengths": [
+          "A parte brasileira traz ativos geradores de caixa e setores conhecidos pelo investidor local.",
+          "No recorte de 1 mês, a carteira acompanha ou supera o benchmark principal.",
+          "As maiores posições cumprem funções relativamente claras dentro da carteira, com destaque para crescimento e estabilidade."
+        ],
+        "overlaps": [
+          "A correlação média entre ativos está elevada, o que reduz o ganho efetivo de diversificação.",
+          "Há repetição setorial relevante em Financeiro.",
+          "Existe repetição de função econômica em crescimento e estabilidade, o que diminui a diversificação efetiva."
+        ],
+        "block_reviews": [
+          {
+            "title": "Ações brasileiras",
+            "assessment": "Bloco razoavelmente distribuído entre setores locais, ainda dependente de macro Brasil.",
+            "highlights": "Maior concentração setorial em Financeiro. O bloco funciona hoje como base doméstica de renda/estabilidade. Retorno em 1 mês: +1,1%."
+          }
+        ]
+      }
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "warm",
+      "elapsed_ms": 34048.56,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 1
+      },
+      "text": null
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 20,
+      "phase": "warm",
+      "elapsed_ms": 26869.64,
+      "schema_and_content_valid": true,
+      "legacy_text_accepted": true,
+      "counts": {
+        "llm_calls": 1,
+        "llm_validated": 1
+      },
+      "text": {
+        "headline": "A avaliação final da carteira em 3 meses é: razoável, com bons ativos, porém com sobreposições e riscos que merecem ajuste, mas com risco concentrado em FIIs e cripto.",
+        "composition_summary": "Não é uma carteira ruim. Ela combina 4 classes de ativos e hoje tem seus maiores pesos em BTC, IVVB11, GOOG34 e MSFT34. No recorte de 3 meses, o retorno agregado estimado da carteira ficou em +1,3%. No mesmo período, o benchmark de referência S&P 500 variou +1,3%. O principal ponto de atenção está na sobreposição entre ativos com função parecida e no risco escondido em alguns blocos, especialmente quando vários ativos parecem diversificação, mas respondem ao mesmo motor.",
+        "final_diagnosis": "No diagnóstico final, muitos ativos tendem a se mover juntos.",
+        "conclusion": "O maior ajuste conceitual para o recorte de 3 meses é reduzir redundâncias, explicitar a função de cada bloco e limitar os riscos que hoje parecem diversificação, mas ainda representam exposição repetida. A pergunta central passa a ser se cada ativo continua cumprindo bem a função que deveria cumprir dentro da carteira.",
+        "strengths": [
+          "A carteira tem boa diversificação entre classes de ativos, o que reduz a dependência de um único mercado.",
+          "A exposição internacional amplia o acesso a dolar e a motores de crescimento fora do mercado doméstico.",
+          "A parte brasileira traz ativos geradores de caixa e setores conhecidos pelo investidor local.",
+          "As maiores posições cumprem funções relativamente claras dentro da carteira, com destaque para crescimento global, renda e assimetria."
+        ],
+        "overlaps": [
+          "A correlação média entre ativos está elevada, o que reduz o ganho efetivo de diversificação.",
+          "O bloco de FIIs já exige cuidado para não mascarar risco de crédito ou sensibilidade a juros.",
+          "Há repetição setorial relevante em Tecnologia e Financeiro.",
+          "Existe repetição de função econômica em crescimento global, renda e crescimento, o que diminui a diversificação efetiva."
+        ],
+        "block_reviews": [
+          {
+            "title": "Ações brasileiras",
+            "assessment": "Bloco razoavelmente distribuido entre setores locais, ainda dependente de macro Brasil.",
+            "highlights": "Maior concentração setorial em Financeiro. O bloco funciona hoje como base doméstica de renda/estabilidade. Retorno em 3 meses: +1,3%."
+          },
+          {
+            "title": "FIIs",
+            "assessment": "Bloco de FIIs mais equilibrado entre renda e tijolo.",
+            "highlights": "0 fundo(s) tem perfil mais proximo de credito ou hibrido. O risco escondido aqui está mais em crédito/indexadores do que em simples oscilação de tela. Retorno em 3 meses: +1,3%."
+          },
+          {
+            "title": "Exterior",
+            "assessment": "Bloco importante para diversificação geográfica, mas sensível ao ciclo de juros e ao peso excessivo em índices parecidos.",
+            "highlights": "Peso agregado aproximado de 33,3% em ativos ligados aos EUA. O bloco cumpre função de crescimento global, mas pode estar redundante em índices muito parecidos. Retorno em 3 meses: +1,3%."
+          },
+          {
+            "title": "Cripto",
+            "assessment": "Bloco com potencial de assimetria, mas com volatilidade estruturalmente alta.",
+            "highlights": "Peso aproximado de 9,5% em criptoativos."
+          }
+        ]
+      }
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 20,
+      "phase": "warm",
+      "elapsed_ms": 43415.11,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 2
+      },
+      "text": null
+    },
+    {
+      "version": "before",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "concurrent",
+      "elapsed_ms": 67957.74,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 2
+      },
+      "text": null,
+      "measurement": null
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "concurrent",
+      "elapsed_ms": 62394.93,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 1,
+        "llm_timeout": 1
+      },
+      "text": null,
+      "measurement": null
+    },
+    {
+      "version": "after",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "concurrent",
+      "elapsed_ms": 37379.01,
+      "schema_and_content_valid": false,
+      "legacy_text_accepted": false,
+      "counts": {
+        "llm_calls": 1,
+        "llm_validated": 1
+      },
+      "text": {
+        "historico": "Nos últimos 7 dias, PETR4 apresentou estabilidade com variação de +0,4%, mantendo-se próximo ao pico do período. O preço oscilou dentro de um intervalo amplo, com queda máxima de 0,5% abaixo do valor máximo registrado. O histórico não revela tendências claras de melhoria ou deterioração, mas indica movimentos moderados. As notícias recentes tiveram tom misto, focadas em resultados, sem impacto definitivo na qualidade do negócio. Sem comparação com o IBOV, pares setoriais ou carteira, não é possível avaliar se o ativo cumpriu sua função de estabilidade. A análise deve considerar que variações curtas podem não refletir mudanças fundamentais.",
+        "situacaoAtual": "PETR4 atualmente está em posição de 100,0% na carteira, o que significa uma exposição altamente concentrada. O preço apresenta movimento lateral, sem direção clara, e as notícias recentes não indicam melhora ou piora nos fundamentos. A oscilação recente de +0,4% sugere estabilidade, mas a alta concentração na carteira implica que variações significativas do ativo terão impacto elevado no resultado total. Por exemplo, uma queda de 10% em PETR4 afetaria diretamente 10,0% da carteira. É essencial monitorar resultados, notícias e volatilidade para avaliar coerência com a função de estabilidade.",
+        "perspectiva": "No horizonte próximo de 1 semana, o cenário é cauteloso. A estabilidade do preço é temporária e depende de fatores como notícias recentes, volatilidade diária e reações do mercado. O ativo pode ser favorecido por resultados consistentes ou melhorias setoriais, mas também pressionado por resultados abaixo do esperado ou piora econômica. Como a posição representa 100% da carteira, movimentos fortes do ativo terão impacto elevado no resultado total. A confiança na perspectiva é moderada, já que eventos imprevisíveis podem alterar rapidamente a dinâmica do ativo."
+      },
+      "measurement": {
+        "outcome": "validated",
+        "http_ms": 37322.05,
+        "metrics": {
+          "total_duration": 34952140000,
+          "load_duration": 177645200,
+          "prompt_eval_duration": 1078842000,
+          "eval_duration": 14952485000,
+          "prompt_eval_count": 1586,
+          "eval_count": 515
+        }
+      }
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "concurrent",
+      "elapsed_ms": 21164.07,
+      "schema_and_content_valid": true,
+      "legacy_text_accepted": true,
+      "counts": {
+        "llm_calls": 1,
+        "llm_validated": 1
+      },
+      "text": {
+        "headline": "A avaliação final da carteira em 1 mês é: fragil na construção atual, com concentração e correlação elevadas.",
+        "composition_summary": "Não é uma carteira ruim. Ela combina 1 classe de ativos e hoje tem seus maiores pesos em SUZB3, RENT3, B3SA3 e WEGE3. No recorte de 1 mês, o retorno agregado estimado da carteira ficou em +1,1%. No mesmo período, o benchmark de referência (Ibovespa) variou +1,1%. O principal ponto de atenção está na sobreposição entre ativos com função parecida e no risco escondido em alguns blocos, especialmente quando vários ativos parecem diversificar, mas respondem ao mesmo motor.",
+        "final_diagnosis": "No diagnóstico final, muitos ativos tendem a se mover juntos.",
+        "conclusion": "O maior ajuste conceitual para o recorte de 1 mês é reduzir redundâncias, explicitar a função de cada bloco e limitar os riscos que hoje parecem diversificação, mas ainda representam exposição repetida. A pergunta central passa a ser se cada ativo continua cumprindo bem a função que deveria cumprir dentro da carteira.",
+        "strengths": [
+          "A parte brasileira traz ativos geradores de caixa e setores conhecidos pelo investidor local.",
+          "No recorte de 1 mês, a carteira acompanha ou supera o benchmark principal.",
+          "As maiores posições cumprem funções relativamente claras dentro da carteira, com destaque para crescimento e estabilidade."
+        ],
+        "overlaps": [
+          "A correlação média entre ativos está elevada, o que reduz o ganho efetivo de diversificação.",
+          "Há repetição setorial relevante em Financeiro.",
+          "Existe repetição de função econômica em crescimento e estabilidade, o que diminui a diversificação efetiva."
+        ],
+        "block_reviews": [
+          {
+            "title": "Ações brasileiras",
+            "assessment": "Bloco razoavelmente distribuído entre setores locais, ainda dependente de macro Brasil.",
+            "highlights": "Maior concentração setorial em Financeiro. O bloco funciona hoje como base doméstica de renda/estabilidade. Retorno em 1 mês: +1,1%."
+          }
+        ]
+      },
+      "measurement": {
+        "outcome": "validated",
+        "http_ms": 21108.12,
+        "metrics": {
+          "total_duration": 18750495200,
+          "load_duration": 180122700,
+          "prompt_eval_duration": 1447796000,
+          "eval_duration": 17047148000,
+          "prompt_eval_count": 1946,
+          "eval_count": 562
+        }
+      }
+    }
+  ],
+  "summary": [
+    {
+      "version": "before",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "initial",
+      "samples": 1,
+      "median_ms": 39554.49,
+      "p95_ms": 39554.49,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "after",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "initial",
+      "samples": 1,
+      "median_ms": 15847.46,
+      "p95_ms": 15847.46,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 5,
+      "phase": "initial",
+      "samples": 1,
+      "median_ms": 42630.04,
+      "p95_ms": 42630.04,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 5,
+      "phase": "initial",
+      "samples": 1,
+      "median_ms": 18052.97,
+      "p95_ms": 18052.97,
+      "valid_rate": 1.0
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "initial",
+      "samples": 1,
+      "median_ms": 42927.38,
+      "p95_ms": 42927.38,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "initial",
+      "samples": 1,
+      "median_ms": 18263.37,
+      "p95_ms": 18263.37,
+      "valid_rate": 1.0
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 20,
+      "phase": "initial",
+      "samples": 1,
+      "median_ms": 36701.19,
+      "p95_ms": 36701.19,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 20,
+      "phase": "initial",
+      "samples": 1,
+      "median_ms": 28017.49,
+      "p95_ms": 28017.49,
+      "valid_rate": 1.0
+    },
+    {
+      "version": "after",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "warm",
+      "samples": 1,
+      "median_ms": 14771.78,
+      "p95_ms": 14771.78,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "before",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "warm",
+      "samples": 1,
+      "median_ms": 32406.33,
+      "p95_ms": 32406.33,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 5,
+      "phase": "warm",
+      "samples": 1,
+      "median_ms": 16741.59,
+      "p95_ms": 16741.59,
+      "valid_rate": 1.0
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 5,
+      "phase": "warm",
+      "samples": 1,
+      "median_ms": 33669.16,
+      "p95_ms": 33669.16,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "warm",
+      "samples": 1,
+      "median_ms": 17518.79,
+      "p95_ms": 17518.79,
+      "valid_rate": 1.0
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "warm",
+      "samples": 1,
+      "median_ms": 34048.56,
+      "p95_ms": 34048.56,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 20,
+      "phase": "warm",
+      "samples": 1,
+      "median_ms": 26869.64,
+      "p95_ms": 26869.64,
+      "valid_rate": 1.0
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 20,
+      "phase": "warm",
+      "samples": 1,
+      "median_ms": 43415.11,
+      "p95_ms": 43415.11,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "before",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "concurrent",
+      "samples": 1,
+      "median_ms": 67957.74,
+      "p95_ms": 67957.74,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "before",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "concurrent",
+      "samples": 1,
+      "median_ms": 62394.93,
+      "p95_ms": 62394.93,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "after",
+      "operation": "asset",
+      "positions": 1,
+      "phase": "concurrent",
+      "samples": 1,
+      "median_ms": 37379.01,
+      "p95_ms": 37379.01,
+      "valid_rate": 0.0
+    },
+    {
+      "version": "after",
+      "operation": "portfolio",
+      "positions": 10,
+      "phase": "concurrent",
+      "samples": 1,
+      "median_ms": 21164.07,
+      "p95_ms": 21164.07,
+      "valid_rate": 1.0
+    }
+  ]
+}

@@ -3,9 +3,11 @@ from app.services.analysis_execution import count
 import json
 import logging
 import re
+from time import perf_counter
 from typing import Any
 
 import httpx
+from pydantic import BaseModel
 
 from app.core.config import AI_API_KEY, AI_BASE_URL, AI_ENABLED, AI_MODEL, AI_PROVIDER, AI_TIMEOUT_SECONDS
 
@@ -208,7 +210,10 @@ class LLMService:
         user_payload: dict[str, Any],
         temperature: float = 0.1,
         max_tokens: int = 900,
+        response_model: type[BaseModel] | None = None,
     ) -> dict[str, Any] | None:
+        if response_model is not None:
+            return self._structured_json(system_prompt, user_payload, temperature, max_tokens, response_model)
         prompt = json.dumps(user_payload, ensure_ascii=False, indent=2)
         raw = self.chat_completion(system_prompt, prompt, temperature=temperature, max_tokens=max_tokens)
         if not raw:
@@ -218,6 +223,64 @@ class LLMService:
         except Exception as exc:
             logger.warning("Retorno JSON invalido da IA local: %s", exc)
             return None
+
+    def _structured_json(self, system_prompt, user_payload, temperature, max_tokens, response_model):
+        if not self.enabled:
+            return None
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user", "content": json.dumps(user_payload, ensure_ascii=False, separators=(",", ":"))},
+        ]
+        schema = response_model.model_json_schema()
+        if self.provider == "ollama":
+            url = f"{self.base_url.removesuffix('/v1')}/api/chat"
+            payload = {"model": self.model, "messages": messages, "format": schema,
+                       "think": False, "stream": False,
+                       "options": {"temperature": temperature, "num_predict": max_tokens}}
+            headers = {}
+        else:
+            messages[0]["content"] += "\nJSON schema: " + json.dumps(schema, ensure_ascii=False, separators=(",", ":"))
+            url = f"{self.base_url}/chat/completions"
+            payload = {"model": self.model, "messages": messages,
+                       "temperature": temperature, "max_tokens": max_tokens}
+            headers = {"Authorization": f"Bearer {self.api_key}"}
+        metrics = {}
+        outcome = "http_error"
+        started = perf_counter()
+        http_ms = None
+        try:
+            with httpx.Client(timeout=self.timeout_seconds) as client:
+                count("llm_calls")
+                response = client.post(url, json=payload, headers=headers)
+                response.raise_for_status()
+                outcome = "invalid_response"
+                data = response.json()
+            http_ms = round((perf_counter() - started) * 1000, 2)
+            if self.provider == "ollama":
+                for key in ("total_duration", "load_duration", "prompt_eval_duration", "eval_duration",
+                            "prompt_eval_count", "eval_count"):
+                    value = data.get(key)
+                    metrics[key] = value if isinstance(value, (int, float)) else None
+                content = data.get("message", {}).get("content", "")
+            else:
+                content = data.get("choices", [{}])[0].get("message", {}).get("content", "")
+                usage = data.get("usage") or {}
+                metrics = {key: usage.get(key) for key in ("prompt_tokens", "completion_tokens")}
+            outcome = "invalid_response"
+            parsed = response_model.model_validate_json(content).model_dump()
+            if self._looks_like_reasoning_or_meta(json.dumps(parsed, ensure_ascii=False)):
+                return None
+            outcome = "validated"
+            return parsed
+        except httpx.TimeoutException:
+            outcome = "timeout"
+            return None
+        except Exception:
+            return None
+        finally:
+            count("llm_" + outcome)
+            logger.info("llm_refinement_metrics provider=%s outcome=%s http_ms=%.2f metrics=%s",
+                        self.provider, outcome, http_ms if http_ms is not None else (perf_counter() - started) * 1000, metrics)
 
     def _extract_json(self, raw: str) -> dict[str, Any]:
         text = raw.strip()

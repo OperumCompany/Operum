@@ -1,4 +1,5 @@
-from app.services.analysis_execution import (analysis_request, analysis_now, request_input, timed, parallel_queries, forecast_availability)
+from app.schemas.analysis_refinement import AssetRefinement
+from app.services.analysis_execution import (analysis_request, analysis_now, request_input, timed, parallel_queries, forecast_availability, count)
 
 import json
 import logging
@@ -1667,30 +1668,6 @@ class AssetAnalysisService:
                 return False
         return True
 
-    def _valid_refined_friendly_sections(self, refined: dict) -> bool:
-        required_text = ["summary", "what_happened", "company_situation", "asset_price_situation", "current_situation", "portfolio_impact", "conclusion"]
-        required_visual = ["asset_status", "fundamentals", "price_trend", "news_sentiment", "position_size", "portfolio_risk", "main_reason", "confidence"]
-        required_scenarios = ["favorable", "base", "adverse"]
-        if self._contains_transactional_recommendation(refined):
-            return False
-        if not isinstance(refined.get("visual_summary"), dict):
-            return False
-        if any(not isinstance(refined["visual_summary"].get(key), str) or not refined["visual_summary"][key].strip() for key in required_visual):
-            return False
-        if not isinstance(refined.get("scenarios"), dict):
-            return False
-        if any(not isinstance(refined["scenarios"].get(key), str) or not refined["scenarios"][key].strip() for key in required_scenarios):
-            return False
-        if any(not isinstance(refined.get(key), str) or not refined[key].strip() for key in required_text):
-            return False
-        if not isinstance(refined.get("what_to_watch"), list):
-            return False
-        if not all(isinstance(item, str) and item.strip() for item in refined["what_to_watch"]):
-            return False
-        if not isinstance(refined.get("data_quality_warnings"), list):
-            return False
-        return all(isinstance(item, str) and item.strip() for item in refined["data_quality_warnings"])
-
     @timed("llm_refinement")
     def _refine_analysis_sections(self, payload: dict, history_horizon: str, outlook_horizon: str) -> dict:
         if not self.llm.enabled or not AI_ENHANCE_ASSET_ANALYSIS:
@@ -1699,6 +1676,8 @@ class AssetAnalysisService:
         refined = self.llm.chat_json(
             ASSET_ANALYSIS_REFINER_PROMPT,
             {
+                "selected_history_horizon": history_horizon,
+                "selected_outlook_horizon": outlook_horizon,
                 "current_snapshot": payload.get("current_snapshot"),
                 "recent_performance": payload.get("recent_performance"),
                 "outlook_3m": payload.get("outlook_3m"),
@@ -1716,56 +1695,20 @@ class AssetAnalysisService:
             },
             temperature=0.15,
             max_tokens=900,
+            response_model=AssetRefinement,
         )
-        if not refined:
+        if not refined or not self._valid_refined_box_sections(refined):
+            count("llm_deterministic_fallback")
             return payload
-        if self._contains_transactional_recommendation(refined):
-            return payload
+        count("llm_refinement_accepted")
 
         sections = payload.get("analysis_sections", {})
-        if self._valid_refined_box_sections(refined):
-            merged_history = dict(sections.get("box_history_by_horizon", {}))
-            merged_outlook = dict(sections.get("box_outlook_by_horizon", {}))
-            merged_history[history_horizon] = refined["historico"].strip()
-            merged_outlook[outlook_horizon] = refined["perspectiva"].strip()
-            sections["box_history_by_horizon"] = merged_history
-            sections["box_current"] = refined["situacaoAtual"].strip()
-            sections["box_outlook_by_horizon"] = merged_outlook
-            payload["analysis_sections"] = sections
-            return payload
-
-        if isinstance(refined.get("current"), str) and refined["current"].strip():
-            sections["current"] = refined["current"].strip()
-
-        if isinstance(refined.get("recent_by_horizon"), dict):
-            merged_recent = dict(sections.get("recent_by_horizon", {}))
-            for key, value in refined["recent_by_horizon"].items():
-                if key in merged_recent and isinstance(value, str) and value.strip():
-                    merged_recent[key] = value.strip()
-            sections["recent_by_horizon"] = merged_recent
-            sections["recent"] = merged_recent.get(history_horizon, sections.get("recent"))
-
-        if isinstance(refined.get("outlook_by_horizon"), dict):
-            merged_outlook = dict(sections.get("outlook_by_horizon", {}))
-            for key, value in refined["outlook_by_horizon"].items():
-                if key in merged_outlook and isinstance(value, str) and value.strip():
-                    merged_outlook[key] = value.strip()
-            sections["outlook_by_horizon"] = merged_outlook
-            sections["outlook"] = merged_outlook.get(outlook_horizon, sections.get("outlook"))
-
-        if self._valid_refined_friendly_sections(refined):
-            sections["visual_summary"] = {
-                key: refined["visual_summary"][key].strip()
-                for key in ["asset_status", "fundamentals", "price_trend", "news_sentiment", "position_size", "portfolio_risk", "main_reason", "confidence"]
-            }
-            for key in ["summary", "what_happened", "company_situation", "asset_price_situation", "current_situation", "portfolio_impact", "conclusion"]:
-                sections[key] = refined[key].strip()
-            sections["scenarios"] = {
-                key: refined["scenarios"][key].strip()
-                for key in ["favorable", "base", "adverse"]
-            }
-            sections["what_to_watch"] = [item.strip() for item in refined["what_to_watch"] if item.strip()]
-            sections["data_quality_warnings"] = [item.strip() for item in refined["data_quality_warnings"] if item.strip()]
-
+        merged_history = dict(sections.get("box_history_by_horizon", {}))
+        merged_outlook = dict(sections.get("box_outlook_by_horizon", {}))
+        merged_history[history_horizon] = refined["historico"].strip()
+        merged_outlook[outlook_horizon] = refined["perspectiva"].strip()
+        sections["box_history_by_horizon"] = merged_history
+        sections["box_current"] = refined["situacaoAtual"].strip()
+        sections["box_outlook_by_horizon"] = merged_outlook
         payload["analysis_sections"] = sections
         return payload

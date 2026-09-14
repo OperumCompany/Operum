@@ -33,6 +33,7 @@ class FrozenDatetime(datetime):
 def load_baseline(ref, filename):
     source = subprocess.check_output(["git", "show", f"{ref}:app/services/{filename}.py"], encoding="utf-8")
     module = types.ModuleType(f"before_{filename}")
+    module.__file__ = str(Path(__file__).resolve().parents[1] / "app" / "services" / f"{filename}.py")
     exec(compile(source, filename, "exec"), module.__dict__)
     module.datetime = FrozenDatetime
     return module
@@ -41,7 +42,7 @@ def load_baseline(ref, filename):
 DEFAULT_BASELINE_REF = "1e4ac3a703bcd81a0ed62f1278ef3c4bbb08283f"
 
 
-def run_comparison(baseline_ref=DEFAULT_BASELINE_REF, repeats=5):
+def run_comparison(baseline_ref=DEFAULT_BASELINE_REF, repeats=5, capture_refinement=None):
     import numpy as np
     import pandas as pd
     from app.schemas.news import NewsItem
@@ -86,6 +87,8 @@ def run_comparison(baseline_ref=DEFAULT_BASELINE_REF, repeats=5):
                         "generated_at": FrozenDatetime.now(timezone.utc).isoformat(),
                         "forecast_series": self._interpolate_series(float(close[-1]), FrozenDatetime.now(timezone.utc), predictions),
                         "forecast_anchor_points": []}
+            def predict_many(self, tickers):
+                return [self.predict(ticker) for ticker in tickers]
             def predict(self, ticker):
                 result = self.predict_multi(ticker, [1])
                 return {"confidence": 0.6} if result else None
@@ -95,6 +98,8 @@ def run_comparison(baseline_ref=DEFAULT_BASELINE_REF, repeats=5):
             def chat_json(self, *args, **kwargs):
                 nonlocal llm_seconds
                 counts["llm"] += 1
+                if capture_refinement is not None and asset_module is after_asset:
+                    capture_refinement(operation, size, args, kwargs)
                 start = time.perf_counter()
                 time.sleep(0.003)
                 llm_seconds += time.perf_counter() - start

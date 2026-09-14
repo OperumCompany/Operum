@@ -264,3 +264,7 @@ Sempre atualizar este arquivo quando houver mudancas em:
 - N?o submeter tarefas que aguardem outras tarefas ao mesmo executor de consultas.
 - Preservar bloqueios da fila local, publica??o at?mica dos modelos e recupera??o do worker ?nico.
 - Opera??o, disponibilidade e m?tricas: `docs/analysis-performance.md`.
+
+- Refinamento de ativo/carteira: usar `chat_json(response_model=...)`, validar antes de alterar textos e manter o diagnóstico determinístico em falhas, sem segunda chamada. Outros consumidores mantêm o caminho anterior.
+- Forecast da carteira: `predict_many` preserva as primeiras oito posições, deduplica downloads por ticker e calcula fora do executor. Usar `Ticker.history` com parâmetros explícitos; não paralelizar `yf.download`, que usa estruturas globais na versão instalada.
+- Métricas: distinguir `forecast_history_batch` (tempo decorrido), `forecast_history` (soma dos downloads) e `forecast_calculations`. `llm_validated` indica schema válido; `llm_refinement_accepted` indica texto aplicado após as validações do serviço.
