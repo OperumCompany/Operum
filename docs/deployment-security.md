@@ -64,6 +64,10 @@ O host do backend Python deve receber:
 - `SUPABASE_DB_URL`
 - `SUPABASE_DB_SCHEMA`
 - `CORS_ORIGINS`
+- `OPERUM_ENV`
+- `OPERUM_RATE_LIMIT_ENABLED`
+- `REDIS_URL`
+- `OPERUM_REFRESH_TOKEN`
 - `OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP`
 - `OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP`
 - `OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP`
@@ -75,13 +79,33 @@ Recomendacao para producao:
 - `OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP=false`
 - `OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP=false`
 - `OPERUM_SEED_DEMO_USER=false`
+- `OPERUM_ENV=production`
+- `OPERUM_RATE_LIMIT_ENABLED=true`
+- `OPERUM_COOKIE_SECURE=true`
+- `REDIS_URL` configurada para Redis/Upstash
+- `CORS_ORIGINS` contendo apenas o dominio real do frontend
 
 Auth em producao:
 
 - a autenticacao continua propria no backend Python
+- sessoes devem trafegar via cookie `operum_session` com `HttpOnly`, `Secure` e `SameSite=Lax`
 - o backend precisa de `SUPABASE_DB_URL` para persistir `app_users`, `auth_sessions` e `user_preferences`
 - manter RLS ativo em `app_users`, `auth_sessions`, `user_preferences`, `portfolios` e `portfolio_positions`
 - nao criar policies publicas permissivas nessas tabelas enquanto o frontend nao usar Supabase Auth
+
+Rate limit em producao:
+
+- `REDIS_URL` e obrigatoria quando `OPERUM_RATE_LIMIT_ENABLED=true`
+- login, cadastro, chat/IA e endpoints administrativos sao limitados pela API
+- WAF/bot protection gerenciado ainda deve ser adicionado na borda quando o dominio estiver pronto
+
+Checks antes do deploy:
+
+- `python -m pytest`
+- `npm run build`
+- `npm audit --audit-level=low`
+- `python -m pip_audit -r requirements.txt`
+- `python scripts/secure_supabase_rls.py`
 
 ## 5. Rotacao de segredos
 

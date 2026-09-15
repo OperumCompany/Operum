@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+from inspect import signature
+from app.services.analysis_execution import request_input, timed
+
 import logging
 import math
 import re
@@ -93,7 +96,16 @@ class NewsSemanticService:
         finally:
             _INDEX_LOCK.release()
 
-    def semantic_scores(
+    def semantic_scores(self, query: str, **kwargs) -> dict[str, float]:
+        bound = signature(self._semantic_scores).bind(query, **kwargs)
+        bound.apply_defaults()
+        db = getattr(self.repository, "db", None)
+        namespace = (getattr(db, "schema", None), getattr(db, "db_url", None)) if db is not None else id(self.repository)
+        key = ("semantic_scores", namespace, getattr(self.embedder, "model_name", None), repr(bound.arguments))
+        return request_input(key, lambda: self._semantic_scores(query, **kwargs))
+
+    @timed("semantic_search")
+    def _semantic_scores(
         self,
         query: str,
         *,

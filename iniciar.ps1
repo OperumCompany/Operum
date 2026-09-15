@@ -1,3 +1,5 @@
+param([switch]$Stop)
+
 $ErrorActionPreference = "Stop"
 
 Write-Host "========================================" -ForegroundColor Cyan
@@ -11,6 +13,8 @@ $backendLog = Join-Path $projectDir "backend-start.log"
 $backendErrorLog = Join-Path $projectDir "backend-start.err.log"
 $frontendLog = Join-Path $projectDir "frontend-start.log"
 $frontendErrorLog = Join-Path $projectDir "frontend-start.err.log"
+$workerLog = Join-Path $projectDir "worker-start.log"
+$workerErrorLog = Join-Path $projectDir "worker-start.err.log"
 $ollamaLog = Join-Path $projectDir "ollama-start.log"
 $ollamaErrorLog = Join-Path $projectDir "ollama-start.err.log"
 
@@ -26,6 +30,16 @@ function Stop-PortProcess {
             Write-Host "  Porta $Port liberada (PID $processId)" -ForegroundColor Yellow
         }
     }
+}
+
+function Stop-WorkspaceWorker {
+    Get-CimInstance Win32_Process -Filter "Name = 'python.exe'" |
+        Where-Object {
+            $_.CommandLine -and
+            $_.CommandLine.Contains('app.workers.analysis_worker') -and
+            ($_.CommandLine -match ('--workspace\s+"?' + [regex]::Escape($projectDir) + '(?:"|\s*$)'))
+        } |
+        ForEach-Object { Stop-Process -Id $_.ProcessId -Force -ErrorAction SilentlyContinue }
 }
 
 function Wait-HttpReady {
@@ -91,6 +105,13 @@ function Repair-ProjectVenv {
 }
 
 Set-Location $projectDir
+Stop-WorkspaceWorker
+if ($Stop) {
+    Stop-PortProcess -Port 8001
+    Stop-PortProcess -Port 5173
+    Write-Host "Operum encerrado." -ForegroundColor Green
+    exit 0
+}
 Repair-ProjectVenv
 Stop-PortProcess -Port 8001
 Stop-PortProcess -Port 8000
@@ -139,6 +160,22 @@ if (-not (Wait-HttpReady -Url "http://127.0.0.1:8001/api/health" -Process $backe
 }
 Write-Host "  Backend OK (porta 8001, PID $($backendProcess.Id))" -ForegroundColor Green
 
+$workerProcess = Start-Process `
+    -FilePath $projectPython `
+    -ArgumentList "-m", "app.workers.analysis_worker", "--workspace", ('"' + $projectDir + '"') `
+    -WorkingDirectory $projectDir `
+    -RedirectStandardOutput $workerLog `
+    -RedirectStandardError $workerErrorLog `
+    -WindowStyle Hidden `
+    -PassThru
+Start-Sleep -Seconds 1
+if ($workerProcess.HasExited) {
+    Write-Host "  ERRO: Worker nao iniciou. Consulte $workerErrorLog" -ForegroundColor Red
+    Stop-PortProcess -Port 8001
+    exit 1
+}
+Write-Host "  Worker iniciado (PID $($workerProcess.Id))" -ForegroundColor Green
+
 Write-Host "[2/2] Iniciando frontend (Vite)..." -ForegroundColor Green
 Remove-Item $frontendLog, $frontendErrorLog -ErrorAction SilentlyContinue
 $frontendProcess = Start-Process `
@@ -154,7 +191,8 @@ if (-not (Wait-HttpReady -Url "http://127.0.0.1:5173/" -MaxRetries 90 -RetryDela
     Write-Host "  ERRO: Frontend nao iniciou ou nao alcancou o backend." -ForegroundColor Red
     if (Test-Path $frontendLog) { Get-Content $frontendLog -Tail 30 }
     if (Test-Path $frontendErrorLog) { Get-Content $frontendErrorLog -Tail 30 }
-    Stop-Process -Id $backendProcess.Id -Force -ErrorAction SilentlyContinue
+    Stop-WorkspaceWorker
+    Stop-PortProcess -Port 8001
     exit 1
 }
 Write-Host "  Frontend OK (porta 5173, PID $($frontendProcess.Id))" -ForegroundColor Green
@@ -172,3 +210,7 @@ Write-Host "  $frontendLog" -ForegroundColor Gray
 Write-Host "  $frontendErrorLog" -ForegroundColor Gray
 Write-Host "  $ollamaLog" -ForegroundColor Gray
 Write-Host "  $ollamaErrorLog" -ForegroundColor Gray
+
+Write-Host "  $workerLog" -ForegroundColor Gray
+Write-Host "  $workerErrorLog" -ForegroundColor Gray
+Write-Host "Para encerrar: ./iniciar.ps1 -Stop" -ForegroundColor Gray

@@ -17,6 +17,8 @@ import pytest_asyncio
 from httpx import ASGITransport, AsyncClient
 from app.main import app
 
+SESSION_COOKIE = "operum_session"
+
 
 @pytest.fixture(scope="session", autouse=True)
 def cleanup_test_data_dir():
@@ -36,8 +38,9 @@ async def auth_headers(client: AsyncClient, suffix: str = "base") -> dict[str, s
     password = "Operum123"
     await client.post("/api/auth/register", json={"name": "Tester", "email": email, "password": password})
     login = await client.post("/api/auth/login", json={"email": email, "password": password})
-    token = login.json()["token"]
-    return {"Authorization": f"Bearer {token}"}
+    token = login.cookies.get(SESSION_COOKIE)
+    assert token
+    return {"Cookie": f"{SESSION_COOKIE}={token}"}
 
 
 @pytest.mark.asyncio
@@ -56,11 +59,17 @@ async def test_auth_register_login_and_me(client: AsyncClient):
         "password": "Operum123",
     })
     assert register.status_code == 200
-    token = register.json()["token"]
+    token = register.cookies.get(SESSION_COOKIE)
+    assert token
 
-    me = await client.get("/api/auth/me", headers={"Authorization": f"Bearer {token}"})
+    me = await client.get("/api/auth/me", headers={"Cookie": f"{SESSION_COOKIE}={token}"})
     assert me.status_code == 200
     assert me.json()["email"] == "camila-real@operum.app"
+    assert "token" not in register.json()
+
+    logout = await client.post("/api/auth/logout", headers={"Cookie": f"{SESSION_COOKIE}={token}"})
+    assert logout.status_code == 200
+    assert SESSION_COOKIE in logout.headers.get("set-cookie", "")
 
 
 @pytest.mark.asyncio
@@ -70,8 +79,9 @@ async def test_account_deletion_requires_reauthentication_and_removes_session(cl
         "email": "delete-account@operum.app",
         "password": "Operum123",
     })
-    token = register.json()["token"]
-    headers = {"Authorization": f"Bearer {token}"}
+    token = register.cookies.get(SESSION_COOKIE)
+    assert token
+    headers = {"Cookie": f"{SESSION_COOKIE}={token}"}
 
     invalid_confirmation = await client.request(
         "DELETE",
@@ -155,11 +165,7 @@ async def test_portfolio_update_cannot_change_server_managed_example_fields(clie
         "owner_id": "outro-usuario",
         "positions": [],
     })
-    assert updated.status_code == 200
-    assert updated.json()["name"] == "Nome permitido"
-    assert updated.json()["kind"] == "standard"
-    assert updated.json()["example_version"] is None
-    assert updated.json()["positions"] == []
+    assert updated.status_code == 422
 
 
 @pytest.mark.asyncio
@@ -186,7 +192,9 @@ async def test_registration_creates_one_persistent_example_portfolio(client: Asy
         "password": "Operum123",
     })
     assert register.status_code == 200
-    headers = {"Authorization": f"Bearer {register.json()['token']}"}
+    token = register.cookies.get(SESSION_COOKIE)
+    assert token
+    headers = {"Cookie": f"{SESSION_COOKIE}={token}"}
 
     listed = await client.get("/api/portfolios", headers=headers)
     assert listed.status_code == 200
@@ -530,10 +538,8 @@ async def test_news_query_and_pagination_metadata(client: AsyncClient):
 @pytest.mark.asyncio
 async def test_news_backfill_accepts_source_scope(client: AsyncClient):
     resp = await client.post("/api/news/backfill?start_date=2026-05-01&source_id=b3_comunicados")
-    assert resp.status_code == 200
-    data = resp.json()
-    assert data["status"] == "ok"
-    assert "sources" in data
+    assert resp.status_code == 503
+    assert "Token administrativo" in resp.json()["detail"]
 
 
 @pytest.mark.asyncio
@@ -642,6 +648,78 @@ async def test_position_opinion_endpoint(client: AsyncClient):
     assert "asset_price_situation" in data["analysis_sections"]
     assert "current_situation" in data["analysis_sections"]
     assert "portfolio_impact" in data["analysis_sections"]
+
+
+@pytest.mark.asyncio
+async def test_position_opinion_prefers_detailed_analysis_for_br_stock(client: AsyncClient, monkeypatch):
+    from app.api import models as models_api
+
+    headers = await auth_headers(client, "position-opinion-br-stock")
+    resp = await client.post("/api/portfolios", headers=headers, json={"name": "Acoes", "base_currency": "BRL"})
+    pid = resp.json()["id"]
+    await client.post(
+        f"/api/portfolios/{pid}/positions",
+        headers=headers,
+        json={"ticker": "PETR4", "asset_class": "BR_STOCK", "quantity": 10, "avg_price": 32},
+    )
+
+    def detailed_analysis(portfolio, ticker, history_horizon, outlook_horizon):
+        return {
+            "portfolio_id": portfolio.id,
+            "ticker": ticker,
+            "status": "ok",
+            "analysis_sections": {
+                "box_current": "Analise detalhada rica para PETR4.",
+                "current": "Analise detalhada rica para PETR4.",
+                "summary": "Analise detalhada rica para PETR4.",
+                "scenarios": {
+                    "favorable": "Cenario favoravel.",
+                    "base": "Cenario base.",
+                    "adverse": "Cenario adverso.",
+                },
+                "what_to_watch": ["Preco do petroleo"],
+                "conclusion": "A leitura nao indica comprar ou vender.",
+                "data_quality_warnings": [],
+                "box_history_by_horizon": {
+                    "1w": "Historico semanal.",
+                    "1m": "Historico mensal.",
+                    "2m": "Historico bimestral.",
+                    "3m": "Historico trimestral.",
+                },
+                "box_outlook_by_horizon": {
+                    "1w": "Perspectiva semanal.",
+                    "1m": "Perspectiva mensal.",
+                    "2m": "Perspectiva bimestral.",
+                    "3m": "Perspectiva trimestral.",
+                },
+                "company_situation": "Dados fundamentais estruturados ainda limitados.",
+            },
+            "sources": [],
+            "source_groups": [],
+            "used_news_count": 0,
+            "selected_history_horizon": history_horizon,
+            "selected_outlook_horizon": outlook_horizon,
+            "asset_function": "acao",
+            "recent_performance": {"forecast_news_adjustment_pct": 0},
+        }
+
+    def predictive_fallback(*args, **kwargs):
+        raise AssertionError("BR_STOCK should prefer the detailed analysis service")
+
+    monkeypatch.setattr(models_api.asset_analysis_service, "generate_asset_analysis", detailed_analysis)
+    monkeypatch.setattr(models_api.predictive_analysis_service, "get_or_bootstrap", predictive_fallback)
+
+    resp = await client.get(
+        f"/api/models/opinion/{pid}/positions/PETR4?history_horizon=1m&outlook_horizon=1w",
+        headers=headers,
+    )
+
+    assert resp.status_code == 200
+    data = resp.json()
+    assert data["ticker"] == "PETR4"
+    assert data["analysis_sections"]["box_current"] == "Analise detalhada rica para PETR4."
+    assert data["selected_history_horizon"] == "1m"
+    assert data["selected_outlook_horizon"] == "1w"
     assert "scenarios" in data["analysis_sections"]
     assert "what_to_watch" in data["analysis_sections"]
     assert "conclusion" in data["analysis_sections"]
@@ -689,6 +767,44 @@ async def test_status_endpoint(client: AsyncClient):
     resp = await client.get("/api/status")
     assert resp.status_code == 200
     assert resp.json()["status"] == "ok"
+
+
+@pytest.mark.asyncio
+async def test_security_headers_are_added(client: AsyncClient):
+    resp = await client.get("/api/health")
+    assert resp.headers["x-content-type-options"] == "nosniff"
+    assert resp.headers["referrer-policy"] == "strict-origin-when-cross-origin"
+    assert "frame-ancestors 'none'" in resp.headers["content-security-policy"]
+
+
+@pytest.mark.asyncio
+async def test_mutating_request_rejects_untrusted_origin(client: AsyncClient):
+    resp = await client.post(
+        "/api/auth/login",
+        headers={"Origin": "https://evil.example"},
+        json={"email": "nobody@operum.app", "password": "Operum123"},
+    )
+    assert resp.status_code == 403
+
+
+@pytest.mark.asyncio
+async def test_login_rate_limit_returns_429(client: AsyncClient, monkeypatch):
+    from app.core.rate_limit import rate_limiter
+
+    monkeypatch.setattr(rate_limiter, "enabled", True)
+    monkeypatch.setattr(rate_limiter, "_redis", None)
+    rate_limiter._memory.clear()
+
+    statuses = []
+    for _ in range(6):
+        resp = await client.post(
+            "/api/auth/login",
+            json={"email": "rate-limit@operum.app", "password": "wrong-password"},
+        )
+        statuses.append(resp.status_code)
+
+    assert statuses[:5] == [401, 401, 401, 401, 401]
+    assert statuses[5] == 429
 
 
 @pytest.mark.asyncio

@@ -1,3 +1,10 @@
+from app.services.analysis_execution import analysis_request, request_input, timed, record_forecast, count, parallel_queries
+from app.services.file_lock import file_lock
+from app.services.local_storage_service import LocalStorageService
+from copy import deepcopy
+import tempfile
+import threading
+
 import logging
 import os
 from datetime import datetime, timezone
@@ -29,7 +36,13 @@ FORECAST_HORIZONS = {
 
 
 class ForecastService:
-    def __init__(self):
+    def __init__(self, repository=None):
+        self.repository = repository
+        self.model_dir = os.environ.get("OPERUM_MODELS_DIR") or (
+            os.path.join(os.environ["OPERUM_DATA_DIR"], "models") if os.environ.get("OPERUM_DATA_DIR") else MODEL_DIR
+        )
+        self._model_lock = threading.RLock()
+        self._model_versions = {}
         self.models: dict[str, dict[int, object]] = {}
         self.model_meta: dict[str, dict[int, dict]] = {}
 
@@ -59,49 +72,105 @@ class ForecastService:
         return pd.DataFrame([feat])
 
     def _model_path(self, ticker: str, horizon_days: int) -> str:
-        return os.path.join(MODEL_DIR, f"forecast_{ticker}_{horizon_days}d.pkl")
+        return os.path.join(self.model_dir, f"forecast_{ticker}_{horizon_days}d.pkl")
 
     def _meta_path(self, ticker: str, horizon_days: int) -> str:
-        return os.path.join(MODEL_DIR, f"forecast_{ticker}_{horizon_days}d_meta.json")
+        return os.path.join(self.model_dir, f"forecast_{ticker}_{horizon_days}d_meta.json")
 
     def _legacy_model_path(self, ticker: str) -> str:
-        return os.path.join(MODEL_DIR, f"forecast_{ticker}.pkl")
+        return os.path.join(self.model_dir, f"forecast_{ticker}.pkl")
 
     def _legacy_meta_path(self, ticker: str) -> str:
-        return os.path.join(MODEL_DIR, f"forecast_{ticker}_meta.json")
+        return os.path.join(self.model_dir, f"forecast_{ticker}_meta.json")
 
     def _load_model(self, ticker: str, horizon_days: int) -> bool:
-        path = self._model_path(ticker, horizon_days)
-        legacy = horizon_days == 1 and os.path.exists(self._legacy_model_path(ticker))
-        if not os.path.exists(path) and not legacy:
-            return False
-        try:
-            self.models.setdefault(ticker, {})
-            self.model_meta.setdefault(ticker, {})
+        with self._model_lock:
+            path = self._model_path(ticker, horizon_days)
+            legacy = horizon_days == 1 and os.path.exists(self._legacy_model_path(ticker))
             model_path = self._legacy_model_path(ticker) if legacy else path
             meta_path = self._legacy_meta_path(ticker) if legacy else self._meta_path(ticker, horizon_days)
-            self.models[ticker][horizon_days] = joblib.load(model_path)
-            if os.path.exists(meta_path):
-                import json
+            key = (ticker, horizon_days)
+            bundle_path = path + ".bundle"
+            if os.path.exists(bundle_path):
+                model_path = bundle_path
+            if not os.path.exists(model_path):
+                # Also support explicitly injected in-memory estimators.
+                return key not in self._model_versions and horizon_days in self.models.get(ticker, {})
+            try:
+                with file_lock(path + ".lock", timeout=2):
+                    version = tuple((os.stat(p).st_mtime_ns, os.stat(p).st_size) if os.path.exists(p) else None
+                                    for p in (model_path, meta_path))
+                    if self._model_versions.get(key) == version and horizon_days in self.models.get(ticker, {}):
+                        return True
+                    loaded = joblib.load(model_path)
+                    if model_path == bundle_path:
+                        model, meta = loaded["model"], loaded["meta"]
+                    else:
+                        model, meta = loaded, {}
+                        if os.path.exists(meta_path):
+                            import json
+                            with open(meta_path, encoding="utf-8") as stream:
+                                meta = json.load(stream)
+                    if not callable(getattr(model, "predict", None)) or not isinstance(meta, dict):
+                        raise ValueError("Invalid forecast artifact")
+                    self.models.setdefault(ticker, {})[horizon_days] = model
+                    self.model_meta.setdefault(ticker, {})[horizon_days] = meta
+                    self._model_versions[key] = version
+                    return True
+            except Exception as exc:
+                logger.warning("Could not load forecast model for %s (%sd): %s", ticker, horizon_days, exc)
+                self.models.get(ticker, {}).pop(horizon_days, None)
+                self.model_meta.get(ticker, {}).pop(horizon_days, None)
+                return False
 
-                with open(meta_path, "r", encoding="utf-8") as f:
-                    self.model_meta[ticker][horizon_days] = json.load(f)
-            return True
-        except Exception as e:
-            logger.warning(f"Erro ao carregar modelo de {ticker} ({horizon_days}d): {e}")
-        return False
+    def missing_horizons(self, ticker: str, horizons: list[int]) -> list[int]:
+        return [horizon for horizon in sorted(set(horizons)) if not self._load_model(ticker, horizon)]
+
+    def _schedule_training(self, ticker: str) -> str:
+        try:
+            if self.repository is None:
+                from app.services.prediction_repository import PredictionRepository
+                self.repository = PredictionRepository()
+            day = datetime.now(timezone.utc).date().isoformat()
+            job = self.repository.enqueue_job(ticker, reason="forecast_training",
+                                              dedupe_key=f"forecast:{ticker}:{day}", priority=10)
+            status = job.get("status")
+            return status if status in {"pending", "running", "failed"} else "not_scheduled"
+        except Exception:
+            logger.exception("Could not enqueue forecast training")
+            return "not_scheduled"
 
     def _save_model(self, ticker: str, horizon_days: int, model) -> None:
-        os.makedirs(MODEL_DIR, exist_ok=True)
-        joblib.dump(model, self._model_path(ticker, horizon_days))
+        os.makedirs(self.model_dir, exist_ok=True)
+        fd, temporary = tempfile.mkstemp(dir=self.model_dir, suffix=".tmp")
+        os.close(fd)
+        try:
+            joblib.dump(model, temporary)
+            os.replace(temporary, self._model_path(ticker, horizon_days))
+        finally:
+            if os.path.exists(temporary):
+                os.unlink(temporary)
 
     def _save_model_meta(self, ticker: str, horizon_days: int, meta: dict) -> None:
-        import json
-
-        os.makedirs(MODEL_DIR, exist_ok=True)
-        with open(self._meta_path(ticker, horizon_days), "w", encoding="utf-8") as f:
-            json.dump(meta, f, ensure_ascii=False, indent=2, default=str)
+        LocalStorageService(self.model_dir).save_json(os.path.basename(self._meta_path(ticker, horizon_days)), meta)
         self.model_meta.setdefault(ticker, {})[horizon_days] = meta
+
+    def _publish_model(self, ticker: str, horizon_days: int, model, meta: dict) -> None:
+        with self._model_lock, file_lock(self._model_path(ticker, horizon_days) + ".lock"):
+            os.makedirs(self.model_dir, exist_ok=True)
+            # This atomic bundle is the serving source of truth for the model/metadata pair.
+            fd, temporary = tempfile.mkstemp(dir=self.model_dir, suffix=".tmp")
+            os.close(fd)
+            try:
+                joblib.dump({"model": model, "meta": meta}, temporary)
+                os.replace(temporary, self._model_path(ticker, horizon_days) + ".bundle")
+            finally:
+                if os.path.exists(temporary):
+                    os.unlink(temporary)
+            self._save_model(ticker, horizon_days, model)
+            self._save_model_meta(ticker, horizon_days, meta)
+            self._model_versions.pop((ticker, horizon_days), None)
+        self._load_model(ticker, horizon_days)
 
     def _estimate_confidence(
         self,
@@ -128,12 +197,21 @@ class ForecastService:
         return round(max(0.05, min(0.95, confidence)), 4)
 
     def _download_data(self, ticker: str, period: str = "2y") -> pd.DataFrame | None:
+        return request_input(("forecast_yahoo", ticker, period), lambda: self._fetch_data(ticker, period))
+
+    @timed("forecast_history")
+    def _fetch_data(self, ticker: str, period: str) -> pd.DataFrame | None:
         try:
             yf_ticker = ticker + ".SA" if not ticker.endswith(".SA") and not any(
                 c in ticker for c in ["-", "USD"]
             ) else ticker
-            df = yf.download(yf_ticker, period=period, progress=False)
+            df = yf.Ticker(yf_ticker).history(
+                period=period, interval="1d", actions=False, auto_adjust=True,
+                back_adjust=False, repair=False, keepna=False, prepost=False,
+                rounding=False, timeout=10, raise_errors=True,
+            )
             if df.empty:
+                count("forecast_history_failed")
                 return None
             if isinstance(df.columns, pd.MultiIndex):
                 df.columns = [col[0] if isinstance(col, tuple) else col for col in df.columns]
@@ -142,9 +220,13 @@ class ForecastService:
                 df[numeric_cols] = df[numeric_cols].apply(pd.to_numeric, errors="coerce")
                 df = df.dropna(subset=["Close"])
             if df.empty:
+                count("forecast_history_failed")
                 return None
-            return df
+            if isinstance(df.index, pd.DatetimeIndex):
+                df.index = df.index.tz_localize(None)
+            return df.sort_index()
         except Exception as e:
+            count("forecast_history_failed")
             logger.debug(f"Erro ao baixar dados de {ticker}: {e}")
             return None
 
@@ -217,6 +299,7 @@ class ForecastService:
             max_depth=4,
             learning_rate=0.05,
             random_state=42,
+            n_jobs=max(1, int(os.environ.get("OPERUM_FORECAST_TRAIN_THREADS", "2"))),
         )
         model.fit(X_train, y_train)
 
@@ -226,11 +309,10 @@ class ForecastService:
         target = y_test if len(X_test) else y_train
         rmse = float(np.sqrt(np.mean(np.square(preds - target)))) if len(target) else 0.0
 
-        self.models.setdefault(ticker, {})[horizon_days] = model
-        self._save_model(ticker, horizon_days, model)
-        self._save_model_meta(
+        self._publish_model(
             ticker,
             horizon_days,
+            model,
             {
                 "ticker": ticker,
                 "horizon_days": horizon_days,
@@ -284,13 +366,12 @@ class ForecastService:
         ticker: str,
         horizon_days: int,
         df: pd.DataFrame,
+        features: pd.DataFrame | None = None,
     ) -> dict | None:
-        if ticker not in self.models or horizon_days not in self.models[ticker]:
-            loaded = self._load_model(ticker, horizon_days)
-            if not loaded:
-                return None
-
-        features = self._prepare_features(df).replace([np.inf, -np.inf], np.nan).fillna(0.0)
+        if not self._load_model(ticker, horizon_days):
+            return None
+        if features is None:
+            features = self._prepare_features(df).replace([np.inf, -np.inf], np.nan).fillna(0.0)
         model = self.models[ticker][horizon_days]
         pred_return = float(model.predict(features)[0])
         last_price = float(df["Close"].values[-1])
@@ -354,8 +435,13 @@ class ForecastService:
 
     def predict(self, ticker: str) -> dict | None:
         result = self.predict_multi(ticker, requested_horizons=[1])
+        return self._one_day_result(result, ticker)
+
+    @staticmethod
+    def _one_day_result(result, ticker=None):
         if result is None:
             return None
+        ticker = ticker if ticker is not None else result["ticker"]
         horizon = result["predictions"][0]
         return {
             "ticker": ticker,
@@ -368,25 +454,50 @@ class ForecastService:
             "horizons": result["predictions"],
         }
 
+    @analysis_request
+    @timed("forecast")
     def predict_multi(self, ticker: str, requested_horizons: list[int] | None = None) -> dict | None:
+        ticker = ticker.upper()
+        requested_horizons = requested_horizons or [5, 21, 42, 63]
+        available = self._available_horizons(ticker, requested_horizons)
+        if not available:
+            return None
         df = self._download_data(ticker, period="9mo")
+        return self._predict_from_history(ticker, available, df)
+
+    def _available_horizons(self, ticker, requested_horizons):
+        missing = self.missing_horizons(ticker, requested_horizons)
+        preparation = request_input(("training_job", ticker), lambda: self._schedule_training(ticker)) if missing else "not_scheduled"
+        record_forecast(ticker, requested_horizons, missing, preparation)
+        return [h for h in sorted(set(requested_horizons)) if h not in missing]
+
+    @analysis_request
+    def predict_many(self, tickers: list[str]) -> list[dict | None]:
+        unique = list(dict.fromkeys(ticker.upper() for ticker in tickers))
+        available = {ticker: self._available_horizons(ticker, [1]) for ticker in unique}
+        eligible = [ticker for ticker in unique if available[ticker]]
+        frames = self._download_batch(eligible)
+        results = {
+            ticker: self._one_day_result(self._predict_from_history(ticker, available[ticker], frame))
+            for ticker, frame in zip(eligible, frames)
+        }
+        return [deepcopy(results.get(ticker.upper())) for ticker in tickers]
+
+    @timed("forecast_history_batch")
+    def _download_batch(self, tickers):
+        return parallel_queries([lambda ticker=ticker: self._download_data(ticker, period="9mo") for ticker in tickers])
+
+    @timed("forecast_calculations")
+    def _predict_from_history(self, ticker, available, df):
         if df is None or len(df) < 40:
             return None
-
-        requested_horizons = requested_horizons or [5, 21, 42, 63]
-        missing = [
-            horizon
-            for horizon in requested_horizons
-            if ticker not in self.models or horizon not in self.models.get(ticker, {})
-        ]
-        if missing:
-            train_result = self.train(ticker, horizons=missing)
-            if train_result.get("status") == "error":
-                logger.warning("Falha ao treinar forecast de %s: %s", ticker, train_result.get("error"))
+        features = self._prepare_features(df).replace([np.inf, -np.inf], np.nan).fillna(0.0)
+        count("forecast_features")
 
         predictions = []
-        for horizon_days in sorted(set(requested_horizons)):
-            prediction = self._predict_horizon(ticker, horizon_days, df)
+        for horizon_days in available:
+            with self._model_lock:
+                prediction = self._predict_horizon(ticker, horizon_days, df, features)
             if prediction:
                 predictions.append(prediction)
 
@@ -414,13 +525,13 @@ class ForecastService:
         }
 
     def list_trained(self) -> list[str]:
-        if not os.path.exists(MODEL_DIR):
+        if not os.path.exists(self.model_dir):
             return []
-        files = os.listdir(MODEL_DIR)
+        files = os.listdir(self.model_dir)
         tickers = set()
         for file_name in files:
-            if file_name.startswith("forecast_") and file_name.endswith(".pkl"):
-                payload = file_name.replace("forecast_", "").replace(".pkl", "")
+            if file_name.startswith("forecast_") and file_name.endswith((".pkl", ".pkl.bundle")):
+                payload = file_name.removeprefix("forecast_").removesuffix(".bundle").removesuffix(".pkl")
                 if "_" in payload:
                     ticker, _ = payload.rsplit("_", 1)
                     tickers.add(ticker)

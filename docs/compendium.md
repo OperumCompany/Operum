@@ -1,7 +1,7 @@
 # Compendium - Operum
 
 > Base de conhecimento consolidada do projeto.
-> Ultima atualizacao: 16/07/2026
+> Ultima atualizacao: 11/09/2026
 
 ---
 
@@ -15,7 +15,7 @@ O Operum e uma aplicacao full-stack para:
 
 O produto hoje combina calculo financeiro classico, ingestao local de noticias e geracao deterministica de analise, com camada opcional de refino textual via Ollama local.
 
-O projeto entrou em fase de preparacao para deploy online com frontend em Vercel e banco principal no Supabase.
+O projeto entrou em fase de preparacao para deploy online com frontend em Vercel, backend Python em host separado, Supabase como Postgres transacional e Redis/Upstash para rate limit de producao.
 
 ---
 
@@ -26,10 +26,11 @@ O projeto entrou em fase de preparacao para deploy online com frontend em Vercel
 | Frontend | React 18 + TypeScript + Vite |
 | UI | Tailwind CSS |
 | Graficos | Recharts |
-| Roteamento | React Router DOM |
+| Roteamento | React Router DOM 7 |
 | Backend | Python 3.11+ + FastAPI |
 | Persistencia | JSON + Parquet via `LocalStorageService` + Supabase Postgres para dados transacionais |
 | Banco online alvo | Supabase Postgres |
+| Rate limit | Redis/Upstash em producao; fallback em memoria apenas fora de producao |
 | Deploy alvo | Vercel para frontend; backend Python em host separado |
 | Precos | brapi primaria + Yahoo Finance fallback |
 | Noticias | RSS + listagens oficiais/editoriais abertas |
@@ -51,6 +52,7 @@ Frontend -> API FastAPI -> Services -> LocalStorageService -> data/
 
 ```text
 Vercel Frontend -> API FastAPI -> Services -> Supabase Postgres
+                                  -> Redis/Upstash para rate limit
                                       -> arquivos/caches locais ou servico separado para dados pesados
 ```
 
@@ -81,6 +83,9 @@ Vercel Frontend -> API FastAPI -> Services -> Supabase Postgres
 - Variaveis de ambiente de Supabase configuradas no projeto
 - Backend ja usa Supabase/Postgres para usuarios, sessoes, preferencias e carteiras quando configurado
 - Autenticacao permanece propria no backend; Supabase e usado como Postgres transacional, nao como Supabase Auth
+- Sessao do navegador usa cookie `operum_session` `HttpOnly`, `SameSite=Lax` e `Secure` em producao; o frontend nao persiste token em `localStorage`
+- Login, cadastro, chat/IA e endpoints administrativos possuem rate limit
+- A API adiciona security headers, restringe CORS e valida `Origin` em metodos mutaveis
 - Tabelas criticas ficam com RLS ativo e sem policies publicas enquanto o backend for a unica camada autorizada
 - `LocalStorageService` permanece para noticias, caches e artefatos analiticos
 - A IA local via Ollama e opcional e sempre cai para fallback deterministico em falha
@@ -94,7 +99,7 @@ Vercel Frontend -> API FastAPI -> Services -> Supabase Postgres
 Dados transacionais e relacionais do produto:
 
 - usuarios da aplicacao
-- sessoes autenticadas do backend atual
+- sessoes autenticadas do backend atual, referenciadas pelo cookie server-side `operum_session`
 - preferencias do usuario
 - carteiras
 - posicoes da carteira
@@ -435,8 +440,12 @@ Esses metadados permitem:
 
 Ultimo estado conhecido apos as mudancas recentes:
 
-- `python -m pytest -q` passou com `67 passed`
+- `python -m pytest` passou com `316 passed`
 - `npm run build` passou
+- `node --test tests/api-client.test.mjs` passou com `9 passed`
+- `npm audit --audit-level=low` passou com `0 vulnerabilities`
+- `python -m pip_audit -r requirements.txt` passou sem vulnerabilidades conhecidas
+- varredura simples de secrets encontrou apenas placeholders/documentacao
 - schema inicial do Supabase foi aplicado com sucesso no projeto configurado
 - `python scripts/verify_supabase_auth.py` validou cadastro, login, `/auth/me`, logout, limpeza do usuario temporario e RLS no Supabase
 - extensao `pgvector 0.8.2`, tabela `processed_news`, RLS e indice HNSW validados

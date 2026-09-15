@@ -1,3 +1,5 @@
+from app.services.analysis_execution import timed
+
 import numpy as np
 import pandas as pd
 
@@ -8,13 +10,11 @@ from app.services.financial_engine import (
     compute_portfolio_weights,
     compute_portfolio_concentration,
     compute_portfolio_volatility,
-    compute_portfolio_return,
     compute_correlation_matrix,
     compute_covariance_matrix,
     compute_var,
     compute_cvar,
     compute_beta,
-    compute_cagr,
 )
 
 
@@ -46,6 +46,7 @@ class PortfolioAnalyticsService:
         returns.index = pd.RangeIndex(len(returns))
         return returns
 
+    @timed("calculations")
     def analyze(self, portfolio: Portfolio, prices_data: dict[str, pd.DataFrame] | None = None) -> dict:
         if not portfolio.positions:
             return self._empty_analysis()
@@ -122,6 +123,17 @@ class PortfolioAnalyticsService:
                     weighted_beta_base = 0.0
                     benchmark_weights: dict[str, float] = {}
                     benchmark_name_map: dict[str, str] = {}
+                    benchmark_returns_cache: dict[tuple[str, int], pd.Series] = {}
+
+                    def benchmark_returns(ticker: str, length: int) -> pd.Series | None:
+                        key = (ticker, length)
+                        if key in benchmark_returns_cache:
+                            return benchmark_returns_cache[key]
+                        returns = self._load_benchmark_returns(ticker, length)
+                        if returns is not None:
+                            benchmark_returns_cache[key] = returns
+                        return returns
+
                     for pos in portfolio.positions:
                         if pos.ticker not in position_returns:
                             continue
@@ -131,7 +143,7 @@ class PortfolioAnalyticsService:
                             continue
                         benchmark_weights[bench_ticker] = benchmark_weights.get(bench_ticker, 0.0) + weight
                         benchmark_name_map[bench_ticker] = bench_name
-                        bench_returns = self._load_benchmark_returns(bench_ticker, len(position_returns[pos.ticker]))
+                        bench_returns = benchmark_returns(bench_ticker, len(position_returns[pos.ticker]))
                         if bench_returns is None:
                             continue
                         aligned = pd.concat([position_returns[pos.ticker], bench_returns], axis=1).dropna()
@@ -169,7 +181,7 @@ class PortfolioAnalyticsService:
                     if weighted_beta_base > 0:
                         portfolio_beta = weighted_beta / weighted_beta_base
                     elif dominant_benchmark:
-                        bench_returns = self._load_benchmark_returns(dominant_benchmark, len(portfolio_series))
+                        bench_returns = benchmark_returns(dominant_benchmark, len(portfolio_series))
                         if bench_returns is not None:
                             aligned = pd.concat([portfolio_series, bench_returns], axis=1).dropna()
                             if len(aligned) >= 10:
@@ -177,7 +189,6 @@ class PortfolioAnalyticsService:
 
         # Class weights
         class_weights: dict[str, float] = {}
-        sector_weights: dict[str, float] = {}
         for i, pos in enumerate(portfolio.positions):
             w_val = float(weights[i])
             class_weights[pos.asset_class] = class_weights.get(pos.asset_class, 0) + w_val

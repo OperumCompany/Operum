@@ -1,4 +1,6 @@
-﻿import hashlib
+﻿from app.services.analysis_execution import request_input, timed
+
+import hashlib
 import logging
 import re
 from dataclasses import dataclass, field
@@ -6,7 +8,7 @@ from datetime import date, datetime, timezone
 from email.utils import parsedate_to_datetime
 from html import unescape
 from typing import Optional
-from urllib.parse import quote, urljoin
+from urllib.parse import urljoin
 
 import feedparser
 import requests
@@ -879,5 +881,9 @@ class NewsIngestionService:
         return new_count
 
     def get_all_raw(self) -> list[NewsItem]:
+        return request_input(("news_archive", str(self.storage.local.base_dir)), self._get_all_raw)
+
+    @timed("news_load")
+    def _get_all_raw(self) -> list[NewsItem]:
         data = self._load_archive()
         return [NewsItem(**item) for item in data]

@@ -1,7 +1,6 @@
 import { ReactNode, createContext, useContext, useEffect, useMemo, useState } from 'react';
 import api from '../utils/api';
 import { AuthResponse, User } from '../types';
-import { readStorage, storageKeys, writeStorage } from '../utils/storage';
 
 type AuthContextType = {
   user: User | null;
@@ -15,24 +14,14 @@ type AuthContextType = {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-function persistSession(response: AuthResponse) {
-  writeStorage(storageKeys.authToken, response.token);
-}
-
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const token = readStorage<string | null>(storageKeys.authToken, null);
-    if (!token) {
-      setLoading(false);
-      return;
-    }
     api.get<User>('/auth/me')
       .then(setUser)
       .catch(() => {
-        writeStorage(storageKeys.authToken, null);
         setUser(null);
       })
       .finally(() => setLoading(false));
@@ -44,7 +33,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     login: async (email, password) => {
       try {
         const response = await api.postPublic<AuthResponse>('/auth/login', { email, password });
-        persistSession(response);
         setUser(response.user);
         return { ok: true, message: 'Login realizado com sucesso.' };
       } catch (error) {
@@ -55,7 +43,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     register: async (userData) => {
       try {
         const response = await api.postPublic<AuthResponse>('/auth/register', userData);
-        persistSession(response);
         setUser(response.user);
         return { ok: true, message: 'Conta criada com sucesso.' };
       } catch (error) {
@@ -82,7 +69,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
           current_password: currentPassword,
           confirmation,
         });
-        writeStorage(storageKeys.authToken, null);
         setUser(null);
         return { ok: true, message: 'Conta excluida com sucesso.' };
       } catch (error) {
@@ -91,11 +77,9 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       }
     },
     logout: async () => {
-      const token = readStorage<string | null>(storageKeys.authToken, null);
-      writeStorage(storageKeys.authToken, null);
       setUser(null);
       try {
-        await api.post('/auth/logout', undefined, token ? { headers: { Authorization: `Bearer ${token}` } } : undefined);
+        await api.post('/auth/logout');
       } catch {
         // noop
       }

@@ -1,4 +1,8 @@
+from app.services.analysis_execution import request_input, timed, count
+from app.services.file_lock import file_lock
+
 import logging
+import re
 from datetime import datetime, timezone, timedelta
 
 import pandas as pd
@@ -75,6 +79,8 @@ class MarketDataService:
             "IBOV": "^BVSP",
             "SP500": "^GSPC",
             "IFIX": "IFIX.SA",
+            "USDBRL": "BRL=X",
+            "BRENT": "BZ=F",
         }
         if ticker in mapping:
             return mapping[ticker]
@@ -91,6 +97,9 @@ class MarketDataService:
             "RADL3", "PRIO3", "EQTL3", "B3SA3", "BPAC11", "CMIG4", "CPLE6", "SANB11",
             "TAEE11",
         ]:
+            return f"{ticker_upper}.SA"
+
+        if re.fullmatch(r"[A-Z]{4}\d{1,2}", ticker_upper):
             return f"{ticker_upper}.SA"
 
         return ticker_upper
@@ -199,6 +208,16 @@ class MarketDataService:
             return None
 
     def get_current_price(self, ticker: str) -> dict | None:
+        return request_input(("current_price", str(self.storage.base_dir), ticker), lambda: self._locked_current_price(ticker))
+
+    def _locked_current_price(self, ticker: str) -> dict | None:
+        import hashlib
+        import os
+        key = hashlib.sha256(ticker.encode()).hexdigest()
+        with file_lock(os.path.join(self.storage.base_dir, "market", "locks", "current-" + key + ".lock"), timeout=120):
+            return self._get_current_price(ticker)
+
+    def _get_current_price(self, ticker: str) -> dict | None:
         cache_key = f"{self._cache_dir}/current_{ticker}.json"
         cached = self.storage.load_json(cache_key)
         if cached:
@@ -215,6 +234,24 @@ class MarketDataService:
             self.storage.save_json(cache_key, result)
             return result
         return None
+
+    def get_cached_current_price(self, ticker: str) -> dict | None:
+        return self.storage.load_json(f"{self._cache_dir}/current_{ticker}.json")
+
+    def get_external_context(self, period: str = "1y") -> pd.DataFrame | None:
+        columns = {"IBOV": "ibov_close", "USDBRL": "usdbrl_close", "BRENT": "brent_close"}
+        merged = None
+        for ticker, column in columns.items():
+            history = self.get_history(ticker, period=period, interval="1d")
+            if not history or not history.get("prices"):
+                return None
+            part = pd.DataFrame(history["prices"])[["date", "close"]].rename(columns={"close": column})
+            part["date"] = pd.to_datetime(part["date"], utc=True).dt.tz_localize(None)
+            merged = part if merged is None else merged.merge(part, on="date", how="outer")
+        merged = merged.sort_values("date").ffill().dropna().reset_index(drop=True)
+        merged["reference_date"] = merged["date"]
+        merged["available_at"] = merged["date"]
+        return merged.drop(columns=["date"])
 
     def _extract_brapi_history_points(self, item: dict) -> list[dict]:
         for key in ("historicalDataPrice", "prices", "historical", "data"):
@@ -376,6 +413,18 @@ class MarketDataService:
             return None
 
     def get_history(self, ticker: str, period: str = "6mo", interval: str = "1d") -> dict | None:
+        key = ("market_history", str(self.storage.base_dir), ticker, period, interval)
+        return request_input(key, lambda: self._locked_history(ticker, period, interval))
+
+    @timed("market_history")
+    def _locked_history(self, ticker: str, period: str, interval: str) -> dict | None:
+        import hashlib
+        import os
+        key = hashlib.sha256(repr((ticker, period, interval)).encode()).hexdigest()
+        with file_lock(os.path.join(self.storage.base_dir, "market", "locks", key + ".lock"), timeout=120):
+            return self._get_history(ticker, period, interval)
+
+    def _get_history(self, ticker: str, period: str, interval: str) -> dict | None:
         cache_key = f"{self._cache_dir}/history_{ticker}_{period}_{interval}.json"
         cached = self.storage.load_json(cache_key)
         if cached:
@@ -383,6 +432,7 @@ class MarketDataService:
             if datetime.now(timezone.utc) - cached_dt < timedelta(hours=4):
                 return cached
 
+        count("market_history_fetch")
         result = (
             self._fetch_brapi_history(ticker, period, interval)
             or self._fetch_yahoo_chart_history(ticker, period, interval)
@@ -392,3 +442,6 @@ class MarketDataService:
             self.storage.save_json(cache_key, result)
             return result
         return None
+
+    def get_cached_history(self, ticker: str, period: str = "6mo", interval: str = "1d") -> dict | None:
+        return self.storage.load_json(f"{self._cache_dir}/history_{ticker}_{period}_{interval}.json")

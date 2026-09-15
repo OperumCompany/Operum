@@ -70,7 +70,7 @@ export function PortfolioEvolutionChart({
       title="Evolução da carteira"
       right={<TrendingUp size={18} className="text-[var(--brand)]" />}
     >
-      <div className="no-print mb-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+      <div className="portfolio-evolution-controls no-print mb-5 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
         <Select value={ticker} onChange={(event) => setTicker(event.target.value)} className="md:max-w-xs">
           <option value="">Carteira completa</option>
           {(data?.available_tickers ?? []).map((item) => <option key={item} value={item}>{item}</option>)}
@@ -92,7 +92,7 @@ export function PortfolioEvolutionChart({
       {loading && <div className="flex h-72 items-center justify-center text-sm text-[var(--text-muted)]">Carregando evolução...</div>}
       {!loading && error && <div className="flex h-56 items-center justify-center text-center text-sm text-[var(--danger-text)]">{error}</div>}
       {!loading && !error && chartData.length > 0 && (
-        <div className="h-[340px] w-full">
+        <div className="portfolio-evolution-chart h-[340px] w-full">
           <ResponsiveContainer width="100%" height="100%">
             <LineChart data={chartData} margin={{ top: 12, right: 16, left: 8, bottom: 0 }}>
               <CartesianGrid stroke="var(--border-soft)" strokeDasharray="4 4" vertical={false} />

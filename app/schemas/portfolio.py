@@ -1,24 +1,26 @@
 from datetime import date, datetime
 from typing import Literal
-from pydantic import BaseModel, Field, field_validator
+from pydantic import Field, field_validator
+
+from app.schemas.base import StrictBaseModel
 
 
-class Position(BaseModel):
-    asset_id: str
-    ticker: str
-    asset_class: str
+class Position(StrictBaseModel):
+    asset_id: str = Field(min_length=1, max_length=32)
+    ticker: str = Field(min_length=1, max_length=16, pattern=r"^[A-Za-z0-9.=-]+$")
+    asset_class: str = Field(min_length=1, max_length=32)
     quantity: float = Field(gt=0)
     avg_price: float | None = Field(default=None, ge=0)
-    currency: str = "BRL"
-    manual_notes: str = ""
+    currency: str = Field(default="BRL", min_length=3, max_length=3)
+    manual_notes: str = Field(default="", max_length=500)
 
 
-class PortfolioSettings(BaseModel):
-    risk_profile: str = "moderado"
-    forecast_horizon_days: int = 5
+class PortfolioSettings(StrictBaseModel):
+    risk_profile: str = Field(default="moderado", min_length=3, max_length=30)
+    forecast_horizon_days: int = Field(default=5, ge=1, le=365)
 
 
-class Portfolio(BaseModel):
+class Portfolio(StrictBaseModel):
     id: str
     owner_id: str | None = None
     name: str
@@ -31,39 +33,39 @@ class Portfolio(BaseModel):
     settings: PortfolioSettings = PortfolioSettings()
 
 
-class PortfolioCreate(BaseModel):
-    name: str
-    base_currency: str = "BRL"
+class PortfolioCreate(StrictBaseModel):
+    name: str = Field(min_length=1, max_length=120)
+    base_currency: str = Field(default="BRL", min_length=3, max_length=3)
     settings: PortfolioSettings = PortfolioSettings()
 
 
-class PortfolioSettingsUpdate(BaseModel):
-    risk_profile: str | None = None
-    forecast_horizon_days: int | None = None
+class PortfolioSettingsUpdate(StrictBaseModel):
+    risk_profile: str | None = Field(default=None, min_length=3, max_length=30)
+    forecast_horizon_days: int | None = Field(default=None, ge=1, le=365)
 
 
-class PortfolioUpdate(BaseModel):
-    name: str | None = None
-    base_currency: str | None = None
+class PortfolioUpdate(StrictBaseModel):
+    name: str | None = Field(default=None, min_length=1, max_length=120)
+    base_currency: str | None = Field(default=None, min_length=3, max_length=3)
     settings: PortfolioSettingsUpdate | None = None
 
 
-class ExamplePortfolioCreateResponse(BaseModel):
+class ExamplePortfolioCreateResponse(StrictBaseModel):
     portfolio: Portfolio
     created: bool
 
 
-class PortfolioBulkDelete(BaseModel):
-    portfolio_ids: list[str]
+class PortfolioBulkDelete(StrictBaseModel):
+    portfolio_ids: list[str] = Field(min_length=1, max_length=50)
 
 
-class PositionAdd(BaseModel):
-    ticker: str
-    asset_class: str
-    quantity: float
-    avg_price: float | None = None
-    currency: str = "BRL"
-    manual_notes: str = ""
+class PositionAdd(StrictBaseModel):
+    ticker: str = Field(min_length=1, max_length=16, pattern=r"^[A-Za-z0-9.=-]+$")
+    asset_class: str = Field(min_length=1, max_length=32)
+    quantity: float = Field(gt=0)
+    avg_price: float | None = Field(default=None, ge=0)
+    currency: str = Field(default="BRL", min_length=3, max_length=3)
+    manual_notes: str = Field(default="", max_length=500)
     occurred_at: date | None = None
 
     @field_validator("occurred_at")
@@ -74,7 +76,7 @@ class PositionAdd(BaseModel):
         return value
 
 
-class PortfolioTransaction(BaseModel):
+class PortfolioTransaction(StrictBaseModel):
     id: str
     portfolio_id: str
     ticker: str
@@ -88,7 +90,7 @@ class PortfolioTransaction(BaseModel):
     origin_key: str | None = None
 
 
-class PortfolioHistoryPoint(BaseModel):
+class PortfolioHistoryPoint(StrictBaseModel):
     date: str
     market_value: float | None
     invested_value: float | None
@@ -97,7 +99,7 @@ class PortfolioHistoryPoint(BaseModel):
     contribution_quantity: float = 0.0
 
 
-class PortfolioHistoryResponse(BaseModel):
+class PortfolioHistoryResponse(StrictBaseModel):
     portfolio_id: str
     period: Literal["1m", "6m", "1y", "max"]
     ticker: str | None = None

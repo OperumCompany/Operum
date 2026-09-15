@@ -1,5 +1,6 @@
 ﻿from app.services.local_storage_service import LocalStorageService
 from app.schemas.asset import Asset
+from app.services.analysis_execution import request_input
 
 
 class AssetUniverseService:
@@ -8,6 +9,9 @@ class AssetUniverseService:
         self._universe_path = "assets/universe.json"
 
     def get_all(self) -> list[Asset]:
+        return request_input(("asset_universe", str(self.storage.base_dir)), self._get_all)
+
+    def _get_all(self) -> list[Asset]:
         data = self.storage.load_json(self._universe_path)
         if data is None:
             self._build_default_universe()

@@ -1,3 +1,5 @@
+from app.services.analysis_execution import start_analysis_executor, stop_analysis_executor
+
 import logging
 import threading
 from contextlib import asynccontextmanager
@@ -12,6 +14,7 @@ from app.core.config import (
     OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP,
     OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP,
 )
+from app.core.security import SecurityMiddleware
 
 logger = logging.getLogger(__name__)
 logging.getLogger("yfinance").setLevel(logging.CRITICAL)
@@ -91,7 +94,11 @@ async def lifespan(app: FastAPI):
         threading.Thread(target=_run_news_backfill_async, daemon=True).start()
     if OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP:
         threading.Thread(target=_warm_prices_async, daemon=True).start()
-    yield
+    start_analysis_executor()
+    try:
+        yield
+    finally:
+        stop_analysis_executor()
 
 
 app = FastAPI(
@@ -105,9 +112,10 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=CORS_ORIGINS,
     allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+    allow_methods=["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
+    allow_headers=["Authorization", "Content-Type"],
 )
+app.add_middleware(SecurityMiddleware)
 
 app.include_router(health.router, prefix="/api")
 app.include_router(auth.router, prefix="/api")

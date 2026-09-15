@@ -22,7 +22,7 @@ ADMIN_REFRESH_TOKEN = os.environ.get("OPERUM_REFRESH_TOKEN", "")
 
 def _require_admin_token(authorization: str | None):
     if not ADMIN_REFRESH_TOKEN:
-        return
+        raise HTTPException(status_code=503, detail="Token administrativo nao configurado")
     if not authorization or authorization != f"Bearer {ADMIN_REFRESH_TOKEN}":
         raise HTTPException(status_code=401, detail="Token administrativo invalido")
 

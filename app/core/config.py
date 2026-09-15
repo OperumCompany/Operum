@@ -27,6 +27,14 @@ _load_local_env()
 DATA_DIR = os.environ.get("OPERUM_DATA_DIR", os.path.join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), "data"))
 CORS_ORIGINS = os.environ.get("CORS_ORIGINS", "http://localhost:5173,http://localhost:3000").split(",")
 API_PREFIX = "/api"
+OPERUM_ENV = os.environ.get("OPERUM_ENV", "development").strip().lower()
+OPERUM_SESSION_COOKIE = os.environ.get("OPERUM_SESSION_COOKIE", "operum_session").strip()
+OPERUM_COOKIE_SECURE = os.environ.get("OPERUM_COOKIE_SECURE", "true" if OPERUM_ENV == "production" else "false").lower() == "true"
+OPERUM_RATE_LIMIT_ENABLED = os.environ.get(
+    "OPERUM_RATE_LIMIT_ENABLED",
+    "true" if OPERUM_ENV == "production" else "false",
+).lower() == "true"
+REDIS_URL = os.environ.get("REDIS_URL", "").strip()
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "")
 SUPABASE_PUBLISHABLE_KEY = os.environ.get("SUPABASE_PUBLISHABLE_KEY", "")
 SUPABASE_SECRET_KEY = os.environ.get("SUPABASE_SECRET_KEY", "")
@@ -57,6 +65,11 @@ NEWS_EMBEDDINGS_INDEX_ON_INGEST = os.environ.get("NEWS_EMBEDDINGS_INDEX_ON_INGES
 NEWS_SEMANTIC_TOP_K = int(os.environ.get("NEWS_SEMANTIC_TOP_K", "25"))
 NEWS_SEMANTIC_CANDIDATES = int(os.environ.get("NEWS_SEMANTIC_CANDIDATES", "300"))
 NEWS_SEMANTIC_MIN_SIMILARITY = float(os.environ.get("NEWS_SEMANTIC_MIN_SIMILARITY", "0.55"))
+FINANCIAL_NLP_ENABLED = os.environ.get("FINANCIAL_NLP_ENABLED", "true").lower() == "true"
+FINANCIAL_NLP_MODEL = os.environ.get(
+    "FINANCIAL_NLP_MODEL",
+    "lucasalmda/pt-br-financial-sentiment-analysis",
+).strip()
 KNOWLEDGE_BASE_ENABLED = os.environ.get("KNOWLEDGE_BASE_ENABLED", "true").lower() == "true"
 KNOWLEDGE_BASE_DIR = os.environ.get("KNOWLEDGE_BASE_DIR", "").strip()
 KNOWLEDGE_SEMANTIC_TOP_K = int(os.environ.get("KNOWLEDGE_SEMANTIC_TOP_K", "4"))

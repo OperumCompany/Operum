@@ -75,11 +75,13 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   transition: background-color 180ms ease, color 180ms ease;
+  overflow-x: hidden;
 }
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-display); letter-spacing: -0.015em; }
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font: inherit; }
 button, a, input, select, textarea { -webkit-tap-highlight-color: transparent; }
+img, svg { max-width: 100%; }
 button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
   outline: 3px solid rgba(223, 80, 242, 0.35);
   outline-offset: 3px;
@@ -424,4 +426,121 @@ html[data-theme='dark'] .chat-history-panel { background: color-mix(in srgb, var
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
+}
+
+/* Responsive foundation: Mobile S/M/L first, tablet from 640px, desktop from 1024px. */
+.app-page { width: min(100%, 1280px); }
+.app-page > * { min-width: 0; }
+
+@media (max-width: 1023px) {
+  .app-sidebar { width: min(20rem, calc(100vw - 2.5rem)); padding: 1rem; }
+  .app-sidebar nav { margin-top: 1.25rem; }
+  .app-sidebar nav a { min-height: 2.9rem; }
+  .app-shell-header { padding-inline: 1.25rem; }
+  .app-shell-header-inner { min-height: 2.75rem; }
+  .app-shell-portfolio select { min-width: 0; text-overflow: ellipsis; }
+  .app-page { padding-bottom: 2rem; }
+  .surface-card { min-width: 0; }
+  .recharts-responsive-container { min-width: 0; }
+}
+
+@media (max-width: 767px) {
+  .app-shell-header { padding: .65rem 1.25rem; }
+  .app-shell-header-inner { gap: .65rem; }
+  .app-shell-header-inner > button { width: 2.75rem; height: 2.75rem; }
+  .app-shell-portfolio { min-width: 0; }
+  .app-shell-portfolio select { min-height: 2.75rem !important; font-size: .78rem; }
+  .app-page { padding: 1.25rem !important; }
+
+  /* Shared cards, feedback and dialogs stay inside the 20px content rhythm. */
+  .surface-card { border-radius: 1.125rem; padding: 1rem; }
+  .surface-card > header { gap: .75rem; }
+  [role='dialog'] { max-height: min(88dvh, 46rem) !important; padding: 1.25rem !important; border-radius: 1.35rem !important; }
+  [role='dialog'] > div:first-child { min-width: 0; }
+  [role='dialog'] h2 { font-size: 1.45rem; }
+  button, input, select, textarea { touch-action: manipulation; }
+  .theme-toggle { min-height: 2.75rem; }
+
+  /* Long financial lists become vertically scannable cards instead of widening the page. */
+  .portfolio-holdings { width: 100%; }
+  .portfolio-holdings tbody { width: 100%; }
+  .portfolio-position-row td { min-width: 0; }
+  .portfolio-position-row td > * { max-width: 62%; }
+  .portfolio-position-row td[data-label='IA'] { align-items: flex-start; flex-direction: column; }
+  .portfolio-position-row td[data-label='IA'] > * { max-width: 100%; }
+  .portfolio-analysis-row > td { padding: .75rem !important; }
+  .portfolio-analysis-row .h-\[26rem\] { height: 18rem; padding: .55rem; }
+  .portfolio-analysis-row .text-4xl { font-size: 2rem; }
+
+  /* Charts retain useful vertical space without forcing a landscape viewport. */
+  .portfolio-evolution .recharts-responsive-container,
+  .portfolio-allocation-map .recharts-responsive-container { min-height: 15rem; }
+  .recharts-legend-wrapper { max-width: 100% !important; }
+  .recharts-default-tooltip { max-width: min(16rem, calc(100vw - 3rem)); white-space: normal !important; }
+
+  /* Paged controls and contextual actions may wrap, never overflow. */
+  nav[aria-label='Paginação de notícias'] > div { max-width: 100%; overflow-x: auto; padding-bottom: .15rem; }
+  nav[aria-label='Paginação de notícias'] { align-items: flex-start; }
+  .mobile-scroll { max-width: 100%; overscroll-behavior-x: contain; }
+}
+
+@media (max-width: 639px) {
+  .app-sidebar { width: min(19rem, calc(100vw - 2rem)); padding: .85rem; }
+  .app-sidebar nav a { border-radius: .8rem; }
+  .app-shell-header { padding-inline: 1.25rem; }
+  .app-shell-header-inner { gap: .5rem; }
+  .app-shell-portfolio select { padding-inline: .7rem !important; }
+  .app-page { padding: 1.25rem !important; }
+  .app-page > .space-y-5 > :is(section, div),
+  .app-page > .space-y-6 > :is(section, div) { min-width: 0; }
+
+  /* Overview and settings actions remain full-width where the label needs room. */
+  .app-page > .space-y-6 > header > a,
+  .settings-delete-button { width: 100%; }
+  .app-page > .space-y-6 > header > a { justify-content: center; }
+
+  /* Dense filters are one-column at Mobile S/M/L. */
+  .portfolio-detail-page form .grid,
+  .portfolio-detail-page .grid.gap-3,
+  .portfolio-detail-page .grid.gap-4 { grid-template-columns: minmax(0, 1fr); }
+  .portfolio-detail-page .no-print > .flex { align-items: stretch; }
+  .portfolio-detail-page .no-print > .flex > * { width: 100%; }
+  .portfolio-detail-page h1 { font-size: 1.8rem; }
+  .portfolio-detail-page .font-data.text-4xl { font-size: 2.15rem; }
+  .portfolio-detail-page .sm\:grid-cols-3 { grid-template-columns: minmax(0, 1fr); }
+  .portfolio-detail-page .sm\:grid-cols-3 > div { padding-block: .25rem; }
+
+  /* News controls keep chips touch-scrollable and filters readable. */
+  .app-page select { max-width: 100%; }
+  .app-page .overflow-x-auto { scrollbar-width: thin; }
+  .app-page [class*='rounded-\[30px\]'] { border-radius: 1.35rem; }
+
+  /* Authentication keeps the form first in the visual rhythm after the introduction. */
+  body > #root > div > .min-h-screen .grid > section:first-child { min-height: auto; }
+}
+
+@media (min-width: 640px) and (max-width: 1023px) {
+  .app-page { padding: 2rem !important; }
+  .app-sidebar { width: min(22rem, calc(100vw - 5rem)); padding: 1.25rem; }
+  .portfolio-detail-page .xl\:grid-cols-\[minmax\(0\,1\.45fr\)_minmax\(280px\,\.55fr\)\] { grid-template-columns: minmax(0, 1fr); }
+  .portfolio-detail-page .xl\:grid-cols-6 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portfolio-detail-page .xl\:grid-cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .portfolio-detail-page .xl\:flex-row { flex-direction: column; }
+  .portfolio-detail-page .xl\:min-w-\[320px\] { min-width: 0; }
+  .app-page > .space-y-5 > .grid.xl\:grid-cols-\[1\.35fr_0\.95fr\],
+  .app-page > .space-y-5 > .grid.xl\:grid-cols-2,
+  .app-page > .space-y-6 > .grid.xl\:grid-cols-\[1\.08fr_\.92fr\] { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 374px) {
+  .app-shell-header-inner > button { width: 2.55rem; height: 2.55rem; }
+  .app-shell-portfolio select { font-size: .72rem; }
+  .app-page { padding-inline: 1rem !important; }
+  .surface-card { padding: .9rem; }
+  .portfolio-position-row { padding: .65rem; }
+  .portfolio-position-row td { gap: .6rem; }
+  .portfolio-position-row td::before { font-size: .61rem; }
+  .portfolio-position-row td > * { max-width: 58%; font-size: .78rem; }
+  .landing-title { font-size: 2.35rem; }
+  .hero-visual { min-height: 370px; }
 }

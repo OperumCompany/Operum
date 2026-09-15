@@ -1,5 +1,5 @@
 import { BriefcaseBusiness, ChevronRight, LayoutDashboard, LogOut, Menu, MessageCircle, Newspaper, PanelLeftClose, PanelLeftOpen, Settings, X } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
 import { Brand } from '../components/Brand';
 import { ThemeToggle } from '../components/ThemeToggle';
@@ -7,6 +7,7 @@ import { Select } from '../components/UI';
 import { useAuth } from '../context/AuthContext';
 import { usePortfolios } from '../context/PortfoliosContext';
 import { ALL_PORTFOLIOS_ID, getPortfolioLabel } from '../utils/portfolios';
+import { isDismissKey } from '../utils/responsive';
 
 const nav = [
   { to: '/app', label: 'Visão geral', icon: LayoutDashboard, end: true },
@@ -22,6 +23,15 @@ export function AppShell() {
   const { user, logout } = useAuth();
   const { portfolios, activePortfolioId, setActivePortfolioId } = usePortfolios();
 
+  useEffect(() => {
+    if (!open) return;
+    function closeDrawer(event: KeyboardEvent) {
+      if (isDismissKey(event.key)) setOpen(false);
+    }
+    window.addEventListener('keydown', closeDrawer);
+    return () => window.removeEventListener('keydown', closeDrawer);
+  }, [open]);
+
   function toggleCollapsed() {
     setCollapsed((current) => {
       localStorage.setItem('operum_sidebar_collapsed', String(!current));
@@ -31,7 +41,7 @@ export function AppShell() {
 
   return (
     <div className="min-h-screen bg-[var(--bg-app)] text-[var(--text-main)]">
-      <aside className={`fixed inset-y-0 left-0 z-40 flex w-[18rem] flex-col border-r border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-5 shadow-[var(--shadow-float)] transition-[width,padding,transform] duration-200 lg:translate-x-0 lg:shadow-none ${collapsed ? 'lg:w-[5.25rem] lg:px-3' : 'lg:w-[18rem]'} ${open ? 'translate-x-0' : '-translate-x-full'}`}>
+      <aside className={`app-sidebar fixed inset-y-0 left-0 z-40 flex w-[18rem] flex-col border-r border-[var(--border-soft)] bg-[var(--bg-surface-strong)] p-5 shadow-[var(--shadow-float)] transition-[width,padding,transform] duration-200 lg:translate-x-0 lg:shadow-none ${collapsed ? 'lg:w-[5.25rem] lg:px-3' : 'lg:w-[18rem]'} ${open ? 'translate-x-0' : '-translate-x-full'}`}>
         <div className={`flex items-center justify-between ${collapsed ? 'lg:flex-col lg:gap-3' : ''}`}>
           <div className={collapsed ? 'lg:hidden' : ''}><Brand to="/" /></div>
           {collapsed && <div className="hidden lg:block"><Brand compact to="/" /></div>}
@@ -74,13 +84,13 @@ export function AppShell() {
 
       {open && <button type="button" className="fixed inset-0 z-30 bg-black/55 backdrop-blur-sm lg:hidden" onClick={() => setOpen(false)} aria-label="Fechar menu" />}
 
-      <main className={`min-w-0 transition-[margin] duration-200 ${collapsed ? 'lg:ml-[5.25rem]' : 'lg:ml-[18rem]'}`}>
-        <header className="sticky top-0 z-20 border-b border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--bg-app)_84%,transparent)] px-5 py-3 backdrop-blur-xl sm:px-8">
-          <div className="mx-auto flex max-w-[1280px] items-center gap-3">
+      <main className={`app-main min-w-0 transition-[margin] duration-200 ${collapsed ? 'lg:ml-[5.25rem]' : 'lg:ml-[18rem]'}`}>
+        <header className="app-shell-header sticky top-0 z-20 border-b border-[var(--border-soft)] bg-[color-mix(in_srgb,var(--bg-app)_84%,transparent)] px-5 py-3 backdrop-blur-xl sm:px-8">
+          <div className="app-shell-header-inner mx-auto flex max-w-[1280px] items-center gap-3">
             <button type="button" className="grid h-11 w-11 shrink-0 place-items-center rounded-lg border border-[var(--border-soft)] bg-[var(--bg-surface)] lg:hidden" onClick={() => setOpen(true)} aria-label="Abrir menu"><Menu size={19} /></button>
             <div className="hidden min-w-0 flex-1 xl:block"><p className="eyebrow">Operum</p><p className="mt-1 truncate text-sm text-[var(--text-muted)]">Controle claro, análise quando você precisar.</p></div>
             <div className="ml-auto flex min-w-0 flex-1 items-center justify-end gap-3 xl:flex-none">
-              <div className="min-w-0 flex-1 sm:w-[18rem] sm:flex-none">
+              <div className="app-shell-portfolio min-w-0 flex-1 sm:w-[18rem] sm:flex-none">
                 <label htmlFor="active-portfolio" className="mb-1 hidden font-data text-[10px] uppercase tracking-[0.12em] text-[var(--text-muted)] sm:block">Carteira ativa</label>
                 <Select id="active-portfolio" value={activePortfolioId} onChange={(event) => setActivePortfolioId(event.target.value)} disabled={!portfolios.length} className="!min-h-10 !rounded-lg !border !border-[var(--border-soft)] !bg-[var(--bg-surface)] !px-3 !py-2 focus:!px-3">
                   {!portfolios.length && <option value="">Nenhuma carteira</option>}

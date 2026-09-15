@@ -177,6 +177,60 @@ create table if not exists public.chat_messages (
   created_at timestamptz not null default timezone('utc', now())
 );
 
+create table if not exists public.model_versions (
+  id uuid primary key,
+  model_family text not null,
+  asset_class text not null,
+  horizon_days integer not null,
+  artifact_path text not null,
+  metadata_path text not null,
+  dataset_hash text not null,
+  feature_schema_version text not null,
+  metrics jsonb not null default '{}'::jsonb,
+  status text not null check (status in ('shadow', 'active', 'rejected', 'archived')),
+  created_at timestamptz not null default timezone('utc', now()),
+  activated_at timestamptz
+);
+
+create table if not exists public.asset_analysis_snapshots (
+  id uuid primary key,
+  ticker text not null,
+  data_cutoff timestamptz not null,
+  news_fingerprint text not null default '',
+  model_versions jsonb not null default '{}'::jsonb,
+  payload jsonb not null,
+  generation_mode text not null check (generation_mode in ('model', 'mixed', 'baseline', 'deterministic_fallback')),
+  is_active boolean not null default false,
+  created_at timestamptz not null default timezone('utc', now())
+);
+
+create table if not exists public.analysis_jobs (
+  id uuid primary key,
+  ticker text not null,
+  reason text not null,
+  dedupe_key text not null unique,
+  status text not null check (status in ('pending', 'running', 'completed', 'failed')),
+  priority integer not null default 0,
+  attempts integer not null default 0,
+  run_after timestamptz not null default timezone('utc', now()),
+  error text,
+  created_at timestamptz not null default timezone('utc', now()),
+  updated_at timestamptz not null default timezone('utc', now())
+);
+
+create table if not exists public.prediction_outcomes (
+  snapshot_id uuid not null references public.asset_analysis_snapshots(id) on delete cascade,
+  ticker text not null,
+  horizon_days integer not null,
+  target_date date not null,
+  predicted_return real not null,
+  lower_return real not null,
+  upper_return real not null,
+  actual_return real,
+  scored_at timestamptz,
+  primary key (snapshot_id, horizon_days)
+);
+
 create index if not exists idx_processed_news_published_at on public.processed_news(published_at desc);
 create index if not exists idx_processed_news_source_id on public.processed_news(source_id);
 create index if not exists idx_processed_news_assets on public.processed_news using gin(mentioned_assets);
@@ -195,6 +249,14 @@ create index if not exists idx_chat_conversations_owner_updated
 on public.chat_conversations(owner_id, updated_at desc);
 create index if not exists idx_chat_messages_conversation_created
 on public.chat_messages(conversation_id, created_at asc);
+create unique index if not exists idx_model_versions_one_active
+on public.model_versions(asset_class, horizon_days) where status = 'active';
+create unique index if not exists idx_asset_analysis_one_active
+on public.asset_analysis_snapshots(ticker) where is_active;
+create index if not exists idx_asset_analysis_ticker_created
+on public.asset_analysis_snapshots(ticker, created_at desc);
+create index if not exists idx_analysis_jobs_claim
+on public.analysis_jobs(status, run_after, priority desc, created_at);
 
 create or replace function public.set_processed_news_search_document()
 returns trigger
@@ -235,6 +297,10 @@ alter table public.knowledge_documents enable row level security;
 alter table public.knowledge_chunks enable row level security;
 alter table public.chat_conversations enable row level security;
 alter table public.chat_messages enable row level security;
+alter table public.model_versions enable row level security;
+alter table public.asset_analysis_snapshots enable row level security;
+alter table public.analysis_jobs enable row level security;
+alter table public.prediction_outcomes enable row level security;
 
 revoke all privileges on all tables in schema public from anon, authenticated;
 

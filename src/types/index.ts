@@ -74,12 +74,6 @@ export type ConversationMessageResponse = {
 
 export type AssetClass = 'Renda fixa' | 'Ações Brasil' | 'Ações EUA' | 'Fundos' | 'Cripto';
 
-export type DashboardMetric = {
-  label: string;
-  value: string;
-  variation: string;
-};
-
 export type UserPreferences = {
   topics: NewsCategory[];
   compactMode: boolean;
@@ -87,7 +81,6 @@ export type UserPreferences = {
 };
 
 export type AuthResponse = {
-  token: string;
   user: User;
 };
 
@@ -243,7 +236,17 @@ export type NewsItem = {
   created_at: string;
 };
 
+export type ForecastAvailability = {
+  status: 'ready' | 'partial' | 'unavailable';
+  items: Array<{
+    ticker: string;
+    missing_horizons: number[];
+    preparation: 'pending' | 'running' | 'failed' | 'not_scheduled';
+  }>;
+};
+
 export type PortfolioOpinion = {
+  forecast_availability?: ForecastAvailability;
   score: number;
   components: {
     diversification: number;
@@ -336,6 +339,7 @@ export type HorizonSeriesPoint = {
 };
 
 export type PositionOpinion = {
+  forecast_availability?: ForecastAvailability;
   portfolio_id: string;
   ticker: string;
   asset_name: string;

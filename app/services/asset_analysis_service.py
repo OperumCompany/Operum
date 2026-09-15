@@ -1,3 +1,6 @@
+from app.schemas.analysis_refinement import AssetRefinement
+from app.services.analysis_execution import (analysis_request, analysis_now, request_input, timed, parallel_queries, forecast_availability, count)
+
 import json
 import logging
 import math
@@ -11,7 +14,7 @@ from app.core.config import AI_ENHANCE_ASSET_ANALYSIS
 from app.schemas.news import NewsItem
 from app.schemas.portfolio import Portfolio, Position
 from app.services.asset_universe_service import AssetUniverseService
-from app.services.forecast_service import FORECAST_HORIZONS, ForecastService
+from app.services.forecast_service import ForecastService
 from app.services.llm_prompts import ASSET_ANALYSIS_REFINER_PROMPT
 from app.services.llm_service import LLMService
 from app.services.local_storage_service import LocalStorageService
@@ -60,6 +63,7 @@ class AssetAnalysisService:
                 "CMIG4": ["cemig"],
                 "CEEB3": ["coelba"],
                 "PETR4": ["petrobras", "petroleo brasileiro"],
+                "ITUB4": ["itau", "itau unibanco", "itaú", "itaú unibanco"],
             },
             "source_confidence": {
                 "official_notice_feed": 1.0,
@@ -127,6 +131,9 @@ class AssetAnalysisService:
         return asset.model_dump()
 
     def _normalize_text(self, text: str) -> str:
+        return request_input(("normalized_text", text), lambda: self._normalize_uncached(text))
+
+    def _normalize_uncached(self, text: str) -> str:
         base = unicodedata.normalize("NFKD", text or "").encode("ascii", "ignore").decode("ascii")
         return base.lower()
 
@@ -217,14 +224,11 @@ class AssetAnalysisService:
 
     def _is_incidental_asset_mention(self, news: NewsItem, meta: dict) -> bool:
         ticker = meta["ticker"].upper()
-        mentioned_assets = {asset.upper() for asset in news.mentioned_assets}
-        if ticker in mentioned_assets:
-            return False
-
         title = self._normalize_text(news.title)
         text = self._normalize_text(f"{news.title} {news.summary} {news.content_preview}")
         aliases = [self._normalize_text(alias) for alias in self._config.get("aliases", {}).get(ticker, [])]
         aliases = [alias for alias in aliases if len(alias) >= 4]
+        mentioned_assets = {asset.upper() for asset in news.mentioned_assets}
 
         analyst_terms = [
             "recomenda",
@@ -242,11 +246,16 @@ class AssetAnalysisService:
         ]
         has_alias = any(alias in text for alias in aliases)
         if not has_alias or not any(term in text for term in analyst_terms):
+            if ticker in mentioned_assets:
+                return False
             return False
 
         analyst_brands = ["bba", "corretora", "research", "analistas"]
         if any(f"{alias} bba" in text for alias in aliases) or any(term in text for term in analyst_brands):
             return True
+
+        if ticker in mentioned_assets:
+            return False
 
         if ":" in news.title:
             before_colon = self._normalize_text(news.title.split(":", 1)[0])
@@ -256,7 +265,7 @@ class AssetAnalysisService:
 
     def get_related_news(self, ticker: str, limit: int = 25, days_back: int | None = None) -> list[dict]:
         meta = self._asset_meta(ticker)
-        now = datetime.now(timezone.utc)
+        now = analysis_now()
         semantic_query = " ".join(
             str(value)
             for value in [
@@ -366,6 +375,9 @@ class AssetAnalysisService:
         return results
 
     def _get_history_dataframe(self, ticker: str) -> pd.DataFrame | None:
+        return request_input(("asset_dataframe", id(self.market), ticker), lambda: self._history_dataframe(ticker))
+
+    def _history_dataframe(self, ticker: str) -> pd.DataFrame | None:
         history = self.market.get_history(ticker, period="1y", interval="1d")
         if not history or not history.get("prices"):
             return None
@@ -385,6 +397,11 @@ class AssetAnalysisService:
         return "IBOV"
 
     def _performance_snapshot(self, ticker: str, avg_price: float | None, history_window: str) -> dict:
+        return request_input(("performance", id(self.market), ticker, avg_price, history_window),
+                             lambda: self._calculate_performance_snapshot(ticker, avg_price, history_window))
+
+    @timed("calculations")
+    def _calculate_performance_snapshot(self, ticker: str, avg_price: float | None, history_window: str) -> dict:
         current = self.market.get_current_price(ticker)
         df = self._get_history_dataframe(ticker)
         meta = self._asset_meta(ticker)
@@ -1339,7 +1356,7 @@ class AssetAnalysisService:
         ]
 
     def _windowed_news(self, news_items: list[dict], days_back: int) -> list[dict]:
-        cutoff = datetime.now(timezone.utc) - timedelta(days=max(days_back * 2, 30))
+        cutoff = analysis_now() - timedelta(days=max(days_back * 2, 30))
         filtered = []
         seen_keys = set()
         for item in news_items:
@@ -1353,28 +1370,8 @@ class AssetAnalysisService:
             filtered.append(item)
         return filtered
 
-    def generate_asset_analysis(
-        self,
-        portfolio: Portfolio,
-        ticker: str,
-        history_horizon: str = "3m",
-        outlook_horizon: str = "3m",
-    ) -> dict:
-        position = self._resolve_position(portfolio, ticker)
-        if position is None:
-            return {
-                "portfolio_id": portfolio.id,
-                "ticker": ticker.upper(),
-                "status": "not_found",
-                "analysis_sections": {},
-                "sources": [],
-                "source_groups": [],
-                "generated_at": datetime.now(timezone.utc).isoformat(),
-            }
-
-        history_horizon = history_horizon if history_horizon in HISTORY_WINDOW_DAYS else "3m"
-        outlook_horizon = outlook_horizon if outlook_horizon in OUTLOOK_WINDOW_DAYS else "3m"
-
+    @timed("source_selection")
+    def select_analysis_news(self, ticker: str, history_horizon: str = "3m", outlook_horizon: str = "3m") -> dict:
         meta = self._asset_meta(ticker)
         history_days = HISTORY_WINDOW_DAYS[history_horizon]
         outlook_days = OUTLOOK_WINDOW_DAYS[outlook_horizon]
@@ -1408,7 +1405,46 @@ class AssetAnalysisService:
             reverse=True,
         )
 
+        return {"all_related_news": all_related_news, "current_news": current_news,
+                "historical_news": historical_news, "outlook_news": outlook_news, "used_news": used_news}
+
+    @analysis_request
+    def generate_asset_analysis(
+        self,
+        portfolio: Portfolio,
+        ticker: str,
+        history_horizon: str = "3m",
+        outlook_horizon: str = "3m",
+    ) -> dict:
+        position = self._resolve_position(portfolio, ticker)
+        if position is None:
+            return {
+                "portfolio_id": portfolio.id,
+                "ticker": ticker.upper(),
+                "status": "not_found",
+                "analysis_sections": {},
+                "sources": [],
+                "source_groups": [],
+                "generated_at": datetime.now(timezone.utc).isoformat(),
+            }
+
+        history_horizon = history_horizon if history_horizon in HISTORY_WINDOW_DAYS else "3m"
+        outlook_horizon = outlook_horizon if outlook_horizon in OUTLOOK_WINDOW_DAYS else "3m"
+
+        meta = self._asset_meta(ticker)
+        selected, _ = parallel_queries([
+            lambda: self.select_analysis_news(ticker, history_horizon, outlook_horizon),
+            lambda: self._get_history_dataframe(ticker),
+        ])
         perf = self._performance_snapshot(ticker, position.avg_price, history_horizon)
+        all_related_news = selected["all_related_news"]
+        current_news = selected["current_news"]
+        historical_news = selected["historical_news"]
+        outlook_news = selected["outlook_news"]
+        used_news = selected["used_news"]
+        history_days = HISTORY_WINDOW_DAYS[history_horizon]
+        outlook_days = OUTLOOK_WINDOW_DAYS[outlook_horizon]
+
         weight_pct = self._compute_weight_pct(portfolio, ticker)
         asset_function = self._infer_asset_function(meta, weight_pct)
 
@@ -1416,6 +1452,25 @@ class AssetAnalysisService:
         forecast_bundle = self.forecast.predict_multi(ticker, requested_horizons=requested_forecast_horizons)
         if forecast_bundle is None:
             forecast_bundle = self._fallback_forecast_bundle(ticker, perf, requested_forecast_horizons)
+        else:
+            covered = {item["horizon_days"] for item in forecast_bundle["predictions"]}
+            missing = [h for h in requested_forecast_horizons if h not in covered]
+            if missing:
+                fallback = self._fallback_forecast_bundle(ticker, perf, missing)
+                if fallback:
+                    forecast_bundle["predictions"] = sorted(
+                        forecast_bundle["predictions"] + fallback["predictions"], key=lambda item: item["horizon_days"],
+                    )
+                    forecast_bundle["forecast_source"] = "mixed"
+                    forecast_bundle["forecast_anchor_points"] = [
+                        {"date": item["horizon_label"], "horizon_days": item["horizon_days"],
+                         "predicted_price": item["predicted_price"], "predicted_return": item["predicted_return"]}
+                        for item in forecast_bundle["predictions"]
+                    ]
+                    forecast_bundle["forecast_series"] = self.forecast._interpolate_series(
+                        forecast_bundle["last_price"], datetime.fromisoformat(forecast_bundle["generated_at"]),
+                        forecast_bundle["predictions"],
+                    )
         news_adjustment_pct, category_counts = self._news_adjustment(outlook_news or used_news, meta, outlook_days)
         adjusted_forecast_bundle = self._apply_news_adjustment(forecast_bundle, news_adjustment_pct)
         forecast_lookup = {
@@ -1431,7 +1486,7 @@ class AssetAnalysisService:
             forecast_prediction.get("predicted_return") if forecast_prediction else None,
         )
         confidence = self._confidence(perf, used_news, forecast_prediction)
-        now = datetime.now(timezone.utc)
+        now = analysis_now()
         historical_series = self._build_historical_series(ticker, history_horizon)
         data_quality_warnings = self._data_quality_warnings(perf, historical_series, used_news)
         response_confidence = self._confidence_with_warnings(confidence, data_quality_warnings)
@@ -1562,6 +1617,7 @@ class AssetAnalysisService:
             "sources": used_news,
             "source_groups": self._build_source_groups(used_news),
         }
+        payload["forecast_availability"] = forecast_availability()
         payload = self._refine_analysis_sections(payload, history_horizon, outlook_horizon)
         self._save_cached_analysis(portfolio, ticker, payload)
         return payload
@@ -1612,30 +1668,7 @@ class AssetAnalysisService:
                 return False
         return True
 
-    def _valid_refined_friendly_sections(self, refined: dict) -> bool:
-        required_text = ["summary", "what_happened", "company_situation", "asset_price_situation", "current_situation", "portfolio_impact", "conclusion"]
-        required_visual = ["asset_status", "fundamentals", "price_trend", "news_sentiment", "position_size", "portfolio_risk", "main_reason", "confidence"]
-        required_scenarios = ["favorable", "base", "adverse"]
-        if self._contains_transactional_recommendation(refined):
-            return False
-        if not isinstance(refined.get("visual_summary"), dict):
-            return False
-        if any(not isinstance(refined["visual_summary"].get(key), str) or not refined["visual_summary"][key].strip() for key in required_visual):
-            return False
-        if not isinstance(refined.get("scenarios"), dict):
-            return False
-        if any(not isinstance(refined["scenarios"].get(key), str) or not refined["scenarios"][key].strip() for key in required_scenarios):
-            return False
-        if any(not isinstance(refined.get(key), str) or not refined[key].strip() for key in required_text):
-            return False
-        if not isinstance(refined.get("what_to_watch"), list):
-            return False
-        if not all(isinstance(item, str) and item.strip() for item in refined["what_to_watch"]):
-            return False
-        if not isinstance(refined.get("data_quality_warnings"), list):
-            return False
-        return all(isinstance(item, str) and item.strip() for item in refined["data_quality_warnings"])
-
+    @timed("llm_refinement")
     def _refine_analysis_sections(self, payload: dict, history_horizon: str, outlook_horizon: str) -> dict:
         if not self.llm.enabled or not AI_ENHANCE_ASSET_ANALYSIS:
             return payload
@@ -1643,6 +1676,8 @@ class AssetAnalysisService:
         refined = self.llm.chat_json(
             ASSET_ANALYSIS_REFINER_PROMPT,
             {
+                "selected_history_horizon": history_horizon,
+                "selected_outlook_horizon": outlook_horizon,
                 "current_snapshot": payload.get("current_snapshot"),
                 "recent_performance": payload.get("recent_performance"),
                 "outlook_3m": payload.get("outlook_3m"),
@@ -1660,56 +1695,20 @@ class AssetAnalysisService:
             },
             temperature=0.15,
             max_tokens=900,
+            response_model=AssetRefinement,
         )
-        if not refined:
+        if not refined or not self._valid_refined_box_sections(refined):
+            count("llm_deterministic_fallback")
             return payload
-        if self._contains_transactional_recommendation(refined):
-            return payload
+        count("llm_refinement_accepted")
 
         sections = payload.get("analysis_sections", {})
-        if self._valid_refined_box_sections(refined):
-            merged_history = dict(sections.get("box_history_by_horizon", {}))
-            merged_outlook = dict(sections.get("box_outlook_by_horizon", {}))
-            merged_history[history_horizon] = refined["historico"].strip()
-            merged_outlook[outlook_horizon] = refined["perspectiva"].strip()
-            sections["box_history_by_horizon"] = merged_history
-            sections["box_current"] = refined["situacaoAtual"].strip()
-            sections["box_outlook_by_horizon"] = merged_outlook
-            payload["analysis_sections"] = sections
-            return payload
-
-        if isinstance(refined.get("current"), str) and refined["current"].strip():
-            sections["current"] = refined["current"].strip()
-
-        if isinstance(refined.get("recent_by_horizon"), dict):
-            merged_recent = dict(sections.get("recent_by_horizon", {}))
-            for key, value in refined["recent_by_horizon"].items():
-                if key in merged_recent and isinstance(value, str) and value.strip():
-                    merged_recent[key] = value.strip()
-            sections["recent_by_horizon"] = merged_recent
-            sections["recent"] = merged_recent.get(history_horizon, sections.get("recent"))
-
-        if isinstance(refined.get("outlook_by_horizon"), dict):
-            merged_outlook = dict(sections.get("outlook_by_horizon", {}))
-            for key, value in refined["outlook_by_horizon"].items():
-                if key in merged_outlook and isinstance(value, str) and value.strip():
-                    merged_outlook[key] = value.strip()
-            sections["outlook_by_horizon"] = merged_outlook
-            sections["outlook"] = merged_outlook.get(outlook_horizon, sections.get("outlook"))
-
-        if self._valid_refined_friendly_sections(refined):
-            sections["visual_summary"] = {
-                key: refined["visual_summary"][key].strip()
-                for key in ["asset_status", "fundamentals", "price_trend", "news_sentiment", "position_size", "portfolio_risk", "main_reason", "confidence"]
-            }
-            for key in ["summary", "what_happened", "company_situation", "asset_price_situation", "current_situation", "portfolio_impact", "conclusion"]:
-                sections[key] = refined[key].strip()
-            sections["scenarios"] = {
-                key: refined["scenarios"][key].strip()
-                for key in ["favorable", "base", "adverse"]
-            }
-            sections["what_to_watch"] = [item.strip() for item in refined["what_to_watch"] if item.strip()]
-            sections["data_quality_warnings"] = [item.strip() for item in refined["data_quality_warnings"] if item.strip()]
-
+        merged_history = dict(sections.get("box_history_by_horizon", {}))
+        merged_outlook = dict(sections.get("box_outlook_by_horizon", {}))
+        merged_history[history_horizon] = refined["historico"].strip()
+        merged_outlook[outlook_horizon] = refined["perspectiva"].strip()
+        sections["box_history_by_horizon"] = merged_history
+        sections["box_current"] = refined["situacaoAtual"].strip()
+        sections["box_outlook_by_horizon"] = merged_outlook
         payload["analysis_sections"] = sections
         return payload

@@ -3,7 +3,6 @@ from __future__ import annotations
 from collections import Counter
 import json
 import re
-import unicodedata
 from urllib.parse import urlsplit, urlunsplit
 
 from app.core.config import AI_ENABLE_CHATBOT

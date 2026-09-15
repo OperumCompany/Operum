@@ -3,11 +3,6 @@ from __future__ import annotations
 import hashlib
 import json
 
-from app.core.config import (
-    NEWS_EMBEDDING_DIMENSIONS,
-    NEWS_EMBEDDING_MODEL,
-    NEWS_EMBEDDINGS_ENABLED,
-)
 from app.schemas.news import NewsItem
 from app.services.embedding_service import EmbeddingService
 

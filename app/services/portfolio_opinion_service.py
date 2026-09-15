@@ -1,8 +1,9 @@
+from app.schemas.analysis_refinement import PortfolioRefinement
+from app.services.analysis_execution import analysis_request, timed, forecast_availability, count
+
 import logging
 from collections import Counter
 from datetime import datetime, timezone
-
-import pandas as pd
 
 from app.core.config import AI_ENHANCE_PORTFOLIO_ANALYSIS
 from app.schemas.portfolio import Portfolio
@@ -43,6 +44,7 @@ class PortfolioOpinionService:
         self.llm = LLMService()
         self.composition_diagnosis = PortfolioCompositionDiagnosisService()
 
+    @analysis_request
     def generate_opinion(
         self,
         portfolio: Portfolio,
@@ -94,6 +96,7 @@ class PortfolioOpinionService:
         opinion = self._refine_opinion_text(opinion, analysis, analysis_horizon)
 
         return {
+            "forecast_availability": forecast_availability(),
             "score": round(portfolio_score, 4),
             "components": {
                 "diversification": round(diversification_score, 4),
@@ -120,6 +123,7 @@ class PortfolioOpinionService:
             "generated_at": opinion["generated_at"],
         }
 
+    @timed("llm_refinement")
     def _refine_opinion_text(self, opinion: dict, analysis: dict, analysis_horizon: str) -> dict:
         if not self.llm.enabled or not AI_ENHANCE_PORTFOLIO_ANALYSIS:
             return opinion
@@ -147,9 +151,12 @@ class PortfolioOpinionService:
             },
             temperature=0.15,
             max_tokens=1200,
+            response_model=PortfolioRefinement,
         )
         if not refined:
+            count("llm_deterministic_fallback")
             return opinion
+        count("llm_refinement_accepted")
 
         for key in ["headline", "composition_summary", "final_diagnosis", "conclusion"]:
             value = refined.get(key)
@@ -237,8 +244,8 @@ class PortfolioOpinionService:
         structural_risk = min(1.0, volatility * 1.8 + var_95 * 2.4 + max(0.0, beta - 1.0) * 0.12)
 
         confidences = []
-        for position in portfolio.positions[:8]:
-            forecast = self.forecast.predict(position.ticker)
+        forecasts = self.forecast.predict_many([position.ticker for position in portfolio.positions[:8]])
+        for forecast in forecasts:
             if forecast and forecast.get("confidence") is not None:
                 confidences.append(float(forecast["confidence"]))
 
@@ -517,13 +524,10 @@ class PortfolioOpinionService:
         sources = []
         seen_ids = set()
         for pos in positions[: min(6, len(positions))]:
-            asset_result = self.asset_analysis.generate_asset_analysis(
-                portfolio,
-                pos.ticker,
-                history_horizon=analysis_horizon,
-                outlook_horizon=analysis_horizon,
+            selected = self.asset_analysis.select_analysis_news(
+                pos.ticker, history_horizon=analysis_horizon, outlook_horizon=analysis_horizon,
             )
-            for source in asset_result.get("sources", [])[:3]:
+            for source in selected["used_news"][:3]:
                 if source["id"] in seen_ids:
                     continue
                 seen_ids.add(source["id"])

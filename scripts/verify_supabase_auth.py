@@ -14,6 +14,7 @@ from app.main import app
 
 
 TEST_PASSWORD = "Operum123"
+SESSION_COOKIE = "operum_session"
 SECURITY_TABLES = [
     "app_users",
     "auth_sessions",
@@ -53,7 +54,8 @@ async def main() -> int:
             assert register.status_code == 200, register.text
             register_payload = register.json()
             assert "password_hash" not in register_payload
-            register_token = register_payload["token"]
+            register_token = register.cookies.get(SESSION_COOKIE)
+            assert register_token, "Cookie de sessao ausente no cadastro"
             user_id = register_payload["user"]["id"]
 
             user_row = db.fetch_one(
@@ -88,7 +90,8 @@ async def main() -> int:
                 json={"email": email, "password": TEST_PASSWORD},
             )
             assert login.status_code == 200, login.text
-            login_token = login.json()["token"]
+            login_token = login.cookies.get(SESSION_COOKIE)
+            assert login_token, "Cookie de sessao ausente no login"
             assert login_token != register_token
 
             old_session = db.fetch_one(

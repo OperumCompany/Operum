@@ -1,15 +1,17 @@
 from datetime import datetime
 
-from pydantic import BaseModel, Field
+from pydantic import EmailStr, Field
+
+from app.schemas.base import StrictBaseModel
 
 
-class UserPreferences(BaseModel):
-    topics: list[str] = []
+class UserPreferences(StrictBaseModel):
+    topics: list[str] = Field(default_factory=list, max_length=20)
     compactMode: bool = False
     notifications: bool = True
 
 
-class UserRecord(BaseModel):
+class UserRecord(StrictBaseModel):
     id: str
     name: str
     email: str
@@ -18,7 +20,7 @@ class UserRecord(BaseModel):
     updated_at: datetime
 
 
-class UserPublic(BaseModel):
+class UserPublic(StrictBaseModel):
     id: str
     name: str
     email: str
@@ -26,27 +28,31 @@ class UserPublic(BaseModel):
     updated_at: datetime
 
 
-class RegisterRequest(BaseModel):
-    name: str = Field(min_length=2)
-    email: str
-    password: str = Field(min_length=6)
+class RegisterRequest(StrictBaseModel):
+    name: str = Field(min_length=2, max_length=120)
+    email: EmailStr
+    password: str = Field(min_length=8, max_length=256)
 
 
-class LoginRequest(BaseModel):
-    email: str
-    password: str = Field(min_length=1)
+class LoginRequest(StrictBaseModel):
+    email: EmailStr
+    password: str = Field(min_length=1, max_length=256)
 
 
-class PasswordUpdateRequest(BaseModel):
-    current_password: str = Field(min_length=1)
-    new_password: str = Field(min_length=6)
+class PasswordUpdateRequest(StrictBaseModel):
+    current_password: str = Field(min_length=1, max_length=256)
+    new_password: str = Field(min_length=8, max_length=256)
 
 
-class AccountDeletionRequest(BaseModel):
-    current_password: str = Field(min_length=1)
-    confirmation: str = Field(min_length=1)
+class AccountDeletionRequest(StrictBaseModel):
+    current_password: str = Field(min_length=1, max_length=256)
+    confirmation: str = Field(min_length=1, max_length=20)
 
 
-class AuthResponse(BaseModel):
+class AuthResponse(StrictBaseModel):
     token: str
+    user: UserPublic
+
+
+class AuthSessionResponse(StrictBaseModel):
     user: UserPublic
