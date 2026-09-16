@@ -22,6 +22,7 @@ ollama-start.log
 # env files
 .env
 .env.*
+!.env.production.example
 
 # logs
 *.log
