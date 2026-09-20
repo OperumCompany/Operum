@@ -307,7 +307,7 @@ class NewsIngestionService:
     def _normalize_text(self, text: str) -> str:
         return self._clean_text(text).lower()
 
-    def _parse_published(self, published: str | datetime | None) -> datetime:
+    def _parse_published(self, published: str | datetime | None, source_id: str = "unknown") -> datetime:
         if isinstance(published, datetime):
             return published if published.tzinfo else published.replace(tzinfo=timezone.utc)
         if isinstance(published, str) and published:
@@ -335,6 +335,9 @@ class NewsIngestionService:
                 return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
             except (TypeError, ValueError, IndexError):
                 pass
+            logger.warning("Data de noticia invalida; usando horario atual. source=%s value=%r", source_id, published)
+        else:
+            logger.info("Noticia sem data publicada; usando horario atual. source=%s", source_id)
         return datetime.now(timezone.utc)
 
     def _normalize_item(self, item: dict) -> Optional[NewsItem]:
@@ -349,7 +352,7 @@ class NewsIngestionService:
             source_name = self._clean_text(item.get("source") or item.get("source_name") or "desconhecida")
             source_type = self._clean_text(item.get("source_type") or "rss") or "rss"
             source_url = item.get("link") or item.get("source_url") or ""
-            published_dt = self._parse_published(item.get("published") or item.get("published_at"))
+            published_dt = self._parse_published(item.get("published") or item.get("published_at"), source_id)
             source_category = item.get("source_category")
             tags_default = [self._clean_text(tag) for tag in item.get("tags_default", []) if self._clean_text(tag)]
             country_default = [self._clean_text(country) for country in item.get("country_default", []) if self._clean_text(country)]
@@ -753,6 +756,7 @@ class NewsIngestionService:
         for source in ALL_NEWS_SOURCES:
             if not source.enabled:
                 continue
+            before = len(raw_items)
             if source.feed_url:
                 raw_items.extend(
                     item for item in self._fetch_rss_source(source)
@@ -763,14 +767,20 @@ class NewsIngestionService:
                     item for item in self._fetch_listing_source(source)
                     if self._is_editorial_item_allowed(source, item)
                 )
+            logger.info("Fonte de noticias %s retornou %s item(ns)", source.source_id, len(raw_items) - before)
         return raw_items
 
     def _normalize_and_score(self, raw_items: list[dict]) -> list[NewsItem]:
         normalized = []
+        failures = 0
         for item in raw_items:
             news = self._normalize_item(item)
             if news:
                 normalized.append(self.scoring.score_news(news))
+            else:
+                failures += 1
+        if failures:
+            logger.warning("Normalizacao descartou %s noticia(s)", failures)
         return self._deduplicate(normalized)
 
     def _update_backfill_meta(
@@ -874,7 +884,10 @@ class NewsIngestionService:
         return self.backfill_history(start_date=start_date)
 
     def ingest(self) -> int:
-        raw_items = self.fetch_from_sources() + self.fetch_from_yfinance()
+        source_items = self.fetch_from_sources()
+        yfinance_items = self.fetch_from_yfinance()
+        logger.info("YFinance retornou %s item(ns)", len(yfinance_items))
+        raw_items = source_items + yfinance_items
         normalized = self._normalize_and_score(raw_items)
         new_count = self._merge_and_store(normalized)
         logger.info(f"Ingestao: {new_count} noticias novas de {len(normalized)} unicas")

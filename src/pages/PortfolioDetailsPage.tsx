@@ -15,7 +15,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { Button, Card, Input } from '../components/UI';
+import { Button, Card, Input, Select } from '../components/UI';
 import { PortfolioAnalysisAI, type PortfolioAnalysisAIHandle } from '../components/PortfolioAnalysisAI';
 import { PortfolioEvolutionChart } from '../components/PortfolioEvolutionChart';
 import { usePortfolios } from '../context/PortfoliosContext';
@@ -388,9 +388,13 @@ export function PortfolioDetailsPage() {
       setQuantity(10);
       setAvgPrice('');
       setAssetTicker('');
-      opinionVersions.current = {};
-      opinionRequestsRef.current = {};
-      setPositionOpinions({});
+      delete opinionVersions.current[assetTicker];
+      delete opinionRequestsRef.current[assetTicker];
+      setPositionOpinions((prev) => {
+        const next = { ...prev };
+        delete next[assetTicker];
+        return next;
+      });
       setHistoryRefreshKey((current) => current + 1);
     } catch {
       // handled by context
@@ -610,7 +614,7 @@ export function PortfolioDetailsPage() {
             </Button>
           )}
           <Button type="button" variant="ghost" onClick={() => window.print()} disabled={pricesLoading}><Download size={16} />Exportar relatório</Button>
-          <Button type="button" variant="ai" onClick={() => { void generatePortfolioAnalysis(); }}><Sparkles size={16} />Gerar análise por IA</Button>
+          <Button type="button" variant="ai" onClick={() => { void generatePortfolioAnalysis(); }}><Sparkles size={16} />Gerar analise por IA</Button>
         </div>
       </section>
 
@@ -672,20 +676,18 @@ export function PortfolioDetailsPage() {
       <Card className="no-print" title="Adicionar ativo ou aporte">
         <form onSubmit={addAsset} className="space-y-3">
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-6">
-            <select
+            <Select
               value={selectedClass}
               onChange={(e) => { setSelectedClass(e.target.value); setAssetTicker(''); }}
-              className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm"
             >
               <option value="">Tipo de ativo</option>
               {ASSET_CLASSES.map((cls) => (
                 <option key={cls} value={cls}>{CLASS_LABELS[cls] || cls}</option>
               ))}
-            </select>
-            <select
+            </Select>
+            <Select
               value={assetTicker}
               onChange={(e) => { setAssetTicker(e.target.value); }}
-              className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm"
               disabled={!selectedClass}
             >
               <option value="">Selecionar ativo</option>
@@ -694,7 +696,7 @@ export function PortfolioDetailsPage() {
                   {asset.ticker} - {cleanText(asset.name)}
                 </option>
               ))}
-            </select>
+            </Select>
             <Input type="number" min={0.01} step={0.01} value={quantity} onChange={(e) => setQuantity(Number(e.target.value))} placeholder="Quantidade" required />
             <Input type="number" min={0} step={0.01} value={avgPrice} onChange={(e) => setAvgPrice(e.target.value)} placeholder="Preço de aquisição" required />
             <Input type="date" max={new Date().toISOString().slice(0, 10)} value={purchaseDate} onChange={(e) => setPurchaseDate(e.target.value)} aria-label="Data do aporte" required />
@@ -707,14 +709,14 @@ export function PortfolioDetailsPage() {
       <Card className="no-print" title="Filtrar ativos" right={<ArrowDownUp size={16} className="text-[var(--brand)]" />}>
         <div className="grid gap-3 sm:grid-cols-3">
           <Input value={tableQuery} onChange={(e) => setTableQuery(e.target.value)} placeholder="Filtrar por ticker ou nome" />
-          <select value={sortKey} onChange={(e) => updateSort(e.target.value as SortKey)} className="rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 py-3 text-sm">
+          <Select value={sortKey} onChange={(e) => updateSort(e.target.value as SortKey)}>
             <option value="weight_pct">% da carteira</option>
             <option value="total_value">Valor atual</option>
             <option value="unrealized_pnl">Ganho/perda</option>
             <option value="current_price">Preço atual</option>
             <option value="quantity">Quantidade</option>
             <option value="ticker">Ticker</option>
-          </select>
+          </Select>
           <Button type="button" variant="ghost" onClick={() => setSortDirection((prev) => (prev === 'asc' ? 'desc' : 'asc'))}>
             Ordem: {sortDirection === 'asc' ? 'Crescente' : 'Decrescente'}
           </Button>
@@ -735,7 +737,7 @@ export function PortfolioDetailsPage() {
                     <th>Valor total</th>
                     <th>P&L não realizado</th>
                     <th>% Carteira</th>
-                    <th>IA</th>
+                    <th>Análise com IA</th>
                     <th></th>
                   </tr>
                 </thead>
@@ -767,7 +769,7 @@ export function PortfolioDetailsPage() {
                             ) : '-'}
                           </td>
                           <td data-label="% Carteira">{priceInfo?.weight_pct != null ? `${priceInfo.weight_pct.toFixed(1)}%` : '-'}</td>
-                          <td data-label="Análise">
+                          <td data-label="Análise com IA">
                             <button
                               type="button"
                               className="inline-flex items-center gap-2 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-3 py-2 text-sm font-semibold text-[var(--text-main)] transition hover:border-[var(--brand)]"

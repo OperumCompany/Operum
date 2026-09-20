@@ -29,6 +29,9 @@ CORS_ORIGINS = os.environ.get("CORS_ORIGINS", "http://localhost:5173,http://loca
 API_PREFIX = "/api"
 OPERUM_ENV = os.environ.get("OPERUM_ENV", "development").strip().lower()
 OPERUM_SESSION_COOKIE = os.environ.get("OPERUM_SESSION_COOKIE", "operum_session").strip()
+OPERUM_REFRESH_COOKIE = os.environ.get("OPERUM_REFRESH_COOKIE", "operum_refresh").strip()
+OPERUM_ACCESS_TOKEN_MINUTES = int(os.environ.get("OPERUM_ACCESS_TOKEN_MINUTES", "15"))
+OPERUM_REFRESH_TOKEN_DAYS = int(os.environ.get("OPERUM_REFRESH_TOKEN_DAYS", "30"))
 OPERUM_COOKIE_SECURE = os.environ.get("OPERUM_COOKIE_SECURE", "true" if OPERUM_ENV == "production" else "false").lower() == "true"
 OPERUM_RATE_LIMIT_ENABLED = os.environ.get(
     "OPERUM_RATE_LIMIT_ENABLED",

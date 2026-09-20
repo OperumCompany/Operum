@@ -8,8 +8,8 @@ from app.schemas.auth import (
     RegisterRequest,
     UserPreferences,
 )
-from app.core.config import OPERUM_SESSION_COOKIE
-from app.core.security import clear_session_cookie, set_session_cookie
+from app.core.config import OPERUM_REFRESH_COOKIE, OPERUM_SESSION_COOKIE
+from app.core.security import clear_refresh_cookie, clear_session_cookie, set_refresh_cookie, set_session_cookie
 from app.services.auth_service import AuthService
 from app.services.exceptions import ServiceUnavailableError
 
@@ -44,6 +44,8 @@ def register(data: RegisterRequest, response: Response):
     try:
         auth = service.register(data)
         set_session_cookie(response, auth.token)
+        if auth.refresh_token:
+            set_refresh_cookie(response, auth.refresh_token)
         return {"user": auth.user}
     except ServiceUnavailableError as exc:
         raise HTTPException(status_code=503, detail=str(exc))
@@ -56,6 +58,8 @@ def login(data: LoginRequest, response: Response):
     try:
         auth = service.login(data)
         set_session_cookie(response, auth.token)
+        if auth.refresh_token:
+            set_refresh_cookie(response, auth.refresh_token)
         return {"user": auth.user}
     except ServiceUnavailableError as exc:
         raise HTTPException(status_code=503, detail=str(exc))
@@ -68,14 +72,34 @@ def logout(
     response: Response,
     ctx=Header(default=None, alias="Authorization"),
     session_cookie: str | None = Cookie(default=None, alias=OPERUM_SESSION_COOKIE),
+    refresh_cookie: str | None = Cookie(default=None, alias=OPERUM_REFRESH_COOKIE),
 ):
-    token = _extract_token(ctx, session_cookie)
+    token = session_cookie.strip() if session_cookie else ctx.split(" ", 1)[1].strip() if ctx and ctx.startswith("Bearer ") else None
     try:
-        service.logout(token)
+        service.logout(token, refresh_cookie)
     except ServiceUnavailableError as exc:
         raise HTTPException(status_code=503, detail=str(exc))
     clear_session_cookie(response)
+    clear_refresh_cookie(response)
     return {"status": "ok"}
+
+
+@router.post("/refresh", response_model=AuthSessionResponse)
+def refresh(response: Response, refresh_cookie: str | None = Cookie(default=None, alias=OPERUM_REFRESH_COOKIE)):
+    if not refresh_cookie:
+        raise HTTPException(status_code=401, detail="Refresh token ausente")
+    try:
+        auth = service.refresh_session(refresh_cookie.strip())
+    except ServiceUnavailableError as exc:
+        raise HTTPException(status_code=503, detail=str(exc))
+    if auth is None:
+        clear_session_cookie(response)
+        clear_refresh_cookie(response)
+        raise HTTPException(status_code=401, detail="Refresh token invalido")
+    set_session_cookie(response, auth.token)
+    if auth.refresh_token:
+        set_refresh_cookie(response, auth.refresh_token)
+    return {"user": auth.user}
 
 
 @router.get("/me")
@@ -124,6 +148,7 @@ def delete_account(
     except ValueError as exc:
         raise HTTPException(status_code=400, detail=str(exc))
     clear_session_cookie(response)
+    clear_refresh_cookie(response)
     return {"status": "ok"}
 
 

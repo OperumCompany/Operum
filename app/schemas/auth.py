@@ -51,6 +51,7 @@ class AccountDeletionRequest(StrictBaseModel):
 
 class AuthResponse(StrictBaseModel):
     token: str
+    refresh_token: str | None = None
     user: UserPublic
 
 

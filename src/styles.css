@@ -466,11 +466,12 @@ html[data-theme='dark'] .chat-history-panel { background: color-mix(in srgb, var
   .portfolio-holdings tbody { width: 100%; }
   .portfolio-position-row td { min-width: 0; }
   .portfolio-position-row td > * { max-width: 62%; }
-  .portfolio-position-row td[data-label='IA'] { align-items: flex-start; flex-direction: column; }
-  .portfolio-position-row td[data-label='IA'] > * { max-width: 100%; }
+  .portfolio-position-row td[data-label='Análise com IA'] { align-items: flex-start; flex-direction: column; }
+  .portfolio-position-row td[data-label='Análise com IA'] > * { max-width: 100%; }
   .portfolio-analysis-row > td { padding: .75rem !important; }
-  .portfolio-analysis-row .h-\[26rem\] { height: 18rem; padding: .55rem; }
+  .portfolio-analysis-row .h-\[26rem\] { height: 18rem; overflow: hidden; padding: .55rem; }
   .portfolio-analysis-row .text-4xl { font-size: 2rem; }
+  .portfolio-position-row td[data-label='Análise com IA'] button { width: 100%; }
 
   /* Charts retain useful vertical space without forcing a landscape viewport. */
   .portfolio-evolution .recharts-responsive-container,

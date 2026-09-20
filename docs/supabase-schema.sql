@@ -24,10 +24,22 @@ create table if not exists public.app_users (
 create table if not exists public.auth_sessions (
   token text primary key,
   user_id uuid not null references public.app_users(id) on delete cascade,
-  created_at timestamptz not null default timezone('utc', now())
+  created_at timestamptz not null default timezone('utc', now()),
+  expires_at timestamptz
 );
 
+alter table public.auth_sessions add column if not exists expires_at timestamptz;
 create index if not exists idx_auth_sessions_user_id on public.auth_sessions(user_id);
+
+create table if not exists public.auth_refresh_tokens (
+  token_hash text primary key,
+  user_id uuid not null references public.app_users(id) on delete cascade,
+  created_at timestamptz not null default timezone('utc', now()),
+  expires_at timestamptz not null,
+  revoked_at timestamptz
+);
+
+create index if not exists idx_auth_refresh_tokens_user_id on public.auth_refresh_tokens(user_id);
 
 create table if not exists public.user_preferences (
   user_id uuid primary key references public.app_users(id) on delete cascade,
@@ -288,6 +300,7 @@ $$;
 
 alter table public.app_users enable row level security;
 alter table public.auth_sessions enable row level security;
+alter table public.auth_refresh_tokens enable row level security;
 alter table public.user_preferences enable row level security;
 alter table public.portfolios enable row level security;
 alter table public.portfolio_positions enable row level security;

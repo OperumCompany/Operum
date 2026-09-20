@@ -2,7 +2,7 @@ import asyncio
 import os
 import shutil
 import tempfile
-from datetime import date
+from datetime import date, datetime, timedelta, timezone
 
 TEST_DATA_DIR = tempfile.mkdtemp(prefix="operum-test-data-")
 os.environ["OPERUM_DATA_DIR"] = TEST_DATA_DIR
@@ -18,6 +18,7 @@ from httpx import ASGITransport, AsyncClient
 from app.main import app
 
 SESSION_COOKIE = "operum_session"
+REFRESH_COOKIE = "operum_refresh"
 
 
 @pytest.fixture(scope="session", autouse=True)
@@ -60,7 +61,9 @@ async def test_auth_register_login_and_me(client: AsyncClient):
     })
     assert register.status_code == 200
     token = register.cookies.get(SESSION_COOKIE)
+    refresh_token = register.cookies.get(REFRESH_COOKIE)
     assert token
+    assert refresh_token
 
     me = await client.get("/api/auth/me", headers={"Cookie": f"{SESSION_COOKIE}={token}"})
     assert me.status_code == 200
@@ -70,6 +73,23 @@ async def test_auth_register_login_and_me(client: AsyncClient):
     logout = await client.post("/api/auth/logout", headers={"Cookie": f"{SESSION_COOKIE}={token}"})
     assert logout.status_code == 200
     assert SESSION_COOKIE in logout.headers.get("set-cookie", "")
+
+
+@pytest.mark.asyncio
+async def test_auth_refresh_rotates_session_cookie(client: AsyncClient):
+    register = await client.post("/api/auth/register", json={
+        "name": "Refresh User",
+        "email": "refresh-user@operum.app",
+        "password": "Operum123",
+    })
+    refresh_token = register.cookies.get(REFRESH_COOKIE)
+    assert refresh_token
+
+    refreshed = await client.post("/api/auth/refresh", headers={"Cookie": f"{REFRESH_COOKIE}={refresh_token}"})
+    assert refreshed.status_code == 200
+    assert refreshed.cookies.get(SESSION_COOKIE)
+    assert refreshed.cookies.get(REFRESH_COOKIE)
+    assert refreshed.json()["user"]["email"] == "refresh-user@operum.app"
 
 
 @pytest.mark.asyncio
@@ -533,6 +553,47 @@ async def test_news_query_and_pagination_metadata(client: AsyncClient):
     assert "total_pages" in data
     assert data["search_mode_used"] in {"hybrid", "keyword"}
     assert "semantic_available" in data
+
+
+@pytest.mark.asyncio
+async def test_news_from_today_appears_first(client: AsyncClient, monkeypatch):
+    from app.api import news as news_api
+    from app.schemas.news import NewsItem
+
+    today = datetime.now(timezone.utc)
+    yesterday = today - timedelta(days=1)
+
+    def item(news_id: str, published_at: datetime) -> NewsItem:
+        return NewsItem(
+            id=news_id,
+            title=f"Noticia {news_id}",
+            subtitle=None,
+            content_preview="Resumo de mercado",
+            full_text_if_available=None,
+            source_id="test",
+            source_name="Fonte Teste",
+            source_type="rss",
+            source_category="press",
+            source_url=f"https://example.com/{news_id}",
+            is_official=False,
+            published_at=published_at,
+            language="pt",
+            tags=["Mercado"],
+            mentioned_assets=[],
+            mentioned_sectors=["Mercado"],
+            mentioned_countries=["BR"],
+            sentiment_score=0,
+            relevance_score=0.5,
+            impact_score=0.5,
+            summary="Resumo",
+            cluster_id=None,
+            created_at=published_at,
+        )
+
+    monkeypatch.setattr(news_api.ingestion_service, "get_all_raw", lambda: [item("ontem", yesterday), item("hoje", today)])
+    resp = await client.get("/api/news?page_size=2")
+    assert resp.status_code == 200
+    assert resp.json()["items"][0]["id"] == "hoje"
 
 
 @pytest.mark.asyncio

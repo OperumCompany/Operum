@@ -43,6 +43,12 @@ test('uses Escape as the shared dismissal key for responsive overlays', () => {
   assert.equal(isDismissKey('Enter'), false);
 });
 
+test('portfolio table labels the AI column descriptively', async () => {
+  const source = await readFile(new URL('../src/pages/PortfolioDetailsPage.tsx', import.meta.url), 'utf8');
+  assert.match(source, /Análise com IA/);
+  assert.doesNotMatch(source, /<th>IA<\/th>/);
+});
+
 test('uses the local API path when no public API URL is configured', () => {
   assert.equal(resolveApiBaseUrl(), '/api');
 });
@@ -117,6 +123,36 @@ test('does not reuse an in-flight GET after a mutation starts', async () => {
     assert.deepEqual(await fresh, { request: 2 });
     releaseStaleRequest();
     assert.deepEqual(await stale, { request: 1 });
+  } finally {
+    globalThis.fetch = originalFetch;
+  }
+});
+
+test('refreshes the session once after an authenticated 401 and retries the request', async () => {
+  const originalFetch = globalThis.fetch;
+  const calls = [];
+
+  globalThis.fetch = async (url, options = {}) => {
+    calls.push({ url: String(url), method: options.method ?? 'GET' });
+    if (String(url).endsWith('/api/protected') && calls.filter((call) => call.url.endsWith('/api/protected')).length === 1) {
+      return new Response(JSON.stringify({ detail: 'Sessao invalida' }), { status: 401 });
+    }
+    if (String(url).endsWith('/api/auth/refresh')) {
+      return new Response(JSON.stringify({ user: { id: 'u1' } }), { status: 200 });
+    }
+    return new Response(JSON.stringify({ ok: true }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  };
+
+  try {
+    assert.deepEqual(await api.get('/protected'), { ok: true });
+    assert.deepEqual(calls.map((call) => [call.method, call.url]), [
+      ['GET', '/api/protected'],
+      ['POST', '/api/auth/refresh'],
+      ['GET', '/api/protected'],
+    ]);
   } finally {
     globalThis.fetch = originalFetch;
   }

@@ -1,3 +1,4 @@
+import { ChevronDown } from 'lucide-react';
 import { ReactNode } from 'react';
 
 export function Card({ title, right, children, className = '' }: { title?: string; right?: ReactNode; children: ReactNode; className?: string }) {
@@ -36,7 +37,17 @@ export function Input({ className = '', ...props }: React.InputHTMLAttributes<HT
 }
 
 export function Select({ className = '', children, ...props }: React.SelectHTMLAttributes<HTMLSelectElement>) {
-  return <select {...props} className={`${inputStyles} cursor-pointer ${className}`}>{children}</select>;
+  return (
+    <span className="relative block w-full">
+      <select
+        {...props}
+        className={`min-h-11 w-full appearance-none rounded-xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 py-2.5 pr-10 text-sm font-semibold text-[var(--text-main)] outline-none transition hover:border-[var(--border-strong)] focus:border-[var(--accent)] focus:ring-4 focus:ring-[rgba(223,80,242,0.10)] disabled:cursor-not-allowed disabled:opacity-60 ${className}`}
+      >
+        {children}
+      </select>
+      <ChevronDown aria-hidden="true" size={16} className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-[var(--text-muted)]" />
+    </span>
+  );
 }
 
 export function Badge({ children, tone = 'primary' }: { children: ReactNode; tone?: 'primary' | 'accent' | 'neutral' }) {

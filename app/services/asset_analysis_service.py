@@ -1619,6 +1619,7 @@ class AssetAnalysisService:
         }
         payload["forecast_availability"] = forecast_availability()
         payload = self._refine_analysis_sections(payload, history_horizon, outlook_horizon)
+        payload = self._normalize_prediction_box_texts(payload, history_horizon, outlook_horizon)
         self._save_cached_analysis(portfolio, ticker, payload)
         return payload
 
@@ -1667,6 +1668,113 @@ class AssetAnalysisService:
             if any(marker in value for marker in ["\n-", "##", "**"]):
                 return False
         return True
+
+    def _compact_box_text(self, text: str, max_chars: int = 1250) -> str:
+        clean = " ".join((text or "").split())
+        if len(clean) <= max_chars:
+            return clean
+        sentences = [part.strip() for part in clean.replace("; ", ". ").split(". ") if part.strip()]
+        selected: list[str] = []
+        current = ""
+        for sentence in sentences:
+            candidate = f"{sentence.rstrip('.')}."
+            next_text = f"{current} {candidate}".strip()
+            if len(next_text) > max_chars:
+                break
+            selected.append(candidate)
+            current = next_text
+        if selected:
+            return " ".join(selected).strip()
+        return clean[: max_chars - 1].rstrip() + "."
+
+    def _expand_box_text(self, text: str, payload: dict, horizon_key: str, kind: str) -> str:
+        sections = payload.get("analysis_sections", {})
+        snapshot = payload.get("current_snapshot", {})
+        perf = payload.get("recent_performance", {})
+        ticker = payload.get("ticker", "O ativo")
+        confidence = payload.get("confidence", "media")
+        used_news_count = payload.get("used_news_count", 0)
+        current_price = snapshot.get("current_price")
+        currency = snapshot.get("currency") or "BRL"
+        weight_pct = snapshot.get("weight_pct")
+        forecast_pct = perf.get("forecast_return_selected_pct")
+        change_pct = perf.get("change_selected_pct")
+        benchmark = perf.get("benchmark_ticker")
+        dominant_topics = ", ".join((payload.get("outlook_3m") or {}).get("dominant_topics", [])[:3])
+
+        if kind == "history":
+            focus = (
+                f"No horizonte {horizon_key}, a leitura historica combina variacao recente"
+                f"{f' de {change_pct:.1f}%' if isinstance(change_pct, (int, float)) else ''}, relacao com {benchmark or 'o benchmark'} "
+                "e intensidade das noticias usadas."
+            )
+        elif kind == "outlook":
+            focus = (
+                f"Na perspectiva {horizon_key}, o cenario considera a previsao do modelo"
+                f"{f' ({forecast_pct:.1f}%)' if isinstance(forecast_pct, (int, float)) else ''}, o fluxo de noticias e a funcao do ativo na carteira."
+            )
+        else:
+            focus = (
+                f"A situacao atual de {ticker} parte do preco {currency} {current_price:.2f}"
+                if isinstance(current_price, (int, float))
+                else f"A situacao atual de {ticker} parte dos dados disponiveis de preco, noticias e carteira."
+            )
+
+        context = [
+            focus,
+            f"A analise usa {used_news_count} noticia(s) ou sinais contextuais recentes e trabalha com confianca {confidence}.",
+            f"Na carteira, o peso observado e {weight_pct:.1f}%." if isinstance(weight_pct, (int, float)) else "Quando o peso na carteira esta indisponivel, o risco de concentracao deve ser verificado manualmente.",
+            f"Temas dominantes: {dominant_topics}." if dominant_topics else "Quando nao ha tema dominante, a leitura deve privilegiar preco, volatilidade e qualidade das fontes.",
+            "Esta leitura e educativa, mostra cenarios e pontos de atencao, mas nao recomenda compra, venda ou manutencao de ativos.",
+        ]
+        extra = " ".join(part for part in context if part)
+        base = " ".join((text or "").split())
+        if extra.lower() in base.lower():
+            return base
+        return f"{base} {extra}".strip()
+
+    def _normalize_prediction_box_text(self, text: str, payload: dict, horizon_key: str, kind: str) -> str:
+        min_chars = 750
+        max_chars = 1250
+        normalized = " ".join((text or "").split())
+        while len(normalized) < min_chars:
+            expanded = self._expand_box_text(normalized, payload, horizon_key, kind)
+            if expanded == normalized:
+                break
+            normalized = expanded
+        if len(normalized) < min_chars:
+            normalized = (
+                f"{normalized} O Operum combina noticias, historico de preco, status do ativo e contexto da carteira "
+                "para apoiar uma decisao mais bem informada, sempre como conteudo educativo e sem indicar operacoes."
+            ).strip()
+        fillers = [
+            "A leitura deve ser comparada com outros ativos da carteira, porque previsao isolada nao substitui avaliacao de concentracao, liquidez e tolerancia a risco.",
+            "Mudancas em juros, fluxo de noticias, volatilidade e preco podem alterar rapidamente o cenario, por isso o acompanhamento deve ser recorrente.",
+            "Quando os sinais forem contraditorios, o ponto mais importante e observar se novas fontes confirmam ou enfraquecem a tese apresentada.",
+        ]
+        filler_index = 0
+        while len(normalized) < min_chars:
+            addition = fillers[filler_index % len(fillers)]
+            candidate = f"{normalized} {addition}".strip()
+            if len(candidate) > max_chars:
+                break
+            normalized = candidate
+            filler_index += 1
+        return self._compact_box_text(normalized, max_chars)
+
+    def _normalize_prediction_box_texts(self, payload: dict, history_horizon: str, outlook_horizon: str) -> dict:
+        sections = payload.get("analysis_sections", {})
+        history_boxes = dict(sections.get("box_history_by_horizon", {}))
+        outlook_boxes = dict(sections.get("box_outlook_by_horizon", {}))
+        for horizon, text in list(history_boxes.items()):
+            history_boxes[horizon] = self._normalize_prediction_box_text(text, payload, horizon, "history")
+        for horizon, text in list(outlook_boxes.items()):
+            outlook_boxes[horizon] = self._normalize_prediction_box_text(text, payload, horizon, "outlook")
+        sections["box_history_by_horizon"] = history_boxes
+        sections["box_current"] = self._normalize_prediction_box_text(sections.get("box_current", ""), payload, history_horizon, "current")
+        sections["box_outlook_by_horizon"] = outlook_boxes
+        payload["analysis_sections"] = sections
+        return payload
 
     @timed("llm_refinement")
     def _refine_analysis_sections(self, payload: dict, history_horizon: str, outlook_horizon: str) -> dict:

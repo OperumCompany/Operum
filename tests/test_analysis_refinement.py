@@ -144,3 +144,35 @@ def test_asset_valid_refinement_preserves_metrics_sources_and_other_horizons(llm
     sent = json.loads(calls[0]["json"]["messages"][1]["content"])
     assert sent["selected_history_horizon"] == "1m"
     assert sent["selected_outlook_horizon"] == "3m"
+
+
+def test_prediction_box_texts_are_normalized_to_display_limits():
+    asset = object.__new__(AssetAnalysisService)
+    payload = {
+        "ticker": "PETR4",
+        "confidence": "media",
+        "used_news_count": 3,
+        "current_snapshot": {"current_price": 31.2, "currency": "BRL", "weight_pct": 12.5},
+        "recent_performance": {
+            "change_selected_pct": -2.4,
+            "forecast_return_selected_pct": 4.1,
+            "benchmark_ticker": "IBOV",
+        },
+        "outlook_3m": {"dominant_topics": ["Petroleo", "Juros"]},
+        "analysis_sections": {
+            "box_history_by_horizon": {"1m": "Historico curto."},
+            "box_current": "Situacao atual curta.",
+            "box_outlook_by_horizon": {"3m": "Perspectiva curta."},
+            "summary": "Resumo curto fica intacto.",
+        },
+    }
+
+    result = asset._normalize_prediction_box_texts(payload, "1m", "3m")
+    sections = result["analysis_sections"]
+    checked = [
+        sections["box_history_by_horizon"]["1m"],
+        sections["box_current"],
+        sections["box_outlook_by_horizon"]["3m"],
+    ]
+    assert all(750 <= len(text) <= 1250 for text in checked)
+    assert sections["summary"] == "Resumo curto fica intacto."

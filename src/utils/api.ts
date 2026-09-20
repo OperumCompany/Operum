@@ -8,18 +8,37 @@ const API_BASE = resolveApiBaseUrl(viteEnv?.VITE_API_BASE_URL);
 
 type ApiRequestOptions = RequestInit & {
   auth?: boolean;
+  skipRefresh?: boolean;
 };
 
 class ApiClient {
   private readonly inFlightGets = new Map<string, Promise<unknown>>();
+  private refreshRequest: Promise<unknown> | null = null;
 
   private invalidateInFlightGets(): void {
     this.inFlightGets.clear();
   }
 
+  private shouldTryRefresh(path: string, options?: ApiRequestOptions): boolean {
+    if (options?.auth === false || options?.skipRefresh) return false;
+    return !['/auth/login', '/auth/register', '/auth/refresh', '/auth/logout'].includes(path);
+  }
+
+  private async refreshSession(): Promise<void> {
+    if (!this.refreshRequest) {
+      this.refreshRequest = this.request('/auth/refresh', {
+        method: 'POST',
+        skipRefresh: true,
+      }).finally(() => {
+        this.refreshRequest = null;
+      });
+    }
+    await this.refreshRequest;
+  }
+
   private async request<T>(path: string, options?: ApiRequestOptions): Promise<T> {
     const url = `${API_BASE}${path}`;
-    const { auth: _auth = true, headers, ...fetchOptions } = options ?? {};
+    const { auth: _auth = true, skipRefresh: _skipRefresh = false, headers, ...fetchOptions } = options ?? {};
     const res = await fetch(url, {
       credentials: 'include',
       headers: {
@@ -28,6 +47,10 @@ class ApiClient {
       },
       ...fetchOptions,
     });
+    if (res.status === 401 && this.shouldTryRefresh(path, options)) {
+      await this.refreshSession();
+      return this.request<T>(path, { ...options, skipRefresh: true });
+    }
     if (!res.ok) {
       const body = await res.text();
       throw new Error(`HTTP ${res.status}: ${body || res.statusText}`);

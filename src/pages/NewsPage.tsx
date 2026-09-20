@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { ChevronLeft, ChevronRight, ExternalLink, Newspaper, RefreshCw, Search, X } from 'lucide-react';
-import { Input } from '../components/UI';
+import { Input, Select } from '../components/UI';
 import { NewsItem } from '../types';
 import api from '../utils/api';
 
@@ -132,14 +132,14 @@ export function NewsPage() {
         </div>
 
         <div className="mt-3 flex flex-col gap-3 sm:flex-row sm:items-center">
-          <select value={selectedAsset ?? ''} onChange={(event) => setSelectedAsset(event.target.value || null)} className="min-h-11 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 text-sm text-[var(--text-main)] focus:outline-none focus:ring-2 focus:ring-[var(--brand)] sm:w-52" aria-label="Filtrar por ativo">
+          <Select value={selectedAsset ?? ''} onChange={(event) => setSelectedAsset(event.target.value || null)} className="sm:w-52" aria-label="Filtrar por ativo">
             <option value="">Todos os ativos</option>
             {availableAssets.map((asset) => <option key={asset} value={asset}>{asset}</option>)}
-          </select>
-          <select value={selectedAdditionalTopic} onChange={(event) => setSelectedTopic(event.target.value || null)} className="min-h-11 rounded-2xl border border-[var(--border-soft)] bg-[var(--bg-surface-strong)] px-4 text-sm text-[var(--text-main)] focus:outline-none focus:ring-2 focus:ring-[var(--brand)] sm:w-56" aria-label="Filtrar por mais temas">
+          </Select>
+          <Select value={selectedAdditionalTopic} onChange={(event) => setSelectedTopic(event.target.value || null)} className="sm:w-56" aria-label="Filtrar por mais temas">
             <option value="">Mais temas</option>
             {additionalTopics.map((topic) => <option key={topic} value={topic}>{topic}</option>)}
-          </select>
+          </Select>
           {debouncedQuery && <span className="w-fit rounded-full bg-[var(--accent-soft)] px-3 py-2 text-xs font-semibold text-[var(--text-main)]">{searchModeUsed === 'hybrid' && semanticAvailable ? 'Busca inteligente' : 'Busca por palavras'}</span>}
         </div>
       </section>

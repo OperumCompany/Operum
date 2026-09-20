@@ -3,9 +3,9 @@ import hmac
 import json
 import secrets
 import uuid
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
-from app.core.config import OPERUM_SEED_DEMO_USER, SUPABASE_DB_SCHEMA
+from app.core.config import OPERUM_ACCESS_TOKEN_MINUTES, OPERUM_REFRESH_TOKEN_DAYS, OPERUM_SEED_DEMO_USER, SUPABASE_DB_SCHEMA
 from app.db.postgres import PostgresClient
 from app.schemas.auth import (
     AccountDeletionRequest,
@@ -27,6 +27,7 @@ class AuthService:
         self.db = PostgresClient(schema=SUPABASE_DB_SCHEMA)
         self._users_path = "auth/users.json"
         self._sessions_path = "auth/sessions.json"
+        self._refresh_tokens_path = "auth/refresh_tokens.json"
         self._preferences_dir = "auth/preferences"
         self._demo_email = "demo@operum.app"
         self._demo_password = "Operum123"
@@ -95,9 +96,10 @@ class AuthService:
 
     def _load_sessions(self) -> list[dict]:
         if self.db.enabled:
+            self._ensure_auth_schema_db()
             return self._run_db(lambda: self.db.fetch_all(
                 """
-                select token, user_id::text as user_id, created_at
+                select token, user_id::text as user_id, created_at, expires_at
                 from public.auth_sessions
                 order by created_at asc
                 """
@@ -106,6 +108,7 @@ class AuthService:
 
     def _save_sessions(self, sessions: list[dict]) -> None:
         if self.db.enabled:
+            self._ensure_auth_schema_db()
             existing = {item["token"] for item in self._load_sessions()}
             next_tokens = {item["token"] for item in sessions}
             tokens_to_delete = existing - next_tokens
@@ -120,17 +123,135 @@ class AuthService:
                 self._run_db(
                     lambda session=session: self.db.execute(
                         """
-                        insert into public.auth_sessions (token, user_id, created_at)
-                        values (%s, %s::uuid, %s)
+                        insert into public.auth_sessions (token, user_id, created_at, expires_at)
+                        values (%s, %s::uuid, %s, %s)
                         on conflict (token) do update set
                           user_id = excluded.user_id,
-                          created_at = excluded.created_at
+                          created_at = excluded.created_at,
+                          expires_at = excluded.expires_at
                         """,
-                        (session["token"], session["user_id"], session["created_at"]),
+                        (session["token"], session["user_id"], session["created_at"], session.get("expires_at")),
                     )
                 )
             return
         self.storage.save_json(self._sessions_path, sessions)
+
+    def _ensure_auth_schema_db(self) -> None:
+        self._run_db(lambda: self.db.execute("alter table public.auth_sessions add column if not exists expires_at timestamptz"))
+        self._run_db(
+            lambda: self.db.execute(
+                """
+                create table if not exists public.auth_refresh_tokens (
+                  token_hash text primary key,
+                  user_id uuid not null references public.app_users(id) on delete cascade,
+                  created_at timestamptz not null default timezone('utc', now()),
+                  expires_at timestamptz not null,
+                  revoked_at timestamptz
+                )
+                """
+            )
+        )
+        self._run_db(lambda: self.db.execute("create index if not exists idx_auth_refresh_tokens_user_id on public.auth_refresh_tokens(user_id)"))
+
+    def _token_hash(self, token: str) -> str:
+        return hashlib.sha256(token.encode("utf-8")).hexdigest()
+
+    def _new_access_token(self) -> tuple[str, datetime, datetime]:
+        now = datetime.now(timezone.utc)
+        return secrets.token_urlsafe(32), now, now + timedelta(minutes=OPERUM_ACCESS_TOKEN_MINUTES)
+
+    def _new_refresh_token(self) -> tuple[str, datetime, datetime]:
+        now = datetime.now(timezone.utc)
+        return secrets.token_urlsafe(48), now, now + timedelta(days=OPERUM_REFRESH_TOKEN_DAYS)
+
+    def _load_refresh_tokens(self) -> list[dict]:
+        if self.db.enabled:
+            self._ensure_auth_schema_db()
+            return self._run_db(lambda: self.db.fetch_all(
+                """
+                select token_hash, user_id::text as user_id, created_at, expires_at, revoked_at
+                from public.auth_refresh_tokens
+                order by created_at asc
+                """
+            ))
+        return list(self.storage.load_json(self._refresh_tokens_path) or [])
+
+    def _save_refresh_tokens(self, tokens: list[dict]) -> None:
+        if self.db.enabled:
+            self._ensure_auth_schema_db()
+            existing = {item["token_hash"] for item in self._load_refresh_tokens()}
+            next_hashes = {item["token_hash"] for item in tokens}
+            hashes_to_delete = existing - next_hashes
+            if hashes_to_delete:
+                self._run_db(lambda: self.db.execute("delete from public.auth_refresh_tokens where token_hash = any(%s)", (list(hashes_to_delete),)))
+            for item in tokens:
+                self._run_db(
+                    lambda item=item: self.db.execute(
+                        """
+                        insert into public.auth_refresh_tokens (token_hash, user_id, created_at, expires_at, revoked_at)
+                        values (%s, %s::uuid, %s, %s, %s)
+                        on conflict (token_hash) do update set
+                          user_id = excluded.user_id,
+                          created_at = excluded.created_at,
+                          expires_at = excluded.expires_at,
+                          revoked_at = excluded.revoked_at
+                        """,
+                        (item["token_hash"], item["user_id"], item["created_at"], item["expires_at"], item.get("revoked_at")),
+                    )
+                )
+            return
+        self.storage.save_json(self._refresh_tokens_path, tokens)
+
+    def _store_refresh_token(self, user_id: str) -> str:
+        token, created_at, expires_at = self._new_refresh_token()
+        token_hash = self._token_hash(token)
+        if self.db.enabled:
+            self._ensure_auth_schema_db()
+            self._run_db(
+                lambda: self.db.execute(
+                    "insert into public.auth_refresh_tokens (token_hash, user_id, created_at, expires_at) values (%s, %s::uuid, %s, %s)",
+                    (token_hash, user_id, created_at, expires_at),
+                )
+            )
+            return token
+        tokens = self._load_refresh_tokens()
+        tokens.append({
+            "token_hash": token_hash,
+            "user_id": user_id,
+            "created_at": created_at.isoformat(),
+            "expires_at": expires_at.isoformat(),
+            "revoked_at": None,
+        })
+        self._save_refresh_tokens(tokens)
+        return token
+
+    def _revoke_refresh_token(self, token: str | None) -> None:
+        if not token:
+            return
+        token_hash = self._token_hash(token)
+        now = datetime.now(timezone.utc)
+        if self.db.enabled:
+            self._ensure_auth_schema_db()
+            self._run_db(lambda: self.db.execute("update public.auth_refresh_tokens set revoked_at = %s where token_hash = %s", (now, token_hash)))
+            return
+        tokens = self._load_refresh_tokens()
+        for item in tokens:
+            if item.get("token_hash") == token_hash:
+                item["revoked_at"] = now.isoformat()
+        self._save_refresh_tokens(tokens)
+
+    def _parse_dt(self, value) -> datetime | None:
+        if value is None:
+            return None
+        if isinstance(value, datetime):
+            return value if value.tzinfo else value.replace(tzinfo=timezone.utc)
+        if isinstance(value, str):
+            try:
+                dt = datetime.fromisoformat(value.replace("Z", "+00:00"))
+                return dt if dt.tzinfo else dt.replace(tzinfo=timezone.utc)
+            except ValueError:
+                return None
+        return None
 
     def _hash_password(self, password: str, salt: str | None = None) -> str:
         password = password.strip()
@@ -179,6 +300,7 @@ class AuthService:
                 from public.auth_sessions s
                 join public.app_users u on u.id = s.user_id
                 where s.token = %s
+                  and (s.expires_at is null or s.expires_at > timezone('utc', now()))
                 """,
                 (token,),
             )
@@ -212,8 +334,9 @@ class AuthService:
         )
 
     def _create_session_db(self, user: UserRecord) -> AuthResponse:
-        token = secrets.token_urlsafe(32)
-        created_at = datetime.now(timezone.utc)
+        self._ensure_auth_schema_db()
+        token, created_at, expires_at = self._new_access_token()
+        refresh_token = self._store_refresh_token(user.id)
 
         def operation():
             with self.db.connection() as conn:
@@ -221,14 +344,14 @@ class AuthService:
                     cur.execute("delete from public.auth_sessions where user_id = %s::uuid", (user.id,))
                     cur.execute(
                         """
-                        insert into public.auth_sessions (token, user_id, created_at)
-                        values (%s, %s::uuid, %s)
+                        insert into public.auth_sessions (token, user_id, created_at, expires_at)
+                        values (%s, %s::uuid, %s, %s)
                         """,
-                        (token, user.id, created_at),
+                        (token, user.id, created_at, expires_at),
                     )
 
         self._run_db(operation)
-        return AuthResponse(token=token, user=self._to_public(user))
+        return AuthResponse(token=token, refresh_token=refresh_token, user=self._to_public(user))
 
     def _touch_user_and_create_session_db(self, user: UserRecord) -> AuthResponse:
         token = secrets.token_urlsafe(32)
@@ -258,8 +381,8 @@ class AuthService:
         return AuthResponse(token=token, user=self._to_public(user))
 
     def _login_db(self, email: str, password: str) -> AuthResponse | None:
-        token = secrets.token_urlsafe(32)
-        session_created_at = datetime.now(timezone.utc)
+        self._ensure_auth_schema_db()
+        token, session_created_at, expires_at = self._new_access_token()
 
         try:
             with self.db.connection() as conn:
@@ -288,12 +411,13 @@ class AuthService:
                     cur.execute("delete from public.auth_sessions where user_id = %s::uuid", (user.id,))
                     cur.execute(
                         """
-                        insert into public.auth_sessions (token, user_id, created_at)
-                        values (%s, %s::uuid, %s)
+                        insert into public.auth_sessions (token, user_id, created_at, expires_at)
+                        values (%s, %s::uuid, %s, %s)
                         """,
-                        (token, user.id, session_created_at),
+                        (token, user.id, session_created_at, expires_at),
                     )
-                    return AuthResponse(token=token, user=self._to_public(user))
+                    refresh_token = self._store_refresh_token(user.id)
+                    return AuthResponse(token=token, refresh_token=refresh_token, user=self._to_public(user))
         except RuntimeError:
             raise
         except Exception as exc:
@@ -388,18 +512,23 @@ class AuthService:
         return self._create_session(user)
 
     def _create_session(self, user: UserRecord) -> AuthResponse:
-        token = secrets.token_urlsafe(32)
+        token, created_at, expires_at = self._new_access_token()
+        refresh_token = self._store_refresh_token(user.id)
         sessions = self._load_sessions()
         sessions = [session for session in sessions if session.get("user_id") != user.id]
         sessions.append({
             "token": token,
             "user_id": user.id,
-            "created_at": datetime.now(timezone.utc).isoformat(),
+            "created_at": created_at.isoformat(),
+            "expires_at": expires_at.isoformat(),
         })
         self._save_sessions(sessions)
-        return AuthResponse(token=token, user=self._to_public(user))
+        return AuthResponse(token=token, refresh_token=refresh_token, user=self._to_public(user))
 
-    def logout(self, token: str) -> None:
+    def logout(self, token: str | None, refresh_token: str | None = None) -> None:
+        self._revoke_refresh_token(refresh_token)
+        if not token:
+            return
         if self.db.enabled:
             self._run_db(lambda: self.db.execute("delete from public.auth_sessions where token = %s", (token,)))
             return
@@ -415,6 +544,9 @@ class AuthService:
         session = next((item for item in sessions if item.get("token") == token), None)
         if session is None:
             return None
+        expires_at = self._parse_dt(session.get("expires_at"))
+        if expires_at and expires_at <= datetime.now(timezone.utc):
+            return None
         users = self._load_users()
         user = next((candidate for candidate in users if candidate.id == session.get("user_id")), None)
         return self._to_public(user) if user else None
@@ -426,8 +558,47 @@ class AuthService:
         session = next((item for item in sessions if item.get("token") == token), None)
         if session is None:
             return None
+        expires_at = self._parse_dt(session.get("expires_at"))
+        if expires_at and expires_at <= datetime.now(timezone.utc):
+            return None
         users = self._load_users()
         return next((candidate for candidate in users if candidate.id == session.get("user_id")), None)
+
+    def refresh_session(self, refresh_token: str) -> AuthResponse | None:
+        token_hash = self._token_hash(refresh_token)
+        now = datetime.now(timezone.utc)
+        if self.db.enabled:
+            self._ensure_auth_schema_db()
+            row = self._run_db(lambda: self.db.fetch_one(
+                """
+                select r.token_hash, r.user_id::text as user_id, r.expires_at, r.revoked_at,
+                       u.id::text as id, u.name, u.email, u.password_hash, u.created_at, u.updated_at
+                from public.auth_refresh_tokens r
+                join public.app_users u on u.id = r.user_id
+                where r.token_hash = %s
+                """,
+                (token_hash,),
+            ))
+            expires_at = self._parse_dt(row.get("expires_at")) if row else None
+            if not row or row.get("revoked_at") or not expires_at or expires_at <= now:
+                return None
+            self._revoke_refresh_token(refresh_token)
+            user = UserRecord(**{key: row[key] for key in ["id", "name", "email", "password_hash", "created_at", "updated_at"]})
+            return self._create_session_db(user)
+
+        tokens = self._load_refresh_tokens()
+        item = next((candidate for candidate in tokens if candidate.get("token_hash") == token_hash), None)
+        if not item or item.get("revoked_at"):
+            return None
+        expires_at = self._parse_dt(item.get("expires_at"))
+        if not expires_at or expires_at <= now:
+            return None
+        users = self._load_users()
+        user = next((candidate for candidate in users if candidate.id == item.get("user_id")), None)
+        if user is None:
+            return None
+        self._revoke_refresh_token(refresh_token)
+        return self._create_session(user)
 
     def update_password(self, token: str, data: PasswordUpdateRequest) -> UserPublic:
         if self.db.enabled:

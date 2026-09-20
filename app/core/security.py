@@ -5,7 +5,14 @@ import json
 from fastapi import HTTPException, Request, Response
 from starlette.middleware.base import BaseHTTPMiddleware
 
-from app.core.config import CORS_ORIGINS, OPERUM_COOKIE_SECURE, OPERUM_SESSION_COOKIE
+from app.core.config import (
+    CORS_ORIGINS,
+    OPERUM_ACCESS_TOKEN_MINUTES,
+    OPERUM_COOKIE_SECURE,
+    OPERUM_REFRESH_COOKIE,
+    OPERUM_REFRESH_TOKEN_DAYS,
+    OPERUM_SESSION_COOKIE,
+)
 from app.core.rate_limit import (
     ADMIN_NEWS_RULE,
     CHAT_HOUR_RULE,
@@ -35,6 +42,19 @@ def set_session_cookie(response: Response, token: str) -> None:
         secure=OPERUM_COOKIE_SECURE,
         samesite="lax",
         path="/",
+        max_age=OPERUM_ACCESS_TOKEN_MINUTES * 60,
+    )
+
+
+def set_refresh_cookie(response: Response, token: str) -> None:
+    response.set_cookie(
+        OPERUM_REFRESH_COOKIE,
+        token,
+        httponly=True,
+        secure=OPERUM_COOKIE_SECURE,
+        samesite="lax",
+        path="/api/auth",
+        max_age=OPERUM_REFRESH_TOKEN_DAYS * 24 * 60 * 60,
     )
 
 
@@ -45,6 +65,16 @@ def clear_session_cookie(response: Response) -> None:
         secure=OPERUM_COOKIE_SECURE,
         samesite="lax",
         path="/",
+    )
+
+
+def clear_refresh_cookie(response: Response) -> None:
+    response.delete_cookie(
+        OPERUM_REFRESH_COOKIE,
+        httponly=True,
+        secure=OPERUM_COOKIE_SECURE,
+        samesite="lax",
+        path="/api/auth",
     )
 
 
