@@ -25,6 +25,56 @@ test('defines the five recorded demonstrations in their commercial order', () =>
   assert.ok(demoSlides.every((slide) => slide.video.endsWith('.webm')));
 });
 
+test('exposes the investor pitch at /slides', async () => {
+  const source = await readFile(new URL('../src/main.tsx', import.meta.url), 'utf8');
+  assert.match(source, /path="\/slides"/);
+  assert.match(source, /PresentationPage/);
+});
+
+test('defines the ten-slide investor pitch without demo slides in the main deck', async () => {
+  const source = await readFile(new URL('../src/presentation/PresentationPage.tsx', import.meta.url), 'utf8');
+  const pitchBlock = source.match(/export const pitchSlides[\s\S]*?export const backupSlides/)[0];
+  const ids = [...pitchBlock.matchAll(/id: '([^']+)'/g)].map((match) => match[1]);
+
+  assert.deepEqual(ids, [
+    'dor',
+    'caso-real',
+    'solucao',
+    'diferencial',
+    'validacao',
+    'mercado',
+    'modelo',
+    'proximos-passos',
+    'investimento',
+    'fechamento',
+  ]);
+  assert.equal(ids.length, 10);
+  assert.ok(!ids.some((id) => id.startsWith('demo-')));
+  assert.doesNotMatch(source, /demoSlides/);
+});
+
+test('includes the core commercial pitch messages', async () => {
+  const source = await readFile(new URL('../src/presentation/PresentationPage.tsx', import.meta.url), 'utf8');
+  assert.match(source, /Investir ficou mais acessível/);
+  assert.match(source, /Dois investidores\. O mesmo problema/);
+  assert.match(source, /Operum: do ruído ao cenário/);
+  assert.match(source, /Operum Core AI/);
+  assert.match(source, /60,6 milhões/);
+  assert.match(source, /diagnóstico de perfil do investidor/);
+  assert.match(source, /R\$750 mil/);
+  assert.match(source, /O mercado já tem informação suficiente/);
+});
+
+test('keeps technical backups behind the backup query mode', async () => {
+  const source = await readFile(new URL('../src/presentation/PresentationPage.tsx', import.meta.url), 'utf8');
+  const backupBlock = source.match(/export const backupSlides[\s\S]*?const numberFormatter/)[0];
+  const backupIds = [...backupBlock.matchAll(/id: '([^']+)'/g)].map((match) => match[1]);
+
+  assert.deepEqual(backupIds, ['backup-rag', 'backup-recuperacao', 'backup-defesa']);
+  assert.match(source, /get\('backup'\) === '1'/);
+  assert.match(source, /\[\.\.\.pitchSlides, \.\.\.backupSlides\]/);
+});
+
 test('plays only the active product demonstration unless motion is reduced', () => {
   assert.equal(shouldPlayDemo(4, 4, false), true);
   assert.equal(shouldPlayDemo(3, 4, false), false);
