@@ -21,6 +21,9 @@ TEMPORAL_TERMS = {
     "este mes", "últimas notícias", "ultimas noticias", "notícia", "noticia",
     "mercado", "resultado trimestral", "copom", "cotação", "cotacao",
 }
+GREETING_TERMS = {
+    "oi", "ola", "olá", "bom dia", "boa tarde", "boa noite", "e ai", "e aí",
+}
 PORTFOLIO_TERMS = {"carteira", "posição", "posicao", "patrimônio", "patrimonio", "meus ativos", "concentração", "concentracao"}
 FINANCE_TERMS = {
     "ação", "acao", "ações", "acoes", "ativo", "investimento", "fii", "etf", "bdr",
@@ -79,6 +82,14 @@ class ChatService:
             }
         portfolio_context = self._build_portfolio_context(active_portfolio, consolidated_portfolios or [])
         intent = self._classify_intent(question, messages, portfolio_context)
+        if intent == "saudacao":
+            return {
+                "message": self._greeting_answer(portfolio_context),
+                "mode": "fallback",
+                "used_portfolio_context": portfolio_context["has_context"],
+                "sources": [],
+                "retrieval": {"intent": intent, "knowledge_count": 0, "news_count": 0, "used_portfolio_context": portfolio_context["has_context"]},
+            }
         if self._is_safe_orientation(question, intent):
             by_id = {item["id"]: item for item in self.knowledge.load_documents()}
             knowledge_context = [
@@ -197,6 +208,8 @@ class ChatService:
 
     def _classify_intent(self, question: str, messages: list[ChatInputMessage], portfolio: dict) -> str:
         normalized = normalize_text(question)
+        if normalized in GREETING_TERMS:
+            return "saudacao"
         if any(term in normalized for term in PORTFOLIO_TERMS):
             return "carteira"
         tickers = {asset.ticker.lower() for asset in self.assets.get_all()}
@@ -282,6 +295,18 @@ class ChatService:
             for pos in top
         )
         return {"has_context": True, "summary": summary, "top_assets": [pos.ticker for pos in top], "class_distribution": dict(classes)}
+
+    @staticmethod
+    def _greeting_answer(portfolio: dict) -> str:
+        if portfolio["has_context"]:
+            return (
+                "Olá! Posso te ajudar a entender sua carteira ativa, explicar conceitos como renda fixa, "
+                "risco, liquidez e diversificação, ou analisar ativos e notícias de mercado."
+            )
+        return (
+            "Olá! Posso te ajudar com conceitos de investimentos, economia, riscos, análise de ativos "
+            "e interpretação de carteira."
+        )
 
     def _fallback_answer(self, question: str, intent: str, knowledge: list[dict], news: list[dict], portfolio: dict) -> str:
         if self._is_safe_orientation(question, intent):

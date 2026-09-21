@@ -17,6 +17,7 @@ RUN python -m pip install --upgrade pip \
 
 COPY app ./app
 COPY data/assets ./data/assets
+COPY docs/knowledge ./docs/knowledge
 
 RUN mkdir -p /app/data/logs /app/data/news /app/data/cache /app/data/models /app/data/market /app/data/portfolios /app/data/ai \
     && useradd --create-home --shell /usr/sbin/nologin operum \

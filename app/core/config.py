@@ -46,6 +46,8 @@ SUPABASE_DB_URL = os.environ.get("SUPABASE_DB_URL", "")
 OPERUM_STORAGE_MODE = os.environ.get("OPERUM_STORAGE_MODE", "auto")
 OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP = os.environ.get("OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP", "true").lower() == "true"
 OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP = os.environ.get("OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP", "true").lower() == "true"
+OPERUM_ENABLE_NEWS_SCHEDULER = os.environ.get("OPERUM_ENABLE_NEWS_SCHEDULER", "false").lower() == "true"
+OPERUM_NEWS_SCHEDULER_INTERVAL_HOURS = float(os.environ.get("OPERUM_NEWS_SCHEDULER_INTERVAL_HOURS", "24"))
 OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP = os.environ.get("OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP", "true").lower() == "true"
 OPERUM_SEED_DEMO_USER = os.environ.get("OPERUM_SEED_DEMO_USER", "false").lower() == "true"
 BRAPI_TOKEN = os.environ.get("BRAPI_TOKEN", "").strip()

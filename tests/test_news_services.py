@@ -67,6 +67,28 @@ def test_editorial_filter_blocks_obvious_noise():
     )
 
 
+def test_news_without_source_date_uses_url_for_stable_deduplication():
+    service = NewsIngestionService()
+    first = service._normalize_item({
+        "title": "Petrobras anuncia novo projeto",
+        "summary": "Companhia detalha investimento.",
+        "link": "https://example.com/petrobras-projeto/",
+        "source": "InfoMoney",
+        "source_id": "infomoney",
+    })
+    second = service._normalize_item({
+        "title": "Petrobras anuncia novo projeto",
+        "summary": "Companhia detalha investimento.",
+        "link": "https://example.com/petrobras-projeto/",
+        "source": "InfoMoney",
+        "source_id": "infomoney",
+    })
+
+    assert first is not None
+    assert second is not None
+    assert first.id == second.id
+
+
 def test_related_news_mix_prefers_official_but_keeps_macro_context():
     service = AssetAnalysisService()
     service._asset_meta = lambda ticker: {

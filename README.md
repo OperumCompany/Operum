@@ -76,6 +76,8 @@ Variaveis recomendadas para producao:
 - `OPERUM_COOKIE_SECURE=true`
 - `OPERUM_REFRESH_TOKEN` para endpoints administrativos de noticias
 - `BRAPI_TOKEN` para cotacoes detalhadas e historico autenticado da brapi
+- `OPERUM_ENABLE_NEWS_SCHEDULER=true` para atualizar noticias automaticamente
+- `OPERUM_NEWS_SCHEDULER_INTERVAL_HOURS=24` para atualizar noticias diariamente
 - `OPERUM_ENABLE_NEWS_INGEST_ON_STARTUP`
 - `OPERUM_ENABLE_NEWS_BACKFILL_ON_STARTUP`
 - `OPERUM_ENABLE_PRICE_WARMUP_ON_STARTUP`

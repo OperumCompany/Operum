@@ -351,8 +351,9 @@ class NewsIngestionService:
             source_id = self._clean_text(item.get("source_id") or "unknown") or "unknown"
             source_name = self._clean_text(item.get("source") or item.get("source_name") or "desconhecida")
             source_type = self._clean_text(item.get("source_type") or "rss") or "rss"
-            source_url = item.get("link") or item.get("source_url") or ""
-            published_dt = self._parse_published(item.get("published") or item.get("published_at"), source_id)
+            source_url = self._clean_feed_link(item.get("link") or item.get("source_url") or "")
+            raw_published = item.get("published") or item.get("published_at")
+            published_dt = self._parse_published(raw_published, source_id)
             source_category = item.get("source_category")
             tags_default = [self._clean_text(tag) for tag in item.get("tags_default", []) if self._clean_text(tag)]
             country_default = [self._clean_text(country) for country in item.get("country_default", []) if self._clean_text(country)]
@@ -361,7 +362,7 @@ class NewsIngestionService:
             mentioned_assets = self._detect_assets(text_for_analysis)
             mentioned_sectors = sorted(set(self._detect_sectors(text_for_analysis) + tags_default))
             mentioned_countries = sorted(set(self._detect_countries(text_for_analysis) + country_default))
-            news_id = self._generate_id(title, source_name, published_dt)
+            news_id = self._generate_id(title, source_name, published_dt if raw_published else source_url)
 
             summary = self.summarizer.summarize(
                 title,
@@ -438,12 +439,15 @@ class NewsIngestionService:
     def _merge_and_store(self, normalized: list[NewsItem]) -> int:
         existing = [NewsItem(**item) for item in self._load_archive()]
         existing_ids = {item.id for item in existing}
+        existing_urls = {item.source_url for item in existing if item.source_url}
         new_count = 0
         new_items: list[NewsItem] = []
         for news in normalized:
-            if news.id in existing_ids:
+            if news.id in existing_ids or (news.source_url and news.source_url in existing_urls):
                 continue
             existing_ids.add(news.id)
+            if news.source_url:
+                existing_urls.add(news.source_url)
             existing.append(news)
             new_items.append(news)
             new_count += 1
