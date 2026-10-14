@@ -45,8 +45,8 @@ test('defines the ten-slide investor pitch without demo slides in the main deck'
     'mercado',
     'modelo',
     'proximos-passos',
-    'investimento',
     'fechamento',
+    'investimento',
   ]);
   assert.equal(ids.length, 10);
   assert.ok(!ids.some((id) => id.startsWith('demo-')));

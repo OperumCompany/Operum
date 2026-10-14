@@ -66,16 +66,16 @@ export const pitchSlides: SlideDefinition[] = [
     note: 'Hoje o Operum está focado em renda variável, porque é onde a combinação de notícias, volatilidade, preço e contexto aparece com mais força. Mas a visão do produto é maior. Queremos expandir para renda fixa, trazendo análises de títulos, taxas, vencimentos, liquidez e cenários de juros. Também queremos criar um diagnóstico de perfil do investidor, identificando se ele tem um perfil mais conservador, moderado ou arrojado. Com isso, o Operum deixa de entregar uma análise igual para todos e passa a adaptar a leitura ao perfil de risco, horizonte e comportamento de cada investidor.',
   },
   {
-    id: 'investimento',
-    kicker: '09 · Escala + investimento',
-    targetSeconds: 50,
-    note: 'Até aqui, construímos produto e tecnologia. O próximo desafio é provar distribuição, retenção e escala. Por isso estruturamos uma rodada pre-seed de R$750 mil por 15% da empresa, correspondente a valuation de R$4,25 milhões pre-money e R$5 milhões post-money. O objetivo não é simplesmente financiar operação. É comprar aproximadamente 18 meses para validar as métricas que transformam um bom produto em um negócio escalável: 2 a 3 mil clientes pagantes, R$57 mil a R$85 mil de MRR, margem acima de 80%, CAC até R$60, churn até 4% e primeiros contratos B2B.',
-  },
-  {
     id: 'fechamento',
-    kicker: '10 · Fechamento',
+    kicker: '09 · Fechamento',
     targetSeconds: 25,
     note: 'O Operum começou há quase dez anos com uma dificuldade pessoal: como transformar tanta informação financeira em algo realmente útil para tomar decisão. Essa pergunta virou uma planilha, a planilha virou uma aplicação, a aplicação se tornou um projeto premiado, e hoje temos um produto funcionando. Agora queremos transformar o Operum em uma empresa. O mercado já tem informação suficiente. O que falta é entendimento. Esse é o Operum.',
+  },
+  {
+    id: 'investimento',
+    kicker: '10 · Escala + investimento',
+    targetSeconds: 50,
+    note: 'Até aqui, construímos produto e tecnologia. O próximo desafio é provar distribuição, retenção e escala. Por isso estruturamos uma rodada pre-seed de R$750 mil por 15% da empresa, correspondente a valuation de R$4,25 milhões pre-money e R$5 milhões post-money. O objetivo não é simplesmente financiar operação. É comprar aproximadamente 18 meses para validar as métricas que transformam um bom produto em um negócio escalável: 2 a 3 mil clientes pagantes, R$57 mil a R$85 mil de MRR, margem acima de 80%, CAC até R$60, churn até 4% e primeiros contratos B2B.',
   },
 ];
 
@@ -231,13 +231,13 @@ function SlideBusiness() {
 
 function SlideRoadmap() {
   const steps = [
-    ['Hoje', 'Renda variável', 'Análises de ações, ativos acompanhados, notícias, volatilidade, cenários e impacto na carteira.'],
-    ['Próximo', 'Renda fixa', 'Leitura de títulos, taxas, vencimentos, liquidez e cenários de juros para ampliar a cobertura.'],
-    ['Evolução', 'Perfil do investidor', 'Diagnóstico conservador, moderado ou arrojado para adaptar análises ao risco e horizonte do usuário.'],
-  ];
+    { stage: 'Hoje', title: 'Renda variável', copy: 'Análises de ações, ativos acompanhados, notícias, volatilidade, cenários e impacto na carteira.' },
+    { stage: 'Próximo', title: 'Renda fixa', copy: 'Leitura de títulos, taxas, vencimentos, liquidez e cenários de juros para ampliar a cobertura.' },
+    { stage: 'Evolução', title: 'Novas frentes', copy: ['Perfil do investidor', 'Operum Global', 'Importe de carteiras via Open Banking'] },
+  ] satisfies Array<{ stage: string; title: string; copy: string | string[] }>;
   return <div className="pitch-slide light-slide roadmap-slide"><div className="pitch-slide-inner roadmap-layout">
     <SectionTitle kicker="Próximos passos" title="De análise de ativos para inteligência personalizada." description="Hoje focamos em renda variável. A próxima etapa é ampliar classes de ativos e adaptar a análise ao perfil de cada investidor." />
-    <div className="roadmap-grid">{steps.map(([stage, title, copy], index) => <Reveal key={title} delay={0.22 + index * 0.1}><article><small>{stage}</small><h2>{title}</h2><p>{copy}</p></article></Reveal>)}</div>
+    <div className="roadmap-grid">{steps.map(({ stage, title, copy }, index) => <Reveal key={title} delay={0.22 + index * 0.1}><article><small>{stage}</small><h2>{title}</h2>{Array.isArray(copy) ? <ul>{copy.map((item) => <li key={item}>{item}</li>)}</ul> : <p>{copy}</p>}</article></Reveal>)}</div>
     <Reveal delay={0.56} className="roadmap-footer"><Sparkles size={18} />A mesma esteira de IA, com análises cada vez mais completas e aderentes ao investidor.</Reveal>
   </div></div>;
 }
@@ -291,8 +291,8 @@ const pitchComponents = [
   SlideMarket,
   SlideBusiness,
   SlideRoadmap,
-  SlideInvestment,
   SlideClose,
+  SlideInvestment,
 ];
 
 const backupComponents = [

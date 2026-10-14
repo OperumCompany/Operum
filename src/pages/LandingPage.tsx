@@ -78,6 +78,7 @@ export function LandingPage() {
               O Operum combina noticias, leitura quantitativa e IA para transformar sua carteira em cenarios de analise. Compare ativos, entenda riscos e acompanhe previsoes com contexto.
             </p>
             <div className="landing-cta-row">
+              {!user && !loading && <Link to="/login" className={ghostLink}>Entrar</Link>}
               <Link to={appTarget} className={primaryLink}>{appLabel}<ArrowRight size={17} /></Link>
               <a href="#produto" className={ghostLink}>Conhecer o Operum</a>
             </div>

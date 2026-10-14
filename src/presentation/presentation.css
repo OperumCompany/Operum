@@ -294,6 +294,9 @@
 .roadmap-grid small { position: relative; z-index: 1; width: fit-content; border-radius: 999px; background: #1c1b1b; padding: .48rem .68rem; color: #fff; font-family: var(--font-data); font-size: .62rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
 .roadmap-grid h2 { position: relative; z-index: 1; margin: auto 0 .85rem; color: #1c1b1b; font-family: var(--font-display); font-size: clamp(1.8rem, 3vw, 3.6rem); letter-spacing: -.075em; line-height: .9; }
 .roadmap-grid p { position: relative; z-index: 1; margin: 0; color: #625b69; font-size: clamp(.78rem, 1vw, .98rem); line-height: 1.55; }
+.roadmap-grid ul { position: relative; z-index: 1; display: grid; gap: .55rem; margin: 0; padding: 0; list-style: none; color: #625b69; font-size: clamp(.78rem, 1vw, .98rem); line-height: 1.35; }
+.roadmap-grid li { display: flex; align-items: flex-start; gap: .5rem; }
+.roadmap-grid li::before { flex: 0 0 auto; width: .42rem; height: .42rem; margin-top: .45em; border-radius: 999px; background: #684cf2; content: ''; }
 .roadmap-footer { display: inline-flex; width: fit-content; align-items: center; gap: .5rem; margin-top: 1.2rem; border-radius: 999px; background: linear-gradient(135deg, #684cf2, #df50f2); padding: .72rem 1rem; color: #fff; font-family: var(--font-data); font-weight: 750; }
 .backup-layout { max-width: 1040px; color: #fff; }
 .backup-layout h1 { margin: .8rem 0 0; color: #fff; font-family: var(--font-display); font-size: clamp(3rem, 6.2vw, 7rem); font-weight: 680; letter-spacing: -.075em; line-height: .9; }
